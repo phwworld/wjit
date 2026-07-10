@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+:root {
+  --white: #fff;
+  --black: #000;
+}
+
+html {
+  font-size: 62.5%; /* 1rem -> 10px */
+  font-weight: 500;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Pretendard';
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+button {
+  font-family: 'Pretendard';
+}
+
+.font-gmarketsans {
+  font-family: 'GmarketSans';
+}

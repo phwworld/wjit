@@ -1,0 +1,505 @@
+/* 시안3 서브 — 레이아웃·솔리드 헤더 · 콘텐츠 폭(index site-container와 동일) */
+
+.sub-page--v3 {
+  --nav-height: 90px;
+  --sub-hero-pad-x: var(--site-container-pad-x);
+  --ring: rgba(21, 171, 230, 0.45);
+  --sub-tab-active-line: #15ABE6;
+  background: #ffffff !important;
+  color: #0f172a;
+  padding-top: var(--nav-h, 90px);
+}
+
+.sub-page--v3 #page-bg-decoration .gridlines {
+  opacity: 0.08 !important;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.sub-page--v3 #page-bg-decoration .noise {
+  opacity: 0.04 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.sub-page--v3 #site-header.site-header {
+  position: fixed;
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: none !important;
+}
+
+.sub-page--v3 #site-header.site-header .header-logo-img--mono {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.sub-page--v3 #site-header.site-header .header-logo-img--color {
+  opacity: 1 !important;
+  pointer-events: auto;
+}
+
+.sub-page--v3 #site-header.site-header .gnb-mega__trigger {
+  color: rgba(17, 26, 51, 0.62);
+}
+
+.sub-page--v3 #site-header.site-header .gnb-mega__item:hover > .gnb-mega__trigger,
+.sub-page--v3 #site-header.site-header .gnb-mega__item:focus-within > .gnb-mega__trigger,
+.sub-page--v3 #site-header.site-header .gnb-mega__item.is-open > .gnb-mega__trigger {
+  color: #111a33;
+}
+
+.sub-page--v3 #site-header.site-header nav[aria-label="보조 메뉴"] a {
+  color: rgba(17, 26, 51, 0.62);
+}
+
+.sub-page--v3 #site-header.site-header .header-toolbar-icon,
+.sub-page--v3 #site-header.site-header .header-menu-icon {
+  color: rgba(17, 26, 51, 0.88);
+}
+
+/* 데스크탑: 모바일 메뉴가 본문 위에 겹치거나 영역을 차지하지 않도록 */
+@media (min-width: 1024px) {
+  .sub-page--v3 #mobile-menu {
+    display: none !important;
+  }
+}
+
+/* 히어로 sticky — body padding만 사용, margin-top 제거 · 본문보다 상위 레이어 */
+.sub-page--v3 .sub-hero-zone {
+  margin-top: 0 !important;
+  top: var(--nav-h, 90px) !important;
+  z-index: 52;
+  overflow: visible;
+}
+
+.sub-page--v3 .sub-section-select {
+  position: relative;
+  z-index: 12;
+}
+
+.sub-page--v3 .sub-legacy-wrap {
+  position: relative;
+  z-index: 0;
+}
+
+/* 히어로 영상 — 상단 화이트 그라데이션 (상단 40% 불투명) */
+.sub-page--v3 .sub-hero__video-frame .sub-hero__overlay-white {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.4) 0%,
+    #ffffff 100%
+  ) !important;
+}
+
+.sub-page--v3 main#content {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+}
+
+.sub-page--v3 #site-footer {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: 0;
+}
+
+/* layout-nav-footer.css 레거시 #site-footer(padding 64px·border-top none) 무력화 — index .site-footer 공통 사용 */
+.sub-page--v3 #site-footer.site-footer {
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.sub-container,
+.sub-page--v3 .site-container {
+  max-width: var(--site-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--site-container-pad-x);
+  padding-right: var(--site-container-pad-x);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sub-page--v3 .skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 10002;
+  padding: 0.5rem 1rem;
+  background: var(--sub-accent, #15ABE6);
+  color: #fff;
+}
+
+.sub-page--v3 .skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.sub-page--v3 .focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(21, 171, 230, 0.45);
+}
+
+/* JS 로드 전·실패 시에도 본문 노출 */
+.sub-page--v3 .sub-hero__copy .hero-title-line__in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sub-page--v3 .reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* sub-container — sub.css의 .site-container 섹션 간격(40px) 동일 적용 */
+.sub-page--v3 .sub-section > .sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sub-content-group-gap);
+}
+
+.sub-page--v3 #overview > .sub-container {
+  gap: var(--sub-overview-group-gap);
+}
+
+.sub-page--v3 #core > .sub-container {
+  gap: 0;
+}
+
+.sub-page--v3 #core .sub-section__head {
+  margin-bottom: var(--sub-overview-group-gap);
+}
+
+.sub-page--v3 #core > .sub-container > .grid {
+  gap: var(--sub-overview-group-gap);
+  margin-bottom: var(--sub-overview-group-gap);
+}
+
+/* 3열·2열 카드 그리드 — 박스 사이 여백(세로 늘어나도 간격 유지) */
+.sub-page--v3 .sub-section > .sub-container > .grid:has(.sub-card) {
+  display: grid !important;
+  gap: 1.25rem !important;
+  row-gap: 1.25rem !important;
+  column-gap: 1.25rem !important;
+  align-items: stretch;
+}
+
+.sub-page--v3 #core + .sub-bridge {
+  margin-top: var(--sub-overview-group-gap);
+}
+
+/* 레거시 본문 — 핵심 섹션 하단 브릿지 간격 */
+.sub-page--legacy-content #core + .sub-bridge {
+  margin-top: var(--sub-content-group-gap, 140px);
+}
+
+.sub-page--legacy-content .sub-legacy-wrap {
+  padding-bottom: 80px;
+}
+
+.sub-page--v3 #differentiator > .sub-container,
+.sub-page--v3 #benefits > .sub-container {
+  gap: 0;
+}
+
+.sub-page--v3 #differentiator .sub-section__head,
+.sub-page--v3 #benefits .sub-section__head {
+  margin-bottom: var(--sub-overview-group-gap);
+}
+
+.sub-page--v3 #differentiator > .sub-container > .sub-section__head ~ * + *,
+.sub-page--v3 #benefits > .sub-container > .sub-section__head ~ * + * {
+  margin-top: var(--sub-content-group-gap) !important;
+}
+
+.sub-page--v3 #differentiator > .sub-container > .reveal-up + * {
+  margin-top: var(--sub-overview-group-gap) !important;
+}
+
+.sub-page--v3 .sub-section > .sub-container > * {
+  margin-top: 0 !important;
+}
+
+/* 시안3 모바일 히어로 — 브로우 1단계 축소 · AICC 대타이틀 2단계 확대 */
+@media (max-width: 1180px) {
+  .sub-page--v3 .sub-hero__eyebrow {
+    font-size: clamp(20px, 2.9vw, 26px) !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__eyebrow {
+    font-size: clamp(16px, 3.9vw, 20px) !important;
+  }
+
+  .sub-page--v3 .sub-hero__title {
+    font-size: clamp(42px, 8vw, 68px) !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__title {
+    font-size: clamp(33px, 8.2vw, 42px) !important;
+  }
+}
+
+/* FAQ 타이틀 — 모바일: 단일 문구, 데스크톱·패드: 기존 2줄 */
+.sub-page--v3 [data-legacy-faq] .sub-legacy-faq__heading--narrow {
+  display: none;
+}
+
+@media (max-width: 719px) {
+  .sub-page--v3 [data-legacy-faq] .sub-legacy-faq__heading--wide,
+  .sub-page--v3 [data-legacy-faq] .sub-legacy-faq__subheading--wide {
+    display: none !important;
+  }
+
+  .sub-page--v3 [data-legacy-faq] .sub-legacy-faq__heading--narrow {
+    display: block;
+  }
+
+  .sub-page--v3 [data-legacy-faq] .sub-legacy-faq__heading {
+    display: block;
+    margin-bottom: 40px !important;
+  }
+
+  .sub-page--v3 .sub-hero__eyebrow {
+    font-size: clamp(18px, 2.75vw, 24px) !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__eyebrow {
+    font-size: clamp(14px, 3.6vw, 18px) !important;
+  }
+
+  .sub-page--v3 .sub-hero__title {
+    font-size: clamp(29px, 5.8vw, 52px) !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: nowrap !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__title {
+    font-size: clamp(26px, 7vw, 36px) !important;
+  }
+
+  /* 셀렉트 — 히어로와 본문 사이: 상단 여백 축소, 스크롤 시 하단 잘림 방지 */
+  .sub-page--v3 .sub-section-select {
+    padding-top: 16px !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven .sub-section-select {
+    padding-top: calc((1 - var(--sub-hero-scroll-progress)) * 16px) !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-section-select {
+    padding: 0 0 12px !important;
+    background: transparent;
+  }
+
+  .sub-page--v3 .sub-section-select__trigger {
+    justify-content: space-between;
+    border-bottom: 0 !important;
+    text-align: left;
+  }
+
+  .sub-page--v3 .sub-section-select__trigger-label {
+    flex: 1;
+    text-align: left;
+  }
+
+  .sub-page--v3 .sub-hero-zone:has(.sub-section-select__box.is-open) {
+    z-index: 56;
+  }
+}
+
+/* 웹(720px+) — 탭 행 · 텍스트↔언더라인 +6px (행高 52→58) */
+@media (min-width: 720px) {
+  .sub-page--v3 {
+    --sub-tab-label-line-gap: 6px;
+    --sub-tab-row-height: calc(52px + var(--sub-tab-label-line-gap));
+    --sub-anchor-height: calc(var(--sub-tab-row-height) + var(--sub-anchor-gap-bottom, 60px));
+  }
+
+  .sub-page--v3 .sub-section-select__option {
+    box-sizing: border-box;
+    align-items: center;
+    min-height: var(--sub-tab-row-height);
+    height: var(--sub-tab-row-height);
+    padding: 0 40px var(--sub-tab-label-line-gap);
+    border-bottom-width: 2px;
+  }
+
+  .sub-page--v3 .sub-section-select__option.is-active {
+    border-bottom: 2px solid var(--sub-accent, #15ABE6) !important;
+  }
+
+  .sub-page--v3 .sub-section-select__option-label {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+}
+
+/* 패드 — sub.css 비대칭 패딩 유지 + 하단 여백 6px 추가 */
+@media ((width: 768px) and (orientation: portrait)), ((width: 820px) and (orientation: portrait)), ((width: 1024px) and (orientation: portrait)), ((height: 768px) and (orientation: landscape)), ((height: 820px) and (orientation: landscape)), ((height: 1024px) and (orientation: landscape)) {
+  .sub-page--v3 .sub-section-select__option {
+    height: auto;
+    min-height: var(--sub-tab-row-height);
+    padding: 1.375rem 40px calc(1rem - 2px + var(--sub-tab-label-line-gap));
+  }
+}
+
+@media ((width: 768px) and (orientation: portrait)), ((width: 820px) and (orientation: portrait)), ((width: 1024px) and (orientation: portrait)) {
+  .sub-page--v3 .sub-section-select__option {
+    padding: 1.375rem clamp(0.625rem, 2.2vw, 1.25rem) calc(1rem + var(--sub-tab-label-line-gap));
+  }
+}
+
+/* 웹·고해상(1024px+) — 탭 라벨 28px */
+@media (min-width: 1024px) {
+  .sub-page--v3 .sub-section-select__option-label {
+    font-size: 28px;
+  }
+}
+
+/* 시안3 웹(720px+, 모바일·패드 제외) — 축소 시 아이브로·대타이틀 숨김 · 히어로 ~120px · 탭만 상단 */
+@media (min-width: 720px) and (not ((width: 768px) and (orientation: portrait))) and (not ((width: 820px) and (orientation: portrait))) and (not ((width: 1024px) and (orientation: portrait))) and (not ((height: 768px) and (orientation: landscape))) and (not ((height: 820px) and (orientation: landscape))) and (not ((height: 1024px) and (orientation: landscape))) {
+  .sub-page--v3 {
+    --sub-hero-height-collapsed: 120px;
+    --sub-hero-copy-pad-top-compact: 0;
+    --sub-anchor-gap-bottom-collapsed: 0;
+    --sub-v3-tab-center-pull-max: calc(
+      (var(--sub-hero-height-collapsed) - var(--sub-tab-row-height, 58px)) / 2 -
+        var(--sub-hero-height-collapsed)
+    );
+    --sub-anchor-height-collapsed: var(--sub-hero-height-collapsed);
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven .sub-hero__eyebrow,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven .sub-hero__title {
+    opacity: calc(1 - clamp(0, var(--sub-hero-scroll-progress) * 1.75, 1));
+    max-height: calc((1 - clamp(0, var(--sub-hero-scroll-progress) * 1.15, 1)) * 10rem);
+    margin-top: calc((1 - clamp(0, var(--sub-hero-scroll-progress) * 1.15, 1)) * 0.75rem);
+    margin-bottom: calc(
+      (1 - clamp(0, var(--sub-hero-scroll-progress) * 1.15, 1)) * (1.1rem + 12px)
+    );
+    overflow: hidden;
+    pointer-events: none;
+    transition: none;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-collapsed .sub-hero__eyebrow,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__eyebrow,
+  .sub-page--v3 .sub-hero-zone.is-collapsed .sub-hero__title,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__title {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-collapsed .sub-hero__copy,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero__copy {
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven .sub-hero__copy {
+    padding-top: calc(
+      (1 - var(--sub-hero-scroll-progress)) * var(--sub-hero-copy-pad-top-expanded) +
+        var(--sub-hero-scroll-progress) * var(--sub-hero-copy-pad-top-compact)
+    );
+    padding-bottom: calc((1 - var(--sub-hero-scroll-progress)) * 1rem);
+  }
+
+  /* 축소 완료 — 히어로(120px) 위에 탭을 겹쳐 세로 중앙 정렬 */
+  .sub-page--v3 .sub-hero-zone.is-collapsed,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    height: var(--sub-hero-height-collapsed);
+    min-height: var(--sub-hero-height-collapsed);
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-collapsed .sub-hero,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-hero {
+    grid-area: 1 / 1;
+    align-self: stretch;
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+
+  .sub-page--v3 .sub-hero-zone.is-collapsed .sub-section-select,
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven.is-collapsed .sub-section-select {
+    grid-area: 1 / 1;
+    align-self: center;
+    justify-self: stretch;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 스크롤 축소 중 — 탭을 히어로 영역 중앙으로 끌어올림 */
+  .sub-page--v3 .sub-hero-zone.is-hero-scroll-driven:not(.is-collapsed) .sub-section-select {
+    margin-top: calc(var(--sub-hero-scroll-progress) * var(--sub-v3-tab-center-pull-max)) !important;
+    padding-top: 0 !important;
+    padding-bottom: calc(
+      (1 - var(--sub-hero-scroll-progress)) * var(--sub-anchor-gap-bottom, 60px)
+    ) !important;
+  }
+
+  .sub-page--v3 .sub-section {
+    scroll-margin-top: calc(
+      var(--nav-height) + var(--sub-hero-height-collapsed) + var(--sub-anchor-height-collapsed) +
+        var(--sub-anchor-head-gap, 0px)
+    );
+  }
+}
+
+/* layout-nav-footer 헤더 규칙 무효화 — index.html site.css(gnb-mega) 구조 사용 */
+.sub-page--v3 #site-header.site-header {
+  height: auto !important;
+  min-height: 0;
+  transform: none !important;
+  overflow: visible !important;
+}
+
+.sub-page--v3 #site-header.site-header > .site-container {
+  height: 90px;
+}
+
+@media (min-width: 1536px) {
+  .sub-page--v3 {
+    --nav-height: 100px;
+  }
+
+  .sub-page--v3 #site-header.site-header > .site-container {
+    height: 100px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .sub-page--v3 {
+    --nav-height: 108px;
+  }
+
+  .sub-page--v3 #site-header.site-header > .site-container {
+    height: 108px;
+  }
+}
+
+/* 검색 풀오버 — index와 동일: 오버레이는 inset:0, 패널만 헤더 높이만큼 offset */
+.sub-page--v3 .header-search-overlay {
+  inset: 0;
+}
+
+.sub-page--v3 .header-search-overlay__panel {
+  top: var(--nav-height);
+}

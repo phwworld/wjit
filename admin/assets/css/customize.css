@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.sidebar-brand .brand-link .brand-image {
+    max-height: 3rem;
+}
+
+.login-logo img {
+    max-height: 7rem;
+}
+
+/* .tabulator {
+    border: 0;
+}
+.tabulator-row:first-child .tabulator-cell {
+    border-top: 0;
+}
+.tabulator-row.tabulator-row-even,
+.tabulator-row.tabulator-selected {
+    background-color: transparent !important;
+}
+.tabulator-row .tabulator-cell.tabulator-row-header {
+    border-bottom: 0;
+}
+.tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left,
+.tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
+    border-width: 1px;
+}
+.tabulator .tabulator-header .tabulator-col {
+    border-top: 1px solid #aaa;
+}
+.tabulator .tabulator-header .tabulator-col:first-child {
+    border-left: 1px solid #aaa;
+}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+    height: 30px;
+    line-height: 30px;
+}
+.tabulator-row .tabulator-cell:first-child {
+    border-left: 1px solid #aaa;
+}
+.tabulator .tabulator-footer {
+    padding-top: 15px;
+    background-color: #fff;
+}
+.tabulator .tabulator-footer .tabulator-paginator {
+    text-align: center;
+} */
+
+/* .img-board .tabulator-cell,
+.img-board .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
+    display: inline-flex;
+    align-items: center;
+}
+.img-board .tabulator-cell {
+    border-top: 1px solid #aaa;
+}
+.img-board .tabulator-cell.align-center {
+    justify-content: center;
+} */
+
+.tabulator-row .tabulator-cell.tabulator-row-header {
+    border-bottom: 0;
+}
+.tabulator-row.tabulator-selected,
+.tabulator-row.tabulator-selected:hover {
+    background-color: transparent;
+}
+.tabulator-row.tabulator-selected.tabulator-row-even {
+    background-color: #efefef;
+}
+
+.img-board .tabulator-cell {
+    display: inline-flex !important;
+    align-items: center;
+}
+.img-board .tabulator-cell.align-center {
+    justify-content: center;
+}

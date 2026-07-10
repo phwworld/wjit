@@ -1,0 +1,125 @@
+<!-- 우측 섹션 퀵메뉴 — 기존(레거시) HTML 백업 · 복원 시 index.html 639~760행 대체 -->
+<!-- 백업 일자: 2026-06-08 -->
+
+    <!-- 섹션 퀵메뉴 (우측 중앙 고정 · 도트 연결선) -->
+    <nav
+      id="section-quick-nav"
+      class="pointer-events-none fixed right-3 top-1/2 z-[90] hidden -translate-y-1/2 md:pointer-events-auto md:block"
+      aria-label="섹션 바로가기"
+    >
+      <div class="flex flex-col items-end">
+        <div class="relative">
+          <!-- 6개 도트를 관통하는 세로 트랙 (1px 화이트) -->
+          <span
+            class="sq-nav-line pointer-events-none absolute right-[4px] top-2 bottom-2 z-0 w-px"
+            aria-hidden="true"
+          ></span>
+          <ul class="relative z-[1] flex flex-col gap-3">
+            <li>
+              <a
+                href="#hero"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="hero"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">HOME</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="services"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">서비스소개</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#media"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="media"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">미디어룸</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#cases"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="cases"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">고객사례</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#growth"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="growth"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">성장스토리</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="sq-nav-link focus-ring flex items-center justify-end gap-2.5 py-0.5 pl-2"
+                data-sq-section="contact-footer"
+                aria-label="고객문의 섹션으로 이동"
+              >
+                <span class="sq-label max-w-[4.25rem] text-right leading-snug">고객문의</span>
+                <span class="sq-dot relative z-[2] h-2 w-2 shrink-0 rounded-full border border-white/35" aria-hidden="true"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 섹션 스크롤 버튼 (우측 하단 고정 · 위/아래 이동) -->
+    <div
+      id="section-scroll-actions"
+      class="pointer-events-none fixed bottom-6 right-3 z-[90] hidden md:pointer-events-auto md:block"
+    >
+      <div class="sq-nav-scroll-actions flex flex-col items-end">
+        <button
+          type="button"
+          id="section-quick-nav-up"
+          class="sq-nav-scroll focus-ring inline-flex items-center justify-center rounded-full"
+          aria-label="페이지 최상단으로 이동"
+        >
+          <span
+            class="inline-grid size-[42px] place-items-center rounded-full border border-white/20 bg-white/5"
+            aria-hidden="true"
+          >
+            <iconify-icon
+              icon="solar:alt-arrow-up-linear"
+              style="font-size: 24px"
+              aria-hidden="true"
+            ></iconify-icon>
+          </span>
+        </button>
+        <button
+          type="button"
+          id="section-quick-nav-down"
+          class="sq-nav-scroll focus-ring inline-flex items-center justify-center rounded-full"
+          aria-label="다음 섹션으로 이동"
+        >
+          <span
+            class="inline-grid size-[42px] place-items-center rounded-full border border-white/20 bg-white/5"
+            aria-hidden="true"
+          >
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              style="font-size: 24px"
+              aria-hidden="true"
+            ></iconify-icon>
+          </span>
+        </button>
+      </div>
+    </div>

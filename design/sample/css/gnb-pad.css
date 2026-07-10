@@ -1,0 +1,459 @@
+/* 패드 가로(768/820/1024 landscape) — GNB 클릭·터치 전용 · index/sub_1 공통 */
+
+html.is-pad-gnb {
+  --gnb-pad-top: var(--sub-dock-top, var(--nav-height, 90px));
+  --gnb-pad-sheet-pad-bottom: 56px;
+  --gnb-pad-close-bottom: 30px;
+}
+
+html.is-pad-gnb #site-header .gnb-mega {
+  display: flex !important;
+  /* inset:0 오버레이 — none으로 두고 트리거만 auto (우측 돋보기 클릭 통과) */
+  pointer-events: none !important;
+  overflow: visible !important;
+}
+
+html.is-pad-gnb #site-header #mobile-menu-button {
+  display: none !important;
+}
+
+html.is-pad-gnb #site-header.site-header .site-container {
+  position: relative;
+  z-index: 203 !important;
+}
+
+html.is-pad-gnb #site-header .site-container > .grid > a[href].focus-ring:first-child,
+html.is-pad-gnb #site-header .site-container > .grid > a.group:first-child {
+  position: relative;
+  z-index: 205 !important;
+  pointer-events: auto !important;
+}
+
+html.is-pad-gnb #site-header .gnb-mega__list,
+html.is-pad-gnb #site-header .gnb-mega__item,
+html.is-pad-gnb #site-header .gnb-mega__trigger {
+  position: relative;
+  z-index: 204 !important;
+  pointer-events: auto !important;
+}
+
+/* 패드 가로 — GNB absolute(inset:0) 위에 툴바(돋보기·글로obe) 클릭 보장 */
+html.is-pad-gnb #site-header .site-container > .grid > .justify-self-end {
+  position: relative;
+  z-index: 206 !important;
+  pointer-events: auto !important;
+}
+
+/* hover로는 열리지 않음 — is-open / is-gnb-mega-open 만 */
+html.is-pad-gnb #site-header:has(.gnb-mega:hover):not(:has(.gnb-mega__item.is-open)):not(.is-gnb-mega-open) .gnb-mega__sheet,
+html.is-pad-gnb #site-header:has(.gnb-mega:focus-within):not(:has(.gnb-mega__item.is-open)):not(.is-gnb-mega-open) .gnb-mega__sheet {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  clip-path: inset(0 0 100% 0) !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+}
+
+html.is-pad-gnb #site-header:has(.gnb-mega:hover) .gnb-mega__item:not(.is-open) .gnb-mega__panel,
+html.is-pad-gnb #site-header:has(.gnb-mega:focus-within) .gnb-mega__item:not(.is-open) .gnb-mega__panel {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header.site-header,
+html.is-pad-gnb #site-header.site-header.is-gnb-mega-open,
+html.is-pad-gnb #site-header.site-header:has(.gnb-mega__item.is-open) {
+  background: #ffffff !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.is-pad-gnb #site-header .gnb-mega__sheet {
+  z-index: 201 !important;
+  top: var(--gnb-pad-top) !important;
+  max-height: none !important;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  transition: none !important;
+}
+
+html.is-pad-gnb #site-header:not(.is-gnb-mega-open):not(:has(.gnb-mega__item.is-open)) .gnb-mega__sheet {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  clip-path: inset(0 0 100% 0) !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__sheet,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__sheet,
+html.is-pad-gnb #site-header:has(.gnb-mega__item.is-open) .gnb-mega__sheet {
+  max-height: none !important;
+  background: #ffffff !important;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.07) !important;
+  clip-path: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+html.is-pad-gnb #site-header .gnb-mega__panel {
+  z-index: 202 !important;
+  top: var(--gnb-pad-top) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  background: transparent !important;
+  transition: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__item.is-open .gnb-mega__panel,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__item.is-open .gnb-mega__panel {
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__item:not(.is-open) .gnb-mega__panel,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__item:not(.is-open) .gnb-mega__panel {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__item.is-open .gnb-mega__panel .gnb-mega__col,
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__item.is-open .gnb-mega__cols--simple .gnb-mega__links li {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .header-logo-img--mono,
+html.is-pad-gnb #site-header.is-gnb-mega-open .header-logo-img--mono {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .header-logo-img--color,
+html.is-pad-gnb #site-header.is-gnb-mega-open .header-logo-img--color {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__trigger,
+html.is-pad-gnb.is-gnb-mega-open #site-header a.gnb-mega__trigger,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__trigger {
+  color: rgba(17, 26, 51, 0.62);
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .gnb-mega__item.is-open > .gnb-mega__trigger,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__item.is-open > .gnb-mega__trigger {
+  color: #111a33;
+}
+
+html.is-pad-gnb.is-gnb-mega-open #site-header .header-toolbar-icon,
+html.is-pad-gnb.is-gnb-mega-open #site-header .header-menu-icon,
+html.is-pad-gnb #site-header.is-gnb-mega-open .header-toolbar-icon,
+html.is-pad-gnb #site-header.is-gnb-mega-open .header-menu-icon {
+  color: rgba(17, 26, 51, 0.88);
+}
+
+html.is-pad-gnb #site-header .gnb-mega__panel-inner {
+  flex: none !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  padding-bottom: calc(2.75rem + var(--gnb-pad-sheet-pad-bottom, 56px)) !important;
+}
+
+/* sub_1·sub_2 — GNB가 sticky 탭 위에 오도록 (레이아웃만) */
+html.is-pad-gnb.is-sub-compact .sub-page--dissolve-tab.sub-page--v3 #site-header.site-header,
+html.is-pad-gnb.is-sub-compact .sub-page--v2-band.sub-page--v3 #site-header.site-header,
+html.is-pad-gnb.is-sub-compact .sub-page--v3-band.sub-page--v3 #site-header.site-header {
+  z-index: 200 !important;
+  overflow: visible !important;
+}
+
+html.is-pad-gnb.is-sub-compact .sub-page--dissolve-tab.sub-page--v3 .header-search-overlay:not(.is-open),
+html.is-pad-gnb.is-sub-compact .sub-page--v2-band.sub-page--v3 .header-search-overlay:not(.is-open),
+html.is-pad-gnb.is-sub-compact .sub-page--v3-band.sub-page--v3 .header-search-overlay:not(.is-open) {
+  z-index: 199 !important;
+}
+
+/* 패드 가로 — index/sub 공통: 메가 열림 시 헤더·닫기 버튼 최상단 */
+html.is-pad-gnb.is-gnb-mega-open #site-header.site-header {
+  z-index: 220 !important;
+}
+
+html.is-pad-gnb .gnb-mega__pad-close {
+  display: none;
+  position: fixed;
+  right: 1.25rem;
+  z-index: 230;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(15, 23, 42, 0.42);
+  cursor: pointer;
+  pointer-events: auto;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+html.is-pad-gnb.is-gnb-mega-open .gnb-mega__pad-close,
+html.is-pad-gnb #site-header.is-gnb-mega-open .gnb-mega__pad-close,
+html.is-pad-gnb #site-header:has(.gnb-mega__item.is-open) .gnb-mega__pad-close {
+  display: inline-flex;
+}
+
+html.is-pad-gnb .gnb-mega__pad-close-icon {
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+  position: relative;
+}
+
+html.is-pad-gnb .gnb-mega__pad-close-icon::before,
+html.is-pad-gnb .gnb-mega__pad-close-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.125rem;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+html.is-pad-gnb .gnb-mega__pad-close-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+html.is-pad-gnb .gnb-mega__pad-close-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+html.is-pad-gnb .gnb-mega__pad-close:hover,
+html.is-pad-gnb .gnb-mega__pad-close:focus-visible {
+  color: rgba(15, 23, 42, 0.78);
+}
+
+/* ── 패드(index/sub 공통) — 검색: 데스크탑형 풀오버 · GNB 시트 겹침 방지 ── */
+@media ((width: 768px) and (orientation: portrait)),
+  ((width: 820px) and (orientation: portrait)),
+  ((width: 1024px) and (orientation: portrait)),
+  ((height: 768px) and (orientation: landscape)),
+  ((height: 820px) and (orientation: landscape)),
+  ((height: 1024px) and (orientation: landscape)) {
+  /* 오버레이 래퍼는 클릭 통과 — 패널만 인터랙션 (헤더 1뎁스·로고·툴바 클릭 보장) */
+  html.is-search-open .header-search-overlay.is-open,
+  html.is-search-open.is-sub-compact .sub-page--dissolve-tab.sub-page--v3 .header-search-overlay.is-open,
+  html.is-search-open.is-sub-compact .sub-page--v2-band.sub-page--v3 .header-search-overlay.is-open,
+  html.is-search-open.is-sub-compact .sub-page--v3-band.sub-page--v3 .header-search-overlay.is-open {
+    z-index: 205 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+  }
+
+  html.is-search-open .header-search-overlay.is-open .header-search-overlay__panel,
+  html.is-search-open .header-search-overlay.is-open .header-search__pad-close {
+    pointer-events: auto !important;
+  }
+
+  html.is-search-open #site-header.site-header,
+  html.is-search-open.is-sub-compact .sub-page--dissolve-tab.sub-page--v3 #site-header.site-header,
+  html.is-search-open.is-sub-compact .sub-page--v2-band.sub-page--v3 #site-header.site-header,
+  html.is-search-open.is-sub-compact .sub-page--v3-band.sub-page--v3 #site-header.site-header {
+    z-index: 1001 !important;
+  }
+
+  html.is-search-open #site-header.is-search-open > .site-container {
+    position: relative;
+    z-index: 2 !important;
+    pointer-events: auto !important;
+  }
+
+  html.is-search-open #site-header .site-container > .grid > a.group:first-child,
+  html.is-search-open #site-header .site-container > .grid > a[href].focus-ring:first-child,
+  html.is-search-open #site-header .gnb-mega,
+  html.is-search-open #site-header .gnb-mega__list,
+  html.is-search-open #site-header .gnb-mega__item,
+  html.is-search-open #site-header .gnb-mega__trigger,
+  html.is-search-open #site-header .site-container > .grid > .justify-self-end,
+  html.is-search-open #site-header #header-search-button {
+    pointer-events: auto !important;
+  }
+
+  html.is-search-open #site-header .site-container > .grid > a.group:first-child,
+  html.is-search-open #site-header .site-container > .grid > a[href].focus-ring:first-child {
+    position: relative;
+    z-index: 208 !important;
+  }
+
+  html.is-search-open #site-header .gnb-mega__list,
+  html.is-search-open #site-header .gnb-mega__item,
+  html.is-search-open #site-header .gnb-mega__trigger {
+    position: relative;
+    z-index: 208 !important;
+  }
+
+  html.is-search-open #site-header .site-container > .grid > .justify-self-end {
+    position: relative;
+    z-index: 209 !important;
+  }
+
+  #site-header.is-search-open .gnb-mega__sheet,
+  #site-header.is-search-open .gnb-mega__panel {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    clip-path: inset(0 0 100% 0) !important;
+    box-shadow: none !important;
+  }
+
+  .header-search-overlay.is-open .header-search-overlay__panel {
+    top: var(--nav-height);
+  }
+
+  /* 모바일 축소 스타일 대신 데스크탑형 검색 UI */
+  .header-search-overlay__inner {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: clamp(2rem, 5vh, 3.25rem);
+    padding-bottom: calc(clamp(2.5rem, 6vh, 4rem) + 56px);
+  }
+
+  .header-search__lead {
+    font-size: calc(2.75rem - 4px);
+    margin-bottom: calc(clamp(1.35rem, 3vh, 2rem) + 20px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header-search__field {
+    padding-bottom: 0.65rem;
+  }
+
+  .header-search__input {
+    font-size: 1.3125rem;
+  }
+
+  .header-search__submit {
+    width: auto;
+    height: auto;
+    min-width: 0;
+    font-size: 1.5rem;
+  }
+
+  .header-search__suggest {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header-search__suggest-label {
+    margin-top: 0.15rem;
+  }
+
+  .header-search__tags {
+    gap: 0.5rem 0.65rem;
+  }
+
+  .header-search__tag {
+    min-height: 2.125rem;
+    padding: 0.45rem 0.8rem;
+    font-size: 18px;
+  }
+
+  /* 패드 세로·가로 — 우측 툴바(돋보기) 클릭 보장 */
+  #site-header .site-container > .grid > .justify-self-end {
+    position: relative;
+    z-index: 207 !important;
+    pointer-events: auto !important;
+  }
+
+  #site-header #header-search-button {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto !important;
+    touch-action: manipulation;
+  }
+
+  /* 패드 검색 — 하단 우측 X 닫기 (GNB 패드 닫기와 동일 패턴) */
+  .header-search__pad-close {
+    display: none;
+    position: fixed;
+    right: 1.25rem;
+    z-index: 231;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(15, 23, 42, 0.42);
+    cursor: pointer;
+    pointer-events: auto;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+
+  html.is-search-open .header-search__pad-close.is-visible {
+    display: inline-flex;
+  }
+
+  .header-search__pad-close-icon {
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    position: relative;
+  }
+
+  .header-search__pad-close-icon::before,
+  .header-search__pad-close-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1.125rem;
+    height: 1.5px;
+    background: currentColor;
+    border-radius: 1px;
+  }
+
+  .header-search__pad-close-icon::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .header-search__pad-close-icon::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .header-search__pad-close:hover,
+  .header-search__pad-close:focus-visible {
+    color: rgba(15, 23, 42, 0.78);
+  }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT</title>
+    <link rel="stylesheet" href="./assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/tabulator.min.css">
+    <link rel="stylesheet" href="./assets/css/adminlte.css">
+    <link rel="stylesheet" href="./assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="./assets/img/Logo_wj_w.svg" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper"></div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">page title</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">grid</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="example-table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/includes.js"></script> <!-- 퍼블리싱 임시 -->
+    <script src="./assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/tabulator.min.js"></script>
+    <script src="./assets/js/adminlte.js"></script>
+    <!-- //Scripts -->
+
+    <!-- grid -->
+    <script>
+    // Inline sample data — an array of plain objects.
+    var tabledata = [
+        { id: 1, name: "Oli Bob",      age: 12, country: "United Kingdom", rating: 1 },
+        { id: 2, name: "Mary May",     age: 1,  country: "Germany",        rating: 2 },
+        { id: 3, name: "Christine Lobowski", age: 42, country: "France",   rating: 0 },
+        { id: 4, name: "Brendon Philips",    age: 125, country: "USA",     rating: 1 },
+        { id: 5, name: "Margret Marmajuke",  age: 16, country: "Sweden",   rating: 5 },
+        { id: 6, name: "Van Ng",       age: 37, country: "Vietnam",        rating: 4 },
+        { id: 7, name: "Duc Ng",       age: 37, country: "Vietnam",        rating: 3 },
+        { id: 8, name: "Duc Ng",       age: 37, country: "Vietnam",        rating: 3 },
+        { id: 9, name: "Duc Ng",       age: 37, country: "Vietnam",        rating: 3 },
+        { id: 10, name: "Duc Ng",       age: 37, country: "Vietnam",        rating: 3 },
+    ];
+
+    // Create the table. Each column maps a header title to a data field.
+    // `sorter` tells Tabulator how to compare values when a header is clicked.
+    var table = new Tabulator("#example-table", {
+        data: tabledata,
+        layout: "fitColumns",       // columns expand to fill the available width
+        columns: [
+            { title: "ID",field: "id",width: 70,sorter: "number" },
+            { title: "Name",field: "name",sorter: "string",editor: "input" },
+            { title: "Age",field: "age",sorter: "number",hozAlign: "right" },
+            { title: "Country",field: "country",sorter: "string",hozAlign: "center" },
+            { title: "Rating",field: "rating",sorter: "number",hozAlign: "right" },
+        ],
+    });
+  </script>
+</body>
+
+</html>
