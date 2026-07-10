@@ -51,7 +51,50 @@
             <!-- //logo -->
 
             <!-- menu -->
-            <div class="sidebar-wrapper"></div>
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">
+                                <p>login<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="board_list.html" class="nav-link">
+                                <p>board list<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Depth Menu
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <!-- //menu -->
         </aside>
         <!-- //menu -->
@@ -87,7 +130,7 @@
                             <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
                         </div>
                     </div>
-                    
+
                     <div id="example-table" class="img-board"></div>
 
                     <!-- <div class="card">
@@ -106,7 +149,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="./assets/js/includes.js"></script> <!-- 퍼블리싱 임시 -->
     <script src="./assets/js/overlayscrollbars.browser.es6.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
@@ -116,55 +158,58 @@
 
     <!-- grid -->
     <script>
-    let tabledata = [
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-        { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
-    ];
+        let tabledata = [
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+            { Img: "https://www.woongjin.com/File_win/images/main_visual/20250714/2769a0ecbd9a4e748b1bd9b7dfab5d50.jpg", Name: "웅진, 한국전력공사 프로젝트 감사패 수상", Active: true, Period: "2023-01-01 ~ 2023-12-31" },
+        ];
 
-    let table = new Tabulator("#example-table", {
-        data: tabledata,
-        layout: "fitColumns",       // columns expand to fill the available width
-        pagination: true,
-        paginationSize: 10,
-        // paginationCounter: "pages",
-        // paginationCounterElement:"#page-count",
-        paginationCounter:function(pageSize, currentRow, currentPage, totalRows, totalPages){
-            return "현재 페이지 : " + currentPage + "/" + totalPages + ", 전체글 : " + totalRows + "개";
-        },
-        rowHeader:{
-            headerSort:false, resizable: false, frozen:true, width: 50, headerHozAlign:"center", hozAlign:"center",cssClass: "align-center", formatter:"rowSelection", titleFormatter:"rowSelection", cellClick:function(e, cell){
-              cell.getRow().toggleSelect();
-            }},
-        columns: [
-            { title: "배너이미지",field: "Img",width: 150,headerHozAlign: "center",hozAlign: "center",headerSort: false,editable: false,cssClass: "align-center", formatter: function(cell, formatterParams){
-                let imgUrl = cell.getValue();
-                return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 60px;'>";
-            }},
-            // { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },
-            { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {url: "board_view.html"} },
-            { title: "활성여부",field: "Active",width: 100,hozAlign: "center",headerHozAlign: "center",headerSort: false,editable: false,cssClass: "align-center" },
-            { title: "기간",field: "Period",width: 200,hozAlign: "center",headerHozAlign: "center",headerSort: false,editable: false,cssClass: "align-center" },
-        ],
-    });
-  </script>
+        let table = new Tabulator("#example-table", {
+            data: tabledata,
+            layout: "fitColumns",       // columns expand to fill the available width
+            pagination: true,
+            paginationSize: 10,
+            // paginationCounter: "pages",
+            // paginationCounterElement:"#page-count",
+            paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
+                return "현재 페이지 : " + currentPage + "/" + totalPages + ", 전체글 : " + totalRows + "개";
+            },
+            rowHeader: {
+                headerSort: false, resizable: false, frozen: true, width: 50, headerHozAlign: "center", hozAlign: "center", cssClass: "align-center", formatter: "rowSelection", titleFormatter: "rowSelection", cellClick: function (e, cell) {
+                    cell.getRow().toggleSelect();
+                }
+            },
+            columns: [
+                {
+                    title: "배너이미지", field: "Img", width: 150, headerHozAlign: "center", hozAlign: "center", headerSort: false, editable: false, cssClass: "align-center", formatter: function (cell, formatterParams) {
+                        let imgUrl = cell.getValue();
+                        return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 60px;'>";
+                    }
+                },
+                // { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },
+                { title: "타이틀", field: "Name", sorter: "string", editor: "input", headerHozAlign: "center", headerSort: false, editable: false, formatter: "link", formatterParams: { url: "board_view.html" } },
+                { title: "활성여부", field: "Active", width: 100, hozAlign: "center", headerHozAlign: "center", headerSort: false, editable: false, cssClass: "align-center" },
+                { title: "기간", field: "Period", width: 200, hozAlign: "center", headerHozAlign: "center", headerSort: false, editable: false, cssClass: "align-center" },
+            ],
+        });
+    </script>
 </body>
 
 </html>

@@ -116,38 +116,12 @@
             <!-- content -->
             <div class="app-content">
                 <div class="container-fluid">
-                    <div class="card" style="height: 200px;overflow: auto;">
+                    <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">content title</h3>
+                            <h3 class="card-title">grid</h3>
                         </div>
                         <div class="card-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?<br>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, in laudantium officiis
-                            iusto ipsa dignissimos, possimus illo inventore a dolorum suscipit provident dolores quaerat
-                            nihil iste adipisci dolor tempore distinctio?
+                            <div id="example-table"></div>
                         </div>
                     </div>
                 </div>
@@ -164,6 +138,37 @@
     <script src="./assets/js/tabulator.min.js"></script>
     <script src="./assets/js/adminlte.js"></script>
     <!-- //Scripts -->
+
+    <!-- grid -->
+    <script>
+        // Inline sample data — an array of plain objects.
+        var tabledata = [
+            { id: 1, name: "Oli Bob", age: 12, country: "United Kingdom", rating: 1 },
+            { id: 2, name: "Mary May", age: 1, country: "Germany", rating: 2 },
+            { id: 3, name: "Christine Lobowski", age: 42, country: "France", rating: 0 },
+            { id: 4, name: "Brendon Philips", age: 125, country: "USA", rating: 1 },
+            { id: 5, name: "Margret Marmajuke", age: 16, country: "Sweden", rating: 5 },
+            { id: 6, name: "Van Ng", age: 37, country: "Vietnam", rating: 4 },
+            { id: 7, name: "Duc Ng", age: 37, country: "Vietnam", rating: 3 },
+            { id: 8, name: "Duc Ng", age: 37, country: "Vietnam", rating: 3 },
+            { id: 9, name: "Duc Ng", age: 37, country: "Vietnam", rating: 3 },
+            { id: 10, name: "Duc Ng", age: 37, country: "Vietnam", rating: 3 },
+        ];
+
+        // Create the table. Each column maps a header title to a data field.
+        // `sorter` tells Tabulator how to compare values when a header is clicked.
+        var table = new Tabulator("#example-table", {
+            data: tabledata,
+            layout: "fitColumns",       // columns expand to fill the available width
+            columns: [
+                { title: "ID", field: "id", width: 70, sorter: "number" },
+                { title: "Name", field: "name", sorter: "string", editor: "input" },
+                { title: "Age", field: "age", sorter: "number", hozAlign: "right" },
+                { title: "Country", field: "country", sorter: "string", hozAlign: "center" },
+                { title: "Rating", field: "rating", sorter: "number", hozAlign: "right" },
+            ],
+        });
+    </script>
 </body>
 
 </html>

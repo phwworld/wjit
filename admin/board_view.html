@@ -52,7 +52,50 @@
             <!-- //logo -->
 
             <!-- menu -->
-            <div class="sidebar-wrapper"></div>
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">
+                                <p>login<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="board_list.html" class="nav-link">
+                                <p>board list<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Depth Menu
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <!-- //menu -->
         </aside>
         <!-- //menu -->
@@ -83,16 +126,18 @@
                                         <input type="text" class="form-control" id="title">
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
                                     <span class="col-sm-1 col-form-label text-center">활성여부</span>
                                     <div class="col-sm-11 d-flex align-items-center">
                                         <div class="form-check me-3">
-                                            <input class="form-check-input" type="radio" name="display" id="display_y" checked="">
+                                            <input class="form-check-input" type="radio" name="display" id="display_y"
+                                                checked="">
                                             <label class="form-check-label" for="display_y">활성</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="display" id="display_n" checked="">
+                                            <input class="form-check-input" type="radio" name="display" id="display_n"
+                                                checked="">
                                             <label class="form-check-label" for="display_n">비활성</label>
                                         </div>
                                     </div>
@@ -115,7 +160,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="./assets/js/includes.js"></script> <!-- 퍼블리싱 임시 -->
     <script src="./assets/js/overlayscrollbars.browser.es6.min.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
