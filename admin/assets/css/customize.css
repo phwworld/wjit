@@ -8,6 +8,11 @@
     max-height: 7rem;
 }
 
+.card-footer {
+    border-top: 0;
+    background-color: #fff;
+}
+
 /* .tabulator {
     border: 0;
 }

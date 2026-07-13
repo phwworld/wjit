@@ -107,7 +107,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Board Registration</h3>
+                            <h3 class="mb-0">Board View</h3>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                                 <div class="row mb-3">
                                     <label for="title" class="col-sm-1 col-form-label text-center">제목</label>
                                     <div class="col-sm-11">
-                                        <input type="text" class="form-control" id="title">
+                                        <input type="text" class="form-control" id="title" readonly value="제목노출">
                                     </div>
                                 </div>
 
@@ -189,6 +189,11 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-danger">취소</button>
+                            <button type="button" class="btn btn-primary">저장</button>
                         </div>
                     </div>
                 </div>
