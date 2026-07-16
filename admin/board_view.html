@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT</title>
+    <link rel="stylesheet" href="./assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/tabulator.min.css">
+    <link rel="stylesheet" href="./assets/css/adminlte.css">
+    <link rel="stylesheet" href="./assets/css/flatpickr.min.css">
+    <link rel="stylesheet" href="./assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="./assets/img/Logo_wj_w.svg" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link">
+                                <p>login<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="board_list.html" class="nav-link">
+                                <p>board list<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Depth Menu
+                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#none" class="nav-link">
+                                        <p>2Depth</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">Board View</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="">
+                                <div class="row mb-3">
+                                    <label for="title" class="col-sm-1 col-form-label text-center">제목</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" class="form-control" id="title" readonly value="제목노출">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <span class="col-sm-1 col-form-label text-center">활성여부</span>
+                                    <div class="col-sm-11 d-flex align-items-center">
+                                        <div class="form-check me-3">
+                                            <input class="form-check-input" type="radio" name="display" id="display_y" checked>
+                                            <label class="form-check-label" for="display_y">활성</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="display" id="display_n">
+                                            <label class="form-check-label" for="display_n">비활성</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="period" class="col-sm-1 col-form-label text-center">노출기간</label>
+                                    <div class="col-sm-11 d-flex align-itmes-center">
+                                        <div><input type="text" class="form-control" id="period1"></div>
+                                        <div class="d-flex align-items-center p-2">~</div>
+                                        <div><input type="text" class="form-control" id="period2"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="image" class="col-sm-1 col-form-label text-center">팝업배너</label>
+                                    <div class="col-sm-11">
+                                        <input class="form-control" type="file" id="image">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <span class="col-sm-1 col-form-label text-center">링크타입</span>
+                                    <div class="col-sm-11 d-flex align-items-center">
+                                        <div class="form-check me-3">
+                                            <input class="form-check-input" type="radio" name="link_type" id="link_type1" checked>
+                                            <label class="form-check-label" for="link_type1">새창</label>
+                                        </div>
+                                        <div class="form-check me-3">
+                                            <input class="form-check-input" type="radio" name="link_type" id="link_type2" >
+                                            <label class="form-check-label" for="link_type2">현재창</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="link_type" id="link_type3" >
+                                            <label class="form-check-label" for="link_type3">링크없음</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="link_url" class="col-sm-1 col-form-label text-center">링크</label>
+                                    <div class="col-sm-11">
+                                        <input type="text" class="form-control" id="link_url">
+                                    </div>
+                                </div>
+
+                                <div class="row d-flex align-items-center">
+                                    <label for="meno" class="col-sm-1 col-form-label text-center">메모</label>
+                                    <div class="col-sm-11">
+                                        <textarea class="form-control" id="meno" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card-footer text-center">
+                            <button type="button" class="btn btn-danger">취소</button>
+                            <button type="button" class="btn btn-primary">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/tabulator.min.js"></script>
+    <script src="./assets/js/adminlte.js"></script>
+    <script src="./assets/js/flatpickr.min.js"></script>
+    <script src="./assets/js/flatpickr_ko.js"></script>
+    <!-- //Scripts -->
+
+    <script>
+        flatpickr("#period1", {
+            locale: "ko",
+            enableTime: true,
+            // mode: "range",
+            time_24hr: true,
+            minuteIncrement: 10
+        });
+
+        flatpickr("#period2", {
+            locale: "ko",
+            enableTime: true,
+            // mode: "range",
+            time_24hr: true,
+            minuteIncrement: 10
+        });
+    </script>
+</body>
+
+</html>
