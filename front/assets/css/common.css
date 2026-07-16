@@ -24,3 +24,62 @@ button {
 .font-gmarketsans {
   font-family: 'GmarketSans';
 }
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+
+/* layout */
+header {
+  height: 6.85rem;
+  border-bottom: 1px solid #686C78;
+}
+header h1 a {
+  display: inline-block;
+  width: 6.9rem;
+  height: 3.6rem;
+  font-size: 0;
+  background: url(../img/Logo_wj.svg) no-repeat;
+  background-size: 100%;
+}
+
+main {
+  
+}
+
+footer {
+  background-color: #333;
+}
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+@media (min-width: 768px) {
+  body {
+    font-size: 2.08vw; /* 16px / 768px * 100 */
+    background-color: #f0f3f4;
+  }
+
+  /* layout */
+  header {
+    height: 6.85rem
+  }
+}
+
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1024px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.6rem; /* PC에서는 16px로 크기 고정 */
+  }
+
+  /* layout */
+  header {
+    height: 9rem;
+  }
+}
