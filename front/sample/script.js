@@ -7,10 +7,15 @@
 
   const DURATION = 800;
   const WHEEL_THRESHOLD = 30;
+  const WHEEL_GESTURE_END_DELAY = 160;
   const TOUCH_THRESHOLD = 50;
 
   let currentIndex = 0;
   let isScrolling = false;
+  let wheelDelta = 0;
+  let wheelDirection = 0;
+  let isWheelGestureLocked = false;
+  let wheelGestureTimer;
 
   function easeInOutCubic(t) {
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -190,24 +195,62 @@
     }
   }
 
+  function normalizeWheelDelta(e) {
+    if (e.deltaMode === WheelEvent.DOM_DELTA_LINE) {
+      return e.deltaY * 16;
+    }
+
+    if (e.deltaMode === WheelEvent.DOM_DELTA_PAGE) {
+      return e.deltaY * window.innerHeight;
+    }
+
+    return e.deltaY;
+  }
+
+  function endWheelGesture() {
+    wheelDelta = 0;
+    wheelDirection = 0;
+    isWheelGestureLocked = false;
+  }
+
   function onWheel(e) {
-    if (isInFooter() && e.deltaY > 0) return;
+    const deltaY = normalizeWheelDelta(e);
+    if (deltaY === 0) return;
 
-    if (isInFooter() && e.deltaY < 0) {
-      e.preventDefault();
-      if (!isScrolling) scrollToLastSection();
-      return;
-    }
-
-    if (isScrolling) {
-      e.preventDefault();
-      return;
-    }
-
-    if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return;
+    if (isInFooter() && deltaY > 0) return;
 
     e.preventDefault();
-    moveSection(e.deltaY > 0 ? 1 : -1);
+
+    clearTimeout(wheelGestureTimer);
+    wheelGestureTimer = setTimeout(
+      endWheelGesture,
+      WHEEL_GESTURE_END_DELAY
+    );
+
+    if (isInFooter() && deltaY < 0) {
+      if (!isScrolling && !isWheelGestureLocked) {
+        isWheelGestureLocked = true;
+        scrollToLastSection();
+      }
+      return;
+    }
+
+    if (isScrolling || isWheelGestureLocked) return;
+
+    const direction = deltaY > 0 ? 1 : -1;
+
+    if (wheelDirection !== 0 && wheelDirection !== direction) {
+      wheelDelta = 0;
+    }
+
+    wheelDirection = direction;
+    wheelDelta += deltaY;
+
+    if (Math.abs(wheelDelta) < WHEEL_THRESHOLD) return;
+
+    isWheelGestureLocked = true;
+    wheelDelta = 0;
+    moveSection(direction);
   }
 
   function onKeydown(e) {
