@@ -22,12 +22,13 @@ main section {
     height: 100vh;
 }
 main section.sec1 {
-    background-color: red
+    background-color: pink
 }
 main section.sec2 {
     background-color: orange
 }
 main section.sec3 {
+    height: calc(100vh + 200px);
     background-color: yellow
 }
 main section.sec4 {

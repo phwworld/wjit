@@ -16,27 +16,92 @@
     return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
-  function getSectionIndex() {
-    const scrollY = window.scrollY;
-    let index = 0;
+  function getSectionSnapPoints(section) {
+    const top = section.offsetTop;
+    const vh = window.innerHeight;
+    const maxScroll = top + section.offsetHeight - vh;
 
-    sections.forEach((section, i) => {
-      const top = section.offsetTop;
-      const middle = top + section.offsetHeight / 2;
-      if (scrollY >= middle - window.innerHeight / 2) {
-        index = i;
+    if (section.offsetHeight <= vh) {
+      return [top];
+    }
+
+    const points = [top];
+    let scrollPos = top;
+
+    while (scrollPos < maxScroll) {
+      scrollPos = Math.min(scrollPos + vh, maxScroll);
+      if (scrollPos > points[points.length - 1]) {
+        points.push(scrollPos);
+      }
+    }
+
+    return points;
+  }
+
+  function findNearestSnapPoint(points, scrollY) {
+    let nearest = points[0];
+
+    points.forEach((point) => {
+      if (Math.abs(scrollY - point) < Math.abs(scrollY - nearest)) {
+        nearest = point;
       }
     });
 
-    return index;
+    return nearest;
+  }
+
+  function getNextScrollTarget(section, direction) {
+    const points = getSectionSnapPoints(section);
+    const scrollY = window.scrollY;
+    const tolerance = 10;
+    let snapIndex = 0;
+
+    points.forEach((point, i) => {
+      if (Math.abs(scrollY - point) <= tolerance) {
+        snapIndex = i;
+      }
+    });
+
+    if (Math.abs(scrollY - points[snapIndex]) > tolerance) {
+      snapIndex = points.findIndex(
+        (point, i) =>
+          scrollY >= point - tolerance &&
+          (i === points.length - 1 || scrollY < points[i + 1] - tolerance)
+      );
+      if (snapIndex === -1) {
+        snapIndex = points.length - 1;
+      }
+    }
+
+    if (direction > 0) {
+      return snapIndex < points.length - 1 ? points[snapIndex + 1] : null;
+    }
+
+    return snapIndex > 0 ? points[snapIndex - 1] : null;
+  }
+
+  function getSectionIndex() {
+    const scrollY = window.scrollY;
+
+    if (isInFooter()) {
+      return sections.length - 1;
+    }
+
+    for (let i = sections.length - 1; i >= 0; i -= 1) {
+      const section = sections[i];
+      const top = section.offsetTop;
+      const bottom = top + section.offsetHeight;
+
+      if (scrollY >= top - 10 && scrollY < bottom - 10) {
+        return i;
+      }
+    }
+
+    return 0;
   }
 
   function getLastSection() {
     return sections[sections.length - 1];
-  }
-
-  function getLastSectionTop() {
-    return getLastSection().offsetTop;
   }
 
   function getLastSectionBottom() {
@@ -46,11 +111,6 @@
 
   function isInFooter() {
     return window.scrollY >= getLastSectionBottom() - 10;
-  }
-
-  function isInTransitionZone() {
-    const scrollY = window.scrollY;
-    return scrollY > getLastSectionTop() + 10 && scrollY < getLastSectionBottom() + 10;
   }
 
   function animateScrollTo(targetY, onComplete) {
@@ -80,16 +140,20 @@
 
   function scrollToLastSection() {
     currentIndex = sections.length - 1;
-    animateScrollTo(getLastSectionTop());
+    const points = getSectionSnapPoints(getLastSection());
+    animateScrollTo(points[points.length - 1]);
   }
 
-  function scrollToSection(index) {
+  function scrollToSection(index, fromDirection) {
     index = Math.max(0, Math.min(index, sections.length - 1));
 
     if (isScrolling && index === currentIndex) return;
 
     currentIndex = index;
-    animateScrollTo(sections[index].offsetTop);
+    const points = getSectionSnapPoints(sections[index]);
+    const target =
+      fromDirection === -1 ? points[points.length - 1] : points[0];
+    animateScrollTo(target);
   }
 
   function scrollToFooter() {
@@ -101,18 +165,28 @@
 
     currentIndex = getSectionIndex();
 
+    if (isInFooter()) {
+      if (direction > 0) return;
+      scrollToLastSection();
+      return;
+    }
+
+    const section = sections[currentIndex];
+    const innerTarget = getNextScrollTarget(section, direction);
+
+    if (innerTarget !== null) {
+      animateScrollTo(innerTarget);
+      return;
+    }
+
     if (direction > 0) {
       if (currentIndex < sections.length - 1) {
         scrollToSection(currentIndex + 1);
-      } else if (!isInFooter()) {
+      } else {
         scrollToFooter();
       }
     } else {
-      if (isInFooter() || isInTransitionZone()) {
-        scrollToLastSection();
-      } else {
-        scrollToSection(currentIndex - 1);
-      }
+      scrollToSection(currentIndex - 1, -1);
     }
   }
 
@@ -206,7 +280,6 @@
 
     clearTimeout(snapTimer);
     snapTimer = setTimeout(() => {
-      const lastTop = getLastSectionTop();
       const footerTop = getLastSectionBottom();
 
       if (scrollY >= footerTop && scrollDirection < 0) {
@@ -214,20 +287,15 @@
         return;
       }
 
-      if (scrollY > lastTop && scrollY < footerTop) {
-        if (scrollDirection < 0) {
-          scrollToLastSection();
-        } else if (scrollDirection > 0) {
-          animateScrollTo(footerTop);
-        }
-        return;
-      }
-
       if (isInFooter()) return;
 
       const index = getSectionIndex();
-      if (index !== currentIndex) {
-        scrollToSection(index);
+      currentIndex = index;
+      const points = getSectionSnapPoints(sections[index]);
+      const nearest = findNearestSnapPoint(points, scrollY);
+
+      if (Math.abs(scrollY - nearest) > 10) {
+        animateScrollTo(nearest);
       }
     }, 100);
   }
@@ -239,6 +307,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   window.addEventListener('resize', () => {
-    window.scrollTo(0, sections[currentIndex].offsetTop);
+    const points = getSectionSnapPoints(sections[currentIndex]);
+    window.scrollTo(0, findNearestSnapPoint(points, window.scrollY));
   });
 })();
