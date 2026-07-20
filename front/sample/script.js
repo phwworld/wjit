@@ -146,7 +146,7 @@
   function scrollToLastSection() {
     currentIndex = sections.length - 1;
     const points = getSectionSnapPoints(getLastSection());
-    animateScrollTo(points[points.length - 1]);
+    animateScrollTo(points[0]);
   }
 
   function scrollToSection(index, fromDirection) {
