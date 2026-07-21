@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웅진IT</title>
+    <link rel="icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="./assets/css/overlayscrollbars.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/css/tabulator.min.css">
+    <!-- <link rel="stylesheet" href="./assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="./assets/css/tabulator_bootstrap5.css">
     <link rel="stylesheet" href="./assets/css/adminlte.css">
     <link rel="stylesheet" href="./assets/css/customize.css">
 </head>
@@ -45,7 +47,7 @@
             <!-- logo -->
             <div class="sidebar-brand">
                 <a href="#none" class="brand-link">
-                    <img src="./assets/img/Logo_wj_w.svg" alt="woongjin" class="brand-image">
+                    <img src="./assets/img/logo.png" alt="woongjin" class="brand-image">
                 </a>
             </div>
             <!-- //logo -->
@@ -56,41 +58,9 @@
                     <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
                         id="navigation">
                         <li class="nav-item">
-                            <a href="login.html" class="nav-link">
-                                <p>login<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            <a href="layout.html" class="nav-link">
+                                <p>layout</p>
                             </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="board_list.html" class="nav-link">
-                                <p>board list<i class="nav-arrow bi bi-chevron-right"></i></p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <p>
-                                    Depth Menu
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#none" class="nav-link">
-                                        <p>2Depth</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#none" class="nav-link">
-                                        <p>2Depth</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#none" class="nav-link">
-                                        <p>2Depth</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -118,17 +88,24 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="mb-2 d-flex justify-content-between">
-                                <div id="page-count"></div>
-                                <div class="d-flex">
-                                    <select class="form-select form-select-sm me-2">
-                                        <option selected>전체</option>
-                                        <option>One</option>
-                                        <option>Two</option>
-                                        <option>Three</option>
-                                    </select>
-                                    <input type="text" class="form-control form-control-sm">
-                                    <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
+                            <div class="row justify-content-end mb-2">
+                                <div class="col-6 text-end">
+                                    <div class="row g-2">
+                                        <div class="col">
+                                            <select class="form-select form-select-sm me-2">
+                                                <option selected>전체</option>
+                                                <option>OneOneOneOneOneOneOneOne</option>
+                                                <option>Two</option>
+                                                <option>Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-8">
+                                            <input type="text" class="form-control form-control-sm me-2" style="width: 100%;">
+                                        </div>
+                                        <div class="col-1">
+                                            <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -136,8 +113,8 @@
                         </div>
 
                         <div class="card-footer text-end">
-                            <button type="button" class="btn btn-danger">삭제</button>
-                            <a href="board_registration.html" type="button" class="btn btn-primary">등록</a>
+                            <button type="button" class="btn btn-danger btn-lg">삭제</button>
+                            <a href="board_registration.html" type="button" class="btn btn-secondary btn-lg">등록</a>
                         </div>
                     </div>
                 </div>
@@ -197,9 +174,9 @@
             },
             columns: [
                 {
-                    title: "배너이미지", field: "Img", width: 150, headerHozAlign: "center", hozAlign: "center", headerSort: false, editable: false, cssClass: "align-center", formatter: function (cell, formatterParams) {
+                    title: "배너이미지", field: "Img", width: 300, headerHozAlign: "center", hozAlign: "center", headerSort: false, editable: false, cssClass: "align-center", formatter: function (cell, formatterParams) {
                         let imgUrl = cell.getValue();
-                        return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 60px;'>";
+                        return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 120px;'>";
                     }
                 },
                 // { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },
