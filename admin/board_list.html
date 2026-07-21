@@ -114,7 +114,7 @@
 
                         <div class="card-footer text-end">
                             <button type="button" class="btn btn-danger btn-lg">삭제</button>
-                            <a href="board_registration.html" type="button" class="btn btn-secondary btn-lg">등록</a>
+                            <button type="button" class="btn btn-secondary btn-lg">등록</button>
                         </div>
                     </div>
                 </div>
@@ -179,8 +179,7 @@
                         return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 120px;'>";
                     }
                 },
-                // { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },
-                { title: "타이틀", field: "Name", sorter: "string", editor: "input", headerHozAlign: "center", headerSort: false, editable: false, formatter: "link", formatterParams: { url: "board_view.html" } },
+                { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },
                 { title: "활성여부", field: "Active", width: 100, hozAlign: "center", headerHozAlign: "center", headerSort: false, editable: false, cssClass: "align-center" },
                 { title: "기간", field: "Period", width: 200, hozAlign: "center", headerHozAlign: "center", headerSort: false, editable: false, cssClass: "align-center" },
             ],
