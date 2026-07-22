@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웅진IT</title>
+    <title>웅진IT 관리자</title>
     <link rel="icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="./assets/css/overlayscrollbars.min.css">
     <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
@@ -90,19 +90,17 @@
                         <div class="card-body">
                             <div class="row justify-content-end mb-2">
                                 <div class="col-6 text-end">
-                                    <div class="row g-2">
-                                        <div class="col">
-                                            <select class="form-select form-select-sm me-2">
+                                    <div class="row g-1">
+                                        <div class="d-flex">
+                                            <select class="form-select form-select-sm me-2" style="width: 40%;">
                                                 <option selected>전체</option>
                                                 <option>OneOneOneOneOneOneOneOne</option>
                                                 <option>Two</option>
                                                 <option>Three</option>
                                             </select>
-                                        </div>
-                                        <div class="col-8">
-                                            <input type="text" class="form-control form-control-sm me-2" style="width: 100%;">
-                                        </div>
-                                        <div class="col-1">
+
+                                            <input type="text" class="form-control form-control-sm me-2">
+
                                             <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
                                         </div>
                                     </div>
@@ -113,8 +111,8 @@
                         </div>
 
                         <div class="card-footer text-end">
-                            <button type="button" class="btn btn-danger btn-lg">삭제</button>
-                            <button type="button" class="btn btn-secondary btn-lg">등록</button>
+                            <button type="button" class="btn btn-danger">삭제</button>
+                            <button type="button" class="btn btn-secondary">등록</button>
                         </div>
                     </div>
                 </div>
@@ -174,9 +172,9 @@
             },
             columns: [
                 {
-                    title: "배너이미지", field: "Img", width: 300, headerHozAlign: "center", hozAlign: "center", headerSort: false, editable: false, cssClass: "align-center", formatter: function (cell, formatterParams) {
+                    title: "배너이미지", field: "Img", width: 200, headerHozAlign: "center", hozAlign: "center", headerSort: false, editable: false, cssClass: "align-center", formatter: function (cell, formatterParams) {
                         let imgUrl = cell.getValue();
-                        return "<img src='" + imgUrl + "' alt='배너이미지' style='height: 120px;'>";
+                        return "<img src='" + imgUrl + "' alt='배너이미지' style='height:80px;'>";
                     }
                 },
                 { title: "타이틀",field: "Name",sorter: "string",editor: "input",headerHozAlign: "center",headerSort: false,editable: false,formatter: "link", formatterParams: {urlPrefix:"/board/view/", urlField:"id"} },

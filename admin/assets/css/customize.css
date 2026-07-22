@@ -31,7 +31,8 @@
     color: inherit;
     text-underline-offset: 4px;
 }
-.tabulator-row.tabulator-row-even {
+.tabulator-row.tabulator-row-even,
+.tabulator-row.tabulator-selected {
     background-color: transparent;
 }
 .tabulator-row.tabulator-selectable:hover {
@@ -44,11 +45,11 @@
 .img-board .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
     display: inline-flex;
     align-items: center;
-}
-.img-board .tabulator-cell {
-    border-top: 1px solid #aaa;
+    border-right: 0;
 }
 .img-board .tabulator-cell.align-center {
     justify-content: center;
 }
-
+.tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left {
+    border-right: 0;
+}
