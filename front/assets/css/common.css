@@ -6,15 +6,10 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem -> 10px */
-  font-weight: 500;
+  font-size: 62.5%;
+  /* 1rem -> 10px */
+  font-weight: 400;
   scroll-behavior: smooth;
-}
-body {
-  font-family: 'Pretendard';
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: var(--black);
 }
 
 button {
@@ -29,36 +24,42 @@ button {
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
    ========================================== */
+body {
+  font-family: 'Pretendard';
+  /* font-size: 1.6rem; */
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--black);
+}
 
 /* layout */
 header {
   height: 6.85rem;
   border-bottom: 1px solid #686C78;
 }
-header h1 a {
-  display: inline-block;
+header h1 img {
   width: 6.9rem;
   height: 3.6rem;
-  font-size: 0;
-  background: url(../img/Logo_wj.svg) no-repeat;
-  background-size: 100%;
 }
 
-main {
-  
-}
+main {}
 
 footer {
   background-color: #333;
+}
+
+.inner_cont {
+  width: 100%;
 }
 
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
    ========================================== */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1366px) {
   body {
-    font-size: 2.08vw; /* 16px / 768px * 100 */
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
     background-color: #f0f3f4;
   }
 
@@ -66,20 +67,39 @@ footer {
   header {
     height: 6.85rem
   }
+  header h1 img {
+    width: 10.1rem;
+    height: 5.3rem;
+  }
+
+  .inner_cont {
+    width: 1200px;
+    padding: 0 4rem;
+  }
 }
 
 
 /* ==========================================
-   PC / 데스크톱 구간 (PC) - 1024px 이상
+   PC / 데스크톱 구간 (PC) - 1440px 이상
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   body {
-    font-size: 1.6rem; /* PC에서는 16px로 크기 고정 */
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
   }
 
   /* layout */
   header {
     height: 9rem;
+  }
+  header h1 img {
+    width: 10.1rem;
+    height: 5.3rem;
+  }
+
+  .inner_cont {
+    width: 1440px;
+    margin: 0 auto;
   }
 }
