@@ -34,15 +34,23 @@ body {
 
 /* layout */
 header {
+  position: sticky;
+  top: 0;
   height: 6.85rem;
   border-bottom: 1px solid #686C78;
+  background-color: #fff;
+  z-index: 10;
 }
 header h1 img {
   width: 6.9rem;
   height: 3.6rem;
 }
 
-main {}
+main .content {
+  position: relative;
+  background-color: #fff;
+  z-index: 20;
+}
 
 footer {
   background-color: #333;
@@ -75,13 +83,29 @@ main .title .info_txt {
 }
 
 .tab_list {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   height: 6rem;
   overflow-x: scroll;
 }
 .tab_list button {
   min-width: calc(100vw / 4);
-  border: 1px solid red;
+  border: 1px solid #f0f0f0;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #111827;
+  background-color: #fff;
+}
+.tab_list button.act {
+  border-color: #00aeef;
+  color: #fff;
+  background-color: #00aeef;
+  z-index: 1;
+}
+.tab_list button ~ button {
+  /* margin-left: -1px; */
 }
 
 /* ==========================================
@@ -92,7 +116,6 @@ main .title .info_txt {
   body {
     /* font-size: 1.6rem; */
     font-size: 2rem;
-    background-color: #f0f3f4;
   }
 
   /* layout */
@@ -162,6 +185,20 @@ main .title .info_txt {
   .inner_cont {
     width: 1440px;
     margin: 0 auto;
+  }
+
+  main .title p {
+    font-size: 2.8rem;
+  }
+  main .title h3 {
+    margin: 1.8rem 0;
+    font-size: 8.4rem;
+  }
+  main .title h3 span {
+    display: inline-block;
+  }
+  main .title .info_txt {
+    font-size: 1.8rem;
   }
 
   .tab_list {
