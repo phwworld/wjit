@@ -40,6 +40,23 @@
     cursor: default;
 }
 
+.page-count {}
+.page-count span > span {
+    padding-left: 10px;
+}
+.page-count span > span::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-right: 8px;
+    background: var(--bs-gray-dark);
+    vertical-align: middle;
+}
+.page-count span > span ~ span {
+    margin-left: 14px;
+}
+
 /* image board */
 .img-board .tabulator-cell,
 .img-board .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
