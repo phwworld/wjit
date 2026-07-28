@@ -70,3 +70,13 @@
 .tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left {
     border-right: 0;
 }
+
+/* table-border-bottom */
+.table-border-top > tbody > tr > th,
+.table-border-top > tbody > tr > td {
+    border-top: 1px solid var(--bs-table-border-color);
+}
+.table-border-top > tbody > tr:first-child > th,
+.table-border-top > tbody > tr:first-child > td {
+    border-top: 0;
+}
