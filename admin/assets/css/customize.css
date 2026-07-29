@@ -39,6 +39,9 @@
     background-color: transparent;
     cursor: default;
 }
+.tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
+    border-right: 0;
+}
 
 .page-count {}
 .page-count span > span {
@@ -79,4 +82,15 @@
 .table-border-top > tbody > tr:first-child > th,
 .table-border-top > tbody > tr:first-child > td {
     border-top: 0;
+}
+
+
+/* 마우스 오버 시 */
+.tabulator.move-table .tabulator-row .tabulator-cell {
+    cursor: grabbing;
+}
+
+/* 드래그 중 */
+.tabulator.move-table .tabulator-row.tabulator-moving {
+    cursor: grabbing;
 }

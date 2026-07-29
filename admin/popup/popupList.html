@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">권한 관리</h3>
+                            <h3 class="mb-0"> 팝업 관리</h3>
                         </div>
                     </div>
                 </div>
@@ -97,8 +97,7 @@
                                         <div class="d-flex">
                                             <select class="form-select form-select-sm me-2" style="width: 40%;">
                                                 <option selected>선택</option>
-                                                <option value="name">이름</option>
-                                                <option value="id">사번</option>
+                                                <option value="title">제목</option>
                                             </select>
 
                                             <input type="text" class="form-control form-control-sm me-2">
@@ -113,6 +112,7 @@
                         </div>
 
                         <div class="card-footer text-end">
+                            <button type="button" class="btn btn-danger">삭제</button>
                             <button type="button" class="btn btn-primary">등록</button>
                         </div>
                     </div>
@@ -134,11 +134,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
-            { no: "2", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: false },
-            { no: "3", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
-            { no: "4", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: false },
-            { no: "5", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
+            { no: "1", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-05-14", },
+            { no: "2", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: false, date: "2026-06-14", },
+            { no: "3", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-07-14", },
+            { no: "4", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: false, date: "2026-08-14", },
+            { no: "5", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-09-14", },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -150,15 +150,18 @@
             paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
                 return `<span>현재 페이지 : ${currentPage} / ${totalPages}</span><span>전체글 : ${totalRows}개</span>`;
             },
+            rowHeader: {
+                headerSort: false, resizable: false, frozen: true, width: 50, headerHozAlign: "center", hozAlign: "center", cssClass: "align-center", formatter: "rowSelection", titleFormatter: "rowSelection", cellClick: function (e, cell) {
+                    cell.getRow().toggleSelect();
+                }
+            },
             columns: [
                 { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "회사코드", field: "com", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사번", field: "empNo", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "이름", field: "userName", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./authFrm.html"} },
-                { title: "ID", field: "userId", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "관리자권한", field: "auth", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "생성일자", field: "date", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사용유무", field: "display", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "사용" : "미사용"; } },
+                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./popupFrm.html"} },
+                { title: "LEFT", field: "popup_left", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "TOP", field: "popup_top", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "사용유무", field: "display", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
+                { title: "등록일", field: "date", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
             ],
         });
     </script>

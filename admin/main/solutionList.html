@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">권한 관리</h3>
+                            <h3 class="mb-0"> 솔루션 관리</h3>
                         </div>
                     </div>
                 </div>
@@ -88,31 +88,12 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row justify-content-between mb-2">
-                                <div class="col-8">
-                                    <div class="page-count"></div>
-                                </div>
-                                <div class="col-4 text-end">
-                                    <div class="row g-1">
-                                        <div class="d-flex">
-                                            <select class="form-select form-select-sm me-2" style="width: 40%;">
-                                                <option selected>선택</option>
-                                                <option value="name">이름</option>
-                                                <option value="id">사번</option>
-                                            </select>
-
-                                            <input type="text" class="form-control form-control-sm me-2">
-
-                                            <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div id="example-table"></div>
+                            <div id="example-table" class="move-table"></div>
                         </div>
 
                         <div class="card-footer text-end">
+                            <button type="button" class="btn btn-danger float-start">선택삭제</button>
+                            <button type="button" class="btn btn-primary">정렬저장</button>
                             <button type="button" class="btn btn-primary">등록</button>
                         </div>
                     </div>
@@ -134,11 +115,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
-            { no: "2", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: false },
-            { no: "3", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
-            { no: "4", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: false },
-            { no: "5", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
+            { title: "AI", display: true, date: "2026-05-14", },
+            { title: "SOLUTION", display: false, date: "2026-06-14", },
+            { title: "ERP", display: true, date: "2026-07-14", },
+            { title: "CLOUD", display: false, date: "2026-08-14", },
+            { title: "SAP ERP", display: true, date: "2026-09-14", },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -146,19 +127,16 @@
             layout: "fitColumns",       // columns expand to fill the available width
             pagination: true,
             paginationSize: 10,
-            paginationCounterElement:".page-count",
-            paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
-                return `<span>현재 페이지 : ${currentPage} / ${totalPages}</span><span>전체글 : ${totalRows}개</span>`;
+            movableRows: true,
+            rowHeader: {
+                headerSort: false, resizable: false, frozen: true, width: 50, headerHozAlign: "center", hozAlign: "center", cssClass: "align-center", formatter: "rowSelection", titleFormatter: "rowSelection", cellClick: function (e, cell) {
+                    cell.getRow().toggleSelect();
+                }
             },
             columns: [
-                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "회사코드", field: "com", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사번", field: "empNo", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "이름", field: "userName", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./authFrm.html"} },
-                { title: "ID", field: "userId", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "관리자권한", field: "auth", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "생성일자", field: "date", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사용유무", field: "display", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "사용" : "미사용"; } },
+                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./solutionFrm.html"} },
+                { title: "활성여부", field: "display", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
+                { title: "등록일", field: "date", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
             ],
         });
     </script>
