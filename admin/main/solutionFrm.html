@@ -153,39 +153,23 @@
     <!-- //Scripts -->
 
     <script>
-        const MAX_SOLUTION_LIST = 7;
+        const maxList = 7;
 
         function addList() {
-            const addArea = document.querySelector('.add-area');
-            const input = document.getElementById('solutionList');
-            const value = input.value.trim();
+            const targetArea = document.querySelector('.add-area');
+            const addHtml = `
+                <div class="mt-2 solution-item">
+                    <input type="text" class="form-control d-inline-block" name="solutionText" id="solutionList" style="width: 40%;">
+                    <button type="button" class="btn btn-secondary float-end me-2" style="width: 200px;" onclick="delList(this);">삭제</button>
+                </div>
+            `;
 
-            if (addArea.querySelectorAll('.solution-item').length >= MAX_SOLUTION_LIST) {
+            if (targetArea.querySelectorAll('.solution-item').length >= maxList) {
                 alert('솔루션 리스트는 최대 8개까지 등록 가능합니다.');
                 return;
+            } else {
+                targetArea.insertAdjacentHTML('beforeend', addHtml);
             }
-
-            const item = document.createElement('div');
-            item.className = 'mt-2 solution-item';
-
-            const textInput = document.createElement('input');
-            textInput.type = 'text';
-            textInput.className = 'form-control d-inline-block';
-            textInput.name = 'solutionText';
-            textInput.value = value;
-            textInput.style.width = '40%';
-
-            const delBtn = document.createElement('button');
-            delBtn.type = 'button';
-            delBtn.className = 'btn btn-secondary float-end me-2';
-            delBtn.style.width = '200px';
-            delBtn.textContent = '삭제';
-            delBtn.onclick = function () { delList(this); };
-
-            item.appendChild(textInput);
-            item.appendChild(delBtn);
-            addArea.appendChild(item);
-            input.value = '';
         }
 
         function delList(btn) {
