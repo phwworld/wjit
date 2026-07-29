@@ -125,10 +125,6 @@
                                             <button type="button" class="btn btn-secondary float-end me-2" style="width: 200px;" onclick="addList();">추가</button>
                                         </div>
                                         <div class="add-area"></div>
-                                        <!-- <div class="mt-2">
-                                            <input type="text" class="form-control d-inline-block" name="solutionText" id="solutionList" style="width: 40%;">
-                                            <button type="button" class="btn btn-secondary float-end me-2" style="width: 200px;" onclick="delList();">삭제</button>
-                                        </div> -->
                                     </div>
                                 </div>
                             </form>
@@ -157,20 +153,43 @@
     <!-- //Scripts -->
 
     <script>
-        let solutionListSize;
-        function addList() {
-            const target = document.querySelector(".add-area");
-            const addHtml = `<div class="mt-2">
-                <input type="text" class="form-control d-inline-block" name="solutionText" id="solutionList" style="width: 40%;">
-                <button type="button" class="btn btn-secondary float-end me-2" style="width: 200px;" onclick="delList();">삭제</button>
-            </div>`;
+        const MAX_SOLUTION_LIST = 7;
 
-            target.innerHTML = addHtml;
-            
+        function addList() {
+            const addArea = document.querySelector('.add-area');
+            const input = document.getElementById('solutionList');
+            const value = input.value.trim();
+
+            if (addArea.querySelectorAll('.solution-item').length >= MAX_SOLUTION_LIST) {
+                alert('솔루션 리스트는 최대 8개까지 등록 가능합니다.');
+                return;
+            }
+
+            const item = document.createElement('div');
+            item.className = 'mt-2 solution-item';
+
+            const textInput = document.createElement('input');
+            textInput.type = 'text';
+            textInput.className = 'form-control d-inline-block';
+            textInput.name = 'solutionText';
+            textInput.value = value;
+            textInput.style.width = '40%';
+
+            const delBtn = document.createElement('button');
+            delBtn.type = 'button';
+            delBtn.className = 'btn btn-secondary float-end me-2';
+            delBtn.style.width = '200px';
+            delBtn.textContent = '삭제';
+            delBtn.onclick = function () { delList(this); };
+
+            item.appendChild(textInput);
+            item.appendChild(delBtn);
+            addArea.appendChild(item);
+            input.value = '';
         }
 
-        const delList = () => {
-            alert("del");
+        function delList(btn) {
+            btn.closest('.solution-item').remove();
         }
     </script>
 </body>
