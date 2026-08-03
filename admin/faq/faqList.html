@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0"> 팝업 관리<span class="page-title-lang">(국문)</span></h3>
+                            <h3 class="mb-0">FAQ 관리<span class="page-title-lang">Business(국문)</span></h3>
                         </div>
                     </div>
                 </div>
@@ -89,15 +89,28 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row justify-content-between mb-2">
-                                <div class="col-8">
+                                <div class="col-4">
                                     <div class="page-count"></div>
                                 </div>
-                                <div class="col-4 text-end">
+                                <div class="col-8 text-end">
                                     <div class="row g-1">
                                         <div class="d-flex">
-                                            <select class="form-select form-select-sm me-2" style="width: 40%;">
+                                            <select class="form-select form-select-sm me-2" name="category1" id="category1" style="width: 35%;">
+                                                <option selected>메뉴1</option>
+                                                <option>AI</option>
+                                                <option>SOLUTION</option>
+                                                <option>ERP</option>
+                                                <option>CLOUD</option>
+                                                <option>MANAGED SERVICE</option>
+                                            </select>
+                                            <select class="form-select form-select-sm me-2" name="category2" id="category2" style="width: 50%;">
+                                                <option selected>메뉴2</option>
+                                                <option>AWS (Amazon Web Services)</option>
+                                            </select>
+                                            <select class="form-select form-select-sm me-2" style="width: 20%;">
                                                 <option selected>선택</option>
                                                 <option value="title">제목</option>
+                                                <option value="content">내용</option>
                                             </select>
 
                                             <input type="text" class="form-control form-control-sm me-2">
@@ -134,11 +147,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-05-14", },
-            { no: "2", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: false, date: "2026-06-14", },
-            { no: "3", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-07-14", },
-            { no: "4", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: false, date: "2026-08-14", },
-            { no: "5", title: "제43기 정기주주총회 안내", popup_left: 50, popup_top: 50, display: true, date: "2026-09-14", },
+            { no: "1", cate1: "AI", cate2: "AICC", title: "Q5. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "2", cate1: "AI", cate2: "AICC", title: "Q4. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "3", cate1: "MANAGED SERVICE", cate2: "AWS (Amazon Web Services)", title: "Q3. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "4", cate1: "AI", cate2: "AICC", title: "Q2. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "5", cate1: "AI", cate2: "AICC", title: "Q1. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -157,9 +170,9 @@
             },
             columns: [
                 { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "카테고리1", field: "cate1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "카테고리2", field: "cate2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
                 { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./popupFrm.html"} },
-                { title: "LEFT", field: "popup_left", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "TOP", field: "popup_top", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
                 { title: "사용유무", field: "display", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
                 { title: "등록일", field: "date", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
             ],
