@@ -17,6 +17,12 @@
     background-color: #fff;
 }
 
+.page-title-lang {
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 /* tabulator */
 .tabulator .tabulator-footer {
     background-color: #fff;
@@ -42,7 +48,11 @@
 .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
     border-right: 0;
 }
+.tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left {
+    border-right: 0;
+}
 
+/* page-count */
 .page-count {}
 .page-count span > span {
     padding-left: 10px;
@@ -70,11 +80,8 @@
 .img-board .tabulator-cell.align-center {
     justify-content: center;
 }
-.tabulator .tabulator-header .tabulator-frozen.tabulator-frozen-left {
-    border-right: 0;
-}
 
-/* table-border-bottom */
+/* table-border-bottom (게시판 상세) */
 .table-border-top > tbody > tr > th,
 .table-border-top > tbody > tr > td {
     border-top: 1px solid var(--bs-table-border-color);
@@ -85,12 +92,10 @@
 }
 
 
-/* 마우스 오버 시 */
+/* move-table (tabulator drag & drop) */
 .tabulator.move-table .tabulator-row .tabulator-cell {
     cursor: grabbing;
 }
-
-/* 드래그 중 */
 .tabulator.move-table .tabulator-row.tabulator-moving {
     cursor: grabbing;
 }
