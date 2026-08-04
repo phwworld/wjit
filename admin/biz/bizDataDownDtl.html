@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT 관리자</title>
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="../assets/img/logo.png" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="../page_list.html" class="nav-link active">
+                                <p>page_list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">다운로드 이력 관리</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <!-- <table class="table table-bordered align-middle"> -->
+                                <table class="table table-borderless table-border-top align-middle">
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                        <col style="width: *;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">메뉴1</th>
+                                            <td>Cloud</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">메뉴2</th>
+                                            <td>Microsoft Azure</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">다운로드 자료명</th>
+                                            <td><a class="text-black" href="#none">웅진_MS사업 소개자료_260430.pdf</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">이름</th>
+                                            <td>홍길동</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">이메일</th>
+                                            <td>hong@example.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">회사(소속)</th>
+                                            <td>웅진</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">직급</th>
+                                            <td>대리</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">자료 사용처</th>
+                                            <td>참고용입니다.</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">다운로드 날자</th>
+                                            <td>2026-08-04</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">개인정보 수집·이용 동의(필수)</th>
+                                            <td>Y</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">마케팅 광고 동의(선택)</th>
+                                            <td>N</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">개인정보 취급위탁(선택)</th>
+                                            <td>N</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-end">
+                            <button type="button" class="btn btn-secondary">목록</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tabulator.min.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <!-- //Scripts -->
+
+    <!-- grid -->
+    <script>
+        let tabledata = [
+            { no: "1", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
+            { no: "2", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
+            { no: "3", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
+            { no: "4", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
+            { no: "5", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
+        ];
+        
+        let table = new Tabulator("#example-table", {
+            data: tabledata,
+            layout: "fitColumns",       // columns expand to fill the available width
+            pagination: true,
+            paginationSize: 10,
+            paginationCounterElement:".page-count",
+            paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
+                return `<span>현재 페이지 : ${currentPage} / ${totalPages}</span><span>전체글 : ${totalRows}개</span>`;
+            },
+            columns: [
+                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "이름", field: "name", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./bizDataDownDtl.html"} },
+                { title: "회사", field: "company", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "메뉴1", field: "category1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "메뉴2", field: "category2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "다운로드 자료명", field: "file_name", headerHozAlign: "center", headerSort: false, },
+                { title: "다운로드 날짜", field: "date", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+            ],
+        });
+    </script>
+</body>
+
+</html>

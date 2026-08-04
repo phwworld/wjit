@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">FAQ 관리<span class="page-title-lang">Business(국문)</span></h3>
+                            <h3 class="mb-0">Industry<span class="page-title-lang">프로젝트 케이스(국문)</span></h3>
                         </div>
                     </div>
                 </div>
@@ -95,26 +95,22 @@
                                 <div class="col-8 text-end">
                                     <div class="row g-1">
                                         <div class="d-flex">
-                                            <select class="form-select form-select-sm me-2" name="category1" id="category1" style="width: 35%;">
+                                            <select class="form-select form-select-sm me-2" name="category1" id="category1" style="width: 30%;">
                                                 <option selected>메뉴1</option>
-                                                <option>AI</option>
-                                                <option>SOLUTION</option>
-                                                <option>ERP</option>
-                                                <option>CLOUD</option>
-                                                <option>MANAGED SERVICE</option>
+                                                <option>렌탈</option>
+                                                <option>모빌리티</option>
+                                                <option>제조</option>
+                                                <option>바이오</option>
+                                                <option>소비재</option>
+                                                <option>물류</option>
+                                                <option>반도체</option>
                                             </select>
 
-                                            <select class="form-select form-select-sm me-2" name="category2" id="category2" style="width: 50%;">
+                                            <select class="form-select form-select-sm me-2" name="category2" id="category2" style="width: 65%;">
                                                 <option selected>메뉴2</option>
-                                                <option>AWS (Amazon Web Services)</option>
+                                                <option>프로세스 정립 및 글로벌 운영 시스템 구축</option>
                                             </select>
                                             
-                                            <select class="form-select form-select-sm me-2" style="width: 20%;">
-                                                <option selected>선택</option>
-                                                <option value="title">제목</option>
-                                                <option value="content">내용</option>
-                                            </select>
-
                                             <input type="text" class="form-control form-control-sm me-2">
 
                                             <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
@@ -149,11 +145,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", cate1: "AI", cate2: "AICC", title: "Q5. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "2", cate1: "AI", cate2: "AICC", title: "Q4. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "3", cate1: "MANAGED SERVICE", cate2: "AWS (Amazon Web Services)", title: "Q3. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "4", cate1: "AI", cate2: "AICC", title: "Q2. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "5", cate1: "AI", cate2: "AICC", title: "Q1. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "1", category1: "모빌리티", category2: "프로세스 정립 및 글로벌 운영 시스템 구축", product_name: "SAP Business One", title: "언더아머", display: true, date: "2026-05-14", },
+            { no: "2", category1: "모빌리티", category2: "프로세스 정립 및 글로벌 운영 시스템 구축", product_name: "SAP Business One", title: "언더아머", display: true, date: "2026-05-14", },
+            { no: "3", category1: "모빌리티", category2: "프로세스 정립 및 글로벌 운영 시스템 구축", product_name: "SAP Business One", title: "언더아머", display: true, date: "2026-05-14", },
+            { no: "4", category1: "모빌리티", category2: "프로세스 정립 및 글로벌 운영 시스템 구축", product_name: "SAP Business One", title: "언더아머", display: true, date: "2026-05-14", },
+            { no: "5", category1: "모빌리티", category2: "프로세스 정립 및 글로벌 운영 시스템 구축", product_name: "SAP Business One", title: "언더아머", display: true, date: "2026-05-14", },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -172,11 +168,12 @@
             },
             columns: [
                 { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "카테고리1", field: "cate1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "카테고리2", field: "cate2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./faqFrm.html"} },
-                { title: "사용유무", field: "display", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
-                { title: "등록일", field: "date", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "메뉴1", field: "category1", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "메뉴2", field: "category2", width: 330, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "제품명", field: "product_name", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./industryCaseFrm.html"} },
+                { title: "활성여부", field: "display", width: 90, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
+                { title: "등록일", field: "date", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
             ],
         });
     </script>

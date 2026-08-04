@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">FAQ 관리<span class="page-title-lang">Business(국문)</span></h3>
+                            <h3 class="mb-0">다운로드 자료 관리</h3>
                         </div>
                     </div>
                 </div>
@@ -103,18 +103,12 @@
                                                 <option>CLOUD</option>
                                                 <option>MANAGED SERVICE</option>
                                             </select>
-
+                                            
                                             <select class="form-select form-select-sm me-2" name="category2" id="category2" style="width: 50%;">
                                                 <option selected>메뉴2</option>
                                                 <option>AWS (Amazon Web Services)</option>
                                             </select>
                                             
-                                            <select class="form-select form-select-sm me-2" style="width: 20%;">
-                                                <option selected>선택</option>
-                                                <option value="title">제목</option>
-                                                <option value="content">내용</option>
-                                            </select>
-
                                             <input type="text" class="form-control form-control-sm me-2">
 
                                             <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
@@ -149,13 +143,13 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", cate1: "AI", cate2: "AICC", title: "Q5. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "2", cate1: "AI", cate2: "AICC", title: "Q4. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "3", cate1: "MANAGED SERVICE", cate2: "AWS (Amazon Web Services)", title: "Q3. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "4", cate1: "AI", cate2: "AICC", title: "Q2. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
-            { no: "5", cate1: "AI", cate2: "AICC", title: "Q1. 비용과 요금 체계는 어떻게 되나요?", display: true, date: "2026-05-14", },
+            { no: "1", main_category: "WRMS", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", title: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", attachment: "file.pdf" },
+            { no: "2", main_category: "WRMS", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", title: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", attachment: "file.pdf" },
+            { no: "3", main_category: "WRMS", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", title: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", attachment: "" },
+            { no: "4", main_category: "WRMS", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", title: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", attachment: "file.pdf" },
+            { no: "5", main_category: "WRMS", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", title: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", attachment: "file.pdf" },
         ];
-
+        
         let table = new Tabulator("#example-table", {
             data: tabledata,
             layout: "fitColumns",       // columns expand to fill the available width
@@ -172,11 +166,12 @@
             },
             columns: [
                 { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "카테고리1", field: "cate1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "카테고리2", field: "cate2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./faqFrm.html"} },
-                { title: "사용유무", field: "display", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
-                { title: "등록일", field: "date", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "메인카테고리", field: "main_category", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "메뉴1", field: "category1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "메뉴2", field: "category2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
+                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, formatter: "link", formatterParams: {url:"./bizDataFrm.html"} },
+                { title: "등록일", field: "date", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "첨부파일", field: "attachment", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { if (cell.getValue()) { return `<a class="btn btn-sm btn-secondary text-white" href="#none">다운로드</a>`; }} },
             ],
         });
     </script>
