@@ -8,7 +8,8 @@
     <link rel="icon" href="../assets/img/favicon.ico">
     <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../assets/css/tabulator.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
     <link rel="stylesheet" href="../assets/css/adminlte.css">
     <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
     <link rel="stylesheet" href="../assets/css/customize.css">
@@ -76,7 +77,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Industry<span class="page-title-info">서비스(국문)</span></h3>
+                            <h3 class="mb-0">투자정보<span class="page-title-info">전자공고</span></h3>
                         </div>
                     </div>
                 </div>
@@ -90,43 +91,21 @@
                         <div class="card-body">
                             <form action="">
                                 <div class="row mb-3">
-                                    <label for="category1" class="col-sm-2 col-form-label text-center fw-bold">메뉴</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category1" id="category1" style="width: 20%;">
-                                            <option selected>메뉴1</option>
-                                            <option>렌탈</option>
-                                            <option>모빌리티</option>
-                                            <option>제조</option>
-                                            <option>바이오</option>
-                                            <option>소비재</option>
-                                            <option>물류</option>
-                                            <option>반도체</option>
-                                        </select>
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category2" id="category2" style="width: 30%;">
-                                            <option selected>메뉴2</option>
-                                            <option>프로세스 정립 및 글로벌 운영 시스템 구축</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            
-                                <div class="row mb-3">
                                     <label for="title" class="col-sm-2 col-form-label text-center fw-bold">제목</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="title" id="title">
+                                        <input type="text" class="form-control" name="title" id="title">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="service_name" class="col-sm-2 col-form-label text-center fw-bold">서비스명</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="service_name" id="service_name">
-                                    </div>
-                                </div>
-                                
-                                <div class="row mb-3">
-                                    <label for="link_url" class="col-sm-2 col-form-label text-center fw-bold">URL</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="link_url" id="link_url">
+                                    <label for="registerDate" class="col-sm-2 col-form-label text-center fw-bold">등록일자</label>
+                                    <div class="col-sm-10 d-flex align-itmes-center">
+                                        <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                            <input type="text" data-input id="registerDate" />
+                                            <button type="button" class="calendar-btn" data-toggle>
+                                                <i class="bi bi-calendar"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -141,6 +120,26 @@
                                             <input class="form-check-input" type="radio" name="display" id="display_n">
                                             <label class="form-check-label" for="display_n">비활성</label>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="content" class="col-sm-2 col-form-label text-center fw-bold">내용</label>
+                                    <div class="col-sm-10">
+                                        <div style="display: flex; align-items: center; justify-content: center; height: 1000px;background: #eee;">editor view</div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="uploadFile" class="col-sm-2 col-form-label text-center fw-bold">파일첨부</label>
+                                    <div class="col-sm-10">
+                                        <div>
+                                            <input class="form-control d-inline-block" type="file" style="width: 80%">
+                                            <button type="button" class="btn btn-secondary float-end me-2" style="width: 100px;" onclick="addList();">추가</button>
+                                        </div>
+                                        <div class="add-area"></div>
+                                        <span class="d-block mt-1 text-primary">* 최대 파일크기 파일당 50MB</span>
+                                        <span class="d-block mt-1 text-primary">* 파일종류 .pdf .zip .cov .xlsx</span>
                                     </div>
                                 </div>
                             </form>
@@ -167,6 +166,36 @@
     <script src="../assets/js/flatpickr.min.js"></script>
     <script src="../assets/js/flatpickr_ko.js"></script>
     <!-- //Scripts -->
+
+    <script>
+        flatpickr("#registerDate", {
+            locale: "ko",
+        });
+
+        // 파일첨부 추가
+        const maxList = 2;
+
+        function addList() {
+            const targetArea = document.querySelector('.add-area');
+            const addHtml = `
+                <div class="mt-2 attachment-item">
+                    <input class="form-control d-inline-block" type="file" style="width: 80%">
+                    <button type="button" class="btn btn-secondary float-end me-2" style="width: 100px;" onclick="delList(this);">삭제</button>
+                </div>
+            `;
+
+            if (targetArea.querySelectorAll('.attachment-item').length >= maxList) {
+                alert('최대 파일 업로드 개수는 3개입니다.');
+                return;
+            } else {
+                targetArea.insertAdjacentHTML('beforeend', addHtml);
+            }
+        }
+
+        function delList(btn) {
+            btn.closest('.attachment-item').remove();
+        }
+    </script>
 
 </body>
 

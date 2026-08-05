@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Industry<span class="page-title-info">서비스(국문)</span></h3>
+                            <h3 class="mb-0">비주얼 배너 관리</h3>
                         </div>
                     </div>
                 </div>
@@ -90,47 +90,6 @@
                         <div class="card-body">
                             <form action="">
                                 <div class="row mb-3">
-                                    <label for="category1" class="col-sm-2 col-form-label text-center fw-bold">메뉴</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category1" id="category1" style="width: 20%;">
-                                            <option selected>메뉴1</option>
-                                            <option>렌탈</option>
-                                            <option>모빌리티</option>
-                                            <option>제조</option>
-                                            <option>바이오</option>
-                                            <option>소비재</option>
-                                            <option>물류</option>
-                                            <option>반도체</option>
-                                        </select>
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category2" id="category2" style="width: 30%;">
-                                            <option selected>메뉴2</option>
-                                            <option>프로세스 정립 및 글로벌 운영 시스템 구축</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            
-                                <div class="row mb-3">
-                                    <label for="title" class="col-sm-2 col-form-label text-center fw-bold">제목</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="title" id="title">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="service_name" class="col-sm-2 col-form-label text-center fw-bold">서비스명</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="service_name" id="service_name">
-                                    </div>
-                                </div>
-                                
-                                <div class="row mb-3">
-                                    <label for="link_url" class="col-sm-2 col-form-label text-center fw-bold">URL</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="link_url" id="link_url">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
                                     <span class="col-sm-2 col-form-label text-center fw-bold">활성 여부</span>
                                     <div class="col-sm-10 d-flex align-items-center">
                                         <div class="form-check me-5">
@@ -141,6 +100,56 @@
                                             <input class="form-check-input" type="radio" name="display" id="display_n">
                                             <label class="form-check-label" for="display_n">비활성</label>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="mainText1" class="col-sm-2 col-form-label text-center fw-bold">메인텍스트</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="mainText" id="mainText1" value="일반 텍스트 입니다.">
+                                        <input type="text" class="form-control mt-2" name="mainText" id="mainText2" value="<span style='color:red;'>색상영역 테스트</span> 입니다.">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="subText1" class="col-sm-2 col-form-label text-center fw-bold">서브텍스트</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="subText" id="subText1">
+                                        <input type="text" class="form-control mt-2" name="subText" id="subText2">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="period" class="col-sm-2 col-form-label text-center fw-bold">게시기간</label>
+                                    <div class="col-sm-10 d-flex align-itmes-center">
+                                        <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                            <input type="text" data-input id="period1" />
+                                            <button type="button" class="calendar-btn" data-toggle>
+                                                <i class="bi bi-calendar"></i>
+                                            </button>
+                                        </div>
+                                        <div class="d-flex align-items-center p-2">~</div>
+                                        <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                            <input type="text" data-input id="period2" />
+                                            <button type="button" class="calendar-btn" data-toggle>
+                                                <i class="bi bi-calendar"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <label for="uploadFile" class="col-sm-2 col-form-label text-center fw-bold">이미지</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="file" id="uploadFile">
+                                        <span class="d-block mt-1 text-primary">* 이미지 사이즈 1092 X 600</span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="link" class="col-sm-2 col-form-label text-center fw-bold">링크</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="link" id="link">
                                     </div>
                                 </div>
                             </form>
@@ -168,6 +177,12 @@
     <script src="../assets/js/flatpickr_ko.js"></script>
     <!-- //Scripts -->
 
+    <script>
+        flatpickr(".flatpickr-wrapper", {
+            wrap: true,
+            locale: "ko",
+        });
+    </script>
 </body>
 
 </html>

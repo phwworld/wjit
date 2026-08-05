@@ -8,7 +8,8 @@
     <link rel="icon" href="../assets/img/favicon.ico">
     <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../assets/css/tabulator.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
     <link rel="stylesheet" href="../assets/css/adminlte.css">
     <link rel="stylesheet" href="../assets/css/flatpickr.min.css">
     <link rel="stylesheet" href="../assets/css/customize.css">
@@ -76,7 +77,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Industry<span class="page-title-info">서비스(국문)</span></h3>
+                            <h3 class="mb-0">미디어룸<span class="page-title-info">뉴스(국문)</span></h3>
                         </div>
                     </div>
                 </div>
@@ -90,43 +91,35 @@
                         <div class="card-body">
                             <form action="">
                                 <div class="row mb-3">
-                                    <label for="category1" class="col-sm-2 col-form-label text-center fw-bold">메뉴</label>
+                                    <label for="mediaName" class="col-sm-2 col-form-label text-center fw-bold">매체명</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category1" id="category1" style="width: 20%;">
-                                            <option selected>메뉴1</option>
-                                            <option>렌탈</option>
-                                            <option>모빌리티</option>
-                                            <option>제조</option>
-                                            <option>바이오</option>
-                                            <option>소비재</option>
-                                            <option>물류</option>
-                                            <option>반도체</option>
-                                        </select>
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category2" id="category2" style="width: 30%;">
-                                            <option selected>메뉴2</option>
-                                            <option>프로세스 정립 및 글로벌 운영 시스템 구축</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            
-                                <div class="row mb-3">
-                                    <label for="title" class="col-sm-2 col-form-label text-center fw-bold">제목</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="title" id="title">
+                                        <input type="text" class="form-control" name="mediaName" id="mediaName">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="service_name" class="col-sm-2 col-form-label text-center fw-bold">서비스명</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="service_name" id="service_name">
+                                    <label for="registerDate" class="col-sm-2 col-form-label text-center fw-bold">발간일</label>
+                                    <div class="col-sm-10 d-flex align-itmes-center">
+                                        <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                            <input type="text" data-input id="registerDate" />
+                                            <button type="button" class="calendar-btn" data-toggle>
+                                                <i class="bi bi-calendar"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row mb-3">
-                                    <label for="link_url" class="col-sm-2 col-form-label text-center fw-bold">URL</label>
+                                    <label for="title" class="col-sm-2 col-form-label text-center fw-bold">기사 제목</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="link_url" id="link_url">
+                                        <input type="text" class="form-control" name="title" id="title">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="link" class="col-sm-2 col-form-label text-center fw-bold">링크</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="link" id="link">
                                     </div>
                                 </div>
 
@@ -134,7 +127,7 @@
                                     <span class="col-sm-2 col-form-label text-center fw-bold">활성 여부</span>
                                     <div class="col-sm-10 d-flex align-items-center">
                                         <div class="form-check me-5">
-                                            <input class="form-check-input" type="radio" name="display" id="display_y" checked>
+                                            <input class="form-check-input" type="radio" name="display" id="display_y" checked="">
                                             <label class="form-check-label" for="display_y">활성</label>
                                         </div>
                                         <div class="form-check">
@@ -167,6 +160,13 @@
     <script src="../assets/js/flatpickr.min.js"></script>
     <script src="../assets/js/flatpickr_ko.js"></script>
     <!-- //Scripts -->
+
+    <script>
+        flatpickr(".flatpickr-wrapper", {
+            wrap: true,
+            locale: "ko",
+        });
+    </script>
 
 </body>
 

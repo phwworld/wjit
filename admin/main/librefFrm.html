@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Industry<span class="page-title-info">프로젝트 케이스(국문)</span></h3>
+                            <h3 class="mb-0">고객 성공사례 관리</h3>
                         </div>
                     </div>
                 </div>
@@ -88,62 +88,12 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
+                            <div class="row text-end mb-2">
+                                <div class="col">
+                                    <span class="d-inline text-danger ms-2">*</span> 표시는 필수 입력 항목입니다.
+                                </div>
+                            </div>
                             <form action="">
-                                <div class="row mb-3">
-                                    <label for="category1" class="col-sm-2 col-form-label text-center fw-bold">메뉴</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category1" id="category1" style="width: 20%;">
-                                            <option selected>메뉴1</option>
-                                            <option>렌탈</option>
-                                            <option>모빌리티</option>
-                                            <option>제조</option>
-                                            <option>바이오</option>
-                                            <option>소비재</option>
-                                            <option>물류</option>
-                                            <option>반도체</option>
-                                        </select>
-                                        <select class="form-select form-select-sm me-2 d-inline" name="category2" id="category2" style="width: 30%;">
-                                            <option selected>메뉴2</option>
-                                            <option>프로세스 정립 및 글로벌 운영 시스템 구축</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            
-                                <div class="row mb-3">
-                                    <label for="product_name" class="col-sm-2 col-form-label text-center fw-bold">제품명</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="product_name" id="product_name">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="project_name1" class="col-sm-2 col-form-label text-center fw-bold">프로젝트명1</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="project_name1" id="project_name1">
-                                    </div>
-                                </div>
-                                
-                                <div class="row mb-3">
-                                    <label for="project_name2" class="col-sm-2 col-form-label text-center fw-bold">프로젝트명2</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="project_name2" id="project_name2">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="project_name3" class="col-sm-2 col-form-label text-center fw-bold">프로젝트명3</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="project_name3" id="project_name3">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label for="link_url" class="col-sm-2 col-form-label text-center fw-bold">URL</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control d-inline" name="link_url" id="link_url">
-                                    </div>
-                                </div>
-
                                 <div class="row mb-3">
                                     <span class="col-sm-2 col-form-label text-center fw-bold">활성 여부</span>
                                     <div class="col-sm-10 d-flex align-items-center">
@@ -155,6 +105,83 @@
                                             <input class="form-check-input" type="radio" name="display" id="display_n">
                                             <label class="form-check-label" for="display_n">비활성</label>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="category" class="col-sm-2 col-form-label text-center fw-bold">카테고리<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="category" id="category">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_main1" class="col-sm-2 col-form-label text-center fw-bold">메인텍스트1<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_main1" id="case_main1">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_sub1" class="col-sm-2 col-form-label text-center fw-bold">서브텍스트1<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_sub1" id="case_sub1">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <label for="case_link1" class="col-sm-2 col-form-label text-center fw-bold">링크1</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_link1" id="case_link1">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_main2" class="col-sm-2 col-form-label text-center fw-bold">메인텍스트2<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_main2" id="case_main2">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_sub2" class="col-sm-2 col-form-label text-center fw-bold">서브텍스트2<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_sub2" id="case_sub2">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <label for="case_link2" class="col-sm-2 col-form-label text-center fw-bold">링크2</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_link2" id="case_link2">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_main3" class="col-sm-2 col-form-label text-center fw-bold">메인텍스트3</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_main3" id="case_main3">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="case_sub3" class="col-sm-2 col-form-label text-center fw-bold">서브텍스트3</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_sub3" id="case_sub3">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <label for="case_link3" class="col-sm-2 col-form-label text-center fw-bold">링크3</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="case_link3" id="case_link3">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="uploadFile" class="col-sm-2 col-form-label text-center fw-bold">이미지<span class="text-danger ms-2">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="file" id="uploadFile">
                                     </div>
                                 </div>
                             </form>

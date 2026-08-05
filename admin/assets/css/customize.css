@@ -17,7 +17,7 @@
     background-color: #fff;
 }
 
-.page-title-lang {
+.page-title-info {
     margin-left: 10px;
     font-size: 1.3rem;
     font-weight: 500;
@@ -98,4 +98,24 @@
 }
 .tabulator.move-table .tabulator-row.tabulator-moving {
     cursor: grabbing;
+}
+
+/* flatpicker */
+.flatpickr-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.flatpickr-wrapper input {
+   width: calc(100% - 40px);
+   height: 38px;
+   padding-left: 10px; 
+   border: 0;
+   outline: 0;
+}
+.flatpickr-wrapper .calendar-btn {
+  background: none;
+  border: none;
+  /* padding: 8px 12px; */
+  cursor: pointer;
+  color: #666;
 }

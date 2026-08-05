@@ -140,9 +140,19 @@
                                         <div class="row mb-3">
                                             <label for="period" class="col-sm-1 col-form-label text-center">노출기간</label>
                                             <div class="col-sm-11 d-flex align-itmes-center">
-                                                <div><input type="text" class="form-control" id="period1"></div>
+                                                <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                                    <input type="text" data-input id="period1" />
+                                                    <button type="button" class="calendar-btn" data-toggle>
+                                                        <i class="bi bi-calendar"></i>
+                                                    </button>
+                                                </div>
                                                 <div class="d-flex align-items-center p-2">~</div>
-                                                <div><input type="text" class="form-control" id="period2"></div>
+                                                <div class="flatpickr-wrapper form-control d-inline p-0" style="width: 200px;">
+                                                    <input type="text" data-input id="period2" />
+                                                    <button type="button" class="calendar-btn" data-toggle>
+                                                        <i class="bi bi-calendar"></i>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                         
@@ -285,20 +295,9 @@
     <!-- //Scripts -->
 
     <script>
-        flatpickr("#period1", {
+        flatpickr(".flatpickr-wrapper", {
+            wrap: true,
             locale: "ko",
-            enableTime: true,
-            // mode: "range",
-            time_24hr: true,
-            minuteIncrement: 10
-        });
-
-        flatpickr("#period2", {
-            locale: "ko",
-            enableTime: true,
-            // mode: "range",
-            time_24hr: true,
-            minuteIncrement: 10
         });
     </script>
 </body>

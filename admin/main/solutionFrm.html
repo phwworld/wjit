@@ -121,7 +121,7 @@
                                     <label for="solutionList" class="col-sm-2 col-form-label text-center fw-bold">솔루션 리스트</label>
                                     <div class="col-sm-10">
                                         <div>
-                                            <input type="text" class="form-control d-inline-block" name="solutionText" id="solutionList" style="width: 40%;">
+                                            <input type="text" class="form-control d-inline-block" name="solutionText" style="width: 40%;">
                                             <button type="button" class="btn btn-secondary float-end me-2" style="width: 100px;" onclick="addList();">추가</button>
                                         </div>
                                         <div class="add-area"></div>
@@ -159,7 +159,7 @@
             const targetArea = document.querySelector('.add-area');
             const addHtml = `
                 <div class="mt-2 solution-item">
-                    <input type="text" class="form-control d-inline-block" name="solutionText" id="solutionList" style="width: 40%;">
+                    <input type="text" class="form-control d-inline-block" name="solutionText" style="width: 40%;">
                     <button type="button" class="btn btn-secondary float-end me-2" style="width: 100px;" onclick="delList(this);">삭제</button>
                 </div>
             `;
