@@ -77,7 +77,7 @@
     align-items: center;
     border-right: 0;
 }
-.img-board .tabulator-cell.align-center {
+.img-board .tabulator-cell {
     justify-content: center;
 }
 

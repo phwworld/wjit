@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">프로젝트 사례<span class="page-title-info">(국문)</span></h3>
+                            <h3 class="mb-0">블로그</h3>
                         </div>
                     </div>
                 </div>
@@ -89,17 +89,19 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row justify-content-between mb-2">
-                                <div class="col-4">
+                                <div class="col-8">
                                     <div class="page-count"></div>
                                 </div>
-                                <div class="col-6 text-end">
+                                <div class="col-4 text-end">
                                     <div class="row g-1">
                                         <div class="d-flex">
-                                            <select class="form-select form-select-sm me-2" name="category1" id="category1" style="width: 50%;">
+                                            <select class="form-select form-select-sm me-2" style="width: 40%;">
                                                 <option selected>구분</option>
-                                                <option>물류관리 시스템(SAP EWM)</option>
+                                                <option>INSIGHT</option>
+                                                <option>NOW</option>
+                                                <option>PEOPLE</option>
                                             </select>
-                                            
+
                                             <input type="text" class="form-control form-control-sm me-2">
 
                                             <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
@@ -134,11 +136,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", solution: "물류관리시스템(SAP EWM)", thumbnail: "https://www.woongjin.com/File_win/images/notice/20260723/dc55f43216ef4fe7b363f2eff4a5b95a.jpg", title: "라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축", display: true, date: "2026-05-14", },
-            { no: "2", solution: "물류관리시스템(SAP EWM)", thumbnail: "https://www.woongjin.com/File_win/images/notice/20260723/dc55f43216ef4fe7b363f2eff4a5b95a.jpg", title: "라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축", display: false, date: "2026-06-14", },
-            { no: "3", solution: "물류관리시스템(SAP EWM)", thumbnail: "https://www.woongjin.com/File_win/images/notice/20260723/dc55f43216ef4fe7b363f2eff4a5b95a.jpg", title: "라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축", display: true, date: "2026-07-14", },
-            { no: "4", solution: "물류관리시스템(SAP EWM)", thumbnail: "https://www.woongjin.com/File_win/images/notice/20260723/dc55f43216ef4fe7b363f2eff4a5b95a.jpg", title: "라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축", display: false, date: "2026-08-14", },
-            { no: "5", solution: "물류관리시스템(SAP EWM)", thumbnail: "https://www.woongjin.com/File_win/images/notice/20260723/dc55f43216ef4fe7b363f2eff4a5b95a.jpg", title: "라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축", display: true, date: "2026-09-14", },
+            { no: "1", category: "INSIGHT", thumbnail: "https://www.woongjin.com/File_win/images/blog/20260715/6a58cad2c0ce4bf7aa9ba79dab009538.png", title: "W-JIT, SAP Business One을 위한 AI Agent ", display: true, date: "2026-05-14", },
+            { no: "2", category: "NOW", thumbnail: "https://www.woongjin.com/File_win/images/blog/20260715/6a58cad2c0ce4bf7aa9ba79dab009538.png", title: "W-JIT, SAP Business One을 위한 AI Agent ", display: true, date: "2026-05-14", },
+            { no: "3", category: "", thumbnail: "https://www.woongjin.com/File_win/images/blog/20260715/6a58cad2c0ce4bf7aa9ba79dab009538.png", title: "W-JIT, SAP Business One을 위한 AI Agent ", display: true, date: "2026-05-14", },
+            { no: "4", category: "PEOPLE", thumbnail: "https://www.woongjin.com/File_win/images/blog/20260715/6a58cad2c0ce4bf7aa9ba79dab009538.png", title: "W-JIT, SAP Business One을 위한 AI Agent ", display: true, date: "2026-05-14", },
+            { no: "5", category: "INSIGHT", thumbnail: "https://www.woongjin.com/File_win/images/blog/20260715/6a58cad2c0ce4bf7aa9ba79dab009538.png", title: "W-JIT, SAP Business One을 위한 AI Agent ", display: true, date: "2026-05-14", },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -156,12 +158,12 @@
                 }
             },
             columns: [
-                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, },
-                { title: "대표솔루션", field: "solution", width: 250, headerHozAlign: "center", headerSort: false, },
-                { title: "썸네일", field: "thumbnail", width: 180, headerHozAlign: "center", headerSort: false, formatter: function (cell, formatterParams) { let imgUrl = cell.getValue(); return "<img src='" + imgUrl + "' alt='배너이미지' style='height:80px;aspect-ratio:16/9;'>";} },
-                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, cssClass: "justify-content-start", formatter: "link", formatterParams: {url:"./projectDtl.html"} },
-                { title: "활성여부", field: "display", width: 120, headerHozAlign: "center", headerSort: true, formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
-                { title: "작성일", field: "date", width: 150, headerHozAlign: "center", headerSort: true, },
+                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "카테고리", field: "category", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "썸네일", field: "thumbnail", width: 120, headerHozAlign: "center", headerSort: false, formatter: function (cell, formatterParams) { let imgUrl = cell.getValue(); return "<img src='" + imgUrl + "' alt='배너이미지' style='height:80px;aspect-ratio:1/1;'>";} },
+                { title: "제목", field: "title", headerHozAlign: "center", headerSort: false, cssClass: "justify-content-start", formatter: "link", formatterParams: {url:"./blogDtl.html"} },
+                { title: "활성여부", field: "display", width: 120, headerHozAlign: "center", headerSort: true, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "활성" : "비활성"; } },
+                { title: "작성일", field: "date", width: 140, headerHozAlign: "center", headerSort: true, hozAlign: "center", },
             ],
         });
     </script>

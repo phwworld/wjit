@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT 관리자</title>
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="../assets/img/logo.png" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="../page_list.html" class="nav-link active">
+                                <p>page_list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">프로젝트 사례<span class="page-title-info">(국문)</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless table-border-top align-middle">
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                        <col style="width: *;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">대표 솔루션</th>
+                                            <td>물류관리시스템(SAP EWM)</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">카테고리</th>
+                                            <td>
+                                                <div class="col d-flex align-items-center gap-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_wrms" disabled checked>
+                                                        <label class="form-check-label" for="project_wrms">
+                                                            WRMS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_wdms" disabled>
+                                                        <label class="form-check-label" for="project_wdms">
+                                                            WDMS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_cloud" disabled>
+                                                        <label class="form-check-label" for="project_cloud">
+                                                            CLOUD
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_saperp" disabled>
+                                                        <label class="form-check-label" for="project_saperp">
+                                                            SAP ERP
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_lowcode" disabled>
+                                                        <label class="form-check-label" for="project_lowcode">
+                                                            Low-Code
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_rental" disabled>
+                                                        <label class="form-check-label" for="project_rental">
+                                                            렌탈
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_mobility" disabled>
+                                                        <label class="form-check-label" for="project_mobility">
+                                                            모빌리티
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_making" disabled>
+                                                        <label class="form-check-label" for="project_making">
+                                                            제조
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_bio" disabled>
+                                                        <label class="form-check-label" for="project_bio">
+                                                            바이오
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_consumergoods" disabled>
+                                                        <label class="form-check-label" for="project_consumergoods">
+                                                            소비재
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_distribution" disabled>
+                                                        <label class="form-check-label" for="project_distribution">
+                                                            물류
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" name="solution_type" id="project_semiconductor" disabled>
+                                                        <label class="form-check-label" for="project_semiconductor">
+                                                            반도체
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">제목</th>
+                                            <td>라이프케어 P사 AWS Control Tower 기반 클라우드 운영환경 구축</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">썸네일</th>
+                                            <td>
+                                                <img src="https://www.woongjin.com/File_win/images/notice/20260723/608f431072d340309c5d457508f76866.jpg" alt="" style="height: 80px; aspect-ratio: 16/9;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">등록일자</th>
+                                            <td>2026.07.31</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">활성여부</th>
+                                            <td>활성</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">내용 요약</th>
+                                            <td>
+                                                글로벌 유제품 및 식음료 기업 M사는 분산된 물류 시스템을 SAP EWM으로 통합하고 모바일 기반 실시간 물류 체계를 구축하여 공급망 효율성과 가시성을 강화하였습니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">내용</th>
+                                            <td>
+                                                <div style="display: flex; align-items: center; justify-content: center; height: 1000px;background: #eee;">editor view</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">첨부파일</th>
+                                            <td>
+                                                <a class="text-black" href="#none">제43기 정기주주총회 소집공고 및 통지.zip</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-end">
+                            <button type="button" class="btn btn-secondary float-start">목록</button>
+                            <button type="button" class="btn btn-danger">삭제</button>
+                            <button type="button" class="btn btn-primary">수정</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tabulator.min.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <!-- //Scripts -->
+
+</body>
+
+</html>
