@@ -89,7 +89,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-borderless table-border-top align-middle">
+                                <table class="table table-border-top align-middle">
                                     <colgroup>
                                         <col style="width: 20%;">
                                         <col style="width: *;">
@@ -167,36 +167,6 @@
     <script src="../assets/js/adminlte.js"></script>
     <!-- //Scripts -->
 
-    <!-- grid -->
-    <script>
-        let tabledata = [
-            { no: "1", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
-            { no: "2", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
-            { no: "3", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
-            { no: "4", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
-            { no: "5", name: "홍**", company: "ABC 회사", category1: "MANAGED SERVICE", category2: "AWS (Amazon Web Services)", file_name: "국내 유일 기업용 렌탈 IT 시스템 WRMS - 구축형", date: "2026-05-14", },
-        ];
-        
-        let table = new Tabulator("#example-table", {
-            data: tabledata,
-            layout: "fitColumns",       // columns expand to fill the available width
-            pagination: true,
-            paginationSize: 10,
-            paginationCounterElement:".page-count",
-            paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
-                return `<span>현재 페이지 : ${currentPage} / ${totalPages}</span><span>전체글 : ${totalRows}개</span>`;
-            },
-            columns: [
-                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "이름", field: "name", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./bizDataDownDtl.html"} },
-                { title: "회사", field: "company", width: 200, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "메뉴1", field: "category1", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "메뉴2", field: "category2", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "textarea", },
-                { title: "다운로드 자료명", field: "file_name", headerHozAlign: "center", headerSort: false, },
-                { title: "다운로드 날짜", field: "date", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-            ],
-        });
-    </script>
 </body>
 
 </html>

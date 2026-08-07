@@ -129,7 +129,11 @@
     <!-- grid -->
     <script>
         let tabledata = [
-            { no: "1", com: "77", empNo: "77104244", userName: "홍길동", userId: "77104244", auth: "슈퍼 관리자", date: "2026-05-14", display: true },
+            { no: "1", edmName: "2025_edu_PowerPlatform1", name: "홍**", companyName: "써밋에너지얼라이언스 유한회사", companyPosition: "부장", department: "영업팀", used: "사용처1", contactType: "방문 상담", agree: "Y", date: "2024-06-01" },
+            { no: "2", edmName: "2025_edu_PowerPlatform2", name: "김**", companyName: "웅진", companyPosition: "과장", department: "마케팅팀", used: "사용처2", contactType: "전화 상담", agree: "N", date: "2024-06-02" },
+            { no: "3", edmName: "2025_edu_PowerPlatform3", name: "이**", companyName: "웅진", companyPosition: "대리", department: "기획팀", used: "사용처3", contactType: "방문 상담", agree: "Y", date: "2024-06-03" },
+            { no: "4", edmName: "2025_edu_PowerPlatform4", name: "박**", companyName: "웅진", companyPosition: "사원", department: "개발팀", used: "사용처4", contactType: "전화 상담", agree: "N", date: "2024-06-04" },
+            { no: "5", edmName: "2025_edu_PowerPlatform5", name: "최**", companyName: "웅진", companyPosition: "부장", department: "영업팀", used: "사용처5", contactType: "방문 상담", agree: "Y", date: "2024-06-05" },
         ];
 
         let table = new Tabulator("#example-table", {
@@ -143,13 +147,15 @@
             },
             columns: [
                 { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "회사코드", field: "com", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사번", field: "empNo", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "이름", field: "userName", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./authFrm.html"} },
-                { title: "ID", field: "userId", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "관리자권한", field: "auth", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "생성일자", field: "date", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
-                { title: "사용유무", field: "display", headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: function(cell) { return cell.getValue() === true ? "사용" : "미사용"; } },
+                { title: "eDM명", field: "edmName", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "이름", field: "name", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./edmDtl.html"} },
+                { title: "회사명", field: "companyName", width: 300, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "직급", field: "companyPosition", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "부서명", field: "department", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "사용처", field: "used", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "추가상담", field: "contactType", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "정보이용동의<br>(선택)", field: "agree", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", titleFormatter: "html", },
+                { title: "등록일", field: "date", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
             ],
         });
     </script>

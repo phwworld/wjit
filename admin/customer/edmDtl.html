@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웅진IT 관리자</title>
-    <link rel="icon" href="./assets/img/favicon.ico">
-    <link rel="stylesheet" href="./assets/css/overlayscrollbars.min.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/css/tabulator.min.css">
-    <link rel="stylesheet" href="./assets/css/adminlte.css">
-    <link rel="stylesheet" href="./assets/css/flatpickr.min.css">
-    <link rel="stylesheet" href="./assets/css/customize.css">
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/customize.css">
 </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -47,7 +47,7 @@
             <!-- logo -->
             <div class="sidebar-brand">
                 <a href="#none" class="brand-link">
-                    <img src="./assets/img/logo.png" alt="woongjin" class="brand-image">
+                    <img src="../assets/img/logo.png" alt="woongjin" class="brand-image">
                 </a>
             </div>
             <!-- //logo -->
@@ -58,8 +58,8 @@
                     <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
                         id="navigation">
                         <li class="nav-item">
-                            <a href="layout.html" class="nav-link">
-                                <p>layout</p>
+                            <a href="../page_list.html" class="nav-link active">
+                                <p>page_list</p>
                             </a>
                         </li>
                     </ul>
@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3 class="mb-0">Board View</h3>
+                            <h3 class="mb-0">문의하기<span class="page-title-info">(eDM)</span></h3>
                         </div>
                     </div>
                 </div>
@@ -89,13 +89,12 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <!-- <table class="table table-bordered align-middle"> -->
                                 <table class="table table-border-top align-middle">
                                     <colgroup>
-                                        <col style="width: 15%;">
-                                        <col style="width: 35%;">
-                                        <col style="width: 15%;">
-                                        <col style="width: 35%;">
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
                                     </colgroup>
                                     <tbody>
                                         <tr>
@@ -106,41 +105,41 @@
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">이름</th>
-                                            <td>TEST</td>
+                                            <td>홍길동</td>
                                             <th class="bg-light text-center fw-bold">연락처</th>
-                                            <td>0211111111</td>
+                                            <td>01012345678</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">이메일</th>
-                                            <td>TEST@gmail.com</td>
+                                            <td>hong@example.com</td>
                                             <th class="bg-light text-center fw-bold">회사</th>
-                                            <td>TEST</td>
+                                            <td>회사</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">부서명</th>
-                                            <td>T</td>
+                                            <td>부서명</td>
                                             <th class="bg-light text-center fw-bold">직급</th>
-                                            <td>T</td>
+                                            <td>직급</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">회사소재지</th>
-                                            <td>-</td>
+                                            <td>회사소재지</td>
                                             <th class="bg-light text-center fw-bold">자료사용처</th>
-                                            <td></td>
+                                            <td>자료사용처</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">추가상담</th>
-                                            <td colspan="3">방문 상담</td>
+                                            <td colspan="3">추가상담</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">상담내용</th>
-                                            <td colspan="3">TEST</td>
+                                            <td colspan="3">상담내용</td>
                                         </tr>
                                         <tr>
                                             <th class="bg-light text-center fw-bold">개인정보수집이용동의(필수)</th>
                                             <td>Y</td>
-                                            <th class="bg-light text-center fw-bold">마케팅 광고, 취급위탁, 정보이전(선택)</th>
-                                            <td>Y</td>
+                                            <th class="bg-light text-center fw-bold">마케팅 광고, 취급탁, 정보이전(선택)</th>
+                                            <td>N</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -159,15 +158,13 @@
     </div>
 
     <!-- Scripts -->
-    <script src="./assets/js/overlayscrollbars.browser.es6.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/tabulator.min.js"></script>
-    <script src="./assets/js/adminlte.js"></script>
-    <script src="./assets/js/flatpickr.min.js"></script>
-    <script src="./assets/js/flatpickr_ko.js"></script>
+    <script src="../assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tabulator.min.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
     <!-- //Scripts -->
-     
+
 </body>
 
 </html>
