@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT 관리자</title>
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="../assets/img/logo.png" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="../page_list.html" class="nav-link active">
+                                <p>page_list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">문의하기<span class="page-title-info">(국문)</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-border-top align-middle">
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">이름</th>
+                                            <td>홍길동</td>
+                                            <th class="bg-light text-center fw-bold">등록일</th>
+                                            <td>2026-05-20</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">연락처</th>
+                                            <td>01022477044</td>
+                                            <th class="bg-light text-center fw-bold">이메일</th>
+                                            <td>hong@example.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">회사(소속)</th>
+                                            <td>웅진IT</td>
+                                            <th class="bg-light text-center fw-bold">직급</th>
+                                            <td>매니저</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">상담방법</th>
+                                            <td>방문상담 희망</td>
+                                            <th class="bg-light text-center fw-bold">유입경로</th>
+                                            <td>기고객사</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">문의구분</th>
+                                            <td colspan="3"><strong>IT솔루션</strong> | SAP S/4HANA</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">이용동의</th>
+                                            <td colspan="3">
+                                                <div class="col d-flex flex-column">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input opacity-100" type="checkbox" value="" name="agree" id="agree1" disabled checked>
+                                                        <label class="form-check-label opacity-100" for="agree1">
+                                                            개인정보 수집 및 이용에 동의합니다. (필수)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input opacity-100" type="checkbox" value="" name="agree" id="agree2" disabled>
+                                                        <label class="form-check-label opacity-100" for="agree2">
+                                                            마케팅 및 광고를 위한 개인정보 수집 및 이용에 동의합니다. (선택)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input opacity-100" type="checkbox" value="" name="agree" id="3" disabled>
+                                                        <label class="form-check-label opacity-100" for="3">
+                                                             개인정보의 취급위탁에 동의합니다. (선택)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">문의 제목</th>
+                                            <td colspan="3">SAP BTP 관련 검토요청 </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">문의 내용</th>
+                                            <td colspan="3">
+                                                BTP 관련 도입 사례와 당사에서 적용 가능한지, 그리고 견적 검토를 받고싶어 연락드렸습니다.<br>
+                                                가급적 메일로 연락부탁드립니다.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">첨부파일</th>
+                                            <td colspan="3">
+                                                <a class="text-black" href="#none">제43기 정기주주총회 소집공고 및 통지.zip</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-responsive mt-3">
+                                <table class="table table-border-top align-middle">
+                                    <colgroup>
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
+                                        <col style="width: 20%;">
+                                        <col style="width: 30%;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">답변제목</th>
+                                            <td>(주)웅진 홈페이지를 방문해 주셔서 감사합니다. 	</td>
+                                            <th class="bg-light text-center fw-bold">답변일</th>
+                                            <td>2026-05-20</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">답변내용(메일)</th>
+                                            <td colspan="3">
+                                                안녕하세요.<br><br>
+
+                                                ㈜웅진 홈페이지를 방문해 주셔서 감사합니다.<br>
+                                                문의사항에 대해 담당자에게 내용을 전달했으며 <br>
+                                                빠른 시간 내에 고객님께 연락 드릴 수 있도록 하겠습니다.<br><br>
+
+                                                감사합니다.<br>
+                                                ㈜웅진 배상
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="bg-light text-center fw-bold">첨부파일</th>
+                                            <td colspan="3">
+                                                <a class="text-black" href="#none">제43기 정기주주총회 소집공고 및 통지.zip</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-end">
+                            <button type="button" class="btn btn-secondary">목록</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tabulator.min.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <!-- //Scripts -->
+
+</body>
+
+</html>
