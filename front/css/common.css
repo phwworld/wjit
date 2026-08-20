@@ -69,6 +69,11 @@ body {
   width: 100%;
 }
 
+.flex-cont {
+  display: flex;
+  flex-direction: column;
+}
+
 /* layout */
 header {
   position: sticky;
@@ -213,6 +218,11 @@ main .title.aicc {
     padding: 0 4rem;
   }
 
+  .flex-cont {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   /* layout */
   header {
     height: 10rem;
@@ -325,6 +335,11 @@ main .title.aicc {
   .inner-cont {
     width: 1440px;
     margin: 0 auto;
+  }
+
+  .flex-cont {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   /* layout */
