@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT 관리자</title>
+    <link rel="icon" href="../assets/img/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-icons.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/tabulator.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/tabulator_bootstrap5.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.css">
+    <link rel="stylesheet" href="../assets/css/customize.css">
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+        <!-- header -->
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item user-menu d-flex align-items-center me-3">
+                        홍길동
+                    </li>
+                    <li>
+                        <a href="#none" class="btn btn-secondary btn-sm float-end">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="btn-logout fw-bolder">로그아웃</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //header -->
+
+        <!-- menu -->
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <!-- logo -->
+            <div class="sidebar-brand">
+                <a href="#none" class="brand-link">
+                    <img src="../assets/img/logo.png" alt="woongjin" class="brand-image">
+                </a>
+            </div>
+            <!-- //logo -->
+
+            <!-- menu -->
+            <div class="sidebar-wrapper">
+                <nav class="mt-2" aria-label="Main navigation">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" data-accordion="false"
+                        id="navigation">
+                        <li class="nav-item">
+                            <a href="../page_list.html" class="nav-link active">
+                                <p>page_list</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- //menu -->
+        </aside>
+        <!-- //menu -->
+
+        <!-- main -->
+        <main class="app-main">
+            <!-- title -->
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="mb-0">문의하기<span class="page-title-info">(eDM)</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //title -->
+
+            <!-- content -->
+            <div class="app-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row justify-content-between mb-2">
+                                <div class="col-8">
+                                    <div class="page-count"></div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="row g-1">
+                                        <div class="d-flex">
+                                            <select class="form-select form-select-sm me-2" style="width: 40%;">
+                                                <option selected>선택</option>
+                                                <option>eDM명</option>
+                                            </select>
+
+                                            <input type="text" class="form-control form-control-sm me-2">
+
+                                            <button type="button" class="btn btn-dark btn-sm text-nowrap">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="example-table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //content -->
+        </main>
+        <!-- //main -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/tabulator.min.js"></script>
+    <script src="../assets/js/adminlte.js"></script>
+    <!-- //Scripts -->
+
+    <!-- grid -->
+    <script>
+        let tabledata = [
+            { no: "1", edmName: "2025_edu_PowerPlatform1", name: "홍**", companyName: "써밋에너지얼라이언스 유한회사", companyPosition: "부장", department: "영업팀", used: "사용처1", contactType: "방문 상담", agree: "Y", date: "2024-06-01" },
+            { no: "2", edmName: "2025_edu_PowerPlatform2", name: "김**", companyName: "웅진", companyPosition: "과장", department: "마케팅팀", used: "사용처2", contactType: "전화 상담", agree: "N", date: "2024-06-02" },
+            { no: "3", edmName: "2025_edu_PowerPlatform3", name: "이**", companyName: "웅진", companyPosition: "대리", department: "기획팀", used: "사용처3", contactType: "방문 상담", agree: "Y", date: "2024-06-03" },
+            { no: "4", edmName: "2025_edu_PowerPlatform4", name: "박**", companyName: "웅진", companyPosition: "사원", department: "개발팀", used: "사용처4", contactType: "전화 상담", agree: "N", date: "2024-06-04" },
+            { no: "5", edmName: "2025_edu_PowerPlatform5", name: "최**", companyName: "웅진", companyPosition: "부장", department: "영업팀", used: "사용처5", contactType: "방문 상담", agree: "Y", date: "2024-06-05" },
+        ];
+
+        let table = new Tabulator("#example-table", {
+            data: tabledata,
+            layout: "fitColumns",       // columns expand to fill the available width
+            pagination: true,
+            paginationSize: 10,
+            paginationCounterElement:".page-count",
+            paginationCounter: function (pageSize, currentRow, currentPage, totalRows, totalPages) {
+                return `<span>현재 페이지 : ${currentPage} / ${totalPages}</span><span>전체글 : ${totalRows}개</span>`;
+            },
+            columns: [
+                { title: "번호", field: "no", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "eDM명", field: "edmName", headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "이름", field: "name", width: 80, headerHozAlign: "center", headerSort: false, hozAlign: "center", formatter: "link", formatterParams: {url:"./edmDtl.html"} },
+                { title: "회사명", field: "companyName", width: 300, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "직급", field: "companyPosition", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "부서명", field: "department", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "사용처", field: "used", width: 150, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "추가상담", field: "contactType", width: 100, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+                { title: "정보이용동의<br>(선택)", field: "agree", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", titleFormatter: "html", },
+                { title: "등록일", field: "date", width: 120, headerHozAlign: "center", headerSort: false, hozAlign: "center", },
+            ],
+        });
+    </script>
+</body>
+
+</html>

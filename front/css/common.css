@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --primary: #15ABE6;
+  --text-point:  #0096D0;
+  --text-point2: #1380CE;
+  --text-body: #202020;
+  --text-secondary: #777;
+  --border-default: #d2d8e3;
+  --bg-surface: #f5f6f8;
+}
+
+html {
+  font-size: 62.5%;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+input[type="text"],
+button {
+  font-family: 'Pretendard';
+}
+
+.font-gmarketsans {
+  font-family: 'GmarketSans';
+}
+
+.blind {
+  font-size: 0;
+  line-height: 0;
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-body);
+}
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+body {
+  font-family: 'Pretendard';
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+/* button */
+.btn-large {
+  display: inline-block;
+  width: 100%;
+  height: 4.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 4.8rem;
+}
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+}
+.btn-area {
+  margin-top: 5rem;
+}
+
+.inner-cont {
+  width: 100%;
+}
+
+/* layout */
+header {
+  position: sticky;
+  top: 0;
+  height: 5.6rem;
+  border-bottom: 1px solid #686C78;
+  background-color: #fff;
+  z-index: 10;
+}
+header .inner-cont {
+  display: flex;
+  align-items: center;
+  padding: 0 2.4rem;
+  justify-content: space-between;
+}
+header h1 a {
+  vertical-align: top;
+}
+header h1 img {
+  width: 6.9rem;
+  height: 3.6rem;
+}
+header .pc-gnb,
+header .shortcut-menu {
+  display: none;
+}
+header .mo-gnb {
+  display: none;
+}
+header .function-menu {
+  display: flex;
+  gap: 2.9rem;
+}
+header .function-menu button {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-size: 100% 100% !important;
+}
+header .function-menu .search {
+  background: url(../img/common/icon_search.svg) no-repeat;
+}
+header .function-menu .lang {
+  background: url(../img/common/icon_lang.svg) no-repeat;
+}
+header .function-menu .mo-menu {
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/common/icon_mobile_menu.svg) no-repeat;
+}
+
+main {
+  padding-bottom: 12rem;
+}
+main .content {
+  position: relative;
+  background-color: #fff;
+  z-index: 20;
+}
+
+footer {
+  background-color: #333;
+}
+
+/* title */
+main .title {
+  padding: 6rem 2.4rem;
+  text-align: center;
+}
+main .title .tit-info1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+main .title h3 {
+  margin: 1.9rem 0;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.2;
+}
+main .title h3 span {
+  display: block;
+  font-weight: 300;
+}
+main .title .tit-info2 {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+main .title.aicc {
+  background: url(../img/business/bg_title_aicc_mo.svg) no-repeat;
+  background-size: 100% auto;
+}
+
+/* content */
+.content .inner-cont {
+  padding: 0 2.4rem;
+}
+
+.c-tit {
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+.s-tit {
+  margin-bottom: 2rem;
+  border-top: 1px dashed #e1e7ee;
+  font-size: 2rem;
+}
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+/* @media (min-width: 768px) and (max-width: 1366px) { */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  body {
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
+  }
+
+  br.mo {
+    display: none;
+  }
+
+  /* button */
+  .btn-large {
+    min-width: 32rem;
+    width: inherit;
+    height: 6.4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 6.4rem;
+  }
+  .btn-area {
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  .inner-cont {
+    padding: 0 4rem;
+  }
+
+  /* layout */
+  header {
+    height: 10rem;
+  }
+  header .inner-cont {
+    height: 100%;
+  }
+  header h1 img {
+    width: 10.8rem;
+    height: 5.6rem;
+  }
+  header .pc-gnb,
+  header .shortcut-menu {
+    display: block;
+  }
+  header .mo-gnb {
+    display: none;
+  }
+  header .r-cont {
+    display: flex;
+    align-items: center;
+  }
+  header .shortcut-menu a {
+    margin-right: 4rem;
+    font-size: 1.8rem;
+    color: #6c7181;
+    line-height: 2rem;
+  }
+  header .function-menu {
+    gap: 4rem;
+  }
+  header .function-menu button {
+    width: 2rem;
+    height: 2rem;
+  }
+  header .function-menu .mo-menu {
+    display: none;
+  }
+
+  main {
+    padding-bottom: 13rem;
+  }
+
+  /* title */
+  main .title {
+    padding: 12rem 0 10rem;
+  }
+  main .title .tit-info1 {
+    font-size: 2.8rem;
+  }
+  main .title h3 {
+    margin: 3rem 0 2.5rem;
+    font-size: 8.4rem;
+  }
+  main .title h3 span {
+    display: inline-block;
+  }
+  main .title .tit-info2 {
+    font-size: 1.8rem;
+  }
+
+  main .title.aicc {
+    background: none;
+  }
+
+  /* content */
+  .c-tit {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  
+  .s-tit {
+    padding: 10rem 0 0;
+    margin: 10rem 0 1rem;
+    font-size: 3.2rem;
+  }
+
+}
+
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1440px) {
+  body {
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
+  }
+
+  br.mo {
+    display: none;
+  }
+
+  /* button */
+  .btn-large {
+    min-width: 32rem;
+    width: inherit;
+    height: 6.4rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 6.4rem;
+  }
+  .btn-area {
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  .inner-cont {
+    width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* layout */
+  header {
+    height: 10rem;
+  }
+  header .inner-cont {
+    height: 100%;
+  }
+  header h1 img {
+    width: 10.8rem;
+    height: 5.6rem;
+  }
+  header .pc-gnb,
+  header .shortcut-menu {
+    display: block;
+  }
+  header .mo-gnb {
+    display: none;
+  }
+  header .r-cont {
+    display: flex;
+    align-items: center;
+  }
+  header .shortcut-menu a {
+    margin-right: 4rem;
+    font-size: 1.8rem;
+    color: #6c7181;
+    line-height: 2rem;
+  }
+  header .function-menu {
+    gap: 4rem;
+  }
+  header .function-menu button {
+    width: 2rem;
+    height: 2rem;
+  }
+  header .function-menu .mo-menu {
+    display: none;
+  }
+
+  main {
+    padding-bottom: 13rem;
+  }
+
+  /* title */
+  main .title {
+    padding: 12rem 0 10rem;
+  }
+  main .title .tit-info1 {
+    font-size: 2.8rem;
+  }
+  main .title h3 {
+    margin: 3rem 0 2.5rem;
+    font-size: 8.4rem;
+  }
+  main .title h3 span {
+    display: inline-block;
+  }
+  main .title .tit-info2 {
+    font-size: 1.8rem;
+  }
+
+  main .title.aicc {
+    background: none;
+  }
+
+  /* content */
+  .content .inner-cont {
+    padding: 0;
+  }
+
+  .c-tit {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  
+  .s-tit {
+    padding: 10rem 0 0;
+    margin: 10rem 0 1rem;
+    font-size: 3.2rem;
+  }
+
+}

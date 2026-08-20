@@ -1,0 +1,792 @@
+@charset "utf-8";
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+/* tab menu, category */
+.tab-list,
+.category-list {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    height: 6.1rem;
+    margin: 0 -2.4rem 6rem;
+    border-bottom: 1px solid var(--primary);
+    overflow-x: scroll;
+}
+.category-list {
+    margin: 0 -2.4rem 4rem;
+}
+.tab-list button,
+.category-list button {
+    min-width: calc(100vw / 4);
+    border: 1px solid #f0f0f0;
+    color: #202020;
+    background-color: #fff;
+}
+.tab-list button.act,
+.category-list button.act {
+    border-color: #00aeef;
+    color: var(--white);
+    font-weight: 700;
+    background-color: var(--primary);
+    z-index: 1;
+}
+.category-list.col3 button {
+    min-width: calc(100vw / 3);
+}
+.category-list.col5 button {
+    min-width: calc(100vw / 5);
+}
+
+.tab-cont {
+    padding-top: 6rem;
+    margin-top: 6rem;
+    border-top: 1px solid #b5b7bd;
+}
+
+.tab-list + .tab-cont {
+    padding: 0;
+    margin-top: 0;
+    border: 0;
+}
+
+/* board search */
+.board-search > form {
+    display: flex;
+}
+.board-search input[type="text"] {
+    width: calc(100% - 4.8rem);
+    padding-left: 1.6rem;
+    border: 1px solid var(--text-secondary);
+    border-right: 0;
+    font-size: 1.6rem;
+}
+.board-search button {
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: var(--primary);
+    background-image: url(../img/common/icon_board_search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3.2rem;
+}
+
+/* board list */
+.board-list {
+    margin-top: 4rem;
+    padding: 4rem 0;
+    border: solid var(--border-default);
+    border-width: 1px 0;
+}
+.board-list .board-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    padding-top: 6rem;
+    border-top: 1px dashed var(--border-default);
+}
+.board-list .board-item:first-child {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.board-list .board-item > span,
+.board-list .board-item > span > span {
+    display: inline-block;
+}
+.board-list .thumb {
+    margin-bottom: 3rem;
+}
+.board-list .thumb img {
+    width: 100%;
+}
+.board-list .cont-txt1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-point);
+}
+.board-list .cont-txt2 {
+    width: 100%;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-body);
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.board-list .cont-txt3 {
+    margin-bottom: 3rem;
+    color: var(--text-body);
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;     
+    overflow: hidden;   
+}
+.board-list .cont-txt4 {
+    font-size: 1.6rem;
+    color: var(--text-body);
+}
+.board-list.type2 {
+    padding: 0;
+}
+.board-list.type2 .board-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 0;
+    margin-top: 0;
+}
+.board-list.type2 .cont {
+    width: calc(100% - 6.8rem);
+}
+.board-list.type2 .btn {
+    width: 4.8rem;
+}
+.board-list.type2 .cont-txt1 {
+    margin-bottom: 0;
+    color: var(--text-body);
+    font-weight: 600;
+}
+.board-list.type2 .btn-down {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 1px solid var(--border-default);
+    background: url(../img/common/icon_down.svg) no-repeat center;
+}
+.board-list.type3 .cont-txt1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;     
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.board-list.type3 .cont-txt2 {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+    white-space: inherit;
+    text-overflow: initial;
+}
+.board-list.type3 .cont-txt2 span ~ span {
+    margin-left: 1rem;
+}
+.board-list.type3 .btn-link {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 1px solid var(--border-default);
+    background: url(../img/common/icon_link.svg) no-repeat center;
+}
+
+/* board more */
+.board-more button span::after {
+    content: "";
+    display: inline-block;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 1rem;
+    background: url(../img/common/icon_board_more.svg) no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+/* pagination */
+.pagination {
+    display: none;
+}
+
+/* board view */
+.board-view {
+    margin-top: 6rem;
+}
+.board-view .view-title {
+    position: relative;
+    padding-bottom: 4rem;
+}
+.board-view .view-title .title-txt1 {
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-point);
+}
+.board-view .view-title .title-txt2 {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.board-view .view-title .title-txt3 {
+    font-size: 1.6rem;
+}
+.view-cont {
+    padding: 8rem 0;
+    border: 1px solid var(--border-default);
+    border-width: 1px 0;
+}
+
+/* cont-type1 */
+.cont-type1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+.cont-type1 .box-tit {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--text-body); 
+}
+.cont-type1 .box-cont {
+    padding: 0 3rem 5rem; 
+    background-color: var(--bg-surface);
+}
+.cont-type1 .box-cont li {
+    position: relative;
+    padding-left: 1.4rem;
+}
+.cont-type1 .box-cont li::before {
+    content: "";
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    width: .4rem;
+    height: .4rem;
+    background: var(--text-point);
+}
+
+/* cont-type2 */
+.cont-type2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.cont-type2 > div {
+    padding: .8rem;
+    background-color: var(--bg-surface);
+}
+.cont-type2 > div > div {
+    padding: 3rem 2rem;
+    border: 1px dashed var(--border-default);
+    background-color: var(--white);
+}
+.cont-type2 .box-tit {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--text-point);
+    font-weight: 700;
+}
+.cont-type2 .box-cont li {
+    position: relative;
+    padding-left: 1.4rem;
+}
+.cont-type2 .box-cont li::before {
+    content: "";
+    position: absolute;
+    top: 1.1rem;
+    left: 0;
+    width: .4rem;
+    height: .4rem;
+    background: var(--text-point);
+}
+
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+/* @media (min-width: 768px) and (max-width: 1366px) { */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    /* tab menu */
+    .tab-list,
+    .category-list {
+        height: 7.4rem;
+        border-width: 2px;
+        margin: 0 0 10rem;
+        overflow-x: hidden;
+    }
+    .tab-list button,
+    .category-list button {
+        min-width: initial !important;
+        flex: 1;
+        font-size: 2.4rem;
+    }
+
+    .tab-cont {
+        padding-top: 10rem;
+        margin-top: 10rem;
+    }
+
+    /* board search */
+    .board-search > form {
+        justify-content: flex-end;
+    }
+    .board-search input[type="text"] {
+        width: calc(45% - 6.8rem);
+        padding-left: 3rem;
+        font-size: 2rem;
+    }
+    .board-search button {
+        width: 6.8rem;
+        height: 6.4rem;
+        background-size: 4rem;
+    }
+
+    /* board list */
+    .board-list {
+        margin-top: 5rem;
+    }
+    .board-list .board-item {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+        padding-top: 4rem;
+        border-top: 1px solid var(--border-default);
+    }
+    .board-list .thumb {
+        margin: 0 8rem 0 0;
+    }
+    .board-list .thumb img {
+        width: 48rem;
+    }
+    .board-list .cont {
+        padding-right: 4rem;
+    }
+    .board-list .cont-txt1 {
+        margin-bottom: 3.2rem;
+        font-size: 2rem;
+    }
+    .board-list .cont-txt2 {
+        margin-bottom: 2.4rem;
+        font-size: 2.4rem;
+        line-height: 1.4;
+    }
+    .board-list .cont-txt3 {
+        min-height: 11rem;
+        margin-bottom: 1.6rem;
+        color: var(--text-body);
+        font-size: 1.8rem;
+    }
+    .board-list .cont-txt4 {
+        font-size: 1.6rem;
+        color: var(--text-body);
+    }
+    .board-list.type2 {
+        padding: 0;
+    }
+    .board-list.type2 .board-item {
+        padding: 2rem 0; 
+    }
+    .board-list.type2 .cont {
+        width: calc(100% - 16.7rem);
+    }
+    .board-list.type2 .btn {
+        width: 15.7rem;
+    }
+    .board-list.type2 .cont-txt1 {
+        margin-bottom: 0;
+        color: var(--text-body);
+        font-weight: 600;
+    }
+    .board-list.type2 .btn-down {
+        display: block;
+        width: 15.7rem;
+        height: 5rem;
+        border: 1px solid var(--border-default);
+        background: none;
+    }
+    .board-list.type2 .btn-down .blind {
+        font-size: 1.8rem;
+        line-height: 5rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+    .board-list.type2 .btn-down .blind::before {
+        content: "";
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 1rem;
+        background: url(../img/common/icon_down.svg) no-repeat center;
+        vertical-align: middle;
+    }
+    .board-list.type3 .cont {
+        position: relative;
+        padding-top: 2.6rem;
+    }
+    .board-list.type3 .cont-txt2 {
+        position: absolute;
+        top: .2rem;
+        font-size: 1.6rem;
+    }
+    .board-list.type3 .btn-link {
+        display: block;
+        width: 15.7rem;
+        height: 5rem;
+        border: 1px solid var(--border-default);
+        text-align: center;
+        background: none;
+    }
+    .board-list.type3 .btn-link .blind {
+        font-size: 1.8rem;
+        line-height: 5rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+    .board-list.type3 .btn-link .blind::before {
+        content: "";
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 1rem;
+        background: url(../img/common/icon_link.svg) no-repeat center top;
+        vertical-align: middle;
+    }
+
+    /* board more */
+    .board-more {
+        display: none;
+    }
+    
+    /* pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: .4rem ;
+        margin-top: 6rem;
+    }
+    .pagination a {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.8rem;
+        color: var(--text-body);
+        text-align: center;
+        line-height: 3rem;
+    }
+    .pagination a.act {
+        font-weight: 600;
+        color: var(--primary);
+        background-color: var(--bg-surface);
+    }
+    .pagination .first {
+        background: url(../img/common/icon_pagination_first.svg) no-repeat;
+    }
+    .pagination .prev {
+        margin-right: 1.6rem;
+        background: url(../img/common/icon_pagination_prev.svg) no-repeat;
+    }
+    .pagination .next {
+        margin-left: 1.6rem;
+        background: url(../img/common/icon_pagination_next.svg) no-repeat;
+    }
+    .pagination .last {
+        background: url(../img/common/icon_pagination_last.svg) no-repeat;
+    }
+
+    /* board view */
+    .board-view {
+        margin-top: 10rem;
+    }
+    .board-view .view-title {
+        padding-bottom: 5rem;
+    }
+    .board-view .view-title .title-txt1 {
+        margin-bottom: 4rem;
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+    .board-view .view-title .title-txt2 {
+        margin-bottom: 0rem;
+        padding-right: 20rem;
+        font-size: 4rem;
+    }
+    .board-view .view-title .title-txt3 {
+        position: absolute;
+        right: 0;
+        bottom: 5.5rem;
+        font-size: 2.4rem;
+    }
+
+    /* cont-type1 */
+    .cont-type1 {
+        flex-direction: row;
+        gap: 3rem;
+        margin-top: 6rem;
+    }
+    .cont-type1 .box-cont li:before {
+        top: 1.3rem;
+    }
+
+    /* cont-type2 */
+    .cont-type2 {
+        margin-top: 6rem;
+    }
+    .cont-type2 > div {
+        padding: 4rem;
+    }
+    .cont-type2 > div > div {
+        padding: 4rem;
+    }
+    .cont-type2 .box-tit {
+        font-size: 2.4rem;
+    }
+    .cont-type2 .box-cont li:before {
+        top: 1.3rem;
+    }
+}
+
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1440px) {
+    /* tab menu, category */
+    .tab-list,
+    .category-list {
+        height: 7.4rem;
+        border-width: 2px;
+        margin: 0 0 10rem;
+        overflow-x: hidden;
+    }
+    .category-list {
+        margin: 0 0 6rem;
+    }
+    .tab-list button,
+    .category-list button {
+        min-width: initial !important;
+        flex: 1;
+        font-size: 2.4rem;
+    }
+    .tab-cont {
+        padding-top: 10rem;
+        margin-top: 10rem;
+    }
+
+    /* board search */
+    .board-search > form {
+        justify-content: flex-end;
+    }
+    .board-search input[type="text"] {
+        width: calc(45% - 6.8rem);
+        padding-left: 3rem;
+        font-size: 2rem;
+    }
+    .board-search button {
+        width: 6.8rem;
+        height: 6.4rem;
+        background-size: 4rem;
+    }
+
+    /* board list */
+    .board-list {
+        margin-top: 5rem;
+    }
+    .board-list .board-item {
+        display: flex;
+        flex-direction: row;
+        margin-top: 4rem;
+        padding-top: 4rem;
+        border-top: 1px solid var(--border-default);
+    }
+    .board-list .thumb {
+        margin: 0 8rem 0 0;
+    }
+    .board-list .thumb img {
+        width: 48rem;
+    }
+    .board-list .cont {
+        padding-right: 4rem;
+    }
+    .board-list .cont-txt1 {
+        margin-bottom: 3.2rem;
+        font-size: 2rem;
+    }
+    .board-list .cont-txt2 {
+        margin-bottom: 2.4rem;
+        font-size: 2.4rem;
+        line-height: 1.4;
+    }
+    .board-list .cont-txt3 {
+        min-height: 11rem;
+        margin-bottom: 1.6rem;
+        color: var(--text-body);
+        font-size: 1.8rem;
+    }
+    .board-list .cont-txt4 {
+        font-size: 1.6rem;
+        color: var(--text-body);
+    }
+    .board-list.type2 {
+        padding: 0;
+    }
+    .board-list.type2 .board-item {
+        padding: 2rem 0; 
+    }
+    .board-list.type2 .cont {
+        width: calc(100% - 16.7rem);
+    }
+    .board-list.type2 .btn {
+        width: 15.7rem;
+    }
+    .board-list.type2 .cont-txt1 {
+        margin-bottom: 0;
+        color: var(--text-body);
+        font-weight: 600;
+    }
+    .board-list.type2 .btn-down {
+        display: block;
+        width: 15.7rem;
+        height: 5rem;
+        border: 1px solid var(--border-default);
+        background: none;
+    }
+    .board-list.type2 .btn-down .blind {
+        font-size: 1.8rem;
+        line-height: 5rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+    .board-list.type2 .btn-down .blind::before {
+        content: "";
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 1rem;
+        background: url(../img/common/icon_down.svg) no-repeat center top;
+        vertical-align: middle;
+    }
+    .board-list.type3 .cont {
+        position: relative;
+        padding-top: 2.6rem;
+    }
+    .board-list.type3 .cont-txt2 {
+        position: absolute;
+        top: .2rem;
+        font-size: 1.6rem;
+    }
+    .board-list.type3 .btn-link {
+        display: block;
+        width: 15.7rem;
+        height: 5rem;
+        border: 1px solid var(--border-default);
+        text-align: center;
+        background: none;
+    }
+    .board-list.type3 .btn-link .blind {
+        font-size: 1.8rem;
+        line-height: 5rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+    .board-list.type3 .btn-link .blind::before {
+        content: "";
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 1rem;
+        background: url(../img/common/icon_link.svg) no-repeat center top;
+        vertical-align: middle;
+    }
+
+    /* board more */
+    .board-more {
+        display: none;
+    }
+    
+    /* pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: .4rem ;
+        margin-top: 6rem;
+    }
+    .pagination a {
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.8rem;
+        color: var(--text-body);
+        text-align: center;
+        line-height: 3rem;
+    }
+    .pagination a.act {
+        font-weight: 600;
+        color: var(--primary);
+        background-color: var(--bg-surface);
+    }
+    .pagination .first {
+        background: url(../img/common/icon_pagination_first.svg) no-repeat;
+    }
+    .pagination .prev {
+        margin-right: 1.6rem;
+        background: url(../img/common/icon_pagination_prev.svg) no-repeat;
+    }
+    .pagination .next {
+        margin-left: 1.6rem;
+        background: url(../img/common/icon_pagination_next.svg) no-repeat;
+    }
+    .pagination .last {
+        background: url(../img/common/icon_pagination_last.svg) no-repeat;
+    }
+
+    /* board view */
+    .board-view {
+        margin-top: 10rem;
+    }
+    .board-view .view-title {
+        padding-bottom: 5rem;
+    }
+    .board-view .view-title .title-txt1 {
+        margin-bottom: 4rem;
+        font-size: 3.2rem;
+        font-weight: 600;
+    }
+    .board-view .view-title .title-txt2 {
+        margin-bottom: 0rem;
+        padding-right: 20rem;
+        font-size: 4rem;
+    }
+    .board-view .view-title .title-txt3 {
+        position: absolute;
+        right: 0;
+        bottom: 5.5rem;
+        font-size: 2.4rem;
+    }
+
+    /* cont-type1 */
+    .cont-type1 {
+        flex-direction: row;
+        gap: 3rem;
+        margin-top: 6rem;
+    }
+    .cont-type1 .box-cont li:before {
+        top: 1.3rem;
+    }
+
+    /* cont-type2 */
+    .cont-type2 {
+        margin-top: 6rem;
+    }
+    .cont-type2 > div {
+        padding: 4rem;
+    }
+    .cont-type2 > div > div {
+        padding: 4rem;
+    }
+    .cont-type2 .box-tit {
+        font-size: 2.4rem;
+    }
+    .cont-type2 .box-cont li:before {
+        top: 1.3rem;
+    }
+}
