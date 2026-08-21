@@ -1,11 +1,13 @@
 // layer popup open
 const openLayer = (popup) => {
-    let target = document.querySelector("." + popup);
+    const target = document.querySelector(".layer-pop." + popup);
+    if (!target) return;
     target.classList.add("act");
 }
 
 // layer popup close
-const closeLayer = (e) => {
-    let target = e.closest(".layer-pop");
+const closeLayer = (el) => {
+    const target = el.closest(".layer-pop");
+    if (!target) return;
     target.classList.remove("act");
 }
