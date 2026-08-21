@@ -325,7 +325,7 @@
                             <span class="cont-txt1">IT 게임체인저의 역할과 S/4HANA Digital Core 전략의 중요성</span>
                         </span>
                         <span class="btn">
-                            <button type="button" class="btn-down"><span class="blind">다운로드</span></button>
+                            <button type="button" class="btn-down" onclick="openLayer('download');"><span class="blind">다운로드</span></button>
                         </span>
                     </a>
 
@@ -334,7 +334,7 @@
                             <span class="cont-txt1">웅진 Microsoft Azure 리플릿</span>
                         </span>
                         <span class="btn">
-                            <button type="button" class="btn-down"><span class="blind">다운로드</span></button>
+                            <button type="button" class="btn-down" onclick="openLayer('download');"><span class="blind">다운로드</span></button>
                         </span>
                     </a>
                 </div>
@@ -376,6 +376,15 @@
         </div>
     </footer>
     <!-- //footer -->
+
+    <!-- 다운로드 레이어 -->
+    <div class="layer-pop download">
+        <div class="pop-cont">
+            
+
+            <button type="button" class="pop-close" onclick="closeLayer(this);">닫기</button>
+        </div>
+    </div>
 
     <script src="../../js/ui.js"></script>
 </body>

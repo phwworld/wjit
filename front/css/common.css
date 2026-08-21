@@ -74,6 +74,39 @@ body {
   flex-direction: column;
 }
 
+/* layer popup */
+.layer-pop {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+.layer-pop.act {
+  display: block;
+}
+.layer-pop::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .3);
+}
+.layer-pop .pop-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100vw - 4rem);
+  height: 20rem;
+  padding: 2rem;
+  background-color: var(--white);
+  transform: translate(-50%, -50%);
+}
+
 /* layout */
 header {
   position: sticky;
