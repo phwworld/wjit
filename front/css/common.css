@@ -96,7 +96,7 @@ body {
   left: 0;
   background: rgba(0, 0, 0, .3);
 }
-.layer-pop .pop-cont {
+.layer-pop .layer-inner {
   position: absolute;
   top: 50%;
   left: 50%;
