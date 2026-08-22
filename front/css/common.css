@@ -61,6 +61,10 @@ body {
   color: var(--white);
   background-color: var(--primary);
 }
+.btn-outline-default {
+  border: 1px solid #afafaf;
+  colot: var(--text-body);
+}
 .btn-area {
   margin-top: 5rem;
 }
@@ -107,14 +111,31 @@ body {
 }
 .layer-pop .pop-head {
   position: relative;
+  padding: 0 3rem 1.6rem 0;
   border-bottom: 2px solid var(--text-body);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+.layer-pop .pop-head > span {
+  margin-left: .4rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--primary)
 }
 .layer-pop .pop-head .pop-close {
   position: absolute;
   top: 0;
   right: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/common/icon_close.svg);
+  background-size: cover;
+}
+.layer-pop .pop-foot {
+  display: flex;
+  gap: .8rem;
+  margin-top: 3rem;
 }
 
 /* layout */

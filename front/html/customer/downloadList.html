@@ -381,11 +381,16 @@
     <div class="layer-pop download" style="display: block;">
         <div class="layer-inner">
             <div class="pop-head">
-                다운로드<span class="">* 표시는 필수항목 입니다.</span>
-                <button type="button" class="pop-close" onclick="closeLayer(this);">닫기</button>
+                다운로드<span>* 표시는 필수항목 입니다.</span>
+                <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
-            <div class="pop-cont"></div>
-            
+            <div class="pop-cont">
+
+            </div>
+            <div class="pop-foot">
+                <button type="button" class="btn-large btn-primary">다운로드</button>
+                <button type="button" class="btn-large btn-outline-default">취소</button>
+            </div>
         </div>
     </div>
 
