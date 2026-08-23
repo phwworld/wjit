@@ -385,7 +385,42 @@
                 <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
             <div class="pop-cont">
+                <form action="">
+                    <div class="forms-cont">
+                        <div class="form-item">
+                            <label for="name"><span class="required">*</span>이름</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        
+                        <div class="form-item">
+                            <label for="email-id"><span class="required">*</span>이메일</label>
+                            <input type="text" class="form-control inline" id="email-id" name="email-id">
+                            <span>@</span>
+                            <input type="text" class="form-control inline" name="email-domain">
+                            <select name="email-domain" id="email-domain">
+                                <option value="직접입력">직접입력</option>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="hotmail.com">hotmail.com</option>
+                                <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                <option value="kakao.com">kakao.com</option>
+                            </select>
+                        </div>
 
+                        <div class="form-item">
+                            <label for="company"><span class="required">*</span>회사(소속)</label>
+                            <input type="text" class="form-control" id="company" name="company">
+                        </div>
+
+                        <div class="form-item">
+                            <label for="level"><span class="required">*</span>직급</label>
+                            <input type="text" class="form-control" id="level" name="level">
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="pop-foot">
                 <button type="button" class="btn-large btn-primary">다운로드</button>

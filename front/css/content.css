@@ -282,6 +282,19 @@
     border-top: 1px solid var(--border-default);
 }
 
+/* forns cont */
+.forms-cont .form-item label {
+    display: block;
+    margin-bottom: .6rem;
+    padding-top: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+.forms-cont .form-item label span {
+    margin-right: .4rem;
+    color: var(--primary);
+}
+
 /* cont-type1 */
 .cont-type1 {
     display: flex;
