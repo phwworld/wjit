@@ -392,12 +392,12 @@
                             <input type="text" class="form-control" id="name" name="name">
                         </div>
                         
-                        <div class="form-item">
+                        <div class="form-item email">
                             <label for="email-id"><span class="required">*</span>이메일</label>
                             <input type="text" class="form-control inline" id="email-id" name="email-id">
-                            <span>@</span>
+                            <span class="unit">@</span>
                             <input type="text" class="form-control inline" name="email-domain">
-                            <select name="email-domain" id="email-domain">
+                            <select class="form-select inline" name="email-domain" id="email-domain">
                                 <option value="직접입력">직접입력</option>
                                 <option value="gmail.com">gmail.com</option>
                                 <option value="naver.com">naver.com</option>
@@ -419,6 +419,31 @@
                             <label for="level"><span class="required">*</span>직급</label>
                             <input type="text" class="form-control" id="level" name="level">
                         </div>
+
+                        <div class="form-item use">
+                            <span class="label"><span class="required">*</span>자료 사용처</span>
+                            <span class="form-check inline">
+                                <input type="radio" id="use1" name="use">
+                                <label for="use1">서비스 적용 검토중</label>
+                            </span>
+                            <span class="form-check inline">
+                                <input type="radio" id="use2" name="use">
+                                <label for="use2">참고자료용</label>
+                            </span>
+                        </div>
+
+                        <div class="form-item agree">
+                            <span class="label"><span class="required">*</span>이용 동의</span>
+                            <p>아래의 링크를 눌러 내용을 확인하시고 동의 여부에 체크해 주세요.</p>
+                            <span class="form-check">
+                                <input type="checkbox" id="agree1" name="agree">
+                                <label for="agree1"><a href="javascript:;" onclick="openLayer('terms1');">개인정보 수집 및 이용</a>에 동의합니다.<span class="required">(필수)</span></label>
+                            </span>
+                            <span class="form-check">
+                                <input type="checkbox" id="agree2" name="agree">
+                                <label for="agree2"><a href="javascript:;" onclick="openLayer('terms1');">마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용</a>에 동의합니다.(선택)</label>
+                            </span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -428,6 +453,31 @@
             </div>
         </div>
     </div>
+    <!-- //다운로드 레이어 -->
+
+    <!-- 약관보기 레이어(개인정보 수집 및 이용) -->
+    <div class="layer-pop terms terms1">
+        <div class="layer-inner">
+            <div class="pop-head">
+                ㈜웅진 개인정보처리(다운로드 관련)를 위한 개인정보 수집 및 이용 동의 (필수)
+                <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
+            </div>
+            <div class="pop-cont"></div>
+        </div>
+    </div>
+    <!-- //약관보기 레이어 -->
+
+     <!-- 약관보기 레이어(마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용) -->
+    <div class="layer-pop terms terms2">
+        <div class="layer-inner">
+            <div class="pop-head">
+                마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용 동의 (선택)
+                <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
+            </div>
+            <div class="pop-cont"></div>
+        </div>
+    </div>
+    <!-- //약관보기 레이어 -->
 
     <script src="../../js/ui.js"></script>
 </body>
