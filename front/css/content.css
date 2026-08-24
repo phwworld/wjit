@@ -356,9 +356,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.layer-pop.download .email > label {
-    width: 100%;
-}
 .layer-pop.download .email input[name="email-id"] {
     width: calc(100% - 2.4rem);
 }
@@ -386,7 +383,7 @@
     margin-top: 2rem;
     border-top: 1px solid var(--border-default);
 }
-.layer-pop.download .agree > p {
+.layer-pop.download .agree > div > p {
     font-size: 1.6rem;
 }
 .layer-pop.download .agree .form-check {
@@ -398,6 +395,27 @@
 .layer-pop.download .agree label a {
     color: var(--text-body);
     text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* terms layer popup */
+.layer-pop.terms .pop-cont {
+    padding: 2rem 0 0 0;
+}
+.layer-pop.terms .pop-cont li {
+    margin-top: 2.4rem;
+}
+.layer-pop.terms .pop-cont li span {
+    display: block;
+    font-weight: 700;
+}
+.layer-pop.terms .pop-cont li span.inline {
+    display: inline;
+}
+.layer-pop.terms .pop-cont li strong {
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 
@@ -665,6 +683,72 @@
     }
     .cont-type2 .box-cont li:before {
         top: 1.3rem;
+    }
+
+    /* download layer popup */
+    .layer-pop.download .form-item {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid var(--border-default);
+        background-color: var(--bg-surface);
+    }
+    .layer-pop.download .form-item > label,
+    .layer-pop.download .form-item > .label {
+        width: 16rem !important;
+        font-weight: 600;
+    }
+    .layer-pop.download .form-item > div {
+        width: calc(100% - 16rem);
+        background-color: var(--white);
+    }
+    .layer-pop.download .form-control {
+        width: 24rem !important;
+    }
+    .layer-pop.download .email {
+        justify-content: flex-start;
+        gap: .8rem;
+    }
+    .layer-pop.download .email .unit {
+        line-height: 3.8rem;
+    }
+    .layer-pop.download .email input[name="email-domain"] {
+        width: 20rem !important;
+        margin-top: 0;
+    }
+    .layer-pop.download .email select {
+        width: 18rem;
+        margin-top: 0;
+    }
+    .layer-pop.download .use .form-check {
+        margin: 0.4rem 0;
+    }
+    .layer-pop.download .use .form-check + .form-check {
+        margin-left: 3rem;
+    }
+    .layer-pop.download .agree {
+        margin-top: 0;
+        border-top: 1px solid var(--border-default);
+    }
+    .layer-pop.download .agree > div {
+        padding: 2rem 0 2rem 1rem;
+    }
+    .layer-pop.download .agree > div > p {
+        font-size: 1.8rem;
+    }
+    .layer-pop.download .agree .form-check {
+        margin-top: 1.6rem;
+    }
+    .layer-pop.download .agree .form-check + .form-check {
+        margin-top: .8rem;
+    }
+    .layer-pop.download .btn-large {
+        min-width: initial;
+        padding: 0 4rem;
+    }
+
+    /* terms layer popup */
+    .layer-pop.terms .layer-inner {
+        height: 65.5rem;
     }
 }
 
@@ -980,57 +1064,59 @@
     .layer-pop.download .form-item > label,
     .layer-pop.download .form-item > .label {
         width: 16rem !important;
+        font-weight: 600;
     }
     .layer-pop.download .form-item > div {
         width: calc(100% - 16rem);
         background-color: var(--white);
     }
+    .layer-pop.download .form-control {
+        width: 24rem !important;
+    }
     .layer-pop.download .email {
-        display: block;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .layer-pop.download .email > label {
-        width: 100%;
-    }
-    .layer-pop.download .email input[name="email-id"] {
-        width: calc(100% - 2.4rem);
+        justify-content: flex-start;
+        gap: .8rem;
     }
     .layer-pop.download .email .unit {
-        display: inline-block;
-        width: 2rem;
-        line-height: 4.2rem;
-        text-align: center;
+        line-height: 3.8rem;
     }
     .layer-pop.download .email input[name="email-domain"] {
-        width: calc(100% - 12.8rem);
-        margin-top: 0.6rem;
+        width: 20rem !important;
+        margin-top: 0;
     }
     .layer-pop.download .email select {
-        width: 12.2rem;
-        margin-top: 0.6rem;
+        width: 18rem;
+        margin-top: 0;
     }
     .layer-pop.download .use .form-check {
-        margin-top: 0.4rem;
+        margin: 0.4rem 0;
     }
     .layer-pop.download .use .form-check + .form-check {
-        margin-left: 2rem;
+        margin-left: 3rem;
     }
     .layer-pop.download .agree {
-        margin-top: 2rem;
+        margin-top: 0;
         border-top: 1px solid var(--border-default);
     }
-    .layer-pop.download .agree > p {
-        font-size: 1.6rem;
+    .layer-pop.download .agree > div {
+        padding: 2rem 0 2rem 1rem;
+    }
+    .layer-pop.download .agree > div > p {
+        font-size: 1.8rem;
     }
     .layer-pop.download .agree .form-check {
         margin-top: 1.6rem;
     }
-    .layer-pop.download .agree .required {
-        color: var(--primary);
+    .layer-pop.download .agree .form-check + .form-check {
+        margin-top: .8rem;
     }
-    .layer-pop.download .agree label a {
-        color: var(--text-body);
-        text-decoration: underline;
+    .layer-pop.download .btn-large {
+        min-width: initial;
+        padding: 0 4rem;
+    }
+
+    /* terms layer popup */
+    .layer-pop.terms .layer-inner {
+        height: 65.5rem;
     }
 }

@@ -368,6 +368,33 @@ main .title.aicc {
     text-align: center;
   }
 
+  /* form */
+  .form-control {
+    height: 3.8rem;
+    padding: 0 1.2rem;
+  }
+  .form-select {
+    height: 3.8rem;
+  }
+  .form-check input[type="checkbox"] + label,
+  .form-check input[type="radio"] + label {
+    padding-left: 3rem;
+    font-size: 1.8rem;
+  }
+  
+  /* forms cont */
+  .forms-cont .form-item > label,
+  .forms-cont .form-item > .label {
+    padding: 0 0 0 3rem;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    line-height: initial;
+    box-sizing: border-box;
+  }
+  .forms-cont .form-item > div {
+    padding: .8rem 0 .8rem 1rem;
+  }
+
   .inner-cont {
     padding: 0 4rem;
   }

@@ -378,7 +378,7 @@
     <!-- //footer -->
 
     <!-- 다운로드 레이어 -->
-    <div class="layer-pop download" style="display: block;">
+    <div class="layer-pop download">
         <div class="layer-inner">
             <div class="pop-head">
                 다운로드<span>* 표시는 필수항목 입니다.</span>
@@ -400,7 +400,7 @@
                                 <input type="text" class="form-control inline" id="email-id" name="email-id">
                                 <span class="unit">@</span>
                                 <input type="text" class="form-control inline" name="email-domain">
-                                <select class="form-select inline" name="email-domain" id="email-domain">
+                                <select class="form-select inline" name="email-domain" id="email-domain" onchange="selectEmailDomain('this', event);">
                                     <option value="직접입력">직접입력</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="naver.com">naver.com</option>
@@ -474,7 +474,15 @@
                 ㈜웅진 개인정보처리(다운로드 관련)를 위한 개인정보 수집 및 이용 동의 (필수)
                 <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
-            <div class="pop-cont"></div>
+            <div class="pop-cont">
+                <p>㈜웅진은 다운로드를 통해 해당 서비스를 이용하고자 하는 공공기관, 기업, 개인 등을 대상으로 아래와 같이 개인정보를 수집하고 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> 해당 서비스와 관련된 리소스 자료 다운로드 </li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급 </li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 다운로드 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
         </div>
     </div>
     <!-- //약관보기 레이어 -->
@@ -486,7 +494,15 @@
                 마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용 동의 (선택)
                 <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
-            <div class="pop-cont"></div>
+            <div class="pop-cont">
+                <p>본 동의문에는 ㈜웅진이 제공하는 상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등 광고성 정보를 전자적 전송매체(전화, 문자, 이메일 등)를 통해 수신할 수 있는 내용이 포함되어 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> <strong>㈜웅진 관련 마케팅 정보(상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등) 발송</strong></li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급</li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 상품, 서비스, 이벤트, 혜택 등의 다양한 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
         </div>
     </div>
     <!-- //약관보기 레이어 -->
