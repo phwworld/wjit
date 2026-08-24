@@ -72,9 +72,6 @@
             min-width: 0;
         }
 
-        .inquiry-form .category-tabs {
-            display: none;
-        }
         .inquiry-form .category-panel {
             display: block;
         }
@@ -217,44 +214,43 @@
                 width: 12rem;
             }
 
-            .inquiry-form .category-box {
-                display: flex;
-                align-items: flex-start;
-                gap: 2.4rem;
+            .inquiry-form .forms-cont .form-item.category > div {
+                padding: 0;
             }
-            .inquiry-form .category-tabs {
+            .inquiry-form .category-box {
+                display: block;
+            }
+            .inquiry-form .category-panel {
                 display: flex;
-                flex-direction: column;
+                align-items: stretch;
+            }
+            .inquiry-form .category-panel + .category-panel {
+                border-top: 1px solid var(--border-default);
+            }
+            .inquiry-form .cate-head {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 flex-shrink: 0;
                 width: 14rem;
-            }
-            .inquiry-form .category-tabs button {
-                padding: 1.6rem 1rem;
-                border: 1px solid #b8e4f5;
+                margin: 0;
+                padding: 2rem 1rem;
                 font-size: 1.8rem;
                 font-weight: 700;
                 color: var(--text-point);
-                background-color: var(--white);
-                text-align: center;
-            }
-            .inquiry-form .category-tabs button + button {
-                border-top: 0;
-            }
-            .inquiry-form .category-tabs button.act {
                 background-color: #e8f6fc;
+                text-align: center;
+                box-sizing: border-box;
             }
-            .inquiry-form .category-panels {
+            .inquiry-form .category-panel[data-panel="group"] .cate-head {
+                margin-top: 0;
+                background-color: var(--white);
+                border-right: 1px solid #b8e4f5;
+            }
+            .inquiry-form .cate-body {
                 flex: 1;
                 min-width: 0;
-            }
-            .inquiry-form .cate-head {
-                display: none;
-            }
-            .inquiry-form .category-panel {
-                display: none;
-            }
-            .inquiry-form .category-panel.act {
-                display: block;
+                padding: 1.2rem 2.4rem;
             }
             .inquiry-form .cate-group {
                 display: flex;
@@ -647,13 +643,10 @@
                             <span class="label">문의구분</span>
                             <div>
                                 <div class="category-box">
-                                    <div class="category-tabs">
-                                        <button type="button" class="act" data-tab="it">IT솔루션</button>
-                                        <button type="button" data-tab="group">웅진그룹</button>
-                                    </div>
                                     <div class="category-panels">
-                                        <div class="category-panel act" data-panel="it">
-                                            <p class="cate-head">IT 솔루션</p>
+                                        <div class="category-panel" data-panel="it">
+                                            <p class="cate-head">IT솔루션</p>
+                                            <div class="cate-body">
 
                                             <div class="cate-group">
                                                 <strong>AI</strong>
@@ -792,10 +785,12 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            </div>
                                         </div>
 
                                         <div class="category-panel" data-panel="group">
                                             <p class="cate-head">웅진그룹</p>
+                                            <div class="cate-body">
                                             <div class="cate-group">
                                                 <div class="cate-checks">
                                                     <span class="form-check">
@@ -811,6 +806,7 @@
                                                         <label for="cat-wj-outsourcing">웅진IT 아웃소싱</label>
                                                     </span>
                                                 </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -918,21 +914,6 @@
         (function () {
             const form = document.querySelector(".inquiry-form");
             if (!form) return;
-
-            form.querySelectorAll(".category-tabs button").forEach(function (btn) {
-                btn.addEventListener("click", function () {
-                    const tab = btn.getAttribute("data-tab");
-                    form.querySelectorAll(".category-tabs button").forEach(function (el) {
-                        el.classList.remove("act");
-                    });
-                    form.querySelectorAll(".category-panel").forEach(function (el) {
-                        el.classList.remove("act");
-                    });
-                    btn.classList.add("act");
-                    const panel = form.querySelector('.category-panel[data-panel="' + tab + '"]');
-                    if (panel) panel.classList.add("act");
-                });
-            });
 
             const domainSelect = form.querySelector("#email-domain");
             const domainInput = form.querySelector('input[name="email-domain"]');
