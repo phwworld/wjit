@@ -1,5 +1,10 @@
 // layer popup open
-const openLayer = (popup) => {
+const openLayer = (popup, e) => {
+    if (popup === "terms1" || popup === "terms2") {
+        e?.preventDefault();
+        e?.stopPropagation();
+    }
+
     const target = document.querySelector(".layer-pop." + popup);
     if (!target) return;
     target.classList.add("act");
