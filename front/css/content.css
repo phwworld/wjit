@@ -392,8 +392,12 @@
 .layer-pop.download .agree .form-check {
     margin-top: 1.6rem;
 }
-.layer-pop.download .agree .form-check .required {
+.layer-pop.download .agree .required {
     color: var(--primary);
+}
+.layer-pop.download .agree label a {
+    color: var(--text-body);
+    text-decoration: underline;
 }
 
 
@@ -964,5 +968,69 @@
     }
     .cont-type2 .box-cont li:before {
         top: 1.3rem;
+    }
+
+    /* download layer popup */
+    .layer-pop.download .form-item {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid var(--border-default);
+        background-color: var(--bg-surface);
+    }
+    .layer-pop.download .form-item > label,
+    .layer-pop.download .form-item > .label {
+        width: 16rem !important;
+    }
+    .layer-pop.download .form-item > div {
+        width: calc(100% - 16rem);
+        background-color: var(--white);
+    }
+    .layer-pop.download .email {
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .layer-pop.download .email > label {
+        width: 100%;
+    }
+    .layer-pop.download .email input[name="email-id"] {
+        width: calc(100% - 2.4rem);
+    }
+    .layer-pop.download .email .unit {
+        display: inline-block;
+        width: 2rem;
+        line-height: 4.2rem;
+        text-align: center;
+    }
+    .layer-pop.download .email input[name="email-domain"] {
+        width: calc(100% - 12.8rem);
+        margin-top: 0.6rem;
+    }
+    .layer-pop.download .email select {
+        width: 12.2rem;
+        margin-top: 0.6rem;
+    }
+    .layer-pop.download .use .form-check {
+        margin-top: 0.4rem;
+    }
+    .layer-pop.download .use .form-check + .form-check {
+        margin-left: 2rem;
+    }
+    .layer-pop.download .agree {
+        margin-top: 2rem;
+        border-top: 1px solid var(--border-default);
+    }
+    .layer-pop.download .agree > p {
+        font-size: 1.6rem;
+    }
+    .layer-pop.download .agree .form-check {
+        margin-top: 1.6rem;
+    }
+    .layer-pop.download .agree .required {
+        color: var(--primary);
+    }
+    .layer-pop.download .agree label a {
+        color: var(--text-body);
+        text-decoration: underline;
     }
 }
