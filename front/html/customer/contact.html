@@ -4,294 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웅진IT</title>
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/ui.css">
-    <style>
-        /* inquiry form - mobile */
-        .inquiry-form .forms-cont {
-            display: flex;
-            flex-direction: column;
-        }
-        /* .inquiry-form .form-item.name { order: 1; }
-        .inquiry-form .form-item.email { order: 2; }
-        .inquiry-form .form-item.company { order: 3; }
-        .inquiry-form .form-item.position { order: 4; }
-        .inquiry-form .form-item.phone { order: 5; }
-        .inquiry-form .form-item.category { order: 6; }
-        .inquiry-form .form-item.source { order: 7; }
-        .inquiry-form .form-item.message { order: 8; }
-        .inquiry-form .form-item.consult { order: 9; }
-        .inquiry-form .form-item.agree { order: 10; } */
-
-        .inquiry-form .form-control,
-        .inquiry-form .form-select {
-            font-family: 'Pretendard';
-            background-color: var(--white);
-        }
-        .inquiry-form textarea.form-control {
-            height: 16rem;
-            padding: 1.2rem;
-            line-height: 1.5;
-        }
-        .inquiry-form .form-control::placeholder,
-        .inquiry-form textarea.form-control::placeholder {
-            color: var(--text-secondary);
-        }
-
-        .inquiry-form .email {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .inquiry-form .email input[name="email-id"] {
-            width: calc(100% - 2.4rem);
-        }
-        .inquiry-form .email .unit {
-            display: inline-block;
-            width: 2rem;
-            line-height: 4.2rem;
-            text-align: center;
-        }
-        .inquiry-form .email input[name="email-domain"] {
-            width: calc(100% - 12.8rem);
-            margin-top: 0.6rem;
-        }
-        .inquiry-form .email .form-select {
-            width: 12.2rem;
-            margin-top: 0.6rem;
-        }
-
-        .inquiry-form .phone-fields {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .inquiry-form .phone-fields .form-control {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .inquiry-form .category-panel {
-            display: block;
-        }
-        .inquiry-form .cate-head {
-            margin: 0.8rem 0 0.4rem;
-            padding: 1rem 1.6rem;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-point);
-            background-color: #e8f6fc;
-        }
-        .inquiry-form .category-panel[data-panel="group"] .cate-head {
-            margin-top: 2.4rem;
-        }
-        .inquiry-form .cate-group {
-            margin-top: 1.6rem;
-        }
-        .inquiry-form .cate-group > strong {
-            display: block;
-            margin-bottom: 1rem;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-point);
-        }
-        .inquiry-form .cate-checks {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem 0.8rem;
-        }
-        .inquiry-form .cate-checks .form-check label {
-            word-break: keep-all;
-        }
-
-        .inquiry-form .form-item.source .form-select {
-            width: 100%;
-        }
-
-        .inquiry-form .consult-fields {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.6rem 2.4rem;
-        }
-        .inquiry-form .consult-fields .form-check + .form-check {
-            margin-top: 0;
-        }
-
-        .inquiry-form .agree > div > p {
-            margin-bottom: 1.6rem;
-            font-size: 1.4rem;
-            color: var(--text-secondary);
-        }
-        .inquiry-form .agree .form-check + .form-check {
-            margin-top: 1.6rem;
-        }
-        .inquiry-form .agree label a {
-            color: var(--text-body);
-            text-decoration: underline;
-        }
-        .inquiry-form .agree .required {
-            margin-left: 0.2rem;
-            color: var(--primary);
-        }
-
-        .inquiry-form .message-fields .form-control + .form-control {
-            margin-top: 0.8rem;
-        }
-
-        /* inquiry form - tablet / PC */
-        @media (min-width: 1025px) {
-            .inquiry-form .form-item.name { order: 1; }
-            .inquiry-form .form-item.email { order: 2; }
-            .inquiry-form .form-item.phone { order: 3; }
-            .inquiry-form .form-item.company { order: 4; }
-            .inquiry-form .form-item.position { order: 5; }
-            .inquiry-form .form-item.category { order: 6; }
-            .inquiry-form .form-item.source { order: 7; }
-            .inquiry-form .form-item.message { order: 8; }
-            .inquiry-form .form-item.consult { order: 9; }
-            .inquiry-form .form-item.agree { order: 10; }
-
-            .inquiry-form .forms-cont {
-                border-bottom: 1px solid var(--border-default);
-            }
-            .inquiry-form .form-item {
-                display: flex;
-                align-items: stretch;
-                border-top: 1px solid var(--border-default);
-                background-color: var(--bg-surface);
-            }
-            .inquiry-form .forms-cont .form-item > label,
-            .inquiry-form .forms-cont .form-item > .label {
-                display: flex;
-                align-items: center;
-                flex-shrink: 0;
-                width: 16rem;
-                margin: 0;
-                padding: 1.6rem 1.6rem 1.6rem 3rem;
-                font-size: 1.8rem;
-                line-height: 1.4;
-                box-sizing: border-box;
-            }
-            .inquiry-form .forms-cont .form-item > div {
-                width: calc(100% - 16rem);
-                padding: 1.2rem 2.4rem;
-                background-color: var(--white);
-            }
-
-            .inquiry-form .form-item.name .form-control,
-            .inquiry-form .form-item.company .form-control,
-            .inquiry-form .form-item.position .form-control,
-            .inquiry-form .form-item.source .form-select {
-                width: 40rem;
-                max-width: 100%;
-            }
-
-            .inquiry-form .email {
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                gap: 0.8rem;
-            }
-            .inquiry-form .email input[name="email-id"],
-            .inquiry-form .email input[name="email-domain"] {
-                width: 22rem;
-                margin-top: 0;
-            }
-            .inquiry-form .email .unit {
-                width: auto;
-                line-height: 3.8rem;
-            }
-            .inquiry-form .email .form-select {
-                width: 16rem;
-                margin-top: 0;
-            }
-
-            .inquiry-form .phone-fields {
-                justify-content: flex-start;
-            }
-            .inquiry-form .phone-fields .form-control {
-                flex: none;
-                width: 12rem;
-            }
-
-            .inquiry-form .forms-cont .form-item.category > div {
-                padding: 0;
-            }
-            .inquiry-form .category-box {
-                display: block;
-            }
-            .inquiry-form .category-panel {
-                display: flex;
-                align-items: stretch;
-            }
-            .inquiry-form .category-panel + .category-panel {
-                border-top: 1px solid var(--border-default);
-            }
-            .inquiry-form .cate-head {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                width: 14rem;
-                margin: 0;
-                padding: 2rem 1rem;
-                font-size: 1.8rem;
-                font-weight: 700;
-                color: var(--text-point);
-                background-color: #e8f6fc;
-                text-align: center;
-                box-sizing: border-box;
-            }
-            .inquiry-form .category-panel[data-panel="group"] .cate-head {
-                margin-top: 0;
-                background-color: var(--white);
-                border-right: 1px solid #b8e4f5;
-            }
-            .inquiry-form .cate-body {
-                flex: 1;
-                min-width: 0;
-                padding: 1.2rem 2.4rem;
-            }
-            .inquiry-form .cate-group {
-                display: flex;
-                align-items: flex-start;
-                margin-top: 0;
-                padding: 1rem 0;
-            }
-            .inquiry-form .cate-group + .cate-group {
-                padding-top: 0.4rem;
-            }
-            .inquiry-form .cate-group > strong {
-                flex: 0 0 16rem;
-                margin: 0;
-                padding-top: 0.2rem;
-                color: var(--text-body);
-                font-size: 1.8rem;
-            }
-            .inquiry-form .cate-checks {
-                flex: 1;
-                grid-template-columns: 1fr 1fr;
-                gap: 1.2rem 2.4rem;
-            }
-
-            .inquiry-form textarea.form-control {
-                height: 20rem;
-            }
-
-            .inquiry-form .consult-fields {
-                display: flex;
-                align-items: center;
-                gap: 3.2rem;
-            }
-            .inquiry-form .consult-fields .form-check + .form-check {
-                margin-top: 0;
-            }
-
-            .inquiry-form .agree > div > p {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/ui.css">
 </head>
 <body>
     <!-- header -->
@@ -575,10 +289,10 @@
         <!-- page title -->
         <div class="title aicc">
             <div class="inner-cont">
-                <p class="tit-info1">궁금하신 점을 남겨주세요</p>
+                <p class="tit-info1">성공적인 비즈니스를 위한 첫걸음 전문가가 신속하게 답변해 드립니다.</p>
                 <h3>문의하기</h3>
                 <p class="tit-info2">
-                    웅진IT에 궁금하신 점을 남겨주시면 담당자가 확인 후 빠르게 답변드리겠습니다.
+                    웅진IT의 솔루션 및 사업 소개자료를 한 곳에서 확인하고 다운로드하실 수 있습니다. 제품별 상세 스펙부터 도입 사례, 서비스 안내까지 필요한 자료를 빠르게 찾아보세요.
                 </p>
             </div>
         </div>
@@ -587,8 +301,8 @@
         <div class="content">
             <!-- inner cont -->
             <div class="inner-cont">
-                <form class="inquiry-form" action="" method="post">
-                    <div class="forms-cont">
+                <form action="">
+                    <div class="inquiry-form">
                         <div class="form-item name">
                             <label for="name">이름</label>
                             <div>
@@ -866,10 +580,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="btn-area">
-                        <button type="submit" class="btn-large btn-primary">문의하기</button>
-                    </div>
                 </form>
             </div>
             <!-- //inner cont -->
@@ -884,52 +594,47 @@
         </div>
     </footer>
     <!-- //footer -->
-     
+
     <!-- 약관보기 레이어(개인정보 수집 및 이용) -->
     <div class="layer-pop terms terms1">
         <div class="layer-inner">
             <div class="pop-head">
-                ㈜웅진 개인정보처리(문의하기 관련)를 위한 개인정보 수집 및 이용 동의 (필수)
+                ㈜웅진 개인정보처리(다운로드 관련)를 위한 개인정보 수집 및 이용 동의 (필수)
                 <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
-            <div class="pop-cont"></div>
+            <div class="pop-cont">
+                <p>㈜웅진은 다운로드를 통해 해당 서비스를 이용하고자 하는 공공기관, 기업, 개인 등을 대상으로 아래와 같이 개인정보를 수집하고 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> 해당 서비스와 관련된 리소스 자료 다운로드 </li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급 </li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 다운로드 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
         </div>
     </div>
     <!-- //약관보기 레이어 -->
 
-    <!-- 약관보기 레이어(마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용) -->
+     <!-- 약관보기 레이어(마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용) -->
     <div class="layer-pop terms terms2">
         <div class="layer-inner">
             <div class="pop-head">
                 마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용 동의 (선택)
                 <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
             </div>
-            <div class="pop-cont"></div>
+            <div class="pop-cont">
+                <p>본 동의문에는 ㈜웅진이 제공하는 상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등 광고성 정보를 전자적 전송매체(전화, 문자, 이메일 등)를 통해 수신할 수 있는 내용이 포함되어 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> <strong>㈜웅진 관련 마케팅 정보(상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등) 발송</strong></li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급</li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 상품, 서비스, 이벤트, 혜택 등의 다양한 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
         </div>
     </div>
     <!-- //약관보기 레이어 -->
 
     <script src="../../js/ui.js"></script>
-    <script>
-        (function () {
-            const form = document.querySelector(".inquiry-form");
-            if (!form) return;
-
-            const domainSelect = form.querySelector("#email-domain");
-            const domainInput = form.querySelector('input[name="email-domain"]');
-            if (domainSelect && domainInput) {
-                domainSelect.addEventListener("change", function () {
-                    if (this.value === "직접입력") {
-                        domainInput.value = "";
-                        domainInput.readOnly = false;
-                        domainInput.focus();
-                    } else {
-                        domainInput.value = this.value;
-                        domainInput.readOnly = true;
-                    }
-                });
-            }
-        })();
-    </script>
 </body>
 </html>
