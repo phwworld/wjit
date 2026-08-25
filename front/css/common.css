@@ -241,6 +241,9 @@ main {
 main .content {
   position: relative;
   background-color: #fff;
+  /* z-index: 20; */
+}
+main .content:has(.category-list, .tab-list) {
   z-index: 20;
 }
 
