@@ -1,7 +1,6 @@
 // select email domain
 const domainSelect = document.querySelector("#email-domain");
 const domainInput = document.querySelector("input[name='email-domain']");
-
 if (domainSelect && domainInput) {
     domainSelect.addEventListener("change", function () {
         if (this.value === "직접입력") {
@@ -11,6 +10,20 @@ if (domainSelect && domainInput) {
         } else {
             domainInput.value = this.value;
             domainInput.readOnly = true;
+        }
+    });
+}
+
+// 문의하시 유입경로 기타
+const inflowSelect = document.querySelector("#inflow");
+const inflowOtherInput = document.querySelector("#inflowOther");
+if (inflowSelect && inflowOtherInput) {
+    inflowSelect.addEventListener("change", function () {
+        if (this.value === "17") {
+            inflowOtherInput.classList.add("show");
+            inflowOtherInput.focus();
+        } else {
+            inflowOtherInput.classList.remove("show");
         }
     });
 }
