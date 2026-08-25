@@ -28,6 +28,35 @@ if (inflowSelect && inflowOtherInput) {
     });
 }
 
+// 문의구분: IT솔루션 / 웅진그룹 상호 배타 선택
+const itCategoryPanel = document.querySelector('.inquiry-form .category-panel[data-panel="it"]');
+const groupCategoryPanel = document.querySelector('.inquiry-form .category-panel[data-panel="group"]');
+if (itCategoryPanel && groupCategoryPanel) {
+    const getCategoryChecks = (panel) => panel.querySelectorAll('input[name="category"]');
+    const hasCheckedCategory = (panel) => [...getCategoryChecks(panel)].some((input) => input.checked);
+
+    const setCategoryChecksDisabled = (panel, disabled) => {
+        getCategoryChecks(panel).forEach((input) => {
+            if (disabled) input.checked = false;
+            input.disabled = disabled;
+        });
+    };
+
+    const syncCategoryPanels = () => {
+        const itChecked = hasCheckedCategory(itCategoryPanel);
+        const groupChecked = hasCheckedCategory(groupCategoryPanel);
+
+        setCategoryChecksDisabled(groupCategoryPanel, itChecked);
+        setCategoryChecksDisabled(itCategoryPanel, groupChecked);
+    };
+
+    [itCategoryPanel, groupCategoryPanel].forEach((panel) => {
+        getCategoryChecks(panel).forEach((input) => {
+            input.addEventListener("change", syncCategoryPanels);
+        });
+    });
+}
+
 // layer popup open
 const openLayer = (popup, event) => {
     if (popup === "terms1" || popup === "terms2") {

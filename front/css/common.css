@@ -137,6 +137,11 @@ textarea.form-control {
 .form-check input[type="checkbox"]:checked + label::before {
   background-image: url(../img/common/icon_check_on.svg);
 }
+.form-check input[type="checkbox"]:disabled + label,
+.form-check input[type="radio"]:disabled + label {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .form-check input[type="radio"] + label::before {
   content: "";
   position: absolute;
