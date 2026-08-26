@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <main>
+        <!-- page title -->
+        <div class="title">
+            <div class="inner-cont">
+                <p class="tit-info1">성공적인 비즈니스를 위한 첫걸음 전문가가 신속하게 답변해 드립니다.</p>
+                <h3>문의하기</h3>
+                <p class="tit-info2">
+                    <span>본 정보 취합에 부합하지 않는 내용(광고성,확인 불가 정보, 욕설, 비방 등)은 답변 없이 임의로 삭제될 수 있습니다. <br>아래의 정보는 모두 필수 입력 사항입니다. 모든 항목을 반드시 입력 하셔야 문의 접수가 가능합니다.</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- page content -->
+        <div class="content">
+            <!-- inner cont -->
+            <div class="inner-cont">
+                <form action="">
+                    <div class="inquery-table">
+                        <table>
+                            <colgroup><col style="width: 200px"><col style="width: *;"></colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><label for="username"><span>*</span>이름</label></th>
+                                    <td>
+                                        <input type="text" class="form-control" id="username" name="username">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="companyname"><span>*</span>회사명</label></th>
+                                    <td>
+                                        <input type="text" class="form-control" id="companyname" name="companyname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="tel1"><span>*</span>연락처</label></th>
+                                    <td class="flexCont">
+                                        <input type="text" class="form-control" id="tel1" name="tel1">
+                                        <input type="text" class="form-control" id="tel2" name="tel2">
+                                        <input type="text" class="form-control" id="tel3" name="tel3">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="email1"><span>*</span>이메일</label></th>
+                                    <td class="flexCont">
+                                        <input type="text" class="form-control" id="email1" name="email1">
+                                        <span class="unit">@</span>
+                                        <input type="text" class="form-control inline" id="email2" name="email2">
+                                        <select class="form-select inline" id="email3" name="email3" onchange="changEmail(this);">
+                                            <option value="직접입력">직접입력</option>
+                                            <option value="naver.com">naver.com</option>
+                                            <option value="nate.com">nate.com</option>
+                                            <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                            <option value="empal.com">empal.com</option>
+                                            <option value="unitel.co.kr">unitel.co.kr</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                            <option value="korea.com">korea.com</option>
+                                            <option value="chol.com">chol.com</option> 
+                                            <option value="paran.com">paran.com</option>
+                                            <option value="freechal.com">freechal.com</option>	
+                                            <option value="daum.net">daum.net</option>	
+                                            <option value="hotmail.com">hotmail.com</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="category4"><span>*</span>유입경로</label></th>
+                                    <td class="flexCont">
+                                        <select class="form-select" id="category4" name="category4" onchange="changInsert(this)">
+                                            <option value="직접입력">직접입력</option>
+                                            <option value="네이버 검색">네이버 검색</option>
+                                            <option value="구글 검색">구글 검색</option>
+                                            <option value="SNS">SNS</option>
+                                            <option value="추천인">소개_추천인 입력</option>
+                                        </select>
+                                        <input type="text" class="form-control" id="inflowOther" name="inflowOther">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txttitle"><span>*</span>제목</label></th>
+                                    <td>
+                                        <input type="text" class="form-control" id="txttitle" name="txttitle" placeholder="제목을 입력하세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="summary"><span>*</span>문의내용</label></th>
+                                    <td>
+                                        <textarea class="form-control" id="summary" name="summary" placeholder="내용을 입력하세요."></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>*</span>개인 정보<br>수집 및 이용 동의</th>
+                                    <td class="terms-area">
+                                        <div class="terms">
+                                            <p class="tit"><span>목적</span></p>
+                                            <p class="cont">회사관련, 서비스/상품, 콜센터 문의 등에 대한 상담 제공 및 상담 내역 이력 관리</p>
+                                            <p class="tit"><span>항목</span></p>
+                                            <p class="cont"><strong>이름, 회사명, 연락처, 이메일 주소 </strong></p>
+                                            <p class="tit"><span>보유기간</span></p>
+                                            <p class="cont"><strong>입력일로부터 2년까지 </strong></p>
+                                        </div>
+
+                                        <div class="info">
+                                            귀하는 위와 같은 개인정보 수집 및 이용에 동의하지 않으실 수 있습니다.
+                                            동의를 하지 않을 경우 문의하기 서비스가 제한될 수 있습니다.
+                                        </div>
+
+                                        <div class="agree">
+                                            <span class="form-check inline">
+                                                <input type="radio" id="agree1" name="agree">
+                                                <label for="agree1">동의함</label>
+                                            </span>
+                                            <span class="form-check inline">
+                                                <input type="radio" id="agree2" name="agree">
+                                                <label for="agree2">동의안함</label>
+                                            </span>
+                                        </div>
+
+                                        <div class="noti">
+                                            ※ <span>*</span>사항은 필수 입력 사항입니다. 모든 항목을 반드시 입력 하셔야만 문의 접수가 가능합니다.<br>
+                                            ※ 본 난의 취지에 부합되지 않은 내용(광고성글, 비방, 욕설)은 답변 없이 임의로 삭제될 수 있습니다
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btn-area">
+                        <button type="button" class="btn-large btn-primary">문의하기</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //inner cont -->
+        </div>
+        <!-- //page content -->
+    </main>
+
+    <script>
+        function changEmail(event) {
+			const selectValue = event.value;
+            const domainInput = document.querySelector("#email2");
+            
+            if (selectValue === "직접입력") {
+                domainInput.value = "";
+                domainInput.readOnly = false;
+                domainInput.focus();
+            } else {
+                domainInput.value = selectValue;
+                domainInput.readOnly = true;
+            }
+		}
+
+        const changInsert = (event) => {
+            const selectValue = event.value;
+            const inflowInput = document.querySelector("#inflowOther");
+            
+            if (selectValue === "직접입력") {
+                inflowInput.value = "";
+                inflowInput.readOnly = false;
+                inflowInput.focus();
+            } else {
+                inflowInput.value = selectValue;
+                inflowInput.readOnly = true;
+            }
+        }
+    </script>
+</body>
+</html>

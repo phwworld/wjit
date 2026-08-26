@@ -465,6 +465,11 @@
     align-content: center;
 }
 
+.inquiry-form .cate-checks.col3 .form-check {
+    line-height: normal;
+    vertical-align: top;
+}
+
 .inquiry-form .cate-checks .form-check label {
     word-break: keep-all;
 }

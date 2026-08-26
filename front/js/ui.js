@@ -1,4 +1,4 @@
-// select email domain
+// 이메일 도메인 선택
 const domainSelect = document.querySelector("#email-domain");
 const domainInput = document.querySelector("input[name='email-domain']");
 if (domainSelect && domainInput) {
