@@ -75,3 +75,19 @@ const closeLayer = (el) => {
     if (!target) return;
     target.classList.remove("act");
 }
+
+// pc gnb
+const pcGnbList = document.querySelectorAll(".pc-gnb > ul > li");
+if (pcGnbList) {
+    pcGnbList.forEach(item => {
+        const gnbSub = item.querySelector(".gnb-sub");  // gnb-sub 요소
+        item.addEventListener("mouseenter", function () {
+            gnbSub.style.height = gnbSub.scrollHeight + "px";
+            gnbSub.style.visibility = "visible";
+        });
+        item.addEventListener("mouseleave", function () {
+            gnbSub.style.height = "0";
+            gnbSub.style.visibility = "hidden";
+        });
+    });
+}

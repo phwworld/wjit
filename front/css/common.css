@@ -611,10 +611,12 @@ main .title.aicc {
 
   /* layout */
   header {
+    position: relative;
     height: 10rem;
   }
   header .inner-cont {
     height: 100%;
+    padding: 0;
   }
   header h1 img {
     width: 10.8rem;
@@ -626,6 +628,11 @@ main .title.aicc {
   }
   header .mo-gnb {
     display: none;
+  }
+  header .l-cont {
+    display: flex;
+    align-items: center;
+    gap: 31.6rem;
   }
   header .r-cont {
     display: flex;
@@ -646,6 +653,68 @@ main .title.aicc {
   }
   header .function-menu .mo-menu {
     display: none;
+  }
+
+  header .pc-gnb > ul {
+    display: none;
+    display: flex;
+    gap: 6rem;
+  }
+  header .pc-gnb > ul > li > a {
+    display: block;
+    height: 10rem;
+    font-size: 2rem;
+    color: #6c7181;
+    font-weight: 700;
+    line-height: 10rem;
+  }
+  header .pc-gnb > ul > li > a:hover,
+  header .pc-gnb > ul > li > a.act {
+    border-bottom: .4rem solid var(--primary);
+    color: var(--text-body);
+  }
+  header .pc-gnb > ul > li > .gnb-sub {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding: 4.5rem 0;
+    background-color: var(--white);
+    z-index: -1;
+    visibility: hidden;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul {
+    display: flex;
+    gap: 2.4rem;
+    width: 144rem;
+    margin: 0 auto;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
+    display: block;
+    width: 25.6rem;
+    padding-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li {
+    padding: .3rem 0;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li a {
+    display: inline-block;
+    width: 25.6rem;
+    min-height: 2.4rem;
+    font-size: 1.6rem;
+    color: #111A33;
+    line-height: auto;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li a:hover {
+    font-weight: 700;
+    background-color: var(--bg-surface);
+  }
+  header .pc-gnb > ul > li > .gnb-sub.industry > ul > li > a,
+  header .pc-gnb > ul > li > .gnb-sub.industry > ul > li > ul li a {
+    width: 22.2rem
   }
 
   main {
