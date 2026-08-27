@@ -679,7 +679,7 @@ main .title.aicc {
     left: 0;
     width: 100%;
     height: 0;
-    padding: 4.5rem 0;
+    padding: 4.8rem 0 0 0;
     background-color: var(--white);
     z-index: -1;
     visibility: hidden;
@@ -689,6 +689,7 @@ main .title.aicc {
     gap: 2.4rem;
     width: 144rem;
     margin: 0 auto;
+    padding-bottom: 4.8rem;
   }
   header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
     display: block;
@@ -697,24 +698,37 @@ main .title.aicc {
     color: var(--primary);
     font-weight: 700;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li {
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > a.is-static {
+    cursor: default;
+  }
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li {
     padding: .3rem 0;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li a {
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a {
     display: inline-block;
     width: 25.6rem;
     min-height: 2.4rem;
+    padding: .2rem 0;
     font-size: 1.6rem;
     color: #111A33;
     line-height: auto;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul li a:hover {
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a:hover {
     font-weight: 700;
     background-color: var(--bg-surface);
   }
-  header .pc-gnb > ul > li > .gnb-sub.industry > ul > li > a,
-  header .pc-gnb > ul > li > .gnb-sub.industry > ul > li > ul li a {
-    width: 22.2rem
+  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > a,
+  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > ul > li > a {
+    width: 18.5rem
+  }
+  header .pc-gnb > ul > li > .gnb-sub.sub3 > ul {
+    padding-left: 71rem;
+  }
+  header .pc-gnb > ul > li > .gnb-sub.sub4 > ul {
+    padding-left: 82rem;
+  }
+  header .pc-gnb > ul > li > .gnb-sub.sub5 > ul {
+    padding-left: 95rem;
   }
 
   main {
