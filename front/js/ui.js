@@ -78,16 +78,31 @@ const closeLayer = (el) => {
 
 // pc gnb
 const pcGnbList = document.querySelectorAll(".pc-gnb > ul > li");
-if (pcGnbList) {
-    pcGnbList.forEach(item => {
-        const gnbSub = item.querySelector(".gnb-sub");  // gnb-sub 요소
-        item.addEventListener("mouseenter", function () {
-            gnbSub.style.height = gnbSub.scrollHeight + "px";
-            gnbSub.style.visibility = "visible";
-        });
-        item.addEventListener("mouseleave", function () {
-            gnbSub.style.height = "0";
-            gnbSub.style.visibility = "hidden";
+if (pcGnbList.length) {
+    const isGnbActive = (item) => item.matches(":hover") || item.contains(document.activeElement);
+
+    const openGnbSub = (gnbSub) => {
+        gnbSub.style.visibility = "visible";
+        gnbSub.style.height = gnbSub.scrollHeight + "px";
+    };
+
+    const closeGnbSub = (item, gnbSub) => {
+        if (isGnbActive(item)) return;
+        gnbSub.style.height = "0";
+        gnbSub.style.visibility = "hidden";
+    };
+
+    pcGnbList.forEach((item) => {
+        const gnbSub = item.querySelector(".gnb-sub");
+        if (!gnbSub) return;
+
+        item.addEventListener("mouseenter", () => openGnbSub(gnbSub));
+        item.addEventListener("mouseleave", () => closeGnbSub(item, gnbSub));
+        item.addEventListener("focusin", () => openGnbSub(gnbSub));
+        item.addEventListener("focusout", (event) => {
+            if (!item.contains(event.relatedTarget)) {
+                closeGnbSub(item, gnbSub);
+            }
         });
     });
 }
