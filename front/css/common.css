@@ -4,7 +4,7 @@
   --white: #fff;
   --black: #000;
   --primary: #15ABE6;
-  --text-point:  #0096D0;
+  --text-point: #0096D0;
   --text-point2: #1380CE;
   --text-body: #202020;
   --text-secondary: #777;
@@ -33,9 +33,11 @@ button {
   font-size: 0;
   line-height: 0;
 }
+
 .hide {
   display: none;
 }
+
 .show {
   display: block !important;
 }
@@ -70,14 +72,17 @@ br.pc {
   text-align: center;
   line-height: 4.8rem;
 }
+
 .btn-primary {
   color: var(--white);
   background-color: var(--primary);
 }
+
 .btn-outline-default {
   border: 1px solid #afafaf;
   colot: var(--text-body);
 }
+
 .btn-area {
   margin-top: 5rem;
 }
@@ -92,10 +97,12 @@ br.pc {
   border: 1px solid var(--border-default);
   font-size: 1.6rem;
 }
+
 textarea.form-control {
   height: 17.8rem;
   padding: 2rem 0 0 1.2rem;
 }
+
 .form-select {
   display: block;
   height: 4.2rem;
@@ -104,28 +111,32 @@ textarea.form-control {
   font-size: 1.6rem;
   background: url(../img/common/icon_select_arrow.svg) no-repeat right .8rem center;
 }
+
 .form-check {
   position: relative;
   display: block;
 }
+
 .form-check input[type="checkbox"],
 .form-check input[type="radio"] {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 0;
   height: 0;
   appearance: none;
 }
-.form-check input[type="checkbox"] + label,
-.form-check input[type="radio"] + label {
+
+.form-check input[type="checkbox"]+label,
+.form-check input[type="radio"]+label {
   position: relative;
   display: inline-block;
   padding-left: 2.8rem;
   font-size: 1.6rem;
   line-height: 2rem;
 }
-.form-check input[type="checkbox"] + label::before {
+
+.form-check input[type="checkbox"]+label::before {
   content: "";
   position: absolute;
   top: 0;
@@ -134,15 +145,18 @@ textarea.form-control {
   height: 2rem;
   background: url(../img/common/icon_check_off.svg) no-repeat;
 }
-.form-check input[type="checkbox"]:checked + label::before {
+
+.form-check input[type="checkbox"]:checked+label::before {
   background-image: url(../img/common/icon_check_on.svg);
 }
-.form-check input[type="checkbox"]:disabled + label,
-.form-check input[type="radio"]:disabled + label {
+
+.form-check input[type="checkbox"]:disabled+label,
+.form-check input[type="radio"]:disabled+label {
   opacity: 0.4;
   cursor: not-allowed;
 }
-.form-check input[type="radio"] + label::before {
+
+.form-check input[type="radio"]+label::before {
   content: "";
   position: absolute;
   top: 0;
@@ -151,9 +165,11 @@ textarea.form-control {
   height: 2rem;
   background: url(../img/common/icon_radio_off.svg) no-repeat;
 }
-.form-check input[type="radio"]:checked + label::before {
+
+.form-check input[type="radio"]:checked+label::before {
   background-image: url(../img/common/icon_radio_on.svg);
 }
+
 .form-control.inline,
 .form-select.inline,
 .form-check.inline {
@@ -161,18 +177,19 @@ textarea.form-control {
 }
 
 /* forms cont */
-.forms-cont .form-item > label,
-.forms-cont .form-item > .label {
-    display: block;
-    margin-bottom: .6rem;
-    padding-top: 2rem;
-    font-size: 1.6rem;
-    line-height: 2.6rem;
+.forms-cont .form-item>label,
+.forms-cont .form-item>.label {
+  display: block;
+  margin-bottom: .6rem;
+  padding-top: 2rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
-.forms-cont .form-item > label .required,
-.forms-cont .form-item > .label .required {
-    margin-right: .4rem;
-    color: var(--primary);
+
+.forms-cont .form-item>label .required,
+.forms-cont .form-item>.label .required {
+  margin-right: .4rem;
+  color: var(--primary);
 }
 
 .inner-cont {
@@ -193,42 +210,52 @@ header {
   background-color: #fff;
   z-index: 10;
 }
+
 header .inner-cont {
   display: flex;
   align-items: center;
   padding: 0 2.4rem;
   justify-content: space-between;
 }
+
 header h1 a {
   vertical-align: top;
 }
+
 header h1 img {
   width: 6.9rem;
   height: 3.6rem;
 }
+
 header .pc-gnb,
 header .shortcut-menu {
   display: none;
 }
+
 header .mo-gnb {
   display: none;
 }
+
 header .function-menu {
   display: flex;
   gap: 2.9rem;
 }
+
 header .function-menu button {
   display: inline-block;
   width: 2rem;
   height: 2rem;
   background-size: 100% 100% !important;
 }
+
 header .function-menu .search {
   background: url(../img/common/icon_search.svg) no-repeat;
 }
+
 header .function-menu .lang {
   background: url(../img/common/icon_lang.svg) no-repeat;
 }
+
 header .function-menu .mo-menu {
   width: 2rem;
   height: 2rem;
@@ -238,11 +265,13 @@ header .function-menu .mo-menu {
 main {
   padding-bottom: 12rem;
 }
+
 main .content {
   position: relative;
   background-color: #fff;
   /* z-index: 20; */
 }
+
 main .content:has(.category-list, .tab-list) {
   z-index: 20;
 }
@@ -257,10 +286,12 @@ main .title {
   padding: 6rem 2.4rem;
   text-align: center;
 }
+
 main .title .tit-info1 {
   font-size: 1.6rem;
   font-weight: 500;
 }
+
 main .title h3 {
   margin: 1.9rem 0;
   font-size: 3.4rem;
@@ -268,10 +299,12 @@ main .title h3 {
   color: var(--black);
   line-height: 1.2;
 }
+
 main .title h3 span {
   display: block;
   font-weight: 300;
 }
+
 main .title .tit-info2 {
   font-size: 1.4rem;
   line-height: 1.5;
@@ -308,9 +341,11 @@ main .title.aicc {
   left: 0;
   z-index: 1000;
 }
+
 .layer-pop.act {
   display: block;
 }
+
 .layer-pop::before {
   content: "";
   position: fixed;
@@ -320,6 +355,7 @@ main .title.aicc {
   left: 0;
   background: rgba(0, 0, 0, .3);
 }
+
 .layer-pop .layer-inner {
   position: absolute;
   top: 50%;
@@ -329,6 +365,7 @@ main .title.aicc {
   background-color: var(--white);
   transform: translate(-50%, -50%);
 }
+
 .layer-pop .pop-head {
   position: relative;
   padding: 0 3rem 1.6rem 0;
@@ -337,12 +374,14 @@ main .title.aicc {
   font-weight: 700;
   line-height: 2.4rem;
 }
-.layer-pop .pop-head > span {
+
+.layer-pop .pop-head>span {
   margin-left: .4rem;
   font-size: 1.4rem;
   font-weight: 400;
   color: var(--primary)
 }
+
 .layer-pop .pop-head .pop-close {
   position: absolute;
   top: 0;
@@ -352,10 +391,12 @@ main .title.aicc {
   background: url(../img/common/icon_close.svg);
   background-size: cover;
 }
+
 .layer-pop .pop-cont {
   max-height: calc(100vh - 4.4rem - 4.8rem - 14.8rem);
   overflow-y: scroll;
 }
+
 .layer-pop .pop-foot {
   display: flex;
   gap: .8rem;
@@ -378,6 +419,7 @@ main .title.aicc {
   br.mo {
     display: none;
   }
+
   br.pc {
     display: block;
   }
@@ -392,6 +434,7 @@ main .title.aicc {
     text-align: center;
     line-height: 6.4rem;
   }
+
   .btn-area {
     margin-top: 6rem;
     text-align: center;
@@ -402,25 +445,28 @@ main .title.aicc {
     height: 3.8rem;
     padding: 0 1.2rem;
   }
+
   .form-select {
     height: 3.8rem;
   }
-  .form-check input[type="checkbox"] + label,
-  .form-check input[type="radio"] + label {
+
+  .form-check input[type="checkbox"]+label,
+  .form-check input[type="radio"]+label {
     padding-left: 3rem;
     font-size: 1.8rem;
   }
-  
+
   /* forms cont */
-  .forms-cont .form-item > label,
-  .forms-cont .form-item > .label {
+  .forms-cont .form-item>label,
+  .forms-cont .form-item>.label {
     padding: 0 0 0 3rem;
     margin-bottom: 0;
     font-size: 1.8rem;
     line-height: initial;
     box-sizing: border-box;
   }
-  .forms-cont .form-item > div {
+
+  .forms-cont .form-item>div {
     padding: .8rem 0 .8rem 1rem;
   }
 
@@ -437,40 +483,61 @@ main .title.aicc {
   header {
     height: 10rem;
   }
+
   header .inner-cont {
     height: 100%;
   }
+
   header h1 img {
     width: 10.8rem;
     height: 5.6rem;
   }
+
   header .pc-gnb,
   header .shortcut-menu {
     display: block;
   }
+
   header .mo-gnb {
     display: none;
   }
+
+  header .l-cont {
+    display: flex;
+    align-items: center;
+    gap: 16.6rem;
+  }
+
   header .r-cont {
     display: flex;
     align-items: center;
   }
+
   header .shortcut-menu a {
     margin-right: 4rem;
     font-size: 1.8rem;
     color: #6c7181;
     line-height: 2rem;
   }
+
   header .function-menu {
     gap: 4rem;
   }
+
   header .function-menu button {
     width: 2rem;
     height: 2rem;
   }
+
   header .function-menu .mo-menu {
     display: none;
   }
+
+  header .pc-gnb {
+    display: none;
+  }
+
+
 
   main {
     padding-bottom: 13rem;
@@ -480,16 +547,20 @@ main .title.aicc {
   main .title {
     padding: 12rem 0 10rem;
   }
+
   main .title .tit-info1 {
     font-size: 2.8rem;
   }
+
   main .title h3 {
     margin: 3rem 0 2.5rem;
     font-size: 8.4rem;
   }
+
   main .title h3 span {
     display: inline-block;
   }
+
   main .title .tit-info2 {
     font-size: 1.8rem;
   }
@@ -503,7 +574,7 @@ main .title.aicc {
     margin-bottom: 1rem;
     font-size: 4rem;
   }
-  
+
   .s-tit {
     padding: 10rem 0 0;
     margin: 10rem 0 1rem;
@@ -515,23 +586,28 @@ main .title.aicc {
     width: 96rem;
     padding: 4rem 6rem;
   }
+
   .layer-pop .pop-head {
     padding: 0 3.6rem 1.8rem 0;
     font-size: 2.4rem;
     line-height: 3rem;
   }
-  .layer-pop .pop-head > span {
+
+  .layer-pop .pop-head>span {
     margin-left: 1rem;
     font-size: 1.6rem;
   }
+
   .layer-pop .pop-head .pop-close {
     width: 3rem;
     height: 3rem;
   }
+
   .layer-pop .pop-cont {
     max-height: inherit;
     overflow-y: hidden;
   }
+
   .layer-pop .pop-foot {
     justify-content: center;
     margin-top: 0;
@@ -553,8 +629,10 @@ main .title.aicc {
   br.mo {
     display: none;
   }
+
   br.pc {
-    display: block;;
+    display: block;
+    ;
   }
 
   /* button */
@@ -567,6 +645,7 @@ main .title.aicc {
     text-align: center;
     line-height: 6.4rem;
   }
+
   .btn-area {
     margin-top: 6rem;
     text-align: center;
@@ -577,25 +656,28 @@ main .title.aicc {
     height: 3.8rem;
     padding: 0 1.2rem;
   }
+
   .form-select {
     height: 3.8rem;
   }
-  .form-check input[type="checkbox"] + label,
-  .form-check input[type="radio"] + label {
+
+  .form-check input[type="checkbox"]+label,
+  .form-check input[type="radio"]+label {
     padding-left: 3rem;
     font-size: 1.8rem;
   }
-  
+
   /* forms cont */
-  .forms-cont .form-item > label,
-  .forms-cont .form-item > .label {
+  .forms-cont .form-item>label,
+  .forms-cont .form-item>.label {
     padding: 0 0 0 3rem;
     margin-bottom: 0;
     font-size: 1.8rem;
     line-height: initial;
     box-sizing: border-box;
   }
-  .forms-cont .form-item > div {
+
+  .forms-cont .form-item>div {
     padding: .8rem 0 .8rem 1rem;
   }
 
@@ -614,53 +696,64 @@ main .title.aicc {
     position: relative;
     height: 10rem;
   }
+
   header .inner-cont {
     height: 100%;
     padding: 0;
   }
+
   header h1 img {
     width: 10.8rem;
     height: 5.6rem;
   }
+
   header .pc-gnb,
   header .shortcut-menu {
     display: block;
   }
+
   header .mo-gnb {
     display: none;
   }
+
   header .l-cont {
     display: flex;
     align-items: center;
     gap: 31.6rem;
   }
+
   header .r-cont {
     display: flex;
     align-items: center;
   }
+
   header .shortcut-menu a {
     margin-right: 4rem;
     font-size: 1.8rem;
     color: #6c7181;
     line-height: 2rem;
   }
+
   header .function-menu {
     gap: 4rem;
   }
+
   header .function-menu button {
     width: 2rem;
     height: 2rem;
   }
+
   header .function-menu .mo-menu {
     display: none;
   }
 
-  header .pc-gnb > ul {
+  header .pc-gnb>ul {
     display: none;
     display: flex;
     gap: 6rem;
   }
-  header .pc-gnb > ul > li > a {
+
+  header .pc-gnb>ul>li>a {
     display: block;
     height: 10rem;
     font-size: 2rem;
@@ -668,14 +761,16 @@ main .title.aicc {
     font-weight: 700;
     line-height: 10rem;
   }
-  header .pc-gnb > ul > li > a:hover,
-  header .pc-gnb > ul > li:hover > a,
-  header .pc-gnb > ul > li:focus-within > a,
-  header .pc-gnb > ul > li > a.act {
+
+  header .pc-gnb>ul>li>a:hover,
+  header .pc-gnb>ul>li:hover>a,
+  header .pc-gnb>ul>li:focus-within>a,
+  header .pc-gnb>ul>li>a.act {
     border-bottom: .4rem solid var(--primary);
     color: var(--text-body);
   }
-  header .pc-gnb > ul > li > .gnb-sub {
+
+  header .pc-gnb>ul>li>.gnb-sub {
     position: absolute;
     top: 10rem;
     left: 0;
@@ -688,27 +783,32 @@ main .title.aicc {
     visibility: hidden;
     transition: height 0.35s ease, visibility 0.35s ease;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul {
     display: flex;
     gap: 2.4rem;
     width: 144rem;
     margin: 0 auto;
     padding-bottom: 4.8rem;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a {
     display: block;
     width: 25.6rem;
     padding-bottom: 1.5rem;
     color: var(--primary);
     font-weight: 700;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a.is-static {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a.is-static {
     cursor: default;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li {
     padding: .3rem 0;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a {
     display: inline-block;
     width: 25.6rem;
     min-height: 2.4rem;
@@ -717,21 +817,26 @@ main .title.aicc {
     color: #111A33;
     line-height: auto;
   }
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a:hover {
+
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
     background-color: var(--bg-surface);
   }
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > a,
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > ul > li > a {
+
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>a,
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>ul>li>a {
     width: 18.5rem
   }
-  header .pc-gnb > ul > li > .gnb-sub.sub3 > ul {
+
+  header .pc-gnb>ul>li>.gnb-sub.sub3>ul {
     padding-left: 71rem;
   }
-  header .pc-gnb > ul > li > .gnb-sub.sub4 > ul {
+
+  header .pc-gnb>ul>li>.gnb-sub.sub4>ul {
     padding-left: 82rem;
   }
-  header .pc-gnb > ul > li > .gnb-sub.sub5 > ul {
+
+  header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
     padding-left: 95rem;
   }
 
@@ -743,16 +848,20 @@ main .title.aicc {
   main .title {
     padding: 12rem 0 10rem;
   }
+
   main .title .tit-info1 {
     font-size: 2.8rem;
   }
+
   main .title h3 {
     margin: 3rem 0 2.5rem;
     font-size: 8.4rem;
   }
+
   main .title h3 span {
     display: inline-block;
   }
+
   main .title .tit-info2 {
     font-size: 1.8rem;
   }
@@ -770,7 +879,7 @@ main .title.aicc {
     margin-bottom: 1rem;
     font-size: 4rem;
   }
-  
+
   .s-tit {
     padding: 10rem 0 0;
     margin: 10rem 0 1rem;
@@ -782,23 +891,28 @@ main .title.aicc {
     width: 96rem;
     padding: 4rem 6rem;
   }
+
   .layer-pop .pop-head {
     padding: 0 3.6rem 1.8rem 0;
     font-size: 2.4rem;
     line-height: 3rem;
   }
-  .layer-pop .pop-head > span {
+
+  .layer-pop .pop-head>span {
     margin-left: 1rem;
     font-size: 1.6rem;
   }
+
   .layer-pop .pop-head .pop-close {
     width: 3rem;
     height: 3rem;
   }
+
   .layer-pop .pop-cont {
     max-height: inherit;
     overflow-y: hidden;
   }
+
   .layer-pop .pop-foot {
     justify-content: center;
     margin-top: 0;
