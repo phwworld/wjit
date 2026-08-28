@@ -106,3 +106,30 @@ if (pcGnbList.length) {
         });
     });
 }
+
+// family site toggle
+const familySite = document.querySelector(".family-site");
+if (familySite) {
+    const familySiteBtn = familySite.querySelector("button");
+
+    const closeFamilySite = () => {
+        familySite.classList.remove("is-open");
+        familySiteBtn.setAttribute("aria-expanded", "false");
+    };
+
+    familySiteBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const isOpen = familySite.classList.toggle("is-open");
+        familySiteBtn.setAttribute("aria-expanded", isOpen);
+    });
+
+    familySite.querySelectorAll("ul a").forEach((link) => {
+        link.addEventListener("click", closeFamilySite);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!familySite.contains(event.target)) {
+            closeFamilySite();
+        }
+    });
+}
