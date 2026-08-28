@@ -560,7 +560,7 @@ main .title.aicc {
   header .l-cont {
     display: flex;
     align-items: center;
-    gap: 16.6rem;
+    gap: 14rem;
   }
 
   header .r-cont {
@@ -588,8 +588,112 @@ main .title.aicc {
     display: none;
   }
 
-  header .pc-gnb {
+  header .pc-gnb > ul {
     display: none;
+    display: flex;
+    gap: 4rem;
+  }
+
+  header .pc-gnb > ul > li > a {
+    display: block;
+    height: 10rem;
+    font-size: 2rem;
+    color: #6c7181;
+    font-weight: 700;
+    line-height: 10rem;
+  }
+
+  header .pc-gnb > ul > li > a:hover,
+  header .pc-gnb > ul > li:hover > a,
+  header .pc-gnb > ul > li:focus-within > a,
+  header .pc-gnb > ul > li > a.act {
+    border-bottom: 0.4rem solid var(--primary);
+    color: var(--text-body);
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding: 4.8rem 1.2rem 0 1.2rem;
+    overflow: hidden;
+    background-color: var(--white);
+    z-index: -1;
+    visibility: hidden;
+    transition:
+      height 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul {
+    display: flex;
+    /* gap: 2.4rem; */
+    gap: 1rem;
+    /* width: 144rem; */
+    width: auto;
+    margin: 0 auto;
+    padding-bottom: 4.8rem;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul li {
+    flex: 1;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
+    display: block;
+    /* width: 25.6rem; */
+    width: auto;
+    padding-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > a.is-static {
+    cursor: default;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li {
+    padding: 0.3rem 0;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a {
+    display: inline-block;
+    /* width: 25.6rem; */
+    width: auto;
+    min-height: 2.4rem;
+    padding: 0.2rem 0;
+    font-size: 1.4rem;
+    color: #111a33;
+    line-height: auto;
+    letter-spacing: -0.5px;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a:hover {
+    font-weight: 700;
+    background-color: var(--bg-surface);
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > a,
+  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > ul > li > a {
+    width: auto;
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub.sub3 > ul {
+    padding-left: calc(2.4rem + 10.8rem + 14rem + 8rem + 0.5rem + 8rem + 7rem);
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub.sub4 > ul {
+    padding-left: calc(
+      2.4rem + 10.8rem + 14rem + 12rem + 0.5rem + 8rem + 7rem + 5rem
+    );
+  }
+
+  header .pc-gnb > ul > li > .gnb-sub.sub5 > ul {
+    padding-left: calc(
+      2.4rem + 10.8rem + 14rem + 16rem + 0.5rem + 8rem + 7rem + 5rem + 7rem
+    );
   }
 
   main {
