@@ -81,7 +81,7 @@ br.pc {
 
 .btn-outline-default {
   border: 1px solid #afafaf;
-  colot: var(--text-body);
+  color: var(--text-body);
 }
 
 .btn-area {
@@ -109,8 +109,7 @@ textarea.form-control {
   padding: 0 4rem 0 1rem;
   border: 1px solid var(--border-default);
   font-size: 1.6rem;
-  background: url(../img/common/icon_select_arrow.svg) no-repeat right 0.8rem
-    center;
+  background: url(../img/common/icon_select_arrow.svg) no-repeat right 0.8rem center;
 }
 
 .form-check {
@@ -128,8 +127,8 @@ textarea.form-control {
   appearance: none;
 }
 
-.form-check input[type="checkbox"] + label,
-.form-check input[type="radio"] + label {
+.form-check input[type="checkbox"]+label,
+.form-check input[type="radio"]+label {
   position: relative;
   display: inline-block;
   padding-left: 2.8rem;
@@ -137,7 +136,7 @@ textarea.form-control {
   line-height: 2rem;
 }
 
-.form-check input[type="checkbox"] + label::before {
+.form-check input[type="checkbox"]+label::before {
   content: "";
   position: absolute;
   top: 0;
@@ -147,17 +146,17 @@ textarea.form-control {
   background: url(../img/common/icon_check_off.svg) no-repeat;
 }
 
-.form-check input[type="checkbox"]:checked + label::before {
+.form-check input[type="checkbox"]:checked+label::before {
   background-image: url(../img/common/icon_check_on.svg);
 }
 
-.form-check input[type="checkbox"]:disabled + label,
-.form-check input[type="radio"]:disabled + label {
+.form-check input[type="checkbox"]:disabled+label,
+.form-check input[type="radio"]:disabled+label {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-.form-check input[type="radio"] + label::before {
+.form-check input[type="radio"]+label::before {
   content: "";
   position: absolute;
   top: 0;
@@ -167,7 +166,7 @@ textarea.form-control {
   background: url(../img/common/icon_radio_off.svg) no-repeat;
 }
 
-.form-check input[type="radio"]:checked + label::before {
+.form-check input[type="radio"]:checked+label::before {
   background-image: url(../img/common/icon_radio_on.svg);
 }
 
@@ -178,8 +177,8 @@ textarea.form-control {
 }
 
 /* forms cont */
-.forms-cont .form-item > label,
-.forms-cont .form-item > .label {
+.forms-cont .form-item>label,
+.forms-cont .form-item>.label {
   display: block;
   margin-bottom: 0.6rem;
   padding-top: 2rem;
@@ -187,8 +186,8 @@ textarea.form-control {
   line-height: 2.6rem;
 }
 
-.forms-cont .form-item > label .required,
-.forms-cont .form-item > .label .required {
+.forms-cont .form-item>label .required,
+.forms-cont .form-item>.label .required {
   margin-right: 0.4rem;
   color: var(--primary);
 }
@@ -210,6 +209,11 @@ header {
   border-bottom: 1px solid #686c78;
   background-color: #fff;
   z-index: 10;
+  transition: z-index 0.3s ease-in-out;
+}
+
+header.act {
+  z-index: 50;
 }
 
 header .inner-cont {
@@ -230,10 +234,6 @@ header h1 img {
 
 header .pc-gnb,
 header .shortcut-menu {
-  display: none;
-}
-
-header .mo-gnb {
   display: none;
 }
 
@@ -263,6 +263,85 @@ header .function-menu .mo-menu {
   background: url(../img/common/icon_mobile_menu.svg) no-repeat;
 }
 
+header .function-menu .mo-menu.act {
+  background-image: url(../img/common/icon_mobile_menu_act.svg);
+}
+
+header .mo-gnb {
+  display: block;
+  position: fixed;
+  top: 5.6rem;
+  right: -100vw;
+  width: 100vw;
+  height: calc(100vh - 5.6rem);
+  background-color: var(--white);
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+  z-index: 50;
+}
+
+header .mo-gnb.act {
+  right: 0;
+}
+
+header .mo-gnb>ul>li>a {
+  display: block;
+  height: 5.2rem;
+  padding-left: 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-body);
+  line-height: 5.2rem;
+  background: url(../img/common/icon_mognb_off.svg) no-repeat right 3.4rem center;
+}
+
+header .mo-gnb>ul>li>a.act {
+  color: var(--primary);
+  background-image: url(../img/common/icon_mognb_on.svg);
+  background-color: #f2fbff
+}
+
+header .mo-gnb>ul>li>ul,
+header .mo-gnb>ul>li>ul>li>ul {
+  display: none;
+}
+
+header .mo-gnb>ul>li>ul>li {
+  padding: 0 2.4rem;
+}
+
+header .mo-gnb>ul>li>ul>li>a {
+  display: block;
+  height: 5rem;
+  padding-left: 1.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 5rem;
+}
+
+header .mo-gnb>ul>li>ul>li:has(ul)>a {
+  background: url(../img/common/icon_mognb_depth_off.svg) no-repeat right 1rem center;
+}
+
+header .mo-gnb>ul>li>ul>li:has(ul)>a.act {
+  background-image: url(../img/common/icon_mognb_on.svg);
+}
+
+header .mo-gnb>ul>li>ul>li>ul {
+  padding: 1.4rem 0;
+  border-top: 2px solid var(--primary)
+}
+
+header .mo-gnb>ul>li>ul>li>ul>li>a {
+  display: block;
+  height: 4.2rem;
+  padding-left: 1.4rem;
+  font-size: 1.6rem;
+  color: var(--text-body);
+  line-height: 4.2rem;
+}
+
 main {
   padding-bottom: 12rem;
 }
@@ -286,10 +365,12 @@ footer .inner-cont {
   flex-direction: column;
   padding: 4rem 2.4rem;
 }
+
 footer .inner-cont .foot-cont1 {
   position: relative;
   order: 1;
 }
+
 footer .inner-cont .foot-cont1 .address {
   position: relative;
   margin-top: 3rem;
@@ -298,6 +379,7 @@ footer .inner-cont .foot-cont1 .address {
   font-size: 1.4rem;
   color: var(--white);
 }
+
 footer .inner-cont .foot-cont1 .address a {
   position: absolute;
   top: 3rem;
@@ -306,32 +388,40 @@ footer .inner-cont .foot-cont1 .address a {
   font-weight: 700;
   color: var(--white);
 }
+
 footer .inner-cont .foot-cont2 {
   order: 0;
 }
+
 footer .inner-cont .foot-cont2 .sns-link {
   display: flex;
   justify-content: center;
   gap: 1.8rem;
 }
+
 footer .inner-cont .foot-cont2 .sns-link a {
   display: block;
   width: 5rem;
   height: 5rem;
   background-size: cover;
 }
+
 footer .inner-cont .foot-cont2 .sns-link .naver {
   background-image: url(../img/common/icon_sns_naver.svg);
 }
+
 footer .inner-cont .foot-cont2 .sns-link .facebook {
   background-image: url(../img/common/icon_sns_facebook.svg);
 }
+
 footer .inner-cont .foot-cont2 .sns-link .youtube {
   background-image: url(../img/common/icon_sns_youtube.svg);
 }
+
 footer .inner-cont .foot-cont2 .sns-link .linkedin {
   background-image: url(../img/common/icon_sns_linkedin.svg);
 }
+
 footer .inner-cont .foot-menu,
 footer .inner-cont .family-site {
   display: none;
@@ -345,7 +435,7 @@ footer .inner-cont .family-site {
   width: 100%;
   height: 5rem;
   background-color: var(--white);
-  z-index: 2000;
+  z-index: 30;
 }
 
 .mobile-float-menu a {
@@ -358,7 +448,8 @@ footer .inner-cont .family-site {
   text-align: center;
   line-height: 5rem;
 }
-.mobile-float-menu a ~ a {
+
+.mobile-float-menu a~a {
   border-left: 1px solid rgba(15, 23, 42, 0.10);
 }
 
@@ -456,7 +547,7 @@ main .title.aicc {
   line-height: 2.4rem;
 }
 
-.layer-pop .pop-head > span {
+.layer-pop .pop-head>span {
   margin-left: 0.4rem;
   font-size: 1.4rem;
   font-weight: 400;
@@ -531,15 +622,15 @@ main .title.aicc {
     height: 3.8rem;
   }
 
-  .form-check input[type="checkbox"] + label,
-  .form-check input[type="radio"] + label {
+  .form-check input[type="checkbox"]+label,
+  .form-check input[type="radio"]+label {
     padding-left: 3rem;
     font-size: 1.8rem;
   }
 
   /* forms cont */
-  .forms-cont .form-item > label,
-  .forms-cont .form-item > .label {
+  .forms-cont .form-item>label,
+  .forms-cont .form-item>.label {
     padding: 0 0 0 3rem;
     margin-bottom: 0;
     font-size: 1.8rem;
@@ -547,7 +638,7 @@ main .title.aicc {
     box-sizing: border-box;
   }
 
-  .forms-cont .form-item > div {
+  .forms-cont .form-item>div {
     padding: 0.8rem 0 0.8rem 1rem;
   }
 
@@ -614,13 +705,13 @@ main .title.aicc {
     display: none;
   }
 
-  header .pc-gnb > ul {
+  header .pc-gnb>ul {
     display: none;
     display: flex;
     gap: 4rem;
   }
 
-  header .pc-gnb > ul > li > a {
+  header .pc-gnb>ul>li>a {
     display: block;
     height: 10rem;
     font-size: 2rem;
@@ -629,15 +720,15 @@ main .title.aicc {
     line-height: 10rem;
   }
 
-  header .pc-gnb > ul > li > a:hover,
-  header .pc-gnb > ul > li:hover > a,
-  header .pc-gnb > ul > li:focus-within > a,
-  header .pc-gnb > ul > li > a.act {
+  header .pc-gnb>ul>li>a:hover,
+  header .pc-gnb>ul>li:hover>a,
+  header .pc-gnb>ul>li:focus-within>a,
+  header .pc-gnb>ul>li>a.act {
     border-bottom: 0.4rem solid var(--primary);
     color: var(--text-body);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub {
+  header .pc-gnb>ul>li>.gnb-sub {
     position: absolute;
     top: 10rem;
     left: 0;
@@ -653,7 +744,7 @@ main .title.aicc {
       visibility 0.35s ease;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul {
+  header .pc-gnb>ul>li>.gnb-sub>ul {
     display: flex;
     /* gap: 2.4rem; */
     gap: 1rem;
@@ -663,11 +754,11 @@ main .title.aicc {
     padding-bottom: 4.8rem;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul li {
+  header .pc-gnb>ul>li>.gnb-sub>ul li {
     flex: 1;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a {
     display: block;
     /* width: 25.6rem; */
     width: auto;
@@ -676,15 +767,15 @@ main .title.aicc {
     font-weight: 700;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a.is-static {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a.is-static {
     cursor: default;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li {
     padding: 0.3rem 0;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a {
     display: inline-block;
     /* width: 25.6rem; */
     width: auto;
@@ -696,30 +787,26 @@ main .title.aicc {
     letter-spacing: -0.5px;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a:hover {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
     background-color: var(--bg-surface);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > a,
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>a,
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>ul>li>a {
     width: auto;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub3 > ul {
+  header .pc-gnb>ul>li>.gnb-sub.sub3>ul {
     padding-left: calc(2.4rem + 10.8rem + 14rem + 8rem + 0.5rem + 8rem + 7rem);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub4 > ul {
-    padding-left: calc(
-      2.4rem + 10.8rem + 14rem + 12rem + 0.5rem + 8rem + 7rem + 5rem
-    );
+  header .pc-gnb>ul>li>.gnb-sub.sub4>ul {
+    padding-left: calc(2.4rem + 10.8rem + 14rem + 12rem + 0.5rem + 8rem + 7rem + 5rem);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub5 > ul {
-    padding-left: calc(
-      2.4rem + 10.8rem + 14rem + 16rem + 0.5rem + 8rem + 7rem + 5rem + 7rem
-    );
+  header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
+    padding-left: calc(2.4rem + 10.8rem + 14rem + 16rem + 0.5rem + 8rem + 7rem + 5rem + 7rem);
   }
 
   main {
@@ -732,20 +819,24 @@ main .title.aicc {
     justify-content: space-between;
     padding: 6rem 2.4rem 6.5rem;
   }
+
   footer .inner-cont .foot-cont1 {
     position: relative;
     order: 0;
   }
+
   footer .inner-cont .foot-menu {
     display: flex;
     gap: 6rem;
     margin-bottom: 2.3rem;
   }
+
   footer .inner-cont .foot-menu a {
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
   }
+
   footer .inner-cont .foot-cont1 .address {
     position: relative;
     margin-top: 2.2rem;
@@ -753,28 +844,33 @@ main .title.aicc {
     border-top: 0;
     font-size: 1.6rem;
   }
+
   footer .inner-cont .foot-cont1 .address a {
     position: static;
     display: inline-block;
     font-size: 1.6rem;
     font-weight: 700;
   }
+
   footer .inner-cont .foot-cont1 .address a::before {
     content: "|";
     display: inline-block;
     margin: 0 1.4rem 0 1rem;
   }
+
   footer .inner-cont .foot-cont2 {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
     order: 1;
   }
+
   footer .inner-cont .foot-cont2 .family-site {
     position: relative;
     display: block;
     height: 5rem;
   }
+
   footer .inner-cont .foot-cont2 .family-site button {
     display: block;
     width: 26rem;
@@ -792,10 +888,12 @@ main .title.aicc {
       border-color 0.3s ease,
       background-color 0.3s ease;
   }
+
   footer .inner-cont .foot-cont2 .family-site.is-open button {
     border-color: rgba(17, 188, 255, 0.4);
     background-color: rgba(17, 188, 255, 0.08);
   }
+
   footer .inner-cont .foot-cont2 .family-site ul {
     position: absolute;
     bottom: 5rem;
@@ -817,6 +915,7 @@ main .title.aicc {
       padding 0.35s ease,
       border-color 0.35s ease;
   }
+
   footer .inner-cont .foot-cont2 .family-site.is-open ul {
     max-height: 35rem;
     padding: 1rem 0;
@@ -833,6 +932,7 @@ main .title.aicc {
     color: rgba(255, 255, 255, 0.92);
     line-height: 4.3rem;
   }
+
   footer .inner-cont .foot-cont2 .family-site li a:hover {
     color: #11bcff;
     background-color: rgba(17, 188, 255, 0.1);
@@ -892,7 +992,7 @@ main .title.aicc {
     line-height: 3rem;
   }
 
-  .layer-pop .pop-head > span {
+  .layer-pop .pop-head>span {
     margin-left: 1rem;
     font-size: 1.6rem;
   }
@@ -957,15 +1057,15 @@ main .title.aicc {
     height: 3.8rem;
   }
 
-  .form-check input[type="checkbox"] + label,
-  .form-check input[type="radio"] + label {
+  .form-check input[type="checkbox"]+label,
+  .form-check input[type="radio"]+label {
     padding-left: 3rem;
     font-size: 1.8rem;
   }
 
   /* forms cont */
-  .forms-cont .form-item > label,
-  .forms-cont .form-item > .label {
+  .forms-cont .form-item>label,
+  .forms-cont .form-item>.label {
     padding: 0 0 0 3rem;
     margin-bottom: 0;
     font-size: 1.8rem;
@@ -973,7 +1073,7 @@ main .title.aicc {
     box-sizing: border-box;
   }
 
-  .forms-cont .form-item > div {
+  .forms-cont .form-item>div {
     padding: 0.8rem 0 0.8rem 1rem;
   }
 
@@ -1043,13 +1143,13 @@ main .title.aicc {
     display: none;
   }
 
-  header .pc-gnb > ul {
+  header .pc-gnb>ul {
     display: none;
     display: flex;
     gap: 6rem;
   }
 
-  header .pc-gnb > ul > li > a {
+  header .pc-gnb>ul>li>a {
     display: block;
     height: 10rem;
     font-size: 2rem;
@@ -1058,15 +1158,15 @@ main .title.aicc {
     line-height: 10rem;
   }
 
-  header .pc-gnb > ul > li > a:hover,
-  header .pc-gnb > ul > li:hover > a,
-  header .pc-gnb > ul > li:focus-within > a,
-  header .pc-gnb > ul > li > a.act {
+  header .pc-gnb>ul>li>a:hover,
+  header .pc-gnb>ul>li:hover>a,
+  header .pc-gnb>ul>li:focus-within>a,
+  header .pc-gnb>ul>li>a.act {
     border-bottom: 0.4rem solid var(--primary);
     color: var(--text-body);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub {
+  header .pc-gnb>ul>li>.gnb-sub {
     position: absolute;
     top: 10rem;
     left: 0;
@@ -1082,7 +1182,7 @@ main .title.aicc {
       visibility 0.35s ease;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul {
+  header .pc-gnb>ul>li>.gnb-sub>ul {
     display: flex;
     gap: 2.4rem;
     width: 144rem;
@@ -1090,7 +1190,7 @@ main .title.aicc {
     padding-bottom: 4.8rem;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a {
     display: block;
     width: 25.6rem;
     padding-bottom: 1.5rem;
@@ -1098,15 +1198,15 @@ main .title.aicc {
     font-weight: 700;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > a.is-static {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>a.is-static {
     cursor: default;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li {
     padding: 0.3rem 0;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a {
     display: inline-block;
     width: 25.6rem;
     min-height: 2.4rem;
@@ -1116,25 +1216,25 @@ main .title.aicc {
     line-height: auto;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub > ul > li > ul > li > a:hover {
+  header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
     background-color: var(--bg-surface);
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > a,
-  header .pc-gnb > ul > li > .gnb-sub.sub2 > ul > li > ul > li > a {
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>a,
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>ul>li>a {
     width: 18.5rem;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub3 > ul {
+  header .pc-gnb>ul>li>.gnb-sub.sub3>ul {
     padding-left: 71rem;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub4 > ul {
+  header .pc-gnb>ul>li>.gnb-sub.sub4>ul {
     padding-left: 82rem;
   }
 
-  header .pc-gnb > ul > li > .gnb-sub.sub5 > ul {
+  header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
     padding-left: 95rem;
   }
 
@@ -1148,20 +1248,24 @@ main .title.aicc {
     justify-content: space-between;
     padding: 6rem 0 6.5rem;
   }
+
   footer .inner-cont .foot-cont1 {
     position: relative;
     order: 0;
   }
+
   footer .inner-cont .foot-menu {
     display: flex;
     gap: 6rem;
     margin-bottom: 2.3rem;
   }
+
   footer .inner-cont .foot-menu a {
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
   }
+
   footer .inner-cont .foot-cont1 .address {
     position: relative;
     margin-top: 2.2rem;
@@ -1169,28 +1273,33 @@ main .title.aicc {
     border-top: 0;
     font-size: 1.6rem;
   }
+
   footer .inner-cont .foot-cont1 .address a {
     position: static;
     display: inline-block;
     font-size: 1.6rem;
     font-weight: 700;
   }
+
   footer .inner-cont .foot-cont1 .address a::before {
     content: "|";
     display: inline-block;
     margin: 0 1.4rem 0 1rem;
   }
+
   footer .inner-cont .foot-cont2 {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
     order: 1;
   }
+
   footer .inner-cont .foot-cont2 .family-site {
     position: relative;
     display: block;
     height: 5rem;
   }
+
   footer .inner-cont .foot-cont2 .family-site button {
     display: block;
     width: 26rem;
@@ -1208,10 +1317,12 @@ main .title.aicc {
       border-color 0.3s ease,
       background-color 0.3s ease;
   }
+
   footer .inner-cont .foot-cont2 .family-site.is-open button {
     border-color: rgba(17, 188, 255, 0.4);
     background-color: rgba(17, 188, 255, 0.08);
   }
+
   footer .inner-cont .foot-cont2 .family-site ul {
     position: absolute;
     bottom: 5rem;
@@ -1233,6 +1344,7 @@ main .title.aicc {
       padding 0.35s ease,
       border-color 0.35s ease;
   }
+
   footer .inner-cont .foot-cont2 .family-site.is-open ul {
     max-height: 35rem;
     padding: 1rem 0;
@@ -1249,6 +1361,7 @@ main .title.aicc {
     color: rgba(255, 255, 255, 0.92);
     line-height: 4.3rem;
   }
+
   footer .inner-cont .foot-cont2 .family-site li a:hover {
     color: #11bcff;
     background-color: rgba(17, 188, 255, 0.1);
@@ -1312,7 +1425,7 @@ main .title.aicc {
     line-height: 3rem;
   }
 
-  .layer-pop .pop-head > span {
+  .layer-pop .pop-head>span {
     margin-left: 1rem;
     font-size: 1.6rem;
   }

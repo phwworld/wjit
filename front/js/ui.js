@@ -1,4 +1,121 @@
-// 이메일 도메인 선택
+// mobile gnb layer toggle
+const moGnbBtn = document.querySelector(".mo-menu");
+const moGnb = document.querySelector(".mo-gnb");
+const header = document.querySelector("header");
+
+const resetMoGnb = () => {
+    if (!moGnb) return;
+    const activeLinks = moGnb.querySelectorAll("a.act");
+    activeLinks.forEach((a) => a.classList.remove("act"));
+
+    const subUls = moGnb.querySelectorAll("ul ul");
+    subUls.forEach((ul) => {
+        ul.style.display = "none";
+        ul.style.height = "";
+        ul.style.overflow = "";
+        ul.style.transition = "";
+    });
+    moGnb.scrollTop = 0;
+};
+
+if (moGnbBtn && moGnb) {
+    moGnbBtn.addEventListener("click", () => {
+        const isOpening = !moGnbBtn.classList.contains("act");
+        moGnbBtn.classList.toggle("act", isOpening);
+        moGnb.classList.toggle("act", isOpening);
+        if (header) header.classList.toggle("act", isOpening);
+
+        if (!isOpening) {
+            resetMoGnb();
+        }
+    });
+}
+
+// mobile gnb accordion menu toggle
+const moGnbMenuNav = document.querySelector(".mo-gnb");
+if (moGnbMenuNav) {
+    const slideDuration = 300;
+
+    const slideDown = (target) => {
+        target.style.display = "block";
+        target.style.overflow = "hidden";
+        target.style.height = "0";
+        const height = target.scrollHeight;
+        target.style.transition = `height ${slideDuration}ms ease-in-out`;
+        target.offsetHeight;
+        target.style.height = height + "px";
+
+        setTimeout(() => {
+            target.style.height = "";
+            target.style.overflow = "";
+            target.style.transition = "";
+        }, slideDuration);
+    };
+
+    const slideUp = (target) => {
+        target.style.overflow = "hidden";
+        target.style.height = target.scrollHeight + "px";
+        target.style.transition = `height ${slideDuration}ms ease-in-out`;
+        target.offsetHeight;
+        target.style.height = "0";
+
+        setTimeout(() => {
+            target.style.display = "none";
+            target.style.height = "";
+            target.style.overflow = "";
+            target.style.transition = "";
+        }, slideDuration);
+    };
+
+    const closeSubMenu = (li) => {
+        const activeLinks = li.querySelectorAll("a.act");
+        activeLinks.forEach((a) => a.classList.remove("act"));
+
+        const openUls = li.querySelectorAll("ul");
+        openUls.forEach((ul) => {
+            if (window.getComputedStyle(ul).display !== "none") {
+                slideUp(ul);
+            }
+        });
+    };
+
+    const moGnbLinks = moGnbMenuNav.querySelectorAll("a");
+    moGnbLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const subMenu = link.nextElementSibling;
+            if (subMenu && subMenu.tagName === "UL") {
+                e.preventDefault();
+                const parentLi = link.closest("li");
+                const isOpening = !link.classList.contains("act");
+
+                if (parentLi && parentLi.parentElement) {
+                    const siblingLis = Array.from(parentLi.parentElement.children).filter(
+                        (child) => child !== parentLi && child.tagName === "LI"
+                    );
+                    siblingLis.forEach((siblingLi) => {
+                        closeSubMenu(siblingLi);
+                    });
+                }
+
+                if (isOpening) {
+                    link.classList.add("act");
+                    slideDown(subMenu);
+                } else {
+                    link.classList.remove("act");
+                    slideUp(subMenu);
+
+                    const childActiveLinks = subMenu.querySelectorAll("a.act");
+                    childActiveLinks.forEach((a) => a.classList.remove("act"));
+                    const childUls = subMenu.querySelectorAll("ul");
+                    childUls.forEach((ul) => {
+                        ul.style.display = "none";
+                        ul.style.height = "";
+                    });
+                }
+            }
+        });
+    });
+}
 const domainSelect = document.querySelector("#email-domain");
 const domainInput = document.querySelector("input[name='email-domain']");
 if (domainSelect && domainInput) {
