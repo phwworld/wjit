@@ -6,6 +6,19 @@
    ========================================== */
 .search-layer {
    position: fixed;
+   top: 5.6rem;
+   left: 0;
+   width: 100%;
+   height: calc(100vh - 5.6rem);
+   background-color: var(--white);
+   z-index: 50;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.search-layer.act {
+   opacity: 1;
+   visibility: visible;
 }
 
 /* ==========================================

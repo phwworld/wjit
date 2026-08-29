@@ -59,6 +59,11 @@ body {
   color: var(--text-body);
 }
 
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
 br.pc {
   display: none;
 }
@@ -1089,7 +1094,6 @@ main .title.aicc {
 
   /* layout */
   header {
-    position: relative;
     height: 10rem;
   }
 
