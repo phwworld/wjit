@@ -4,79 +4,7 @@
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
    ========================================== */
-.search-layer {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100vh;
-   padding: 6rem 2.4rem;
-   background-color: var(--white);
-   z-index: 50;
-   opacity: 0;
-   visibility: hidden;
-   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-.search-layer.act {
-   opacity: 1;
-   visibility: visible;
-}
-.search-layer .title {
-   margin-bottom: 3rem;
-   font-size: 2rem;
-   font-weight: 500;
-   text-align: center;
-}
-.search-layer .title span {
-   color: var(--text-point);
-}
-.search-layer .search-input form {
-   display: flex;
-   justify-content: space-between;
-   height: 6rem;
-   border-bottom: 2px solid var(--primary);
-}
-.search-layer .search-input input {
-   width: calc(100% - 5rem);
-   font-size: 2rem;
-   font-weight: 500;
-}
-.search-layer .search-input button {
-   width: 5rem;
-   height: 6rem;
-   background: url(../img/common/icon_search2.svg) no-repeat center center;
-}
-.search-layer .recommend-list {
-   margin-top: 3rem;
-}
-.search-layer .recommend-list p {
-   margin-bottom: 2rem;
-   font-size: 2rem;
-   font-weight: 600;
-}
-.search-layer .recommend-list div {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 1rem 1rem;
-}
-.search-layer .recommend-list button {
-   height: 4.2rem;
-   padding: 0 2rem;
-   border: 1px solid var(--primary);
-   border-radius: 10rem;
-   font-size: 1.6rem;
-   color: var(--text-point);
-   font-weight: 500;
-}
-.search-layer .close {
-   position: absolute;
-   top: 2.4rem;
-   right: 2.4rem;
-   width: 2.4rem;
-   height: 2.4rem;
-   background: url(../img/common/icon_close.svg) no-repeat center center;
-   background-size: 1.2rem 1.2rem;
-}
+
 
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
@@ -91,31 +19,5 @@
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
 @media (min-width: 1440px) {
-   .search-layer .inner-cont {
-      width: 70rem;
-      margin: 0 auto;
-   }
-   .search-layer .title {
-      margin-bottom: 4rem;
-      font-size: 3.2rem;
-   }
-   .search-layer .search-input form {
-      height: 6rem;
-      border-bottom: 3px solid var(--primary);
-   }
-   .search-layer .search-input input {
-      font-size: 2.4rem;
-   }
-   .search-layer .recommend-list {
-      margin-top: 4rem;
-   }
-   .search-layer .close {
-      top: 6rem;
-      left: 50%;
-      right: auto;
-      width: 3rem;
-      height: 3rem;
-      margin-left: 72rem;
-      background-size: 100%;
-   }
+   
 }
