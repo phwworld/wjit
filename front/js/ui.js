@@ -273,19 +273,25 @@ function initSearchLayer() {
     const searchLayer = document.querySelector(".search-layer");
     if (!searchBtn || !searchLayer) return;
 
+    const searchInput = searchLayer.querySelector(".search-input input[type='text'], input[type='search']");
+    const closeBtn = searchLayer.querySelector(".close, .search-close, .btn-close");
+    const recommendBtns = searchLayer.querySelectorAll(".recommend-list button");
+
     const closeSearchLayer = () => {
         searchBtn.classList.remove("act");
         searchBtn.setAttribute("aria-expanded", "false");
         searchLayer.classList.remove("act");
+        document.body.classList.remove("no-scroll");
+        searchBtn.focus();
     };
 
     const openSearchLayer = () => {
         searchBtn.classList.add("act");
         searchBtn.setAttribute("aria-expanded", "true");
         searchLayer.classList.add("act");
+        document.body.classList.add("no-scroll");
 
         // 검색창 내부 input 자동 포커스
-        const searchInput = searchLayer.querySelector("input[type='text'], input[type='search']");
         if (searchInput) {
             setTimeout(() => searchInput.focus(), 100);
         }
@@ -296,9 +302,9 @@ function initSearchLayer() {
         const header = document.querySelector("header");
         if (moGnbBtn && moGnbBtn.classList.contains("act")) {
             moGnbBtn.classList.remove("act");
+            moGnbBtn.setAttribute("aria-expanded", "false");
             moGnb.classList.remove("act");
             if (header) header.classList.remove("act");
-            document.body.classList.remove("no-scroll");
         }
     };
 
@@ -312,10 +318,22 @@ function initSearchLayer() {
         }
     });
 
-    // 검색 레이어 닫기 버튼 지원
-    const closeBtn = searchLayer.querySelector(".search-close, .btn-close");
+    // 닫기 버튼 클릭 이벤트
     if (closeBtn) {
-        closeBtn.addEventListener("click", closeSearchLayer);
+        closeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeSearchLayer();
+        });
+    }
+
+    // 추천 검색어 버튼 클릭 시 검색창에 텍스트 입력 및 포커스
+    if (recommendBtns.length && searchInput) {
+        recommendBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                searchInput.value = btn.textContent.trim();
+                searchInput.focus();
+            });
+        });
     }
 
     // ESC 키로 검색 레이어 닫기
