@@ -358,7 +358,7 @@ main .content {
 }
 
 main .content:has(.category-list, .tab-list) {
-  z-index: 20;
+  z-index: 50;
 }
 
 footer {
