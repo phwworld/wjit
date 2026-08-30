@@ -477,29 +477,98 @@ function initCategoryPanels() {
    9. 탭 메뉴 & 카테고리 탭 (Tab Menu & Category Tabs)
    ========================================================================== */
 function initTabMenu() {
-    const tabContainers = document.querySelectorAll(".tab-list, .category-list");
+    // 1) 카테고리 리스트 (category-list, category-list2) 단순 활성화 토글
+    const categoryContainers = document.querySelectorAll(".category-list, .category-list2");
+    categoryContainers.forEach((container) => {
+        const buttons = container.querySelectorAll("button");
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                buttons.forEach((btn) => btn.classList.remove("act"));
+                button.classList.add("act");
+            });
+        });
+    });
+
+    // 2) 탭 메뉴 (tab-list) - 클릭 시 해당 tab-cont 영역으로 스크롤 이동 및 ScrollSpy
+    const tabContainers = document.querySelectorAll(".tab-list");
     tabContainers.forEach((tabContainer) => {
         const tabButtons = tabContainer.querySelectorAll("button");
         const parentSection = tabContainer.closest(".inner-cont, .content, main") || document;
         const tabContents = parentSection.querySelectorAll(".tab-cont");
 
+        if (!tabButtons.length) return;
+
+        let isClickScrolling = false;
+        let scrollTimeout = null;
+
+        const getScrollOffset = (targetCont) => {
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.offsetHeight : 0;
+            const tabHeight = tabContainer.offsetHeight || 0;
+            
+            let contMarginTop = 0;
+            const contElement = targetCont || tabContents[0];
+            if (contElement) {
+                const marginTopVal = parseFloat(window.getComputedStyle(contElement).marginTop);
+                if (!isNaN(marginTopVal)) {
+                    contMarginTop = marginTopVal;
+                }
+            }
+
+            return headerHeight + tabHeight - contMarginTop;
+        };
+
+        const setActiveTab = (index) => {
+            tabButtons.forEach((btn, i) => {
+                btn.classList.toggle("act", i === index);
+            });
+        };
+
         tabButtons.forEach((button, index) => {
             button.addEventListener("click", () => {
-                tabButtons.forEach((btn) => btn.classList.remove("act"));
-                button.classList.add("act");
+                setActiveTab(index);
 
-                // 연관된 .tab-cont가 존재하는 경우 활성화 전환
-                if (tabContents.length > 0) {
-                    tabContents.forEach((cont, contIndex) => {
-                        if (contIndex === index) {
-                            cont.style.display = "block";
-                        } else {
-                            cont.style.display = "none";
-                        }
+                if (tabContents.length > index && tabContents[index]) {
+                    const targetCont = tabContents[index];
+                    const offset = getScrollOffset(targetCont);
+                    const targetTop = targetCont.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                    isClickScrolling = true;
+                    if (scrollTimeout) clearTimeout(scrollTimeout);
+
+                    window.scrollTo({
+                        top: Math.max(0, targetTop),
+                        behavior: "smooth"
                     });
+
+                    scrollTimeout = setTimeout(() => {
+                        isClickScrolling = false;
+                    }, 800);
                 }
             });
         });
+
+        // 페이지 스크롤 시 현재 보고 있는 tab-cont 섹션에 맞춰 tab 버튼 활성화 (ScrollSpy)
+        if (tabContents.length > 0) {
+            const onScroll = () => {
+                if (isClickScrolling) return;
+
+                const scrollPos = window.pageYOffset;
+
+                let activeIndex = 0;
+                tabContents.forEach((cont, i) => {
+                    const offset = getScrollOffset(cont) + 30;
+                    const contTop = cont.getBoundingClientRect().top + window.pageYOffset;
+                    if (scrollPos + offset >= contTop) {
+                        activeIndex = i;
+                    }
+                });
+
+                setActiveTab(activeIndex);
+            };
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+        }
     });
 }
 
