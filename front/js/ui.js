@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInflowSelect();
     initCategoryPanels();
     initTabMenu();
+    initFaqAccordion();
     initLayerPopupEvents();
 });
 
@@ -573,7 +574,50 @@ function initTabMenu() {
 }
 
 /* ==========================================================================
-   10. 레이어 팝업 열기 / 닫기 (Layer Popup - Global Functions)
+   10. FAQ 아코디언 (FAQ Accordion)
+   ========================================================================== */
+function initFaqAccordion() {
+    const faqLists = document.querySelectorAll(".faq .faq-list");
+    if (!faqLists.length) return;
+
+    faqLists.forEach((list) => {
+        const items = list.querySelectorAll(".faq-item");
+
+        items.forEach((item) => {
+            const head = item.querySelector(".item-head");
+            const cont = item.querySelector(".item-cont");
+            if (!head || !cont) return;
+
+            const isOpen = head.classList.contains("act") || cont.classList.contains("act");
+            head.classList.toggle("act", isOpen);
+            cont.classList.toggle("act", isOpen);
+            head.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+            head.addEventListener("click", (e) => {
+                e.preventDefault();
+                const willOpen = !head.classList.contains("act");
+
+                items.forEach((other) => {
+                    if (other === item) return;
+                    const otherHead = other.querySelector(".item-head");
+                    const otherCont = other.querySelector(".item-cont");
+                    // if (otherHead) {
+                    //     otherHead.classList.remove("act");
+                    //     otherHead.setAttribute("aria-expanded", "false");
+                    // }
+                    // if (otherCont) otherCont.classList.remove("act");
+                });
+
+                head.classList.toggle("act", willOpen);
+                cont.classList.toggle("act", willOpen);
+                head.setAttribute("aria-expanded", willOpen ? "true" : "false");
+            });
+        });
+    });
+}
+
+/* ==========================================================================
+   11. 레이어 팝업 열기 / 닫기 (Layer Popup - Global Functions)
    ========================================================================== */
 function syncBodyScrollForPopups() {
     const hasActivePopup = document.querySelector(".layer-pop.act");
@@ -631,7 +675,7 @@ window.openLayer = openLayer;
 window.closeLayer = closeLayer;
 
 /* ==========================================================================
-   11. 레이어 팝업 이벤트 바인딩 (배경 클릭, 취소 버튼, ESC 키)
+   12. 레이어 팝업 이벤트 바인딩 (배경 클릭, 취소 버튼, ESC 키)
    ========================================================================== */
 function initLayerPopupEvents() {
     const popups = document.querySelectorAll(".layer-pop");
