@@ -1,0 +1,302 @@
+@charset "utf-8";
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+/* aicc */
+.aicc-cont1 .box-cont {
+    padding-top: 13rem;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-image: url(../img/business/bg_aicc_con1_01.svg);
+    background-size: 8rem;
+}
+
+.aicc-cont1 div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_aicc_con1_02.svg);
+}
+
+.aicc-cont1 div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_aicc_con1_03.svg);
+}
+
+.aicc-cont2>div>div {
+    padding-bottom: 13rem;
+    background-repeat: no-repeat;
+    background-position: center bottom 3rem;
+    background-size: 8rem;
+    background-image: url(../img/business/bg_aicc_con2_01.svg);
+}
+
+.aicc-cont2:nth-of-type(2)>div>div {
+    background-image: url(../img/business/bg_aicc_con2_02.svg)
+}
+
+.aicc-cont2:nth-of-type(3)>div>div {
+    background-image: url(../img/business/bg_aicc_con2_03.svg)
+}
+
+.aicc-cont3 .box-cont {
+    padding: 2.4rem 1rem .8rem;
+}
+
+.aicc-cont3 .box-cont p {
+    margin-bottom: 2.4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.aicc-cont3 .box-cont .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem .8rem;
+}
+
+.aicc-cont3 .box-cont .service-list div {
+    flex-basis: calc(50% - .8rem);
+    min-height: 14.7rem;
+    padding-top: 10rem;
+    border: 1px solid var(--border-default);
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: var(--white);
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-image: url(../img/business/bg_aicc_cont3_01.svg);
+    background-size: auto 6rem;
+}
+
+.aicc-cont3 .box-cont .service-list div:nth-of-type(2) {
+    background-image: url(../img/business/bg_aicc_cont3_02.svg);
+}
+
+.aicc-cont3 .box-cont .service-list div:nth-of-type(3) {
+    background-image: url(../img/business/bg_aicc_cont3_03.svg);
+}
+
+.aicc-cont3 .box-cont .service-list div:nth-of-type(4) {
+    background-image: url(../img/business/bg_aicc_cont3_04.svg);
+}
+
+.aicc-cont4 {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background-color: var(--bg-surface);
+}
+
+.aicc-cont4 .img-cont {
+    text-align: center;
+}
+
+.aicc-cont4 img {
+    width: 16rem;
+}
+
+.aicc-cont4 .txt-cont p {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.aicc-cont4 .txt-cont li {
+    position: relative;
+    padding-left: 1.4rem;
+}
+
+.aicc-cont4 .txt-cont li::before {
+    content: "";
+    position: absolute;
+    top: 1.2rem;
+    left: 0;
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    background-color: var(--text-body);
+}
+
+.aicc-cont5>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.aicc-cont5>div>div {
+    border-style: solid;
+    padding: 13rem 0 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_aicc_cont5_01.svg);
+}
+
+.aicc-cont5>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_aicc_cont5_02.svg);
+}
+
+.aicc-cont5>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_aicc_cont5_03.svg);
+}
+
+.aicc-cont6 .box-cont {
+    padding-top: 3rem;
+}
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+    /* aicc */
+    .cont-type1.aicc-cont1 .box-cont {
+        padding-top: 16rem;
+        background-size: 10rem;
+    }
+
+    .aicc-cont2>div>div {
+        padding-bottom: 4rem;
+        background-position: right 8rem center;
+        background-size: 10rem;
+    }
+
+    .aicc-cont3>div {
+        width: 100%;
+    }
+
+    .aicc-cont3 .box-cont {
+        padding: 4rem;
+    }
+
+    .aicc-cont3 .box-cont p {
+        margin-bottom: 4rem;
+        font-size: 3rem;
+    }
+
+    .aicc-cont3 .box-cont .service-list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .aicc-cont3 .box-cont .service-list div {
+        flex-basis: calc(25% - 2rem);
+        min-height: 26rem;
+        padding-top: 18rem;
+        font-size: 2.4rem;
+        background-position: center top 6rem;
+        background-image: url(../img/business/bg_aicc_cont3_01.svg);
+        background-size: auto 10rem;
+    }
+
+    .aicc-cont4 {
+        flex-direction: row;
+        align-items: center;
+        gap: 6rem;
+        padding: 6rem 7rem;
+    }
+
+    .aicc-cont4 .txt-cont p {
+        font-size: 3rem;
+    }
+
+    .aicc-cont5>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .aicc-cont5>div>div {
+        flex-basis: calc(33.3% - 2rem);
+        padding: 17rem 0 5rem;
+        font-size: 2.4rem;
+        background-position: center top 5rem;
+        background-size: auto 10rem;
+    }
+
+    .aicc-cont6 .box-cont {
+        padding-top: 4rem;
+    }
+}
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1440px) {
+
+    /* aicc */
+    .cont-type1.aicc-cont1 .box-cont {
+        padding-top: 16rem;
+        background-size: 10rem;
+    }
+
+    .aicc-cont2>div>div {
+        padding-bottom: 4rem;
+        background-position: right 8rem center;
+        background-size: 10rem;
+    }
+
+    .aicc-cont3>div {
+        width: 100%;
+    }
+
+    .aicc-cont3 .box-cont {
+        padding: 4rem;
+    }
+
+    .aicc-cont3 .box-cont p {
+        margin-bottom: 4rem;
+        font-size: 3rem;
+    }
+
+    .aicc-cont3 .box-cont .service-list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .aicc-cont3 .box-cont .service-list div {
+        flex-basis: calc(25% - 2rem);
+        min-height: 26rem;
+        padding-top: 18rem;
+        font-size: 2.4rem;
+        background-position: center top 6rem;
+        background-image: url(../img/business/bg_aicc_cont3_01.svg);
+        background-size: auto 10rem;
+    }
+
+    .aicc-cont4 {
+        flex-direction: row;
+        align-items: center;
+        gap: 6rem;
+        padding: 6rem 7rem;
+    }
+
+    .aicc-cont4 .txt-cont p {
+        font-size: 3rem;
+    }
+
+    .aicc-cont5>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .aicc-cont5>div>div {
+        flex-basis: calc(33.3% - 2rem);
+        padding: 17rem 0 5rem;
+        font-size: 2.4rem;
+        background-position: center top 5rem;
+        background-size: auto 10rem;
+    }
+
+    .aicc-cont6 .box-cont {
+        padding-top: 4rem;
+    }
+}

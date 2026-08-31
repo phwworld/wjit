@@ -589,7 +589,8 @@ main > .title.aicc {
 }
 
 .s-tit {
-  margin-bottom: 2rem;
+  margin: 6rem 0 2rem;
+  padding-top: 6rem;
   border-top: 1px dashed #e1e7ee;
   font-size: 2rem;
 }
