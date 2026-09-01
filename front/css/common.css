@@ -588,6 +588,21 @@ main > .title.aicc {
   font-size: 2.4rem;
 }
 
+.c-tit span {
+  display: block;
+  font-size: 2rem;
+}
+
+.cont-txt+.c-tit {
+  margin-top: 6rem;
+}
+
+.c-tit.line {
+  margin: 6rem 0 2rem;
+  padding-top: 6rem;
+  border-top: 1px solid #b5b7bd;
+}
+
 .s-tit {
   margin: 6rem 0 2rem;
   padding-top: 6rem;
@@ -1109,6 +1124,15 @@ main > .title.aicc {
     margin-bottom: 1rem;
     font-size: 4rem;
   }
+  
+  .c-tit span {
+    display: inline-block;
+    font-size: 4rem;
+  }
+
+  .cont-txt+.c-tit {
+    margin-top: 10rem;
+  }
 
   .s-tit {
     padding: 10rem 0 0;
@@ -1575,6 +1599,15 @@ main > .title.aicc {
   .c-tit {
     margin-bottom: 1rem;
     font-size: 4rem;
+  }
+  
+  .c-tit span {
+    display: inline-block;
+    font-size: 4rem;
+  }
+
+  .cont-txt+.c-tit {
+    margin-top: 10rem;
   }
 
   .s-tit {

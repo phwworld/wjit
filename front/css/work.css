@@ -4,7 +4,36 @@
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
    ========================================== */
+/* wikl */
+   .wikl-cont1 > div {
+   display: flex;
+   flex-direction: column;
+   gap: .6rem;
+}
 
+/* aws */
+.aws-cont1 {
+   margin-top: 4rem;
+}
+
+.aws-cont2 .box-cont {
+   padding-top: 13rem;
+   background-repeat: no-repeat;
+   background-position: center top 3rem;
+   background-size: 8.6rem auto;
+   background-image: url(../img/business/bg_aws_cont2_01.svg);
+}
+.aws-cont2 div:nth-of-type(2) .box-cont {
+   background-image: url(../img/business/bg_aws_cont2_02.svg);
+}
+.aws-cont2 div:nth-of-type(3) .box-cont {
+   background-image: url(../img/business/bg_aws_cont2_03.svg);
+}
+
+/* bridge-area */
+.bridge-area {
+   
+}
 
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
@@ -19,5 +48,14 @@
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
 @media (min-width: 1440px) {
+   /* aws */
+   .aws-cont1 {
+      margin-top: 4rem;
+   }
+
+   .aws-cont2 .box-cont {
+      padding-top: 16rem;
+      background-size: 10.8rem auto;
+   }
    
 }
