@@ -490,14 +490,27 @@ function initTabMenu() {
         });
     });
 
-    // 2) 탭 메뉴 (tab-list) - 클릭 시 해당 tab-cont 영역으로 스크롤 이동 및 ScrollSpy
+    // 2) 탭 메뉴 (tab-list) - data-target ↔ tab-cont id 매칭으로 스크롤 이동 및 ScrollSpy
     const tabContainers = document.querySelectorAll(".tab-list");
     tabContainers.forEach((tabContainer) => {
-        const tabButtons = tabContainer.querySelectorAll("button");
-        const parentSection = tabContainer.closest(".inner-cont, .content, main") || document;
-        const tabContents = parentSection.querySelectorAll(".tab-cont");
-
+        const tabButtons = Array.from(tabContainer.querySelectorAll("button"));
         if (!tabButtons.length) return;
+
+        const parentSection = tabContainer.closest(".inner-cont, .content, main") || document;
+        const fallbackContents = Array.from(parentSection.querySelectorAll(".tab-cont"));
+
+        const getTargetCont = (button, index) => {
+            const targetId = (button.getAttribute("data-target") || "").replace(/^#/, "");
+            if (targetId) {
+                const byId = document.getElementById(targetId);
+                if (byId) return byId;
+            }
+            return fallbackContents[index] || null;
+        };
+
+        const tabTargets = tabButtons
+            .map((button, index) => ({ button, cont: getTargetCont(button, index) }))
+            .filter((item) => item.cont);
 
         let isClickScrolling = false;
         let scrollTimeout = null;
@@ -506,9 +519,9 @@ function initTabMenu() {
             const header = document.querySelector("header");
             const headerHeight = header ? header.offsetHeight : 0;
             const tabHeight = tabContainer.offsetHeight || 0;
-            
+
             let contMarginTop = 0;
-            const contElement = targetCont || tabContents[0];
+            const contElement = targetCont || (tabTargets[0] && tabTargets[0].cont);
             if (contElement) {
                 const marginTopVal = parseFloat(window.getComputedStyle(contElement).marginTop);
                 if (!isNaN(marginTopVal)) {
@@ -519,53 +532,53 @@ function initTabMenu() {
             return headerHeight + tabHeight - contMarginTop;
         };
 
-        const setActiveTab = (index) => {
-            tabButtons.forEach((btn, i) => {
-                btn.classList.toggle("act", i === index);
+        const setActiveTab = (activeButton) => {
+            tabButtons.forEach((btn) => {
+                btn.classList.toggle("act", btn === activeButton);
             });
         };
 
         tabButtons.forEach((button, index) => {
             button.addEventListener("click", () => {
-                setActiveTab(index);
+                setActiveTab(button);
 
-                if (tabContents.length > index && tabContents[index]) {
-                    const targetCont = tabContents[index];
-                    const offset = getScrollOffset(targetCont);
-                    const targetTop = targetCont.getBoundingClientRect().top + window.pageYOffset - offset;
+                const targetCont = getTargetCont(button, index);
+                if (!targetCont) return;
 
-                    isClickScrolling = true;
-                    if (scrollTimeout) clearTimeout(scrollTimeout);
+                const offset = getScrollOffset(targetCont);
+                const targetTop = targetCont.getBoundingClientRect().top + window.pageYOffset - offset;
 
-                    window.scrollTo({
-                        top: Math.max(0, targetTop),
-                        behavior: "smooth"
-                    });
+                isClickScrolling = true;
+                if (scrollTimeout) clearTimeout(scrollTimeout);
 
-                    scrollTimeout = setTimeout(() => {
-                        isClickScrolling = false;
-                    }, 800);
-                }
+                window.scrollTo({
+                    top: Math.max(0, targetTop),
+                    behavior: "smooth"
+                });
+
+                scrollTimeout = setTimeout(() => {
+                    isClickScrolling = false;
+                }, 800);
             });
         });
 
         // 페이지 스크롤 시 현재 보고 있는 tab-cont 섹션에 맞춰 tab 버튼 활성화 (ScrollSpy)
-        if (tabContents.length > 0) {
+        if (tabTargets.length > 0) {
             const onScroll = () => {
                 if (isClickScrolling) return;
 
                 const scrollPos = window.pageYOffset;
+                let activeButton = tabTargets[0].button;
 
-                let activeIndex = 0;
-                tabContents.forEach((cont, i) => {
+                tabTargets.forEach(({ button, cont }) => {
                     const offset = getScrollOffset(cont) + 30;
                     const contTop = cont.getBoundingClientRect().top + window.pageYOffset;
                     if (scrollPos + offset >= contTop) {
-                        activeIndex = i;
+                        activeButton = button;
                     }
                 });
 
-                setActiveTab(activeIndex);
+                setActiveTab(activeButton);
             };
 
             window.addEventListener("scroll", onScroll, { passive: true });

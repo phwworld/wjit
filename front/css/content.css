@@ -12,7 +12,8 @@
     z-index: 20;
     display: flex;
     height: 6.1rem;
-    margin: 0 -2.4rem 6rem;
+    /* margin: 0 -2.4rem 6rem; */
+    margin: 0 0 6rem;
     border-bottom: 1px solid var(--primary);
     overflow-x: scroll;
 }
@@ -89,7 +90,7 @@
     border-top: 1px solid #b5b7bd;
 }
 
-.tab-list+.tab-cont {
+.tab-cont:nth-of-type(1) {
     padding: 0;
     margin-top: 0;
     border: 0;
@@ -835,7 +836,7 @@
     .category-list {
         height: 7.4rem;
         border-width: 2px;
-        margin: 0 0 10rem;
+        margin: 0 2.4rem 10rem 2.4rem;
         overflow-x: hidden;
     }
 
@@ -1545,9 +1546,11 @@
     /* tab menu, category */
     .tab-list,
     .category-list {
+        width: 144rem;
         height: 7.4rem;
         border-width: 2px;
-        margin: 0 0 10rem;
+        /* margin: 0 0 10rem; */
+        margin: 0 auto 10rem auto;
         overflow-x: hidden;
     }
 
