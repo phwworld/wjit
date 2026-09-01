@@ -53,20 +53,20 @@
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-image: url(../img/business/bg_aicc_cont3_01.svg);
+    background-image: url(../img/business/bg_aws_cont6_01.svg);
     background-size: auto 6rem;
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(2) {
-    background-image: url(../img/business/bg_aicc_cont3_02.svg);
+    background-image: url(../img/business/bg_aws_cont6_02.svg);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(3) {
-    background-image: url(../img/business/bg_aicc_cont3_03.svg);
+    background-image: url(../img/business/bg_aws_cont6_03.svg);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(4) {
-    background-image: url(../img/business/bg_aicc_cont3_04.svg);
+    background-image: url(../img/business/bg_aws_cont6_04.svg);
 }
 
 /* ==========================================
@@ -92,6 +92,33 @@
    .aws2 {
       margin-top: 2rem;
    }
+   .aws-cont6>div {
+      width: 100%;
+}
+
+.aws-cont6 .box-cont {
+      padding: 4rem;
+}
+
+.aws-cont6 .box-cont p {
+      margin-bottom: 4rem;
+      font-size: 3rem;
+}
+
+.aws-cont6 .box-cont .service-list {
+      flex-wrap: nowrap;
+      gap: 2rem;
+}
+
+.aws-cont6 .box-cont .service-list div {
+      /* flex-basis: calc(25% - 2rem); */
+      flex: 1;
+      min-height: 26rem;
+      padding: 17rem 5rem 0;
+      font-size: 2.4rem;
+      background-position: center top 4rem;
+      background-size: auto 10rem;
+}
 }
 
 /* ==========================================
@@ -116,5 +143,33 @@
    }
    .aws2 {
       margin-top: 2rem;
+   }
+   
+   .aws-cont6>div {
+         width: 100%;
+   }
+
+   .aws-cont6 .box-cont {
+         padding: 4rem;
+   }
+
+   .aws-cont6 .box-cont p {
+         margin-bottom: 4rem;
+         font-size: 3rem;
+   }
+
+   .aws-cont6 .box-cont .service-list {
+         flex-wrap: nowrap;
+         gap: 2rem;
+   }
+
+   .aws-cont6 .box-cont .service-list div {
+         /* flex-basis: calc(25% - 2rem); */
+         flex: 1;
+         min-height: 26rem;
+         padding: 17rem 5rem 0;
+         font-size: 2.4rem;
+         background-position: center top 4rem;
+         background-size: auto 10rem;
    }
 }
