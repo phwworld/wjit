@@ -4,6 +4,33 @@
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
    ========================================== */
+/* btn shortcut */
+.btn-shortcut {
+   margin-top: 4rem;
+   text-align: center;
+}
+.btn-shortcut a {
+   display: inline-block;
+   width: 100%;
+   height: 4.8rem;
+   padding: 0 2rem;
+   color: var(--white);
+   font-weight: 700;
+   line-height: 4.8rem;
+   background-color: var(--primary);
+}
+.btn-shortcut a span {
+   display: inline-block;
+   padding-right: 4.4rem;
+   background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right 1rem center;
+   background-size: auto 1.8rem;
+}
+.btn-shortcut a i {
+   padding-left: 1rem;
+   font-size: 1.4rem;
+   font-weight: 400;
+}
+
 /* tab menu, category */
 .tab-list,
 .category-list {
@@ -98,6 +125,7 @@
 
 .bridge-area + .inner-cont > .tab-cont:nth-of-type(1) {
     border-top: 0;
+    margin-top: 6rem;
 }
 
 /* board search */
@@ -649,6 +677,9 @@
 }
 
 /* cont-img */
+.cont-img {
+    margin-top: 4rem;
+}
 .cont-img>div {
     display: none;
 }
@@ -830,6 +861,39 @@
    ========================================== */
 /* @media (min-width: 768px) and (max-width: 1366px) { */
 @media (min-width: 1025px) and (max-width: 1366px) {
+    /* btn shortcut */
+   .btn-shortcut {
+      margin-top: 0;
+   }
+   .btn-shortcut a {
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 34rem;
+      height: 10rem;
+      padding: 1.2rem 4rem;
+      font-size: 2.8rem;
+      text-align: left;
+      line-height: 1;
+   }
+   .btn-shortcut a span {
+      display: inline-block;
+      width: 100%;
+      padding-right: 2.4rem;
+      background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right top .5rem;
+      background-size: auto 1.8rem;
+   }
+   .btn-shortcut a i {
+      display: block;
+      margin-top: 1rem;
+      padding-left: 0;
+      font-size: 2rem;
+   }
+
+   .cont-txt:has( + .btn-shortcut) {
+      float: left;
+      width: calc(100% - 40rem);
+   }
 
     /* tab menu */
     .tab-list,
@@ -871,6 +935,10 @@
 
     .tab-cont {
         padding-top: 10rem;
+        margin-top: 10rem;
+    }
+
+    .bridge-area + .inner-cont > .tab-cont:nth-of-type(1) {
         margin-top: 10rem;
     }
 
@@ -1422,6 +1490,17 @@
         padding: 4rem 6rem;
     }
 
+    /* cont-img */
+    :lang(ko) .cont-img .mo.ko,
+    :lang(en) .cont-img .mo.en {
+        display: none;
+    }
+    
+    :lang(ko) .cont-img .pc.ko,
+    :lang(en) .cont-img .pc.en {
+        display: block;
+    }
+
     /* cont-type1 */
     .cont-type1 {
         flex-direction: row;
@@ -1542,6 +1621,39 @@
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
 @media (min-width: 1440px) {
+    /* btn shortcut */
+   .btn-shortcut {
+      margin-top: 0;
+   }
+   .btn-shortcut a {
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 34rem;
+      height: 10rem;
+      padding: 1.2rem 4rem;
+      font-size: 2.8rem;
+      text-align: left;
+      line-height: 1;
+   }
+   .btn-shortcut a span {
+      display: inline-block;
+      width: 100%;
+      padding-right: 2.4rem;
+      background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right top .5rem;
+      background-size: auto 1.8rem;
+   }
+   .btn-shortcut a i {
+      display: block;
+      margin-top: 1rem;
+      padding-left: 0;
+      font-size: 2rem;
+   }
+
+   .cont-txt:has( + .btn-shortcut) {
+      float: left;
+      width: calc(100% - 50rem);
+   }
 
     /* tab menu, category */
     .tab-list,
@@ -1589,6 +1701,10 @@
 
     .tab-cont {
         padding-top: 10rem;
+        margin-top: 10rem;
+    }
+
+    .bridge-area + .inner-cont > .tab-cont:nth-of-type(1) {
         margin-top: 10rem;
     }
 
