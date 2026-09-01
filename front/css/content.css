@@ -130,6 +130,14 @@
     border-width: 1px 0;
 }
 
+.board-list .board-item.no-data {
+    display: block;
+    width: 100% !important;
+    text-align: center;
+    font-weight: 700;
+    color: var(--text-point);
+}
+
 .board-list .board-item {
     display: flex;
     flex-direction: column;
@@ -1728,6 +1736,12 @@
         gap: 8rem 2.7rem;
         padding: 0;
         border: 0;
+    }
+
+    .board-list.type4 .board-item.no-data {
+        padding: 4rem 0;
+        border: solid var(--border-default);
+        border-width: 1px 0;
     }
 
     .board-list.type4 .board-item {
