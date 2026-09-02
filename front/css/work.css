@@ -5,7 +5,7 @@
    - 기준 해상도: 360px
    ========================================== */
 /* wikl */
-.wikl-cont1 > div {
+.wikl-cont1>div {
    display: flex;
    flex-direction: column;
    gap: .6rem;
@@ -28,23 +28,23 @@
    font-weight: 700;
 }
 
-.wdms-ai .box-cont p + p strong {
+.wdms-ai .box-cont p+p strong {
    margin-top: 2rem;
 }
 
-.wdms-ai .box-cont ul + p strong {
+.wdms-ai .box-cont ul+p strong {
    margin-top: 2rem;
 }
 
-.wdms-feat > div,
-.wdms-effect > div {
+.wdms-feat>div,
+.wdms-effect>div {
    display: flex;
    flex-direction: column;
    gap: .8rem;
 }
 
-.wdms-feat > div > div:not(:has(.box-tit)),
-.wdms-effect > div > div {
+.wdms-feat>div>div:not(:has(.box-tit)),
+.wdms-effect>div>div {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -90,12 +90,15 @@
    background-size: 8.6rem auto;
    background-image: url(../img/business/bg_aws_cont2_01.svg);
 }
+
 .aws-cont2 div:nth-of-type(2) .box-cont {
    background-image: url(../img/business/bg_aws_cont2_02.svg);
 }
+
 .aws-cont2 div:nth-of-type(3) .box-cont {
    background-image: url(../img/business/bg_aws_cont2_03.svg);
 }
+
 .aws-cont4>div {
    display: flex;
    flex-direction: column;
@@ -103,39 +106,39 @@
 }
 
 .aws-cont6 .box-cont {
-    padding: .8rem;
+   padding: .8rem;
 }
 
 .aws-cont6 .box-cont .service-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .8rem .8rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: .8rem .8rem;
 }
 
 .aws-cont6 .box-cont .service-list div {
-    flex-basis: calc(50% - .8rem);
-    min-height: 15.2rem;
-    padding: 10rem 1rem 0;
-    border: 1px solid var(--border-default);
-    font-size: 1.4rem;
-    text-align: center;
-    background-color: var(--white);
-    background-repeat: no-repeat;
-    background-position: center top 3rem;
-    background-image: url(../img/business/bg_aws_cont6_01.svg);
-    background-size: auto 6rem;
+   flex-basis: calc(50% - .8rem);
+   min-height: 15.2rem;
+   padding: 10rem 1rem 0;
+   border: 1px solid var(--border-default);
+   font-size: 1.4rem;
+   text-align: center;
+   background-color: var(--white);
+   background-repeat: no-repeat;
+   background-position: center top 3rem;
+   background-image: url(../img/business/bg_aws_cont6_01.svg);
+   background-size: auto 6rem;
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(2) {
-    background-image: url(../img/business/bg_aws_cont6_02.svg);
+   background-image: url(../img/business/bg_aws_cont6_02.svg);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(3) {
-    background-image: url(../img/business/bg_aws_cont6_03.svg);
+   background-image: url(../img/business/bg_aws_cont6_03.svg);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(4) {
-    background-image: url(../img/business/bg_aws_cont6_04.svg);
+   background-image: url(../img/business/bg_aws_cont6_04.svg);
 }
 
 /* ==========================================
@@ -143,39 +146,48 @@
    - 기준 해상도: 768px
    ========================================== */
 @media (min-width: 1025px) and (max-width: 1366px) {
+
    /* wdms */
    .wdms-area {
       flex-wrap: wrap;
    }
-   .wdms-area > div {
+
+   .wdms-area>div {
       flex: 1 1 calc(50% - 1.5rem);
    }
+
    .wdms-ai .box-cont {
       padding-top: 4rem;
    }
-   .wdms-feat > div,
-   .wdms-effect > div {
+
+   .wdms-feat>div,
+   .wdms-effect>div {
       flex-direction: row;
       flex-wrap: wrap;
       gap: 2rem;
    }
-   .wdms-feat > div > div,
-   .wdms-effect > div > div {
+
+   .wdms-feat>div>div,
+   .wdms-effect>div>div {
       flex: 1 1 calc(50% - 2rem);
    }
-   .wdms-effect > div > div {
+
+   .wdms-effect>div>div {
       flex-basis: calc(33.333% - 2rem);
       min-height: 12rem;
       font-size: 2rem;
    }
-   .wdms-feat > div > div:not(:has(.box-tit)) {
+
+   .wdms-feat>div>div:not(:has(.box-tit)) {
       min-height: 12rem;
       font-size: 2rem;
    }
+
    .wdms-partners {
       gap: 1.2rem;
       margin-top: 6rem;
    }
+
    .wdms-partners li {
       flex-basis: calc(20% - 1.2rem);
       min-height: 8.8rem;
@@ -193,38 +205,43 @@
       padding-top: 16rem;
       background-size: 10.8rem auto;
    }
+
    .aws-cont4>div {
       flex-direction: row;
       gap: 2rem;
    }
+
    .aws-cont4>div>div {
       flex: 1;
    }
+
    .cont-txt:has(+ .btn-shortcut.aws1) {
       padding-top: 1.5rem;
    }
+
    .aws2 {
       margin-top: 2rem;
    }
+
    .aws-cont6>div {
       width: 100%;
-}
+   }
 
-.aws-cont6 .box-cont {
+   .aws-cont6 .box-cont {
       padding: 4rem;
-}
+   }
 
-.aws-cont6 .box-cont p {
+   .aws-cont6 .box-cont p {
       margin-bottom: 4rem;
       font-size: 3rem;
-}
+   }
 
-.aws-cont6 .box-cont .service-list {
+   .aws-cont6 .box-cont .service-list {
       flex-wrap: nowrap;
       gap: 2rem;
-}
+   }
 
-.aws-cont6 .box-cont .service-list div {
+   .aws-cont6 .box-cont .service-list div {
       /* flex-basis: calc(25% - 2rem); */
       flex: 1;
       min-height: 26rem;
@@ -232,7 +249,7 @@
       font-size: 2.4rem;
       background-position: center top 4rem;
       background-size: auto 10rem;
-}
+   }
 }
 
 /* ==========================================
@@ -240,39 +257,48 @@
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
 @media (min-width: 1440px) {
+
    /* wdms */
    .wdms-area {
       flex-wrap: wrap;
    }
-   .wdms-area > div {
+
+   .wdms-area>div {
       flex: 1 1 calc(50% - 1.5rem);
    }
+
    .wdms-ai .box-cont {
       padding-top: 4rem;
    }
-   .wdms-feat > div,
-   .wdms-effect > div {
+
+   .wdms-feat>div,
+   .wdms-effect>div {
       flex-direction: row;
       flex-wrap: wrap;
       gap: 2rem;
    }
-   .wdms-feat > div > div,
-   .wdms-effect > div > div {
+
+   .wdms-feat>div>div,
+   .wdms-effect>div>div {
       flex: 1 1 calc(50% - 2rem);
    }
-   .wdms-effect > div > div {
+
+   .wdms-effect>div>div {
       flex-basis: calc(33.333% - 2rem);
       min-height: 12rem;
       font-size: 2rem;
    }
-   .wdms-feat > div > div:not(:has(.box-tit)) {
+
+   .wdms-feat>div>div:not(:has(.box-tit)) {
       min-height: 12rem;
       font-size: 2rem;
    }
+
    .wdms-partners {
       gap: 1.2rem;
       margin-top: 6rem;
    }
+
    .wdms-partners li {
       flex-basis: calc(20% - 1.2rem);
       min-height: 8.8rem;
@@ -290,45 +316,49 @@
       padding-top: 16rem;
       background-size: 10.8rem auto;
    }
+
    .aws-cont4>div {
       flex-direction: row;
       gap: 2rem;
    }
+
    .aws-cont4>div>div {
       flex: 1;
    }
+
    .cont-txt:has(+ .btn-shortcut.aws1) {
       padding-top: 1.5rem;
    }
+
    .aws2 {
       margin-top: 2rem;
    }
-   
+
    .aws-cont6>div {
-         width: 100%;
+      width: 100%;
    }
 
    .aws-cont6 .box-cont {
-         padding: 4rem;
+      padding: 4rem;
    }
 
    .aws-cont6 .box-cont p {
-         margin-bottom: 4rem;
-         font-size: 3rem;
+      margin-bottom: 4rem;
+      font-size: 3rem;
    }
 
    .aws-cont6 .box-cont .service-list {
-         flex-wrap: nowrap;
-         gap: 2rem;
+      flex-wrap: nowrap;
+      gap: 2rem;
    }
 
    .aws-cont6 .box-cont .service-list div {
-         /* flex-basis: calc(25% - 2rem); */
-         flex: 1;
-         min-height: 26rem;
-         padding: 17rem 5rem 0;
-         font-size: 2.4rem;
-         background-position: center top 4rem;
-         background-size: auto 10rem;
+      /* flex-basis: calc(25% - 2rem); */
+      flex: 1;
+      min-height: 26rem;
+      padding: 17rem 5rem 0;
+      font-size: 2.4rem;
+      background-position: center top 4rem;
+      background-size: auto 10rem;
    }
 }

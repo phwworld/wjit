@@ -545,17 +545,17 @@ footer .inner-cont .family-site {
 }
 
 /* title */
-main > .title {
+main>.title {
   padding: 6rem 2.4rem;
   text-align: center;
 }
 
-main > .title .tit-info1 {
+main>.title .tit-info1 {
   font-size: 1.6rem;
   font-weight: 500;
 }
 
-main > .title h3 {
+main>.title h3 {
   margin: 1.9rem 0;
   font-size: 3.4rem;
   font-weight: 700;
@@ -563,17 +563,17 @@ main > .title h3 {
   line-height: 1.2;
 }
 
-main > .title h3 span {
+main>.title h3 span {
   display: block;
   font-weight: 300;
 }
 
-main > .title .tit-info2 {
+main>.title .tit-info2 {
   font-size: 1.4rem;
   line-height: 1.5;
 }
 
-main > .title.aicc {
+main>.title.aicc {
   background: url(../img/business/bg_title_aicc_mo.svg) no-repeat;
   background-size: 100% auto;
 }
@@ -905,10 +905,11 @@ main > .title.aicc {
     align-items: flex-start;
     gap: 4rem 2.4rem;
   }
-  
+
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li {
     flex: calc(25% - 2.4rem) 0 1;
   }
+
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>a,
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>ul>li>a {
     width: auto;
@@ -1094,28 +1095,28 @@ main > .title.aicc {
   }
 
   /* title */
-  main > .title {
+  main>.title {
     padding: 12rem 0 10rem;
   }
 
-  main > .title .tit-info1 {
+  main>.title .tit-info1 {
     font-size: 2.8rem;
   }
 
-  main > .title h3 {
+  main>.title h3 {
     margin: 3rem 0 2.5rem;
     font-size: 8.4rem;
   }
 
-  main > .title h3 span {
+  main>.title h3 span {
     display: inline-block;
   }
 
-  main > .title .tit-info2 {
+  main>.title .tit-info2 {
     font-size: 1.8rem;
   }
 
-  main > .title.aicc {
+  main>.title.aicc {
     background: none;
   }
 
@@ -1124,7 +1125,7 @@ main > .title.aicc {
     margin-bottom: 1rem;
     font-size: 4rem;
   }
-  
+
   .c-tit span {
     display: inline-block;
     font-size: 4rem;
@@ -1566,28 +1567,28 @@ main > .title.aicc {
   }
 
   /* title */
-  main > .title {
+  main>.title {
     padding: 12rem 0 10rem;
   }
 
-  main > .title .tit-info1 {
+  main>.title .tit-info1 {
     font-size: 2.8rem;
   }
 
-  main > .title h3 {
+  main>.title h3 {
     margin: 3rem 0 2.5rem;
     font-size: 8.4rem;
   }
 
-  main > .title h3 span {
+  main>.title h3 span {
     display: inline-block;
   }
 
-  main > .title .tit-info2 {
+  main>.title .tit-info2 {
     font-size: 1.8rem;
   }
 
-  main > .title.aicc {
+  main>.title.aicc {
     background: none;
   }
 
@@ -1600,7 +1601,7 @@ main > .title.aicc {
     margin-bottom: 1rem;
     font-size: 4rem;
   }
-  
+
   .c-tit span {
     display: inline-block;
     font-size: 4rem;

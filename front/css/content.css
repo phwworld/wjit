@@ -609,28 +609,37 @@
 }
 
 /* faq, project-case, download */
-.faq, .project-case, .download {
+.faq,
+.project-case,
+.download {
     margin-top: 6rem;
     padding-top: 6rem;
     border-top: 1px solid #b5b7bd;
 }
 
-.faq .title, .project-case .title, .download .title {
+.faq .title,
+.project-case .title,
+.download .title {
     margin-bottom: 2rem;
     font-size: 2.4rem;
     font-weight: 700;
 }
 
-.faq .title span, .project-case .title span, .download .title span {
+.faq .title span,
+.project-case .title span,
+.download .title span {
     display: none;
 }
 
-.faq .faq-list, .project-case .project-list, .download .board-list {
+.faq .faq-list,
+.project-case .project-list,
+.download .board-list {
     border-top: 2px solid var(--text-body);
     border-bottom: 1px solid var(--border-default);
 }
 
-.faq .faq-item .item-head, .project-case .project-item .item-head {
+.faq .faq-item .item-head,
+.project-case .project-item .item-head {
     position: relative;
     display: block;
     padding: 2.4rem 3.2rem 2.4rem 0;
@@ -640,7 +649,8 @@
     color: var(--text-body);
 }
 
-.faq .faq-item .item-head::after, .project-case .project-item .item-head::after {
+.faq .faq-item .item-head::after,
+.project-case .project-item .item-head::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -653,26 +663,31 @@
     transition: transform 0.4s ease-in-out;
 }
 
-.faq .faq-item .item-head.act::after, .project-case .project-item .item-head.act::after {
+.faq .faq-item .item-head.act::after,
+.project-case .project-item .item-head.act::after {
     transform: translateY(-50%) rotate(180deg);
 }
 
-.faq .faq-item:first-child .item-head, .project-case .project-item:first-child .item-head {
+.faq .faq-item:first-child .item-head,
+.project-case .project-item:first-child .item-head {
     border-top: 0;
 }
 
-.faq .faq-item .item-cont, .project-case .project-item .item-cont {
+.faq .faq-item .item-cont,
+.project-case .project-item .item-cont {
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
     transition: grid-template-rows 0.4s ease-in-out;
 }
 
-.faq .faq-item .item-cont.act, .project-case .project-item .item-cont.act {
+.faq .faq-item .item-cont.act,
+.project-case .project-item .item-cont.act {
     grid-template-rows: 1fr;
 }
 
-.faq .faq-item .item-cont-inner, .project-case .project-item .item-cont-inner {
+.faq .faq-item .item-cont-inner,
+.project-case .project-item .item-cont-inner {
     overflow: hidden;
     min-height: 0;
     padding: 0;
@@ -683,7 +698,8 @@
     transition: padding 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.faq .faq-item .item-cont.act .item-cont-inner, .project-case .project-item .item-cont.act .item-cont-inner {
+.faq .faq-item .item-cont.act .item-cont-inner,
+.project-case .project-item .item-cont.act .item-cont-inner {
     padding: 4rem 0;
     opacity: 1;
 }
@@ -691,6 +707,7 @@
 .project-case {
     position: relative;
 }
+
 .project-case .project-item .item-head {
     display: flex;
     align-items: center;
@@ -700,9 +717,11 @@
 .project-case .project-item .item-head .logo {
     width: 6.5rem;
 }
+
 .project-case .project-item .item-head .logo img {
     width: 100%;
 }
+
 .project-case .project-item .item-head .txt {
     width: calc(100% - 6.5rem);
     font-size: 1.6rem;
@@ -711,9 +730,11 @@
     overflow: hidden;
 
 }
+
 .project-case .project-item .item-head .txt strong {
     display: none;
 }
+
 .project-case .project-case-more {
     position: absolute;
     top: 5.5rem;
@@ -730,6 +751,7 @@
 .download .board-list.type2 {
     margin-top: 0;
 }
+
 .download .board-list.type2 .cont-txt1 {
     width: 100%;
     text-overflow: ellipsis;
@@ -1522,48 +1544,58 @@
     }
 
     /* faq, project-case, download */
-    .faq, .project-case, .download {
+    .faq,
+    .project-case,
+    .download {
         margin-top: 10rem;
         padding-top: 10rem;
     }
 
-    .faq .title, .project-case .title, .download .title {
+    .faq .title,
+    .project-case .title,
+    .download .title {
         font-size: 4rem;
     }
 
-    .faq .title span, .project-case .title span, .download .title span {
+    .faq .title span,
+    .project-case .title span,
+    .download .title span {
         display: inline-block;
         margin-left: 2rem;
         font-size: 1.8rem;
         font-weight: 400;
     }
 
-    .faq .faq-item .item-head::after, .project-case .project-item .item-head::after {
+    .faq .faq-item .item-head::after,
+    .project-case .project-item .item-head::after {
         right: .8rem;
         width: 1.6rem;
         height: 1.6rem;
     }
 
-    .faq .faq-item:first-child .item-head, .project-case .project-item:first-child .item-head {
+    .faq .faq-item:first-child .item-head,
+    .project-case .project-item:first-child .item-head {
         border-top: 0;
     }
 
-    .faq .faq-item .item-cont .item-cont-inner, .project-case .project-item .item-cont .item-cont-inner {
+    .faq .faq-item .item-cont .item-cont-inner,
+    .project-case .project-item .item-cont .item-cont-inner {
         padding: 0 3.2rem 0 0;
     }
 
-    .faq .faq-item .item-cont.act .item-cont-inner, .project-case .project-item .item-cont.act .item-cont-inner {
+    .faq .faq-item .item-cont.act .item-cont-inner,
+    .project-case .project-item .item-cont.act .item-cont-inner {
         padding: 4rem 3.2rem 4rem 0;
     }
 
     .project-case .project-item .item-head {
         gap: 7rem;
     }
-    
+
     .project-case .project-item .item-head .logo {
         width: 13rem;
     }
-    
+
     .project-case .project-item .item-head .txt {
         width: calc(100% - 13rem);
         padding-left: 2rem;
@@ -1572,16 +1604,19 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-    
+
     }
+
     .project-case .project-item .item-head .txt strong {
         display: inline-block;
         font-weight: 700;
     }
+
     .project-case .project-item .item-head .txt strong::after {
         content: "|";
         margin: 0 2rem
     }
+
     .project-case .project-case-more {
         top: 10.5rem;
         height: 5rem;
@@ -2361,48 +2396,58 @@
     }
 
     /* faq, project-case, download */
-    .faq, .project-case, .download {
+    .faq,
+    .project-case,
+    .download {
         margin-top: 10rem;
         padding-top: 10rem;
     }
 
-    .faq .title, .project-case .title, .download .title {
+    .faq .title,
+    .project-case .title,
+    .download .title {
         font-size: 4rem;
     }
 
-    .faq .title span, .project-case .title span, .download .title span {
+    .faq .title span,
+    .project-case .title span,
+    .download .title span {
         display: inline-block;
         margin-left: 2rem;
         font-size: 1.8rem;
         font-weight: 400;
     }
 
-    .faq .faq-item .item-head::after, .project-case .project-item .item-head::after {
+    .faq .faq-item .item-head::after,
+    .project-case .project-item .item-head::after {
         right: .8rem;
         width: 1.6rem;
         height: 1.6rem;
     }
 
-    .faq .faq-item:first-child .item-head, .project-case .project-item:first-child .item-head {
+    .faq .faq-item:first-child .item-head,
+    .project-case .project-item:first-child .item-head {
         border-top: 0;
     }
 
-    .faq .faq-item .item-cont .item-cont-inner, .project-case .project-item .item-cont .item-cont-inner {
+    .faq .faq-item .item-cont .item-cont-inner,
+    .project-case .project-item .item-cont .item-cont-inner {
         padding: 0 3.2rem 0 0;
     }
 
-    .faq .faq-item .item-cont.act .item-cont-inner, .project-case .project-item .item-cont.act .item-cont-inner {
+    .faq .faq-item .item-cont.act .item-cont-inner,
+    .project-case .project-item .item-cont.act .item-cont-inner {
         padding: 4rem 3.2rem 4rem 0;
     }
 
     .project-case .project-item .item-head {
         gap: 7rem;
     }
-    
+
     .project-case .project-item .item-head .logo {
         width: 13rem;
     }
-    
+
     .project-case .project-item .item-head .txt {
         width: calc(100% - 13rem);
         padding-left: 2rem;
@@ -2411,16 +2456,19 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-    
+
     }
+
     .project-case .project-item .item-head .txt strong {
         display: inline-block;
         font-weight: 700;
     }
+
     .project-case .project-item .item-head .txt strong::after {
         content: "|";
         margin: 0 2rem
     }
+
     .project-case .project-case-more {
         top: 10.5rem;
         height: 5rem;
