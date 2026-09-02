@@ -78,10 +78,9 @@
 /* youtube player */
 .youtube-player {
    width: 100%;
-   aspect-ratio: 1/1;
+   aspect-ratio: 4/3;
    margin-top: 4rem;
 }
-
 
 /* aws */
 .aws-cont2 .box-cont {
@@ -183,6 +182,12 @@
       font-size: 1.6rem;
    }
 
+   /* youtube player */
+   .youtube-player {
+      aspect-ratio: 16/9;
+      margin-top: 6rem;
+   }
+
    /* aws */
    .aws-cont2 .box-cont {
       padding-top: 16rem;
@@ -272,6 +277,12 @@
       flex-basis: calc(20% - 1.2rem);
       min-height: 8.8rem;
       font-size: 1.6rem;
+   }
+
+   /* youtube player */
+   .youtube-player {
+      aspect-ratio: 16/9;
+      margin-top: 6rem;
    }
 
    /* aws */
