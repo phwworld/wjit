@@ -11,6 +11,12 @@
    gap: .6rem;
 }
 
+/* youtube player */
+.youtube-player {
+   width: 100%;
+   aspect-ratio: 1/1;
+   margin-top: 4rem;
+}
 
 
 /* aws */
