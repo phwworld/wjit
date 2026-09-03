@@ -312,6 +312,132 @@
     padding: 3rem 2rem;
 }
 
+/* powerPlatform */
+.powerPlatform-cont1>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.powerPlatform-cont1>div>p {
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.powerPlatform-cont1>div>div {
+    padding: 1.6rem 2rem 1.6rem 8.6rem;
+    background-repeat: no-repeat;
+    background-position: left 2rem center;
+    background-size: 5rem;
+    background-image: url(../img/business/bg_powerPlatform_cont1_01.svg);
+}
+
+.powerPlatform-cont1 .box-tit {
+    margin-bottom: .5rem;
+    font-size: 1.8rem;
+    color: var(--text-body);
+}
+
+.powerPlatform-cont1 .box-cont {
+    font-size: 1.4rem;
+}
+
+.powerPlatform-cont1>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_powerPlatform_cont1_02.svg);
+}
+
+.powerPlatform-cont1>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_powerPlatform_cont1_03.svg);
+}
+
+.powerPlatform-cont1>div>div:nth-of-type(4) {
+    background-image: url(../img/business/bg_powerPlatform_cont1_04.svg);
+}
+
+.powerPlatform-cont1>div>div:nth-of-type(5) {
+    background-image: url(../img/business/bg_powerPlatform_cont1_05.svg);
+}
+
+.powerPlatform-cont2>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.powerPlatform-cont2>div>div {
+    padding: 1.6rem 2rem 1.6rem 8.6rem;
+    background-repeat: no-repeat;
+    background-position: left 2rem center;
+    background-size: 5rem auto;
+    background-image: url(../img/business/bg_powerPlatform_cont2_01.svg);
+}
+
+.powerPlatform-cont2 .box-tit {
+    margin-bottom: 0.6rem;
+    font-size: 1.6rem;
+}
+
+.powerPlatform-cont2 .box-cont {
+    font-size: 1.4rem;
+}
+
+.powerPlatform-cont2>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_powerPlatform_cont2_02.svg);
+}
+
+.powerPlatform-cont2>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_powerPlatform_cont2_03.svg);
+}
+
+.powerPlatform-cont2>div>div:nth-of-type(4) {
+    background-image: url(../img/business/bg_powerPlatform_cont2_04.svg);
+}
+
+.powerPlatform-cont2>div>div:nth-of-type(5) {
+    background-image: url(../img/business/bg_powerPlatform_cont2_05.svg);
+}
+
+.powerPlatform-cont2>div>div:nth-of-type(6) {
+    background-image: url(../img/business/bg_powerPlatform_cont2_06.svg);
+}
+
+.powerPlatform-cont3 .box-cont {
+    padding: 12rem 2rem 3rem;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-size: 6rem auto;
+    background-image: url(../img/business/bg_powerPlatform_cont3_01.svg);
+}
+
+.powerPlatform-cont3>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_powerPlatform_cont3_02.svg);
+}
+
+.powerPlatform-cont3>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_powerPlatform_cont3_03.svg);
+}
+
+.powerPlatform-cont3>div:nth-of-type(4) .box-cont {
+    background-image: url(../img/business/bg_powerPlatform_cont3_04.svg);
+}
+
+.powerPlatform-cont5>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.powerPlatform-cont5 .box-tit {
+    margin-bottom: 1rem;
+}
+
+.powerPlatform-cont5 .box-cont {
+    font-size: 1.6rem;
+}
+
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
@@ -507,6 +633,115 @@
 
     .msazure-cont8 .box-cont {
         padding: 4rem 3rem;
+    }
+
+    /* powerPlatform */
+    .powerPlatform-cont1>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 4rem 4rem;
+    }
+
+    .powerPlatform-cont1>div>p {
+        flex-basis: 100%;
+        margin-bottom: 0;
+        padding-top: 0;
+        font-size: 3.2rem;
+    }
+
+    .powerPlatform-cont1>div>div {
+        flex: 1;
+        padding: 13rem 0 4rem;
+        text-align: center;
+        background-position: center top 4rem;
+        background-size: 7rem;
+    }
+
+    .powerPlatform-cont1 .box-tit {
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        line-height: initial;
+    }
+
+    .powerPlatform-cont1 .box-cont {
+        font-size: 2rem;
+        line-height: initial;
+    }
+
+    .powerPlatform-cont2>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .powerPlatform-cont2>div>div {
+        flex-basis: calc(33.3% - 2rem);
+        padding: 3rem 4rem 3rem 16rem;
+        background-repeat: no-repeat;
+        background-position: left 4rem center;
+        background-size: 10rem auto;
+    }
+
+    .powerPlatform-cont2 .box-tit {
+        margin-bottom: 1rem;
+        font-size: 2.4rem;
+    }
+
+    .powerPlatform-cont2 .box-cont {
+        font-size: 2rem;
+    }
+
+    .powerPlatform-cont3 {
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    .powerPlatform-cont3>div {
+        flex: 1 1 calc(50% - 3rem);
+    }
+
+    .powerPlatform-cont3 .box-cont {
+        padding: 4rem 3rem 5rem 16rem;
+        background-position: left 4rem center;
+        background-size: 8rem auto;
+    }
+
+    .powerPlatform-cont3>div:nth-of-type(1) .box-cont {
+        background-size: 9.rem auto;
+    }
+
+    .powerPlatform-cont5>div {
+        gap: 2rem;
+    }
+
+    .powerPlatform-cont5>div>div {
+        display: flex;
+        align-items: center;
+        padding: 3rem 6rem;
+    }
+
+    .powerPlatform-cont5 .box-tit {
+        position: relative;
+        width: 34rem;
+        margin-bottom: 0;
+    }
+
+    .powerPlatform-cont5 .box-tit::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.9rem;
+        height: 5rem;
+        background: url(../img/business/bg_powerPlatform_cont5_tit.svg) no-repeat;
+        background-size: 100%;
+    }
+
+    .powerPlatform-cont5 .box-cont {
+        width: calc(100% - 34rem);
+        padding-left: 5rem;
+        font-size: 2rem;
     }
 }
 
@@ -705,5 +940,114 @@
 
     .msazure-cont8 .box-cont {
         padding: 4rem 3rem;
+    }
+
+    /* powerPlatform */
+    .powerPlatform-cont1>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 4rem 4rem;
+    }
+
+    .powerPlatform-cont1>div>p {
+        flex-basis: 100%;
+        margin-bottom: 0;
+        padding-top: 0;
+        font-size: 3.2rem;
+    }
+
+    .powerPlatform-cont1>div>div {
+        flex: 1;
+        padding: 13rem 0 4rem;
+        text-align: center;
+        background-position: center top 4rem;
+        background-size: 7rem;
+    }
+
+    .powerPlatform-cont1 .box-tit {
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        line-height: initial;
+    }
+
+    .powerPlatform-cont1 .box-cont {
+        font-size: 2rem;
+        line-height: initial;
+    }
+
+    .powerPlatform-cont2>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .powerPlatform-cont2>div>div {
+        flex-basis: calc(33.3% - 2rem);
+        padding: 3rem 4rem 3rem 16rem;
+        background-repeat: no-repeat;
+        background-position: left 4rem center;
+        background-size: 10rem auto;
+    }
+
+    .powerPlatform-cont2 .box-tit {
+        margin-bottom: 1rem;
+        font-size: 2.4rem;
+    }
+
+    .powerPlatform-cont2 .box-cont {
+        font-size: 2rem;
+    }
+
+    .powerPlatform-cont3 {
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    .powerPlatform-cont3>div {
+        flex: 1 1 calc(50% - 3rem);
+    }
+
+    .powerPlatform-cont3 .box-cont {
+        padding: 4rem 3rem 5rem 16rem;
+        background-position: left 4rem center;
+        background-size: 8rem auto;
+    }
+
+    .powerPlatform-cont3>div:nth-of-type(1) .box-cont {
+        background-size: 9.rem auto;
+    }
+
+    .powerPlatform-cont5>div {
+        gap: 2rem;
+    }
+
+    .powerPlatform-cont5>div>div {
+        display: flex;
+        align-items: center;
+        padding: 3rem 6rem;
+    }
+
+    .powerPlatform-cont5 .box-tit {
+        position: relative;
+        width: 34rem;
+        margin-bottom: 0;
+    }
+
+    .powerPlatform-cont5 .box-tit::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.9rem;
+        height: 5rem;
+        background: url(../img/business/bg_powerPlatform_cont5_tit.svg) no-repeat;
+        background-size: 100%;
+    }
+
+    .powerPlatform-cont5 .box-cont {
+        width: calc(100% - 34rem);
+        padding-left: 5rem;
+        font-size: 2rem;
     }
 }

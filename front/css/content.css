@@ -1649,6 +1649,10 @@
         margin-top: 6rem;
     }
 
+    .cont-type1>div {
+        flex: 1;
+    }
+
     .cont-type1 .box-cont li:before {
         top: 1.3rem;
     }
