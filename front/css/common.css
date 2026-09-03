@@ -597,7 +597,7 @@ main>.title.aicc {
   margin-top: 6rem;
 }
 
-.c-tit.line {
+.c-tit.devide {
   margin: 6rem 0 2rem;
   padding-top: 6rem;
   border-top: 1px solid #b5b7bd;
@@ -608,6 +608,11 @@ main>.title.aicc {
   padding-top: 6rem;
   border-top: 1px dashed #e1e7ee;
   font-size: 2rem;
+}
+.s-tit.no-devide {
+  /* margin-top: 0; */
+  padding-top: 0;
+  border-top: none;
 }
 
 /* layer popup */

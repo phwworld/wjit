@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+/* wikl */
+.wikl-cont1>div {
+   display: flex;
+   flex-direction: column;
+   gap: .6rem;
+}
+
+/* wdms */
+.wdms-area .box-cont,
+.wdms-ai .box-cont {
+   padding-top: 3rem;
+}
+
+.wdms-ai .box-cont p {
+   margin-bottom: 1.2rem;
+}
+
+.wdms-ai .box-cont p strong {
+   display: block;
+   margin-bottom: .4rem;
+   color: var(--text-point);
+   font-weight: 700;
+}
+
+.wdms-ai .box-cont p+p strong {
+   margin-top: 2rem;
+}
+
+.wdms-ai .box-cont ul+p strong {
+   margin-top: 2rem;
+}
+
+.wdms-feat>div,
+.wdms-effect>div {
+   display: flex;
+   flex-direction: column;
+   gap: .8rem;
+}
+
+.wdms-feat>div>div:not(:has(.box-tit)),
+.wdms-effect>div>div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 8rem;
+   font-weight: 700;
+   text-align: center;
+   word-break: keep-all;
+}
+
+.wdms-partners {
+   display: flex;
+   flex-wrap: wrap;
+   gap: .8rem;
+   margin-top: 4rem;
+}
+
+.wdms-partners li {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-basis: calc(50% - .4rem);
+   min-height: 6.4rem;
+   padding: 1rem .8rem;
+   border: 1px solid var(--border-default);
+   font-weight: 700;
+   text-align: center;
+   background-color: var(--bg-surface);
+   word-break: keep-all;
+}
+
+
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+   /* wdms */
+   .wdms-area {
+      flex-wrap: wrap;
+   }
+
+   .wdms-area>div {
+      flex: 1 1 calc(50% - 1.5rem);
+   }
+
+   .wdms-ai .box-cont {
+      padding-top: 4rem;
+   }
+
+   .wdms-feat>div,
+   .wdms-effect>div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+   }
+
+   .wdms-feat>div>div,
+   .wdms-effect>div>div {
+      flex: 1 1 calc(50% - 2rem);
+   }
+
+   .wdms-effect>div>div {
+      flex-basis: calc(33.333% - 2rem);
+      min-height: 12rem;
+      font-size: 2rem;
+   }
+
+   .wdms-feat>div>div:not(:has(.box-tit)) {
+      min-height: 12rem;
+      font-size: 2rem;
+   }
+
+   .wdms-partners {
+      gap: 1.2rem;
+      margin-top: 6rem;
+   }
+
+   .wdms-partners li {
+      flex-basis: calc(20% - 1.2rem);
+      min-height: 8.8rem;
+      font-size: 1.6rem;
+   }
+
+   
+}
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1440px) {
+
+   /* wdms */
+   .wdms-area {
+      flex-wrap: wrap;
+   }
+
+   .wdms-area>div {
+      flex: 1 1 calc(50% - 1.5rem);
+   }
+
+   .wdms-ai .box-cont {
+      padding-top: 4rem;
+   }
+
+   .wdms-feat>div,
+   .wdms-effect>div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+   }
+
+   .wdms-feat>div>div,
+   .wdms-effect>div>div {
+      flex: 1 1 calc(50% - 2rem);
+   }
+
+   .wdms-effect>div>div {
+      flex-basis: calc(33.333% - 2rem);
+      min-height: 12rem;
+      font-size: 2rem;
+   }
+
+   .wdms-feat>div>div:not(:has(.box-tit)) {
+      min-height: 12rem;
+      font-size: 2rem;
+   }
+
+   .wdms-partners {
+      gap: 1.2rem;
+      margin-top: 6rem;
+   }
+
+   .wdms-partners li {
+      flex-basis: calc(20% - 1.2rem);
+      min-height: 8.8rem;
+      font-size: 1.6rem;
+   }
+
+   
+}
