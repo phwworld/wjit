@@ -329,6 +329,7 @@
 
 .powerPlatform-cont1>div>div {
     padding: 1.6rem 2rem 1.6rem 8.6rem;
+    border: 1px solid #942d8a;
     background-repeat: no-repeat;
     background-position: left 2rem center;
     background-size: 5rem;
@@ -346,18 +347,22 @@
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(2) {
+    border-color: #4641b7;
     background-image: url(../img/business/bg_powerPlatform_cont1_02.svg);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(3) {
+    border-color: #1046c0;
     background-image: url(../img/business/bg_powerPlatform_cont1_03.svg);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(4) {
+    border-color: #128cac;
     background-image: url(../img/business/bg_powerPlatform_cont1_04.svg);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(5) {
+    border-color: #dea010; 
     background-image: url(../img/business/bg_powerPlatform_cont1_05.svg);
 }
 
@@ -437,6 +442,54 @@
 .powerPlatform-cont5 .box-cont {
     font-size: 1.6rem;
 }
+
+/* naverCloudPlatform */
+.naverCloudPlatform-cont1 .box-cont {
+    padding: 3rem 2rem;
+ }
+ 
+ .naverCloudPlatform-cont2 .box-cont {
+    padding: 3rem 2rem;
+ }
+ .naverCloudPlatform-cont2 .box-cont + div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 2rem 3rem
+ }
+ .naverCloudPlatform-cont2 .box-cont + div span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(33.3% - 1rem);
+    height: 5.4rem;;
+    border: 1px solid var(--text-point);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-point);
+    text-align: center;
+    background-color: var(--white)
+ }
+ 
+ .naverCloudPlatform-cont3>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+ }
+ 
+ .naverCloudPlatform-cont6 .box-cont {
+    padding: 13rem 2rem 3rem;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-size: 9rem 8rem;
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_01.svg)
+ }
+ .naverCloudPlatform-cont6>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_02.svg)
+ }
+ .naverCloudPlatform-cont6>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_03.svg)
+ }
 
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
@@ -743,6 +796,31 @@
         padding-left: 5rem;
         font-size: 2rem;
     }
+
+    /* naverCloudPlatform */
+   .naverCloudPlatform-cont1 .box-cont {
+    padding: 4rem 3rem;
+ }
+
+ .naverCloudPlatform-cont2 .box-cont {
+    min-height: 17rem;
+    padding: 4rem 3rem;
+ }
+ .naverCloudPlatform-cont2 .box-cont + div {
+    padding: 0 3rem 5rem
+ }
+ .naverCloudPlatform-cont2 .box-cont + div span {
+    font-size: 1.8rem;
+ }
+
+ .naverCloudPlatform-cont3>div {
+    gap: 2rem;
+ }
+
+ .naverCloudPlatform-cont6 .box-cont {
+    padding: 16rem 3rem 4rem;
+    background-size: auto 10rem;
+ }
 }
 
 /* ==========================================
@@ -1050,4 +1128,29 @@
         padding-left: 5rem;
         font-size: 2rem;
     }
+
+    /* naverCloudPlatform */
+   .naverCloudPlatform-cont1 .box-cont {
+    padding: 4rem 3rem;
+ }
+
+ .naverCloudPlatform-cont2 .box-cont {
+    min-height: 17rem;
+    padding: 4rem 3rem;
+ }
+ .naverCloudPlatform-cont2 .box-cont + div {
+    padding: 0 3rem 5rem
+ }
+ .naverCloudPlatform-cont2 .box-cont + div span {
+    font-size: 1.8rem;
+ }
+
+ .naverCloudPlatform-cont3>div {
+    gap: 2rem;
+ }
+
+ .naverCloudPlatform-cont6 .box-cont {
+    padding: 16rem 3rem 4rem;
+    background-size: auto 10rem;
+ }
 }
