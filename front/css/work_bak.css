@@ -4,12 +4,7 @@
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
    ========================================== */
-/* wikl */
-.wikl-cont1>div {
-   display: flex;
-   flex-direction: column;
-   gap: .6rem;
-}
+
 
 /* wdms */
 .wdms-area .box-cont,

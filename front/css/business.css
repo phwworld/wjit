@@ -11,6 +11,35 @@
     margin-top: 4rem;
 }
 
+/* service list */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ }
+ .service-list .service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-height: 12rem;
+    border: 1px solid var(--text-secondary);
+    font-size: 2.4rem;
+    color: var(--black);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+ }
+ .service-list .service-item span {
+    font-size: 1.6rem;
+    font-weight: 500;
+ }
+ .service-list .service-item i {
+    font-size: 1.4rem;
+ }
+
 /* aicc */
 .aicc-cont1 .box-cont {
     padding-top: 13rem;
@@ -626,6 +655,75 @@
     padding: 3rem 2rem;
 }
 
+/* mendix */
+.mendix-cont2>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.mendix-cont3>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.mendix-cont3 .box-tit {
+    margin-bottom: 1rem;
+    padding-top: 7rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_mendix_cont3_01.svg);
+}
+
+.mendix-cont3>div>div:nth-of-type(1) .box-tit {
+    background-image: url(../img/business/bg_mendix_cont3_02.svg);
+}
+
+.mendix-cont3>div>div:nth-of-type(2) .box-tit {
+    background-image: url(../img/business/bg_mendix_cont3_03.svg);
+}
+
+.mendix-cont4 .box-cont {
+    padding: 12rem 3rem 3rem;
+    background-repeat: no-repeat;
+    background-position: top 2rem center;
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_mendix_cont4_01.svg)
+}
+
+.mendix-cont4>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_mendix_cont4_02.svg)
+}
+
+.mendix-cont4>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_mendix_cont4_03.svg)
+}
+
+.mendix-cont4>div:nth-of-type(4) .box-cont {
+    background-image: url(../img/business/bg_mendix_cont4_04.svg)
+}
+
+.mendix-cont4>div:nth-of-type(5) .box-cont {
+    background-image: url(../img/business/bg_mendix_cont4_05.svg)
+}
+
+.mendix-cont4>div:nth-of-type(6) .box-cont {
+    background-image: url(../img/business/bg_mendix_cont4_06.svg)
+}
+
+.mendix-cont5>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.mendix-cont5 .box-tit {
+    margin-bottom: 1rem;
+}
+
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
@@ -636,6 +734,32 @@
     .youtube-player {
         aspect-ratio: 16/9;
         margin-top: 6rem;
+    }
+
+    /* service list */
+    .service-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    .service-list .service-item {
+        gap: 2.2rem;
+        width: calc((100% - 6rem) / 3);
+        padding: 3rem;
+        min-height: 26rem;
+        font-size: 3.8rem;
+    }
+    .service-list .service-item:hover {
+        border-color: var(--text-point);
+        color: var(--white);
+        background-color: var(--primary);
+    }
+    .service-list .service-item span {
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+    .service-list .service-item i {
+        font-size: 2rem;
     }
 
     /* aicc */
@@ -1077,6 +1201,67 @@
 
     .databricks-cont5 .box-cont {
         padding: 4rem 3rem;
+    }
+
+    /* mendix */
+    /* mendix */
+    .mendix-cont2>div {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mendix-cont2 li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont3>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .mendix-cont3 .box-tit {
+        margin-bottom: 2rem;
+        padding-top: 10rem;
+        background-size: auto 8rem;
+    }
+
+    .mendix-cont3 li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont4 {
+        flex-wrap: wrap;
+    }
+
+    .mendix-cont4>div {
+        flex: 0 0 calc(33.3% - 3rem);
+    }
+
+    .mendix-cont4 .box-cont {
+        padding: 16rem 3rem 4rem;
+        background-position: top 3rem center;
+        background-size: auto 10rem;
+    }
+
+    .mendix-cont4 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont5>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .mendix-cont5>div>div {
+        flex: 1;
+    }
+
+    .mendix-cont5 .box-tit {
+        margin-bottom: 2rem;
+    }
+
+    .mendix-cont5 .box-cont li {
+        font-size: 1.8rem;
     }
 }
 
@@ -1092,6 +1277,32 @@
         margin-top: 6rem;
     }
 
+    /* service list */
+    .service-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    .service-list .service-item {
+        gap: 2.2rem;
+        width: calc((100% - 6rem) / 3);
+        padding: 3rem;
+        min-height: 26rem;
+        font-size: 3.8rem;
+    }
+    .service-list .service-item:hover {
+        border-color: var(--text-point);
+        color: var(--white);
+        background-color: var(--primary);
+    }
+    .service-list .service-item span {
+        font-size: 2.4rem;
+        font-weight: 400;
+    }
+    .service-list .service-item i {
+        font-size: 2rem;
+    }
+
     /* aicc */
     .cont-type1.aicc-cont1 .box-cont {
         padding-top: 16rem;
@@ -1531,5 +1742,65 @@
 
     .databricks-cont5 .box-cont {
         padding: 4rem 3rem;
+    }
+
+    /* mendix */
+    .mendix-cont2>div {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mendix-cont2 li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont3>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .mendix-cont3 .box-tit {
+        margin-bottom: 2rem;
+        padding-top: 10rem;
+        background-size: auto 8rem;
+    }
+
+    .mendix-cont3 li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont4 {
+        flex-wrap: wrap;
+    }
+
+    .mendix-cont4>div {
+        flex: 0 0 calc(33.3% - 3rem);
+    }
+
+    .mendix-cont4 .box-cont {
+        padding: 16rem 3rem 4rem;
+        background-position: top 3rem center;
+        background-size: auto 10rem;
+    }
+
+    .mendix-cont4 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .mendix-cont5>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .mendix-cont5>div>div {
+        flex: 1;
+    }
+
+    .mendix-cont5 .box-tit {
+        margin-bottom: 2rem;
+    }
+
+    .mendix-cont5 .box-cont li {
+        font-size: 1.8rem;
     }
 }
