@@ -1052,6 +1052,44 @@
     font-size: 1.6rem;
 }
 
+/* bpo */
+.bpo-cont1>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.bpo-cont1 .box-cont {
+    padding-bottom: 10rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-point);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_bpo_cont1_01.svg);
+}
+
+.bpo-cont1 .box-cont span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-body);
+}
+
+.bpo-cont1>div>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_bpo_cont1_02.svg);
+}
+
+.bpo-cont1>div>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_bpo_cont1_03.svg);
+}
+
+.bpo-cont2 i {
+    display: none;
+}
+
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
@@ -1847,6 +1885,30 @@
     .gdc-cont4 .box-cont {
         width: calc(100% - 34rem);
         font-size: 2rem;
+    }
+
+    /* bpo */
+    .bpo-cont1>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .bpo-cont1>div>div {
+        flex: 1;
+    }
+
+    .bpo-cont1 .box-cont {
+        padding-bottom: 12rem;
+        font-size: 2.4rem;
+        background-size: auto 10rem;
+    }
+
+    .bpo-cont2 {
+        margin-top: 6rem;
+    }
+
+    .bpo-cont2 a {
+        width: 43rem;
     }
 }
 
@@ -2644,5 +2706,29 @@
     .gdc-cont4 .box-cont {
         width: calc(100% - 34rem);
         font-size: 2rem;
+    }
+
+    /* bpo */
+    .bpo-cont1>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .bpo-cont1>div>div {
+        flex: 1;
+    }
+
+    .bpo-cont1 .box-cont {
+        padding-bottom: 12rem;
+        font-size: 2.4rem;
+        background-size: auto 10rem;
+    }
+
+    .bpo-cont2 {
+        margin-top: 6rem;
+    }
+
+    .bpo-cont2 a {
+        width: 43rem;
     }
 }
