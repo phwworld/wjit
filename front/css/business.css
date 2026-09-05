@@ -912,6 +912,63 @@
     margin-bottom: 1rem;
 }
 
+/* ito */
+.ito-cont1 .box-cont {
+    padding: 3rem 2rem;
+}
+
+.ito-cont2 .box-cont {
+    padding: 4rem 3rem;
+}
+
+.ito-cont2 .box-cont>p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: .8rem;
+}
+
+.ito-cont2 .box-cont ul+p {
+    margin-top: 4rem;
+}
+
+.ito-cont3>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.ito-cont3 .box-tit {
+    margin-bottom: 1rem;
+}
+
+.ito-cont4>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.ito-cont4>div>div {
+    padding: 2rem 2rem 3rem;
+}
+
+.ito-cont4 .box-tit {
+    margin-bottom: 1rem;
+    padding-top: 8rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto 6.4rem;
+    background-image: url(../img/business/bg_ito_cont4_01.svg);
+}
+
+.ito-cont4>div>div:nth-of-type(2) .box-tit {
+    background-image: url(../img/business/bg_ito_cont4_02.svg);
+}
+
+.ito-cont4>div>div:nth-of-type(3) .box-tit {
+    background-image: url(../img/business/bg_ito_cont4_03.svg);
+}
+
 /* ==========================================
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
@@ -1585,6 +1642,43 @@
     }
 
     .mendix-cont5 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    /* ito */
+    .ito-cont1 .box-cont {
+        padding: 4rem 3rem;
+    }
+
+    .ito-cont2 .box-cont {
+        padding: 4rem;
+    }
+
+    .ito-cont3>div {
+        gap: 2rem;
+    }
+
+    .ito-cont3 .box-tit {
+        margin-bottom: 2rem;
+    }
+
+    .ito-cont4>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .ito-cont4>div>div {
+        flex: 1;
+        padding: 4rem;
+    }
+
+    .ito-cont4 .box-tit {
+        margin-bottom: 2rem;
+        padding-top: 12rem;
+        background-size: auto 10rem;
+    }
+
+    .ito-cont4 .box-cont li {
         font-size: 1.8rem;
     }
 }
@@ -2261,6 +2355,43 @@
     }
 
     .mendix-cont5 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    /* ito */
+    .ito-cont1 .box-cont {
+        padding: 4rem 3rem;
+    }
+
+    .ito-cont2 .box-cont {
+        padding: 4rem;
+    }
+
+    .ito-cont3>div {
+        gap: 2rem;
+    }
+
+    .ito-cont3 .box-tit {
+        margin-bottom: 2rem;
+    }
+
+    .ito-cont4>div {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .ito-cont4>div>div {
+        flex: 1;
+        padding: 4rem;
+    }
+
+    .ito-cont4 .box-tit {
+        margin-bottom: 2rem;
+        padding-top: 12rem;
+        background-size: auto 10rem;
+    }
+
+    .ito-cont4 .box-cont li {
         font-size: 1.8rem;
     }
 }
