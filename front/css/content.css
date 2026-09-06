@@ -957,7 +957,7 @@
         display: inline-flex;
         justify-content: flex-start;
         align-items: center;
-        width: 34rem;
+        min-width: 34rem;
         height: 10rem;
         padding: 1.2rem 4rem;
         font-size: 2.8rem;
@@ -982,7 +982,17 @@
 
     .cont-txt:has(+ .btn-shortcut) {
         float: left;
-        width: calc(100% - 40rem);
+        width: calc(100% - 50rem);
+        min-height: 10rem;
+        padding-bottom: 6rem;
+    }
+    
+    .cont-txt:has(+ .btn-shortcut) + .btn-shortcut {
+        float: right;
+    }
+
+    .cont-txt:has(+ .btn-shortcut) + .btn-shortcut + * {
+        clear: both;
     }
 
     /* tab menu */
@@ -1776,7 +1786,7 @@
         display: inline-flex;
         justify-content: flex-start;
         align-items: center;
-        width: 34rem;
+        min-width: 34rem;
         height: 10rem;
         padding: 1.2rem 4rem;
         font-size: 2.8rem;
@@ -1821,6 +1831,16 @@
     .cont-txt:has(+ .btn-shortcut) {
         float: left;
         width: calc(100% - 50rem);
+        min-height: 10rem;
+        padding-bottom: 6rem;
+    }
+    
+    .cont-txt:has(+ .btn-shortcut) + .btn-shortcut {
+        float: right;
+    }
+
+    .cont-txt:has(+ .btn-shortcut) + .btn-shortcut + * {
+        clear: both;
     }
 
     /* tab menu, category */
