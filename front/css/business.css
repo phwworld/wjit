@@ -2153,6 +2153,10 @@
         width: 108rem !important;
     }
 
+    .naverworks-cont10 a {
+        width: 38.4rem;
+    }
+
     .naverworks-cont12 {
         margin-top: 6rem;
     }
@@ -3105,6 +3109,10 @@
     .naverworks-cont7 .pc img,
     .naverworks-cont8 .pc img {
         width: 108rem !important;
+    }
+
+    .naverworks-cont10 a {
+        width: 38.4rem;
     }
 
     .naverworks-cont12 {
