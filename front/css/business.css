@@ -684,6 +684,298 @@
     margin-top: 1rem;
 }
 
+/* s4hana */
+.s4hana-cont1>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.s4hana-cont1>div>div {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: calc((100% - 1rem) / 2);
+    /* height: 13.4rem; */
+    padding: 9.2rem 0 2rem;
+    border-style: solid;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top 2.4rem;
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_s4hana_cont1_01.svg);
+}
+
+.s4hana-cont1>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_s4hana_cont1_02.svg);
+}
+
+.s4hana-cont1>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_s4hana_cont1_03.svg);
+}
+
+.s4hana-cont1>div>div:nth-of-type(4) {
+    background-image: url(../img/business/bg_s4hana_cont1_04.svg);
+}
+
+.s4hana-cont2 .box-cont {
+    padding: 3rem;
+    font-size: 1.8rem;
+}
+
+.s4hana-cont3 .box-cont {
+    padding: 3rem 2rem;
+}
+
+.s4hana-cont3 .box-cont p {
+    margin-bottom: 1.6rem;
+    font-size: 1.6rem;
+}
+
+.s4hana-cont3 .box-cont li {
+    font-size: 1.4rem;
+}
+
+.s4hana-cont3 .box-cont .box-stit {
+    margin: 1.6rem 0 1rem;
+    font-size: 2rem;
+    ;
+    font-weight: 700;
+}
+
+.s4hana-cont4 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.s4hana-cont4>div {
+    width: calc((100% - .8rem) / 2);
+}
+
+.s4hana-cont4 .box-cont {
+    padding: 9.2rem 1rem 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top 1.6rem;
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_s4hana_cont4_01.svg);
+}
+
+.s4hana-cont4>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont4_02.svg);
+}
+
+.s4hana-cont4>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont4_03.svg);
+}
+
+.s4hana-cont4>div:nth-of-type(4) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont4_04.svg);
+}
+
+.s4hana-cont4>div:nth-of-type(5) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont4_05.svg);
+}
+
+.s4hana-cont4>div:nth-of-type(6) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont4_06.svg);
+}
+
+.s4hana-cont5 {
+    margin-top: 4rem;
+}
+
+.s4hana-cont5 table {
+    border-bottom: 2px solid #00a0df;
+}
+
+.s4hana-cont5 table thead th {
+    padding: 1rem 0;
+    border-left: 1px solid #fff;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: #00a0df;
+}
+
+.s4hana-cont5 table tbody th {
+    padding: 1rem 0;
+    font-size: 1.6rem;
+    background-color: #f0fbff;
+}
+
+.s4hana-cont5 table tbody td {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.s4hana-cont5 table tbody th,
+.s4hana-cont5 table tbody td {
+    border: solid #00a0df;
+    border-width: 0 0 1px 1px;
+}
+
+.s4hana-cont5 table tbody th {
+    border-left: 0;
+}
+
+.s4hana-cont6>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.s4hana-cont6>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.6rem 1.5rem 1.6rem 9.1rem;
+    border-style: solid;
+    background-repeat: no-repeat;
+    background-position: left 1.5rem center;
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_s4hana_cont5_01.svg);
+}
+
+.s4hana-cont6>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_s4hana_cont5_02.svg);
+}
+
+.s4hana-cont6>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_s4hana_cont5_03.svg);
+}
+
+.s4hana-cont6>div>div:nth-of-type(4) {
+    background-image: url(../img/business/bg_s4hana_cont5_04.svg);
+}
+
+.s4hana-cont6 .box-tit {
+    margin-bottom: .6rem;
+    font-size: 1.8rem;
+}
+
+.s4hana-cont6 .box-cont {
+    font-size: 1.4rem;
+}
+
+.s4hana-cont7 .box-cont {
+    padding: 13rem 3rem 3rem;
+    font-size: 1.8rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_s4hana_cont7_01.svg);
+}
+
+.s4hana-cont7>div:nth-of-type(2) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont7_02.svg);
+}
+
+.s4hana-cont7>div:nth-of-type(3) .box-cont {
+    background-image: url(../img/business/bg_s4hana_cont7_03.svg);
+}
+
+.s4hana-cont8 .box-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2.4rem;
+}
+
+.s4hana-cont8 .box-cont>p {
+    min-height: 6rem;
+    padding-left: 7.6rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_s4hana_cont8_01.svg);
+}
+
+.s4hana-cont8>div:nth-of-type(2) .box-cont>p {
+    background-image: url(../img/business/bg_s4hana_cont8_02.svg);
+}
+
+.s4hana-cont8>div:nth-of-type(3) .box-cont>p {
+    background-image: url(../img/business/bg_s4hana_cont8_03.svg);
+}
+
+.s4hana-cont8>div:nth-of-type(4) .box-cont>p {
+    background-image: url(../img/business/bg_s4hana_cont8_04.svg);
+}
+
+.s4hana-cont8 .box-cont>div {
+    padding: 2rem;
+    border-left: .3rem solid var(--primary);
+    background-color: var(--white);
+    box-shadow: 0 1.2rem .6rem rgba(0, 0, 0, .04);
+}
+
+.s4hana-cont8 .box-stit {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.s4hana-cont8 .box-stit+p {
+    font-size: 1.6rem;
+}
+
+.s4hana-cont8 .box-cont a {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-point);
+    text-align: right;
+}
+
+.s4hana-cont9>div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.s4hana-cont9>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12.6rem 2rem 3rem;
+    border-style: solid;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top 3rem;
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_s4hana_cont9_01.svg);
+}
+
+.s4hana-cont9>div>div:nth-of-type(2) {
+    background-image: url(../img/business/bg_s4hana_cont9_02.svg);
+}
+
+.s4hana-cont9>div>div:nth-of-type(3) {
+    background-image: url(../img/business/bg_s4hana_cont9_03.svg);
+}
+
+.s4hana-cont9>div>div:nth-of-type(4) {
+    background-image: url(../img/business/bg_s4hana_cont9_04.svg);
+}
+
+.s4hana-cont9 .box-tit {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.s4hana-cont9 .box-cont {
+    font-size: 1.6rem;
+}
+
 /* aws */
 .aws-cont2 .box-cont {
     padding-top: 13rem;
@@ -2127,6 +2419,190 @@
         margin-top: 2rem;
     }
 
+    /* s4hana */
+    .s4hana-cont1>div {
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .s4hana-cont1>div>div {
+        width: auto;
+        flex: 1;
+        padding: 16.6rem 0 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 5rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont2 .box-cont {
+        padding: 4rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont3 .box-cont {
+        padding: 4rem;
+    }
+
+    .s4hana-cont3 .box-cont p {
+        margin-bottom: 4rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont3 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont3 .box-cont .box-stit {
+        margin: 4rem 0 .8rem;
+        font-size: 1.8rem;
+        ;
+    }
+
+    .s4hana-cont4 {
+        gap: 3rem;
+    }
+
+    .s4hana-cont4>div {
+        flex: none;
+        width: calc((100% - 6rem) / 3);
+    }
+
+    .s4hana-cont4 .box-cont {
+        padding: 16rem 4rem 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont5 {
+        margin-top: 6rem;
+    }
+
+    .s4hana-cont5 table {
+        border-bottom: 2px solid #00a0df;
+    }
+
+    .s4hana-cont5 table thead th {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont5 table tbody th {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont5 table tbody td {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont6>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .s4hana-cont6>div>div {
+        flex: none;
+        width: calc((100% - 2rem) / 2);
+        padding: 3rem 4rem 3rem 20rem;
+        background-position: left 4rem center;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont6 .box-tit {
+        margin-bottom: 1rem;
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont6 .box-cont {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont7 .box-cont {
+        padding: 16rem 4rem 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont8 {
+        flex-wrap: wrap;
+    }
+
+    .s4hana-cont8>div {
+        flex: none;
+        width: calc((100% - 3rem) / 2);
+    }
+
+    .s4hana-cont8 .box-cont {
+        padding: 4rem;
+    }
+
+    .s4hana-cont8 .box-cont>p {
+        min-height: 10rem;
+        padding-left: 13rem;
+        font-size: 2.4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont8 .box-cont>div {
+        padding: 3rem 4rem 2rem;
+    }
+
+    .s4hana-cont8 .box-stit {
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont8 .box-stit+p {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont9>div {
+        gap: 2rem;
+    }
+
+    .s4hana-cont9>div>div {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+        min-height: 14rem;
+        padding: 2rem 6rem 2rem 23rem;
+        text-align: left;
+        background-position: left 6rem center;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont9 .box-tit {
+        position: relative;
+        flex: none;
+        width: 36.9rem;
+        margin-bottom: 0;
+        padding-right: 2.9rem;
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont9 .box-tit::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1.9rem;
+        height: 5rem;
+        transform: translateY(-50%);
+        background: url(../img/business/bg_s4hana_cont9_arrow.svg) no-repeat center / contain;
+    }
+
+    .s4hana-cont9 .box-cont {
+        flex: 1;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
     /* aws */
     .aws-cont2 .box-cont {
         padding-top: 16rem;
@@ -3360,6 +3836,190 @@
 
     .gamsolution-cont4 .cont-txt+.cont-img {
         margin-top: 2rem;
+    }
+
+    /* s4hana */
+    .s4hana-cont1>div {
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .s4hana-cont1>div>div {
+        width: auto;
+        flex: 1;
+        padding: 16.6rem 0 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 5rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont2 .box-cont {
+        padding: 4rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont3 .box-cont {
+        padding: 4rem;
+    }
+
+    .s4hana-cont3 .box-cont p {
+        margin-bottom: 4rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont3 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont3 .box-cont .box-stit {
+        margin: 4rem 0 .8rem;
+        font-size: 1.8rem;
+        ;
+    }
+
+    .s4hana-cont4 {
+        gap: 3rem;
+    }
+
+    .s4hana-cont4>div {
+        flex: none;
+        width: calc((100% - 6rem) / 3);
+    }
+
+    .s4hana-cont4 .box-cont {
+        padding: 16rem 4rem 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont5 {
+        margin-top: 6rem;
+    }
+
+    .s4hana-cont5 table {
+        border-bottom: 2px solid #00a0df;
+    }
+
+    .s4hana-cont5 table thead th {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont5 table tbody th {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont5 table tbody td {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont6>div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .s4hana-cont6>div>div {
+        flex: none;
+        width: calc((100% - 2rem) / 2);
+        padding: 3rem 4rem 3rem 20rem;
+        background-position: left 4rem center;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont6 .box-tit {
+        margin-bottom: 1rem;
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont6 .box-cont {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .s4hana-cont7 .box-cont {
+        padding: 16rem 4rem 5rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        background-position: center top 4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont8 {
+        flex-wrap: wrap;
+    }
+
+    .s4hana-cont8>div {
+        flex: none;
+        width: calc((100% - 3rem) / 2);
+    }
+
+    .s4hana-cont8 .box-cont {
+        padding: 4rem;
+    }
+
+    .s4hana-cont8 .box-cont>p {
+        min-height: 10rem;
+        padding-left: 13rem;
+        font-size: 2.4rem;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont8 .box-cont>div {
+        padding: 3rem 4rem 2rem;
+    }
+
+    .s4hana-cont8 .box-stit {
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont8 .box-stit+p {
+        font-size: 1.8rem;
+    }
+
+    .s4hana-cont9>div {
+        gap: 2rem;
+    }
+
+    .s4hana-cont9>div>div {
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+        min-height: 14rem;
+        padding: 2rem 6rem 2rem 23rem;
+        text-align: left;
+        background-position: left 6rem center;
+        background-size: auto 10rem;
+    }
+
+    .s4hana-cont9 .box-tit {
+        position: relative;
+        flex: none;
+        width: 36.9rem;
+        margin-bottom: 0;
+        padding-right: 2.9rem;
+        font-size: 2.4rem;
+    }
+
+    .s4hana-cont9 .box-tit::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1.9rem;
+        height: 5rem;
+        transform: translateY(-50%);
+        background: url(../img/business/bg_s4hana_cont9_arrow.svg) no-repeat center / contain;
+    }
+
+    .s4hana-cont9 .box-cont {
+        flex: 1;
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     /* aws */
