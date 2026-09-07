@@ -816,6 +816,9 @@
     height: .4rem;
     background: var(--text-point);
 }
+.cont-type1 .box-cont li~li {
+    margin-top: 0.8rem;
+}
 
 /* cont-type2 (외곽 회색 배경색) */
 .cont-type2 {
@@ -855,6 +858,9 @@
     width: .4rem;
     height: .4rem;
     background: var(--text-point);
+}
+.cont-type2 .box-cont li~li {
+    margin-top: 0.8rem;
 }
 
 /* download layer popup */
@@ -958,6 +964,7 @@
         justify-content: flex-start;
         align-items: center;
         min-width: 34rem;
+        width: 34rem;
         height: 10rem;
         padding: 1.2rem 4rem;
         font-size: 2.8rem;
@@ -967,7 +974,7 @@
 
     .btn-shortcut a span {
         display: inline-block;
-        width: 100%;
+        /* width: 100%; */
         padding-right: 2.4rem;
         background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right top .5rem;
         background-size: auto 1.8rem;
