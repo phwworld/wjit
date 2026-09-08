@@ -47,6 +47,11 @@ textarea::placeholder {
   color: var(--border-input);
 }
 
+/* color */
+.text-point {
+  color: var(--text-point);
+}
+
 /* ==========================================
    기본 스타일 & 모바일 (Mobile)
    - 기준 해상도: 360px
