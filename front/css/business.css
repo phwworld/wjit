@@ -976,6 +976,56 @@
     font-size: 1.6rem;
 }
 
+/* businessOne */
+.businessOne-cont5 .cont-type1 .box-cont {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 2rem 2rem 3rem;
+}
+
+.businessOne-cont5 .cont-type1 .box-cont li {
+    font-size: 1.6rem;
+}
+
+.businessOne-cont5 .cont-type2 {
+    margin-top: 2rem;
+}
+
+.businessOne-cont5 .cont-type2>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+
+.businessOne-cont5 .cont-type2 .box-stit {
+    flex: none;
+    width: 100%;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.businessOne-cont5 .cont-type2>div>div {
+    width: 100%;
+    padding: 2rem 2rem 3rem;
+    border-style: solid;
+}
+
+.businessOne-cont5 .cont-type2 .box-tit {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.businessOne-cont5 .cont-type2 .box-cont li {
+    font-size: 1.4rem;
+}
+
+.businessOne-cont5 .cont-type2 .box-cont li span {
+    display: block;
+}
+
 /* aws */
 .aws-cont2 .box-cont {
     padding-top: 13rem;
@@ -2603,6 +2653,48 @@
         font-weight: 500;
     }
 
+    /* businessOne */
+    .businessOne-cont5 .cont-type1 .box-cont {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 4rem 4rem 5rem;
+    }
+
+    .businessOne-cont5 .cont-type1 .box-cont ul {
+        flex: 1;
+    }
+
+    .businessOne-cont5 .cont-type1 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .businessOne-cont5 .cont-type2>div {
+        gap: 2rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-stit {
+        padding-bottom: 0;
+        font-size: 2.8rem;
+    }
+
+    .businessOne-cont5 .cont-type2>div>div {
+        width: calc((100% - 4rem) / 3);
+        padding: 4rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-tit {
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-cont li {
+        font-size: 1.8rem;
+    }
+    
+    .businessOne-cont6 a {
+        width: 40rem;
+    }
+
     /* aws */
     .aws-cont2 .box-cont {
         padding-top: 16rem;
@@ -4020,6 +4112,48 @@
         flex: 1;
         font-size: 2rem;
         font-weight: 500;
+    }
+
+    /* businessOne */
+    .businessOne-cont5 .cont-type1 .box-cont {
+        flex-direction: row;
+        gap: 4rem;
+        padding: 4rem 4rem 5rem;
+    }
+
+    .businessOne-cont5 .cont-type1 .box-cont ul {
+        flex: 1;
+    }
+
+    .businessOne-cont5 .cont-type1 .box-cont li {
+        font-size: 1.8rem;
+    }
+
+    .businessOne-cont5 .cont-type2>div {
+        gap: 2rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-stit {
+        padding-bottom: 0;
+        font-size: 2.8rem;
+    }
+
+    .businessOne-cont5 .cont-type2>div>div {
+        width: calc((100% - 4rem) / 3);
+        padding: 4rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-tit {
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+    }
+
+    .businessOne-cont5 .cont-type2 .box-cont li {
+        font-size: 1.8rem;
+    }
+    
+    .businessOne-cont6 a {
+        width: 40rem;
     }
 
     /* aws */
