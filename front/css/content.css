@@ -956,8 +956,8 @@
    태블릿 구간 (Tablet) - 768px 이상
    - 기준 해상도: 768px
    ========================================== */
-/* @media (min-width: 768px) and (max-width: 1366px) { */
-@media (min-width: 1025px) and (max-width: 1366px) {
+/* @media (min-width: 1025px) and (max-width: 1366px) { */
+@media (min-width: 1025px) and (max-width: 1339px) {
 
     /* btn shortcut */
     .btn-shortcut {
