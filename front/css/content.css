@@ -78,6 +78,11 @@
     z-index: 1;
 }
 
+.tab-list.col2 button {
+    min-width: calc(100vw / 2);
+}
+
+.tab-list.col3 button,
 .category-list.col3 button {
     min-width: calc(100vw / 3);
 }

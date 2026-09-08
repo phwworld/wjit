@@ -2654,6 +2654,14 @@
     }
 
     /* businessOne */
+    .businessOne-cont3 .pc {
+        text-align: center;
+    }
+    
+    .businessOne-cont3 .pc img {
+        width: 100%;
+    }
+
     .businessOne-cont5 .cont-type1 .box-cont {
         flex-direction: row;
         gap: 4rem;
@@ -4115,6 +4123,14 @@
     }
 
     /* businessOne */
+    .businessOne-cont3 .pc {
+        text-align: center;
+    }
+
+    .businessOne-cont3 .pc img {
+        width: 122rem;
+    }
+
     .businessOne-cont5 .cont-type1 .box-cont {
         flex-direction: row;
         gap: 4rem;
