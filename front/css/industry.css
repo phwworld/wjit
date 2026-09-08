@@ -5,7 +5,102 @@
    - 기준 해상도: 360px
    ========================================== */
 
+/* Project Cases Swiper */
+.industry-project-slider {
+   position: relative;
+   margin-top: 2.4rem;
+   padding: 0 3.2rem;
+}
 
+.industry-project-slider .project-cases-swiper {
+   overflow: hidden;
+}
+
+.industry-project-slider .project-case-card {
+   position: relative;
+   display: block;
+   min-height: 22rem;
+   padding: 7.2rem 2rem 4.8rem 2.4rem;
+   background-color: var(--bg-surface);
+   border: 1px solid var(--bg-surface);
+   background-image: url("../img/industry/arrow_blue.png");
+   background-position: calc(100% - 2rem) calc(100% - 1.6rem);
+   background-repeat: no-repeat;
+   background-size: 2.4rem auto;
+   color: var(--text-body);
+   text-decoration: none;
+   box-sizing: border-box;
+   transition: transform 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+
+.industry-project-slider .project-case-card .badge {
+   position: absolute;
+   top: 1.6rem;
+   left: -0.4rem;
+   padding: 0.8rem 1.6rem;
+   background-color: var(--text-point);
+   color: var(--white);
+   font-size: 1.4rem;
+   font-weight: 500;
+   line-height: 1.2;
+}
+
+.industry-project-slider .project-case-card .tit {
+   display: -webkit-box;
+   overflow: hidden;
+   max-height: 10.2rem;
+   font-size: 1.8rem;
+   font-weight: 600;
+   line-height: 1.4;
+   letter-spacing: -0.04em;
+   word-break: keep-all;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+}
+
+.industry-project-slider .project-case-card:hover,
+.industry-project-slider .project-case-card:focus-visible {
+   transform: translateY(-0.8rem);
+   background-color: var(--white);
+   border-color: var(--text-point);
+   outline: none;
+}
+
+.industry-project-slider .project-cases-prev,
+.industry-project-slider .project-cases-next {
+   position: absolute;
+   top: 50%;
+   z-index: 2;
+   width: 3.2rem;
+   height: 3.2rem;
+   margin-top: -1.6rem;
+   border: 0;
+   background-color: transparent;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 1.1rem auto;
+   cursor: pointer;
+}
+
+.industry-project-slider .project-cases-prev {
+   left: -0.4rem;
+   background-image: url("../img/industry/slide_arrow_prev.png");
+}
+
+.industry-project-slider .project-cases-next {
+   right: -0.4rem;
+   background-image: url("../img/industry/slide_arrow_next.png");
+}
+
+.industry-project-slider .project-cases-prev::after,
+.industry-project-slider .project-cases-next::after {
+   display: none;
+}
+
+.industry-project-slider .swiper-button-disabled {
+   opacity: 0.35;
+   cursor: default;
+}
 
 /* ==========================================
    태블릿 구간 (Tablet) - 1025px ~ 1366px
@@ -19,6 +114,37 @@
    .inner-cont.industry .tab-cont {
       padding: 0;
       border: 0;
+   }
+
+   .industry-project-slider {
+      margin-top: 4rem;
+      padding: 0 4rem;
+   }
+
+   .industry-project-slider .project-case-card {
+      min-height: 24rem;
+      padding: 8rem 3.2rem 4.8rem 3.2rem;
+      background-position: calc(100% - 3.2rem) calc(100% - 2rem);
+   }
+
+   .industry-project-slider .project-case-card .badge {
+      top: 2rem;
+      left: -0.5rem;
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+   }
+
+   .industry-project-slider .project-case-card .tit {
+      font-size: 2.2rem;
+      line-height: 1.45;
+   }
+
+   .industry-project-slider .project-cases-prev {
+      left: 0;
+   }
+
+   .industry-project-slider .project-cases-next {
+      right: 0;
    }
 }
 
@@ -35,5 +161,45 @@
       padding: 0;
       border: 0;
    }
-   
+
+   .industry-project-slider {
+      margin-top: 4rem;
+      padding: 0 5rem;
+   }
+
+   .industry-project-slider .project-case-card {
+      min-height: 26rem;
+      padding: 9rem 4rem 5rem 4rem;
+      background-position: calc(100% - 4rem) calc(100% - 2.4rem);
+      background-size: 3.6rem auto;
+   }
+
+   .industry-project-slider .project-case-card .badge {
+      top: 2rem;
+      left: -0.5rem;
+      padding: 1.2rem 2.3rem;
+      font-size: 1.75rem;
+   }
+
+   .industry-project-slider .project-case-card .tit {
+      max-height: 10.2rem;
+      font-size: 2.4rem;
+      line-height: 3.4rem;
+   }
+
+   .industry-project-slider .project-cases-prev,
+   .industry-project-slider .project-cases-next {
+      width: 4rem;
+      height: 4rem;
+      margin-top: -2rem;
+      background-size: 1.4rem auto;
+   }
+
+   .industry-project-slider .project-cases-prev {
+      left: 0;
+   }
+
+   .industry-project-slider .project-cases-next {
+      right: 0;
+   }
 }
