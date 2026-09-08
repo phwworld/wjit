@@ -1159,6 +1159,16 @@
     font-size: 1.6rem;
 }
 
+/* wijardPackage */
+.wijardPackage-cont2 {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.wijardPackage-cont2 img {
+    width: 60%;
+}
+
 /* cloudOnepack */
 .cloudOnepack-cont2 .box-cont {
     padding: 3rem;
@@ -2168,7 +2178,7 @@
    - 기준 해상도: 768px
    ========================================== */
 /* @media (min-width: 1025px) and (max-width: 1366px) { */
-@media (min-width: 1025px) and (max-width: 1339px) {
+@media (min-width: 1025px) and (max-width: 1439px) {
 
     /* youtube player */
     .youtube-player {
@@ -3054,6 +3064,15 @@
         pointer-events: none;
     }
 
+    /* wijardPackage */
+    .wijardPackage-cont2 {
+        margin-top: 6rem;
+    }
+
+    .wijardPackage-cont2 img {
+        width: 40%;
+    }
+
     /* cloudOnepack */
     .cloudOnepack-cont2 .box-cont {
         padding: 4rem;
@@ -3106,7 +3125,7 @@
     .cloudOnepack-cont6 {
         margin-top: 3rem;
     }
-    
+
     .cloudOnepack-cont6 li {
         font-size: 1.8rem;
     }
@@ -3163,7 +3182,7 @@
     .cloudOnepack-cont6 {
         margin-top: 3rem;
     }
-    
+
     .cloudOnepack-cont6 li {
         font-size: 1.8rem;
     }
@@ -4740,6 +4759,15 @@
         background: url(../img/business/icon_smartFactory_cont6_arrow.svg) no-repeat center / 3.3rem 5rem;
         transform: translate(-50%, -50%);
         pointer-events: none;
+    }
+
+    /* wijardPackage */
+    .wijardPackage-cont2 {
+        margin-top: 6rem;
+    }
+
+    .wijardPackage-cont2 img {
+        width: 40%;
     }
 
     /* aws */

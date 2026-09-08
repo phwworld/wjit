@@ -694,7 +694,7 @@ main>.title.aicc {
    - 기준 해상도: 768px
    ========================================== */
 /* @media (min-width: 1025px) and (max-width: 1366px) { */
-@media (min-width: 1025px) and (max-width: 1339px) {
+@media (min-width: 1025px) and (max-width: 1439px) {
   body {
     padding-bottom: 0;
     /* font-size: 1.6rem; */
