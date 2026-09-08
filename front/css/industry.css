@@ -16,6 +16,12 @@
    overflow: hidden;
 }
 
+/* 뱃지 overhang·호버 리프트가 overflow에 잘리지 않도록 슬라이드 여백 확보 */
+.industry-project-slider .swiper-slide {
+   padding: 1rem 0.5rem 0;
+   box-sizing: border-box;
+}
+
 .industry-project-slider .project-case-card {
    position: relative;
    display: block;
@@ -119,6 +125,10 @@
    .industry-project-slider {
       margin-top: 4rem;
       padding: 0 4rem;
+   }
+
+   .industry-project-slider .swiper-slide {
+      padding: 1.2rem 0.6rem 0;
    }
 
    .industry-project-slider .project-case-card {
