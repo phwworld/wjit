@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+
+/* sub tab list */
+.sub-tab-list {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.sub-tab-list button {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   width: 9.2rem;
+   height: 4.8rem;
+   border-top: 1px solid #e1e7ee;
+   border-right: 1px solid #e1e7ee;
+   border-bottom: 1px solid #e1e7ee;
+   border-left: 0;
+   color: #202020;
+   font-size: 1.8rem;
+   font-weight: 400;
+   line-height: 1.4;
+   text-align: center;
+   white-space: nowrap;
+   background-color: var(--white);
+}
+
+.sub-tab-list button:first-child {
+   border-left: 1px solid #e1e7ee;
+}
+
+.sub-tab-list button.act {
+   z-index: 1;
+   border: 1px solid var(--primary);
+   color: #009dda;
+   font-weight: 700;
+}
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   ========================================== */
+@media (min-width: 1440px) {
+
+   .sub-tab-list button {
+      flex: 1;
+      width: auto;
+      height: 6.4rem;
+      border-color: var(--border-default);
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: normal;
+   }
+
+   .sub-tab-list button.act {
+      border-width: 2px;
+      border-color: var(--primary);
+   }
+
+}
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 1025px ~ 1439px
+   ========================================== */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+   .sub-tab-list button {
+      flex: 1;
+      width: auto;
+      height: 6.4rem;
+      border-color: var(--border-default);
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: normal;
+   }
+
+   .sub-tab-list button.act {
+      border-width: 2px;
+      border-color: var(--primary);
+   }
+
+}

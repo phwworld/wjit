@@ -481,7 +481,7 @@ function initCategoryPanels() {
    ========================================================================== */
 function initTabMenu() {
     // 1) 카테고리 리스트 (category-list, category-list2) 단순 활성화 토글
-    const categoryContainers = document.querySelectorAll(".category-list, .category-list2");
+    const categoryContainers = document.querySelectorAll(".category-list, .category-list2, .sub-tab-list");
     categoryContainers.forEach((container) => {
         const buttons = container.querySelectorAll("button");
         buttons.forEach((button) => {
