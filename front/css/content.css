@@ -58,13 +58,15 @@
 }
 
 .category-list {
-    margin: 0 -2.4rem 4rem;
+    /* margin: 0 -2.4rem 4rem; */
+    margin: 0 0 4rem;
 }
 
 .tab-list button,
 .category-list button {
     min-width: calc(100vw / 4);
     border: 1px solid #f0f0f0;
+    font-size: 1.6rem;
     color: #202020;
     background-color: #fff;
 }
@@ -1910,7 +1912,7 @@
     }
 
     .category-list {
-        margin: 0 0 6rem;
+        margin: 0 auto 6rem;
     }
 
     .tab-list button,

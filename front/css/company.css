@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* ==========================================
+   기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+
+/* company tab */
+.company-tab {
+   position: sticky;
+   top: 6.1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 6rem;
+   background-color: var(--white);;
+}
+
+.company-tab button {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   width: 9.2rem;
+   height: 4.8rem;
+   border: solid #e1e7ee;
+   border-width: 1px 1px 1px 0;
+   font-size: 1.8rem;
+}
+
+.company-tab button:first-child {
+   border-left: 1px solid #e1e7ee;
+}
+
+.company-tab button.act {
+   z-index: 1;
+   border: 1px solid var(--primary);
+   color: #009dda;
+   font-weight: 700;
+}
+
+/* company cont */
+.company-cont {
+   margin-top: 6rem;
+}
+
+/* ==========================================
+   PC / 데스크톱 구간 (PC) - 1440px 이상
+   ========================================== */
+@media (min-width: 1440px) {
+
+/* company tab */
+.company-tab {
+   top: 7.4rem;
+   padding: 0 22rem;
+   margin-top: 10rem;
+}
+
+.company-tab button {
+   flex: 1;
+   width: auto;
+   height: 6.4rem;
+   border-color: var(--border-default);
+   font-size: 2.4rem;
+   font-weight: 500;
+   line-height: normal;
+}
+
+.company-tab button.act {
+   border-width: 2px;
+   border-color: var(--primary);
+}
+
+/* company cont */
+.company-cont {
+   margin-top: 10em;
+}
+
+}
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 1025px ~ 1439px
+   ========================================== */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+/* company tab */
+.company-tab {
+   top: 7.4rem;
+   padding: 0 22rem;
+   margin-top: 10rem;
+}
+
+.company-tab button {
+   flex: 1;
+   width: auto;
+   height: 6.4rem;
+   border-color: var(--border-default);
+   font-size: 2.4rem;
+   font-weight: 500;
+   line-height: normal;
+}
+
+.company-tab button.act {
+   border-width: 2px;
+   border-color: var(--primary);
+}
+
+/* company cont */
+.company-cont {
+   margin-top: 10rem;
+}
+
+}
