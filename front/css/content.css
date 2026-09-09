@@ -58,7 +58,8 @@
 }
 
 .category-list {
-    margin: 0 -2.4rem 4rem;
+    /* margin: 0 -2.4rem 4rem; */
+    margin: 0 0 4rem;
 }
 
 .tab-list button,
