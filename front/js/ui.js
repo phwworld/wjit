@@ -3,6 +3,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+    initPageTitle();
     initHeader();
     initMobileGnb();
     initPcGnb();
@@ -17,6 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
     initLayerPopupEvents();
     initIndustrySliders();
 });
+
+/* ==========================================================================
+   0. 페이지 타이틀 등장 애니메이션 (Page Title)
+   ========================================================================== */
+function initPageTitle() {
+    const title = document.querySelector("main > .title");
+    if (!title) return;
+
+    requestAnimationFrame(() => {
+        title.classList.add("act");
+    });
+}
 
 /* ==========================================================================
    1. 헤더 스크롤 감지 (Header Scroll Effect)

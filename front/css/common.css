@@ -558,6 +558,9 @@ main>.title {
 main>.title .tit-info1 {
   font-size: 1.6rem;
   font-weight: 500;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 main>.title h3 {
@@ -566,6 +569,9 @@ main>.title h3 {
   font-weight: 700;
   color: var(--black);
   line-height: 1.2;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 main>.title h3 span {
@@ -576,6 +582,16 @@ main>.title h3 span {
 main>.title .tit-info2 {
   font-size: 1.4rem;
   line-height: 1.5;
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+main>.title.act .tit-info1,
+main>.title.act .tit-info2,
+main>.title.act h3 {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 main:has(>.title.aicc) {
