@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initFaqAccordion();
     initProjectCaseAccordion();
     initLayerPopupEvents();
+    initIndustrySliders();
 });
 
 /* ==========================================================================
@@ -752,5 +753,64 @@ function initLayerPopupEvents() {
                 closeLayer(topPopup);
             }
         }
+    });
+}
+
+/* ==========================================================================
+   14. 산업 페이지 슬라이더 (Project Cases / Services)
+   ========================================================================== */
+function initIndustrySliders() {
+    if (typeof Swiper === "undefined") return;
+
+    document.querySelectorAll(".project-slider").forEach((slider) => {
+        const swiperEl = slider.querySelector(".swiper");
+        if (!swiperEl) return;
+
+        new Swiper(swiperEl, {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            loop: true,
+            watchOverflow: true,
+            observer: true,
+            observeParents: true,
+            pagination: {
+                el: slider.querySelector(".swiper-pagination"),
+                clickable: true
+            },
+            navigation: {
+                prevEl: slider.querySelector(".project-slider-prev"),
+                nextEl: slider.querySelector(".project-slider-next")
+            },
+            breakpoints: {
+                1025: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll(".services-slider").forEach((slider) => {
+        const swiperEl = slider.querySelector(".swiper");
+        if (!swiperEl) return;
+
+        new Swiper(swiperEl, {
+            enabled: false,
+            loop: true,
+            watchOverflow: true,
+            observer: true,
+            observeParents: true,
+            navigation: {
+                prevEl: slider.querySelector(".services-slider-prev"),
+                nextEl: slider.querySelector(".services-slider-next")
+            },
+            breakpoints: {
+                1025: {
+                    enabled: true,
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                }
+            }
+        });
     });
 }
