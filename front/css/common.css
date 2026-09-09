@@ -578,10 +578,14 @@ main>.title .tit-info2 {
   line-height: 1.5;
 }
 
-main:has(>.title.aicc) {
+/* main:has(>.title.aicc) {
   background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
   background-size: 100% auto;
-}
+} */
+.title.aicc {
+  background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
+  background-size: 100% auto;
+ }
 
 /* content */
 .content .inner-cont {
@@ -1126,7 +1130,11 @@ main:has(>.title.aicc) {
     font-size: 1.8rem;
   }
 
-  main:has(>.title.aicc) {
+  /* main:has(>.title.aicc) {
+    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
+    background-size: 100% auto;
+  } */
+  .title.aicc {
     background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
     background-size: 100% auto;
   }
@@ -1599,9 +1607,13 @@ main:has(>.title.aicc) {
     font-size: 1.8rem;
   }
 
-  main:has(>.title.aicc) {
+  /* main:has(>.title.aicc) {
     background: url(../img/common/bg_title_aicc_pc.svg) no-repeat center top;
     background-size: contain;
+  } */
+  .title.aicc {
+    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
+    background-size: 100% auto;
   }
 
   /* content */

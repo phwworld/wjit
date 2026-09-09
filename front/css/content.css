@@ -66,6 +66,7 @@
 .category-list button {
     min-width: calc(100vw / 4);
     border: 1px solid #f0f0f0;
+    font-size: 1.6rem;
     color: #202020;
     background-color: #fff;
 }
