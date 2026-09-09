@@ -34,7 +34,7 @@
    background: var(--bg-surface);
 }
 
-.features-cont + .features-cont {
+.features-cont+.features-cont {
    margin-top: 2rem;
 }
 
@@ -291,7 +291,7 @@
       font-size: 2rem;
    }
 
-   .features-cont + .features-cont {
+   .features-cont+.features-cont {
       margin-top: 4rem;
    }
 

@@ -578,8 +578,8 @@ main>.title .tit-info2 {
   line-height: 1.5;
 }
 
-main>.title.aicc {
-  background: url(../img/business/bg_title_aicc_mo.svg) no-repeat;
+main:has(>.title.aicc) {
+  background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
   background-size: 100% auto;
 }
 
@@ -1126,8 +1126,9 @@ main>.title.aicc {
     font-size: 1.8rem;
   }
 
-  main>.title.aicc {
-    background: none;
+  main:has(>.title.aicc) {
+    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
+    background-size: 100% auto;
   }
 
   /* content */
@@ -1598,8 +1599,9 @@ main>.title.aicc {
     font-size: 1.8rem;
   }
 
-  main>.title.aicc {
-    background: none;
+  main:has(>.title.aicc) {
+    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat center top;
+    background-size: contain;
   }
 
   /* content */

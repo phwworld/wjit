@@ -395,7 +395,7 @@
     padding-top: 3rem;
     border-top: 1px solid var(--border-default);
 }
-
+ 
 /* 문의하기 */
 .tit-info2.contact {
     padding: 2rem 2rem 3rem 2rem;
@@ -608,9 +608,26 @@
 
 /* name card */
 .name-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     margin-top: 6rem;
     padding: 4rem 2rem;
     background-color: var(--bg-surface);
+}
+.name-card>div:first-child {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+.name-card>div:first-child img {
+    width: auto;
+    height: 6rem;
+}
+.name-card>div>p {
+    font-size: 1.6rem;
+}
+.name-card>div>p span {
+    font-weight: 700;
 }
 
 /* faq, project-case, download */
@@ -866,6 +883,12 @@
 }
 .cont-type2 .box-cont li~li {
     margin-top: 0.8rem;
+}
+
+/* bridge area */
+.bridge-area {
+    margin-top: 4rem;
+    background-color: var(--bg-surface);
 }
 
 /* download layer popup */
@@ -1561,8 +1584,22 @@
 
     /* name card */
     .name-card {
-        margin-top: 7rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10rem;
         padding: 6rem 7rem;
+    }
+    .name-card>div:first-child {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+    .name-card>div:first-child img {
+        height: 8rem;
+    }
+    .name-card>div>p {
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     /* faq, project-case, download */
@@ -1698,6 +1735,11 @@
 
     .cont-type2 .box-cont li:before {
         top: 1.3rem;
+    }
+
+    /* bridge area */
+    .bridge-area {
+        margin-top: 10rem;
     }
 
     /* download layer popup */
@@ -2428,8 +2470,22 @@
 
     /* name card */
     .name-card {
-        margin-top: 7rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10rem;
         padding: 6rem 7rem;
+    }
+    .name-card>div:first-child {
+        font-size: 2.8rem;
+        font-weight: 700;
+    }
+    .name-card>div:first-child img {
+        height: 8rem;
+    }
+    .name-card>div>p {
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     /* faq, project-case, download */
@@ -2565,6 +2621,11 @@
 
     .cont-type2 .box-cont li:before {
         top: 1.3rem;
+    }
+
+    /* bridge area */
+    .bridge-area {
+        margin-top: 10rem;
     }
 
     /* download layer popup */
