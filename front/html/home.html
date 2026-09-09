@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body class="home-page">
+    <header class="home-header">
+        <div class="home-header__inner">
+            <h1 class="home-logo">
+                <a href="./home.html">
+                    <img src="../img/common/Logo_wj_w.svg" alt="woongjin" class="logo-white">
+                    <img src="../img/common/Logo_wj.svg" alt="woongjin" class="logo-color">
+                </a>
+            </h1>
+            <nav class="home-nav" aria-label="섹션 바로가기">
+                <ul>
+                    <li><a href="#section-hero" data-section="0" class="is-active">Home</a></li>
+                    <li><a href="#section-business" data-section="1">Business</a></li>
+                    <li><a href="#section-industry" data-section="2">Industry</a></li>
+                    <li><a href="#section-insight" data-section="3">Insight</a></li>
+                    <li><a href="#section-contact" data-section="4">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="./customer/contact.html" class="home-header__cta">문의하기</a>
+        </div>
+    </header>
+
+    <nav class="home-pagination" aria-label="페이지 네비게이션">
+        <button type="button" class="is-active" data-section="0" aria-label="Home"></button>
+        <button type="button" data-section="1" aria-label="Business"></button>
+        <button type="button" data-section="2" aria-label="Industry"></button>
+        <button type="button" data-section="3" aria-label="Insight"></button>
+        <button type="button" data-section="4" aria-label="Contact"></button>
+    </nav>
+
+    <main class="home-fullpage">
+        <section id="section-hero" class="home-section home-section--hero" data-theme="dark">
+            <div class="home-section__bg" aria-hidden="true"></div>
+            <div class="home-section__inner">
+                <p class="home-eyebrow">Woongjin IT</p>
+                <h2 class="home-headline">
+                    디지털 혁신의 중심에<br>
+                    <em>웅진</em>이 있습니다
+                </h2>
+                <p class="home-desc">
+                    SAP ERP, 클라우드, 렌탈특화솔루션, Web / SI 분야까지<br>
+                    기업 고객의 성공적인 미래가치 창출을 함께하는 IT 컨설팅 파트너입니다.
+                </p>
+                <div class="home-cta-group">
+                    <a href="#section-business" class="btn-home btn-home--primary" data-section="1">비즈니스 살펴보기</a>
+                    <a href="./customer/contact.html" class="btn-home btn-home--ghost">문의하기</a>
+                </div>
+            </div>
+            <button type="button" class="home-scroll-hint" data-section="1" aria-label="다음 섹션으로 이동">
+                <span>Scroll</span>
+            </button>
+        </section>
+
+        <section id="section-business" class="home-section home-section--business" data-theme="light">
+            <div class="home-section__inner">
+                <p class="home-eyebrow">Business</p>
+                <h2 class="home-headline">비즈니스 영역</h2>
+                <p class="home-desc">
+                    AI부터 ERP, Cloud, Managed Service까지<br>
+                    디지털 전환에 필요한 기술을 한곳에서 제안합니다.
+                </p>
+                <ul class="home-biz-list">
+                    <li>
+                        <a href="./business/ai/aiInfo.html">
+                            <span class="home-biz-list__label">01</span>
+                            <strong>AI</strong>
+                            <span>AICC · WIKL · SAP Joule</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./business/solution/solutionInfo.html">
+                            <span class="home-biz-list__label">02</span>
+                            <strong>SOLUTION</strong>
+                            <span>WRMS · WDMS · GAM</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./business/erp/erpInfo.html">
+                            <span class="home-biz-list__label">03</span>
+                            <strong>ERP</strong>
+                            <span>SAP · Dynamics 365</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./business/cloud/cloudInfo.html">
+                            <span class="home-biz-list__label">04</span>
+                            <strong>CLOUD</strong>
+                            <span>AWS · Azure · NAVER</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./business/managed/managedInfo.html">
+                            <span class="home-biz-list__label">05</span>
+                            <strong>MANAGED</strong>
+                            <span>ITO · GDC · BPO</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-industry" class="home-section home-section--industry" data-theme="dark">
+            <div class="home-section__bg" aria-hidden="true"></div>
+            <div class="home-section__inner">
+                <p class="home-eyebrow">Industry</p>
+                <h2 class="home-headline">산업별 전문성</h2>
+                <p class="home-desc">
+                    렌탈, 모빌리티, 제조, 바이오 등<br>
+                    산업 특성을 이해하는 맞춤형 IT 솔루션을 제공합니다.
+                </p>
+                <ul class="home-industry-grid">
+                    <li><a href="./industry/rental/rental1.html">렌탈</a></li>
+                    <li><a href="./industry/mobility/mobility1.html">모빌리티</a></li>
+                    <li><a href="./industry/manufacturing/manufacturing1.html">제조</a></li>
+                    <li><a href="./industry/bio/bio1.html">바이오</a></li>
+                    <li><a href="./industry/consumerGoods/consumerGoods1.html">소비재</a></li>
+                    <li><a href="./industry/distribution/distribution1.html">물류</a></li>
+                    <li><a href="./industry/semiconductor/semiconductor1.html">반도체</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="section-insight" class="home-section home-section--insight" data-theme="light">
+            <div class="home-section__inner">
+                <p class="home-eyebrow">Insight</p>
+                <h2 class="home-headline">인사이트 &amp; 자료</h2>
+                <p class="home-desc">
+                    프로젝트 사례와 미디어 콘텐츠로<br>
+                    웅진의 경험과 전문성을 확인해 보세요.
+                </p>
+                <div class="home-insight-cards">
+                    <a href="./customer/referenceList.html" class="home-insight-card">
+                        <span class="home-insight-card__tag">Case</span>
+                        <strong>프로젝트 사례</strong>
+                        <p>산업별 성공 프로젝트를 살펴보세요.</p>
+                    </a>
+                    <a href="./customer/blogList.html" class="home-insight-card">
+                        <span class="home-insight-card__tag">Blog</span>
+                        <strong>블로그</strong>
+                        <p>기술 트렌드와 실무 인사이트를 공유합니다.</p>
+                    </a>
+                    <a href="./customer/libraryList.html" class="home-insight-card">
+                        <span class="home-insight-card__tag">Library</span>
+                        <strong>자료실</strong>
+                        <p>소개서와 브로슈어를 다운로드하세요.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-contact" class="home-section home-section--contact" data-theme="dark">
+            <div class="home-section__bg" aria-hidden="true"></div>
+            <div class="home-section__inner">
+                <p class="home-eyebrow">Contact</p>
+                <h2 class="home-headline">
+                    비즈니스 혁신을<br>
+                    함께 시작하세요
+                </h2>
+                <p class="home-desc">
+                    궁금한 점이 있으신가요?<br>
+                    웅진 IT 전문가가 빠르게 도와드리겠습니다.
+                </p>
+                <div class="home-cta-group">
+                    <a href="./customer/contact.html" class="btn-home btn-home--primary">문의하기</a>
+                    <a href="./company/overview.html" class="btn-home btn-home--ghost">회사소개</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="home-footer">
+        <div class="home-footer__inner">
+            <div class="home-footer__links">
+                <a href="./company/overview.html">회사정보</a>
+                <a href="#none">채용정보</a>
+                <a href="./customer/contact.html">문의하기</a>
+            </div>
+            <p class="home-footer__address">
+                서울시 중구 청계천로 24 케이스퀘어시티 6-9, 16층
+                <a href="#none">개인정보 처리방침</a><br>
+                Copyright ©Woongjin Co., Ltd. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/home.js"></script>
+</body>
+</html>
