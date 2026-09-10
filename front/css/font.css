@@ -73,14 +73,6 @@
 }
 
 @font-face {
-  font-family: 'Pretendard';
-  font-weight: 900;
-  font-display: swap;
-  src: url(../font/Pretendard-Black.woff2) format('woff2'),
-       url(../font/Pretendard-Black.woff) format('woff');
-}
-
-@font-face {
   font-family: "GmarketSans";
   font-style: normal;
   font-weight: 500;
@@ -93,4 +85,28 @@
   font-weight: 700;
   font-display: swap;
   src: url("../font/GmarketSansBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'WOONGJINLOVE';
+  font-weight: 700;
+  font-display: swap;
+  src: url(../font/WOONGJINLOVE-Bold.woff2) format('woff2'),
+       url(../font/WOONGJINLOVE-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'WOONGJINLOVE';
+  font-weight: 500;
+  font-display: swap;
+  src: url(../font/WOONGJINLOVE-Medium.woff2) format('woff2'),
+       url(../font/WOONGJINLOVE-Medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'WOONGJINLOVE';
+  font-weight: 300;
+  font-display: swap;
+  src: url(../font/WOONGJINLOVE-Light.woff2) format('woff2'),
+       url(../font/WOONGJINLOVE-Light.woff) format('woff');
 }
