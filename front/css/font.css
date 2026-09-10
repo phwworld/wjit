@@ -91,22 +91,22 @@
   font-family: 'WOONGJINLOVE';
   font-weight: 700;
   font-display: swap;
-  src: url(../font/WOONGJINLOVE-Bold.woff2) format('woff2'),
-       url(../font/WOONGJINLOVE-Bold.woff) format('woff');
+  src: url(../font/WOONGJINLOVE-Bold.woff2) format('font-woff2'),
+       url(../font/WOONGJINLOVE-Bold.woff) format('font-woff');
 }
 
 @font-face {
   font-family: 'WOONGJINLOVE';
   font-weight: 500;
   font-display: swap;
-  src: url(../font/WOONGJINLOVE-Medium.woff2) format('woff2'),
-       url(../font/WOONGJINLOVE-Medium.woff) format('woff');
+  src: url(../font/WOONGJINLOVE-Medium.woff2) format('font-woff2'),
+       url(../font/WOONGJINLOVE-Medium.woff) format('font-woff');
 }
 
 @font-face {
   font-family: 'WOONGJINLOVE';
   font-weight: 300;
   font-display: swap;
-  src: url(../font/WOONGJINLOVE-Light.woff2) format('woff2'),
-       url(../font/WOONGJINLOVE-Light.woff) format('woff');
+  src: url(../font/WOONGJINLOVE-Light.woff2) format('font-woff2'),
+       url(../font/WOONGJINLOVE-Light.woff) format('font-woff');
 }
