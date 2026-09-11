@@ -8,20 +8,16 @@
   const sections = [...main.querySelectorAll(".home-section")];
   if (sections.length === 0) return;
 
-  const header = document.querySelector(".home-header");
   const pagination = document.querySelector(".home-pagination");
-  const navLinks = [...document.querySelectorAll(".home-nav a[data-section]")];
   const paginationButtons = pagination
     ? [...pagination.querySelectorAll("button[data-section]")]
     : [];
-  const sectionTriggers = [
-    ...document.querySelectorAll("[data-section]:not(.home-nav a)"),
-  ];
 
   const DURATION = 800;
   const WHEEL_THRESHOLD = 30;
   const WHEEL_GESTURE_END_DELAY = 160;
   const TOUCH_THRESHOLD = 50;
+  const LIGHT_SECTION_INDEXES = new Set([2, 4]);
 
   let currentIndex = 0;
   let isScrolling = false;
@@ -58,13 +54,11 @@
 
   function findNearestSnapPoint(points, scrollY) {
     let nearest = points[0];
-
     points.forEach((point) => {
       if (Math.abs(scrollY - point) < Math.abs(scrollY - nearest)) {
         nearest = point;
       }
     });
-
     return nearest;
   }
 
@@ -133,16 +127,10 @@
 
   function updateUI(index) {
     const safeIndex = Math.max(0, Math.min(index, sections.length - 1));
-    const theme = sections[safeIndex].dataset.theme || "dark";
-    const isLight = theme === "light";
+    const isLight = LIGHT_SECTION_INDEXES.has(safeIndex) && !isInFooter();
 
     sections.forEach((section, i) => {
       section.classList.toggle("is-active", i === safeIndex);
-    });
-
-    navLinks.forEach((link) => {
-      const linkIndex = Number(link.dataset.section);
-      link.classList.toggle("is-active", linkIndex === safeIndex);
     });
 
     paginationButtons.forEach((button) => {
@@ -150,12 +138,8 @@
       button.classList.toggle("is-active", buttonIndex === safeIndex);
     });
 
-    if (header) {
-      header.classList.toggle("is-light", isLight && !isInFooter());
-    }
-
     if (pagination) {
-      pagination.classList.toggle("is-light", isLight && !isInFooter());
+      pagination.classList.toggle("is-light", isLight);
     }
   }
 
@@ -209,7 +193,6 @@
 
   function scrollToFooter() {
     animateScrollTo(getLastSectionBottom(), () => {
-      if (header) header.classList.add("is-light");
       if (pagination) pagination.classList.add("is-light");
     });
   }
@@ -248,11 +231,9 @@
     if (e.deltaMode === WheelEvent.DOM_DELTA_LINE) {
       return e.deltaY * 16;
     }
-
     if (e.deltaMode === WheelEvent.DOM_DELTA_PAGE) {
       return e.deltaY * window.innerHeight;
     }
-
     return e.deltaY;
   }
 
@@ -271,10 +252,7 @@
     e.preventDefault();
 
     clearTimeout(wheelGestureTimer);
-    wheelGestureTimer = setTimeout(
-      endWheelGesture,
-      WHEEL_GESTURE_END_DELAY
-    );
+    wheelGestureTimer = setTimeout(endWheelGesture, WHEEL_GESTURE_END_DELAY);
 
     if (isInFooter() && deltaY < 0) {
       if (!isScrolling && !isWheelGestureLocked) {
@@ -324,7 +302,6 @@
     }
 
     if (!(e.key in keyMap)) return;
-
     if (isInFooter() && keyMap[e.key] > 0) return;
 
     e.preventDefault();
@@ -339,7 +316,6 @@
 
   function onTouchEnd(e) {
     const diff = touchStartY - e.changedTouches[0].clientY;
-
     if (Math.abs(diff) < TOUCH_THRESHOLD) return;
 
     if (isInFooter() && diff < 0) {
@@ -393,19 +369,14 @@
     }, 100);
   }
 
-  function bindSectionTriggers() {
-    const allTriggers = [...navLinks, ...paginationButtons, ...sectionTriggers];
-
-    allTriggers.forEach((el) => {
-      el.addEventListener("click", (e) => {
-        const index = Number(el.dataset.section);
-        if (Number.isNaN(index)) return;
-
-        e.preventDefault();
-        scrollToSection(index);
-      });
+  paginationButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const index = Number(button.dataset.section);
+      if (Number.isNaN(index)) return;
+      scrollToSection(index);
     });
-  }
+  });
 
   window.addEventListener("wheel", onWheel, { passive: false });
   window.addEventListener("keydown", onKeydown);
@@ -419,7 +390,6 @@
     updateUI(currentIndex);
   });
 
-  bindSectionTriggers();
   currentIndex = getSectionIndex();
   updateUI(currentIndex);
 })();
