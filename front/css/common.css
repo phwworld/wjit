@@ -29,6 +29,10 @@ button {
   font-family: "GmarketSans";
 }
 
+.font-wjlove {
+  font-family: 'WOONGJINLOVE';
+}
+
 .blind {
   font-size: 0;
   line-height: 0;
@@ -1170,6 +1174,12 @@ main>.title.act h3 {
     margin-top: 10rem;
   }
 
+  .c-tit.devide {
+    margin: 10rem 0 2rem;
+    padding-top: 10rem;
+    border-top: 1px solid #b5b7bd;
+  }
+
   .s-tit {
     padding: 10rem 0 0;
     margin: 10rem 0 1rem;
@@ -1645,6 +1655,12 @@ main>.title.act h3 {
   .c-tit span {
     display: inline-block;
     font-size: 4rem;
+  }
+
+  .c-tit.devide {
+    margin: 10rem 0 2rem;
+    padding-top: 10rem;
+    border-top: 1px solid #b5b7bd;
   }
 
   .cont-txt+.c-tit {

@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInflowSelect();
     initCategoryPanels();
     initTabMenu();
+    initCompanyTab();
     initFaqAccordion();
     initProjectCaseAccordion();
     initLayerPopupEvents();
@@ -602,14 +603,74 @@ function initTabMenu() {
 }
 
 /* ==========================================================================
+   9-1. 회사정보 탭 (Company Tab)
+   ========================================================================== */
+function initCompanyTab() {
+    const tabContainers = document.querySelectorAll(".company-tab");
+    if (!tabContainers.length) return;
+
+    const getOffsetTop = (element) => {
+        let offsetTop = 0;
+        let node = element;
+        while (node) {
+            offsetTop += node.offsetTop;
+            node = node.offsetParent;
+        }
+        return offsetTop;
+    };
+
+    tabContainers.forEach((tabContainer) => {
+        const buttons = Array.from(tabContainer.querySelectorAll("button"));
+        if (!buttons.length) return;
+
+        const companyCont = tabContainer.nextElementSibling && tabContainer.nextElementSibling.classList.contains("company-cont")
+            ? tabContainer.nextElementSibling
+            : (tabContainer.parentElement ? tabContainer.parentElement.querySelector(".company-cont") : null);
+        const tabContents = companyCont ? Array.from(companyCont.querySelectorAll(".tab-cont")) : [];
+
+        const scrollToContent = () => {
+            const stickyTop = parseFloat(window.getComputedStyle(tabContainer).top) || 0;
+            const tabHeight = tabContainer.offsetHeight || 0;
+            const contMarginTop = companyCont ? (parseFloat(window.getComputedStyle(companyCont).marginTop) || 0) : 0;
+            const target = (companyCont && companyCont.querySelector(".tab-cont.act")) || companyCont || tabContainer;
+
+            window.scrollTo({
+                top: Math.max(0, getOffsetTop(target) - stickyTop - tabHeight - contMarginTop),
+                behavior: "smooth"
+            });
+        };
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                buttons.forEach((btn) => btn.classList.remove("act"));
+                button.classList.add("act");
+
+                const targetId = (button.getAttribute("data-target") || "").trim().replace(/^#/, "");
+                if (targetId) {
+                    const targetCont = document.getElementById(targetId);
+                    if (targetCont && targetCont.classList.contains("tab-cont")) {
+                        tabContents.forEach((cont) => cont.classList.remove("act"));
+                        targetCont.classList.add("act");
+                    }
+                }
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(scrollToContent);
+                });
+            });
+        });
+    });
+}
+
+/* ==========================================================================
    10. FAQ 아코디언 (FAQ Accordion)
    ========================================================================== */
 function initFaqAccordion() {
-    const faqLists = document.querySelectorAll(".faq .faq-list");
+    const faqLists = document.querySelectorAll(".faq .faq-list, .history > .history-list");
     if (!faqLists.length) return;
 
     faqLists.forEach((list) => {
-        const items = list.querySelectorAll(".faq-item");
+        const items = list.querySelectorAll(":scope > .faq-item, :scope > .history-item");
 
         items.forEach((item) => {
             const head = item.querySelector(".item-head");
