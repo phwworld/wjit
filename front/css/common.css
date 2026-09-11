@@ -77,6 +77,10 @@ br.pc {
   display: none;
 }
 
+.mo-hide {
+  display: none;
+}
+
 /* button */
 .btn-large {
   display: inline-block;
@@ -738,6 +742,10 @@ main>.title.act h3 {
     display: block;
   }
 
+  .mo-hide {
+    display: block;
+  }
+
   /* button */
   .btn-large {
     min-width: 32rem;
@@ -1235,6 +1243,10 @@ main>.title.act h3 {
   }
 
   br.pc {
+    display: block;
+  }
+
+  .mo-hide {
     display: block;
   }
 

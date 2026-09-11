@@ -42,59 +42,179 @@
                     <button type="button">주식정보</button>
                     <button type="button">공시정보</button>
                     <button type="button">전자공고</button>
-                    <button type="button">기업회생 게시판</button>
+                    <!-- <button type="button">기업회생 게시판</button> -->
                 </div>
 
                 <div class="company-cont">
-                    <div class="tab-cont" id="content1">
-                        <h4 class="c-tit">디지털 혁신의 중심에 웅진이 있습니다.</h4>
+                    <div class="financial-tit">
+                        <h4 class="c-tit">연결 요약 재무정보</h4>
 
-                        <p class="cont-txt">
-                            IT서비스로 디지털 혁신을 이루고, 기업 고객의 성공적인 미래가치창출을 이루기 위해 함께하는 IT컨설팅 파트너 입니다. 2003년 웅진 그룹의 SAP 시스템 통합 프로젝트를 시작으로 2008년 대외사업 진출을 통해 15년 이상 다양한 산업군의 고객사례를 보유하고 있습니다. SAP ERP, 클라우드, 렌탈특화솔루션, Web / SI분야등 사업을 확대해가며 디지털 비즈니스를 이끌고 있습니다.
-                        </p>
-
-                        <h4 class="c-tit devide">Our Experience, Your Business. 웅진의 강점은 바로 ‘직접경험’입니다.</h4>
-
-                        <p class="cont-txt">
-                            고객에게 서비스하기 전에 직접 제품을 도입해보고 장단점을 확실하게 파악하기 전까진 고객에게 제안하지 않습니다. 웅진은 그룹사 IT 총괄 운영에 대한 경험, IT시스템의 경량화 경험, 클라우드 전환에 대한 경험, 그룹의 계열사의 ‘디지털 트랜스포메이션’(Digital Transfor-mation)경험 등을 통해 IT시스템이 기업에게 끼치는 영향을 잘 알고 있습니다.웅진은 Real-Time비즈니스와 Simple한 아키텍처를 중심으로 다양한 경험을 기업고객에게 제안합니다.
-                        </p>
-
-                        <div class="overview-cont1"></div>
-
-                        <h4 class="c-tit devide">“웅진은 기업고객의 성공을 위해 함께합니다.”</h4>
-
-                        <p class="cont-txt">
-                            ㈜웅진은 2003년 웅진그룹의 각 계열사 전산조직을 통합해 전문적인 IT서비스를 제공하기 위해 설립되었습니다.
-                        </p>
+                        <div>
+                            <label for="year-select1">연도검색</label>
+                            <select class="form-select inline" id="year-select1">
+                                <option value="2020" selected>2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2017">2017</option>
+                                <option value="2016" class="mo-hide">2016</option>
+                                <option value="2015" class="mo-hide">2015</option>
+                                <option value="2014" class="mo-hide">2014</option>
+                                <option value="2013" class="mo-hide">2013</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="tab-cont" id="content2">
-                        <h4 class="c-tit">사랑하고, 또 사랑하고, 또 사랑하는 마음</h4>
+                    <div class="financial-cont" id="link_fi_statements"></div>
 
-                        <p class="cont-txt">
-                            또또사랑은 웅진의 창업자인 윤석금 회장이 직접 만든 용어입니다. 한국인에게는 자신이 좋아하는 일은 시키지 않아도 열심히 하고 신나면 놀라운 능력을 발휘하는 ‘신기(神氣)’ 정서가 있습니다. 윤석금 회장은 초기 사업을 시작하며 직원들의 기를 어떻게 살릴 수 있을까를 고민했고 그 해답은 사랑이었습니다. 자신의 일을 사랑하고 함께 일하는 동료를 사랑하면 자연스럽게 신기가 발현되고 이것이 다시 일에 대한 열정으로 이어져 조직의 성과를 낸다는 것이 또또사랑의 핵심 개념입니다.
-                        </p>
+                    <div class="financial-tit devide">
+                        <h4 class="c-tit">별도 요약 재무정보 </h4>
+
+                        <div>
+                            <label for="year-select2">연도검색</label>
+                            <select class="form-select inline" id="year-select2">
+                                <option value="2020" selected>2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2017">2017</option>
+                                <option value="2016" class="mo-hide">2016</option>
+                                <option value="2015" class="mo-hide">2015</option>
+                                <option value="2014" class="mo-hide">2014</option>
+                                <option value="2013" class="mo-hide">2013</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="tab-cont" id="content3">
-                        <h4 class="c-tit">디지털 혁신의 중심에 웅진이 있습니다.</h4>
+                    <div class="financial-cont" id="separate_fi_statements"></div> 
 
-                        <p class="cont-txt">
-                            IT서비스로 디지털 혁신을 이루고, 기업 고객의 성공적인 미래가치창출을 이루기 위해 함께하는 IT컨설팅 파트너 입니다. 2003년 웅진 그룹의 SAP 시스템 통합 프로젝트를 시작으로 2008년 대외사업 진출을 통해 15년 이상 다양한 산업군의 고객사례를 보유하고 있습니다. SAP ERP, 클라우드, 렌탈특화솔루션, Web / SI분야등 사업을 확대해가며 디지털 비즈니스를 이끌고 있습니다.
-                        </p>
+                    <div class="financial-cont devide">
+                        <p class="tit">신용등급</p>
+                        <div>
+                            <p class="scroll-txt">* 표를 좌우로 스크롤하여 확인하세요.</p>
+                            <div class="scroll-table">
+                                <table>
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">평가일</th>
+                                            <th scope="col">평가대상 <br class="mo">유가증권 등급</th>
+                                            <th scope="col">평가대상 <br class="mo">유가증권의 신용등급</th>
+                                            <th scope="col">평가회사</th>
+                                            <th scope="col">평가구분</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">2017.07.17</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB+</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>본평가</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2018.06.25</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB+</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>본평가</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2018.07.20</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB+</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>본평가</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2019.02.26</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB0</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>수시평가</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2019.04.01</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB-</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>수시평가</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2020.07.13</th>
+                                            <td>기업신용평가</td>
+                                            <td>BBB0</td>
+                                            <td>한국신용평가(AAA~D)</td>
+                                            <td>본평가</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
-                        <h4 class="c-tit devide">Our Experience, Your Business. 웅진의 강점은 바로 ‘직접경험’입니다.</h4>
-
-                        <p class="cont-txt">
-                            고객에게 서비스하기 전에 직접 제품을 도입해보고 장단점을 확실하게 파악하기 전까진 고객에게 제안하지 않습니다. 웅진은 그룹사 IT 총괄 운영에 대한 경험, IT시스템의 경량화 경험, 클라우드 전환에 대한 경험, 그룹의 계열사의 ‘디지털 트랜스포메이션’(Digital Transfor-mation)경험 등을 통해 IT시스템이 기업에게 끼치는 영향을 잘 알고 있습니다.웅진은 Real-Time비즈니스와 Simple한 아키텍처를 중심으로 다양한 경험을 기업고객에게 제안합니다.
-                        </p>
-
-                        <h4 class="c-tit devide">“웅진은 기업고객의 성공을 위해 함께합니다.”</h4>
-
-                        <p class="cont-txt">
-                            ㈜웅진은 2003년 웅진그룹의 각 계열사 전산조직을 통합해 전문적인 IT서비스를 제공하기 위해 설립되었습니다.
-                        </p>
+                            <div>
+                                <table>
+                                    <colgroup>
+                                        <col style="width:20%">
+                                        <col style="width:80%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">등급</th>
+                                            <th scope="col">정의</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">AAA</th>
+                                            <td>원리금 지급확실성이 최고 수준임</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">AA</th>
+                                            <td>원리금 지급확실성이 매우 높지만 AAA 등급에 비하여 다소 낮은 요소가 있음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">A</th>
+                                            <td>원리금 지급확실성이 높지만, 장래의 환경변화에 따라 다소 영향을 받을 가능성이 있음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">BBB</th>
+                                            <td>원리금 지급확실성이 있지만, 장래의 환경변화에 따라 저하될 가능성이 내포되어 있음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">BB</th>
+                                            <td>원리급 지급능력에 당면문제는 없으나 장해의 안정성면에서는 투기적인 요소가 내포되어 있음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">B</th>
+                                            <td>원리금 지급능력이 부족하여 투기적임</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">CCC</th>
+                                            <td>원리금의 채무불이행이 발생할 위험요소가 내포되어 있음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">CC</th>
+                                            <td>원리금의 채무불이행이 발생할 가능성이 높음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">C</th>
+                                            <td>원리금의 채무불이행이 발생할 가능성이 극히 높음</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">D</th>
+                                            <td>현재 채무불이행 상태에 있음</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="info">주) 상기 AA~B까지는 당해 등급 내에서의 상대적 위치에 따라 + 또는 -부호를 부여할 수 있음</p>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             <!-- //inner cont -->
@@ -116,5 +236,32 @@
     </div>
 
     <script src="../../js/ui.js"></script>
+    <script>
+        const yearSelect1 = document.querySelector("#year-select1");
+        const yearSelect2 = document.querySelector("#year-select2");
+        const yearResult1 = document.querySelector("#link_fi_statements");
+        const yearResult2 = document.querySelector("#separate_fi_statements");
+
+        yearSelect1.addEventListener("change", () => {
+            const selectVal = yearSelect1.value;
+            fetch(`../invest/link_fi_statements_${selectVal}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    yearResult1.innerHTML = html;
+                });
+        });
+        yearSelect1.dispatchEvent(new Event("change"));
+
+        yearSelect2.addEventListener("change", () => {
+            const selectVal = yearSelect2.value;
+            fetch(`../invest/separate_fi_statements_${selectVal}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    yearResult2.innerHTML = html;
+                });
+        });
+        yearSelect2.dispatchEvent(new Event("change"));
+
+    </script>
 </body>
 </html>
