@@ -880,63 +880,6 @@
    text-align: right;
 }
 
-.financial-cont table {
-   width: 100%;
-   table-layout: fixed;
-}
-
-.financial-cont table thead th {
-   padding: 0.8rem 0;
-   color: var(--white);
-   font-size: 1.8rem;
-   font-weight: 700;
-   line-height: 1.4;
-   text-align: center;
-   background-color: var(--primary);
-   vertical-align: middle;
-}
-
-.financial-cont table tbody th,
-.financial-cont table tbody td {
-   padding: 0.8rem 1rem 0.9rem;
-   border-bottom: 1px solid #e1e7ee;
-   color: var(--text-body);
-   vertical-align: middle;
-}
-
-.financial-cont table tbody th {
-   font-size: 1.6rem;
-   font-weight: 600;
-   line-height: 1.6;
-   letter-spacing: -0.02em;
-   text-align: center;
-   word-break: keep-all;
-}
-
-.financial-cont table tbody td {
-   position: relative;
-   font-size: 1.6rem;
-   font-weight: 400;
-   line-height: 1;
-   text-align: right;
-}
-
-.financial-cont table tbody td::before {
-   content: "";
-   position: absolute;
-   top: 50%;
-   left: 0;
-   width: 1px;
-   height: 2.5rem;
-   background-color: #e1e7ee;
-   transform: translateY(-50%);
-}
-
-.financial-cont table tbody tr:last-child th,
-.financial-cont table tbody tr:last-child td {
-   border-bottom-color: var(--text-secondary);
-}
-
 .financial-cont.devide {
    margin-top: 6rem;
    border-top: 1px solid #b5b7bd;
@@ -944,38 +887,6 @@
 
 .financial-cont.devide>div>div ~ div {
    margin-top: 6rem;
-}
-
-.financial-cont.devide table td {
-   text-align: center;
-}
-
-.financial-cont.devide>div>div ~ div table td {
-   text-align: left;
-}
-
-.scroll-txt {
-   margin-bottom: 1rem;
-   font-size: 1.4rem;
-   color: var(--text-body);
-   text-align: right;
-}
-
-.scroll-table {
-   overflow-x: auto;
-   -webkit-overflow-scrolling: touch;
-}
-
-.financial-cont .scroll-table > table {
-   width: max-content;
-   min-width: 100%;
-   table-layout: auto;
-}
-
-.financial-cont .scroll-table > table thead th,
-.financial-cont .scroll-table > table tbody th,
-.financial-cont .scroll-table > table tbody td {
-   white-space: nowrap;
 }
 
 /* overseas */
@@ -1086,6 +997,34 @@
 
 .overseas-cont+.c-tit {
    margin-top: 6rem;
+}
+
+/* disclosure */
+.disclosure-cont.pc {
+   display: none;
+}
+
+.disclosure-cont.mo {
+   display: block;
+}
+
+.disclosure-cont.mo div {
+   padding: 4rem 0;
+   font-size: 1.6rem;
+   text-align: center;
+   background-color: var(--bg-surface);
+}
+
+/* report table */
+.report-cont {
+   margin-top: 6rem;
+}
+
+.report-cont .tit {
+   margin-bottom: 2rem;
+   font-size: 2rem;
+   font-weight: 700;
+   color: var(--text-point);
 }
 
 /* ==========================================
@@ -1851,59 +1790,48 @@
       padding-top: 0;
       border: 0;
    }
-   .financial-cont table thead th {
-      height: 5.2rem;
-      padding: 1.4rem 2rem;
-      font-size: 2rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
-   }
-
-   .financial-cont table tbody th,
-   .financial-cont table tbody td {
-      height: 5.2rem;
-      padding: 1.4rem 2rem;
-   }
-
-   .financial-cont table tbody th {
-      font-size: 1.8rem;
-   }
-
-   .financial-cont table tbody td {
-      font-size: 1.8rem;
-      line-height: 1.6;
-      letter-spacing: -0.02em;
-   }
-
-   .financial-cont table tbody td::before {
-      height: 4.7rem;
-      background-color: var(--border-default);
-   }
-
-   .scroll-txt {
-      display: none;
-   }
-
-   .scroll-table {
-      overflow-x: visible;
-   }
-
-   .financial-cont .scroll-table > table {
-      width: 100%;
-      table-layout: fixed;
-   }
-
-   .financial-cont .scroll-table > table thead th,
-   .financial-cont .scroll-table > table tbody th,
-   .financial-cont .scroll-table > table tbody td {
-      white-space: normal;
-   }
 
    .financial-cont.devide {
       margin-top: 10rem;
       padding-top: 10rem;
    }
 
+   /* disclosure */
+   .disclosure-cont.mo {
+      display: none;
+   }
+
+   .disclosure-cont.pc {
+      display: block;
+   }
+
+   .disclosure-cont.pc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   
+   .disclosure-cont.pc .shortcut {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      height: 6.4rem;
+      padding: 0 3rem;
+      color: var(--white);
+      font-size: 2.4rem;
+      font-weight: 700;
+      background-color: var(--primary);
+   }
+   
+   .disclosure-cont.pc .shortcut::before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      background: url(../img/common/icon_page_move.svg) no-repeat center;
+      background-size: 100%;
+   }
+   
    /* overseas */
    .overseas-cont {
       margin-top: 6rem;
@@ -2005,6 +1933,26 @@
 
    .overseas-cont+.c-tit {
       margin-top: 10rem;
+   }
+
+   /* report table */
+   .report-cont {
+      display: flex;
+      flex-wrap: wrap;
+      clear: both;
+      margin-top: 0;
+      padding-top: 6rem;
+   }
+
+   .report-cont .tit {
+      width: 31rem;
+      margin: 0;
+      font-size: 3.2rem;
+      color: var(--text-body);
+   }
+
+   .report-cont>div {
+      width: calc(100% - 31rem);
    }
 
 }
@@ -2778,59 +2726,48 @@
          padding-top: 0;
          border: 0;
       }
-      .financial-cont table thead th {
-         height: 5.2rem;
-         padding: 1.4rem 2rem;
-         font-size: 2rem;
-         line-height: 1;
-         letter-spacing: -0.02em;
-      }
-   
-      .financial-cont table tbody th,
-      .financial-cont table tbody td {
-         height: 5.2rem;
-         padding: 1.4rem 2rem;
-      }
-   
-      .financial-cont table tbody th {
-         font-size: 1.8rem;
-      }
-   
-      .financial-cont table tbody td {
-         font-size: 1.8rem;
-         line-height: 1.6;
-         letter-spacing: -0.02em;
-      }
-   
-      .financial-cont table tbody td::before {
-         height: 4.7rem;
-         background-color: var(--border-default);
-      }
-   
-      .scroll-txt {
-         display: none;
-      }
-   
-      .scroll-table {
-         overflow-x: visible;
-      }
-   
-      .financial-cont .scroll-table > table {
-         width: 100%;
-         table-layout: fixed;
-      }
-   
-      .financial-cont .scroll-table > table thead th,
-      .financial-cont .scroll-table > table tbody th,
-      .financial-cont .scroll-table > table tbody td {
-         white-space: normal;
-      }
-   
+
       .financial-cont.devide {
          margin-top: 10rem;
          padding-top: 10rem;
       }
-   
+
+      /* disclosure */
+      .disclosure-cont.mo {
+         display: none;
+      }
+
+      .disclosure-cont.pc {
+         display: block;
+      }
+
+      .disclosure-cont.pc {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      
+      .disclosure-cont.pc .shortcut {
+         display: inline-flex;
+         align-items: center;
+         gap: 0.8rem;
+         height: 6.4rem;
+         padding: 0 3rem;
+         color: var(--white);
+         font-size: 2.4rem;
+         font-weight: 700;
+         background-color: var(--primary);
+      }
+      
+      .disclosure-cont.pc .shortcut::before {
+         content: "";
+         width: 2.5rem;
+         height: 2.5rem;
+         margin-right: 1rem;
+         background: url(../img/common/icon_page_move.svg) no-repeat center;
+         background-size: 100%;
+      }
+
       /* overseas */
       .overseas-cont {
          margin-top: 6rem;
@@ -2934,5 +2871,25 @@
       .overseas-cont+.c-tit {
          margin-top: 10rem;
       }
-   
+
+      /* report table */
+      .report-cont {
+         display: flex;
+         flex-wrap: wrap;
+         clear: both;
+         margin-top: 0;
+         padding-top: 6rem;
+      }
+
+      .report-cont .tit {
+         width: 31rem;
+         margin: 0;
+         font-size: 3.2rem;
+         color: var(--text-body);
+      }
+
+      .report-cont>div {
+         width: calc(100% - 31rem);
+      }
+
    }
