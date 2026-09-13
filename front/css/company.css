@@ -925,7 +925,7 @@
 .financial-cont tbody th,
 .financial-cont tbody td {
    height: 4.2rem;
-   padding: 0.8rem 1rem 0.9rem 0;
+   padding: 0.8rem 1rem 0.9rem 1rem;
    border-bottom: 1px solid #e1e7ee;
    color: var(--text-body);
    font-size: 1.6rem;
@@ -949,7 +949,19 @@
 
 .financial-cont tbody th + td,
 .financial-cont tbody td + td {
-   border-left: 1px solid #e1e7ee;
+   position: relative;
+}
+
+.financial-cont tbody th + td::before,
+.financial-cont tbody td + td::before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 0;
+   width: 1px;
+   height: 2.5rem;
+   background-color: #e1e7ee;
+   transform: translateY(-50%);
 }
 
 .financial-cont tbody tr:last-child th,
@@ -966,7 +978,7 @@
    white-space: nowrap;
 }
 
-.financial-cont.devide > div > div:not(.scroll-table) table td {
+.financial-cont table td.left {
    text-align: left;
 }
 
@@ -1106,6 +1118,71 @@
    font-size: 2rem;
    font-weight: 700;
    color: var(--text-point);
+}
+
+/* report list */
+.report-list {
+   border-top: 2px solid var(--text-body);
+}
+
+.report-list .report-item {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.6rem;
+   padding: 1.6rem 0;
+   border-bottom: 1px solid var(--border-default);
+}
+
+.report-list .report-item:last-child {
+   border-bottom-color: var(--text-secondary);
+}
+
+.report-list .report-info {
+   display: flex;
+   flex-wrap: wrap;
+   flex: 1;
+   min-width: 0;
+   align-items: center;
+   color: var(--text-body);
+   font-size: 1.6rem;
+   font-weight: 600;
+   letter-spacing: -0.02em;
+   line-height: 1.6;
+}
+
+.report-list .report-info .date {
+   order: -1;
+   width: 100%;
+   margin-bottom: 0.4rem;
+   color: var(--text-secondary);
+   font-size: 1.6rem;
+   font-weight: 400;
+   line-height: normal;
+}
+
+.report-list .report-info .year,
+.report-list .report-info .num {
+   flex-shrink: 0;
+   width: 5rem;
+}
+
+.report-list .report-info .tit {
+   flex: 1;
+   min-width: 0;
+}
+
+.report-list .report-info .tit a {
+   color: var(--text-body);
+}
+
+.report-list .btn-down {
+   flex-shrink: 0;
+   width: 4.8rem;
+   height: 4.8rem;
+   border: 1px solid var(--border-input);
+   background: url(../img/common/icon_down.svg) no-repeat center;
+   background-size: 2.4rem;
 }
 
 /* ==========================================
@@ -1903,9 +1980,10 @@
       letter-spacing: -0.02em;
    }
 
-   .financial-cont tbody th + td,
-   .financial-cont tbody td + td {
-      border-left-color: var(--border-default);
+   .financial-cont tbody th + td::before,
+   .financial-cont tbody td + td::before {
+      height: 4.7rem;
+      background-color: var(--border-default);
    }
 
    /* disclosure */
@@ -2065,6 +2143,76 @@
 
    .report-cont>div {
       width: calc(100% - 31rem);
+   }
+
+   /* report list */
+   .report-list .report-item {
+      gap: 2rem;
+      border-bottom-width: 2px;
+      border-bottom-color: #e1e7ee;
+   }
+
+   .report-list .report-item:last-child {
+      border-bottom-color: var(--text-secondary);
+   }
+
+   .report-list .report-info {
+      flex-wrap: nowrap;
+      gap: 1rem;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .report-list .report-info .date {
+      order: 0;
+      width: auto;
+      margin-bottom: 0;
+      color: var(--text-body);
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.8;
+      white-space: nowrap;
+   }
+
+   .report-list .report-info .year {
+      width: 20rem;
+   }
+
+   .report-list .report-info .tit {
+      flex: 1;
+      width: auto;
+      max-width: 68rem;
+   }
+
+   .report-list .report-info .tit2 {
+      max-width: 110rem;
+   }
+
+   .report-list .btn-down {
+      width: 15.7rem;
+      height: 5rem;
+      border-color: var(--text-secondary);
+      background: none;
+   }
+
+   .report-list .btn-down .blind {
+      font-size: 1.8rem;
+      line-height: 5rem;
+      color: #666;
+      font-weight: 500;
+   }
+
+   .report-list .btn-down .blind::before {
+      content: "";
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 1rem;
+      background: url(../img/common/icon_down.svg) no-repeat center;
+      background-size: 2.4rem;
+      vertical-align: middle;
    }
 
 }
@@ -2870,9 +3018,10 @@
          letter-spacing: -0.02em;
       }
 
-      .financial-cont tbody th + td,
-      .financial-cont tbody td + td {
-         border-left-color: var(--border-default);
+      .financial-cont tbody th + td::before,
+      .financial-cont tbody td + td::before {
+         height: 4.7rem;
+         background-color: var(--border-default);
       }
 
       /* disclosure */
@@ -3033,6 +3182,76 @@
 
       .report-cont>div {
          width: calc(100% - 31rem);
+      }
+
+      /* report list */
+      .report-list .report-item {
+         gap: 2rem;
+         border-bottom-width: 2px;
+         border-bottom-color: #e1e7ee;
+      }
+
+      .report-list .report-item:last-child {
+         border-bottom-color: var(--text-secondary);
+      }
+
+      .report-list .report-info {
+         flex-wrap: nowrap;
+         gap: 1rem;
+         font-size: 2rem;
+         font-weight: 500;
+         letter-spacing: -0.02em;
+         line-height: 1.8;
+      }
+
+      .report-list .report-info .date {
+         order: 0;
+         width: auto;
+         margin-bottom: 0;
+         color: var(--text-body);
+         font-size: 2rem;
+         font-weight: 500;
+         line-height: 1.8;
+         white-space: nowrap;
+      }
+
+      .report-list .report-info .year {
+         width: 20rem;
+      }
+
+      .report-list .report-info .tit {
+         flex: 1;
+         width: auto;
+         max-width: 68rem;
+      }
+
+      .report-list .report-info .tit2 {
+         max-width: 120rem;
+      }
+
+      .report-list .btn-down {
+         width: 15.7rem;
+         height: 5rem;
+         border-color: var(--text-secondary);
+         background: none;
+      }
+
+      .report-list .btn-down .blind {
+         font-size: 1.8rem;
+         line-height: 5rem;
+         color: #666;
+         font-weight: 500;
+      }
+
+      .report-list .btn-down .blind::before {
+         content: "";
+         display: inline-block;
+         width: 2.4rem;
+         height: 2.4rem;
+         margin-right: 1rem;
+         background: url(../img/common/icon_down.svg) no-repeat center;
+         background-size: 2.4rem;
+         vertical-align: middle;
       }
 
    }
