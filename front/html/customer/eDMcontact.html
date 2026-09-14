@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웅진IT</title>
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/ui.css">
+</head>
+<body>
+    <main>
+        <!-- page title -->
+        <div class="title no-animate aicc">
+            <div class="inner-cont">
+                <p class="tit-info1">WOONGJIN</p>
+                <h3>웅진 AWS PoC 무상지원 이벤트</h3>
+                <p class="tit-info2 contact">
+                    <span>아래의 정보는 모두 필수 입력 사항입니다. 모든 항목을 반드시 입력 하셔야 문의 접수가 가능합니다.</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- page content -->
+        <div class="content">
+            <!-- inner cont -->
+            <div class="inner-cont">
+                <form action="">
+                    <!-- inquiry-form -->
+                    <div class="inquiry-form">
+                        <div class="form-item name">
+                            <label for="name">이름</label>
+                            <div>
+                                <input type="text" class="form-control" id="name" name="name">
+                            </div>
+                        </div>
+
+                        <div class="form-item email">
+                            <label for="email-id">이메일</label>
+                            <div class="email">
+                                <input type="text" class="form-control inline" id="email-id" name="email-id">
+                                <span class="unit">@</span>
+                                <input type="text" class="form-control inline" name="email-domain">
+                                <select class="form-select inline" name="email-domain-select" id="email-domain">
+                                    <option value="직접입력">직접입력</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                    <option value="kakao.com">kakao.com</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-item phone">
+                            <label for="phone1">연락처</label>
+                            <div class="phone-fields">
+                                <input type="tel" class="form-control" id="phone1" name="phone1" maxlength="3" inputmode="numeric">
+                                <input type="tel" class="form-control" id="phone2" name="phone2" maxlength="4" inputmode="numeric">
+                                <input type="tel" class="form-control" id="phone3" name="phone3" maxlength="4" inputmode="numeric">
+                            </div>
+                        </div>
+
+                        <div class="form-item company">
+                            <label for="company">회사(소속)</label>
+                            <div>
+                                <input type="text" class="form-control" id="company" name="company">
+                            </div>
+                        </div>
+
+                        <div class="form-item position">
+                            <label for="level">직급</label>
+                            <div>
+                                <input type="text" class="form-control" id="level" name="level">
+                            </div>
+                        </div>
+
+                        <div class="form-item position">
+                            <label for="department">부서</label>
+                            <div>
+                                <input type="text" class="form-control" id="department" name="department">
+                            </div>
+                        </div>
+
+                        <div class="form-item message">
+                            <label for="subject">문의내용</label>
+                            <div class="message-fields">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
+                                <textarea class="form-control" id="content" name="content" placeholder="내용을 입력하세요."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-item agree">
+                            <span class="label">이용 동의</span>
+                            <div>
+                                <p>아래의 링크를 눌러 내용을 확인하시고 동의 여부에 체크해 주세요.</p>
+                                <span class="form-check">
+                                    <input type="checkbox" id="agree1" name="agree1">
+                                    <label for="agree1"><a href="javascript:;" onclick="openLayer('terms1', event);">개인정보 수집 및 이용</a>에 동의합니다.<span class="required">(필수)</span></label>
+                                </span>
+                                <span class="form-check">
+                                    <input type="checkbox" id="agree2" name="agree2">
+                                    <label for="agree2"><a href="javascript:;" onclick="openLayer('terms2', event);">마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용</a>에 동의합니다.(선택)</label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- board more -->
+                    <div class="btn-area">
+                        <button type="button" class="btn-large btn-primary">신청하기</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //inner cont -->
+        </div>
+        <!-- //page content -->
+    </main>
+
+    <!-- 약관보기 레이어(개인정보 수집 및 이용) --> 
+    <div class="layer-pop terms terms1">
+        <div class="layer-inner">
+            <div class="pop-head">
+                ㈜웅진 개인정보처리(다운로드 관련)를 위한 개인정보 수집 및 이용 동의 (필수)
+                <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
+            </div>
+            <div class="pop-cont">
+                <p>㈜웅진은 다운로드를 통해 해당 서비스를 이용하고자 하는 공공기관, 기업, 개인 등을 대상으로 아래와 같이 개인정보를 수집하고 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> 해당 서비스와 관련된 리소스 자료 다운로드 </li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급 </li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 다운로드 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //약관보기 레이어 -->
+
+    <!-- 약관보기 레이어(마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용) -->
+    <div class="layer-pop terms terms2">
+        <div class="layer-inner">
+            <div class="pop-head">
+                마케팅 활용 및 광고성 정보 전송을 위한 개인정보 수집 및 이용 동의 (선택)
+                <button type="button" class="pop-close" onclick="closeLayer(this);"><span class="blind">닫기</span></button>
+            </div>
+            <div class="pop-cont">
+                <p>본 동의문에는 ㈜웅진이 제공하는 상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등 광고성 정보를 전자적 전송매체(전화, 문자, 이메일 등)를 통해 수신할 수 있는 내용이 포함되어 있습니다.</p>
+                <ul>
+                    <li><span>1. 목적</span> <strong>㈜웅진 관련 마케팅 정보(상품, 서비스, 이벤트, 혜택 등 다양한 정보(뉴스레터 포함) 등) 발송</strong></li>
+                    <li><span>2. 항목</span> 이름, 이메일, 연락처, 회사(소속), 직급</li>
+                    <li><span>3. 보유기간</span> <strong>입력일로부터 2년까지</strong></li>
+                    <li><span class="inline">4. </span> 귀하는 위와 같은 개인정보 수집 및 이용 동의를 거부하실 수 있으며, 동의를 거부할 경우 당사가 제공하는 상품, 서비스, 이벤트, 혜택 등의 다양한 정보를 제공받으실 수 없습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //약관보기 레이어 -->
+
+    <script src="../../js/ui.js"></script>
+</body>
+</html>

@@ -602,6 +602,14 @@ main>.title.act h3 {
   opacity: 1;
 }
 
+main>.title.no-animate .tit-info1,
+main>.title.no-animate .tit-info2,
+main>.title.no-animate h3 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
 /* main:has(>.title.aicc) {
   background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
   background-size: 100% auto;

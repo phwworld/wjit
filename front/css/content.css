@@ -402,6 +402,8 @@
 .tit-info2.contact {
     padding: 2rem 2rem 3rem 2rem;
     background-color: var(--bg-surface);
+    transform: translateY(0) !important;
+    opacity: 1 !important;
 }
 
 .tit-info2.contact span {
@@ -418,16 +420,6 @@
     border-width: 1px 0;
 }
 
-/* .inquiry-form .form-item.name { order: 1; }
-.inquiry-form .form-item.email { order: 2; }
-.inquiry-form .form-item.company { order: 3; }
-.inquiry-form .form-item.position { order: 4; }
-.inquiry-form .form-item.phone { order: 5; }
-.inquiry-form .form-item.category { order: 6; }
-.inquiry-form .form-item.source { order: 7; }
-.inquiry-form .form-item.message { order: 8; }
-.inquiry-form .form-item.consult { order: 9; }
-.inquiry-form .form-item.agree { order: 10; } */
 .inquiry-form .form-item>label,
 .inquiry-form .form-item>.label {
     display: block;
@@ -891,6 +883,24 @@
 .bridge-area {
     margin-top: 4rem;
     background-color: var(--bg-surface);
+}
+
+.bridge-area .inner-cont {
+    padding: 4rem 2.4rem 0;
+}
+
+.bridge-area .bridge-tit {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.bridge-area .bridge-tit span {
+    color: var(--text-point);
+}
+
+.bridge-area .bridge-txt {
+    margin-bottom: 4rem; 
 }
 
 /* download layer popup */
@@ -1362,25 +1372,19 @@
     }
 
     .tit-info2.contact span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5rem;
         padding: 0 0 0 7rem;
-        text-align: left;
         background: url(../img/common/icon_exclamation.svg) no-repeat left center;
     }
+
 
     .inquiry-form {
         padding: 0;
     }
 
-    /* .inquiry-form .form-item.name { order: 1; }
-    .inquiry-form .form-item.email { order: 2; }
-    .inquiry-form .form-item.phone { order: 3; }
-    .inquiry-form .form-item.company { order: 4; }
-    .inquiry-form .form-item.position { order: 5; }
-    .inquiry-form .form-item.category { order: 6; }
-    .inquiry-form .form-item.source { order: 7; }
-    .inquiry-form .form-item.message { order: 8; }
-    .inquiry-form .form-item.consult { order: 9; }
-   .inquiry-form .form-item.agree { order: 10; } */
     .inquiry-form .form-item {
         display: flex;
         align-items: stretch;
@@ -1742,6 +1746,19 @@
     /* bridge area */
     .bridge-area {
         margin-top: 10rem;
+    }
+
+    .bridge-area .inner-cont {
+        padding: 8.7rem 2.4rem;
+    }
+    
+    .bridge-area .bridge-tit {
+        font-size: 5rem;
+    }
+    
+    .bridge-area .bridge-txt {
+        margin-bottom: 4rem;
+        font-size: 2.4rem;
     }
 
     /* download layer popup */
@@ -2248,8 +2265,11 @@
     }
 
     .tit-info2.contact span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5rem;
         padding: 0 0 0 7rem;
-        text-align: left;
         background: url(../img/common/icon_exclamation.svg) no-repeat left center;
     }
 
@@ -2257,16 +2277,6 @@
         padding: 0;
     }
 
-    /* .inquiry-form .form-item.name { order: 1; }
-    .inquiry-form .form-item.email { order: 2; }
-    .inquiry-form .form-item.phone { order: 3; }
-    .inquiry-form .form-item.company { order: 4; }
-    .inquiry-form .form-item.position { order: 5; }
-    .inquiry-form .form-item.category { order: 6; }
-    .inquiry-form .form-item.source { order: 7; }
-    .inquiry-form .form-item.message { order: 8; }
-    .inquiry-form .form-item.consult { order: 9; }
-   .inquiry-form .form-item.agree { order: 10; } */
     .inquiry-form .form-item {
         display: flex;
         align-items: stretch;
@@ -2628,6 +2638,19 @@
     /* bridge area */
     .bridge-area {
         margin-top: 10rem;
+    }
+
+    .bridge-area .inner-cont {
+        padding: 8.7rem 0;
+    }
+    
+    .bridge-area .bridge-tit {
+        font-size: 5rem;
+    }
+    
+    .bridge-area .bridge-txt {
+        margin-bottom: 4rem;
+        font-size: 2.4rem;
     }
 
     /* download layer popup */

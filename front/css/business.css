@@ -193,6 +193,67 @@
     padding-top: 3rem;
 }
 
+.aicc-bridge {
+    padding-bottom: 100vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_aicc_bridge_mo.svg);
+    background-color: #f1f2f6;
+ }
+ 
+ .aicc-bridge-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ }
+ 
+ .aicc-bridge-cont > p:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem 1rem;
+    border: 1px solid var(--text-point);
+    background-color: rgba(255, 255, 255, 0.88);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-point);
+    text-align: center;
+    white-space: nowrap;
+ }
+ 
+ .aicc-bridge-cont > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+ }
+ 
+ .aicc-bridge-cont > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 calc(50% - .5rem);
+    min-height: 5.3rem;
+    padding: 1.3rem 1.8rem;
+    border: 1px solid var(--border-default);
+    background-color: rgba(255, 255, 255, 0.88);
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+ }
+ 
+ .aicc-bridge-cont > p:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem 2.4rem;
+    background-color: var(--primary);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+ }
+
 /* wikl */
 .wikl-cont1>div {
     display: flex;
@@ -464,6 +525,47 @@
 .wrms-cont4 li~li {
     margin-top: 1rem;
 }
+
+.wrms-bridge {
+    padding-bottom: 80.55vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_wrms_bridge_mo.svg);
+    background-color: #eef0f6;
+ }
+ 
+ .wrms-bridge-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ }
+ 
+ .wrms-bridge-cont > div {
+    background-color: var(--white);
+ }
+ 
+ .wrms-bridge-cont > div > p:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.8rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--text-body);
+ }
+ 
+ .wrms-bridge-cont > div > p:last-of-type {
+    padding: 3rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-align: center;
+ }
 
 /* wdms */
 .wdms-cont3>div {
@@ -976,6 +1078,15 @@
     font-size: 1.6rem;
 }
 
+.s4hana-bridge {
+    padding-bottom: 69.44vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_s4hana_bridge_mo.svg);
+    background-color: #f1f2f6;
+ } 
+
 /* businessOne */
 .businessOne-cont5 .cont-type1 .box-cont {
     display: flex;
@@ -1340,6 +1451,96 @@
     background-image: url(../img/business/bg_aws_cont6_04.svg);
 }
 
+.aws-bridge {
+    padding-bottom: 94.44vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_aws_bridge_mo.svg);
+    background-color: #f5f6f8;
+ }
+ 
+ .aws-bridge .bridge-tit img {
+    width: 10rem;
+    height: 6rem;
+    margin: 0 0 3rem 0;
+ }
+ 
+ .aws-bridge-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ }
+ 
+ .aws-bridge-cont > div {
+    background-color: var(--white);
+ }
+ 
+ .aws-bridge-cont > div > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-align: center;
+    line-height: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--text-body);
+ }
+ 
+ .aws-bridge-cont > div > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+ }
+ 
+ .aws-bridge-cont > div:nth-of-type(2) > div {
+    gap: .6rem;
+ }
+ 
+ .aws-bridge-cont > div > div > div {
+    flex: 1;
+    padding-top: 7rem;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 5.6rem 5.5rem;
+ }
+ 
+ .aws-bridge-cont > div:first-of-type > div > div:first-of-type {
+    background-image: url(../img/business/ico_aws_bridge_docker.png);
+    background-size: 5.7rem 4.1rem;
+    background-position: center top .95rem;
+ }
+ 
+ .aws-bridge-cont > div:first-of-type > div > div:last-of-type {
+    background-image: url(../img/business/ico_aws_bridge_kubernetes.png);
+    background-size: 5.6rem 5.4rem;
+    background-position: center top .3rem;
+ }
+ 
+ .aws-bridge-cont > div:nth-of-type(2) > div > div:first-of-type {
+    background-image: url(../img/business/ico_aws_bridge_ecs.png);
+ }
+ 
+ .aws-bridge-cont > div:nth-of-type(2) > div > div:nth-of-type(2),
+ .aws-bridge-cont > div:nth-of-type(2) > div > div:last-of-type {
+    background-image: url(../img/business/ico_aws_bridge_eks.png);
+ }
+ 
+ .aws-bridge-cont > div:last-of-type > div > div:first-of-type {
+    background-image: url(../img/business/ico_aws_bridge_quicksight.png);
+ }
+ 
+ .aws-bridge-cont > div:last-of-type > div > div:last-of-type {
+    background-image: url(../img/business/ico_aws_bridge_blockchain.png);
+ }
+
 /* msazure */
 .msazure-cont1>div {
     display: flex;
@@ -1620,6 +1821,68 @@
 .naverCloudPlatform-cont6>div:nth-of-type(3) .box-cont {
     background-image: url(../img/business/bg_naverCloudPlatform_cont6_03.svg)
 }
+
+.naverCloudPlatform-bridge {
+    padding-bottom: 93.33vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_naverCloudPlatform_bridge_mo.svg);
+    background-color: #f7f6f9;
+ }
+ 
+ .naverCloudPlatform-bridge-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+ }
+ 
+ .naverCloudPlatform-bridge-cont > p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-align: center;
+    line-height: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), var(--text-body);
+ }
+ 
+ .naverCloudPlatform-bridge-cont > div {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .naverCloudPlatform-bridge-cont > div > div {
+    position: relative;
+    padding: 1.4rem;
+    border: 1px solid var(--border-default);
+    background-color: var(--white);
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-align: center;
+ }
+ 
+ .naverCloudPlatform-bridge-cont > div > div:not(:last-child) {
+    margin-bottom: 2.4rem;
+ }
+ 
+ .naverCloudPlatform-bridge-cont > div > div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1.81213rem;
+    height: 1.1182rem;
+    margin-top: .8rem;
+    transform: translateX(-50%);
+    background: url(../img/business/ico_ncp_bridge_arrow_down.svg) no-repeat center;
+    background-size: 1.81213rem 1.1182rem;
+ }
 
 /* databricks */
 .databricks-cont1>div {
@@ -2286,6 +2549,30 @@
         padding-top: 4rem;
     }
 
+    .aicc-bridge {
+        height: 65rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_aicc_bridge_pc.svg);
+     }
+     
+     .aicc-bridge-cont {
+        width: 100rem;
+     }
+     .aicc-bridge-cont > p:first-of-type,
+     .aicc-bridge-cont > div > div,
+     .aicc-bridge-cont > p:last-of-type {
+        height: 5.3rem;
+        min-height: 5.3rem;
+        padding: 0;
+     }
+     
+     .aicc-bridge-cont > p:last-of-type {
+        font-size: 2.4rem;
+        letter-spacing: -0.02em;
+     }
+
     /* wikl */
     .wikl-cont1>div {
         flex-direction: row;
@@ -2447,6 +2734,35 @@
     .wrms-cont4 li {
         font-size: 1.8rem;
     }
+
+    .wrms-bridge {
+        height: 65rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_wrms_bridge_pc.svg);
+     }
+
+     .wrms-bridge .inner-cont {
+        padding-top: 10.7rem;
+     }
+     
+     .wrms-bridge-cont {
+        flex-direction: row;
+        gap: 1rem;
+        width: 108rem
+     }
+     
+     .wrms-bridge-cont > div {
+        flex: 1;
+        min-width: 0;
+     }
+     
+     .wrms-bridge-cont > div > p:first-of-type {
+        height: 5.2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+     }
 
     /* wdms */
     .wdms-cont3>div {
@@ -2909,6 +3225,22 @@
         font-weight: 500;
     }
 
+    .s4hana-bridge {
+        height: 65rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_s4hana_bridge_pc.svg);
+     }
+
+     .s4hana-bridge .inner-cont {
+        padding-top: 14.6rem;
+     }
+     
+     .s4hana-bridge .bridge-txt {
+        width: 62rem;
+     }
+
     /* businessOne */
     .businessOne-cont3 .pc {
         text-align: center;
@@ -3238,6 +3570,40 @@
         background-size: auto 10rem;
     }
 
+    .aws-bridge {
+        height: 60rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_aws_bridge_pc.svg);
+     }
+
+     .aws-bridge .inner-cont {
+        padding-top: 11.7rem;
+     }
+     
+     .aws-bridge .bridge-tit img {
+        margin: 0 3rem 0 0;
+     }
+     
+     .aws-bridge-cont {
+        flex-direction: row;
+        gap: 1rem;
+        width: 108.5rem; 
+     }
+     
+     .aws-bridge-cont > div {
+        flex: 1;
+        min-width: 0;
+     }
+     
+     .aws-bridge-cont > div > p {
+        min-height: 4.8rem;
+        padding: 1.4rem 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+     }
+
     /* msazure */
     .msazure-cont1>div {
         flex-direction: row;
@@ -3437,6 +3803,59 @@
         padding: 16rem 3rem 4rem;
         background-size: auto 10rem;
     }
+
+    .naverCloudPlatform-bridge {
+        height: 73.9rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_naverCloudPlatform_bridge_pc.svg);
+     }
+     
+     .naverCloudPlatform-bridge-cont {
+        gap: 2rem;
+        width: 100rem;
+     }
+     
+     .naverCloudPlatform-bridge-cont > p {
+        height: 5.3rem;
+        padding: 0 2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        background: var(--primary);
+     }
+     
+     .naverCloudPlatform-bridge-cont > div {
+        flex-direction: row;
+        align-items: center;
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        height: 10rem;
+        padding: 0 1rem;
+        background-color: rgba(255, 255, 255, 0.88);
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 2.4rem;
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div:not(:last-child)::after {
+        left: 100%;
+        top: 50%;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-top: 0;
+        transform: translateY(-50%);
+        background-image: url(../img/business/ico_ncp_bridge_arrow.svg);
+        background-size: 2.4rem 2.4rem;
+     }
 
     /* databricks */
     .databricks-cont1>div {
@@ -3983,6 +4402,30 @@
         padding-top: 4rem;
     }
 
+    .aicc-bridge {
+        height: 65rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_aicc_bridge_pc.svg);
+     }
+     
+     .aicc-bridge-cont {
+        width: 100rem;
+     }
+     .aicc-bridge-cont > p:first-of-type,
+     .aicc-bridge-cont > div > div,
+     .aicc-bridge-cont > p:last-of-type {
+        height: 5.3rem;
+        min-height: 5.3rem;
+        padding: 0;
+     }
+     
+     .aicc-bridge-cont > p:last-of-type {
+        font-size: 2.4rem;
+        letter-spacing: -0.02em;
+     }
+
     /* wikl */
     .wikl-cont1>div {
         flex-direction: row;
@@ -4144,6 +4587,35 @@
     .wrms-cont4 li {
         font-size: 1.8rem;
     }
+
+    .wrms-bridge {
+        height: 65rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_wrms_bridge_pc.svg);
+     }
+
+     .wrms-bridge .inner-cont {
+        padding-top: 10.7rem;
+     }
+     
+     .wrms-bridge-cont {
+        flex-direction: row;
+        gap: 1rem;
+        width: 108rem
+     }
+     
+     .wrms-bridge-cont > div {
+        flex: 1;
+        min-width: 0;
+     }
+     
+     .wrms-bridge-cont > div > p:first-of-type {
+        height: 5.2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+     }
 
     /* wdms */
     .wdms-cont3>div {
@@ -4606,6 +5078,22 @@
         font-weight: 500;
     }
 
+    .s4hana-bridge {
+        height: 60rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_s4hana_bridge_pc.svg);
+     }
+
+     .s4hana-bridge .inner-cont {
+        padding-top: 14.6rem;
+     }
+     
+     .s4hana-bridge .bridge-txt {
+        width: 62rem;
+     }
+
     /* businessOne */
     .businessOne-cont3 .pc {
         text-align: center;
@@ -4821,6 +5309,40 @@
         background-size: auto 10rem;
     }
 
+    .aws-bridge {
+        height: 60rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_aws_bridge_pc.svg);
+     }
+
+     .aws-bridge .inner-cont {
+        padding-top: 11.7rem;
+     }
+     
+     .aws-bridge .bridge-tit img {
+        margin: 0 3rem 0 0;
+     }
+     
+     .aws-bridge-cont {
+        flex-direction: row;
+        gap: 1rem;
+        width: 108.5rem; 
+     }
+     
+     .aws-bridge-cont > div {
+        flex: 1;
+        min-width: 0;
+     }
+     
+     .aws-bridge-cont > div > p {
+        min-height: 4.8rem;
+        padding: 1.4rem 2rem;
+        font-size: 2rem;
+        font-weight: 700;
+     }
+
     /* msazure */
     .msazure-cont1>div {
         flex-direction: row;
@@ -5020,6 +5542,63 @@
         padding: 16rem 3rem 4rem;
         background-size: auto 10rem;
     }
+
+    .naverCloudPlatform-bridge {
+        height: 73.9rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_naverCloudPlatform_bridge_pc.svg);
+     }
+
+     .naverCloudPlatform-bridge .inner-cont {
+        padding-top: 13.3rem;
+     }
+     
+     .naverCloudPlatform-bridge-cont {
+        gap: 2rem;
+        width: 100rem;
+     }
+     
+     .naverCloudPlatform-bridge-cont > p {
+        height: 5.3rem;
+        padding: 0 2rem;
+        font-size: 2.4rem;
+        font-weight: 700;
+        background: var(--primary);
+     }
+     
+     .naverCloudPlatform-bridge-cont > div {
+        flex-direction: row;
+        align-items: center;
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        height: 10rem;
+        padding: 0 1rem;
+        background-color: rgba(255, 255, 255, 0.88);
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 2.4rem;
+     }
+     
+     .naverCloudPlatform-bridge-cont > div > div:not(:last-child)::after {
+        left: 100%;
+        top: 50%;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-top: 0;
+        transform: translateY(-50%);
+        background-image: url(../img/business/ico_ncp_bridge_arrow.svg);
+        background-size: 2.4rem 2.4rem;
+     }
 
     /* databricks */
     .databricks-cont1>div {
