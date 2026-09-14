@@ -343,7 +343,44 @@
     </nav>
 
     <main class="home-fullpage">
-        <section id="section-1" class="home-section" data-index="0" style="--section-bg: #15abe6;" aria-label="섹션 1">
+        <section id="section-1" class="home-section home-section--hero" data-index="0" style="--section-bg: #000;" aria-label="섹션 1">
+            <div class="home-hero-media" aria-hidden="true">
+                <div class="home-hero-video-stack">
+                    <video
+                        id="section-video-1"
+                        class="home-hero-video-layer is-active"
+                        data-hero-video="0"
+                        muted
+                        playsinline
+                        preload="auto"
+                    >
+                        <source src="../img/dummy/section-1.mp4" type="video/mp4" />
+                    </video>
+                    <video
+                        id="section-video-2"
+                        class="home-hero-video-layer home-hero-video-layer--crop-offset"
+                        data-hero-video="1"
+                        muted
+                        playsinline
+                        preload="auto"
+                    >
+                        <source src="../img/dummy/section-2.mp4" type="video/mp4" />
+                    </video>
+                    <video
+                        id="section-video-3"
+                        class="home-hero-video-layer"
+                        data-hero-video="2"
+                        muted
+                        playsinline
+                        preload="auto"
+                    >
+                        <source src="../img/dummy/section-3.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+            <nav class="home-hero-video-nav" aria-label="히어로 배너 진행">
+                <div class="home-hero-video-nav__segments" id="home-hero-video-nav-segments" role="tablist"></div>
+            </nav>
         </section>
         <section id="section-2" class="home-section" data-index="1" style="--section-bg: #0b1220;" aria-label="섹션 2">
         </section>
