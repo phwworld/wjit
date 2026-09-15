@@ -634,6 +634,13 @@ main>.title.no-animate h3 {
   font-size: 2rem;
 }
 
+.c-tit .full-name {
+  display: block;
+  font-size: 2rem;
+  color: var(--text-body);
+  font-weight: 500;
+}
+
 .cont-txt+.c-tit {
   margin-top: 6rem;
 }
@@ -650,10 +657,16 @@ main>.title.no-animate h3 {
   border-top: 1px dashed #e1e7ee;
   font-size: 2rem;
 }
+
 .s-tit.no-devide {
   /* margin-top: 0; */
   padding-top: 0;
   border-top: none;
+}
+
+.ss-tit {
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 /* layer popup */
@@ -1186,6 +1199,12 @@ main>.title.no-animate h3 {
     font-size: 4rem;
   }
 
+  .c-tit .full-name {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 300;
+  }
+
   .cont-txt+.c-tit {
     margin-top: 10rem;
   }
@@ -1200,6 +1219,11 @@ main>.title.no-animate h3 {
     padding: 10rem 0 0;
     margin: 10rem 0 1rem;
     font-size: 3.2rem;
+  }
+
+  .ss-tit {
+    margin-bottom: 1.2rem;
+    font-size: 2.8rem;
   }
 
   /* layer popup */
@@ -1677,6 +1701,12 @@ main>.title.no-animate h3 {
     font-size: 4rem;
   }
 
+  .c-tit .full-name {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 300;
+  }
+
   .c-tit.devide {
     margin: 10rem 0 2rem;
     padding-top: 10rem;
@@ -1691,6 +1721,11 @@ main>.title.no-animate h3 {
     padding: 10rem 0 0;
     margin: 10rem 0 1rem;
     font-size: 3.2rem;
+  }
+
+  .ss-tit {
+    margin-bottom: 1.2rem;
+    font-size: 2.8rem;
   }
 
   /* layer popup */

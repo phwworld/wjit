@@ -652,11 +652,11 @@ function initCompanyTab() {
                         tabContents.forEach((cont) => cont.classList.remove("act"));
                         targetCont.classList.add("act");
                     }
-                }
 
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(scrollToContent);
-                });
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(scrollToContent);
+                    });
+                }
             });
         });
     });

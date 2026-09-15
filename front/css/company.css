@@ -50,6 +50,10 @@
    font-weight: 700;
 }
 
+.company-tab.col5 button {
+   width: calc(100% / 5)
+}
+
 /* company cont */
 .company-cont {
    margin-top: 6rem;

@@ -147,6 +147,10 @@
     margin-top: 6rem;
 }
 
+.bridge-area+.inner-cont > .c-tit:nth-of-type(1) {
+    margin-top: 6rem;
+}
+
 /* board search */
 .board-search>form {
     display: flex;
@@ -1089,6 +1093,10 @@
         margin-top: 10rem;
     }
 
+    .bridge-area+.inner-cont > .c-tit:nth-of-type(1) {
+        margin-top: 10rem;
+    }
+
     /* board search */
     .board-search>form {
         justify-content: flex-end;
@@ -1967,6 +1975,10 @@
     }
 
     .bridge-area+.inner-cont>.tab-cont:nth-of-type(1) {
+        margin-top: 10rem;
+    }
+
+    .bridge-area+.inner-cont > .c-tit:nth-of-type(1) {
         margin-top: 10rem;
     }
 
