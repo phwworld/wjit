@@ -260,7 +260,10 @@
 
    .bss-cont4.wics div,
    .bss-cont4.wevs div,
-   .bss-cont4.fams div {
+   .bss-cont4.fams div,
+   .bss-cont4.wpms div,
+   .bss-cont4.wrpa div,
+   .bss-cont4.weis div {
       background-size: 8rem 6rem;
    }
    .bss-cont4.wics div:nth-child(1) {
@@ -326,6 +329,65 @@
    .bss-cont4.fams div:nth-child(7) {
       grid-column: 1 / 3;
       background-image: url(../img/business/bg_bss_fams_cont4_07.svg);
+   }
+
+   .bss-cont4.wpms div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_01.svg);
+   }
+   .bss-cont4.wpms div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_02.svg);
+   }
+   .bss-cont4.wpms div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_03.svg);
+   }
+   .bss-cont4.wpms div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_04.svg);
+   }
+   .bss-cont4.wpms div:nth-child(5) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_05.svg);
+   }
+   .bss-cont4.wpms div:nth-child(6) {
+      background-image: url(../img/business/bg_bss_wpms_cont4_06.svg);
+   }
+   
+   .bss-cont4.wrpa div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_01.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_02.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_03.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_04.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(5) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_05.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(6) {
+      background-image: url(../img/business/bg_bss_wrpa_cont4_06.svg);
+   }
+   .bss-cont4.wrpa div:nth-child(7) {
+      grid-column: 1 / 3;
+      background-image: url(../img/business/bg_bss_wrpa_cont4_07.svg);
+   }
+
+   .bss-cont4.weis div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_weis_cont4_01.svg);
+   }
+   .bss-cont4.weis div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_weis_cont4_02.svg);
+   }
+   .bss-cont4.weis div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_weis_cont4_03.svg);
+   }
+   .bss-cont4.weis div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_weis_cont4_04.svg);
+   }
+   .bss-cont4.weis div:nth-child(5) {
+      grid-column: 1 / 3;
+      background-image: url(../img/business/bg_bss_weis_cont4_05.svg);
    }
 
    .bss-cont5 {
@@ -595,6 +657,14 @@
       text-align: left;
    }
 
+   .bss-cont3.double {
+      flex-wrap: wrap;
+   }
+
+   .bss-cont3.double div {
+      flex: 1 1 calc((100% - 4rem) / 3);
+   }
+
    .bss-cont4 {
       display: flex;
       padding: 2rem;
@@ -647,7 +717,10 @@
 
    .bss-cont4.wics div,
    .bss-cont4.wevs div,
-   .bss-cont4.fams div {
+   .bss-cont4.fams div,
+   .bss-cont4.wpms div,
+   .bss-cont4.wrpa div,
+   .bss-cont4.weis div {
       background-size: 10rem 8rem;
    }
 
@@ -817,6 +890,81 @@
       background-image: url(../img/business/bg_bss_fams_cont5_09.svg);
    }
 
+   .bss-cont5.wpms > div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_01.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_02.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_03.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_04.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(5) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_05.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(6) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_06.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(7) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_07.svg);
+   }
+   .bss-cont5.wpms > div:nth-child(8) {
+      background-image: url(../img/business/bg_bss_wpms_cont5_08.svg);
+   }
+
+   .bss-cont5.wrpa > div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_01.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_02.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_03.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_04.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(5) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_05.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(6) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_06.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(7) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_07.svg);
+   }
+   .bss-cont5.wrpa > div:nth-child(8) {
+      background-image: url(../img/business/bg_bss_wrpa_cont5_08.svg);
+   }
+
+   .bss-cont5.weis > div:nth-child(1) {
+      background-image: url(../img/business/bg_bss_weis_cont5_01.svg);
+   }
+   .bss-cont5.weis > div:nth-child(2) {
+      background-image: url(../img/business/bg_bss_weis_cont5_02.svg);
+   }
+   .bss-cont5.weis > div:nth-child(3) {
+      background-image: url(../img/business/bg_bss_weis_cont5_03.svg);
+   }
+   .bss-cont5.weis > div:nth-child(4) {
+      background-image: url(../img/business/bg_bss_weis_cont5_04.svg);
+   }
+   .bss-cont5.weis > div:nth-child(5) {
+      background-image: url(../img/business/bg_bss_weis_cont5_05.svg);
+   }
+   .bss-cont5.weis > div:nth-child(6) {
+      background-image: url(../img/business/bg_bss_weis_cont5_06.svg);
+   }
+   .bss-cont5.weis > div:nth-child(7) {
+      background-image: url(../img/business/bg_bss_weis_cont5_07.svg);
+   }
+   .bss-cont5.weis > div:nth-child(8) {
+      background-image: url(../img/business/bg_bss_weis_cont5_08.svg);
+   }
+
    .bss-cont5 + p {
       margin-top: 1.6rem;
       font-size: 1.8rem;
@@ -842,6 +990,14 @@
       margin-bottom: 2rem;
       font-size: 2.4rem;
       line-height: 1.2;
+   }
+
+   .bss-cont6.double {
+      flex-wrap: wrap;
+   }
+
+   .bss-cont6.double div {
+      flex: 1 1 calc((100% - 4rem) / 3);
    }
 
 }
