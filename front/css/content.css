@@ -142,6 +142,12 @@
     border: 0;
 }
 
+.tab-cont.type2 {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 .bridge-area+.inner-cont>.tab-cont:nth-of-type(1) {
     border-top: 0;
     margin-top: 6rem;
