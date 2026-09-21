@@ -337,11 +337,11 @@
     <main class="home">
         <section class="home-sec1">
             <div class="home-visual-item is-active">
-                <video class="home-visual-video" src="../img/dummy/home_visual_02.mp4" autoplay muted loop playsinline></video>
+                <video class="home-visual-video" src="../img/dummy/home_visual_02.mp4" autoplay muted playsinline></video>
                 <div class="home-visual-text">
                     <div class="txt1">
-                        <span style="color: #202020;">AI·ERP·클라우드</span><br>
-                        <span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;"></span>을 설계하다</span>
+                        <span class="line-mask"><span class="line-in" style="color: #202020;">AI·ERP·클라우드</span></span>
+                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;">을 설계하다</span></span></span>
                     </div>
                     <div class="txt2">
                         <span style="color: #202020;">기업의 핵심 업무와 IT 환경을 연결해 지속 가능한 디지털 전환을 지원합니다. </span>
@@ -357,11 +357,11 @@
                 </div>
             </div>
             <div class="home-visual-item">
-                <video class="home-visual-video" src="../img/dummy/home_visual_01.mp4" autoplay muted loop playsinline></video>
+                <video class="home-visual-video" src="../img/dummy/home_visual_01.mp4" autoplay muted playsinline></video>
                 <div class="home-visual-text">
                     <div class="txt1">
-                        <span style="color: #202020;">AI·ERP·클라우드</span><br>
-                        <span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;"></span>을 설계하다</span>
+                        <span class="line-mask"><span class="line-in" style="color: #202020;">AI·ERP·클라우드</span></span>
+                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;">을 설계하다</span></span></span>
                     </div>
                     <div class="txt2">
                         <span style="color: #202020;">기업의 핵심 업무와 IT 환경을 연결해 지속 가능한 디지털 전환을 지원합니다. </span>
@@ -377,11 +377,11 @@
                 </div>
             </div>
             <div class="home-visual-item">
-                <video class="home-visual-video" src="../img/dummy/home_visual_03.mp4" autoplay muted loop playsinline></video>
+                <video class="home-visual-video" src="../img/dummy/home_visual_03.mp4" autoplay muted playsinline></video>
                 <div class="home-visual-text">
                     <div class="txt1">
-                        <span style="color: #202020;">AI·ERP·클라우드</span><br>
-                        <span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;"></span>을 설계하다</span>
+                        <span class="line-mask"><span class="line-in" style="color: #202020;">AI·ERP·클라우드</span></span>
+                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;">을 설계하다</span></span></span>
                     </div>
                     <div class="txt2">
                         <span style="color: #202020;">기업의 핵심 업무와 IT 환경을 연결해 지속 가능한 디지털 전환을 지원합니다. </span>
@@ -504,7 +504,10 @@
                 </div>
             </div>
         </section>
-        <section class="home-sec3">
+        <section class="home-sec3" data-tone="dark">
+            <video class="home-sec3-bg-video" autoplay muted loop playsinline aria-hidden="true">
+                <source src="../img/home/bg_home_sec3.webm" type="video/webm">
+            </video>
             <div class="inner-cont">
                 <div class="home-sec-title">WHAT'S NEW</div>
                 <div class="home-sec-info">웅진IT의 최신 소식과 디지털 인사이트를 만나보세요</div>
@@ -770,7 +773,10 @@
                 <div class="case-list-pagination"></div>
             </div>
         </section>
-        <section class="home-sec5">
+        <section class="home-sec5" data-tone="dark">
+            <div class="home-sec5-bg-clip" aria-hidden="true">
+                <div class="home-sec5-bg-inner"></div>
+            </div>
             <div class="inner-cont">
                 <div class="home-sec-title">고객과 함께 <br class="mo">성장하는 웅진IT</div>
                 <div class="home-sec-info">다양한 산업의 고객과 함께 축적한 IT 경험과 역량</div>
@@ -782,7 +788,7 @@
                         </div>
                         <div class="info">
                             <strong class="tit">Revenue</strong>
-                            <p class="num">1,400억+</p>
+                            <p class="num" data-growth-count="1400" data-growth-format="revenue">0억+</p>
                         </div>
                     </article>
                     <article class="home-growth-card card-customers">
@@ -791,7 +797,7 @@
                         </div>
                         <div class="info">
                             <strong class="tit">Clients</strong>
-                            <p class="num">1,700+</p>
+                            <p class="num" data-growth-count="1700" data-growth-format="clients">0+</p>
                         </div>
                     </article>
                     <article class="home-growth-card card-professionals">
@@ -800,7 +806,7 @@
                         </div>
                         <div class="info">
                             <strong class="tit">Professionals</strong>
-                            <p class="num">1,000</p>
+                            <p class="num" data-growth-count="1000" data-growth-format="professionals">0</p>
                         </div>
                     </article>
                     <article class="home-growth-card card-experience">
@@ -809,7 +815,7 @@
                         </div>
                         <div class="info">
                             <strong class="tit">Experience</strong>
-                            <p class="num">22년+</p>
+                            <p class="num" data-growth-count="22" data-growth-format="experience">0년+</p>
                         </div>
                     </article>
                 </div>

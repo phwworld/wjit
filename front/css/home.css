@@ -27,9 +27,17 @@ main.home > section {
     min-height: 100vh;
 }
 
+/* 히어로 인트로: 좌상단 모서리를 기준으로 사각형이 커지며 열리는 clip-path 리빌 */
 main.home > .home-sec1 {
     height: 100vh;
     overflow: hidden;
+    clip-path: inset(0 100% 100% 0);
+    transition: clip-path 1.18s cubic-bezier(0.83, 0, 0.17, 1);
+    will-change: clip-path;
+}
+
+main.home > .home-sec1.is-intro-revealed {
+    clip-path: inset(0 0 0 0);
 }
 
 main.home > section .inner-cont {
@@ -95,14 +103,57 @@ main.home > section .home-sec-info {
     font-weight: 800;
 }
 
+/* 히어로 카피: 줄 단위 마스크 슬라이드 인/아웃 (영상 전환에 맞춘 텍스트 노출·히든) */
+.home-visual-text .txt1 .line-mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.1em;
+}
+
+.home-visual-text .txt1 .line-in {
+    display: block;
+    transform: translate3d(0, 105%, 0);
+    transition: transform 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.home-visual-item.is-active .txt1 .line-in {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: 0.15s;
+}
+
+.home-visual-item.is-active .txt1 .line-mask:nth-child(2) .line-in {
+    transition-delay: 0.25s;
+}
+
 .home-visual-text .txt2 {
     margin-top: 2rem;
     font-size: 2rem;
     font-weight: 500;
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.home-visual-item.is-active .txt2 {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 0.35s;
 }
 
 .home-visual-text .btn {
     margin-top: 5rem;
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.home-visual-item.is-active .btn {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: 0.45s;
 }
 
 .home-visual-text .btn button {
@@ -281,12 +332,29 @@ main.home > section .home-sec-info {
  }
 
  .home-sec3 {
+    position: relative;
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 30.96%, rgba(0, 0, 0, 0.00) 100%), url(../img/home/bg_home_sec3.svg) lightgray 50% / cover no-repeat;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
+ }
+
+ .home-sec3-bg-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ .home-sec3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 30.96%, rgba(0, 0, 0, 0.00) 100%);
+    pointer-events: none;
  }
 
  .home-sec3 .home-sec-title,
@@ -295,8 +363,15 @@ main.home > section .home-sec-info {
  }
 
  .home-sec3 .inner-cont {
+    position: relative;
+    z-index: 2;
     width: 100%;
     padding-bottom: 0;
+ }
+
+ .home-sec3 .news-list-wrap {
+    position: relative;
+    z-index: 2;
  }
 
  /* news-list (swiper) */
@@ -544,14 +619,47 @@ main.home > section .home-sec-info {
 }
 
 .home-sec5 {
+    position: relative;
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* 성장스토리: 화이트 배경 → 좌→우 clip-path 마스크 리빌(히어로와 동일 패턴) */
+.home-sec5-bg-clip {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.18s cubic-bezier(0.83, 0, 0.17, 1);
+    will-change: clip-path;
+}
+
+.home-sec5.is-growth-bg-open .home-sec5-bg-clip {
+    clip-path: inset(0 0 0 0);
+}
+
+.home-sec5-bg-inner {
+    position: absolute;
+    inset: 0;
     background: url(../img/home/bg_home_sec5.svg) no-repeat center top;
     background-size: cover;
+    transform: scale(1.12);
+    transform-origin: left center;
+    transition: transform 1.18s cubic-bezier(0.83, 0, 0.17, 1);
+    will-change: transform;
+}
+
+.home-sec5.is-growth-bg-open .home-sec5-bg-inner {
+    transform: scale(1);
 }
 
 .home-sec5 .inner-cont {
+    position: relative;
+    z-index: 1;
     width: 100%;
     padding-bottom: 0;
 }
@@ -559,6 +667,20 @@ main.home > section .home-sec-info {
 .home-sec5 .home-sec-title,
 .home-sec5 .home-sec-info {
     color: var(--white);
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.home-sec5.is-content-ready .home-sec-title {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.home-sec5.is-content-ready .home-sec-info {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0.12s;
 }
 
 .home-growth-list {
@@ -578,6 +700,18 @@ main.home > section .home-sec-info {
     padding: 1.8rem 3.8rem 2rem 3rem;
     background-color: #fff;
     box-shadow: 0 1.8rem 5.5rem rgba(15, 23, 42, 0.12);
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    filter: blur(4px);
+    transition: opacity 0.78s cubic-bezier(0.33, 0, 0.22, 1),
+        transform 0.96s cubic-bezier(0.2, 1, 0.28, 1),
+        filter 0.78s cubic-bezier(0.33, 0, 0.22, 1);
+}
+
+.home-growth-card.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
 }
 
 .home-growth-card .info {
@@ -702,6 +836,37 @@ main.home > section .home-sec-info {
 }
 
 .home-quick-nav a.is-active .dot {
+    background-color: var(--primary);
+    border-color: #fff;
+}
+
+/* home-quick-nav: 어두운 배경 섹션(고객사례, 성장스토리 등) 위에서의 톤 전환 */
+.home-quick-nav.is-dark ul::before {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.home-quick-nav.is-dark .dot {
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+}
+
+.home-quick-nav.is-dark .label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.home-quick-nav.is-dark a:hover .label {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.home-quick-nav.is-dark a:hover .dot {
+    border-color: #fff;
+}
+
+.home-quick-nav.is-dark a.is-active .label {
+    color: #fff;
+}
+
+.home-quick-nav.is-dark a.is-active .dot {
     background-color: var(--primary);
     border-color: #fff;
 }
@@ -1107,6 +1272,9 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec5 {
         gap: 6rem;
+    }
+
+    .home-sec5-bg-inner {
         background-size: auto 100%;
     }
 
@@ -1172,6 +1340,19 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         gap: 1rem;
         width: 144rem;
         margin: 4rem auto 0;
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+        filter: blur(4px);
+        transition: opacity 0.78s cubic-bezier(0.33, 0, 0.22, 1),
+            transform 0.96s cubic-bezier(0.2, 1, 0.28, 1),
+            filter 0.78s cubic-bezier(0.33, 0, 0.22, 1);
+    }
+
+    /* 성장 리포트 카드 등장이 끝난 뒤에만 노출 (home.js에서 is-revealed 부여) */
+    .home-history-list.is-revealed {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
     }
 
     .home-history-list .tit {
@@ -1207,6 +1388,8 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         line-height: 1.4;
         letter-spacing: -0.02em;
         white-space: nowrap;
+        color: rgba(255, 255, 255, 0.78);
+        transition: color 0.2s ease;
     }
 
     .home-history-list .desc {
@@ -1216,6 +1399,8 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         font-weight: 500;
         line-height: 1.2;
         letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.62);
+        transition: color 0.2s ease;
     }
 
     .home-history-list .more {
@@ -1225,10 +1410,21 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         flex-shrink: 0;
         width: 4.6rem;
         height: 5rem;
+        transition: transform 0.22s ease;
     }
 
     .home-history-list .more img {
         display: block;
+    }
+
+    /* 연혁 리스트: 호버 시 텍스트 밝아지고 화살표가 오른쪽으로 슬라이드 (예시 사이트 growth-history와 동일) */
+    .home-history-list a:hover .year,
+    .home-history-list a:hover .desc {
+        color: #fff;
+    }
+
+    .home-history-list a:hover .more {
+        transform: translateX(3px);
     }
 }
 
