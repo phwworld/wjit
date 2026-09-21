@@ -375,9 +375,16 @@ main.home > section .home-sec-info {
  }
 
  /* news-list (swiper) */
+ .news-list-wrap {
+    width: 100%;
+    min-width: 0;
+ }
+
  .news-list {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
  }
 
  .news-list .swiper {
@@ -477,6 +484,7 @@ main.home > section .home-sec-info {
     position: relative;
     width: 100%;
     padding: 0 2.4rem;
+    margin-top: 2rem;
 }
 
 .case-list .swiper {
@@ -1033,6 +1041,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .news-list-wrap {
         position: relative;
+        width: auto;
     }
 
     .news-list {
@@ -1131,7 +1140,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .case-list {
         width: 144rem;
-        margin: 0 auto;
+        margin: 5rem auto 0;
         padding: 0;
         overflow: hidden;
     }
@@ -1454,6 +1463,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec3 {
         gap: 6rem;
+    }
+
+    .news-list-wrap {
+        position: relative;
     }
 
     .news-list {
