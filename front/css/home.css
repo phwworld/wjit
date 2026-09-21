@@ -307,7 +307,11 @@ main.home > section .home-sec-info {
 
  .news-list .swiper {
     overflow: visible;
-    padding: 1rem 0 3rem;
+    /* padding: 1rem 0 3rem; */
+ }
+
+ .news-list .swiper-wrapper {
+    transition-timing-function: linear !important;
  }
 
  .news-list .swiper-slide {
@@ -321,7 +325,7 @@ main.home > section .home-sec-info {
     height: 100%;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 1.8rem 5.5rem rgba(15, 23, 42, 0.12);
+    /* box-shadow: 0 1.8rem 5.5rem rgba(15, 23, 42, 0.12); */
     color: inherit;
     text-align: left;
  }
@@ -375,6 +379,252 @@ main.home > section .home-sec-info {
  .news-list-next {
     display: none;
  }
+
+.home-sec4 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.home-sec4 .inner-cont {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.home-sec4 .home-sec-info {
+    color: var(--text-secondary);
+}
+
+/* case-list (swiper) */
+.case-list {
+    position: relative;
+    width: 100%;
+    padding: 0 2.4rem;
+}
+
+.case-list .swiper {
+    overflow: hidden;
+}
+
+.case-slide {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+    color: var(--white);
+}
+
+.case-banner .thumb {
+    position: absolute;
+    inset: 0;
+}
+
+.case-banner .thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-banner .thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.18) 49.89%, rgba(0, 0, 0, 0) 85.612%);
+}
+
+.case-banner .info {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 2.2rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.case-banner .cate {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.case-banner .tit {
+    overflow: hidden;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.case-banner .desc {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.case-items {
+    margin-top: 1rem;
+}
+
+.case-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    padding: 1.7rem 0;
+    border-bottom: 1px solid #eee;
+    color: inherit;
+}
+
+.case-items li:last-child .case-item {
+    border-bottom: 0;
+}
+
+.case-item .txt {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.case-item .tit {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-body);
+}
+
+.case-item .desc {
+    overflow: hidden;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text-body);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.case-item .more {
+    position: relative;
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.case-item .more img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.case-item .more .on,
+.case-item .more .pc {
+    display: none;
+}
+
+.case-list-pagination {
+    display: none;
+}
+
+.home-sec5 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    background: url(../img/home/bg_home_sec5.svg) no-repeat center top;
+    background-size: cover;
+}
+
+.home-sec5 .inner-cont {
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.home-sec5 .home-sec-title,
+.home-sec5 .home-sec-info {
+    color: var(--white);
+}
+
+.home-growth-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    padding: 0 2.4rem;
+}
+
+.home-growth-card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4.1rem;
+    padding: 1.8rem 3.8rem 2rem 3rem;
+    background-color: #fff;
+    box-shadow: 0 1.8rem 5.5rem rgba(15, 23, 42, 0.12);
+}
+
+.home-growth-card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 13.9rem;
+}
+
+.home-growth-card .tit {
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.home-growth-card .num {
+    font-family: "GmarketSans";
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--text-body);
+}
+
+.home-growth-card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 5.6rem;
+    height: 5.8rem;
+}
+
+.home-growth-card .icon img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.home-growth-list .pc {
+    display: none;
+}
+
+.home-history-list {
+    display: none;
+}
 
 /* home-quick-nav */
 .home-quick-nav {
@@ -616,16 +866,20 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         gap: 6rem;
     }
 
+    .news-list-wrap {
+        position: relative;
+    }
+
     .news-list {
-        /* max-width: 192rem; */
-        width: 155.6rem;
+        position: relative;
+        width: 144rem;
         margin: 0 auto;
-        /* padding: 0 7.8rem; */
+        overflow: hidden;
     }
 
     .news-list .swiper {
-        overflow: hidden;
-        padding: 2rem 0 5rem;
+        width: 123.6rem;
+        /* padding: 2rem 0 5rem; */
     }
 
     .news-list .swiper-slide {
@@ -681,11 +935,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .news-list-prev {
-        left: 0;
+        left: -9rem;
     }
 
     .news-list-next {
-        right: 0;
+        right: -9rem;
     }
 
     .news-list-prev:hover,
@@ -706,7 +960,278 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         cursor: default;
     }
 
+    .home-sec4 {
+        gap: 6rem;
+    }
+
+    .case-list {
+        width: 144rem;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .case-list .swiper {
+        overflow: hidden;
+    }
+
+    .case-slide {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .case-banner {
+        flex-shrink: 0;
+        width: 54rem;
+        height: 45rem;
+    }
+
+    .case-banner .thumb::after {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.444%, rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    .case-banner .info {
+        left: 4rem;
+        right: 4rem;
+        bottom: 5rem;
+        gap: 0.6rem;
+    }
+
+    .case-banner .cate {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+    }
+
+    .case-banner .tit {
+        font-size: 3.6rem;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        white-space: normal;
+    }
+
+    .case-banner .desc {
+        font-size: 1.8rem;
+        line-height: 1.4;
+        letter-spacing: 0;
+    }
+
+    .case-items {
+        flex: 1;
+        width: 86rem;
+        margin-top: 0;
+        border-top: 1px solid #e1e7ee;
+    }
+
+    .case-item {
+        align-items: flex-end;
+        padding: 2.5rem 0 3rem;
+        border-bottom-color: #e1e7ee;
+    }
+
+    .case-items li:last-child .case-item {
+        border-bottom: 1px solid #e1e7ee;
+    }
+
+    .case-item .txt {
+        gap: 0;
+    }
+
+    .case-item .tit {
+        min-height: 5.8rem;
+        font-size: 2.8rem;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+    }
+
+    .case-item .desc {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: -0.02em;
+        color: var(--text-secondary);
+        white-space: normal;
+    }
+
+    .case-item .more {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .case-item .more .mo {
+        display: none;
+    }
+
+    .case-item .more .pc.off {
+        display: block;
+    }
+
+    .case-item:hover .tit {
+        color: var(--primary);
+    }
+
+    .case-item:hover .more .pc.off {
+        display: none;
+    }
+
+    .case-item:hover .more .pc.on {
+        display: block;
+    }
+
+    .case-list-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 28rem !important;
+        margin: 4rem auto 0;
+        padding: 1rem 0;
+    }
+
+    .case-list-pagination .swiper-pagination-bullet {
+        width: 9rem;
+        height: 0.4rem;
+        margin: 0;
+        border-radius: 0;
+        background: #e1e7ee;
+        opacity: 1;
+        transition: background-color 0.2s ease;
+    }
+
+    .case-list-pagination .swiper-pagination-bullet-active {
+        background: var(--primary);
+    }
+
+    .home-sec5 {
+        gap: 6rem;
+        background-size: auto 100%;
+    }
+
+    .home-growth-list {
+        flex-direction: row;
+        gap: 2rem;
+        width: 144rem;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .home-growth-list .mo {
+        display: none;
+    }
+
+    .home-growth-list .pc {
+        display: inline;
+    }
+
+    .home-growth-card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 0 0 34.5rem;
+        width: 34.5rem;
+        height: 34.5rem;
+        gap: 0;
+        padding: 6rem 2rem 0;
+    }
+
+    .home-growth-card .icon {
+        width: 11rem;
+        height: 11rem;
+    }
+
+    .home-growth-card .info {
+        align-items: center;
+        width: auto;
+        margin-top: 1.6rem;
+        gap: 2.4rem;
+        text-align: center;
+    }
+
+    .home-growth-card .tit {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .home-growth-card .num {
+        font-size: 4.8rem;
+    }
+
 }
+
+/* ==========================================
+고해상도 (pc) - 2560px 이상
+========================================== */
+@media screen and (min-width: 2560px) {
+    .home-history-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 144rem;
+        margin: 4rem auto 0;
+    }
+
+    .home-history-list .tit {
+        height: 7rem;
+        border-bottom: 0.2rem solid #fff;
+        color: #fff;
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0.2rem 1.1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .home-history-list ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-history-list a {
+        display: flex;
+        align-items: center;
+        height: 6rem;
+        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+
+    .home-history-list .year {
+        flex-shrink: 0;
+        width: 14rem;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+    }
+
+    .home-history-list .desc {
+        margin-left: 4rem;
+        margin-right: auto;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+
+    .home-history-list .more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 4.6rem;
+        height: 5rem;
+    }
+
+    .home-history-list .more img {
+        display: block;
+    }
+}
+
 /* ==========================================
 태블릿 구간 (Tablet) - 768px 이상 - 기준 해상도: 768px
 ========================================== */
@@ -741,16 +1266,16 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .news-list .swiper {
         overflow: hidden;
-        padding: 2rem 0 5rem;
+        /* padding: 2rem 0 5rem; */
     }
 
     .news-list .swiper-slide {
         width: 38rem;
     }
 
-    .news-list .news-card {
+    /* .news-list .news-card {
         box-shadow: 0 -5rem 5.5rem rgba(15, 23, 42, 0.12);
-    }
+    } */
 
     .news-list .news-card .thumb {
         height: 23rem;
@@ -814,6 +1339,204 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         display: block;
         width: 2.2rem;
         height: 4rem;
+    }
+
+    .home-sec4 {
+        gap: 6rem;
+    }
+
+    .case-list {
+        padding: 0 4rem;
+        overflow: hidden;
+    }
+
+    .case-list .swiper {
+        overflow: hidden;
+    }
+
+    .case-slide {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .case-banner {
+        flex-shrink: 0;
+        width: 42%;
+        height: auto;
+        aspect-ratio: 540 / 450;
+    }
+
+    .case-banner .thumb::after {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 23.444%, rgba(0, 0, 0, 0.7) 100%);
+    }
+
+    .case-banner .info {
+        left: 3rem;
+        right: 3rem;
+        bottom: 3.2rem;
+        gap: 0.6rem;
+    }
+
+    .case-banner .cate {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+    }
+
+    .case-banner .tit {
+        font-size: 2.8rem;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        white-space: normal;
+    }
+
+    .case-banner .desc {
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+
+    .case-items {
+        flex: 1;
+        min-width: 0;
+        margin-top: 0;
+        border-top: 1px solid #e1e7ee;
+    }
+
+    .case-item {
+        align-items: flex-end;
+        padding: 2rem 0 2.4rem;
+        border-bottom-color: #e1e7ee;
+    }
+
+    .case-items li:last-child .case-item {
+        border-bottom: 1px solid #e1e7ee;
+    }
+
+    .case-item .txt {
+        gap: 0;
+    }
+
+    .case-item .tit {
+        min-height: 4.6rem;
+        font-size: 2.4rem;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+    }
+
+    .case-item .desc {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: -0.02em;
+        color: var(--text-secondary);
+        white-space: normal;
+    }
+
+    .case-item .more {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .case-item .more .mo {
+        display: none;
+    }
+
+    .case-item .more .pc.off {
+        display: block;
+    }
+
+    .case-item:hover .tit {
+        color: var(--primary);
+    }
+
+    .case-item:hover .more .pc.off {
+        display: none;
+    }
+
+    .case-item:hover .more .pc.on {
+        display: block;
+    }
+
+    .case-list-pagination {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 28rem !important;
+        margin: 3rem auto 0;
+        padding: 1rem 0;
+    }
+
+    .case-list-pagination .swiper-pagination-bullet {
+        width: 9rem;
+        height: 0.4rem;
+        margin: 0;
+        border-radius: 0;
+        background: #e1e7ee;
+        opacity: 1;
+        transition: background-color 0.2s ease;
+    }
+
+    .case-list-pagination .swiper-pagination-bullet-active {
+        background: var(--primary);
+    }
+
+    .home-sec5 {
+        gap: 6rem;
+    }
+
+    .home-growth-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem;
+        padding: 0 4rem;
+    }
+
+    .home-growth-list .card-customers { order: 1; }
+    .home-growth-list .card-professionals { order: 2; }
+    .home-growth-list .card-experience { order: 3; }
+    .home-growth-list .card-revenue { order: 4; }
+
+    .home-growth-list .mo {
+        display: none;
+    }
+
+    .home-growth-list .pc {
+        display: inline;
+    }
+
+    .home-growth-card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 4rem 2rem 3.2rem;
+    }
+
+    .home-growth-card .icon {
+        width: 8.8rem;
+        height: 8.8rem;
+    }
+
+    .home-growth-card .info {
+        align-items: center;
+        width: auto;
+        margin-top: 1.6rem;
+        gap: 1.6rem;
+        text-align: center;
+    }
+
+    .home-growth-card .tit {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .home-growth-card .num {
+        font-size: 3.6rem;
     }
 
 }
