@@ -554,12 +554,48 @@ function initTabMenu() {
             });
         };
 
+        const isType2 = tabContainer.classList.contains("type2");
+
+        const getOffsetTop = (element) => {
+            let offsetTop = 0;
+            let node = element;
+            while (node) {
+                offsetTop += node.offsetTop;
+                node = node.offsetParent;
+            }
+            return offsetTop;
+        };
+
+        const scrollToContent = (targetCont) => {
+            const stickyTop = parseFloat(window.getComputedStyle(tabContainer).top) || 0;
+            const tabHeight = tabContainer.offsetHeight || 0;
+            const tabMarginBottom = parseFloat(window.getComputedStyle(tabContainer).marginBottom) || 0;
+            const contMarginTop = parseFloat(window.getComputedStyle(targetCont).marginTop) || 0;
+            const target = targetCont || tabContainer;
+
+            window.scrollTo({
+                top: Math.max(0, getOffsetTop(target) - stickyTop - tabHeight - tabMarginBottom - contMarginTop),
+                behavior: "smooth"
+            });
+        };
+
         tabButtons.forEach((button, index) => {
             button.addEventListener("click", () => {
                 setActiveTab(button);
 
                 const targetCont = getTargetCont(button, index);
                 if (!targetCont) return;
+
+                if (isType2) {
+                    fallbackContents.forEach((cont) => {
+                        cont.classList.toggle("hide", cont !== targetCont);
+                    });
+
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => scrollToContent(targetCont));
+                    });
+                    return;
+                }
 
                 const offset = getScrollOffset(targetCont);
                 const targetTop = targetCont.getBoundingClientRect().top + window.pageYOffset - offset;
@@ -579,7 +615,7 @@ function initTabMenu() {
         });
 
         // 페이지 스크롤 시 현재 보고 있는 tab-cont 섹션에 맞춰 tab 버튼 활성화 (ScrollSpy)
-        if (tabTargets.length > 0) {
+        if (tabTargets.length > 0 && !isType2) {
             const onScroll = () => {
                 if (isClickScrolling) return;
 
