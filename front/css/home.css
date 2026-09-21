@@ -284,6 +284,7 @@ main.home > section .home-sec-info {
     flex-direction: column;
     justify-content: center;
     gap: 4rem;
+    overflow-x: hidden;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.50) 30.96%, rgba(0, 0, 0, 0.00) 100%), url(../img/home/bg_home_sec3.svg) lightgray 50% / cover no-repeat;
     background-size: cover;
     background-position: center;
@@ -296,13 +297,20 @@ main.home > section .home-sec-info {
 
  .home-sec3 .inner-cont {
     width: 100%;
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
  }
 
  /* news-list (swiper) */
+ .news-list-wrap {
+    width: 100%;
+    min-width: 0;
+ }
+
  .news-list {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
  }
 
  .news-list .swiper {
@@ -402,6 +410,7 @@ main.home > section .home-sec-info {
     position: relative;
     width: 100%;
     padding: 0 2.4rem;
+    margin-top: 2rem;
 }
 
 .case-list .swiper {
@@ -868,6 +877,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .news-list-wrap {
         position: relative;
+        width: auto;
     }
 
     .news-list {
@@ -966,7 +976,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .case-list {
         width: 144rem;
-        margin: 0 auto;
+        margin: 5rem auto 0;
         padding: 0;
         overflow: hidden;
     }
@@ -1258,6 +1268,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec3 {
         gap: 6rem;
+    }
+
+    .news-list-wrap {
+        position: relative;
     }
 
     .news-list {
