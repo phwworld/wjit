@@ -331,6 +331,41 @@ main.home > section .home-sec-info {
     background-image: url(../img/home/icon_home_sec2_06.svg);
  }
 
+/* home-sec2: 스크롤 등장 — 타이틀 먼저, 카드 순차 (페이드 + 상승 + 블러) */
+.home-sec2 .home-sec-title,
+.home-sec2 .home-sec-info,
+.home-sec2 .business-item {
+    opacity: 0;
+    transform: translate3d(0, 36px, 0);
+    filter: blur(4px);
+    transition:
+        opacity 600ms cubic-bezier(0.33, 0, 0.22, 1),
+        transform 680ms cubic-bezier(0.2, 1, 0.28, 1),
+        filter 680ms cubic-bezier(0.33, 0, 0.22, 1);
+    will-change: opacity, transform, filter;
+}
+
+.home-sec2 .home-sec-title.is-revealed,
+.home-sec2 .home-sec-info.is-revealed,
+.home-sec2 .business-item.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-sec2 .home-sec-title,
+    .home-sec2 .home-sec-info,
+    .home-sec2 .business-item {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        clip-path: none;
+        transition: none;
+        will-change: auto;
+    }
+}
+
  .home-sec3 {
     position: relative;
     flex-direction: column;
@@ -763,6 +798,7 @@ main.home > section .home-sec-info {
     gap: 0.8rem;
     width: 100%;
     padding: 0 2.4rem;
+    margin-top: 2rem;
 }
 
 .home-growth-card {
@@ -945,6 +981,86 @@ main.home > section .home-sec-info {
     border-color: #fff;
 }
 
+/* home 우측 하단 스크롤 버튼
+   모바일: 히어로를 지난 뒤에만 top 노출 / PC: 히어로=아래, 중간=위+아래, 푸터=위 */
+.scroll-action-home {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 8.2rem;
+    right: 2.4rem;
+    z-index: 10000;
+    gap: 0.8rem;
+}
+
+.scroll-action-home button {
+    width: 5.2rem;
+    height: 5.2rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.scroll-action-home .scroll-top {
+    background-image: url(../img/common/float_top_off.png);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+}
+
+.scroll-action-home.is-mobile-top-visible .scroll-top {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scroll-action-home .scroll-top:hover {
+    background-image: url(../img/common/float_top_on.png);
+}
+
+.scroll-action-home .scroll-btm {
+    display: none;
+    background-image: url(../img/common/float_btm_off.png);
+}
+
+.scroll-action-home .scroll-btm:hover {
+    background-image: url(../img/common/float_btm_on.png);
+}
+
+@media (min-width: 1025px) {
+    .scroll-action-home {
+        bottom: 1.5rem;
+        right: 1rem;
+    }
+
+    .scroll-action-home button {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .scroll-action-home .scroll-top {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        transition: none;
+    }
+
+    .scroll-action-home .scroll-btm {
+        display: block;
+    }
+
+    .scroll-action-home.is-at-hero .scroll-top {
+        display: none;
+    }
+
+    .scroll-action-home.is-at-end .scroll-btm {
+        display: none;
+    }
+}
+
 /* ==========================================
 PC / 데스크톱 구간 (PC) - 1440px 이상
 ========================================== */
@@ -1095,6 +1211,28 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
     .home-sec2 .business-item a:hover .hover {
         display: block;
+    }
+
+    /* 데스크톱 카드: opacity/translate 대신 좌→우 clip-path 마스크 오픈 */
+    .home-sec2 .business-item {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.62s cubic-bezier(0.22, 1, 0.33, 1);
+        will-change: clip-path;
+    }
+
+    .home-sec2 .business-item.is-revealed {
+        clip-path: inset(0 0 0 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .home-sec2 .business-item {
+            clip-path: inset(0 0 0 0) !important;
+            transition: none !important;
+            will-change: auto;
+        }
     }
 
     .home-quick-nav {
@@ -1357,7 +1495,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         flex-direction: row;
         gap: 2rem;
         width: 144rem;
-        margin: 0 auto;
+        margin: 5rem auto 0;
         padding: 0;
     }
 
@@ -1409,6 +1547,13 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 고해상도 (pc) - 2560px 이상
 ========================================== */
 @media screen and (min-width: 2560px) {
+    .case-list .case-banner {
+        height: 60rem;
+    }
+    .case-list .case-items .hide {
+        display: block;
+    }
+    
     .home-history-list {
         display: flex;
         flex-direction: column;

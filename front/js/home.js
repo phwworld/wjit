@@ -10,6 +10,53 @@
   });
 })();
 
+// home-sec2: 스크롤 진입 시 1회 — 타이틀/설명 등장 후 카드 순차 리빌
+// 모바일·태블릿: 페이드 + 상승 + 블러 / 데스크톱(1440+): 카드 좌→우 clip-path 와이프
+(function () {
+  const section = document.querySelector(".home-sec2");
+  if (!section) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const textEls = [
+    section.querySelector(".home-sec-title"),
+    section.querySelector(".home-sec-info"),
+  ];
+  const cards = Array.from(section.querySelectorAll(".business-item"));
+  const reveal = (el) => el && el.classList.add("is-revealed");
+
+  let done = false;
+  const run = () => {
+    if (done) return;
+    done = true;
+    textEls.forEach(reveal);
+
+    const base = 220;
+    const step = 110;
+    cards.forEach((card, i) => {
+      if (reduceMotion) {
+        reveal(card);
+        return;
+      }
+      window.setTimeout(() => reveal(card), base + i * step);
+    });
+  };
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    run();
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      run();
+      io.disconnect();
+    },
+    { threshold: 0.26, rootMargin: "0px 0px -24% 0px" }
+  );
+  io.observe(section);
+})();
+
 // 성장스토리(home-sec5): 스크롤 진입 시 1회 — 화이트 배경 → 좌→우 clip-path 마스크 리빌 → 상단 문구 등장
 // → 카드가 마스크 완료 시점부터 하나씩 순차 등장(그와 동시에 카운트업) → 카드 등장이 끝나면 연혁 리스트 노출
 (function () {
@@ -299,10 +346,10 @@
     effect: "fade",
     fadeEffect: { crossFade: true },
     watchOverflow: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: caseList.querySelector(".case-list-pagination"),
       clickable: true,
@@ -359,6 +406,9 @@
 
   const quickNav = document.querySelector(".home-quick-nav");
   const quickNavLinks = quickNav ? Array.from(quickNav.querySelectorAll("a[data-index]")) : [];
+  const scrollAction = document.querySelector(".scroll-action-home");
+  const btnTop = scrollAction && scrollAction.querySelector(".scroll-top");
+  const btnBtm = scrollAction && scrollAction.querySelector(".scroll-btm");
 
   const mqNarrow = window.matchMedia("(max-width: 1024px)");
 
@@ -398,16 +448,47 @@
     quickNav.classList.toggle("is-dark", sections[index]?.dataset.tone === "dark");
   };
 
+  // PC: 히어로=아래만, 중간=위+아래, 푸터=위만
+  // 모바일: 샘플 #mobile-scroll-top과 같이 히어로를 지난 뒤에만 위로가기 노출
+  const syncScrollAction = (index) => {
+    if (!scrollAction) return;
+
+    if (mqNarrow.matches) {
+      const hero = sections[0];
+      const pastHero = hero
+        ? window.scrollY >= hero.offsetTop + hero.offsetHeight - 48
+        : window.scrollY > window.innerHeight * 0.45;
+      scrollAction.classList.toggle("is-mobile-top-visible", pastHero);
+      scrollAction.classList.remove("is-at-hero", "is-at-end");
+      return;
+    }
+
+    scrollAction.classList.remove("is-mobile-top-visible");
+    const atHero = index === 0;
+    const atEnd = !atHero && isInFooterZone();
+    scrollAction.classList.toggle("is-at-hero", atHero);
+    scrollAction.classList.toggle("is-at-end", atEnd);
+    if (btnTop) {
+      btnTop.setAttribute("aria-label", atEnd ? "페이지 최상단으로 이동" : "이전 섹션으로 이동");
+    }
+  };
+
+  const syncChrome = (index) => {
+    syncQuickNav(index);
+    syncScrollAction(index);
+  };
+
   const scrollToSection = (index) => {
     if (index < 0 || index >= sections.length) return;
 
-    syncQuickNav(index);
+    syncChrome(index);
 
     const targetY = getTargetY(index);
     const startY = window.scrollY;
     const distance = targetY - startY;
     if (Math.abs(distance) < 1) {
       window.scrollTo(0, targetY);
+      syncChrome(getActiveIndex());
       return;
     }
 
@@ -430,6 +511,7 @@
         isAnimating = false;
         rafId = null;
         html.style.scrollBehavior = prevScrollBehavior;
+        syncChrome(getActiveIndex());
       }
     };
 
@@ -487,16 +569,40 @@
 
   const handleScroll = () => {
     if (isAnimating) return;
-    syncQuickNav(getActiveIndex());
+    syncChrome(getActiveIndex());
   };
 
   quickNavLinks.forEach((link) => {
     link.addEventListener("click", () => scrollToSection(Number(link.dataset.index)));
   });
 
+  if (btnTop) {
+    btnTop.addEventListener("click", () => {
+      if (mqNarrow.matches || isInFooterZone()) {
+        scrollToSection(0);
+        return;
+      }
+      const index = getActiveIndex();
+      if (index > 0) scrollToSection(index - 1);
+    });
+  }
+
+  if (btnBtm) {
+    btnBtm.addEventListener("click", () => {
+      const index = getActiveIndex();
+      if (index < lastIndex) {
+        scrollToSection(index + 1);
+        return;
+      }
+      const footer = document.querySelector("footer");
+      if (footer) window.scrollTo({ top: footer.offsetTop, behavior: "smooth" });
+    });
+  }
+
   window.addEventListener("wheel", handleWheel, { passive: false });
   window.addEventListener("keydown", handleKeydown);
   window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", () => syncChrome(getActiveIndex()), { passive: true });
 
-  syncQuickNav(getActiveIndex());
+  syncChrome(getActiveIndex());
 })();

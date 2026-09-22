@@ -374,6 +374,40 @@ main .content:has(.category-list, .tab-list) {
   z-index: 50;
 }
 
+.scroll-action {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 8.2rem;
+  right: 2.4rem;
+  z-index: 10000;
+  gap: 0.8rem;
+}
+
+.scroll-action  button {
+  width: 5rem;
+  height: 5rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.scroll-action .scroll-top {
+  background-image: url(../img/common/float_top_off.png)
+}
+
+.scroll-action .scroll-top:hover {
+  background-image: url(../img/common/float_top_on.png)
+}
+
+.scroll-action .scroll-btm {
+  display: none;
+  background-image: url(../img/common/float_btm_off.png)
+}
+
+.scroll-action .scroll-btm:hover {
+  background-image: url(../img/common/float_btm_on.png)
+}
+
 footer {
   background-color: #333;
 }
@@ -424,6 +458,10 @@ footer .inner-cont .foot-cont2 .sns-link a {
   background-size: cover;
 }
 
+footer .inner-cont .foot-cont2 .sns-link a:hover {
+  transform: translateY(-0.1rem);
+}
+
 footer .inner-cont .foot-cont2 .sns-link .naver {
   background-image: url(../img/common/icon_sns_naver.svg);
 }
@@ -438,6 +476,22 @@ footer .inner-cont .foot-cont2 .sns-link .youtube {
 
 footer .inner-cont .foot-cont2 .sns-link .linkedin {
   background-image: url(../img/common/icon_sns_linkedin.svg);
+}
+
+footer .inner-cont .foot-cont2 .sns-link .naver:hover {
+  background-image: url(../img/common/icon_sns_naver_ho.svg);
+}
+
+footer .inner-cont .foot-cont2 .sns-link .facebook:hover {
+  background-image: url(../img/common/icon_sns_facebook_ho.svg);
+}
+
+footer .inner-cont .foot-cont2 .sns-link .youtube:hover {
+  background-image: url(../img/common/icon_sns_youtube_ho.svg);
+}
+
+footer .inner-cont .foot-cont2 .sns-link .linkedin:hover {
+  background-image: url(../img/common/icon_sns_linkedin_ho.svg);
 }
 
 footer .inner-cont .foot-menu,
@@ -994,6 +1048,20 @@ main>.title.no-animate h3 {
     padding-bottom: 13rem;
   }
 
+  .scroll-action {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+  
+  .scroll-action  button {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .scroll-action .scroll-btm {
+    display: block;
+  }
+
   footer .inner-cont {
     display: flex;
     flex-direction: row;
@@ -1490,6 +1558,20 @@ main>.title.no-animate h3 {
 
   main {
     padding-bottom: 13rem;
+  }
+
+  .scroll-action {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+  
+  .scroll-action  button {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .scroll-action .scroll-btm {
+    display: block;
   }
 
   footer .inner-cont {
