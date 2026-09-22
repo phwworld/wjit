@@ -275,7 +275,11 @@
   nextEl?.addEventListener("click", () => slideByNav("next"));
 })();
 
-// sec4 case list swiper
+// sec4 case list swiper + 고객성공사례 배너 인트로
+// - 배너 인트로: 클립 마스크 리빌(좌상단 기준) + 이미지 줌아웃 + 텍스트/리스트 순차 등장
+//   섹션에 스크롤로 진입하기 전까지는 재생하지 않고, 진입한 뒤에는 자동 롤링으로 슬라이드가
+//   바뀔 때마다(loop 클론 포함) 새로 활성화된 슬라이드에 매번 다시 재생한다
+// - 하단 리스트 자동 롤링: Swiper autoplay
 (function () {
   if (typeof Swiper === "undefined") return;
 
@@ -285,12 +289,20 @@
   const swiperEl = caseList.querySelector(".swiper");
   if (!swiperEl) return;
 
-  new Swiper(swiperEl, {
+  const swiper = new Swiper(swiperEl, {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     speed: 600,
+    // 좌우로 밀려 들어오는 기본 슬라이드 전환은 clip-path 마스크 리빌과 동시에 돌면
+    // 두 애니메이션이 겹쳐 보여서, 밀기 없이 크로스페이드만 쓰고 마스크 리빌이 전환 효과를 전담하게 함
+    effect: "fade",
+    fadeEffect: { crossFade: true },
     watchOverflow: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: caseList.querySelector(".case-list-pagination"),
       clickable: true,
@@ -301,6 +313,31 @@
       },
     },
   });
+
+  const section = document.querySelector(".home-sec4");
+  if (!section || !("IntersectionObserver" in window)) return;
+
+  const revealActiveSlide = () => {
+    const activeSlide = swiperEl.querySelector(".swiper-slide-active");
+    if (!activeSlide) return;
+    const banner = activeSlide.querySelector(".case-banner");
+    const items = activeSlide.querySelector(".case-items");
+    if (banner) banner.classList.add("is-revealed");
+    if (items) items.classList.add("is-revealed");
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      revealActiveSlide();
+      // 진입 이후엔 자동 롤링으로 슬라이드가 바뀔 때마다 새 활성 슬라이드를 매번 리빌
+      swiper.on("slideChangeTransitionStart", revealActiveSlide);
+      io.disconnect();
+    },
+    { threshold: 0.2 }
+  );
+
+  io.observe(section);
 })();
 
 // main.home 섹션 풀스크린 스냅 스크롤 + 퀵네비 연동 (PC 전용: 휠/키보드)

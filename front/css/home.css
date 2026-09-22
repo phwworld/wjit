@@ -483,7 +483,7 @@ main.home > section .home-sec-info {
 .case-list {
     position: relative;
     width: 100%;
-    padding: 0 2.4rem;
+    /* padding: 0 2.4rem; */
     margin-top: 2rem;
 }
 
@@ -505,9 +505,30 @@ main.home > section .home-sec-info {
     color: var(--white);
 }
 
+/* 고객성공사례 배너 인트로: 좌상단 기준 clip-path 마스크 리빌 + 이미지 살짝 줌아웃 */
+.case-banner-clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    clip-path: inset(0 100% 100% 0);
+    transition: clip-path 0.97s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: clip-path;
+}
+
+.case-banner.is-revealed .case-banner-clip {
+    clip-path: inset(0 0 0 0);
+}
+
 .case-banner .thumb {
     position: absolute;
     inset: 0;
+    transform: scale(1.12);
+    transform-origin: top left;
+    transition: transform 0.97s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.case-banner.is-revealed .thumb {
+    transform: scale(1);
 }
 
 .case-banner .thumb img {
@@ -533,6 +554,30 @@ main.home > section .home-sec-info {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
+}
+
+/* 배너 텍스트 순차 등장: 카테고리 → 제목 → 설명 */
+.case-banner .cate,
+.case-banner .tit,
+.case-banner .desc {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1), transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.case-banner.is-revealed .cate,
+.case-banner.is-revealed .tit,
+.case-banner.is-revealed .desc {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.case-banner.is-revealed .tit {
+    transition-delay: 0.1s;
+}
+
+.case-banner.is-revealed .desc {
+    transition-delay: 0.2s;
 }
 
 .case-banner .cate {
@@ -570,10 +615,31 @@ main.home > section .home-sec-info {
     padding: 1.7rem 0;
     border-bottom: 1px solid #eee;
     color: inherit;
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1), transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .case-items li:last-child .case-item {
     border-bottom: 0;
+}
+
+/* 리스트 항목 순차 등장 */
+.case-items.is-revealed li:nth-child(1) .case-item {
+    transition-delay: 0s;
+}
+
+.case-items.is-revealed li:nth-child(2) .case-item {
+    transition-delay: 0.08s;
+}
+
+.case-items.is-revealed li:nth-child(3) .case-item {
+    transition-delay: 0.16s;
+}
+
+.case-items.is-revealed .case-item {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .case-item .txt {
