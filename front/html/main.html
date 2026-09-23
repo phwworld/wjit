@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-    <header>
+    <header class="transparent">
         <div class="inner-cont">
             <div class="l-cont">
-                <h1><a href="/"><img src="../img/common/Logo_wj.svg" alt="woongjin"></a></h1>
+                <h1><a href="/">woongjin</a></h1>
 
                 <nav class="pc-gnb">
                     <ul>
@@ -360,18 +360,18 @@
                 <video class="home-visual-video" src="../img/dummy/home_visual_01.mp4" autoplay muted playsinline></video>
                 <div class="home-visual-text">
                     <div class="txt1">
-                        <span class="line-mask"><span class="line-in" style="color: #202020;">AI·ERP·클라우드</span></span>
-                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;">을 설계하다</span></span></span>
+                        <span class="line-mask"><span class="line-in" style="color: #ffffff;">데이터와 AI를 연결해</span></span>
+                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">일하는 방식</span><span style="color: #ffffff;">을 바꾸다</span></span></span>
                     </div>
                     <div class="txt2">
-                        <span style="color: #202020;">기업의 핵심 업무와 IT 환경을 연결해 지속 가능한 디지털 전환을 지원합니다. </span>
+                        <span style="color: #ffffff;">기업의 데이터와 업무에 AI를 적용해 더 빠른 판단과 실행을 가능하게 합니다.</span>
                     </div>
                     <div class="btn">
-                        <button type="button" class="visual-btn1">What We Do</button>
+                        <button type="button" class="visual-btn2">What We Do</button>
                         <style>
-                            .visual-btn1 {border-color: #000;color: #000;}
-                            .visual-btn1::before {background-color: #fff;}
-                            .visual-btn1:hover {color: #000;}
+                            .visual-btn2 {border-color: #fff;color: #fff;}
+                            .visual-btn2::before {background-color: #fff;}
+                            .visual-btn2:hover {color: #000;}
                         </style>
                     </div>
                 </div>
@@ -380,18 +380,18 @@
                 <video class="home-visual-video" src="../img/dummy/home_visual_03.mp4" autoplay muted playsinline></video>
                 <div class="home-visual-text">
                     <div class="txt1">
-                        <span class="line-mask"><span class="line-in" style="color: #202020;">AI·ERP·클라우드</span></span>
-                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">기업의 내일</span><span style="color: #202020;">을 설계하다</span></span></span>
+                        <span class="line-mask"><span class="line-in" style="color: #ffffff;">컨설팅부터 운영까지</span></span>
+                        <span class="line-mask"><span class="line-in"><span style="color: #0997CF;">고객의 성과</span><span style="color: #ffffff;">로 연경합니다</span></span></span>
                     </div>
                     <div class="txt2">
-                        <span style="color: #202020;">기업의 핵심 업무와 IT 환경을 연결해 지속 가능한 디지털 전환을 지원합니다. </span>
+                        <span style="color: #ffffff;">전략 수립부터 구축·운영·고도화까지 고객의 안정적인 성장을 지원합니다.</span>
                     </div>
                     <div class="btn">
-                        <button type="button" class="visual-btn1">What We Do</button>
+                        <button type="button" class="visual-btn3">What We Do</button>
                         <style>
-                            .visual-btn1 {border-color: #000;color: #000;}
-                            .visual-btn1::before {background-color: #fff;}
-                            .visual-btn1:hover {color: #000;}
+                            .visual-btn3 {border-color: #fff;color: #fff;}
+                            .visual-btn3::before {background-color: #fff;}
+                            .visual-btn3:hover {color: #000;}
                         </style>
                     </div>
                 </div>
@@ -964,5 +964,73 @@
     <script src="../js/swiper-bundle.min.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/home.js"></script>
+    <script>
+        // 메인 header transition
+        (function () {
+            const header = document.querySelector("header");
+            const sec1 = document.querySelector(".home-sec1");
+            if (!header || !sec1) return;
+
+            const visualItems = Array.from(document.querySelectorAll(".home-visual-item"));
+            const moMenu = document.querySelector(".mo-menu");
+            const pcGnb = document.querySelector(".pc-gnb > ul");
+
+            let sec1Visible = false;
+            let menuOpen = false;
+            let gnbHover = false;
+
+            const syncHeader = () => {
+                const activeIndex = visualItems.findIndex((item) => item.classList.contains("is-active"));
+                const holdSolid = menuOpen || gnbHover;
+                const overHero = sec1Visible && !holdSolid;
+
+                header.classList.toggle("transparent", overHero);
+                header.classList.toggle("white", overHero && (activeIndex === 1 || activeIndex === 2));
+            };
+
+            const updateSec1Visible = () => {
+                const rect = sec1.getBoundingClientRect();
+                const visible = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+                const next = visible > 1;
+                if (next === sec1Visible) return;
+                sec1Visible = next;
+                syncHeader();
+            };
+
+            window.addEventListener("scroll", updateSec1Visible, { passive: true });
+            window.addEventListener("resize", updateSec1Visible);
+            updateSec1Visible();
+
+            if (visualItems.length && "MutationObserver" in window) {
+                const visualObserver = new MutationObserver(syncHeader);
+                visualItems.forEach((item) => {
+                    visualObserver.observe(item, { attributes: true, attributeFilter: ["class"] });
+                });
+            }
+
+            if (moMenu && "MutationObserver" in window) {
+                new MutationObserver(() => {
+                    menuOpen = moMenu.classList.contains("act");
+                    syncHeader();
+                }).observe(moMenu, { attributes: true, attributeFilter: ["class"] });
+            }
+
+            if (pcGnb) {
+                pcGnb.addEventListener("mouseover", (event) => {
+                    if (!event.target.closest(".pc-gnb > ul > li > a")) return;
+                    if (gnbHover) return;
+                    gnbHover = true;
+                    syncHeader();
+                });
+                pcGnb.addEventListener("mouseleave", () => {
+                    if (!gnbHover) return;
+                    gnbHover = false;
+                    syncHeader();
+                });
+            }
+
+            syncHeader();
+        })();
+    </script>
 </body>
 </html>

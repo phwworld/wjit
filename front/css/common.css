@@ -237,21 +237,23 @@ header.act {
 header .inner-cont {
   display: flex;
   align-items: center;
+  height: 5.6rem;
   padding: 0 2.4rem;
   justify-content: space-between;
 }
 
 header h1 a {
-  vertical-align: top;
-}
-
-header h1 img {
+  display: block;
   width: 6.9rem;
   height: 3.6rem;
+  font-size: 0;
+  line-height: 0;
+  background: url(../img/common/Logo_wj.svg) no-repeat;
+  background-size: 100% 100%;
 }
 
 header .pc-gnb,
-header .shortcut-menu {
+header .shortcut-menu { 
   display: none;
 }
 
@@ -358,6 +360,32 @@ header .mo-gnb>ul>li>ul>li>ul>li>a {
   font-size: 1.6rem;
   color: var(--text-body);
   line-height: 4.2rem;
+}
+
+header.transparent {
+  border-bottom: 0;
+  background-color: transparent;
+}
+
+header.white h1 a {
+  background-image: url(../img/common/Logo_wj_w.svg);
+}
+
+header.white .pc-gnb>ul>li>a,
+header.white .shortcut-menu a {
+  color: var(--white);
+}
+
+header.white .function-menu .search {
+  background-image: url(../img/common/icon_search_w.svg);
+}
+
+header.white .function-menu .lang {
+  background-image: url(../img/common/icon_lang_w.svg);
+}
+
+header.white .function-menu .mo-menu {
+  background-image: url(../img/common/icon_mobile_menu_w.svg);
 }
 
 main {
@@ -885,7 +913,7 @@ main>.title.no-animate h3 {
     height: 100%;
   }
 
-  header h1 img {
+  header h1 a {
     width: 10.8rem;
     height: 5.6rem;
   }
@@ -922,8 +950,8 @@ main>.title.no-animate h3 {
   }
 
   header .function-menu button {
-    width: 2rem;
-    height: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   header .function-menu .mo-menu {
@@ -1416,7 +1444,7 @@ main>.title.no-animate h3 {
     padding: 0;
   }
 
-  header h1 img {
+  header h1 a {
     width: 10.8rem;
     height: 5.6rem;
   }
@@ -1453,8 +1481,8 @@ main>.title.no-animate h3 {
   }
 
   header .function-menu button {
-    width: 2rem;
-    height: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   header .function-menu .mo-menu {

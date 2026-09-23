@@ -1,11 +1,27 @@
 // 히어로 인트로: 좌상단 모서리를 기준으로 clip-path 사각형이 커지며 열리는 리빌 (로드 시 1회)
+// 헤더·퀵네비·스크롤 버튼은 리빌이 시작되기 전까지 숨기고, is-intro-revealed 2초 뒤 노출
 (function () {
   const hero = document.querySelector(".home-sec1");
   if (!hero) return;
 
+  const chrome = [
+    document.querySelector("header"),
+    document.querySelector(".home-quick-nav"),
+    document.querySelector(".scroll-action-home"),
+  ].filter(Boolean);
+
+  chrome.forEach((el) => {
+    el.style.opacity = "0";
+  });
+
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       hero.classList.add("is-intro-revealed");
+      window.setTimeout(() => {
+        chrome.forEach((el) => {
+          el.style.opacity = "1";
+        });
+      }, 1000);
     });
   });
 })();
