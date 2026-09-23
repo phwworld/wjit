@@ -1659,6 +1659,28 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 ========================================== */
 @media (min-width: 1025px) and (max-width: 1439px) {
 
+    main.home > section .home-sec-title {
+        font-size: 5rem;
+    }
+    
+    main.home > section .home-sec-info {
+        margin-top: 1.6rem;
+        font-size: 2.4rem;
+    }
+
+    .home-visual-text .txt1 {
+        font-size: 9rem;
+    }
+    
+    .home-visual-text .txt2 {
+        margin-top: 4rem;
+        font-size: 2.4rem;
+    }
+    
+    .home-visual-text .btn {
+        margin-top: 6rem;
+    }
+
     .home-visual-text .btn button {
         width: 32rem;
         height: 7rem;
@@ -1678,6 +1700,149 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         display: block;
     }
 
+    .home-quick-nav .label {
+        font-size: 1.3rem;
+    }
+
+    .home-sec2 .inner-cont {
+        /* max-width: 128rem; */
+        padding: 0 8.5rem !important;
+    }
+    
+    .home-sec2 .business-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .home-sec2 .business-item {
+        flex: 0 0 calc((100% - 4rem) / 3);
+    }
+    
+    .home-sec2 .business-item a {
+        height: 28rem;
+        padding: 4.8rem 4rem 0 4rem;
+        /* background-repeat: no-repeat; */
+        /* background-position: 0 0; */
+        /* background-size: cover; */
+        /* background-image: url(../img/home/bg_home_sec2_01.svg); */
+        /* isolation: isolate; */
+    }
+    
+    .home-sec2 .business-item a::after {
+        /* content: "";
+        position: absolute;
+        background: #000;
+        z-index: -1;
+        inset: 0;
+        opacity: 0.2; */
+        display: none;
+    }
+
+    .home-sec2 .business-item .txt1 {
+        font-size: 3.4rem;
+        color: #000;
+     }
+     
+     .home-sec2 .business-item .txt2 {
+        font-size: 2rem;
+        color: #000;
+     }
+     
+     .home-sec2 .business-item .hover {
+        display: block;
+        margin-top: 1.6rem;
+     }
+     
+     .home-sec2 .business-item .hover span {
+        position: relative;
+        font-size: 1.6rem;
+        color: #000;
+        letter-spacing: -1px;
+     }
+
+     .home-sec2 .business-item .hover span:first-child,
+    .home-sec2 .business-item .hover br:not(.mo) + span {
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    .home-sec2 .business-item .hover span:first-child::before,
+    .home-sec2 .business-item .hover br:not(.mo) + span::before {
+        display: none;
+    }
+
+    /* .home-sec2 .business-item:nth-of-type(2) a {
+        background-image: url(../img/home/bg_home_sec2_02.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(3) a {
+        background-image: url(../img/home/bg_home_sec2_03.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(4) a {
+        background-image: url(../img/home/bg_home_sec2_04.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(5) a {
+        background-image: url(../img/home/bg_home_sec2_05.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(6) a {
+        background-image: url(../img/home/bg_home_sec2_06.svg);
+    } */
+
+    .home-sec2 .business-item a:hover {
+        background-color: var(--bg-surface);
+        background-position: right 4rem top 5rem;
+        background-size: 3.4rem 3.4rem;
+        background-image: url(../img/home/icon_home_sec2_01.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(2) a:hover {
+        background-image: url(../img/home/icon_home_sec2_02.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(3) a:hover {
+        background-image: url(../img/home/icon_home_sec2_03.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(4) a:hover {
+        background-image: url(../img/home/icon_home_sec2_04.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(5) a:hover {
+        background-image: url(../img/home/icon_home_sec2_05.svg);
+    }
+    .home-sec2 .business-item:nth-of-type(6) a:hover {
+        background-image: url(../img/home/icon_home_sec2_06.svg);
+    }
+    .home-sec2 .business-item a:hover .txt1 {
+        color: #000;
+    }
+     
+    .home-sec2 .business-item a:hover .txt2 {
+        color: #000;
+    }
+    .home-sec2 .business-item a:hover .hover {
+        display: block;
+    }
+
+    /* 데스크톱 카드: opacity/translate 대신 좌→우 clip-path 마스크 오픈 */
+    .home-sec2 .business-item {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.62s cubic-bezier(0.22, 1, 0.33, 1);
+        will-change: clip-path;
+    }
+
+    .home-sec2 .business-item.is-revealed {
+        clip-path: inset(0 0 0 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .home-sec2 .business-item {
+            clip-path: inset(0 0 0 0) !important;
+            transition: none !important;
+            will-change: auto;
+        }
+    }
+
     .home-sec3 {
         gap: 6rem;
     }
@@ -1687,16 +1852,16 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .news-list {
-        padding: 0 6rem;
+        padding: 0 12rem;
     }
 
     .news-list .swiper {
         overflow: hidden;
-        /* padding: 2rem 0 5rem; */
     }
 
     .news-list .swiper-slide {
-        width: 38rem;
+        /* width: 38rem; */
+        width: 32rem;
     }
 
     /* .news-list .news-card {
@@ -1748,11 +1913,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .news-list-prev {
-        left: 0;
+        left: 4rem;
     }
 
     .news-list-next {
-        right: 0;
+        right: 4rem;
     }
 
     .news-list-prev:hover,
@@ -1771,8 +1936,13 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         gap: 6rem;
     }
 
+    .home-sec4 .inner-cont {
+        padding: 0 6rem !important;
+    }
+
     .case-list {
         padding: 0 4rem;
+        margin-top: 5rem;
         overflow: hidden;
     }
 
@@ -1788,7 +1958,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .case-banner {
         flex-shrink: 0;
-        width: 42%;
+        width: 38%;
         height: auto;
         aspect-ratio: 540 / 450;
     }
@@ -1916,15 +2086,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-growth-list {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 1.6rem;
-        padding: 0 4rem;
+        padding: 0 8rem;
+        margin-top: 5rem;
     }
-
-    .home-growth-list .card-customers { order: 1; }
-    .home-growth-list .card-professionals { order: 2; }
-    .home-growth-list .card-experience { order: 3; }
-    .home-growth-list .card-revenue { order: 4; }
 
     .home-growth-list .mo {
         display: none;

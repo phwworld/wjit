@@ -319,19 +319,82 @@
     resumeTicker();
   });
 
-  const slideByNav = (direction) => {
-    if (!isDesktop()) return;
-    swiper.autoplay.stop();
+  // 연속 티커 도중 네비 클릭 시 translate/index가 어긋날 수 있어
+  // 가장 가까운 snap에 맞춘 뒤 slidePrev/Next(루프 정상 처리)로 한 칸씩 이동.
+  // 연타 시에는 애니메이션을 끊지 않고 큐에 쌓아 순차 처리한다.
+  // (slideTo로 인덱스 wrap 하면 전체 트랙을 가로지르는 오동작이 난다)
+  let pendingDelta = 0;
+  let navBusy = false;
+
+  const snapToClosest = () => {
+    const current = swiper.getTranslate();
+    swiper.setTransition(0);
+    swiper.setTranslate(current);
     swiper.animating = false;
-    swiper.params.speed = NAV_SPEED;
-    if (direction === "next") swiper.slideNext();
-    else swiper.slidePrev();
+
+    let closest = 0;
+    let minDist = Infinity;
+    swiper.snapGrid.forEach((snap, i) => {
+      const dist = Math.abs(current + snap);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = i;
+      }
+    });
+    swiper.slideTo(closest, 0);
   };
 
-  swiper.on("transitionEnd", () => {
+  const resumeTickerIfNeeded = () => {
     if (hovering || !isDesktop()) return;
     swiper.params.speed = TICKER_SPEED;
     if (!swiper.autoplay.running) swiper.autoplay.start();
+  };
+
+  const runNav = () => {
+    if (navBusy || pendingDelta === 0) return;
+
+    swiper.autoplay.stop();
+
+    // 티커/호버 정지 직후 첫 스텝만 snap 보정. 큐 이어서 갈 때는 이미 snap 위에 있다.
+    if (swiper.params.speed !== NAV_SPEED) snapToClosest();
+
+    const step = pendingDelta > 0 ? 1 : -1;
+    pendingDelta -= step;
+    navBusy = true;
+    swiper.params.speed = NAV_SPEED;
+
+    let settled = false;
+    const settle = () => {
+      if (settled) return;
+      settled = true;
+      swiper.off("transitionEnd", settle);
+      navBusy = false;
+
+      if (pendingDelta !== 0) {
+        runNav();
+        return;
+      }
+      resumeTickerIfNeeded();
+    };
+
+    swiper.on("transitionEnd", settle);
+    if (step > 0) swiper.slideNext(NAV_SPEED);
+    else swiper.slidePrev(NAV_SPEED);
+
+    // transition이 스킵되는 경우 대비
+    window.setTimeout(settle, NAV_SPEED + 80);
+  };
+
+  const slideByNav = (direction) => {
+    if (!isDesktop()) return;
+    pendingDelta += direction === "next" ? 1 : -1;
+    pendingDelta = Math.max(-8, Math.min(8, pendingDelta));
+    runNav();
+  };
+
+  swiper.on("transitionEnd", () => {
+    if (navBusy || pendingDelta !== 0) return;
+    resumeTickerIfNeeded();
   });
 
   prevEl?.addEventListener("click", () => slideByNav("prev"));
