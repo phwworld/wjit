@@ -50,7 +50,7 @@
     top: 0;
     z-index: 20;
     display: flex;
-    height: 6.1rem;
+    height: 6rem;
     /* margin: 0 -2.4rem 6rem; */
     margin: 0 0 6rem;
     border-bottom: 1px solid var(--primary);

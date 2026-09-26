@@ -641,7 +641,7 @@ footer .inner-cont .family-site {
 
 /* title */
 main>.title {
-  padding: 6rem 2.4rem;
+  padding: 5.6rem 2.4rem;
   text-align: center;
 }
 
@@ -731,6 +731,11 @@ main>.title.no-animate h3 {
   margin: 6rem 0 2rem;
   padding-top: 6rem;
   border-top: 1px solid #b5b7bd;
+}
+
+.c-tit.devide.no-line {
+  padding-top: 0;
+  border: 0;
 }
 
 .s-tit {
@@ -1255,7 +1260,7 @@ main>.title.no-animate h3 {
 
   /* title */
   main>.title {
-    padding: 12rem 0 10rem;
+    padding: 10.5rem 0 10.5rem;
   }
 
   main>.title .tit-info1 {
@@ -1264,7 +1269,7 @@ main>.title.no-animate h3 {
 
   main>.title h3 {
     margin: 3rem 0 2.5rem;
-    font-size: 8.4rem;
+    font-size: 7rem;
   }
 
   main>.title h3 span {
@@ -1767,7 +1772,7 @@ main>.title.no-animate h3 {
 
   /* title */
   main>.title {
-    padding: 12rem 0 10rem;
+    padding: 10.5rem 0 10.5rem;
   }
 
   main>.title .tit-info1 {
@@ -1776,7 +1781,7 @@ main>.title.no-animate h3 {
 
   main>.title h3 {
     margin: 3rem 0 2.5rem;
-    font-size: 8.4rem;
+    font-size: 7rem;
   }
 
   main>.title h3 span {
