@@ -53,32 +53,32 @@
     padding-top: 13rem;
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-image: url(../img/business/bg_aicc_con1_01.svg);
-    background-size: 8rem;
+    background-image: url(../img/business/bg_aicc_con1_01.png);
+    background-size: auto 8rem;
 }
 
 .aicc-cont1 div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_aicc_con1_02.svg);
+    background-image: url(../img/business/bg_aicc_con1_02.png);
 }
 
 .aicc-cont1 div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_aicc_con1_03.svg);
+    background-image: url(../img/business/bg_aicc_con1_03.png);
 }
 
 .aicc-cont2>div>div {
     padding-bottom: 13rem;
     background-repeat: no-repeat;
     background-position: center bottom 3rem;
-    background-size: 8rem;
-    background-image: url(../img/business/bg_aicc_con2_01.svg);
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_aicc_con2_01.png);
 }
 
 .aicc-cont2:nth-of-type(2)>div>div {
-    background-image: url(../img/business/bg_aicc_con2_02.svg)
+    background-image: url(../img/business/bg_aicc_con2_02.png)
 }
 
 .aicc-cont2:nth-of-type(3)>div>div {
-    background-image: url(../img/business/bg_aicc_con2_03.svg)
+    background-image: url(../img/business/bg_aicc_con2_03.png)
 }
 
 .aicc-cont3 .box-cont {
@@ -108,20 +108,20 @@
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-image: url(../img/business/bg_aicc_cont3_01.svg);
+    background-image: url(../img/business/bg_aicc_cont3_01.png);
     background-size: auto 6rem;
 }
 
 .aicc-cont3 .box-cont .service-list div:nth-of-type(2) {
-    background-image: url(../img/business/bg_aicc_cont3_02.svg);
+    background-image: url(../img/business/bg_aicc_cont3_02.png);
 }
 
 .aicc-cont3 .box-cont .service-list div:nth-of-type(3) {
-    background-image: url(../img/business/bg_aicc_cont3_03.svg);
+    background-image: url(../img/business/bg_aicc_cont3_03.png);
 }
 
 .aicc-cont3 .box-cont .service-list div:nth-of-type(4) {
-    background-image: url(../img/business/bg_aicc_cont3_04.svg);
+    background-image: url(../img/business/bg_aicc_cont3_04.png);
 }
 
 .aicc-cont4 {
@@ -171,22 +171,22 @@
 
 .aicc-cont5>div>div {
     border-style: solid;
-    padding: 13rem 0 2rem;
+    padding: 10rem 0 2rem;
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-size: auto 8rem;
-    background-image: url(../img/business/bg_aicc_cont5_01.svg);
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_aicc_cont5_01.png);
 }
 
 .aicc-cont5>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_aicc_cont5_02.svg);
+    background-image: url(../img/business/bg_aicc_cont5_02.png);
 }
 
 .aicc-cont5>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_aicc_cont5_03.svg);
+    background-image: url(../img/business/bg_aicc_cont5_03.png);
 }
 
 .aicc-cont6 .box-cont {
@@ -2990,8 +2990,7 @@
 
     /* aicc */
     .cont-type1.aicc-cont1 .box-cont {
-        padding-top: 16rem;
-        background-size: 10rem;
+        padding-top: 14rem;
     }
 
     .aicc-cont2>div>div {
@@ -3021,12 +3020,11 @@
 
     .aicc-cont3 .box-cont .service-list div {
         flex-basis: calc(25% - 2rem);
-        min-height: 26rem;
-        padding-top: 18rem;
+        min-height: 20rem;
+        padding-top: 14rem;
         font-size: 2.4rem;
-        background-position: center top 6rem;
-        background-image: url(../img/business/bg_aicc_cont3_01.svg);
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .aicc-cont4 {
@@ -3047,11 +3045,10 @@
 
     .aicc-cont5>div>div {
         flex: 1;
-        /* flex-basis: calc(33.3% - 2rem); */
-        padding: 17rem 0 5rem;
+        padding: 14rem 0 4rem;
         font-size: 2.4rem;
-        background-position: center top 5rem;
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .aicc-cont6 .box-cont {
@@ -5453,8 +5450,7 @@
 
     /* aicc */
     .cont-type1.aicc-cont1 .box-cont {
-        padding-top: 16rem;
-        background-size: 10rem;
+        padding-top: 14rem;
     }
 
     .aicc-cont2>div>div {
@@ -5484,12 +5480,11 @@
 
     .aicc-cont3 .box-cont .service-list div {
         flex-basis: calc(25% - 2rem);
-        min-height: 26rem;
-        padding-top: 18rem;
+        min-height: 20rem;
+        padding-top: 14rem;
         font-size: 2.4rem;
-        background-position: center top 6rem;
-        background-image: url(../img/business/bg_aicc_cont3_01.svg);
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .aicc-cont4 {
@@ -5510,11 +5505,10 @@
 
     .aicc-cont5>div>div {
         flex: 1;
-        /* flex-basis: calc(33.3% - 2rem); */
-        padding: 17rem 0 5rem;
+        padding: 14rem 0 4rem;
         font-size: 2.4rem;
-        background-position: center top 5rem;
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .aicc-cont6 .box-cont {
