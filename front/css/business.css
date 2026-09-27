@@ -193,13 +193,13 @@
     padding-top: 3rem;
 }
 
-.aicc-bridge {
+.aicc-bridge .inner-cont {
     padding-bottom: 100vw;
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100%;
-    background-image: url(../img/business/bg_aicc_bridge_mo.svg);
-    background-color: #f1f2f6;
+    background-size: 100% auto;
+    background-image: url(../img/business/bg_aicc_bridge_mo.png);
+    /* background-color: #f1f2f6; */
 }
 
 .aicc-bridge-cont {
