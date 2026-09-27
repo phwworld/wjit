@@ -271,27 +271,27 @@
     background-repeat: no-repeat;
     background-position: left 2rem center;
     background-size: 5rem;
-    background-image: url(../img/business/bg_wikl_cont1_01.svg);
+    background-image: url(../img/business/bg_wikl_cont1_01.png);
 }
 
 .wikl-cont1>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_wikl_cont1_02.svg);
+    background-image: url(../img/business/bg_wikl_cont1_02.png);
 }
 
 .wikl-cont1>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_wikl_cont1_03.svg);
+    background-image: url(../img/business/bg_wikl_cont1_03.png);
 }
 
 .wikl-cont1>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_wikl_cont1_04.svg);
+    background-image: url(../img/business/bg_wikl_cont1_04.png);
 }
 
 .wikl-cont1>div>div:nth-of-type(5) {
-    background-image: url(../img/business/bg_wikl_cont1_05.svg);
+    background-image: url(../img/business/bg_wikl_cont1_05.png);
 }
 
 .wikl-cont1>div>div:nth-of-type(6) {
-    background-image: url(../img/business/bg_wikl_cont1_06.svg);
+    background-image: url(../img/business/bg_wikl_cont1_06.png);
 }
 
 .wikl-cont2>div {
@@ -344,15 +344,15 @@
     background-repeat: no-repeat;
     background-position: center top 1.6rem;
     background-size: auto 4rem;
-    background-image: url(../img/business/bg_wikl_cont5_01.svg);
+    background-image: url(../img/business/bg_wikl_cont5_01.png);
 }
 
 .wikl-cont5>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_wikl_cont5_02.svg);
+    background-image: url(../img/business/bg_wikl_cont5_02.png);
 }
 
 .wikl-cont5>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_wikl_cont5_03.svg);
+    background-image: url(../img/business/bg_wikl_cont5_03.png);
 }
 
 .wikl-cont6 {
@@ -373,7 +373,7 @@
     background-repeat: no-repeat;
     background-position: center top 2rem;
     background-size: auto 4rem;
-    background-image: url(../img/business/bg_wikl_cont6_01.svg);
+    background-image: url(../img/business/bg_wikl_cont6_01.png);
 }
 
 .wikl-cont6>div span {
@@ -382,15 +382,15 @@
 }
 
 .wikl-cont6>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_wikl_cont6_02.svg);
+    background-image: url(../img/business/bg_wikl_cont6_02.png);
 }
 
 .wikl-cont6>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_wikl_cont6_03.svg);
+    background-image: url(../img/business/bg_wikl_cont6_03.png);
 }
 
 .wikl-cont6>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_wikl_cont6_04.svg);
+    background-image: url(../img/business/bg_wikl_cont6_04.png);
 }
 
 .wikl-cont7 {
@@ -3095,7 +3095,7 @@
         padding: 3rem 4rem 3rem 16rem;
         font-size: 2rem;
         background-position: left 4rem center;
-        background-size: 10rem 8rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont2>div {
@@ -3139,9 +3139,9 @@
 
     .wikl-cont5 .box-cont {
         padding: 16rem 0 5rem;
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont6 {
@@ -3156,24 +3156,23 @@
         position: relative;
         flex: 1;
         width: auto;
-        min-height: 26rem;
-        padding: 18rem 0 2rem;
+        padding: 16rem 0 4rem;
         border: 1px solid var(--border-default);
-        font-size: 2.4rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-color: var(--white);
-        background-position: center top 6rem;
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont6>div::before {
         content: "";
         position: absolute;
         top: 50%;
-        left: -4rem;
-        width: 6rem;
-        height: 6rem;
-        background: url(../img/business/icon_step_arrow.svg) no-repeat;
+        left: -2.2rem;
+        width: 2.2rem;
+        height: 3.2rem;
+        background: url(../img/business/icon_step_arrow.png) no-repeat;
         transform: translateY(-50%);
     }
 
@@ -5555,7 +5554,7 @@
         padding: 3rem 4rem 3rem 16rem;
         font-size: 2rem;
         background-position: left 4rem center;
-        background-size: 10rem 8rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont2>div {
@@ -5599,9 +5598,9 @@
 
     .wikl-cont5 .box-cont {
         padding: 16rem 0 5rem;
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont6 {
@@ -5616,24 +5615,23 @@
         position: relative;
         flex: 1;
         width: auto;
-        min-height: 26rem;
-        padding: 18rem 0 2rem;
+        padding: 16rem 0 4rem;
         border: 1px solid var(--border-default);
-        font-size: 2.4rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-color: var(--white);
-        background-position: center top 6rem;
-        background-size: auto 10rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .wikl-cont6>div::before {
         content: "";
         position: absolute;
         top: 50%;
-        left: -4rem;
-        width: 6rem;
-        height: 6rem;
-        background: url(../img/business/icon_step_arrow.svg) no-repeat;
+        left: -2.2rem;
+        width: 2.2rem;
+        height: 3.2rem;
+        background: url(../img/business/icon_step_arrow.png) no-repeat;
         transform: translateY(-50%);
     }
 

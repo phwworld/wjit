@@ -883,6 +883,7 @@
     left: 0;
     width: .4rem;
     height: .4rem;
+    border-radius: 50%;
     background: var(--text-point);
 }
 .cont-type2 .box-cont li~li {
