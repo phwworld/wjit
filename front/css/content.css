@@ -860,7 +860,8 @@
 
 .cont-type2>div>div {
     padding: 3rem 2rem;
-    border: 1px dashed var(--border-default);
+    /* border: 1px dashed var(--border-default); */
+    border: 1px solid var(--border-default);
     background-color: var(--white);
 }
 
@@ -1940,6 +1941,25 @@
         margin-top: 1rem;
         padding-left: 0;
         font-size: 2rem;
+    }
+
+    .btn-shortcut.youtube {
+        margin-top: 4rem;
+    }
+
+    .btn-shortcut.youtube a {
+        height: 7.4rem;
+        padding: 0 4rem;
+    }
+
+    .btn-shortcut.youtube a span {
+        background-position: right center;
+    }
+
+    .btn-shortcut.youtube i {
+        display: inline-block;
+        margin: 0 0 0 1rem;
+        font-size: 2.4rem;
     }
 
     .cont-txt:has(+ .btn-shortcut) {

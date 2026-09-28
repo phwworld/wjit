@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjectCaseAccordion();
     initLayerPopupEvents();
     initIndustrySliders();
+    initServiceItemCycle();
 });
 
 /* ==========================================================================
@@ -923,4 +924,64 @@ function initIndustrySliders() {
             }
         });
     });
+}
+
+/* ==========================================================================
+   15. 모바일·태블릿 서비스 목록 순차 강조 (Service Item Cycle)
+   ========================================================================== */
+function initServiceItemCycle() {
+    const lists = document.querySelectorAll(".service-list");
+    if (!lists.length) return;
+
+    const cycleQuery = window.matchMedia("(max-width: 1439px)");
+    const interval = 3000;
+    const timers = new Map();
+
+    const getItems = (list) => list.querySelectorAll(":scope > .service-item");
+
+    const clearOn = (list) => {
+        getItems(list).forEach((item) => item.classList.remove("on"));
+    };
+
+    const stop = (list) => {
+        const timer = timers.get(list);
+        if (timer) {
+            clearInterval(timer);
+            timers.delete(list);
+        }
+        clearOn(list);
+    };
+
+    const start = (list) => {
+        const items = getItems(list);
+        if (!items.length || timers.has(list)) return;
+
+        let index = 0;
+        const activate = () => {
+            items.forEach((item, i) => item.classList.toggle("on", i === index));
+            index = (index + 1) % items.length;
+        };
+
+        activate();
+        timers.set(list, setInterval(activate, interval));
+    };
+
+    const sync = () => {
+        lists.forEach((list) => {
+            if (!getItems(list).length) return;
+            if (cycleQuery.matches) {
+                start(list);
+            } else {
+                stop(list);
+            }
+        });
+    };
+
+    if (typeof cycleQuery.addEventListener === "function") {
+        cycleQuery.addEventListener("change", sync);
+    } else {
+        cycleQuery.addListener(sync);
+    }
+
+    sync();
 }

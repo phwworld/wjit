@@ -1292,6 +1292,10 @@ main>.title.no-animate h3 {
     font-weight: 300;
   }
 
+  .c-tit strong.full-name {
+    font-weight: 500;
+  }
+
   .c-tit.devide {
     margin: 10rem 0 2rem;
     padding-top: 10rem;

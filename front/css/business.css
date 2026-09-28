@@ -37,6 +37,7 @@
     font-weight: 600;
     text-align: center;
     line-height: 1.2;
+    transition: color 0.45s ease, background-color 0.45s ease, border-color 0.45s ease;
 }
 
 .service-list .service-item span {
@@ -46,6 +47,12 @@
 
 .service-list .service-item i {
     font-size: 1.4rem;
+}
+
+.service-list .service-item.on {
+    border-color: var(--text-point);
+    color: var(--white);
+    background-color: var(--primary);
 }
 
 /* aicc */
@@ -193,13 +200,13 @@
     padding-top: 3rem;
 }
 
-.aicc-bridge .inner-cont {
+.aicc-bridge {
     padding-bottom: 100vw;
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100% auto;
     background-image: url(../img/business/bg_aicc_bridge_mo.png);
-    /* background-color: #f1f2f6; */
+    background-color: #f1f2f6;
 }
 
 .aicc-bridge-cont {
@@ -1316,19 +1323,19 @@
     background-repeat: no-repeat;
     background-position: center top 2.4rem;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_s4hana_cont1_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont1_01.png );
 }
 
 .s4hana-cont1>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_s4hana_cont1_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont1_02.png);
 }
 
 .s4hana-cont1>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_s4hana_cont1_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont1_03.png);
 }
 
 .s4hana-cont1>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_s4hana_cont1_04.svg);
+    background-image: url(../img/business/bg_s4hana_cont1_04.png);
 }
 
 .s4hana-cont2 .box-cont {
@@ -1373,27 +1380,27 @@
     background-repeat: no-repeat;
     background-position: center top 1.6rem;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_s4hana_cont4_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_01.png);
 }
 
 .s4hana-cont4>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont4_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_02.png);
 }
 
 .s4hana-cont4>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont4_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_03.png);
 }
 
 .s4hana-cont4>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont4_04.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_04.png);
 }
 
 .s4hana-cont4>div:nth-of-type(5) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont4_05.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_05.png);
 }
 
 .s4hana-cont4>div:nth-of-type(6) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont4_06.svg);
+    background-image: url(../img/business/bg_s4hana_cont4_06.png);
 }
 
 .s4hana-cont5 {
@@ -1449,19 +1456,19 @@
     background-repeat: no-repeat;
     background-position: left 1.5rem center;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_s4hana_cont5_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont5_01.png);
 }
 
 .s4hana-cont6>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_s4hana_cont5_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont5_02.png);
 }
 
 .s4hana-cont6>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_s4hana_cont5_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont5_03.png);
 }
 
 .s4hana-cont6>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_s4hana_cont5_04.svg);
+    background-image: url(../img/business/bg_s4hana_cont5_04.png);
 }
 
 .s4hana-cont6 .box-tit {
@@ -1480,15 +1487,15 @@
     background-repeat: no-repeat;
     background-position: center top 3rem;
     background-size: auto 8rem;
-    background-image: url(../img/business/bg_s4hana_cont7_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont7_01.png);
 }
 
 .s4hana-cont7>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont7_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont7_02.png);
 }
 
 .s4hana-cont7>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_s4hana_cont7_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont7_03.png);
 }
 
 .s4hana-cont8 .box-cont {
@@ -1506,19 +1513,19 @@
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_s4hana_cont8_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont8_01.png);
 }
 
 .s4hana-cont8>div:nth-of-type(2) .box-cont>p {
-    background-image: url(../img/business/bg_s4hana_cont8_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont8_02.png);
 }
 
 .s4hana-cont8>div:nth-of-type(3) .box-cont>p {
-    background-image: url(../img/business/bg_s4hana_cont8_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont8_03.png);
 }
 
 .s4hana-cont8>div:nth-of-type(4) .box-cont>p {
-    background-image: url(../img/business/bg_s4hana_cont8_04.svg);
+    background-image: url(../img/business/bg_s4hana_cont8_04.png);
 }
 
 .s4hana-cont8 .box-cont>div {
@@ -1541,10 +1548,12 @@
 .s4hana-cont8 .box-cont a {
     display: block;
     margin-top: 1rem;
-    font-size: 1.4rem;
+    background: url(../img/business/icon_s4hana_cont8_arrow.png) no-repeat right center;
+    background-size: auto 1.8rem;
+    /* font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-point);
-    text-align: right;
+    text-align: right; */
 }
 
 .s4hana-cont9>div {
@@ -1563,19 +1572,19 @@
     background-repeat: no-repeat;
     background-position: center top 3rem;
     background-size: auto 8rem;
-    background-image: url(../img/business/bg_s4hana_cont9_01.svg);
+    background-image: url(../img/business/bg_s4hana_cont9_01.png);
 }
 
 .s4hana-cont9>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_s4hana_cont9_02.svg);
+    background-image: url(../img/business/bg_s4hana_cont9_02.png);
 }
 
 .s4hana-cont9>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_s4hana_cont9_03.svg);
+    background-image: url(../img/business/bg_s4hana_cont9_03.png);
 }
 
 .s4hana-cont9>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_s4hana_cont9_04.svg);
+    background-image: url(../img/business/bg_s4hana_cont9_04.png);
 }
 
 .s4hana-cont9 .box-tit {
@@ -1906,16 +1915,16 @@
     padding-top: 13rem;
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-size: 8.6rem auto;
-    background-image: url(../img/business/bg_aws_cont2_01.svg);
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_aws_cont2_01.png);
 }
 
 .aws-cont2 div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_aws_cont2_02.svg);
+    background-image: url(../img/business/bg_aws_cont2_02.png);
 }
 
 .aws-cont2 div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_aws_cont2_03.svg);
+    background-image: url(../img/business/bg_aws_cont2_03.png);
 }
 
 .aws-cont4>div {
@@ -1944,20 +1953,20 @@
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-image: url(../img/business/bg_aws_cont6_01.svg);
+    background-image: url(../img/business/bg_aws_cont6_01.png);
     background-size: auto 6rem;
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(2) {
-    background-image: url(../img/business/bg_aws_cont6_02.svg);
+    background-image: url(../img/business/bg_aws_cont6_02.png);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(3) {
-    background-image: url(../img/business/bg_aws_cont6_03.svg);
+    background-image: url(../img/business/bg_aws_cont6_03.png);
 }
 
 .aws-cont6 .box-cont .service-list div:nth-of-type(4) {
-    background-image: url(../img/business/bg_aws_cont6_04.svg);
+    background-image: url(../img/business/bg_aws_cont6_04.png);
 }
 
 .aws-bridge {
@@ -2089,19 +2098,19 @@
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 5rem auto;
-    background-image: url(../img/business/bg_msazure_cont2_01.svg);
+    background-image: url(../img/business/bg_msazure_cont2_01.png);
 }
 
 .msazure-cont2>div>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_msazure_cont2_02.svg);
+    background-image: url(../img/business/bg_msazure_cont2_02.png);
 }
 
 .msazure-cont2>div>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_msazure_cont2_03.svg);
+    background-image: url(../img/business/bg_msazure_cont2_03.png);
 }
 
 .msazure-cont2>div>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_msazure_cont2_04.svg);
+    background-image: url(../img/business/bg_msazure_cont2_04.png);
 }
 
 .msazure-cont4>div {
@@ -2128,19 +2137,19 @@
     background-repeat: no-repeat;
     background-position: center top 2.4rem;
     background-size: 7rem 6rem;
-    background-image: url(../img/business/bg_msazure_cont6_01.svg);
+    background-image: url(../img/business/bg_msazure_cont6_01.png);
 }
 
 .msazure-cont6>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_msazure_cont6_02.svg);
+    background-image: url(../img/business/bg_msazure_cont6_02.png);
 }
 
 .msazure-cont6>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_msazure_cont6_03.svg);
+    background-image: url(../img/business/bg_msazure_cont6_03.png);
 }
 
 .msazure-cont6>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_msazure_cont6_04.svg);
+    background-image: url(../img/business/bg_msazure_cont6_04.png);
 }
 
 .msazure-cont8 .box-cont {
@@ -2167,8 +2176,8 @@
     border: 1px solid #942d8a;
     background-repeat: no-repeat;
     background-position: left 2rem center;
-    background-size: 5rem;
-    background-image: url(../img/business/bg_powerPlatform_cont1_01.svg);
+    background-size: auto 5rem;
+    background-image: url(../img/business/bg_powerPlatform_cont1_01.png);
 }
 
 .powerPlatform-cont1 .box-tit {
@@ -2183,22 +2192,22 @@
 
 .powerPlatform-cont1>div>div:nth-of-type(2) {
     border-color: #4641b7;
-    background-image: url(../img/business/bg_powerPlatform_cont1_02.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont1_02.png);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(3) {
     border-color: #1046c0;
-    background-image: url(../img/business/bg_powerPlatform_cont1_03.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont1_03.png);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(4) {
     border-color: #128cac;
-    background-image: url(../img/business/bg_powerPlatform_cont1_04.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont1_04.png);
 }
 
 .powerPlatform-cont1>div>div:nth-of-type(5) {
     border-color: #dea010;
-    background-image: url(../img/business/bg_powerPlatform_cont1_05.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont1_05.png);
 }
 
 .powerPlatform-cont2>div {
@@ -2211,8 +2220,8 @@
     padding: 1.6rem 2rem 1.6rem 8.6rem;
     background-repeat: no-repeat;
     background-position: left 2rem center;
-    background-size: 5rem auto;
-    background-image: url(../img/business/bg_powerPlatform_cont2_01.svg);
+    background-size: auto 6rem;
+    background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
 }
 
 .powerPlatform-cont2 .box-tit {
@@ -2225,23 +2234,23 @@
 }
 
 .powerPlatform-cont2>div>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_powerPlatform_cont2_02.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont2_02.png);
 }
 
 .powerPlatform-cont2>div>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_powerPlatform_cont2_03.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont2_03.png);
 }
 
 .powerPlatform-cont2>div>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_powerPlatform_cont2_04.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont2_04.png);
 }
 
 .powerPlatform-cont2>div>div:nth-of-type(5) {
-    background-image: url(../img/business/bg_powerPlatform_cont2_05.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont2_05.png);
 }
 
 .powerPlatform-cont2>div>div:nth-of-type(6) {
-    background-image: url(../img/business/bg_powerPlatform_cont2_06.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont2_06.png);
 }
 
 .powerPlatform-cont3 .box-cont {
@@ -2249,19 +2258,19 @@
     background-repeat: no-repeat;
     background-position: center top 3rem;
     background-size: 6rem auto;
-    background-image: url(../img/business/bg_powerPlatform_cont3_01.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont3_01.png);
 }
 
 .powerPlatform-cont3>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_powerPlatform_cont3_02.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont3_02.png);
 }
 
 .powerPlatform-cont3>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_powerPlatform_cont3_03.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont3_03.png);
 }
 
 .powerPlatform-cont3>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_powerPlatform_cont3_04.svg);
+    background-image: url(../img/business/bg_powerPlatform_cont3_04.png);
 }
 
 .powerPlatform-cont5>div {
@@ -2319,16 +2328,16 @@
     padding: 13rem 2rem 3rem;
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-size: 9rem 8rem;
-    background-image: url(../img/business/bg_naverCloudPlatform_cont6_01.svg)
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_01.png)
 }
 
 .naverCloudPlatform-cont6>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_naverCloudPlatform_cont6_02.svg)
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_02.png)
 }
 
 .naverCloudPlatform-cont6>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_naverCloudPlatform_cont6_03.svg)
+    background-image: url(../img/business/bg_naverCloudPlatform_cont6_03.png)
 }
 
 .naverCloudPlatform-bridge {
@@ -2414,20 +2423,20 @@
     padding: 13rem 2rem 3rem;
     background-repeat: no-repeat;
     background-position: center top 3rem;
-    background-size: 8rem;
-    background-image: url(../img/business/bg_databricks_cont2_01.svg)
+    background-size: auto 8rem;
+    background-image: url(../img/business/bg_databricks_cont2_01.png)
 }
 
 .databricks-cont2>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_databricks_cont2_02.svg)
+    background-image: url(../img/business/bg_databricks_cont2_02.png)
 }
 
 .databricks-cont2>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_databricks_cont2_03.svg)
+    background-image: url(../img/business/bg_databricks_cont2_03.png)
 }
 
 .databricks-cont2>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_databricks_cont2_04.svg)
+    background-image: url(../img/business/bg_databricks_cont2_04.png)
 }
 
 .databricks-cont3>div {
@@ -2446,7 +2455,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_databricks_cont3_01.svg)
+    background-image: url(../img/business/bg_databricks_cont3_01.png)
 }
 
 .databricks-cont3 .box-cont {
@@ -2469,17 +2478,16 @@
 .databricks-cont3 .box-cont strong {
     display: block;
     margin-bottom: .8rem;
-    ;
     font-size: 2rem;
     font-weight: 700;
 }
 
 .databricks-cont3>div>div:nth-of-type(2) .box-tit {
-    background-image: url(../img/business/bg_databricks_cont3_02.svg)
+    background-image: url(../img/business/bg_databricks_cont3_02.png)
 }
 
 .databricks-cont3>div>div:nth-of-type(3) .box-tit {
-    background-image: url(../img/business/bg_databricks_cont3_03.svg)
+    background-image: url(../img/business/bg_databricks_cont3_03.png)
 }
 
 .databricks-cont4>div>div {
@@ -2543,15 +2551,15 @@
     background-repeat: no-repeat;
     background-position: top center;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_mendix_cont3_01.svg);
+    background-image: url(../img/business/bg_mendix_cont3_01.png);
 }
 
 .mendix-cont3>div>div:nth-of-type(1) .box-tit {
-    background-image: url(../img/business/bg_mendix_cont3_02.svg);
+    background-image: url(../img/business/bg_mendix_cont3_02.png);
 }
 
 .mendix-cont3>div>div:nth-of-type(2) .box-tit {
-    background-image: url(../img/business/bg_mendix_cont3_03.svg);
+    background-image: url(../img/business/bg_mendix_cont3_03.png);
 }
 
 .mendix-cont4 .box-cont {
@@ -2559,27 +2567,27 @@
     background-repeat: no-repeat;
     background-position: top 2rem center;
     background-size: auto 8rem;
-    background-image: url(../img/business/bg_mendix_cont4_01.svg)
+    background-image: url(../img/business/bg_mendix_cont4_01.png)
 }
 
 .mendix-cont4>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_mendix_cont4_02.svg)
+    background-image: url(../img/business/bg_mendix_cont4_02.png)
 }
 
 .mendix-cont4>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_mendix_cont4_03.svg)
+    background-image: url(../img/business/bg_mendix_cont4_03.png)
 }
 
 .mendix-cont4>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_mendix_cont4_04.svg)
+    background-image: url(../img/business/bg_mendix_cont4_04.png)
 }
 
 .mendix-cont4>div:nth-of-type(5) .box-cont {
-    background-image: url(../img/business/bg_mendix_cont4_05.svg)
+    background-image: url(../img/business/bg_mendix_cont4_05.png)
 }
 
 .mendix-cont4>div:nth-of-type(6) .box-cont {
-    background-image: url(../img/business/bg_mendix_cont4_06.svg)
+    background-image: url(../img/business/bg_mendix_cont4_06.png)
 }
 
 .mendix-cont5>div {
@@ -2605,27 +2613,27 @@
     background-repeat: no-repeat;
     background-position: left center;
     background-size: auto 5rem;
-    background-image: url(../img/business/bg_naverworks_cont2_01.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_01.png);
 }
 
 .naverworks-cont2>div>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_naverworks_cont2_02.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_02.png);
 }
 
 .naverworks-cont2>div>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_naverworks_cont2_03.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_03.png);
 }
 
 .naverworks-cont2>div>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_naverworks_cont2_04.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_04.png);
 }
 
 .naverworks-cont2>div>div:nth-of-type(5) .box-cont {
-    background-image: url(../img/business/bg_naverworks_cont2_05.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_05.png);
 }
 
 .naverworks-cont2>div>div:nth-of-type(6) .box-cont {
-    background-image: url(../img/business/bg_naverworks_cont2_06.svg);
+    background-image: url(../img/business/bg_naverworks_cont2_06.png);
 }
 
 .naverworks-cont4 {
@@ -2649,51 +2657,51 @@
     background-repeat: no-repeat;
     background-position: center top 2rem;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_naverworks_cont5_01.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_01.png);
 }
 
 .naverworks-cont5>div:nth-of-type(1) .box-cont>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_naverworks_cont5_02.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_02.png);
 }
 
 .naverworks-cont5>div:nth-of-type(1) .box-cont>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_naverworks_cont5_03.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_03.png);
 }
 
 .naverworks-cont5>div:nth-of-type(1) .box-cont>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_naverworks_cont5_04.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_04.png);
 }
 
 .naverworks-cont5>div:nth-of-type(1) .box-cont>div:nth-of-type(5) {
-    background-image: url(../img/business/bg_naverworks_cont5_05.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_05.png);
 }
 
 .naverworks-cont5>div:nth-of-type(1) .box-cont>div:nth-of-type(6) {
-    background-image: url(../img/business/bg_naverworks_cont5_06.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_06.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(1) {
-    background-image: url(../img/business/bg_naverworks_cont5_07.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_07.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(2) {
-    background-image: url(../img/business/bg_naverworks_cont5_08.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_08.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(3) {
-    background-image: url(../img/business/bg_naverworks_cont5_09.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_09.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(4) {
-    background-image: url(../img/business/bg_naverworks_cont5_10.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_10.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(5) {
-    background-image: url(../img/business/bg_naverworks_cont5_11.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_11.png);
 }
 
 .naverworks-cont5>div:nth-of-type(2) .box-cont>div:nth-of-type(6) {
-    background-image: url(../img/business/bg_naverworks_cont5_12.svg);
+    background-image: url(../img/business/bg_naverworks_cont5_12.png);
 }
 
 .naverworks-cont6 {
@@ -2813,15 +2821,15 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 6.4rem;
-    background-image: url(../img/business/bg_ito_cont4_01.svg);
+    background-image: url(../img/business/bg_ito_cont4_01.png);
 }
 
 .ito-cont4>div>div:nth-of-type(2) .box-tit {
-    background-image: url(../img/business/bg_ito_cont4_02.svg);
+    background-image: url(../img/business/bg_ito_cont4_02.png);
 }
 
 .ito-cont4>div>div:nth-of-type(3) .box-tit {
-    background-image: url(../img/business/bg_ito_cont4_03.svg);
+    background-image: url(../img/business/bg_ito_cont4_03.png);
 }
 
 /* gdc */
@@ -2858,19 +2866,19 @@
     background-repeat: no-repeat;
     background-position: center top;
     background-size: auto 6rem;
-    background-image: url(../img/business/bg_gdc_cont3_01.svg);
+    background-image: url(../img/business/bg_gdc_cont3_01.png);
 }
 
 .gdc-cont3>div>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_gdc_cont3_02.svg);
+    background-image: url(../img/business/bg_gdc_cont3_02.png);
 }
 
 .gdc-cont3>div>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_gdc_cont3_03.svg);
+    background-image: url(../img/business/bg_gdc_cont3_03.png);
 }
 
 .gdc-cont3>div>div:nth-of-type(4) .box-cont {
-    background-image: url(../img/business/bg_gdc_cont3_04.svg);
+    background-image: url(../img/business/bg_gdc_cont3_04.png);
 }
 
 .gdc-cont4>div {
@@ -2893,10 +2901,10 @@
     color: var(--text-point);
 }
 
-.gdc-cont4>div>div>div {
+/* .gdc-cont4>div>div>div {
     padding-left: 2rem;
     border-left: 1px dashed var(--primary);
-}
+} */
 
 .gdc-cont4 .box-tit {
     margin-bottom: .6rem;
@@ -2923,7 +2931,7 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: auto 8rem;
-    background-image: url(../img/business/bg_bpo_cont1_01.svg);
+    background-image: url(../img/business/bg_bpo_cont1_01.png);
 }
 
 .bpo-cont1 .box-cont span {
@@ -2934,11 +2942,11 @@
 }
 
 .bpo-cont1>div>div:nth-of-type(2) .box-cont {
-    background-image: url(../img/business/bg_bpo_cont1_02.svg);
+    background-image: url(../img/business/bg_bpo_cont1_02.png);
 }
 
 .bpo-cont1>div>div:nth-of-type(3) .box-cont {
-    background-image: url(../img/business/bg_bpo_cont1_03.svg);
+    background-image: url(../img/business/bg_bpo_cont1_03.png);
 }
 
 .bpo-cont2 i {
@@ -4174,11 +4182,11 @@
     .s4hana-cont1>div>div {
         width: auto;
         flex: 1;
-        padding: 16.6rem 0 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
-        background-position: center top 5rem;
-        background-size: auto 10rem;
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont2 .box-cont {
@@ -4217,11 +4225,11 @@
     }
 
     .s4hana-cont4 .box-cont {
-        padding: 16rem 4rem 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
+        padding: 14rem 4rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont5 {
@@ -4253,27 +4261,28 @@
     .s4hana-cont6>div>div {
         flex: none;
         width: calc((100% - 2rem) / 2);
-        padding: 3rem 4rem 3rem 20rem;
+        padding: 3rem 4rem 3rem 17rem;
         background-position: left 4rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont6 .box-tit {
         margin-bottom: 1rem;
         font-size: 2.4rem;
+        font-weight: 500;
     }
 
     .s4hana-cont6 .box-cont {
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 
-    .s4hana-cont7 .box-cont {
-        padding: 16rem 4rem 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
+    .s4hana-cont7 .box-cont  {
+        padding: 14rem 4rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont8 {
@@ -4285,15 +4294,15 @@
         width: calc((100% - 3rem) / 2);
     }
 
-    .s4hana-cont8 .box-cont {
+    .s4hana-cont8 .box-cont  {
         padding: 4rem;
     }
 
     .s4hana-cont8 .box-cont>p {
-        min-height: 10rem;
-        padding-left: 13rem;
-        font-size: 2.4rem;
-        background-size: auto 10rem;
+        min-height: 8rem;
+        padding-left: 11rem;
+        font-size: 2rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont8 .box-cont>div {
@@ -4301,11 +4310,15 @@
     }
 
     .s4hana-cont8 .box-stit {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .s4hana-cont8 .box-stit+p {
         font-size: 1.8rem;
+    }
+
+    .s4hana-cont8 .box-cont a {
+        background-size: auto 2.1rem;
     }
 
     .s4hana-cont9>div {
@@ -4316,11 +4329,11 @@
         flex-direction: row;
         align-items: center;
         gap: 5rem;
-        min-height: 14rem;
-        padding: 2rem 6rem 2rem 23rem;
+        min-height: 12rem;
+        padding: 2rem 6rem 2rem 19rem;
         text-align: left;
         background-position: left 6rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont9 .box-tit {
@@ -4330,6 +4343,7 @@
         margin-bottom: 0;
         padding-right: 2.9rem;
         font-size: 2.4rem;
+        font-weight: 500;
     }
 
     .s4hana-cont9 .box-tit::after {
@@ -4342,11 +4356,11 @@
         transform: translateY(-50%);
         background: url(../img/business/bg_s4hana_cont9_arrow.svg) no-repeat center / contain;
     }
-
+ 
     .s4hana-cont9 .box-cont {
         flex: 1;
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 
     .s4hana-bridge {
@@ -4531,8 +4545,8 @@
 
     /* aws */
     .aws-cont2 .box-cont {
-        padding-top: 16rem;
-        background-size: 10.8rem auto;
+        padding-top: 14rem;
+        background-size: auto 8rem;
     }
 
     .aws-cont4>div {
@@ -4556,7 +4570,7 @@
         width: 100%;
     }
 
-    .aws-cont6 .box-cont {
+    .aws-cont6 .box-cont  {
         padding: 4rem;
     }
 
@@ -4573,11 +4587,11 @@
     .aws-cont6 .box-cont .service-list div {
         /* flex-basis: calc(25% - 2rem); */
         flex: 1;
-        min-height: 26rem;
-        padding: 17rem 5rem 0;
-        font-size: 2.4rem;
+        /* min-height: 23rem; */
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .aws-bridge {
@@ -4649,7 +4663,7 @@
         min-height: 8rem;
         padding-left: 12rem;
         font-size: 2rem;
-        background-size: 10rem auto;
+        background-size: auto 8rem;
     }
 
     .msazure-cont4>div {
@@ -4667,11 +4681,11 @@
 
     .msazure-cont6>div>div {
         flex: 1;
-        height: 26rem;
-        padding: 14.6rem 0 2rem;
-        font-size: 2.4rem;
-        background-position: center top 3rem;
-        background-size: 10rem 10rem;
+        /* height: 26rem; */
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .msazure-cont8 .box-cont {
@@ -4698,7 +4712,7 @@
         padding: 13rem 0 4rem;
         text-align: center;
         background-position: center top 4rem;
-        background-size: 7rem;
+        background-size: auto 7rem;
     }
 
     .powerPlatform-cont1 .box-tit {
@@ -4723,16 +4737,17 @@
         padding: 3rem 4rem 3rem 16rem;
         background-repeat: no-repeat;
         background-position: left 4rem center;
-        background-size: 10rem auto;
+        background-size: auto 8rem;
     }
 
     .powerPlatform-cont2 .box-tit {
         margin-bottom: 1rem;
         font-size: 2.4rem;
+        font-weight: 500;
     }
 
     .powerPlatform-cont2 .box-cont {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .powerPlatform-cont3 {
@@ -4747,7 +4762,7 @@
     .powerPlatform-cont3 .box-cont {
         padding: 4rem 3rem 5rem 16rem;
         background-position: left 4rem center;
-        background-size: 8rem auto;
+        background-size: auto 8rem;
     }
 
     .powerPlatform-cont3>div:nth-of-type(1) .box-cont {
@@ -4810,8 +4825,8 @@
     }
 
     .naverCloudPlatform-cont6 .box-cont {
-        padding: 16rem 3rem 4rem;
-        background-size: auto 10rem;
+        padding: 14rem 3rem 4rem;
+        background-size: auto 8rem;
     }
 
     .naverCloudPlatform-bridge {
@@ -4901,22 +4916,9 @@
     }
 
     .databricks-cont2 .box-cont {
-        padding: 4rem 3rem 5rem 15rem;
+        padding: 4rem 3rem 5rem 16rem;
         background-position: left 4rem center;
-        background-size: 9rem;
-        background-image: url(../img/business/bg_databricks_cont2_01.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(2) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_02.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(3) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_03.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(4) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_04.svg)
+        background-size: auto 8rem;
     }
 
     .databricks-cont3>div {
@@ -4926,19 +4928,20 @@
     .databricks-cont3>div>div {
         display: flex;
         align-items: center;
-        padding: 4rem;
+        /* padding: 4rem; */
+        padding: 4rem 0;
     }
 
     .databricks-cont3 .box-tit {
-        width: 22rem;
-        padding-top: 8rem;
+        width: 24rem;
+        padding-top: 9rem;
         border-right: 1px dashed var(--text-point);
-        background-size: auto 7rem;
+        background-size: auto 8rem;
     }
 
     .databricks-cont3 .box-cont {
         flex-direction: row;
-        width: calc(100% - 22rem);
+        width: calc(100% - 24rem - 4rem);
     }
 
     .databricks-cont3 .box-cont>div {
@@ -5009,6 +5012,7 @@
     .mendix-cont3 .box-tit {
         margin-bottom: 2rem;
         padding-top: 10rem;
+        font-weight: 500;
         background-size: auto 8rem;
     }
 
@@ -5025,9 +5029,9 @@
     }
 
     .mendix-cont4 .box-cont {
-        padding: 16rem 3rem 4rem;
+        padding: 14rem 9rem 4rem;
         background-position: top 3rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .mendix-cont4 .box-cont li {
@@ -5083,7 +5087,7 @@
     .naverworks-cont5 .box-cont>div {
         width: calc((100% - 2rem) / 2);
         padding: 12.6rem 0 3rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
         background-position: center top 3rem;
         background-size: auto 8rem;
     }
@@ -5181,10 +5185,11 @@
         padding: 4rem;
     }
 
-    .ito-cont4 .box-tit {
+    .ito-cont4 .box-tit  {
         margin-bottom: 2rem;
-        padding-top: 12rem;
-        background-size: auto 10rem;
+        padding-top: 10rem;
+        font-weight: 500;
+        background-size: auto 8rem;
     }
 
     .ito-cont4 .box-cont li {
@@ -5213,21 +5218,21 @@
     }
 
     .gdc-cont3>div {
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
         gap: 2rem;
-        padding: 1rem;
+        padding: 4rem;
     }
 
     .gdc-cont3>div>div {
         width: auto;
         flex: 1;
-        padding: 3rem 0;
+        padding: 4rem 0;
     }
 
     .gdc-cont3 .box-cont {
-        padding: 11.5rem 5rem 0;
-        font-size: 2.4rem;
-        background-size: auto 10rem;
+        padding: 9rem 5rem 0;
+        font-size: 1.8rem;
+        background-size: auto 8rem;
     }
 
     .gdc-cont4>div {
@@ -5241,7 +5246,7 @@
     }
 
     .gdc-cont4 .num {
-        font-size: 6rem;
+        font-size: 6rem; 
     }
 
     .gdc-cont4>div>div>div {
@@ -5249,7 +5254,7 @@
         align-items: center;
         gap: 5rem;
         min-height: 8rem;
-        padding-left: 4rem;
+        /* padding-left: 4rem; */
     }
 
     .gdc-cont4 .box-tit {
@@ -5286,9 +5291,10 @@
     }
 
     .bpo-cont1 .box-cont {
-        padding-bottom: 12rem;
+        padding-bottom: 10rem;
         font-size: 2.4rem;
-        background-size: auto 10rem;
+        font-weight: 500;
+        background-size: auto 8rem;
     }
 
     .bpo-cont2 {
@@ -5328,7 +5334,7 @@
         font-size: 3.8rem;
     }
 
-    .service-list .service-item:hover {
+    .service-list .service-item.on {
         border-color: var(--text-point);
         color: var(--white);
         background-color: var(--primary);
@@ -6533,11 +6539,11 @@
     .s4hana-cont1>div>div {
         width: auto;
         flex: 1;
-        padding: 16.6rem 0 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
-        background-position: center top 5rem;
-        background-size: auto 10rem;
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont2 .box-cont {
@@ -6576,11 +6582,11 @@
     }
 
     .s4hana-cont4 .box-cont {
-        padding: 16rem 4rem 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
+        padding: 14rem 4rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont5 {
@@ -6612,27 +6618,28 @@
     .s4hana-cont6>div>div {
         flex: none;
         width: calc((100% - 2rem) / 2);
-        padding: 3rem 4rem 3rem 20rem;
+        padding: 3rem 4rem 3rem 17rem;
         background-position: left 4rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont6 .box-tit {
         margin-bottom: 1rem;
         font-size: 2.4rem;
+        font-weight: 500;
     }
 
     .s4hana-cont6 .box-cont {
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 
-    .s4hana-cont7 .box-cont {
-        padding: 16rem 4rem 5rem;
-        font-size: 2.4rem;
-        font-weight: 500;
+    .s4hana-cont7 .box-cont  {
+        padding: 14rem 4rem 4rem;
+        font-size: 1.8rem;
+        font-weight: 400;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont8 {
@@ -6649,10 +6656,10 @@
     }
 
     .s4hana-cont8 .box-cont>p {
-        min-height: 10rem;
-        padding-left: 13rem;
-        font-size: 2.4rem;
-        background-size: auto 10rem;
+        min-height: 8rem;
+        padding-left: 11rem;
+        font-size: 2rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont8 .box-cont>div {
@@ -6660,12 +6667,17 @@
     }
 
     .s4hana-cont8 .box-stit {
-        font-size: 2.4rem;
+        font-size: 2rem;
     }
 
     .s4hana-cont8 .box-stit+p {
         font-size: 1.8rem;
     }
+
+    .s4hana-cont8 .box-cont a {
+        background-size: auto 2.1rem;
+    }
+    
 
     .s4hana-cont9>div {
         gap: 2rem;
@@ -6675,11 +6687,11 @@
         flex-direction: row;
         align-items: center;
         gap: 5rem;
-        min-height: 14rem;
-        padding: 2rem 6rem 2rem 23rem;
+        min-height: 12rem;
+        padding: 2rem 6rem 2rem 19rem;
         text-align: left;
         background-position: left 6rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .s4hana-cont9 .box-tit {
@@ -6689,6 +6701,7 @@
         margin-bottom: 0;
         padding-right: 2.9rem;
         font-size: 2.4rem;
+        font-weight: 500;
     }
 
     .s4hana-cont9 .box-tit::after {
@@ -6701,11 +6714,11 @@
         transform: translateY(-50%);
         background: url(../img/business/bg_s4hana_cont9_arrow.svg) no-repeat center / contain;
     }
-
+ 
     .s4hana-cont9 .box-cont {
         flex: 1;
-        font-size: 2rem;
-        font-weight: 500;
+        font-size: 1.8rem;
+        font-weight: 400;
     }
 
     .s4hana-bridge {
@@ -7004,8 +7017,8 @@
 
     /* aws */
     .aws-cont2 .box-cont {
-        padding-top: 16rem;
-        background-size: 10.8rem auto;
+        padding-top: 14rem;
+        background-size: auto 8rem;
     }
 
     .aws-cont4>div {
@@ -7046,11 +7059,11 @@
     .aws-cont6 .box-cont .service-list div {
         /* flex-basis: calc(25% - 2rem); */
         flex: 1;
-        min-height: 26rem;
-        padding: 17rem 5rem 0;
-        font-size: 2.4rem;
+        /* min-height: 23rem; */
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
         background-position: center top 4rem;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .aws-bridge {
@@ -7140,11 +7153,11 @@
 
     .msazure-cont6>div>div {
         flex: 1;
-        height: 26rem;
-        padding: 14.6rem 0 2rem;
-        font-size: 2.4rem;
-        background-position: center top 3rem;
-        background-size: 10rem 10rem;
+        /* height: 26rem; */
+        padding: 14rem 0 4rem;
+        font-size: 1.8rem;
+        background-position: center top 4rem;
+        background-size: auto 8rem;
     }
 
     .msazure-cont8 .box-cont {
@@ -7171,7 +7184,7 @@
         padding: 13rem 0 4rem;
         text-align: center;
         background-position: center top 4rem;
-        background-size: 7rem;
+        background-size: auto 7rem;
     }
 
     .powerPlatform-cont1 .box-tit {
@@ -7196,16 +7209,17 @@
         padding: 3rem 4rem 3rem 16rem;
         background-repeat: no-repeat;
         background-position: left 4rem center;
-        background-size: 10rem auto;
+        background-size: auto 8rem;
     }
 
     .powerPlatform-cont2 .box-tit {
         margin-bottom: 1rem;
         font-size: 2.4rem;
-    }
+        font-weight: 500;
+    } 
 
     .powerPlatform-cont2 .box-cont {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .powerPlatform-cont3 {
@@ -7220,7 +7234,7 @@
     .powerPlatform-cont3 .box-cont {
         padding: 4rem 3rem 5rem 16rem;
         background-position: left 4rem center;
-        background-size: 8rem auto;
+        background-size: auto 8rem;
     }
 
     .powerPlatform-cont3>div:nth-of-type(1) .box-cont {
@@ -7283,8 +7297,8 @@
     }
 
     .naverCloudPlatform-cont6 .box-cont {
-        padding: 16rem 3rem 4rem;
-        background-size: auto 10rem;
+        padding: 14rem 3rem 4rem;
+        background-size: auto 8rem;
     }
 
     .naverCloudPlatform-bridge {
@@ -7370,22 +7384,9 @@
     }
 
     .databricks-cont2 .box-cont {
-        padding: 4rem 3rem 5rem 15rem;
+        padding: 4rem 3rem 5rem 16rem;
         background-position: left 4rem center;
-        background-size: 9rem;
-        background-image: url(../img/business/bg_databricks_cont2_01.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(2) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_02.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(3) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_03.svg)
-    }
-
-    .databricks-cont2>div:nth-of-type(4) .box-cont {
-        background-image: url(../img/business/bg_databricks_cont2_04.svg)
+        background-size: auto 8rem;
     }
 
     .databricks-cont3>div {
@@ -7395,19 +7396,20 @@
     .databricks-cont3>div>div {
         display: flex;
         align-items: center;
-        padding: 4rem;
+        /* padding: 4rem; */
+        padding: 4rem 0;
     }
 
     .databricks-cont3 .box-tit {
-        width: 22rem;
-        padding-top: 8rem;
+        width: 24rem;
+        padding-top: 9rem;
         border-right: 1px dashed var(--text-point);
-        background-size: auto 7rem;
+        background-size: auto 8rem;
     }
 
     .databricks-cont3 .box-cont {
         flex-direction: row;
-        width: calc(100% - 22rem);
+        width: calc(100% - 24rem - 4rem);
     }
 
     .databricks-cont3 .box-cont>div {
@@ -7478,6 +7480,7 @@
     .mendix-cont3 .box-tit {
         margin-bottom: 2rem;
         padding-top: 10rem;
+        font-weight: 500;
         background-size: auto 8rem;
     }
 
@@ -7494,9 +7497,9 @@
     }
 
     .mendix-cont4 .box-cont {
-        padding: 16rem 3rem 4rem;
+        padding: 14rem 7rem 4rem;
         background-position: top 3rem center;
-        background-size: auto 10rem;
+        background-size: auto 8rem;
     }
 
     .mendix-cont4 .box-cont li {
@@ -7552,7 +7555,7 @@
     .naverworks-cont5 .box-cont>div {
         width: calc((100% - 2rem) / 2);
         padding: 12.6rem 0 3rem;
-        font-size: 2rem;
+        font-size: 1.8rem;
         background-position: center top 3rem;
         background-size: auto 8rem;
     }
@@ -7654,10 +7657,11 @@
         padding: 4rem;
     }
 
-    .ito-cont4 .box-tit {
+    .ito-cont4 .box-tit  {
         margin-bottom: 2rem;
-        padding-top: 12rem;
-        background-size: auto 10rem;
+        padding-top: 10rem;
+        font-weight: 500;
+        background-size: auto 8rem;
     }
 
     .ito-cont4 .box-cont li {
@@ -7686,21 +7690,21 @@
     }
 
     .gdc-cont3>div {
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
         gap: 2rem;
-        padding: 1rem;
+        padding: 4rem;
     }
 
     .gdc-cont3>div>div {
         width: auto;
         flex: 1;
-        padding: 3rem 0;
+        padding: 4rem 0;
     }
 
     .gdc-cont3 .box-cont {
-        padding: 11.5rem 5rem 0;
-        font-size: 2.4rem;
-        background-size: auto 10rem;
+        padding: 9rem 5rem 0;
+        font-size: 1.8rem;
+        background-size: auto 8rem;
     }
 
     .gdc-cont4>div {
@@ -7722,7 +7726,7 @@
         align-items: center;
         gap: 5rem;
         min-height: 8rem;
-        padding-left: 4rem;
+        /* padding-left: 4rem; */
     }
 
     .gdc-cont4 .box-tit {
@@ -7759,9 +7763,10 @@
     }
 
     .bpo-cont1 .box-cont {
-        padding-bottom: 12rem;
+        padding-bottom: 10rem;
         font-size: 2.4rem;
-        background-size: auto 10rem;
+        font-weight: 500;
+        background-size: auto 8rem;
     }
 
     .bpo-cont2 {
