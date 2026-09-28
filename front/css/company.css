@@ -16,8 +16,11 @@
 
 /* company tab */
 .company-tab {
+   --sticky-offset: 6.1rem;
    position: sticky;
-   top: 6.1rem;
+   /* 헤더 노출 시 헤더 높이(--sticky-tab-top)만큼 함께 이동 */
+   top: calc(var(--sticky-tab-top, 0px) + var(--sticky-offset));
+   transition: top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -1202,7 +1205,7 @@
    
       /* company tab */
       .company-tab {
-         top: 7.4rem;
+         --sticky-offset: 7.4rem;
          padding: 0 22rem;
          margin-top: 10rem;
       }
@@ -2235,7 +2238,7 @@
 
    /* company tab */
    .company-tab {
-      top: 7.4rem;
+      --sticky-offset: 7.4rem;
       padding: 0 22rem;
       margin-top: 10rem;
    }

@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     initPageTitle();
     initHeader();
+    initHeaderAutoHide();
     initMobileGnb();
     initPcGnb();
     initSearchLayer();
@@ -51,6 +52,182 @@ function initHeader() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
+}
+
+/* ==========================================================================
+   1-1. 탭 페이지 헤더 자동 숨김 (Header Auto Hide with Sticky Tab)
+   - 탭(.tab-list) 또는 카테고리(.category-list)가 헤더 아래에 고정된 이후
+     · 아래로 스크롤: 헤더 숨김 + 탭 top 0
+     · 위로 스크롤: 헤더 노출 + 탭 헤더 바로 아래
+   - 탭 클릭 이동 중에는 헤더 상태를 도착 상태로 미리 고정(lock)하여 도착 후 위치 보정(튐) 없음
+   ========================================================================== */
+let headerAutoHide = null;
+
+// 문서 기준 top (border-box)
+function getDocTop(element) {
+    return element.getBoundingClientRect().top + window.scrollY;
+}
+
+// sticky 요소의 고정 전(원래 위치) 문서 기준 top — sticky 상태와 무관하게 계산
+function getStickyNaturalTop(element) {
+    const prev = element.previousElementSibling;
+    if (prev) {
+        const prevMarginBottom = parseFloat(window.getComputedStyle(prev).marginBottom) || 0;
+        return prev.getBoundingClientRect().bottom + window.scrollY + prevMarginBottom;
+    }
+
+    const parent = element.parentElement;
+    const parentStyle = window.getComputedStyle(parent);
+    const parentBorderTop = parseFloat(parentStyle.borderTopWidth) || 0;
+    const parentPaddingTop = parseFloat(parentStyle.paddingTop) || 0;
+    return getDocTop(parent) + parentBorderTop + parentPaddingTop;
+}
+
+function initHeaderAutoHide() {
+    const header = document.querySelector("header");
+    const tabList = document.querySelector(".tab-list, .category-list");
+    if (!header || !tabList) return;
+
+    const root = document.documentElement;
+    const SCROLL_DIR_EPS = 2;
+    let hidden = false;
+    let locked = false;
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const getHeaderHeight = () => header.offsetHeight;
+
+    // 헤더 노출 상태 기준으로 탭이 헤더 아래에 고정되는 시점을 지났는지
+    const isPastTab = (scrollY) => scrollY > 0 && scrollY + getHeaderHeight() >= getStickyNaturalTop(tabList) - 1;
+
+    // 모바일 GNB · 검색 레이어 · 키보드 포커스가 헤더 안에 있으면 숨기지 않음
+    const isHeaderBusy = () =>
+        header.classList.contains("act") ||
+        document.body.classList.contains("no-scroll") ||
+        Boolean(header.querySelector(":focus-visible"));
+
+    const apply = (nextHidden) => {
+        hidden = nextHidden;
+        header.classList.toggle("is-hide", hidden);
+        root.style.setProperty("--sticky-tab-top", `${hidden ? 0 : getHeaderHeight()}px`);
+    };
+
+    const sync = () => {
+        ticking = false;
+        const scrollY = window.scrollY;
+        const delta = scrollY - lastScrollY;
+
+        if (!locked) {
+            let nextHidden = hidden;
+            if (!isPastTab(scrollY) || isHeaderBusy()) {
+                nextHidden = false;
+            } else if (delta > SCROLL_DIR_EPS) {
+                nextHidden = true;
+            } else if (delta < -SCROLL_DIR_EPS) {
+                nextHidden = false;
+            }
+            if (nextHidden !== hidden) apply(nextHidden);
+        }
+
+        // 느린 스크롤도 방향이 누적되도록 임계값 이상 이동했을 때만 기준점 갱신
+        if (Math.abs(delta) > SCROLL_DIR_EPS) lastScrollY = scrollY;
+    };
+
+    const requestSync = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(sync);
+    };
+
+    header.classList.add("is-auto-hide");
+    window.addEventListener("scroll", requestSync, { passive: true });
+    window.addEventListener("resize", () => {
+        apply(hidden);
+        requestSync();
+    });
+
+    headerAutoHide = {
+        // 헤더 숨김 여부에 따른 탭 고정 top
+        getTabTop: (isHeaderHidden = hidden) => (isHeaderHidden ? 0 : getHeaderHeight()),
+        // 탭 클릭 이동 — 도착 상태로 헤더를 먼저 전환하고 이동 중 방향 감지 중지
+        lock: (nextHidden) => {
+            locked = true;
+            apply(nextHidden);
+        },
+        unlock: () => {
+            locked = false;
+            lastScrollY = window.scrollY;
+        }
+    };
+
+    apply(false);
+    sync();
+}
+
+function getMaxScroll() {
+    return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+}
+
+// 요소별 추가 sticky 오프셋 (--sticky-offset, px·rem) — 예: 카테고리 아래 2단 탭(.company-tab)
+function getStickyOffset(element) {
+    const raw = window.getComputedStyle(element).getPropertyValue("--sticky-offset").trim();
+    const value = parseFloat(raw);
+    if (!value) return 0;
+    if (raw.endsWith("rem")) {
+        return value * (parseFloat(window.getComputedStyle(document.documentElement).fontSize) || 10);
+    }
+    return value;
+}
+
+// 헤더 숨김 여부에 따른 sticky 탭 고정 top (헤더 자동 숨김 미적용 시 CSS top 사용)
+function getStickyTabTop(element, isHeaderHidden) {
+    if (!headerAutoHide) return parseFloat(window.getComputedStyle(element).top) || 0;
+    return headerAutoHide.getTabTop(isHeaderHidden) + getStickyOffset(element);
+}
+
+/**
+ * 탭 클릭 이동 공통 스크롤
+ * - 이동 방향으로 도착 시 헤더 상태를 먼저 확정(아래: 숨김 / 위: 노출)하고 이동 → 도착 후 위치 보정(튐) 없음
+ * - getTargetTop(isHeaderHidden): 헤더 상태별 목표 scrollTop
+ * - 이동 중 사용자가 직접 스크롤(휠·터치·키)하면 즉시 종료
+ */
+let cancelScrollWithHeader = null;
+
+function scrollWithHeader(getTargetTop, onEnd) {
+    if (cancelScrollWithHeader) cancelScrollWithHeader();
+
+    const clampTop = (top) => Math.min(getMaxScroll(), Math.max(0, Math.round(top)));
+    const downTop = clampTop(getTargetTop(true));
+    const isHeaderHidden = Boolean(headerAutoHide) && downTop > window.scrollY + 1;
+    const targetTop = isHeaderHidden ? downTop : clampTop(getTargetTop(false));
+    const USER_EVENTS = ["wheel", "touchstart", "keydown"];
+    let idleTimer = null;
+
+    const end = () => {
+        clearTimeout(idleTimer);
+        window.removeEventListener("scroll", onProgress);
+        window.removeEventListener("scrollend", end);
+        USER_EVENTS.forEach((type) => window.removeEventListener(type, end));
+        cancelScrollWithHeader = null;
+        if (headerAutoHide) headerAutoHide.unlock();
+        if (onEnd) onEnd();
+    };
+
+    // scrollend 미지원 브라우저 대비 — 스크롤 이벤트가 150ms 없으면 종료
+    function onProgress() {
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(end, 150);
+    }
+
+    cancelScrollWithHeader = end;
+    if (headerAutoHide) headerAutoHide.lock(isHeaderHidden);
+
+    window.addEventListener("scroll", onProgress, { passive: true });
+    window.addEventListener("scrollend", end);
+    USER_EVENTS.forEach((type) => window.addEventListener(type, end, { passive: true }));
+    onProgress();
+
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
 }
 
 /* ==========================================================================
@@ -529,25 +706,10 @@ function initTabMenu() {
             .map((button, index) => ({ button, cont: getTargetCont(button, index) }))
             .filter((item) => item.cont);
 
+        const isType2 = tabContainer.classList.contains("type2");
+        const SPY_THRESHOLD = 30;
         let isClickScrolling = false;
-        let scrollTimeout = null;
-
-        const getScrollOffset = (targetCont) => {
-            const header = document.querySelector("header");
-            const headerHeight = header ? header.offsetHeight : 0;
-            const tabHeight = tabContainer.offsetHeight || 0;
-
-            let contMarginTop = 0;
-            const contElement = targetCont || (tabTargets[0] && tabTargets[0].cont);
-            if (contElement) {
-                const marginTopVal = parseFloat(window.getComputedStyle(contElement).marginTop);
-                if (!isNaN(marginTopVal)) {
-                    contMarginTop = marginTopVal;
-                }
-            }
-
-            return headerHeight + tabHeight - contMarginTop;
-        };
+        let clickedButton = null;
 
         const setActiveTab = (activeButton) => {
             tabButtons.forEach((btn) => {
@@ -555,29 +717,24 @@ function initTabMenu() {
             });
         };
 
-        const isType2 = tabContainer.classList.contains("type2");
-
-        const getOffsetTop = (element) => {
-            let offsetTop = 0;
-            let node = element;
-            while (node) {
-                offsetTop += node.offsetTop;
-                node = node.offsetParent;
-            }
-            return offsetTop;
+        // 도착 스크롤 위치 — 첫 번째 컨텐츠·type2는 탭이 막 고정되는 위치, 나머지는 컨텐츠 상단이 탭 바로 아래
+        const getTargetScrollTop = (targetCont, index, isHeaderHidden) => {
+            const tabTop = getStickyTabTop(tabContainer, isHeaderHidden);
+            return isType2 || index === 0
+                ? getStickyNaturalTop(tabContainer) - tabTop
+                : getDocTop(targetCont) - tabTop - tabContainer.offsetHeight;
         };
 
-        const scrollToContent = (targetCont) => {
-            const stickyTop = parseFloat(window.getComputedStyle(tabContainer).top) || 0;
-            const tabHeight = tabContainer.offsetHeight || 0;
-            const tabMarginBottom = parseFloat(window.getComputedStyle(tabContainer).marginBottom) || 0;
-            const contMarginTop = parseFloat(window.getComputedStyle(targetCont).marginTop) || 0;
-            const target = targetCont || tabContainer;
-
-            window.scrollTo({
-                top: Math.max(0, getOffsetTop(target) - stickyTop - tabHeight - tabMarginBottom - contMarginTop),
-                behavior: "smooth"
-            });
+        const scrollToContent = (targetCont, index) => {
+            isClickScrolling = true;
+            scrollWithHeader(
+                (isHeaderHidden) => getTargetScrollTop(targetCont, index, isHeaderHidden),
+                () => {
+                    isClickScrolling = false;
+                    // 페이지 하단 등 목표까지 스크롤이 닿지 않아도 클릭한 탭 유지
+                    if (clickedButton) setActiveTab(clickedButton);
+                }
+            );
         };
 
         tabButtons.forEach((button, index) => {
@@ -587,31 +744,20 @@ function initTabMenu() {
                 const targetCont = getTargetCont(button, index);
                 if (!targetCont) return;
 
+                clickedButton = button;
+
                 if (isType2) {
                     fallbackContents.forEach((cont) => {
                         cont.classList.toggle("hide", cont !== targetCont);
                     });
 
                     requestAnimationFrame(() => {
-                        requestAnimationFrame(() => scrollToContent(targetCont));
+                        requestAnimationFrame(() => scrollToContent(targetCont, index));
                     });
                     return;
                 }
 
-                const offset = getScrollOffset(targetCont);
-                const targetTop = targetCont.getBoundingClientRect().top + window.pageYOffset - offset;
-
-                isClickScrolling = true;
-                if (scrollTimeout) clearTimeout(scrollTimeout);
-
-                window.scrollTo({
-                    top: Math.max(0, targetTop),
-                    behavior: "smooth"
-                });
-
-                scrollTimeout = setTimeout(() => {
-                    isClickScrolling = false;
-                }, 800);
+                scrollToContent(targetCont, index);
             });
         });
 
@@ -619,22 +765,28 @@ function initTabMenu() {
         if (tabTargets.length > 0 && !isType2) {
             const onScroll = () => {
                 if (isClickScrolling) return;
+                clickedButton = null;
 
-                const scrollPos = window.pageYOffset;
+                const line = getStickyTabTop(tabContainer) + tabContainer.offsetHeight + SPY_THRESHOLD;
                 let activeButton = tabTargets[0].button;
 
                 tabTargets.forEach(({ button, cont }) => {
-                    const offset = getScrollOffset(cont) + 30;
-                    const contTop = cont.getBoundingClientRect().top + window.pageYOffset;
-                    if (scrollPos + offset >= contTop) {
+                    if (cont.getBoundingClientRect().top <= line) {
                         activeButton = button;
                     }
                 });
+
+                // 페이지 최하단 도달 시 마지막 탭 활성 (마지막 컨텐츠가 짧아 기준선에 닿지 않는 경우)
+                if (window.scrollY > 0 && window.scrollY >= getMaxScroll() - 2) {
+                    activeButton = tabTargets[tabTargets.length - 1].button;
+                }
 
                 setActiveTab(activeButton);
             };
 
             window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            onScroll();
         }
     });
 }
@@ -666,15 +818,13 @@ function initCompanyTab() {
         const tabContents = companyCont ? Array.from(companyCont.querySelectorAll(".tab-cont")) : [];
 
         const scrollToContent = () => {
-            const stickyTop = parseFloat(window.getComputedStyle(tabContainer).top) || 0;
             const tabHeight = tabContainer.offsetHeight || 0;
             const contMarginTop = companyCont ? (parseFloat(window.getComputedStyle(companyCont).marginTop) || 0) : 0;
             const target = (companyCont && companyCont.querySelector(".tab-cont.act")) || companyCont || tabContainer;
 
-            window.scrollTo({
-                top: Math.max(0, getOffsetTop(target) - stickyTop - tabHeight - contMarginTop),
-                behavior: "smooth"
-            });
+            scrollWithHeader((isHeaderHidden) =>
+                getOffsetTop(target) - getStickyTabTop(tabContainer, isHeaderHidden) - tabHeight - contMarginTop
+            );
         };
 
         buttons.forEach((button) => {

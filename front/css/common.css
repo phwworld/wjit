@@ -227,7 +227,20 @@ header {
   border-bottom: 1px solid #686c78;
   background-color: #fff;
   z-index: 10;
-  transition: z-index 0.3s ease-in-out;
+  transition: z-index 0.3s ease-in-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+}
+
+/* 탭 페이지 헤더 자동 숨김 — 헤더가 본문(.content z-index 50) 위에 노출 */
+header.is-auto-hide {
+  z-index: 60;
+}
+
+/* 숨김 완료 후 visibility 처리 — 헤더 밖으로 넘치는 로고 등이 탭 위에 남지 않도록 */
+header.is-hide {
+  transform: translateY(-100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: z-index 0.3s ease-in-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s 0.3s;
 }
 
 header.act {
