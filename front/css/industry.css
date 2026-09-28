@@ -212,37 +212,6 @@
 }
 
 /* ==========================================
-   태블릿 구간 (Tablet) - 1025px ~ 1366px
-   ========================================== */
-@media (min-width: 1025px) and (max-width: 1439px) {
-
-   .inner-cont.industry .s-tit {
-      margin-top: 8rem;
-   }
-
-   .inner-cont.industry .tab-cont {
-      padding: 0;
-      border: 0;
-   }
-
-   /* visual cont */
-   .visual-cont {
-      margin-top: 8rem;
-   }
-
-   .visual-cont .badge {
-      position: absolute;
-      top: 6rem;
-      left: -1rem;
-   }
-
-   .visual-cont .badge>img {
-      height: 12rem;
-   }
-
-}
-
-/* ==========================================
    PC / 데스크톱 구간 (PC) - 1440px 이상
    ========================================== */
 @media (min-width: 1440px) {
@@ -502,3 +471,34 @@
    }
 
 }
+
+/* ==========================================
+   태블릿 구간 (Tablet) - 1025px ~ 1366px
+   ========================================== */
+   @media (min-width: 1025px) and (max-width: 1439px) {
+
+      .inner-cont.industry .s-tit {
+         margin-top: 8rem;
+      }
+   
+      .inner-cont.industry .tab-cont {
+         padding: 0;
+         border: 0;
+      }
+   
+      /* visual cont */
+      .visual-cont {
+         margin-top: 8rem;
+      }
+   
+      .visual-cont .badge {
+         position: absolute;
+         top: 6rem;
+         left: -1rem;
+      }
+   
+      .visual-cont .badge>img {
+         height: 12rem;
+      }
+   
+   }

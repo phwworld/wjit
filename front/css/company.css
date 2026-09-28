@@ -1190,1038 +1190,6 @@
 }
 
 /* ==========================================
-   태블릿 구간 (Tablet) - 1025px ~ 1439px
-   ========================================== */
-@media (min-width: 1025px) and (max-width: 1439px) {
-
-   /* company tab */
-   .company-tab {
-      top: 7.4rem;
-      padding: 0 22rem;
-      margin-top: 10rem;
-   }
-
-   .company-tab button {
-      flex: 1;
-      width: auto;
-      height: 6.4rem;
-      border-color: var(--border-default);
-      font-size: 2.4rem;
-      font-weight: 500;
-      line-height: normal;
-   }
-
-   .company-tab button.act {
-      border-width: 2px;
-      border-color: var(--primary);
-   }
-
-   /* company cont */
-   .company-cont {
-      margin-top: 10rem;
-   }
-
-   .company-cont .c-tit span {
-      font-size: 4rem;
-   }
-
-   .company-cont .c-tit.font-wjlove {
-      margin-bottom: 6rem;
-      font-size: 4.6rem;
-   }
-
-   /* overview */
-   .overview-cont1 {
-      display: grid;
-      grid-template-columns: minmax(18rem, 28.3rem) minmax(32rem, 65.2rem) minmax(18rem, 28.3rem);
-      grid-template-areas:
-         "sap diagram cloud"
-         "solution solution solution";
-      column-gap: 4rem;
-      row-gap: 6rem;
-      align-items: center;
-      margin-top: 8rem;
-      padding-bottom: 5rem;
-   }
-
-   .overview-cont1 .overview-diagram {
-      grid-area: diagram;
-      margin-bottom: 0;
-   }
-
-   .overview-cont1 .overview-diagram .mo {
-      display: none;
-   }
-
-   .overview-cont1 .overview-diagram .pc {
-      display: block;
-      width: 100%;
-      max-width: none;
-   }
-
-   .overview-cont1 .overview-group {
-      width: auto;
-      padding: 0;
-      background-color: transparent;
-   }
-
-   .overview-cont1 .overview-group.sap {
-      grid-area: sap;
-   }
-
-   .overview-cont1 .overview-group.cloud {
-      grid-area: cloud;
-      text-align: right;
-   }
-
-   .overview-cont1 .overview-group.solution {
-      grid-area: solution;
-   }
-
-   .overview-cont1 .group-inner {
-      padding: 0;
-      border: 0;
-      background-color: transparent;
-   }
-
-   .overview-cont1 .overview-group h5 {
-      display: none;
-   }
-
-   .overview-cont1 .overview-group li+li {
-      margin-top: 3rem;
-   }
-
-   .overview-cont1 .overview-group.solution ul {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 8rem;
-   }
-
-   .overview-cont1 .overview-group.solution li+li {
-      margin-top: 0;
-   }
-
-   .overview-cont1 .overview-group strong {
-      margin-bottom: 0.4rem;
-      font-size: 2.4rem;
-      letter-spacing: -0.02em;
-      line-height: 1.4;
-   }
-
-   .overview-cont1 .overview-group p {
-      font-size: 1.8rem;
-      letter-spacing: 0;
-      line-height: 1.4;
-   }
-
-   /* overview cont2 */
-   .overview-cont2 {
-      margin-top: 6rem;
-   }
-
-   .overview-cont2.history>.history-list {
-      border-top-width: 0.3rem;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-head {
-      gap: 0;
-      padding: 2.4rem 4rem 2.4rem 0;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-head::after {
-      right: 0.8rem;
-      width: 2.4rem;
-      height: 1.8rem;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-head strong {
-      width: 18.4rem;
-      font-size: 2.4rem;
-      letter-spacing: -0.02em;
-      line-height: 1;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-head span {
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-cont .item-cont-inner,
-   .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
-      padding-right: 0;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-cont-inner {
-      padding: 0 0 0 10rem;
-   }
-
-   .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
-      padding: 4rem 0 4rem 10rem;
-   }
-
-   .overview-cont2 .item-cont .history-item .year {
-      width: auto;
-      padding-right: 3rem;
-      font-size: 2.4rem;
-      letter-spacing: -0.02em;
-   }
-
-   .overview-cont2 .item-cont .history-item .marker::before {
-      top: 0.6rem;
-   }
-
-   .overview-cont2 .item-cont .history-item .marker::after {
-      top: 1.2rem;
-   }
-
-   .overview-cont2 .item-cont .history-item ul {
-      padding: 0 0 4rem 3rem;
-   }
-
-   .overview-cont2 .item-cont .history-item:last-child ul {
-      padding-bottom: 1rem;
-   }
-
-   .overview-cont2 .item-cont .history-item li {
-      font-size: 1.8rem;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overview-cont2 .item-cont .history-item li+li {
-      margin-top: 0;
-   }
-
-   .overview-cont3 {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4rem;
-   }
-
-   .overview-cont3 .overview-visual {
-      order: 1;
-      flex: 0 1 48rem;
-      width: 48rem;
-      max-width: 48rem;
-   }
-
-   .overview-cont3 .cont-txt {
-      flex: 1;
-      min-width: 0;
-      font-size: 2rem;
-      font-weight: 500;
-   }
-
-   .overview-cont4 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.6rem;
-      margin-top: 4rem;
-      padding: 2.4rem;
-   }
-
-   .overview-cont4 .love-card {
-      height: auto;
-      min-height: 28rem;
-      padding: 2.4rem 2rem 3rem;
-      background-position: right 2rem top 2.4rem;
-      background-size: 7rem 7rem;
-      border: 1px dashed var(--border-default);
-   }
-
-   .overview-cont4 .card-head {
-      height: auto;
-      min-height: 7rem;
-      margin-bottom: 1.6rem;
-      padding: 0 8rem 0 0;
-      font-size: 2.8rem;
-   }
-
-   .overview-cont4 .love-card p {
-      font-size: 1.8rem;
-      font-weight: 500;
-      line-height: 1.8;
-   }
-
-   .overview-cont5 {
-      margin-top: 4rem;
-      padding: 0 0 6rem;
-      background: linear-gradient(to bottom, transparent 14rem, var(--bg-surface) 14rem);
-   }
-
-   .overview-cont5 .ethics-diagram {
-      max-width: 64rem;
-      aspect-ratio: 868 / 360;
-   }
-
-   .overview-cont5 .ethics-diagram p {
-      font-size: 2.4rem;
-   }
-
-   .overview-cont5 .ethics-tit {
-      gap: 2rem;
-      font-size: 2.8rem;
-   }
-
-   .overview-cont5 .ethics-tit::before,
-   .overview-cont5 .ethics-tit::after {
-      flex: 1;
-      width: auto;
-   }
-
-   .overview-cont5 .ethics-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.6rem;
-   }
-
-   .overview-cont5 .ethics-item {
-      flex-direction: row;
-      align-items: stretch;
-   }
-
-   .overview-cont5 .ethics-item strong {
-      flex-shrink: 0;
-      width: 12rem;
-      height: auto;
-      min-height: 22rem;
-      font-size: 2.2rem;
-      line-height: 1.8;
-   }
-
-   .overview-cont5 .ethics-item ul,
-   .overview-cont5 .ethics-item .ethics-org {
-      flex: 1;
-      height: auto;
-      min-height: 22rem;
-      padding: 2.4rem 2rem;
-      border-color: var(--border-default);
-   }
-
-   .overview-cont5 .ethics-item ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-   }
-
-   .overview-cont5 .ethics-item li {
-      font-size: 1.8rem;
-      font-weight: 500;
-      line-height: 1.8;
-   }
-
-   .overview-cont5 .ethics-item li span {
-      padding-left: 8.8rem;
-   }
-
-   .overview-cont5 .ethics-org {
-      justify-content: center;
-      gap: 3rem;
-   }
-
-   .overview-cont5 .ethics-org p {
-      width: auto;
-      padding: 1rem 2.4rem;
-      font-size: 1.8rem;
-   }
-
-   .overview-cont5 .ethics-org p:first-child::after {
-      height: 3rem;
-      background-color: var(--border-default);
-   }
-
-   .overview-cont6 {
-      flex-direction: row;
-      justify-content: space-between;
-      height: auto;
-      min-height: 24rem;
-      margin-top: 6rem;
-      padding: 3rem 6rem;
-      border-width: 3rem;
-   }
-
-   .overview-cont6 .ci-logo {
-      width: 22rem;
-      height: 11.5rem;
-   }
-
-   .overview-cont6 .ci-btns {
-      flex-direction: row;
-      width: auto;
-      gap: 1.6rem;
-   }
-
-   .overview-cont6 .ci-btns a {
-      height: 5rem;
-      padding: 0 3rem;
-      border-color: var(--text-secondary);
-   }
-
-   .overview-cont7 {
-      position: relative;
-      display: block;
-      height: auto;
-      aspect-ratio: 1440 / 680;
-      margin-top: 6rem;
-      padding: 0;
-      background-color: var(--white);
-      box-shadow: inset 0 0 0 3rem var(--bg-surface);
-   }
-
-   .overview-cont7::after {
-      content: "";
-      position: absolute;
-      top: 4.412%;
-      right: 2.083%;
-      bottom: 4.412%;
-      left: 2.083%;
-      border: 1px dashed var(--border-default);
-      pointer-events: none;
-   }
-
-   .overview-cont7 .talent-logo {
-      display: none;
-   }
-
-   .overview-cont7 .talent-diagram {
-      display: block;
-      position: absolute;
-      left: 33.125%;
-      top: 15.441%;
-      width: 34.444%;
-      height: auto;
-   }
-
-   .overview-cont7 .talent-list {
-      display: block;
-      width: auto;
-   }
-
-   .overview-cont7 .talent-list li {
-      position: absolute;
-      display: block;
-      width: 22.222%;
-      padding: 0;
-      background: none;
-      border: 0;
-   }
-
-   .overview-cont7 .talent-list li>img {
-      display: none;
-   }
-
-   .overview-cont7 .talent-list li:nth-child(1) {
-      left: 5.347%;
-      top: 15.441%;
-      text-align: right;
-   }
-
-   .overview-cont7 .talent-list li:nth-child(2) {
-      left: 73.125%;
-      top: 15.441%;
-   }
-
-   .overview-cont7 .talent-list li:nth-child(3) {
-      left: 5.347%;
-      top: 61.324%;
-      text-align: right;
-   }
-
-   .overview-cont7 .talent-list li:nth-child(4) {
-      left: 73.125%;
-      top: 61.324%;
-   }
-
-   .overview-cont7 .talent-list li:nth-child(1) .talent-txt,
-   .overview-cont7 .talent-list li:nth-child(3) .talent-txt {
-      align-items: flex-end;
-   }
-
-   .overview-cont7 .talent-txt strong {
-      font-family: 'WOONGJINLOVE';
-      font-size: 2.2rem;
-      line-height: 1.6;
-   }
-
-   .overview-cont7 .talent-txt p {
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overview-cont8 {
-      gap: 4rem;
-      margin-top: 6rem;
-      padding: 4rem 2rem;
-      background-color: var(--bg-surface);
-   }
-
-   .overview-cont8 .reward-block {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 20rem 1fr;
-      align-items: start;
-      gap: 0;
-      min-height: 28rem;
-      padding: 0;
-      background: none;
-      box-shadow: none;
-      border: 0;
-   }
-
-   .overview-cont8 .reward-block::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 9.4rem;
-      height: 18rem;
-      background-color: var(--white);
-      border: 1px dashed var(--border-default);
-   }
-
-   .overview-cont8 .reward-head {
-      position: relative;
-      z-index: 1;
-      grid-column: 2;
-      grid-row: 1;
-      flex-direction: column-reverse;
-      justify-content: center;
-      gap: 0.6rem;
-      width: 20rem;
-      height: 20rem;
-      padding: 0;
-      border: 0.6rem solid #11bcff;
-      border-radius: 50%;
-      background-color: var(--white);
-   }
-
-   .overview-cont8 .reward-head::before,
-   .overview-cont8 .reward-head::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      z-index: -1;
-      width: 21rem;
-      height: 0.5rem;
-      background-color: #11bcff;
-      transform: translateY(-.8rem);
-   }
-
-   .overview-cont8 .reward-head::before {
-      right: 100%;
-   }
-
-   .overview-cont8 .reward-head::after {
-      left: 100%;
-   }
-
-   .overview-cont8 .reward-head strong {
-      font-family: 'WOONGJINLOVE';
-      font-size: 2.8rem;
-      letter-spacing: -0.04em;
-      line-height: 1.6;
-   }
-
-   .overview-cont8 .reward-head img {
-      width: 6.4rem;
-      height: 7.2rem;
-   }
-
-   .overview-cont8 .reward-block:nth-child(2) .reward-head img {
-      width: 7.2rem;
-      height: 7.2rem;
-   }
-
-   .overview-cont8 .reward-item {
-      position: relative;
-      z-index: 1;
-      grid-row: 1;
-      align-items: center;
-      gap: 1.6rem;
-      padding-top: 2.4rem;
-   }
-
-   .overview-cont8 .reward-item:nth-child(2) {
-      grid-column: 1;
-   }
-
-   .overview-cont8 .reward-item:nth-child(3) {
-      grid-column: 3;
-   }
-
-   .overview-cont8 .reward-item+.reward-item {
-      padding-top: 2.4rem;
-      border-top: 0;
-   }
-
-   .overview-cont8 .reward-item strong {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      flex-shrink: 0;
-      width: 14rem;
-      height: 14rem;
-      min-width: 14rem;
-      min-height: 14rem;
-      border: 0.4rem solid #11bcff;
-      border-radius: 50%;
-      background-color: var(--white);
-      font-family: 'WOONGJINLOVE';
-      font-size: 2.4rem;
-      letter-spacing: -0.04em;
-      line-height: 1.6;
-      text-align: center;
-   }
-
-   .overview-cont8 .reward-item p {
-      color: #1a1a1a;
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-      text-align: center;
-   }
-
-   .overview-cont9 {
-      gap: 2rem;
-      margin-top: 6rem;
-      padding: 2.4rem;
-   }
-
-   .overview-cont9>div {
-      justify-content: center;
-      gap: 0;
-      min-height: 14rem;
-      padding: 2.4rem 3rem 2.4rem 15.2rem;
-      border: 1px dashed var(--border-default);
-      background-position: left 4rem center;
-      background-size: 7.2rem 7.2rem;
-   }
-
-   .overview-cont9>div:nth-child(1) {
-      background-image: url(../img/company/img_overview_cont9_icon01.svg);
-   }
-
-   .overview-cont9>div:nth-child(2) {
-      background-image: url(../img/company/img_overview_cont9_icon02.svg);
-      background-size: 7.8rem 7.2rem;
-   }
-
-   .overview-cont9>div:nth-child(3) {
-      background-image: url(../img/company/img_overview_cont9_icon03.svg);
-      background-size: 7rem 7.2rem;
-   }
-
-   .overview-cont9 strong {
-      font-family: 'WOONGJINLOVE';
-      font-size: 2.4rem;
-      letter-spacing: -0.04em;
-      line-height: 1.6;
-   }
-
-   .overview-cont9 p {
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overview-cont10 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem 2.4rem;
-      margin-top: 6rem;
-      padding: 2.4rem;
-   }
-
-   .overview-cont10>div {
-      gap: 0;
-      min-height: 13rem;
-      height: auto;
-      padding: 2.4rem 2.4rem 2.4rem 11rem;
-      border: 1px dashed var(--border-default);
-      background-position: left 2.4rem center;
-      background-size: 5.6rem 5.6rem;
-   }
-
-   .overview-cont10>div:nth-child(3) {
-      background-size: 6.3rem 5.6rem;
-   }
-
-   .overview-cont10>div:nth-child(6) {
-      background-size: 4.4rem 5.6rem;
-   }
-
-   .overview-cont10>div:nth-child(8) {
-      background-size: 5.6rem 4.7rem;
-   }
-
-   .overview-cont10>div:nth-child(9) {
-      background-size: 6.4rem 5.1rem;
-   }
-
-   .overview-cont10 .mo {
-      display: none;
-   }
-
-   .overview-cont10 strong {
-      font-family: 'WOONGJINLOVE';
-      font-size: 2.2rem;
-      letter-spacing: -0.04em;
-      line-height: 1.6;
-   }
-
-   .overview-cont10 p {
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   /* financial */
-   .financial-tit {
-      display: flex;
-      justify-content: space-between; 
-      align-items: center;
-      margin-bottom: 5rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--text-body);
-   }
-
-   .financial-tit.devide {
-      margin-top: 10rem;
-      padding-top: 10rem;
-   }
-
-   .financial-tit .c-tit {
-      margin-bottom: 0;
-   }
-
-   .financial-tit label {
-      display: inline-block;
-      margin-right: 2rem;
-      font-size: 2.4rem;
-   }
-
-   .financial-tit select {
-      width: 24rem;
-      height: 4.8rem;
-   }
-
-   .financial-cont {
-      display: flex;
-      flex-wrap: wrap;;
-   }
-
-   .financial-cont .tit {
-      width: 31rem;
-      margin: 10rem 0 0;
-      padding-top: 10rem;
-      border-top: 1px dashed var(--border-default);
-      font-size: 3.2rem;
-      color: var(--text-body);
-   }
-   .financial-cont .tit span {
-      display: block;
-      margin-left: 0;
-      font-size: 2rem;
-   }
-   
-   .financial-cont .info {
-      margin-top: 2rem;
-      font-size: 2rem;
-   }
-
-   .financial-cont>div {
-      width: calc(100% - 31rem);
-      margin-top: 10rem;
-      padding-top: 10rem;
-      border-top: 1px dashed var(--border-default);
-   }
-
-   .financial-cont .tit:first-child,
-   .financial-cont div:nth-of-type(1) {
-      margin-top: 0;
-      padding-top: 0;
-      border: 0;
-   }
-
-   .financial-cont.devide {
-      margin-top: 10rem;
-      padding-top: 10rem;
-   }
-
-   .financial-cont .scroll-txt {
-      display: none;
-   }
-
-   .financial-cont .scroll-table,
-   .financial-cont > div {
-      overflow-x: auto;
-   }
-
-   .financial-cont thead th {
-      height: 5.2rem;
-      padding: 0 2rem;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
-      line-height: normal;
-   }
-
-   .financial-cont tbody th,
-   .financial-cont tbody td {
-      height: 5.2rem;
-      padding: 1.4rem 2rem 1.5rem;
-      font-size: 1.8rem;
-      line-height: 1.6;
-      letter-spacing: -0.02em;
-   }
-
-   .financial-cont tbody th + td::before,
-   .financial-cont tbody td + td::before {
-      height: 4.7rem;
-      background-color: var(--border-default);
-   }
-
-   /* disclosure */
-   .disclosure-cont.mo {
-      display: none;
-   }
-
-   .disclosure-cont.pc {
-      display: block;
-   }
-
-   .disclosure-cont.pc {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-   }
-   
-   .disclosure-cont.pc .shortcut {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      height: 6.4rem;
-      padding: 0 3rem;
-      color: var(--white);
-      font-size: 2.4rem;
-      font-weight: 700;
-      background-color: var(--primary);
-   }
-   
-   .disclosure-cont.pc .shortcut::before {
-      content: "";
-      width: 2.5rem;
-      height: 2.5rem;
-      margin-right: 1rem;
-      background: url(../img/common/icon_page_move.svg) no-repeat center;
-      background-size: 100%;
-   }
-   
-   /* overseas */
-   .overseas-cont {
-      margin-top: 6rem;
-      padding: 3rem;
-      background-color: var(--bg-surface);
-   }
-
-   .overseas-cont .overseas-box {
-      padding: 4rem 4rem 0;
-      background-color: var(--white);
-      border: 1px solid #e1e7ee;
-   }
-
-   .overseas-cont .overseas-company {
-      display: block;
-      margin-bottom: 3rem;
-      color: var(--text-body);
-      font-size: 2.8rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overseas-cont .overseas-list {
-      gap: 0;
-   }
-
-   .overseas-cont .overseas-item {
-      gap: 1.6rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid #e1e7ee;
-   }
-
-   .overseas-cont .overseas-item+.overseas-item {
-      margin-top: 3rem;
-   }
-
-   .overseas-cont .overseas-item:last-child {
-      padding-bottom: 4rem;
-      border-bottom: 0;
-   }
-
-   .overseas-cont .overseas-region {
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: normal;
-   }
-
-   .overseas-cont .overseas-body {
-      flex-direction: row;
-      align-items: center;
-      gap: 3rem;
-   }
-
-   .overseas-cont .overseas-info {
-      flex: 1;
-      gap: 1.6rem;
-      min-width: 0;
-   }
-
-   .overseas-cont .overseas-info li {
-      gap: 2rem;
-   }
-
-   .overseas-cont .overseas-info .label {
-      width: 12rem;
-      height: 3.6rem;
-      font-size: 1.8rem;
-      line-height: 1.8;
-   }
-
-   .overseas-cont .overseas-info p {
-      font-size: 1.8rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .overseas-cont .overseas-btns {
-      flex-direction: column;
-      flex-shrink: 0;
-      gap: 1.2rem;
-      width: 15.7rem;
-   }
-
-   .overseas-cont .overseas-btns a {
-      flex: none;
-      width: 100%;
-      height: 5rem;
-      padding: 0 2rem;
-      font-size: 1.6rem;
-      line-height: 1.6;
-   }
-
-   .overseas-cont .overseas-btns a:only-child {
-      width: 100%;
-   }
-
-   .overseas-cont+.c-tit {
-      margin-top: 10rem;
-   }
-
-   /* report table */
-   .report-cont {
-      display: flex;
-      flex-wrap: wrap;
-      clear: both;
-      margin-top: 0;
-      padding-top: 6rem;
-   }
-
-   .report-cont .tit {
-      width: 31rem;
-      margin: 0;
-      font-size: 3.2rem;
-      color: var(--text-body);
-   }
-
-   .report-cont>div {
-      width: calc(100% - 31rem);
-   }
-
-   /* report list */
-   .report-list .report-item {
-      gap: 2rem;
-      border-bottom-width: 2px;
-      border-bottom-color: #e1e7ee;
-   }
-
-   .report-list .report-item:last-child {
-      border-bottom-color: var(--text-secondary);
-   }
-
-   .report-list .report-info {
-      flex-wrap: nowrap;
-      gap: 1rem;
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      line-height: 1.8;
-   }
-
-   .report-list .report-info .date {
-      order: 0;
-      width: auto;
-      margin-bottom: 0;
-      color: var(--text-body);
-      font-size: 2rem;
-      font-weight: 500;
-      line-height: 1.8;
-      white-space: nowrap;
-   }
-
-   .report-list .report-info .year {
-      width: 20rem;
-   }
-
-   .report-list .report-info .tit {
-      flex: 1;
-      width: auto;
-      max-width: 68rem;
-   }
-
-   .report-list .report-info .tit2 {
-      max-width: 110rem;
-   }
-
-   .report-list .btn-down {
-      width: 15.7rem;
-      height: 5rem;
-      border-color: var(--text-secondary);
-      background: none;
-   }
-
-   .report-list .btn-down .blind {
-      font-size: 1.8rem;
-      line-height: 5rem;
-      color: #666;
-      font-weight: 500;
-   }
-
-   .report-list .btn-down .blind::before {
-      content: "";
-      display: inline-block;
-      width: 2.4rem;
-      height: 2.4rem;
-      margin-right: 1rem;
-      background: url(../img/common/icon_down.svg) no-repeat center;
-      background-size: 2.4rem;
-      vertical-align: middle;
-   }
-
-}
-
-/* ==========================================
    PC / 데스크톱 구간 (PC) - 1440px 이상
    ========================================== */
    @media (min-width: 1440px) {
@@ -3259,3 +2227,1035 @@
       }
 
    }
+
+   /* ==========================================
+   태블릿 구간 (Tablet) - 1025px ~ 1439px
+   ========================================== */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+   /* company tab */
+   .company-tab {
+      top: 7.4rem;
+      padding: 0 22rem;
+      margin-top: 10rem;
+   }
+
+   .company-tab button {
+      flex: 1;
+      width: auto;
+      height: 6.4rem;
+      border-color: var(--border-default);
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: normal;
+   }
+
+   .company-tab button.act {
+      border-width: 2px;
+      border-color: var(--primary);
+   }
+
+   /* company cont */
+   .company-cont {
+      margin-top: 10rem;
+   }
+
+   .company-cont .c-tit span {
+      font-size: 4rem;
+   }
+
+   .company-cont .c-tit.font-wjlove {
+      margin-bottom: 6rem;
+      font-size: 4.6rem;
+   }
+
+   /* overview */
+   .overview-cont1 {
+      display: grid;
+      grid-template-columns: minmax(18rem, 28.3rem) minmax(32rem, 65.2rem) minmax(18rem, 28.3rem);
+      grid-template-areas:
+         "sap diagram cloud"
+         "solution solution solution";
+      column-gap: 4rem;
+      row-gap: 6rem;
+      align-items: center;
+      margin-top: 8rem;
+      padding-bottom: 5rem;
+   }
+
+   .overview-cont1 .overview-diagram {
+      grid-area: diagram;
+      margin-bottom: 0;
+   }
+
+   .overview-cont1 .overview-diagram .mo {
+      display: none;
+   }
+
+   .overview-cont1 .overview-diagram .pc {
+      display: block;
+      width: 100%;
+      max-width: none;
+   }
+
+   .overview-cont1 .overview-group {
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+   }
+
+   .overview-cont1 .overview-group.sap {
+      grid-area: sap;
+   }
+
+   .overview-cont1 .overview-group.cloud {
+      grid-area: cloud;
+      text-align: right;
+   }
+
+   .overview-cont1 .overview-group.solution {
+      grid-area: solution;
+   }
+
+   .overview-cont1 .group-inner {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+   }
+
+   .overview-cont1 .overview-group h5 {
+      display: none;
+   }
+
+   .overview-cont1 .overview-group li+li {
+      margin-top: 3rem;
+   }
+
+   .overview-cont1 .overview-group.solution ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8rem;
+   }
+
+   .overview-cont1 .overview-group.solution li+li {
+      margin-top: 0;
+   }
+
+   .overview-cont1 .overview-group strong {
+      margin-bottom: 0.4rem;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+   }
+
+   .overview-cont1 .overview-group p {
+      font-size: 1.8rem;
+      letter-spacing: 0;
+      line-height: 1.4;
+   }
+
+   /* overview cont2 */
+   .overview-cont2 {
+      margin-top: 6rem;
+   }
+
+   .overview-cont2.history>.history-list {
+      border-top-width: 0.3rem;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-head {
+      gap: 0;
+      padding: 2.4rem 4rem 2.4rem 0;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-head::after {
+      right: 0.8rem;
+      width: 2.4rem;
+      height: 1.8rem;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-head strong {
+      width: 18.4rem;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
+      line-height: 1;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-head span {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-cont .item-cont-inner,
+   .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
+      padding-right: 0;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-cont-inner {
+      padding: 0 0 0 10rem;
+   }
+
+   .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
+      padding: 4rem 0 4rem 10rem;
+   }
+
+   .overview-cont2 .item-cont .history-item .year {
+      width: auto;
+      padding-right: 3rem;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
+   }
+
+   .overview-cont2 .item-cont .history-item .marker::before {
+      top: 0.6rem;
+   }
+
+   .overview-cont2 .item-cont .history-item .marker::after {
+      top: 1.2rem;
+   }
+
+   .overview-cont2 .item-cont .history-item ul {
+      padding: 0 0 4rem 3rem;
+   }
+
+   .overview-cont2 .item-cont .history-item:last-child ul {
+      padding-bottom: 1rem;
+   }
+
+   .overview-cont2 .item-cont .history-item li {
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overview-cont2 .item-cont .history-item li+li {
+      margin-top: 0;
+   }
+
+   .overview-cont3 {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+   }
+
+   .overview-cont3 .overview-visual {
+      order: 1;
+      flex: 0 1 48rem;
+      width: 48rem;
+      max-width: 48rem;
+   }
+
+   .overview-cont3 .cont-txt {
+      flex: 1;
+      min-width: 0;
+      font-size: 2rem;
+      font-weight: 500;
+   }
+
+   .overview-cont4 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+      margin-top: 4rem;
+      padding: 2.4rem;
+   }
+
+   .overview-cont4 .love-card {
+      height: auto;
+      min-height: 28rem;
+      padding: 2.4rem 2rem 3rem;
+      background-position: right 2rem top 2.4rem;
+      background-size: 7rem 7rem;
+      border: 1px dashed var(--border-default);
+   }
+
+   .overview-cont4 .card-head {
+      height: auto;
+      min-height: 7rem;
+      margin-bottom: 1.6rem;
+      padding: 0 8rem 0 0;
+      font-size: 2.8rem;
+   }
+
+   .overview-cont4 .love-card p {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.8;
+   }
+
+   .overview-cont5 {
+      margin-top: 4rem;
+      padding: 0 0 6rem;
+      background: linear-gradient(to bottom, transparent 14rem, var(--bg-surface) 14rem);
+   }
+
+   .overview-cont5 .ethics-diagram {
+      max-width: 64rem;
+      aspect-ratio: 868 / 360;
+   }
+
+   .overview-cont5 .ethics-diagram p {
+      font-size: 2.4rem;
+   }
+
+   .overview-cont5 .ethics-tit {
+      gap: 2rem;
+      font-size: 2.8rem;
+   }
+
+   .overview-cont5 .ethics-tit::before,
+   .overview-cont5 .ethics-tit::after {
+      flex: 1;
+      width: auto;
+   }
+
+   .overview-cont5 .ethics-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+   }
+
+   .overview-cont5 .ethics-item {
+      flex-direction: row;
+      align-items: stretch;
+   }
+
+   .overview-cont5 .ethics-item strong {
+      flex-shrink: 0;
+      width: 12rem;
+      height: auto;
+      min-height: 22rem;
+      font-size: 2.2rem;
+      line-height: 1.8;
+   }
+
+   .overview-cont5 .ethics-item ul,
+   .overview-cont5 .ethics-item .ethics-org {
+      flex: 1;
+      height: auto;
+      min-height: 22rem;
+      padding: 2.4rem 2rem;
+      border-color: var(--border-default);
+   }
+
+   .overview-cont5 .ethics-item ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+
+   .overview-cont5 .ethics-item li {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.8;
+   }
+
+   .overview-cont5 .ethics-item li span {
+      padding-left: 8.8rem;
+   }
+
+   .overview-cont5 .ethics-org {
+      justify-content: center;
+      gap: 3rem;
+   }
+
+   .overview-cont5 .ethics-org p {
+      width: auto;
+      padding: 1rem 2.4rem;
+      font-size: 1.8rem;
+   }
+
+   .overview-cont5 .ethics-org p:first-child::after {
+      height: 3rem;
+      background-color: var(--border-default);
+   }
+
+   .overview-cont6 {
+      flex-direction: row;
+      justify-content: space-between;
+      height: auto;
+      min-height: 24rem;
+      margin-top: 6rem;
+      padding: 3rem 6rem;
+      border-width: 3rem;
+   }
+
+   .overview-cont6 .ci-logo {
+      width: 22rem;
+      height: 11.5rem;
+   }
+
+   .overview-cont6 .ci-btns {
+      flex-direction: row;
+      width: auto;
+      gap: 1.6rem;
+   }
+
+   .overview-cont6 .ci-btns a {
+      height: 5rem;
+      padding: 0 3rem;
+      border-color: var(--text-secondary);
+   }
+
+   .overview-cont7 {
+      position: relative;
+      display: block;
+      height: auto;
+      aspect-ratio: 1440 / 680;
+      margin-top: 6rem;
+      padding: 0;
+      background-color: var(--white);
+      box-shadow: inset 0 0 0 3rem var(--bg-surface);
+   }
+
+   .overview-cont7::after {
+      content: "";
+      position: absolute;
+      top: 4.412%;
+      right: 2.083%;
+      bottom: 4.412%;
+      left: 2.083%;
+      border: 1px dashed var(--border-default);
+      pointer-events: none;
+   }
+
+   .overview-cont7 .talent-logo {
+      display: none;
+   }
+
+   .overview-cont7 .talent-diagram {
+      display: block;
+      position: absolute;
+      left: 33.125%;
+      top: 15.441%;
+      width: 34.444%;
+      height: auto;
+   }
+
+   .overview-cont7 .talent-list {
+      display: block;
+      width: auto;
+   }
+
+   .overview-cont7 .talent-list li {
+      position: absolute;
+      display: block;
+      width: 22.222%;
+      padding: 0;
+      background: none;
+      border: 0;
+   }
+
+   .overview-cont7 .talent-list li>img {
+      display: none;
+   }
+
+   .overview-cont7 .talent-list li:nth-child(1) {
+      left: 5.347%;
+      top: 15.441%;
+      text-align: right;
+   }
+
+   .overview-cont7 .talent-list li:nth-child(2) {
+      left: 73.125%;
+      top: 15.441%;
+   }
+
+   .overview-cont7 .talent-list li:nth-child(3) {
+      left: 5.347%;
+      top: 61.324%;
+      text-align: right;
+   }
+
+   .overview-cont7 .talent-list li:nth-child(4) {
+      left: 73.125%;
+      top: 61.324%;
+   }
+
+   .overview-cont7 .talent-list li:nth-child(1) .talent-txt,
+   .overview-cont7 .talent-list li:nth-child(3) .talent-txt {
+      align-items: flex-end;
+   }
+
+   .overview-cont7 .talent-txt strong {
+      font-family: 'WOONGJINLOVE';
+      font-size: 2.2rem;
+      line-height: 1.6;
+   }
+
+   .overview-cont7 .talent-txt p {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overview-cont8 {
+      gap: 4rem;
+      margin-top: 6rem;
+      padding: 4rem 2rem;
+      background-color: var(--bg-surface);
+   }
+
+   .overview-cont8 .reward-block {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 20rem 1fr;
+      align-items: start;
+      gap: 0;
+      min-height: 28rem;
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      border: 0;
+   }
+
+   .overview-cont8 .reward-block::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 9.4rem;
+      height: 18rem;
+      background-color: var(--white);
+      border: 1px dashed var(--border-default);
+   }
+
+   .overview-cont8 .reward-head {
+      position: relative;
+      z-index: 1;
+      grid-column: 2;
+      grid-row: 1;
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 20rem;
+      height: 20rem;
+      padding: 0;
+      border: 0.6rem solid #11bcff;
+      border-radius: 50%;
+      background-color: var(--white);
+   }
+
+   .overview-cont8 .reward-head::before,
+   .overview-cont8 .reward-head::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+      width: 21rem;
+      height: 0.5rem;
+      background-color: #11bcff;
+      transform: translateY(-.8rem);
+   }
+
+   .overview-cont8 .reward-head::before {
+      right: 100%;
+   }
+
+   .overview-cont8 .reward-head::after {
+      left: 100%;
+   }
+
+   .overview-cont8 .reward-head strong {
+      font-family: 'WOONGJINLOVE';
+      font-size: 2.8rem;
+      letter-spacing: -0.04em;
+      line-height: 1.6;
+   }
+
+   .overview-cont8 .reward-head img {
+      width: 6.4rem;
+      height: 7.2rem;
+   }
+
+   .overview-cont8 .reward-block:nth-child(2) .reward-head img {
+      width: 7.2rem;
+      height: 7.2rem;
+   }
+
+   .overview-cont8 .reward-item {
+      position: relative;
+      z-index: 1;
+      grid-row: 1;
+      align-items: center;
+      gap: 1.6rem;
+      padding-top: 2.4rem;
+   }
+
+   .overview-cont8 .reward-item:nth-child(2) {
+      grid-column: 1;
+   }
+
+   .overview-cont8 .reward-item:nth-child(3) {
+      grid-column: 3;
+   }
+
+   .overview-cont8 .reward-item+.reward-item {
+      padding-top: 2.4rem;
+      border-top: 0;
+   }
+
+   .overview-cont8 .reward-item strong {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 14rem;
+      height: 14rem;
+      min-width: 14rem;
+      min-height: 14rem;
+      border: 0.4rem solid #11bcff;
+      border-radius: 50%;
+      background-color: var(--white);
+      font-family: 'WOONGJINLOVE';
+      font-size: 2.4rem;
+      letter-spacing: -0.04em;
+      line-height: 1.6;
+      text-align: center;
+   }
+
+   .overview-cont8 .reward-item p {
+      color: #1a1a1a;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+      text-align: center;
+   }
+
+   .overview-cont9 {
+      gap: 2rem;
+      margin-top: 6rem;
+      padding: 2.4rem;
+   }
+
+   .overview-cont9>div {
+      justify-content: center;
+      gap: 0;
+      min-height: 14rem;
+      padding: 2.4rem 3rem 2.4rem 15.2rem;
+      border: 1px dashed var(--border-default);
+      background-position: left 4rem center;
+      background-size: 7.2rem 7.2rem;
+   }
+
+   .overview-cont9>div:nth-child(1) {
+      background-image: url(../img/company/img_overview_cont9_icon01.svg);
+   }
+
+   .overview-cont9>div:nth-child(2) {
+      background-image: url(../img/company/img_overview_cont9_icon02.svg);
+      background-size: 7.8rem 7.2rem;
+   }
+
+   .overview-cont9>div:nth-child(3) {
+      background-image: url(../img/company/img_overview_cont9_icon03.svg);
+      background-size: 7rem 7.2rem;
+   }
+
+   .overview-cont9 strong {
+      font-family: 'WOONGJINLOVE';
+      font-size: 2.4rem;
+      letter-spacing: -0.04em;
+      line-height: 1.6;
+   }
+
+   .overview-cont9 p {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overview-cont10 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 2.4rem;
+      margin-top: 6rem;
+      padding: 2.4rem;
+   }
+
+   .overview-cont10>div {
+      gap: 0;
+      min-height: 13rem;
+      height: auto;
+      padding: 2.4rem 2.4rem 2.4rem 11rem;
+      border: 1px dashed var(--border-default);
+      background-position: left 2.4rem center;
+      background-size: 5.6rem 5.6rem;
+   }
+
+   .overview-cont10>div:nth-child(3) {
+      background-size: 6.3rem 5.6rem;
+   }
+
+   .overview-cont10>div:nth-child(6) {
+      background-size: 4.4rem 5.6rem;
+   }
+
+   .overview-cont10>div:nth-child(8) {
+      background-size: 5.6rem 4.7rem;
+   }
+
+   .overview-cont10>div:nth-child(9) {
+      background-size: 6.4rem 5.1rem;
+   }
+
+   .overview-cont10 .mo {
+      display: none;
+   }
+
+   .overview-cont10 strong {
+      font-family: 'WOONGJINLOVE';
+      font-size: 2.2rem;
+      letter-spacing: -0.04em;
+      line-height: 1.6;
+   }
+
+   .overview-cont10 p {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   /* financial */
+   .financial-tit {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      margin-bottom: 5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--text-body);
+   }
+
+   .financial-tit.devide {
+      margin-top: 10rem;
+      padding-top: 10rem;
+   }
+
+   .financial-tit .c-tit {
+      margin-bottom: 0;
+   }
+
+   .financial-tit label {
+      display: inline-block;
+      margin-right: 2rem;
+      font-size: 2.4rem;
+   }
+
+   .financial-tit select {
+      width: 24rem;
+      height: 4.8rem;
+   }
+
+   .financial-cont {
+      display: flex;
+      flex-wrap: wrap;;
+   }
+
+   .financial-cont .tit {
+      width: 31rem;
+      margin: 10rem 0 0;
+      padding-top: 10rem;
+      border-top: 1px dashed var(--border-default);
+      font-size: 3.2rem;
+      color: var(--text-body);
+   }
+   .financial-cont .tit span {
+      display: block;
+      margin-left: 0;
+      font-size: 2rem;
+   }
+   
+   .financial-cont .info {
+      margin-top: 2rem;
+      font-size: 2rem;
+   }
+
+   .financial-cont>div {
+      width: calc(100% - 31rem);
+      margin-top: 10rem;
+      padding-top: 10rem;
+      border-top: 1px dashed var(--border-default);
+   }
+
+   .financial-cont .tit:first-child,
+   .financial-cont div:nth-of-type(1) {
+      margin-top: 0;
+      padding-top: 0;
+      border: 0;
+   }
+
+   .financial-cont.devide {
+      margin-top: 10rem;
+      padding-top: 10rem;
+   }
+
+   .financial-cont .scroll-txt {
+      display: none;
+   }
+
+   .financial-cont .scroll-table,
+   .financial-cont > div {
+      overflow-x: auto;
+   }
+
+   .financial-cont thead th {
+      height: 5.2rem;
+      padding: 0 2rem;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+      line-height: normal;
+   }
+
+   .financial-cont tbody th,
+   .financial-cont tbody td {
+      height: 5.2rem;
+      padding: 1.4rem 2rem 1.5rem;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      letter-spacing: -0.02em;
+   }
+
+   .financial-cont tbody th + td::before,
+   .financial-cont tbody td + td::before {
+      height: 4.7rem;
+      background-color: var(--border-default);
+   }
+
+   /* disclosure */
+   .disclosure-cont.mo {
+      display: none;
+   }
+
+   .disclosure-cont.pc {
+      display: block;
+   }
+
+   .disclosure-cont.pc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   
+   .disclosure-cont.pc .shortcut {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      height: 6.4rem;
+      padding: 0 3rem;
+      color: var(--white);
+      font-size: 2.4rem;
+      font-weight: 700;
+      background-color: var(--primary);
+   }
+   
+   .disclosure-cont.pc .shortcut::before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      background: url(../img/common/icon_page_move.svg) no-repeat center;
+      background-size: 100%;
+   }
+   
+   /* overseas */
+   .overseas-cont {
+      margin-top: 6rem;
+      padding: 3rem;
+      background-color: var(--bg-surface);
+   }
+
+   .overseas-cont .overseas-box {
+      padding: 4rem 4rem 0;
+      background-color: var(--white);
+      border: 1px solid #e1e7ee;
+   }
+
+   .overseas-cont .overseas-company {
+      display: block;
+      margin-bottom: 3rem;
+      color: var(--text-body);
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overseas-cont .overseas-list {
+      gap: 0;
+   }
+
+   .overseas-cont .overseas-item {
+      gap: 1.6rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid #e1e7ee;
+   }
+
+   .overseas-cont .overseas-item+.overseas-item {
+      margin-top: 3rem;
+   }
+
+   .overseas-cont .overseas-item:last-child {
+      padding-bottom: 4rem;
+      border-bottom: 0;
+   }
+
+   .overseas-cont .overseas-region {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: normal;
+   }
+
+   .overseas-cont .overseas-body {
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+   }
+
+   .overseas-cont .overseas-info {
+      flex: 1;
+      gap: 1.6rem;
+      min-width: 0;
+   }
+
+   .overseas-cont .overseas-info li {
+      gap: 2rem;
+   }
+
+   .overseas-cont .overseas-info .label {
+      width: 12rem;
+      height: 3.6rem;
+      font-size: 1.8rem;
+      line-height: 1.8;
+   }
+
+   .overseas-cont .overseas-info p {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .overseas-cont .overseas-btns {
+      flex-direction: column;
+      flex-shrink: 0;
+      gap: 1.2rem;
+      width: 15.7rem;
+   }
+
+   .overseas-cont .overseas-btns a {
+      flex: none;
+      width: 100%;
+      height: 5rem;
+      padding: 0 2rem;
+      font-size: 1.6rem;
+      line-height: 1.6;
+   }
+
+   .overseas-cont .overseas-btns a:only-child {
+      width: 100%;
+   }
+
+   .overseas-cont+.c-tit {
+      margin-top: 10rem;
+   }
+
+   /* report table */
+   .report-cont {
+      display: flex;
+      flex-wrap: wrap;
+      clear: both;
+      margin-top: 0;
+      padding-top: 6rem;
+   }
+
+   .report-cont .tit {
+      width: 31rem;
+      margin: 0;
+      font-size: 3.2rem;
+      color: var(--text-body);
+   }
+
+   .report-cont>div {
+      width: calc(100% - 31rem);
+   }
+
+   /* report list */
+   .report-list .report-item {
+      gap: 2rem;
+      border-bottom-width: 2px;
+      border-bottom-color: #e1e7ee;
+   }
+
+   .report-list .report-item:last-child {
+      border-bottom-color: var(--text-secondary);
+   }
+
+   .report-list .report-info {
+      flex-wrap: nowrap;
+      gap: 1rem;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.8;
+   }
+
+   .report-list .report-info .date {
+      order: 0;
+      width: auto;
+      margin-bottom: 0;
+      color: var(--text-body);
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.8;
+      white-space: nowrap;
+   }
+
+   .report-list .report-info .year {
+      width: 20rem;
+   }
+
+   .report-list .report-info .tit {
+      flex: 1;
+      width: auto;
+      max-width: 68rem;
+   }
+
+   .report-list .report-info .tit2 {
+      max-width: 110rem;
+   }
+
+   .report-list .btn-down {
+      width: 15.7rem;
+      height: 5rem;
+      border-color: var(--text-secondary);
+      background: none;
+   }
+
+   .report-list .btn-down .blind {
+      font-size: 1.8rem;
+      line-height: 5rem;
+      color: #666;
+      font-weight: 500;
+   }
+
+   .report-list .btn-down .blind::before {
+      content: "";
+      display: inline-block;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 1rem;
+      background: url(../img/common/icon_down.svg) no-repeat center;
+      background-size: 2.4rem;
+      vertical-align: middle;
+   }
+
+}
