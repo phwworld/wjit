@@ -78,14 +78,18 @@
 
 /* overview */
 .overview-cont1 {
-   display: flex;
+   /* display: flex;
    flex-direction: column;
    align-items: center;
-   gap: 3rem;
+   gap: 3rem; */
    margin-top: 6rem;
 }
 
-.overview-cont1 .overview-diagram {
+.overview-cont1 img {
+   width: 100%;
+}
+
+/* .overview-cont1 .overview-diagram {
    margin-bottom: 3rem;
 }
 
@@ -140,7 +144,7 @@
    letter-spacing: -0.02em;
    line-height: 1.5;
    word-break: keep-all;
-}
+} */
 
 /* overview cont2 */
 .overview-cont2 {
@@ -170,10 +174,10 @@
    content: "";
    position: absolute;
    top: 50%;
-   right: 0.4rem;
-   width: 1.3rem;
-   height: 1.3rem;
-   background: url(../img/common/icon_faq_arrow.svg) no-repeat;
+   right: 0;
+   width: 3.4rem;
+   height: 3.4rem;
+   background: url(../img/common/icon_faq_arrow.png) no-repeat;
    background-size: 100%;
    transform: translateY(-50%);
    transition: transform 0.4s ease-in-out;
@@ -1202,7 +1206,7 @@
    
       /* company tab */
       .company-tab {
-         top: 7.4rem;
+         top: 6.6rem;
          padding: 0 22rem;
          margin-top: 10rem;
       }
@@ -1233,19 +1237,24 @@
    
       /* overview */
       .overview-cont1 {
-         display: grid;
+         /* display: grid;
          grid-template-columns: 28.3rem 65.2rem 28.3rem;
          grid-template-areas:
             "sap diagram cloud"
             "solution solution solution";
          column-gap: 11.1rem;
          row-gap: 8rem;
-         align-items: center;
+         align-items: center; */
          margin-top: 8rem;
-         padding-bottom: 5rem;
+         text-align: center;
+         /* padding-bottom: 5rem; */
+      }
+
+      .overview-cont1 img {
+         width: initial;
       }
    
-      .overview-cont1 .overview-diagram {
+      /* .overview-cont1 .overview-diagram {
          grid-area: diagram;
          margin-bottom: 0;
       }
@@ -1320,7 +1329,7 @@
          letter-spacing: 0;
          line-height: 1.4;
          white-space: nowrap;
-      }
+      } */
    
       .overview-cont2 {
          margin-top: 6rem;
@@ -1332,13 +1341,13 @@
    
       .overview-cont2.history>.history-list>.history-item .item-head {
          gap: 0;
-         padding: 2.4rem 4rem 2.4rem 0;
+         padding: 2.4rem 4rem ;
       }
    
       .overview-cont2.history>.history-list>.history-item .item-head::after {
-         right: 0.8rem;
-         width: 2.4rem;
-         height: 1.8rem;
+         right: 4rem;
+         width: 3.4rem;
+         height: 3.4rem;
       }
    
       .overview-cont2.history>.history-list>.history-item .item-head strong {
@@ -1356,11 +1365,11 @@
       }
    
       .overview-cont2.history>.history-list>.history-item .item-cont-inner {
-         padding: 0 0 0 18.4rem;
+         padding: 0 0 0 22.4rem;
       }
    
       .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
-         padding: 4rem 0 4rem 18.4rem;
+         padding: 4rem 0 4rem 22.4rem;
       }
    
       .overview-cont2 .item-cont .history-item .year {
@@ -2235,7 +2244,7 @@
 
    /* company tab */
    .company-tab {
-      top: 7.4rem;
+      top: 6.6rem;
       padding: 0 22rem;
       margin-top: 10rem;
    }
@@ -2271,19 +2280,24 @@
 
    /* overview */
    .overview-cont1 {
-      display: grid;
+      /* display: grid;
       grid-template-columns: minmax(18rem, 28.3rem) minmax(32rem, 65.2rem) minmax(18rem, 28.3rem);
       grid-template-areas:
          "sap diagram cloud"
          "solution solution solution";
       column-gap: 4rem;
       row-gap: 6rem;
-      align-items: center;
+      align-items: center; */
       margin-top: 8rem;
-      padding-bottom: 5rem;
+      text-align: center;
+      /* padding-bottom: 5rem; */
    }
 
-   .overview-cont1 .overview-diagram {
+   .overview-cont1 img {
+      width: initial;
+   }
+
+   /* .overview-cont1 .overview-diagram {
       grid-area: diagram;
       margin-bottom: 0;
    }
@@ -2352,7 +2366,7 @@
       font-size: 1.8rem;
       letter-spacing: 0;
       line-height: 1.4;
-   }
+   } */
 
    /* overview cont2 */
    .overview-cont2 {
@@ -2365,13 +2379,13 @@
 
    .overview-cont2.history>.history-list>.history-item .item-head {
       gap: 0;
-      padding: 2.4rem 4rem 2.4rem 0;
+      padding: 2.4rem 4rem;
    }
 
    .overview-cont2.history>.history-list>.history-item .item-head::after {
-      right: 0.8rem;
-      width: 2.4rem;
-      height: 1.8rem;
+      right: 4rem;
+      width: 3.4rem;
+      height: 3.4rem;
    }
 
    .overview-cont2.history>.history-list>.history-item .item-head strong {
@@ -2394,11 +2408,11 @@
    }
 
    .overview-cont2.history>.history-list>.history-item .item-cont-inner {
-      padding: 0 0 0 10rem;
+      padding: 0 0 0 22.4rem;
    }
 
    .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
-      padding: 4rem 0 4rem 10rem;
+      padding: 4rem 0 4rem 22.4rem;
    }
 
    .overview-cont2 .item-cont .history-item .year {
