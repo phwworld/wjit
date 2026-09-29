@@ -1,5 +1,7 @@
 // 히어로 인트로: 좌상단 모서리를 기준으로 clip-path 사각형이 커지며 열리는 리빌 (로드 시 1회)
-// 헤더·퀵네비·스크롤 버튼은 리빌이 시작되기 전까지 숨기고, is-intro-revealed 2초 뒤 노출
+// 헤더·퀵네비·스크롤 버튼은 리빌이 시작되기 전까지 숨기고, is-intro-revealed 뒤 노출
+// 영상은 is-active를 유지해 좌상단 clip-path로 열리고,
+// 카피만 숨김 자세로 고정한 뒤 2초 후 롤링과 같은 아래→위 등장을 재생
 (function () {
   const hero = document.querySelector(".home-sec1");
   if (!hero) return;
@@ -9,14 +11,51 @@
     document.querySelector(".home-quick-nav"),
     document.querySelector(".scroll-action-home"),
   ].filter(Boolean);
+  const activeItem = hero.querySelector(".home-visual-item.is-active");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   chrome.forEach((el) => {
     el.style.opacity = "0";
   });
 
+  if (activeItem && !reduceMotion) {
+    activeItem.classList.add("is-copy-reset");
+  }
+
+  const revealCopy = () => {
+    if (!activeItem) return;
+    if (!activeItem.classList.contains("is-active")) {
+      activeItem.classList.remove("is-copy-reset");
+      return;
+    }
+
+    const nodes = [
+      ...activeItem.querySelectorAll(".line-in"),
+      activeItem.querySelector(".txt2"),
+      activeItem.querySelector(".btn"),
+    ].filter(Boolean);
+
+    nodes.forEach((el) => {
+      const cs = getComputedStyle(el);
+      el.style.transition = "none";
+      el.style.transform = cs.transform;
+      el.style.opacity = cs.opacity;
+    });
+    activeItem.classList.remove("is-copy-reset");
+    void activeItem.offsetWidth;
+    nodes.forEach((el) => {
+      el.style.transition = "";
+      el.style.transform = "";
+      el.style.opacity = "";
+    });
+  };
+
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       hero.classList.add("is-intro-revealed");
+      if (activeItem && !reduceMotion) {
+        window.setTimeout(revealCopy, 1000);
+      }
       window.setTimeout(() => {
         chrome.forEach((el) => {
           el.style.opacity = "1";
