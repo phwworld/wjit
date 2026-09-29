@@ -753,8 +753,8 @@ main>.title.no-animate h3 {
 
 .s-tit {
   margin: 6rem 0 2rem;
-  padding-top: 6rem;
-  border-top: 1px dashed #e1e7ee;
+  /* padding-top: 6rem;
+  border-top: 1px dashed #e1e7ee; */
   font-size: 2rem;
 }
 
@@ -1320,8 +1320,8 @@ main>.title.no-animate h3 {
   }
 
   .s-tit {
-    padding: 10rem 0 0;
     margin: 10rem 0 1rem;
+    /* padding: 10rem 0 0; */
     font-size: 2.8rem;
   }
 
@@ -1850,8 +1850,8 @@ main>.title.no-animate h3 {
   }
 
   .s-tit {
-    padding: 10rem 0 0;
     margin: 10rem 0 1rem;
+    /* padding: 10rem 0 0; */
     font-size: 2.8rem;
   }
 

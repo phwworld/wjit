@@ -681,9 +681,9 @@
     position: absolute;
     top: 50%;
     right: .4rem;
-    width: 1.3rem;
-    height: 1.3rem;
-    background: url(../img/common/icon_faq_arrow.svg) no-repeat;
+    width: 3.4rem;
+    height: 3.4rem;
+    background: url(../img/common/icon_faq_arrow.png) no-repeat;
     background-size: 100%;
     transform: translateY(-50%);
     transition: transform 0.4s ease-in-out;
@@ -1684,11 +1684,16 @@
         font-weight: 400;
     }
 
+    .faq .faq-item .item-head,
+    .project-case .project-item .item-head {
+        padding: 2.4rem 4rem;
+    }
+    
     .faq .faq-item .item-head::after,
     .project-case .project-item .item-head::after {
-        right: .8rem;
-        width: 1.6rem;
-        height: 1.6rem;
+        right: 4rem;
+        width: 3.4rem;
+        height: 3.4rem;
     }
 
     .faq .faq-item:first-child .item-head,
@@ -1698,12 +1703,12 @@
 
     .faq .faq-item .item-cont .item-cont-inner,
     .project-case .project-item .item-cont .item-cont-inner {
-        padding: 0 3.2rem 0 0;
+        padding: 0 4rem;
     }
 
     .faq .faq-item .item-cont.act .item-cont-inner,
     .project-case .project-item .item-cont.act .item-cont-inner {
-        padding: 4rem 3.2rem 4rem 0;
+        padding: 4rem 4rem;
     }
 
     .project-case .project-item .item-head {
@@ -1743,6 +1748,10 @@
         font-size: 2rem;
         line-height: 5rem;
         background-position: right 1.6rem center;
+    }
+
+    .download .board-list.type2 .board-item {
+        padding: 2rem 4rem;
     }
 
     .download .board-list.type2 .cont {
@@ -2571,11 +2580,16 @@
         font-weight: 400;
     }
 
+    .faq .faq-item .item-head,
+    .project-case .project-item .item-head {
+        padding: 2.4rem 4rem;
+    }
+
     .faq .faq-item .item-head::after,
     .project-case .project-item .item-head::after {
-        right: .8rem;
-        width: 1.6rem;
-        height: 1.6rem;
+        right: 4rem;
+        width: 3.4rem;
+        height: 3.4rem;
     }
 
     .faq .faq-item:first-child .item-head,
@@ -2585,12 +2599,12 @@
 
     .faq .faq-item .item-cont .item-cont-inner,
     .project-case .project-item .item-cont .item-cont-inner {
-        padding: 0 3.2rem 0 0;
+        padding: 0 4rem;
     }
 
     .faq .faq-item .item-cont.act .item-cont-inner,
     .project-case .project-item .item-cont.act .item-cont-inner {
-        padding: 4rem 3.2rem 4rem 0;
+        padding: 4rem 4rem;
     }
 
     .project-case .project-item .item-head {
@@ -2632,6 +2646,10 @@
         background-position: right 1.6rem center;
     }
 
+    .download .board-list.type2 .board-item {
+        padding: 2rem 4rem;
+    }
+    
     .download .board-list.type2 .cont {
         padding-right: 0;
     }

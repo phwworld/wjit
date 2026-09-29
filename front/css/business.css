@@ -763,6 +763,7 @@
 
 .wdms-cont10 .img-type {
     padding: 1rem;
+    border: 0;
     background-color: var(--primary);
 }
 
@@ -3686,10 +3687,10 @@
         position: absolute;
         right: 3rem;
         bottom: 1.6rem;
-        width: 14.3962rem;
-        height: 1.8rem;
-        background: url(../img/business/ico_bss_cont1_arrow_off.svg) no-repeat right center;
-        background-size: 14.3962rem 1.9821rem;
+        width: 3.7rem;
+        height: 2.4rem;
+        background: url(../img/business/ico_bss_cont1_arrow.png) no-repeat right center;
+        background-size: 100%;
     }
 
     .bss-cont1 a:hover {
@@ -3697,9 +3698,9 @@
         border-color: var(--primary);
     }
 
-    .bss-cont1 a:hover::after {
+    /* .bss-cont1 a:hover::after {
         background-image: url(../img/business/ico_bss_cont1_arrow_on.svg);
-    }
+    } */
 
     .bss-cont2 {
         flex-direction: row;
@@ -3787,7 +3788,7 @@
         min-width: 0;
         padding: 13.6rem 0 4rem;
         border-color: #b5b7bd;
-        border-style: dashed;
+        /* border-style: dashed; */
         background-position: center top 4rem;
         font-size: 2rem;
     }
@@ -3869,9 +3870,11 @@
         position: absolute;
         top: 50%;
         right: 0;
-        width: 1px;
         height: 5rem;
-        background-color: var(--text-point);
+        border-right: 1px dashed var(--text-point);
+        /* width: 1px;
+        height: 5rem;
+        background-color: var(--text-point); */
         transform: translateY(-50%);
     }
 
@@ -6043,10 +6046,10 @@
         position: absolute;
         right: 3rem;
         bottom: 1.6rem;
-        width: 14.3962rem;
-        height: 1.8rem;
-        background: url(../img/business/ico_bss_cont1_arrow_off.svg) no-repeat right center;
-        background-size: 14.3962rem 1.9821rem;
+        width: 3.7rem;
+        height: 2.4rem;
+        background: url(../img/business/ico_bss_cont1_arrow.png) no-repeat right center;
+        background-size: 100%;
     }
 
     .bss-cont1 a:hover {
@@ -6054,9 +6057,9 @@
         border-color: var(--primary);
     }
 
-    .bss-cont1 a:hover::after {
+    /* .bss-cont1 a:hover::after {
         background-image: url(../img/business/ico_bss_cont1_arrow_on.svg);
-    }
+    } */
 
     .bss-cont2 {
         flex-direction: row;
@@ -6144,7 +6147,7 @@
         min-width: 0;
         padding: 13.6rem 0 4rem;
         border-color: #b5b7bd;
-        border-style: dashed;
+        /* border-style: dashed; */
         background-position: center top 4rem;
         font-size: 2rem;
     }
@@ -6226,9 +6229,11 @@
         position: absolute;
         top: 50%;
         right: 0;
-        width: 1px;
         height: 5rem;
-        background-color: var(--text-point);
+        border-right: 1px dashed var(--text-point);
+        /* width: 1px;
+        height: 5rem;
+        background-color: var(--text-point); */
         transform: translateY(-50%);
     }
 
