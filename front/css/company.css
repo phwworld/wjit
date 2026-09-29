@@ -1209,7 +1209,7 @@
    
       /* company tab */
       .company-tab {
-         --sticky-offset: 7.4rem;
+         --sticky-offset: 6.6rem;
          padding: 0 22rem;
          margin-top: 10rem;
       }
@@ -2247,7 +2247,7 @@
 
    /* company tab */
    .company-tab {
-      --sticky-offset: 7.4rem;
+      --sticky-offset: 6.6rem;
       padding: 0 22rem;
       margin-top: 10rem;
    }
