@@ -159,6 +159,22 @@ main.home > section .home-sec-info {
     transition-delay: 0.45s;
 }
 
+/* 로드 인트로: 영상(is-active)은 보이게 두고, 카피만 등장 전까지 아래에 고정 */
+.home-visual-item.is-copy-reset .txt1 .line-in,
+.home-visual-item.is-active.is-copy-reset .txt1 .line-in {
+    transform: translate3d(0, 105%, 0);
+    transition: none;
+}
+
+.home-visual-item.is-copy-reset .txt2,
+.home-visual-item.is-copy-reset .btn,
+.home-visual-item.is-active.is-copy-reset .txt2,
+.home-visual-item.is-active.is-copy-reset .btn {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    transition: none;
+}
+
 .home-visual-text .btn button {
     position: relative;
     z-index: 0;
