@@ -229,25 +229,62 @@
   io.observe(section);
 })();
 
-// 히어로 배경 영상 롤링: 영상 재생이 끝나면 다음 슬라이드로 크로스페이드 전환 + 하단 네비(활성 상태·진행률) 동기화
+// 히어로 배경 영상 롤링: 6초마다 다음 슬라이드로 크로스페이드 전환 + 하단 네비(활성 상태·진행률) 동기화
 (function () {
   const items = Array.from(document.querySelectorAll(".home-visual-item"));
   const navItems = Array.from(document.querySelectorAll(".home-visual-nav-item"));
   if (items.length < 2) return;
 
+  const SLIDE_DURATION = 5000;
   const videos = items.map((item) => item.querySelector(".home-visual-video"));
 
   let activeIndex = items.findIndex((item) => item.classList.contains("is-active"));
   if (activeIndex < 0) activeIndex = 0;
+
+  let slideStartedAt = 0;
+  let slideRafId = null;
+  let slideTimerId = null;
 
   const setNavFill = (index, ratio) => {
     const fill = navItems[index] && navItems[index].querySelector(".home-visual-nav-fill");
     if (fill) fill.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
   };
 
+  const stopSlideTimer = () => {
+    if (slideRafId) {
+      cancelAnimationFrame(slideRafId);
+      slideRafId = null;
+    }
+    if (slideTimerId) {
+      clearTimeout(slideTimerId);
+      slideTimerId = null;
+    }
+  };
+
+  const tickNavFill = () => {
+    const elapsed = performance.now() - slideStartedAt;
+    setNavFill(activeIndex, elapsed / SLIDE_DURATION);
+    if (elapsed < SLIDE_DURATION) {
+      slideRafId = requestAnimationFrame(tickNavFill);
+    }
+  };
+
+  const startSlideTimer = () => {
+    stopSlideTimer();
+    slideStartedAt = performance.now();
+    setNavFill(activeIndex, 0);
+    slideRafId = requestAnimationFrame(tickNavFill);
+    slideTimerId = window.setTimeout(() => {
+      activate((activeIndex + 1) % items.length);
+    }, SLIDE_DURATION);
+  };
+
   const activate = (index) => {
     const prevIndex = activeIndex;
-    if (prevIndex === index) return;
+    if (prevIndex === index) {
+      startSlideTimer();
+      return;
+    }
     activeIndex = index;
 
     items.forEach((item, i) => item.classList.toggle("is-active", i === index));
@@ -268,26 +305,15 @@
       const playPromise = nextVideo.play();
       if (playPromise && playPromise.catch) playPromise.catch(() => {});
     }
+
+    startSlideTimer();
   };
-
-  const goToNext = () => activate((activeIndex + 1) % items.length);
-
-  videos.forEach((video, i) => {
-    if (!video) return;
-
-    video.addEventListener("ended", () => {
-      if (i === activeIndex) goToNext();
-    });
-
-    video.addEventListener("timeupdate", () => {
-      if (i !== activeIndex || !video.duration) return;
-      setNavFill(i, video.currentTime / video.duration);
-    });
-  });
 
   navItems.forEach((navItem, i) => {
     navItem.addEventListener("click", () => activate(i));
   });
+
+  startSlideTimer();
 })();
 
 // sec3 news list swiper
