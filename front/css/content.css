@@ -639,8 +639,8 @@
 .project-case,
 .download {
     margin-top: 6rem;
-    padding-top: 6rem;
-    border-top: 1px solid #b5b7bd;
+    /* padding-top: 6rem;
+    border-top: 1px solid #b5b7bd; */
 }
 
 .faq .title,
@@ -1666,7 +1666,7 @@
     .project-case,
     .download {
         margin-top: 10rem;
-        padding-top: 10rem;
+        /* padding-top: 10rem; */
     }
 
     .faq .title,
@@ -2562,7 +2562,7 @@
     .project-case,
     .download {
         margin-top: 10rem;
-        padding-top: 10rem;
+        /* padding-top: 10rem; */
     }
 
     .faq .title,

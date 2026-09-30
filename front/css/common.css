@@ -1158,9 +1158,9 @@ main>.title.no-animate h3 {
     color: rgba(255, 255, 255, 0.85);
     text-align: left;
     background-color: rgba(255, 255, 255, 0.06);
-    background-image: url(../img/common/icon_familysite.svg);
+    background-image: url(../img/common/icon_familysite.png);
     background-repeat: no-repeat;
-    background-position: right 2rem center;
+    background-position: right 1rem center;
     transition:
       border-color 0.3s ease,
       background-color 0.3s ease;
@@ -1696,9 +1696,9 @@ main>.title.no-animate h3 {
     color: rgba(255, 255, 255, 0.85);
     text-align: left;
     background-color: rgba(255, 255, 255, 0.06);
-    background-image: url(../img/common/icon_familysite.svg);
+    background-image: url(../img/common/icon_familysite.png);
     background-repeat: no-repeat;
-    background-position: right 2rem center;
+    background-position: right 1rem center;
     transition:
       border-color 0.3s ease,
       background-color 0.3s ease;

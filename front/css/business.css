@@ -4428,6 +4428,15 @@
         font-size: 1.8rem;
     }
 
+    .businessOne-cont6-area {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .businessOne-cont6-area .cont-txt ~ .cont-txt {
+        margin-top: 2rem;
+    }
+
     .businessOne-cont6 a {
         width: 40rem;
     }
@@ -6786,6 +6795,15 @@
 
     .businessOne-cont5 .cont-type2 .box-cont li {
         font-size: 1.8rem;
+    }
+
+    .businessOne-cont6-area {
+        display: flex;
+        gap: 3rem;
+    }
+    
+    .businessOne-cont6-area .cont-txt ~ .cont-txt {
+        margin-top: 2rem;
     }
 
     .businessOne-cont6 a {
