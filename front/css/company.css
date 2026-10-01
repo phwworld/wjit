@@ -14,6 +14,20 @@
    letter-spacing: -0.02em;
 }
 
+:lang(en) .en-hide {
+   display: none;
+ }
+
+/* img-txt */
+.img-txt>div {
+   display: none;
+}
+
+:lang(ko) .img-txt .mo.ko,
+:lang(en) .img-txt .mo.en {
+   display: block;
+}
+
 /* company tab */
 .company-tab {
    --sticky-offset: 6.1rem;
@@ -337,32 +351,32 @@
    background-color: var(--white);
    background-repeat: no-repeat;
    background-position: right 2.1rem top 2.1rem;
-   background-size: 7.7rem 6rem;
+   background-size: auto 6rem;
    border: 1px solid #e1e7ee;
 }
 
 .overview-cont4 .love-card:nth-child(1) {
-   background-image: url(../img/company/img_overview_cont4_ci01.svg);
+   background-image: url(../img/company/img_overview_cont4_ci01.png);
 }
 
 .overview-cont4 .love-card:nth-child(2) {
-   background-image: url(../img/company/img_overview_cont4_ci02.svg);
+   background-image: url(../img/company/img_overview_cont4_ci02.png);
 }
 
 .overview-cont4 .love-card:nth-child(3) {
-   background-image: url(../img/company/img_overview_cont4_ci03.svg);
+   background-image: url(../img/company/img_overview_cont4_ci03.png);
 }
 
 .overview-cont4 .love-card:nth-child(4) {
-   background-image: url(../img/company/img_overview_cont4_ci04.svg);
+   background-image: url(../img/company/img_overview_cont4_ci04.png);
 }
 
 .overview-cont4 .love-card:nth-child(5) {
-   background-image: url(../img/company/img_overview_cont4_ci05.svg);
+   background-image: url(../img/company/img_overview_cont4_ci05.png);
 }
 
 .overview-cont4 .love-card:nth-child(6) {
-   background-image: url(../img/company/img_overview_cont4_ci06.svg);
+   background-image: url(../img/company/img_overview_cont4_ci06.png);
 }
 
 .overview-cont4 .card-head {
@@ -577,7 +591,7 @@
    letter-spacing: -0.5px;
 }
 
-.overview-cont6 .ci-btns a::before {
+.overview-cont6 .ci-btns a::after {
    content: "";
    width: 2.4rem;
    height: 2.4rem;
@@ -585,7 +599,7 @@
    background-size: 2.4rem;
 }
 
-.overview-cont7 {
+/* .overview-cont7 {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -656,9 +670,9 @@
    letter-spacing: 0;
    line-height: 1.4;
    word-break: keep-all;
-}
+} */
 
-.overview-cont8 {
+/* .overview-cont8 {
    display: flex;
    flex-direction: column;
    gap: 5.6rem;
@@ -726,9 +740,9 @@
    letter-spacing: -0.02em;
    line-height: 1.5;
    word-break: keep-all;
-}
+} */
 
-.overview-cont9 {
+/* .overview-cont9 {
    display: flex;
    flex-direction: column;
    gap: 0.8rem;
@@ -763,9 +777,9 @@
    letter-spacing: -0.02em;
    line-height: 1.5;
    word-break: keep-all;
-}
+} */
 
-.overview-cont10 {
+/* .overview-cont10 {
    display: flex;
    flex-direction: column;
    gap: 0.8rem;
@@ -845,7 +859,7 @@
    font-size: 1.4rem;
    line-height: 1.4;
    word-break: keep-all;
-}
+} */
 
 /* financial */
 .financial-tit {
@@ -1206,6 +1220,17 @@
          margin-bottom: 6rem;
          font-size: 4.6rem;
       }
+
+      /* img-txt */
+      :lang(ko) .img-txt .mo.ko,
+      :lang(en) .img-txt .mo.en {
+         display: none;
+      }
+
+      :lang(ko) .img-txt .pc.ko,
+      :lang(en) .img-txt .pc.en {
+         display: block;
+      }
    
       /* company tab */
       .company-tab {
@@ -1442,7 +1467,7 @@
          height: 34rem;
          padding: 4rem 3.4rem 4.9rem;
          background-position: right 3.4rem top 4rem;
-         background-size: 9rem 9rem;
+         background-size: auto 9rem;
          border: 1px dashed var(--border-default);
       }
    
@@ -1575,7 +1600,7 @@
          border-color: var(--text-secondary);
       }
    
-      .overview-cont7 {
+      /* .overview-cont7 {
          position: relative;
          display: block;
          height: 68rem;
@@ -1662,9 +1687,9 @@
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
-      }
+      } */
    
-      .overview-cont8 {
+      /* .overview-cont8 {
          gap: 5rem;
          margin-top: 6rem;
          padding: 5rem 4rem;
@@ -1805,10 +1830,9 @@
          letter-spacing: -0.02em;
          line-height: 1.8;
          text-align: center;
-         /* transform: translateX(-50%); */
-      }
+      } */
    
-      .overview-cont9 {
+      /* .overview-cont9 {
          gap: 3rem;
          margin-top: 6rem;
          padding: 4rem;
@@ -1849,9 +1873,9 @@
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
-      }
+      } */
    
-      .overview-cont10 {
+      /* .overview-cont10 {
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: 3rem 4rem;
@@ -1901,7 +1925,7 @@
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
-      }
+      } */
    
       /* financial */
       .financial-tit {
@@ -2245,6 +2269,17 @@
    ========================================== */
 @media (min-width: 1025px) and (max-width: 1439px) {
 
+   /* img-txt */
+   :lang(ko) .img-txt .mo.ko,
+   :lang(en) .img-txt .mo.en {
+      display: none;
+   }
+
+   :lang(ko) .img-txt .pc.ko,
+   :lang(en) .img-txt .pc.en {
+      display: block;
+   }
+
    /* company tab */
    .company-tab {
       --sticky-offset: 6.6rem;
@@ -2485,7 +2520,7 @@
       min-height: 28rem;
       padding: 2.4rem 2rem 3rem;
       background-position: right 2rem top 2.4rem;
-      background-size: 7rem 7rem;
+      background-size: auto 7rem;
       border: 1px dashed var(--border-default);
    }
 
@@ -2617,7 +2652,7 @@
       border-color: var(--text-secondary);
    }
 
-   .overview-cont7 {
+   /* .overview-cont7 {
       position: relative;
       display: block;
       height: auto;
@@ -2708,9 +2743,9 @@
       font-weight: 500;
       letter-spacing: -0.02em;
       line-height: 1.8;
-   }
+   } */
 
-   .overview-cont8 {
+   /* .overview-cont8 {
       gap: 4rem;
       margin-top: 6rem;
       padding: 4rem 2rem;
@@ -2843,9 +2878,9 @@
       letter-spacing: -0.02em;
       line-height: 1.8;
       text-align: center;
-   }
+   } */
 
-   .overview-cont9 {
+   /* .overview-cont9 {
       gap: 2rem;
       margin-top: 6rem;
       padding: 2.4rem;
@@ -2887,9 +2922,9 @@
       font-weight: 500;
       letter-spacing: -0.02em;
       line-height: 1.8;
-   }
+   } */
 
-   .overview-cont10 {
+   /* .overview-cont10 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem 2.4rem;
@@ -2939,7 +2974,7 @@
       font-weight: 500;
       letter-spacing: -0.02em;
       line-height: 1.8;
-   }
+   } */
 
    /* financial */
    .financial-tit {

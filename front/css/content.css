@@ -160,28 +160,26 @@
 /* board search */
 .board-search>form {
     display: flex;
+    padding: 0.8rem 0;
+    border-bottom: 2px solid var(--primary);
 }
 
 .board-search input[type="text"] {
-    width: calc(100% - 4.8rem);
-    padding-left: 1.6rem;
-    border: 1px solid var(--text-secondary);
-    border-right: 0;
-    font-size: 1.6rem;
+    width: calc(100% - 5.5rem);
+    padding-left: 0.6rem;
+    font-size: 1.8rem;
 }
 
 .board-search input[type="text"]::placeholder {
-    color: var(--text-body);
+    color: #b5b7bd;
 }
 
 .board-search button {
-    width: 4.8rem;
-    height: 4.8rem;
-    background-color: var(--primary);
-    background-image: url(../img/common/icon_board_search.svg);
+    width: 5rem;
+    height: 4rem;
+    background-image: url(../img/common/icon_board_search.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 3.2rem;
 }
 
 /* board list */
@@ -403,9 +401,9 @@
 }
 
 .board-view.blog-view {
-    margin-top: 0;
+    /* margin-top: 0;
     padding-top: 3rem;
-    border-top: 1px solid var(--border-default);
+    border-top: 1px solid var(--border-default); */
 }
  
 /* 문의하기 */
@@ -1103,7 +1101,7 @@
     .category-list2 button {
         height: 6.4rem;
         padding: 0 3rem;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
 
     .category-list2 button::before {
@@ -1132,20 +1130,17 @@
     }
 
     /* board search */
-    .board-search>form {
+    .board-search {
+        display: flex;
         justify-content: flex-end;
+    }
+    .board-search>form {
+        width: 70rem;
     }
 
     .board-search input[type="text"] {
-        width: calc(45% - 6.8rem);
-        padding-left: 3rem;
-        font-size: 2rem;
-    }
-
-    .board-search button {
-        width: 6.8rem;
-        height: 6.4rem;
-        background-size: 4rem;
+        width: calc(100% - 5.5rem);
+        font-size: 2.4rem;
     }
 
     .category-list2+.board-search {
@@ -1291,7 +1286,7 @@
     .board-list.type4 {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 8rem 2.7rem;
+        gap: 4rem 2.7rem;
         padding: 0;
         border: 0;
     }
@@ -1397,14 +1392,14 @@
 
     .board-view .view-title .title-txt1 {
         margin-bottom: 4rem;
-        font-size: 3.2rem;
+        font-size: 2.4rem;
         font-weight: 600;
     }
 
     .board-view .view-title .title-txt2 {
         margin-bottom: 0rem;
         padding-right: 20rem;
-        font-size: 4rem;
+        font-size: 3.6rem;
     }
 
     .board-view .view-title .title-txt3 {
@@ -1415,9 +1410,9 @@
     }
 
     .board-view.blog-view {
-        margin-top: 5rem;
+        /* margin-top: 5rem;
         padding-top: 5rem;
-        border-width: 2px;
+        border-width: 2px; */
     }
 
     /* 문의하기 */
@@ -2011,7 +2006,7 @@
     .category-list2 button {
         height: 6.4rem;
         padding: 0 3rem;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
 
     .category-list2 button::before {
@@ -2040,20 +2035,17 @@
     }
 
     /* board search */
-    .board-search>form {
+    .board-search {
+        display: flex;
         justify-content: flex-end;
+    }
+    .board-search>form {
+        width: 70rem;
     }
 
     .board-search input[type="text"] {
-        width: calc(45% - 6.8rem);
-        padding-left: 3rem;
-        font-size: 2rem;
-    }
-
-    .board-search button {
-        width: 6.8rem;
-        height: 6.4rem;
-        background-size: 4rem;
+        width: calc(100% - 5.5rem);
+        font-size: 2.4rem;
     }
 
     .category-list2+.board-search {
@@ -2199,7 +2191,7 @@
     .board-list.type4 {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 8rem 2.7rem;
+        gap: 4rem 2.7rem;
         padding: 0;
         border: 0;
     }
@@ -2306,7 +2298,7 @@
     .board-view .view-title .title-txt2 {
         margin-bottom: 0rem;
         padding-right: 20rem;
-        font-size: 4rem;
+        font-size: 3.6rem;
     }
 
     .board-view .view-title .title-txt3 {
