@@ -283,11 +283,11 @@ header .function-menu button {
 }
 
 header .function-menu .search {
-  background: url(../img/common/icon_search.svg) no-repeat;
+  background: url(../img/common/icon_search_off.png) no-repeat;
 }
 
 header .function-menu .lang {
-  background: url(../img/common/icon_lang.svg) no-repeat;
+  background: url(../img/common/icon_lang_off.png) no-repeat;
 }
 
 header .function-menu .mo-menu {
@@ -329,9 +329,9 @@ header .mo-gnb>ul>li>a {
 }
 
 header .mo-gnb>ul>li>a.act {
-  color: var(--primary);
+  color: var(--text-point);
   background-image: url(../img/common/icon_mognb_on.svg);
-  background-color: #f2fbff
+  background-color: #e5f2f8;
 }
 
 header .mo-gnb>ul>li>ul,
@@ -349,7 +349,7 @@ header .mo-gnb>ul>li>ul>li>a {
   padding-left: 1.4rem;
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-point);
   line-height: 5rem;
 }
 
@@ -769,6 +769,10 @@ main>.title.no-animate h3 {
   font-size: 2rem;
 }
 
+.cont-txt {
+  line-height: 1.8;
+}
+
 /* layer popup */
 .layer-pop {
   display: none;
@@ -964,6 +968,10 @@ main>.title.no-animate h3 {
     line-height: 2rem;
   }
 
+  header .shortcut-menu a:hover {
+    color: #222;
+  }
+
   header .function-menu {
     gap: 4rem;
   }
@@ -975,6 +983,14 @@ main>.title.no-animate h3 {
 
   header .function-menu .mo-menu {
     display: none;
+  }
+
+  header .function-menu .search:hover {
+    background-image: url(../img/common/icon_search_on.png);
+  }
+  
+  header .function-menu .lang:hover {
+    background-image: url(../img/common/icon_lang_on.png);
   }
 
   header .pc-gnb>ul {
@@ -1052,12 +1068,16 @@ main>.title.no-animate h3 {
 
   header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
-    background-color: var(--bg-surface);
+  }
+
+  header .pc-gnb>ul>li>.gnb-sub.sub2>ul {
+    flex-wrap: wrap;
+    gap: 4rem 5rem;
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>a,
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul>li>ul>li>a {
-    width: 18.5rem;
+    width: 32rem;
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub3>ul {
@@ -1580,7 +1600,6 @@ main>.title.no-animate h3 {
 
   header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
-    background-color: var(--bg-surface);
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul {
