@@ -1312,7 +1312,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         line-height: 1.5;
         letter-spacing: -0.02em;
         color: #777;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
     }
 
     .news-list-prev,
@@ -1906,7 +1906,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         line-height: 1.5;
         letter-spacing: -0.02em;
         color: #777;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
     }
 
     .news-list-prev,

@@ -201,12 +201,26 @@
 }
 
 .aicc-bridge {
-    padding-bottom: 100vw;
+    padding-bottom: 0;
+    background-color: #fff;
+    background-image: none;
+}
+
+.aicc-bridge .inner-cont {
+    background: linear-gradient(to bottom, #fff 0%, #eeeff3 100%);
+}
+
+.aicc-bridge::after {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 360 / 327;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100% auto;
-    background-image: url(../img/business/bg_aicc_bridge_mo.png);
-    background-color: #f1f2f6;
+    background-position: center top, center center;
+    background-size: 100% 100%, 100% 100%;
+    background-image:
+        linear-gradient(to bottom, #eeeff3 5.335%, rgba(239, 240, 244, 0) 17.717%),
+        url(../img/business/bg_aicc_bridge_mo.png);
 }
 
 .aicc-bridge-cont {
@@ -534,18 +548,43 @@
 }
 
 .wrms-bridge {
-    padding-bottom: 80.55vw;
+    padding-bottom: 0;
+    background-color: #fff;
+    background-image: none;
+}
+
+.wrms-bridge::after {
+    content: "";
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 360 / 290;
+    background-color: #e3e8ef;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100%;
+    background-position: center;
+    background-size: 100% 100%;
     background-image: url(../img/business/bg_wrms_bridge_mo.svg);
-    background-color: #eef0f6;
 }
 
 .wrms-bridge-cont {
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.wrms-bridge-cont::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: calc(290 / 360 * -100vw);
+    left: -2.4rem;
+    right: -2.4rem;
+    background: linear-gradient(to bottom, #fff 11.093%, #e3e8ef 37.825%);
+    pointer-events: none;
 }
 
 .wrms-bridge-cont>div {
@@ -771,6 +810,15 @@
     width: 100%;
 }
 
+.wdms-bridge {
+    padding-bottom: 98.23vw;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
+    background-image: url(../img/business/bg_wdms_bridge_mo.png);
+    background-color: #f5f6f8;
+}
+
 /* gamsolution */
 .gamsolution-cont4>div {
     display: flex;
@@ -796,12 +844,20 @@
 
 /* businessSynergySuit */
 .bss-bridge {
-    padding-bottom: 94.44vw;
+    padding-bottom: 0;
+    background: linear-gradient(to bottom, #fff 0%, #ebedf3 64.496%);
+}
+
+.bss-bridge::after {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 360 / 340;
+    background-color: #ebedf3;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 100%;
+    background-position: center;
+    background-size: 100% 100%;
     background-image: url(../img/business/bg_bss_bridge_mo.svg);
-    background-color: #f1f0f2;
 }
 
 .bss-bridge-cont {
@@ -3066,9 +3122,19 @@
     .aicc-bridge {
         height: 65rem;
         padding-bottom: 0;
+        background-color: #f1f2f6;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_aicc_bridge_pc.svg);
+    }
+
+    .aicc-bridge .inner-cont {
+        background: none;
+    }
+
+    .aicc-bridge::after {
+        content: none;
     }
 
     .aicc-bridge-cont {
@@ -3253,9 +3319,16 @@
     .wrms-bridge {
         height: 65rem;
         padding-bottom: 0;
+        background-color: #eef0f6;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_wrms_bridge_pc.svg);
+    }
+
+    .wrms-bridge::after,
+    .wrms-bridge-cont::before {
+        content: none;
     }
 
     .wrms-bridge .inner-cont {
@@ -3544,6 +3617,19 @@
         width: 9rem;
     }
 
+    .wdms-bridge {
+        height: 40rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_wdms_bridge_pc.png);
+    }
+
+    .wdms-bridge .inner-cont {
+        padding-top: 10rem;
+        padding-right: 44rem;
+    }
+
     /* gamsolution */
     .gamsolution-cont4>div {
         gap: 2rem;
@@ -3569,9 +3655,15 @@
     .bss-bridge {
         height: 64.4 rem;
         padding-bottom: 0;
+        background-color: #f1f0f2;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_bss_bridge_pc.svg);
+    }
+
+    .bss-bridge::after {
+        content: none;
     }
 
     .bss-bridge .inner-cont {
@@ -5431,9 +5523,19 @@
     .aicc-bridge {
         height: 65rem;
         padding-bottom: 0;
+        background-color: #f1f2f6;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_aicc_bridge_pc.svg);
+    }
+
+    .aicc-bridge .inner-cont {
+        background: none;
+    }
+
+    .aicc-bridge::after {
+        content: none;
     }
 
     .aicc-bridge-cont {
@@ -5618,9 +5720,16 @@
     .wrms-bridge {
         height: 65rem;
         padding-bottom: 0;
+        background-color: #eef0f6;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_wrms_bridge_pc.svg);
+    }
+
+    .wrms-bridge::after,
+    .wrms-bridge-cont::before {
+        content: none;
     }
 
     .wrms-bridge .inner-cont {
@@ -5912,6 +6021,19 @@
         width: 9rem;
     }
 
+    .wdms-bridge {
+        height: 40rem;
+        padding-bottom: 0;
+        background-position: center center;
+        background-size: auto 100%;
+        background-image: url(../img/business/bg_wdms_bridge_pc.png);
+    }
+
+    .wdms-bridge .inner-cont {
+        padding-top: 10rem;
+        padding-right: 44rem;
+    }
+
     /* gamsolution */
     .gamsolution-cont4>div {
         gap: 2rem;
@@ -5937,9 +6059,15 @@
     .bss-bridge {
         height: 64.4 rem;
         padding-bottom: 0;
+        background-color: #f1f0f2;
+        background-repeat: no-repeat;
         background-position: center center;
         background-size: auto 100%;
         background-image: url(../img/business/bg_bss_bridge_pc.svg);
+    }
+
+    .bss-bridge::after {
+        content: none;
     }
 
     .bss-bridge .inner-cont {
