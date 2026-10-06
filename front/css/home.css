@@ -9,6 +9,7 @@ body:has(main.home) header {
     top: 0;
     left: 0;
     width: 100%;
+    border-bottom: 0;
     opacity: 0;
     transition: opacity 0.6s ease, z-index 0.3s ease-in-out;
 }
@@ -48,16 +49,17 @@ main.home > section .inner-cont {
 }
 
 main.home > section .home-sec-title {
-    font-size: 3.4rem;
+    font-size: 2.8rem;
     font-weight: 700;
+    letter-spacing: -2%;
     text-align: center;
     line-height: 1.2;
 }
 
 main.home > section .home-sec-info {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -102,8 +104,9 @@ main.home > section .home-sec-info {
 }
 
 .home-visual-text .txt1 {
-    font-size: 3.2rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -2%;
 }
 
 /* 히어로 카피: 줄 단위 마스크 슬라이드 인/아웃 (영상 전환에 맞춘 텍스트 노출·히든) */
@@ -131,8 +134,10 @@ main.home > section .home-sec-info {
 
 .home-visual-text .txt2 {
     margin-top: 2rem;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: -2%;
+    line-height: 1.6;
     opacity: 0;
     transform: translate3d(0, 10px, 0);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -266,14 +271,15 @@ main.home > section .home-sec-info {
 }
 
 .home-sec2 .home-sec-info {
-    color: #777;
+    /* color: #777; */
+    color: var(--text-body);
 }
 
 .home-sec2 .business-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 .home-sec2 .business-item a {
@@ -388,7 +394,7 @@ main.home > section .home-sec-info {
     position: relative;
     flex-direction: column;
     justify-content: center;
-    gap: 4rem;
+    gap: 3rem;
     overflow: hidden;
  }
 
@@ -419,7 +425,7 @@ main.home > section .home-sec-info {
     position: relative;
     z-index: 2;
     width: 100%;
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
  }
 
  .home-sec3 .news-list-wrap {
@@ -529,7 +535,8 @@ main.home > section .home-sec-info {
 }
 
 .home-sec4 .home-sec-info {
-    color: var(--text-secondary);
+    /* color: var(--text-secondary); */
+    color: var(--text-body);
 }
 
 /* case-list (swiper) */
@@ -537,7 +544,7 @@ main.home > section .home-sec-info {
     position: relative;
     width: 100%;
     /* padding: 0 2.4rem; */
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .case-list .swiper {
@@ -816,7 +823,7 @@ main.home > section .home-sec-info {
     gap: 0.8rem;
     width: 100%;
     padding: 0 2.4rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .home-growth-card {
@@ -1093,11 +1100,16 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     main.home > section .home-sec-title {
         font-size: 5rem;
+        letter-spacing: -2%;
+        line-height: 1;
     }
     
     main.home > section .home-sec-info {
-        margin-top: 1.6rem;
-        font-size: 2.4rem;
+        margin-top: 2rem;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: -2%;
+        line-height: 1;
     }
 
     .home-visual-text .txt1 {
@@ -1132,7 +1144,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         flex-direction: row;
         flex-wrap: wrap;
         gap: 2.4rem;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
     
     .home-sec2 .business-item {
@@ -1265,7 +1277,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec3 {
-        gap: 6rem;
+        gap: 5rem;
+    }
+
+    .home-sec3 .inner-cont {
+        padding-bottom: 0 !important;
     }
 
     .news-list-wrap {
@@ -1449,11 +1465,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .case-item .desc {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 500;
         line-height: 1.8;
         letter-spacing: -0.02em;
-        color: var(--text-secondary);
+        color: var(--text-body);
         white-space: normal;
     }
 
@@ -1680,11 +1696,16 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     main.home > section .home-sec-title {
         font-size: 5rem;
+        letter-spacing: -2%;
+        line-height: 1;
     }
     
     main.home > section .home-sec-info {
-        margin-top: 1.6rem;
-        font-size: 2.4rem;
+        margin-top: 2rem;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: -2%;
+        line-height: 1;
     }
 
     .home-visual-text .txt1 {
@@ -1732,7 +1753,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         flex-direction: row;
         flex-wrap: wrap;
         gap: 2rem;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
     
     .home-sec2 .business-item {
@@ -1863,7 +1884,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec3 {
-        gap: 6rem;
+        gap: 5rem;
     }
 
     .news-list-wrap {
@@ -2041,10 +2062,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .case-item .desc {
         font-size: 1.8rem;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.8;
         letter-spacing: -0.02em;
-        color: var(--text-secondary);
+        color: var(--text-body);
         white-space: normal;
     }
 

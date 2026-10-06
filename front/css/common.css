@@ -224,7 +224,7 @@ header {
   position: sticky;
   top: 0;
   height: 5.6rem;
-  border-bottom: 1px solid #686c78;
+  /* border-bottom: 1px solid #686c78; */
   background-color: #fff;
   z-index: 10;
   transition: z-index 0.3s ease-in-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
@@ -930,6 +930,7 @@ main>.title.no-animate h3 {
   /* layout */
   header {
     height: 10rem;
+    border-bottom: 1px solid var(--text-body);
   }
 
   header .inner-cont {
@@ -1475,6 +1476,7 @@ main>.title.no-animate h3 {
   /* layout */
   header {
     height: 10rem;
+    border-bottom: 1px solid var(--text-body);
   }
 
   header .inner-cont {
