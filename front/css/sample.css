@@ -1,0 +1,98 @@
+/* ==========================================
+   1. 기본 스타일 & 모바일 (Mobile)
+   - 기준 해상도: 360px
+   ========================================== */
+html {
+  font-size: 62.5%; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 3.88vw; /* 14px / 360px * 100 */
+  background-color: #f9f9f9;
+}
+
+.wrapper {
+  padding: 4.16vw; /* 15px / 360px * 100 */
+}
+
+header, main, aside, footer {
+  padding: 5.55vw;       /* 20px / 360px * 100 */
+  margin-bottom: 4.16vw; /* 15px / 360px * 100 */
+  border-radius: 2.22vw; /* 8px / 360px * 100 */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 각 영역별 색상 지정 */
+.header { background-color: #34495e; }
+.main-content { background-color: #3498db; }
+.sidebar { background-color: #e67e22; }
+.footer { background-color: #7f8c8d; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ==========================================
+   2. 태블릿 구간 (Tablet) - 768px 이상
+   - 기준 해상도: 768px
+   ========================================== */
+@media (min-width: 768px) {
+  body {
+    font-size: 2.08vw; /* 16px / 768px * 100 */
+    background-color: #f0f3f4;
+  }
+
+  .wrapper {
+    padding: 3.9vw; /* 30px / 768px * 100 */
+  }
+  
+  header, main, aside, footer {
+    /* 태블릿 화면에 맞춘 가변 여백과 라운딩 */
+    padding: 3.9vw;       /* 30px / 768px * 100 */
+    margin-bottom: 2.6vw; /* 20px / 768px * 100 */
+    border-radius: 1.04vw; /* 8px / 768px * 100 */
+  }
+}
+
+
+/* ==========================================
+   3. PC / 데스크톱 구간 (PC) - 1024px 이상
+   - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
+   ========================================== */
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.6rem; /* PC에서는 16px로 크기 고정 */
+  }
+
+  .wrapper {
+    max-width: 120.0rem; /* 1200px */
+    margin: 0 auto;
+    padding: 3.0rem;     /* 30px 고정 */
+  }
+
+  header, main, aside, footer {
+    padding: 2.0rem;       /* 20px 고정 */
+    margin-bottom: 0;      /* 레이아웃 배치에 따른 조정 */
+    border-radius: 0.8rem; /* 8px 고정 */
+  }
+
+  .container {
+    flex-direction: row;
+    gap: 2.0rem; /* 20px 고정 */
+  }
+
+  .main-content {
+    flex: 7;
+  }
+
+  .sidebar {
+    flex: 3;
+  }
+}

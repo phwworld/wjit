@@ -266,7 +266,7 @@ header h1 a {
 }
 
 header .pc-gnb,
-header .shortcut-menu { 
+header .shortcut-menu {
   display: none;
 }
 
@@ -275,7 +275,8 @@ header .function-menu {
   gap: 2.9rem;
 }
 
-header .function-menu button {
+header .function-menu button,
+header .function-menu a {
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -976,7 +977,8 @@ main>.title.no-animate h3 {
     gap: 4rem;
   }
 
-  header .function-menu button {
+  header .function-menu button,
+  header .function-menu a {
     width: 2.8rem;
     height: 2.8rem;
   }
@@ -988,7 +990,7 @@ main>.title.no-animate h3 {
   header .function-menu .search:hover {
     background-image: url(../img/common/icon_search_on.png);
   }
-  
+
   header .function-menu .lang:hover {
     background-image: url(../img/common/icon_lang_on.png);
   }
@@ -1084,12 +1086,20 @@ main>.title.no-animate h3 {
     padding-left: 71rem;
   }
 
+  :lang(en) header .pc-gnb>ul>li>.gnb-sub.sub3>ul {
+    padding-left: 57rem;
+  }
+
   header .pc-gnb>ul>li>.gnb-sub.sub4>ul {
     padding-left: 82rem;
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
     padding-left: 95rem;
+  }
+
+  :lang(en) header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
+    padding-left: 84rem;
   }
 
   main {
@@ -1100,7 +1110,7 @@ main>.title.no-animate h3 {
     bottom: 1.5rem;
     right: 1rem;
   }
-  
+
   .scroll-action  button {
     width: 6rem;
     height: 6rem;
@@ -1507,7 +1517,8 @@ main>.title.no-animate h3 {
     gap: 4rem;
   }
 
-  header .function-menu button {
+  header .function-menu button,
+  header .function-menu a {
     width: 2.8rem;
     height: 2.8rem;
   }
@@ -1637,12 +1648,12 @@ main>.title.no-animate h3 {
     bottom: 1.5rem;
     right: 1rem;
   }
-  
+
   .scroll-action  button {
     width: 6rem;
     height: 6rem;
   }
-  
+
   .scroll-action .scroll-btm {
     display: block;
   }

@@ -521,12 +521,18 @@ function initSearchLayer() {
         });
     }
 
-    // 추천 검색어 버튼 클릭 시 검색창에 텍스트 입력 및 포커스
+    // 추천 검색어를 입력칸에 넣고 검색 버튼을 누른 것과 같이 보낸다
     if (recommendBtns.length && searchInput) {
         recommendBtns.forEach((btn) => {
             btn.addEventListener("click", () => {
                 searchInput.value = btn.textContent.trim();
-                searchInput.focus();
+                const form = searchInput.form;
+                if (!form) return;
+                if (typeof form.requestSubmit === "function") {
+                    form.requestSubmit();
+                } else {
+                    form.submit();
+                }
             });
         });
     }
@@ -640,7 +646,7 @@ function initCategoryPanels() {
     const groupCategoryPanel = document.querySelector('.inquiry-form .category-panel[data-panel="group"]');
     if (!itCategoryPanel || !groupCategoryPanel) return;
 
-    const getCategoryChecks = (panel) => panel.querySelectorAll('input[name="category"]');
+    const getCategoryChecks = (panel) => panel.querySelectorAll('input[name="categories"], input[name="category"]');
     const hasCheckedCategory = (panel) => [...getCategoryChecks(panel)].some((input) => input.checked);
 
     const setCategoryChecksDisabled = (panel, disabled) => {

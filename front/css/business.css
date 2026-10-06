@@ -1868,7 +1868,11 @@
 }
 
 .cloudOnepack-cont5 .col-cate {
-    width: 10rem;
+    width: 34%;
+}
+
+.cloudOnepack-cont5 .col-item {
+    width: 28%;
 }
 
 .cloudOnepack-cont5 table:not(:last-child) {
@@ -4647,6 +4651,67 @@
         width: 40%;
     }
 
+    /* cloudOnepack */
+    .cloudOnepack-cont2 .box-cont {
+        padding: 4rem;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .cloudOnepack-cont5 {
+        margin-top: 6rem;
+    }
+
+    .cloudOnepack-cont5 .col-cate {
+        width: 40rem;
+    }
+
+    .cloudOnepack-cont5 .col-item {
+        width: 28rem;
+    }
+
+    .cloudOnepack-cont5 th,
+    .cloudOnepack-cont5 td {
+        height: 7rem;
+        padding: 1.2rem 1rem;
+        font-size: 2rem;
+    }
+
+    .cloudOnepack-cont5 .cate {
+        padding: 2.4rem 1rem;
+        font-size: 2rem;
+    }
+
+    .cloudOnepack-cont5 .cate strong {
+        font-size: 2.4rem;
+    }
+
+    .cloudOnepack-cont5 .cate span {
+        font-weight: 700;
+    }
+
+    .cloudOnepack-cont5 th:not(.cate) {
+        line-height: 1.4;
+    }
+
+    .cloudOnepack-cont5 td {
+        font-weight: 500;
+        line-height: 1.8;
+    }
+
+    .cloudOnepack-cont5 td.price {
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .cloudOnepack-cont6 {
+        margin-top: 3rem;
+    }
+
+    .cloudOnepack-cont6 li {
+        font-size: 1.8rem;
+    }
+
     /* aws */
     .aws-cont2 .box-cont {
         padding-top: 14rem;
@@ -7064,64 +7129,11 @@
     }
 
     .cloudOnepack-cont5 .col-cate {
-        width: 40rem;
+        width: 28rem;
     }
 
-    .cloudOnepack-cont5 th,
-    .cloudOnepack-cont5 td {
-        height: 7rem;
-        padding: 1.2rem 1rem;
-        font-size: 2rem;
-    }
-
-    .cloudOnepack-cont5 .cate {
-        padding: 2.4rem 1rem;
-        font-size: 2rem;
-    }
-
-    .cloudOnepack-cont5 .cate strong {
-        font-size: 2.4rem;
-    }
-
-    .cloudOnepack-cont5 .cate span {
-        font-weight: 700;
-    }
-
-    .cloudOnepack-cont5 th:not(.cate) {
-        line-height: 1.4;
-    }
-
-    .cloudOnepack-cont5 td {
-        font-weight: 500;
-        line-height: 1.8;
-    }
-
-    .cloudOnepack-cont5 td.price {
-        font-weight: 700;
-        line-height: normal;
-    }
-
-    .cloudOnepack-cont6 {
-        margin-top: 3rem;
-    }
-
-    .cloudOnepack-cont6 li {
-        font-size: 1.8rem;
-    }
-
-    /* cloudOnepack */
-    .cloudOnepack-cont2 .box-cont {
-        padding: 4rem;
-        font-size: 2rem;
-        font-weight: 500;
-    }
-
-    .cloudOnepack-cont5 {
-        margin-top: 6rem;
-    }
-
-    .cloudOnepack-cont5 .col-cate {
-        width: 40rem;
+    .cloudOnepack-cont5 .col-item {
+        width: 24rem;
     }
 
     .cloudOnepack-cont5 th,

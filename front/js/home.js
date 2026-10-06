@@ -129,6 +129,8 @@
     if (type === "clients") return `${n.toLocaleString("ko-KR")}+`;
     if (type === "professionals") return n.toLocaleString("en-US");
     if (type === "experience") return `${n}년+`;
+    // number: 접미사는 HTML에 두고 숫자만 올린다 (영문 B+ / + Years)
+    if (type === "number") return String(n);
     return n.toLocaleString("ko-KR");
   };
 

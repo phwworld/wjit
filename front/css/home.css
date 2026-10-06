@@ -846,7 +846,9 @@ main.home > section .home-sec-info {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    width: 13.9rem;
+    min-width: 13.9rem;
+    width: auto;
+    max-width: calc(100% - 10rem);
 }
 
 .home-growth-card .tit {
@@ -858,11 +860,12 @@ main.home > section .home-sec-info {
 }
 
 .home-growth-card .num {
-    font-family: "GmarketSans";
+    font-family: "GmarketSans", "Pretendard", sans-serif;
     font-weight: 500;
     font-size: 2.8rem;
     line-height: 1;
     color: var(--text-body);
+    white-space: nowrap;
 }
 
 .home-growth-card .icon {
