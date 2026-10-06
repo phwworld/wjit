@@ -1,7 +1,7 @@
 // 히어로 인트로: 좌상단 모서리를 기준으로 clip-path 사각형이 커지며 열리는 리빌 (로드 시 1회)
 // 헤더·퀵네비·스크롤 버튼은 리빌이 시작되기 전까지 숨기고, is-intro-revealed 뒤 노출
 // 영상은 is-active를 유지해 좌상단 clip-path로 열리고,
-// 카피만 숨김 자세로 고정한 뒤 2초 후 롤링과 같은 아래→위 등장을 재생
+// 카피는 숨김 자세로 고정했다가 마스크가 완전히 열린 뒤(샘플과 동일) 아래→위 등장을 재생
 (function () {
   const hero = document.querySelector(".home-sec1");
   if (!hero) return;
@@ -22,39 +22,24 @@
     activeItem.classList.add("is-copy-reset");
   }
 
+  // is-copy-reset 해제 시 is-active 상태의 transition으로 등장 재생
+  let copyRevealed = false;
   const revealCopy = () => {
-    if (!activeItem) return;
-    if (!activeItem.classList.contains("is-active")) {
-      activeItem.classList.remove("is-copy-reset");
-      return;
-    }
-
-    const nodes = [
-      ...activeItem.querySelectorAll(".line-in"),
-      activeItem.querySelector(".txt2"),
-      activeItem.querySelector(".btn"),
-    ].filter(Boolean);
-
-    nodes.forEach((el) => {
-      const cs = getComputedStyle(el);
-      el.style.transition = "none";
-      el.style.transform = cs.transform;
-      el.style.opacity = cs.opacity;
-    });
+    if (copyRevealed || !activeItem) return;
+    copyRevealed = true;
     activeItem.classList.remove("is-copy-reset");
-    void activeItem.offsetWidth;
-    nodes.forEach((el) => {
-      el.style.transition = "";
-      el.style.transform = "";
-      el.style.opacity = "";
-    });
   };
+
+  hero.addEventListener("transitionend", (e) => {
+    if (e.target === hero && e.propertyName === "clip-path") revealCopy();
+  });
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       hero.classList.add("is-intro-revealed");
       if (activeItem && !reduceMotion) {
-        window.setTimeout(revealCopy, 1000);
+        // transitionend 누락 대비
+        window.setTimeout(revealCopy, 1400);
       }
       window.setTimeout(() => {
         chrome.forEach((el) => {
@@ -231,14 +216,21 @@
   io.observe(section);
 })();
 
-// 히어로 배경 영상 롤링: 6초마다 다음 슬라이드로 크로스페이드 전환 + 하단 네비(활성 상태·진행률) 동기화
+// 히어로 배경 영상 롤링: 5초마다 다음 슬라이드로 전환 + 하단 네비(활성 상태·진행률) 동기화
+// - 퇴장 슬라이드는 is-leaving으로 불투명하게 아래에 두고 신규 슬라이드만 위에서 페이드 인(흰 배경 노출 방지)
+// - 카피는 샘플과 동일하게 기존 카피가 위로 빠진 뒤(COPY_EXIT_MS) 신규 카피 등장
 (function () {
+  const hero = document.querySelector(".home-sec1");
   const items = Array.from(document.querySelectorAll(".home-visual-item"));
   const navItems = Array.from(document.querySelectorAll(".home-visual-nav-item"));
   if (items.length < 2) return;
 
   const SLIDE_DURATION = 5000;
+  const FADE_MS = 1000;
+  // 제목 퇴장 0.42s + 2번째 줄 스태거 0.15s
+  const COPY_EXIT_MS = 570;
   const videos = items.map((item) => item.querySelector(".home-visual-video"));
+  let leaveTimerId = null;
 
   let activeIndex = items.findIndex((item) => item.classList.contains("is-active"));
   if (activeIndex < 0) activeIndex = 0;
@@ -289,17 +281,33 @@
     }
     activeIndex = index;
 
-    items.forEach((item, i) => item.classList.toggle("is-active", i === index));
+    // 이전 전환이 끝나기 전에 다시 전환되면 남아 있던 퇴장 슬라이드를 즉시 정리
+    if (leaveTimerId) {
+      clearTimeout(leaveTimerId);
+      leaveTimerId = null;
+    }
+    if (hero) hero.style.setProperty("--copy-in-base", `${COPY_EXIT_MS}ms`);
+
+    items.forEach((item, i) => {
+      item.classList.remove("is-copy-reset");
+      item.classList.toggle("is-leaving", i === prevIndex);
+      item.classList.toggle("is-active", i === index);
+    });
     navItems.forEach((navItem, i) => {
       navItem.classList.toggle("is-active", i === index);
       if (i !== index) setNavFill(i, 0);
     });
 
+    const prevItem = items[prevIndex];
     const prevVideo = videos[prevIndex];
-    if (prevVideo) {
-      prevVideo.pause();
-      prevVideo.currentTime = 0;
-    }
+    leaveTimerId = window.setTimeout(() => {
+      leaveTimerId = null;
+      prevItem.classList.remove("is-leaving");
+      if (prevVideo) {
+        prevVideo.pause();
+        prevVideo.currentTime = 0;
+      }
+    }, FADE_MS);
 
     const nextVideo = videos[index];
     if (nextVideo) {
@@ -364,25 +372,64 @@
     swiper.animating = false;
   };
 
+  // 재개용 이어가기 애니메이션 식별자 (도중에 다시 정지·네비 이동하면 이전 콜백 무효화)
+  let resumeToken = 0;
+
   const pauseTicker = () => {
+    resumeToken += 1;
     swiper.autoplay.stop();
     freezeTranslate();
   };
 
+  // 멈춘 위치에서 바로 autoplay를 시작하면 "남은 거리 + 다음 한 칸"을 TICKER_SPEED 안에 가버려
+  // 순간적으로 빨라지므로, 현재 목표 snap까지 남은 거리를 원래 티커 속도로 먼저 이어간 뒤 autoplay 재개
   const resumeTicker = () => {
     swiper.params.speed = TICKER_SPEED;
-    swiper.autoplay.start();
+
+    const current = swiper.getTranslate();
+    const target = -swiper.snapGrid[swiper.snapIndex];
+    const step = (swiper.slidesSizesGrid[0] || 0) + (Number(swiper.params.spaceBetween) || 0);
+    const remaining = current - target;
+
+    if (!step || !Number.isFinite(target) || remaining <= 1) {
+      swiper.autoplay.start();
+      return;
+    }
+
+    const token = ++resumeToken;
+    const duration = (TICKER_SPEED * remaining) / step;
+    let finished = false;
+
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      swiper.wrapperEl.removeEventListener("transitionend", onEnd);
+      if (token !== resumeToken || hovering || navBusy || pendingDelta !== 0) return;
+      if (!swiper.autoplay.running) swiper.autoplay.start();
+    };
+    const onEnd = (e) => {
+      if (e.target === swiper.wrapperEl) finish();
+    };
+
+    swiper.wrapperEl.addEventListener("transitionend", onEnd);
+    swiper.setTransition(duration);
+    swiper.setTranslate(target);
+    window.setTimeout(finish, duration + 80);
   };
 
-  newsListWrap.addEventListener("mouseenter", () => {
-    if (!isDesktop()) return;
+  // 카드(a.news-card)에 마우스가 올라가 있는 동안 티커 일시 정지, 카드 밖으로 나가면 재개
+  swiperEl.addEventListener("mouseover", (e) => {
+    if (!isDesktop() || hovering) return;
+    if (!e.target.closest(".news-card")) return;
     hovering = true;
     pauseTicker();
   });
 
-  newsListWrap.addEventListener("mouseleave", () => {
-    if (!isDesktop()) return;
+  swiperEl.addEventListener("mouseout", (e) => {
+    if (!isDesktop() || !hovering) return;
+    if (e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(".news-card")) return;
     hovering = false;
+    if (navBusy || pendingDelta !== 0) return;
     resumeTicker();
   });
 
@@ -534,7 +581,7 @@
 })();
 
 // main.home 섹션 풀스크린 스냅 스크롤 + 퀵네비 연동 (PC 전용: 휠/키보드)
-// - 섹션이 뷰포트 높이 이내면 휠/키보드 1회당 한 화면씩 다음/이전 섹션으로 이동(ease-out-quad 이징)
+// - 섹션이 뷰포트 높이 이내면 휠/키보드 1회당 한 화면씩 다음/이전 섹션으로 이동(CSS ease-out 이징)
 // - 섹션이 뷰포트보다 크면 내부는 기본 스크롤을 허용하고, 섹션 상/하단 끝에서만 다음 화면으로 전환
 // - 마지막 섹션 이후 푸터 영역에서 위로 스크롤하면 스크롤 다운과 동일하게 한 화면씩 마지막 섹션으로 복귀
 // - 모바일 터치는 가로채지 않고 완전한 자연 스크롤로 둔다(참고한 샘플 페이지도 동일한 방식:
@@ -561,7 +608,25 @@
   let isAnimating = false;
   let rafId = null;
 
-  const easeOutQuad = (t) => t * (2 - t);
+  // CSS ease-out과 동일한 cubic-bezier(0, 0, 0.58, 1): 진행률 t에 해당하는 곡선 값을 뉴턴법으로 계산
+  const cubicBezier = (x1, y1, x2, y2) => {
+    const bx = (u) => 3 * x1 * u * (1 - u) * (1 - u) + 3 * x2 * u * u * (1 - u) + u * u * u;
+    const by = (u) => 3 * y1 * u * (1 - u) * (1 - u) + 3 * y2 * u * u * (1 - u) + u * u * u;
+    const dbx = (u) => 3 * x1 * (1 - u) * (1 - u) + 6 * (x2 - x1) * u * (1 - u) + 3 * (1 - x2) * u * u;
+    return (t) => {
+      if (t <= 0) return 0;
+      if (t >= 1) return 1;
+      let u = t;
+      for (let i = 0; i < 8; i++) {
+        const d = dbx(u);
+        if (Math.abs(d) < 1e-6) break;
+        u -= (bx(u) - t) / d;
+        u = Math.min(1, Math.max(0, u));
+      }
+      return by(u);
+    };
+  };
+  const easeOut = cubicBezier(0, 0, 0.58, 1);
   const getEdge = () => (mqNarrow.matches ? 3 : 1);
 
   // 좁은 화면 보정: 반올림 오차로 이전 섹션이 1~2px 비치는 것을 막기 위해 진행 방향으로 살짝 더 이동
@@ -649,7 +714,7 @@
 
     const tick = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      window.scrollTo(0, startY + distance * easeOutQuad(progress));
+      window.scrollTo(0, startY + distance * easeOut(progress));
 
       if (progress < 1) {
         rafId = requestAnimationFrame(tick);
