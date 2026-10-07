@@ -730,6 +730,11 @@ main>.title.no-animate h3 {
   font-size: 2rem;
 }
 
+.c-tit .text-point {
+  display: inline !important;
+  font-size: inherit;
+}
+
 .c-tit .full-name {
   display: block;
   font-size: 2rem;

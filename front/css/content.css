@@ -58,6 +58,7 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    background-color: var(--white);
 }
 
 .tab-list::-webkit-scrollbar,
@@ -407,6 +408,25 @@
     /* margin-top: 0;
     padding-top: 3rem;
     border-top: 1px solid var(--border-default); */
+}
+
+.board-view .view-attachment {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-default);
+}
+.board-view .view-attachment .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.board-view .view-attachment .file-list a {
+    color: var(--text-body);
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
 }
  
 /* 문의하기 */

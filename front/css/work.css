@@ -4,14 +4,825 @@
    기본 스타일 & 모바일 (Mobile) - 기준 해상도: 360px
 ========================================== */
 
+.youtube-player + .source {
+   margin-top: 1rem;
+   font-size: 1.1rem;
+   font-weight: 400;
+   color: var(--text-secondary);
+}
 
+.youtube-player + .source a {
+   color: var(--text-secondary);
+   text-decoration: underline;
+}
+
+.dynamics365-bridge {
+   margin-top: 6rem;
+   background-color: var(--bg-surface);
+}
+
+.dynamics365-bridge .inner-cont {
+   padding: 6rem 2.4rem;
+}
+
+.dynamics365-bridge .bridge-tit {
+   margin-bottom: 0;
+   font-size: 2.4rem;
+   font-weight: 700;
+   line-height: normal;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-bridge .bridge-tit span {
+   display: block;
+   color: var(--text-body);
+}
+
+.dynamics365-bridge .bridge-tabs {
+   display: flex;
+   gap: 0.4rem;
+   margin: 3rem -2.4rem 0;
+   padding: 0 2.4rem;
+   overflow-x: auto;
+   scrollbar-width: none;
+}
+
+.dynamics365-bridge .bridge-tabs::-webkit-scrollbar {
+   display: none;
+}
+
+.dynamics365-bridge .bridge-tabs button {
+   flex: 0 0 auto;
+   height: 6.2rem;
+   padding: 0 3rem;
+   border: 1px solid #eee;
+   border-radius: 10rem;
+   background-color: #fff;
+   font-family: inherit;
+   font-size: 1.8rem;
+   font-weight: 500;
+   line-height: normal;
+   color: var(--text-body);
+   white-space: nowrap;
+}
+
+.dynamics365-bridge .bridge-tabs button.act {
+   border-color: var(--primary);
+   background-color: var(--primary);
+   font-weight: 700;
+   letter-spacing: -0.02em;
+   color: #fff;
+}
+
+.dynamics365-bridge .bridge-body {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   margin-top: 4rem;
+}
+
+.dynamics365-bridge .bridge-stit {
+   font-size: 2rem;
+   font-weight: 700;
+   line-height: 1.4;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-bridge .bridge-copy ul {
+   margin-top: 2rem;
+}
+
+.dynamics365-bridge .bridge-copy li {
+   position: relative;
+   padding-left: 1.4rem;
+   font-size: 1.8rem;
+   font-weight: 500;
+   line-height: 1.6;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-bridge .bridge-copy li::before {
+   content: "";
+   position: absolute;
+   top: 1.2rem;
+   left: 0;
+   width: 0.4rem;
+   height: 0.4rem;
+   border-radius: 50%;
+   background-color: #0096d0;
+}
+
+.dynamics365-bridge .bridge-copy li + li {
+   margin-top: 0.8rem;
+}
+
+.dynamics365-bridge .bridge-visual {
+   height: 18.2rem;
+   padding: 0.6rem;
+   background-color: #fff;
+}
+
+.dynamics365-bridge .bridge-visual img {
+   display: block;
+   box-sizing: border-box;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: top center;
+   border: 1px solid #e1e7ee;
+}
+
+.dynamics365-cont3 .box-cont {
+   padding: 3rem;
+}
+
+.dynamics365-cont5 .box-cont {
+   padding: 3rem 2rem;
+}
+
+.dynamics365-cont5 .box-stit {
+   margin-bottom: 1.2rem;
+   font-size: 2rem;
+   font-weight: 700;
+}
+.dynamics365-cont5 ul + .box-stit {
+   margin-top: 3rem;
+}
+
+.dynamics365-cont6.cont-type2 > div {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+}
+
+.dynamics365-cont6.cont-type2 > div > div {
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   padding: 2rem;
+   border: 1px solid #e1e7ee;
+}
+
+.dynamics365-cont6 .box-cate {
+   margin-bottom: 0.6rem;
+   font-size: 1.4rem;
+   font-weight: 400;
+   line-height: normal;
+   color: var(--text-body);
+}
+
+.dynamics365-cont6 .box-tit {
+   margin-bottom: 1rem;
+   font-size: 2rem;
+   font-weight: 700;
+   line-height: 1.4;
+   letter-spacing: -0.02em;
+}
+
+.dynamics365-cont6 .box-cont {
+   margin-bottom: 1.2rem;
+   font-size: 1.6rem;
+   font-weight: 400;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-cont6 .btn-demo {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   align-self: flex-end;
+   min-width: 7rem;
+   height: 3.2rem;
+   padding: 0 2.6rem 0 1.2rem;
+   border: 1px solid #b5b7bd;
+   border-radius: 10rem;
+   background-color: var(--white);
+   background-image: url(../img/business/icon_dynamics365_demo_mo.png);
+   background-repeat: no-repeat;
+   background-position: right 0.6rem center;
+   background-size: 1.6rem 1.6rem;
+   font-size: 1.4rem;
+   font-weight: 400;
+   line-height: 1;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+   white-space: nowrap;
+}
+
+.dynamics365-cont7:not(:empty) {
+   display: flex;
+   flex-direction: column;
+   gap: 1.6rem;
+   margin-top: 4rem;
+   padding: 0.8rem;
+   background-color: var(--bg-surface);
+}
+
+.dynamics365-cont7 .box-list {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+}
+
+.dynamics365-cont7 .box-list p {
+   padding: 2rem;
+   border: 1px solid #e1e7ee;
+   background-color: var(--white);
+   font-size: 1.8rem;
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   text-align: center;
+   color: var(--text-body);
+}
+
+.dynamics365-cont7 .box-img {
+   height: 17.3rem;
+   border: 1px solid #e1e7ee;
+   background-color: var(--white);
+   overflow: hidden;
+}
+
+.dynamics365-cont7 .box-img img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center top;
+}
+
+.dynamics365-cont8 {
+   margin-top: 4rem;
+}
+
+.dynamics365-cont8 .cont8-body {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+   padding: 0.8rem;
+   background-color: var(--bg-surface);
+}
+
+.dynamics365-cont8 .cont8-col {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+}
+
+.dynamics365-cont8 .box {
+   padding: 2rem;
+   border: 1px solid #e1e7ee;
+   background-color: var(--white);
+   background-repeat: no-repeat;
+   background-position: right 2rem top 2rem;
+   background-size: 7rem 5rem;
+}
+
+.dynamics365-cont8 .box.supply {
+   background-image: url(../img/business/icon_dynamics365_cont8_supply.png);
+}
+
+.dynamics365-cont8 .box.customer {
+   background-image: url(../img/business/icon_dynamics365_cont8_customer.png);
+}
+
+.dynamics365-cont8 .box.service {
+   background-image: url(../img/business/icon_dynamics365_cont8_service.png);
+}
+
+.dynamics365-cont8 .box.finance {
+   background-image: url(../img/business/icon_dynamics365_cont8_finance.png);
+}
+
+.dynamics365-cont8 .box.isv {
+   background-image: url(../img/business/icon_dynamics365_cont8_isv.png);
+}
+
+.dynamics365-cont8 .box-tit {
+   display: flex;
+   align-items: center;
+   min-height: 5rem;
+   padding-right: 8rem;
+   font-size: 2rem;
+   font-weight: 700;
+   line-height: 1.4;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-cont8 .box ul {
+   margin-top: 1rem;
+}
+
+.dynamics365-cont8 .box li {
+   position: relative;
+   padding-left: 1.4rem;
+   font-size: 1.6rem;
+   font-weight: 400;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+}
+
+.dynamics365-cont8 .box li::before {
+   content: "";
+   position: absolute;
+   top: 0.9rem;
+   left: 0;
+   width: 0.4rem;
+   height: 0.4rem;
+   border-radius: 50%;
+   background-color: #0096d0;
+}
+
+.dynamics365-cont8 .box li + li {
+   margin-top: 0.4rem;
+}
+
+.dynamics365-cont8 .cont8-note {
+   margin-top: 1rem;
+   font-size: 1.1rem;
+   font-weight: 400;
+   line-height: 1.2;
+   color: var(--text-secondary);
+}
+
+.dynamics365-cont9 {
+   display: flex;
+   flex-direction: column;
+   gap: 4rem;
+   margin-top: 4rem;
+}
+
+.dynamics365-cont9 .cont9-summary {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.dynamics365-cont9 .summary-card {
+   border: 1px solid #e1e7ee;
+   background-color: var(--bg-surface);
+}
+
+.dynamics365-cont9 .summary-tit {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 4.8rem;
+   padding: 0 2rem;
+   background-color: #202020;
+   font-size: 2rem;
+   font-weight: 500;
+   line-height: 1.2;
+   letter-spacing: -0.02em;
+   text-align: center;
+   color: #fff;
+}
+
+.dynamics365-cont9 .summary-card ul {
+   padding: 3rem 2rem;
+}
+
+.dynamics365-cont9 .summary-card li {
+   position: relative;
+   padding-left: 1.4rem;
+   font-size: 1.8rem;
+   font-weight: 400;
+   line-height: 1.6;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
+
+.dynamics365-cont9 .summary-card li::before {
+   content: "";
+   position: absolute;
+   top: 1.4rem;
+   left: 0;
+   width: 0.4rem;
+   height: 0.4rem;
+   border-radius: 50%;
+   background-color: #0096d0;
+}
+
+.dynamics365-cont9 .summary-card li + li {
+   margin-top: 0.8rem;
+}
+
+.dynamics365-cont9 .cont9-features {
+   display: flex;
+   flex-direction: column;
+   gap: 0.8rem;
+   padding: 0.8rem;
+   background-color: var(--bg-surface);
+}
+
+.dynamics365-cont9 .feature {
+   padding: 2rem;
+   border: 1px solid #e1e7ee;
+   background-color: #fff;
+   background-repeat: no-repeat;
+}
+
+.dynamics365-cont9 .feature.plan {
+   background-image: url(../img/business/icon_dynamics365_cont9_plan.png);
+   background-position: right 2.6rem top 2.1rem;
+   background-size: 4.8rem 4.8rem;
+}
+
+.dynamics365-cont9 .feature.account {
+   background-image: url(../img/business/icon_dynamics365_cont9_account.png);
+   background-position: right 2rem top 2.1rem;
+   background-size: 6rem 4.8rem;
+}
+
+.dynamics365-cont9 .feature.tax {
+   background-image: url(../img/business/icon_dynamics365_cont9_tax.png);
+   background-position: right 2.4rem top 2rem;
+   background-size: 5.2rem 5rem;
+}
+
+.dynamics365-cont9 .feature.revenue {
+   background-image: url(../img/business/icon_dynamics365_cont9_revenue.png);
+   background-position: right 2.4rem top 2rem;
+   background-size: 5.2rem 5rem;
+}
+
+.dynamics365-cont9 .feature.cash {
+   background-image: url(../img/business/icon_dynamics365_cont9_cash.png);
+   background-position: right 2.5rem top 2.2rem;
+   background-size: 5rem 4.6rem;
+}
+
+.dynamics365-cont9 .feature.performance {
+   background-image: url(../img/business/icon_dynamics365_cont9_performance.png);
+   background-position: right 2.7rem top 2.2rem;
+   background-size: 4.6rem 4.6rem;
+}
+
+.dynamics365-cont9 .feature-tit {
+   display: flex;
+   align-items: center;
+   min-height: 5rem;
+   padding-right: 7rem;
+   font-size: 2rem;
+   font-weight: 700;
+   line-height: normal;
+   color: var(--text-body);
+}
+
+.dynamics365-cont9 .feature-txt {
+   margin-top: 1rem;
+   font-size: 1.8rem;
+   font-weight: 400;
+   line-height: 1.6;
+   letter-spacing: -0.02em;
+   color: var(--text-body);
+}
 
 
 /* ==========================================
    PC / 데스크톱 구간 (PC) - 1440px 이상
 ========================================== */
 @media (min-width: 1440px) {
+
+   .youtube-player + .source {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+   }
+
+   .dynamics365-cont3 .box-cont {
+      padding: 4rem 3rem;
+   }
+
+   .dynamics365-cont5 .box-cont {
+      padding: 4rem;
+   }
    
+   .dynamics365-cont5 .box-stit {
+      margin-bottom: 0.8rem;
+   }
+   .dynamics365-cont5 ul + .box-stit {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-cont6 {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-cont6.cont-type2 > div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 2rem;
+   }
+
+   .dynamics365-cont6.cont-type2 > div > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+         "cate btn"
+         "tit tit"
+         "cont cont";
+      align-content: start;
+      align-items: start;
+      width: calc((100% - 2rem) / 2);
+      padding: 3rem 4rem;
+   }
+
+   .dynamics365-cont6 .box-cate {
+      grid-area: cate;
+      margin-bottom: 0;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+   }
+
+   .dynamics365-cont6 .box-tit {
+      grid-area: tit;
+      margin: 0.6rem 0 0;
+      font-size: 2.4rem;
+      line-height: normal;
+   }
+
+   .dynamics365-cont6 .box-cont {
+      grid-area: cont;
+      margin: 1rem 0 0;
+      font-size: 2rem;
+      font-weight: 500;
+   }
+
+   .dynamics365-cont6 .btn-demo {
+      grid-area: btn;
+      align-self: start;
+      justify-self: end;
+      height: 4rem;
+      padding: 0 3.6rem 0 2rem;
+      background-image: url(../img/business/icon_dynamics365_demo.png);
+      background-position: right 0.8rem center;
+      background-size: 2.4rem 2.4rem;
+      font-size: 1.6rem;
+      line-height: 1;
+      letter-spacing: 0;
+   }
+
+   .dynamics365-cont7:not(:empty) {
+      flex-direction: row;
+      align-items: center;
+      gap: 2.6rem;
+      margin-top: 6rem;
+      padding: 4rem;
+   }
+
+   .dynamics365-cont7 .box-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      flex: 1.24;
+      gap: 1.6rem;
+      min-width: 0;
+   }
+
+   .dynamics365-cont7 .box-list p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 14rem;
+      padding: 2rem 4rem;
+      font-size: 2rem;
+   }
+
+   .dynamics365-cont7 .box-img {
+      flex: 1;
+      max-width: 57.8rem;
+      height: 29.6rem;
+      padding: 1rem;
+      border: 0;
+      border-radius: 0.6rem;
+   }
+
+   .dynamics365-cont8 {
+      margin-top: 6rem;
+   }
+
+   .dynamics365-cont8 .cont8-body {
+      display: grid;
+      grid-template-columns: minmax(0, 42fr) minmax(0, 60fr) minmax(0, 42fr);
+      align-items: center;
+      gap: 0;
+      padding: 2rem 0;
+      background: url(../img/business/img_dynamics365_cont8_diagram.png) no-repeat center / calc(100% * 60 / 144) auto;
+   }
+
+   .dynamics365-cont8 .cont8-body::before {
+      content: "";
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: 600 / 640;
+   }
+
+   .dynamics365-cont8 .cont8-col:first-child {
+      grid-column: 1;
+      grid-row: 1;
+   }
+
+   .dynamics365-cont8 .cont8-col:last-child {
+      grid-column: 3;
+      grid-row: 1;
+   }
+
+   .dynamics365-cont8 .cont8-col {
+      gap: 3rem;
+   }
+
+   .dynamics365-cont8 .box {
+      padding: 3rem 12rem 3rem 4rem;
+      border-color: #b5b7bd;
+      background-position: right 4rem center;
+      background-size: 8rem 7rem;
+   }
+
+   .dynamics365-cont8 .box-tit {
+      min-height: 0;
+      padding-right: 0;
+      font-size: 2.4rem;
+      line-height: normal;
+      color: var(--text-point);
+   }
+
+   .dynamics365-cont8 .box li {
+      font-size: 1.8rem;
+      line-height: 1.6;
+   }
+
+   .dynamics365-cont8 .box li::before {
+      top: 1.2rem;
+      background-color: var(--primary);
+   }
+
+   .dynamics365-cont8 .box li + li {
+      margin-top: 0.8rem;
+   }
+
+   .dynamics365-cont8 .cont8-note {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+   }
+
+   .dynamics365-cont9 {
+      gap: 3rem;
+   }
+
+   .dynamics365-cont9 .cont9-summary {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 2rem;
+   }
+
+   .dynamics365-cont9 .summary-card {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 4rem;
+   }
+
+   .dynamics365-cont9 .summary-tit {
+      height: 5.2rem;
+      font-weight: 700;
+      line-height: normal;
+   }
+
+   .dynamics365-cont9 .summary-card ul {
+      padding: 4rem 3rem 0;
+   }
+
+   .dynamics365-cont9 .cont9-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      padding: 4rem;
+   }
+
+   .dynamics365-cont9 .feature {
+      padding: 3rem 4rem;
+   }
+
+   .dynamics365-cont9 .feature.plan {
+      background-position: right 6rem bottom 3rem;
+      background-size: 6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.account {
+      background-position: right 5.2rem bottom 3rem;
+      background-size: 7.6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.tax,
+   .dynamics365-cont9 .feature.revenue {
+      background-position: right 5.85rem bottom 3rem;
+      background-size: 6.3rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.cash {
+      background-position: right 5.7rem bottom 3rem;
+      background-size: 6.6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.performance {
+      background-position: right 6rem bottom 3rem;
+      background-size: 6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature-tit {
+      min-height: 0;
+      padding-right: 0;
+      line-height: 1;
+      color: var(--text-point);
+   }
+
+   .dynamics365-cont9 .feature-txt {
+      display: flex;
+      align-items: center;
+      min-height: 6rem;
+      margin-top: 2rem;
+      padding-right: 11rem;
+   }
+
+   .dynamics365-bridge {
+      margin-top: 10rem;
+      background-color: #f1f2f6;
+   }
+
+   .dynamics365-bridge .inner-cont {
+      padding: 8rem 0;
+   }
+
+   .dynamics365-bridge .bridge-tit {
+      display: flex;
+      align-items: flex-end;
+      gap: 2rem;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: #0f172a;
+   }
+
+   .dynamics365-bridge .bridge-tit span {
+      display: inline;
+      color: var(--text-point);
+   }
+
+   .dynamics365-bridge .bridge-tabs {
+      gap: 0.7rem;
+      margin: 3rem 0 0;
+      padding: 0;
+      overflow: visible;
+   }
+
+   .dynamics365-bridge .bridge-tabs button {
+      flex: 1;
+      width: auto;
+      padding: 0 2rem;
+   }
+
+   .dynamics365-bridge .bridge-body {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 6rem;
+   }
+
+   .dynamics365-bridge .bridge-copy {
+      flex: 1;
+      min-width: 0;
+   }
+
+   .dynamics365-bridge .bridge-stit {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.6;
+   }
+
+   .dynamics365-bridge .bridge-copy ul {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-bridge .bridge-copy li + li {
+      margin-top: 2rem;
+   }
+
+   .dynamics365-bridge .bridge-visual {
+      flex: 0 0 49.028%;
+      width: 49.028%;
+      height: auto;
+      aspect-ratio: 706 / 414;
+      padding: 1.6rem;
+      border-radius: 1.2rem;
+   }
 
 }
 
@@ -22,6 +833,338 @@
 /* @media (min-width: 1025px) and (max-width: 1366px) { */
 @media (min-width: 1025px) and (max-width: 1439px) {
 
+   .youtube-player + .source {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+   }
+
+   .dynamics365-cont3 .box-cont {
+      padding: 4rem 3rem;
+   }
+
+   .dynamics365-cont5 .box-cont {
+      padding: 4rem;
+   }
    
+   .dynamics365-cont5 .box-stit {
+      margin-bottom: 0.8rem;
+   }
+   .dynamics365-cont5 ul + .box-stit {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-cont6 {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-cont6.cont-type2 > div {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 2rem;
+   }
+
+   .dynamics365-cont6.cont-type2 > div > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+         "cate btn"
+         "tit tit"
+         "cont cont";
+      align-content: start;
+      align-items: start;
+      width: calc((100% - 2rem) / 2);
+      padding: 3rem 4rem;
+   }
+
+   .dynamics365-cont6 .box-cate {
+      grid-area: cate;
+      margin-bottom: 0;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+   }
+
+   .dynamics365-cont6 .box-tit {
+      grid-area: tit;
+      margin: 0.6rem 0 0;
+      font-size: 2.4rem;
+      line-height: normal;
+   }
+
+   .dynamics365-cont6 .box-cont {
+      grid-area: cont;
+      margin: 1rem 0 0;
+      font-size: 2rem;
+      font-weight: 500;
+   }
+
+   .dynamics365-cont6 .btn-demo {
+      grid-area: btn;
+      align-self: start;
+      justify-self: end;
+      height: 4rem;
+      padding: 0 3.6rem 0 2rem;
+      background-image: url(../img/business/icon_dynamics365_demo.png);
+      background-position: right 0.8rem center;
+      background-size: 2.4rem 2.4rem;
+      font-size: 1.6rem;
+      line-height: 1;
+      letter-spacing: 0;
+   }
+
+   .dynamics365-cont7:not(:empty) {
+      flex-direction: row;
+      align-items: center;
+      gap: 2.6rem;
+      margin-top: 6rem;
+      padding: 4rem;
+   }
+
+   .dynamics365-cont7 .box-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      flex: 1.24;
+      gap: 1.6rem;
+      min-width: 0;
+   }
+
+   .dynamics365-cont7 .box-list p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 14rem;
+      padding: 2rem 4rem;
+      font-size: 2rem;
+   }
+
+   .dynamics365-cont7 .box-img {
+      flex: 1;
+      max-width: 57.8rem;
+      height: 29.6rem;
+      padding: 1rem;
+      border: 0;
+      border-radius: 0.6rem;
+   }
+
+   .dynamics365-cont8 {
+      margin-top: 6rem;
+   }
+
+   .dynamics365-cont8 .cont8-body {
+      display: grid;
+      grid-template-columns: minmax(0, 42fr) minmax(0, 60fr) minmax(0, 42fr);
+      align-items: center;
+      gap: 0;
+      padding: 2rem 0;
+      background: url(../img/business/img_dynamics365_cont8_diagram.png) no-repeat center / calc(100% * 60 / 144) auto;
+   }
+
+   .dynamics365-cont8 .cont8-body::before {
+      content: "";
+      grid-column: 2;
+      grid-row: 1;
+      aspect-ratio: 600 / 640;
+   }
+
+   .dynamics365-cont8 .cont8-col:first-child {
+      grid-column: 1;
+      grid-row: 1;
+   }
+
+   .dynamics365-cont8 .cont8-col:last-child {
+      grid-column: 3;
+      grid-row: 1;
+   }
+
+   .dynamics365-cont8 .cont8-col {
+      gap: 3rem;
+   }
+
+   .dynamics365-cont8 .box {
+      padding: 3rem 12rem 3rem 4rem;
+      border-color: #b5b7bd;
+      background-position: right 4rem center;
+      background-size: 8rem 7rem;
+   }
+
+   .dynamics365-cont8 .box-tit {
+      min-height: 0;
+      padding-right: 0;
+      font-size: 2.4rem;
+      line-height: normal;
+      color: var(--text-point);
+   }
+
+   .dynamics365-cont8 .box li {
+      font-size: 1.8rem;
+      line-height: 1.6;
+   }
+
+   .dynamics365-cont8 .box li::before {
+      top: 1.2rem;
+      background-color: var(--primary);
+   }
+
+   .dynamics365-cont8 .box li + li {
+      margin-top: 0.8rem;
+   }
+
+   .dynamics365-cont8 .cont8-note {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+   }
+
+   .dynamics365-cont9 {
+      gap: 3rem;
+   }
+
+   .dynamics365-cont9 .cont9-summary {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 2rem;
+   }
+
+   .dynamics365-cont9 .summary-card {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 4rem;
+   }
+
+   .dynamics365-cont9 .summary-tit {
+      height: 5.2rem;
+      font-weight: 700;
+      line-height: normal;
+   }
+
+   .dynamics365-cont9 .summary-card ul {
+      padding: 4rem 3rem 0;
+   }
+
+   .dynamics365-cont9 .cont9-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      padding: 4rem;
+   }
+
+   .dynamics365-cont9 .feature {
+      padding: 3rem 4rem;
+   }
+
+   .dynamics365-cont9 .feature.plan {
+      background-position: right 6rem bottom 3rem;
+      background-size: 6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.account {
+      background-position: right 5.2rem bottom 3rem;
+      background-size: 7.6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.tax,
+   .dynamics365-cont9 .feature.revenue {
+      background-position: right 5.85rem bottom 3rem;
+      background-size: 6.3rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.cash {
+      background-position: right 5.7rem bottom 3rem;
+      background-size: 6.6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature.performance {
+      background-position: right 6rem bottom 3rem;
+      background-size: 6rem 6rem;
+   }
+
+   .dynamics365-cont9 .feature-tit {
+      min-height: 0;
+      padding-right: 0;
+      line-height: 1;
+      color: var(--text-point);
+   }
+
+   .dynamics365-cont9 .feature-txt {
+      display: flex;
+      align-items: center;
+      min-height: 6rem;
+      margin-top: 2rem;
+      padding-right: 11rem;
+   }
+
+   .dynamics365-bridge {
+      margin-top: 10rem;
+      background-color: #f1f2f6;
+   }
+
+   .dynamics365-bridge .inner-cont {
+      padding: 8rem 4rem;
+   }
+
+   .dynamics365-bridge .bridge-tit {
+      display: flex;
+      align-items: flex-end;
+      gap: 2rem;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: #0f172a;
+   }
+
+   .dynamics365-bridge .bridge-tit span {
+      display: inline;
+      color: var(--text-point);
+   }
+
+   .dynamics365-bridge .bridge-tabs {
+      gap: 0.8rem;
+      margin: 3rem -4rem 0;
+      padding: 0 4rem;
+      overflow-x: auto;
+   }
+
+   .dynamics365-bridge .bridge-tabs button {
+      flex: 0 0 auto;
+      padding: 0 3rem;
+
+   }
+
+   .dynamics365-bridge .bridge-body {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 6rem;
+   }
+
+   .dynamics365-bridge .bridge-copy {
+      flex: 1;
+      min-width: 0;
+   }
+
+   .dynamics365-bridge .bridge-stit {
+      font-size: 3.2rem;
+      font-weight: 600;
+      line-height: 1.6;
+   }
+
+   .dynamics365-bridge .bridge-copy ul {
+      margin-top: 4rem;
+   }
+
+   .dynamics365-bridge .bridge-copy li + li {
+      margin-top: 2rem;
+   }
+
+   .dynamics365-bridge .bridge-visual {
+      flex: 0 0 49.028%;
+      width: 49.028%;
+      height: auto;
+      aspect-ratio: 706 / 414;
+      padding: 1.6rem;
+      border-radius: 1.2rem;
+   }
 
 }

@@ -723,7 +723,7 @@ function initTabMenu() {
             });
         };
 
-        // 도착 스크롤 위치 — 첫 번째 컨텐츠·type2는 탭이 막 고정되는 위치, 나머지는 컨텐츠 상단이 탭 바로 아래
+        // 도착 스크롤 위치 — type2·첫 번째 컨텐츠는 탭이 --sticky-tab-top에 고정되는 위치, 나머지는 컨텐츠 상단이 탭 바로 아래
         const getTargetScrollTop = (targetCont, index, isHeaderHidden) => {
             const tabTop = getStickyTabTop(tabContainer, isHeaderHidden);
             return isType2 || index === 0
