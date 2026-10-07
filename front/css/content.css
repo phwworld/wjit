@@ -51,10 +51,18 @@
     z-index: 20;
     transition: top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     display: flex;
+    flex-wrap: nowrap;
     height: 6.2rem;
     margin: 0 0 6rem;
     border-bottom: 2px solid var(--primary);
-    overflow-x: scroll;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.tab-list::-webkit-scrollbar,
+.category-list::-webkit-scrollbar {
+    display: none;
 }
 
 .category-list {
@@ -64,33 +72,28 @@
 
 .tab-list button,
 .category-list button {
-    min-width: calc(100vw / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    min-width: 8rem;
+    height: 100%;
+    padding: 0 1.2rem;
     border: 1px solid #f0f0f0;
     font-size: 1.6rem;
+    white-space: nowrap;
     color: #202020;
     background-color: #fff;
 }
 
 .tab-list button.act,
 .category-list button.act {
+    padding: 0 1rem;
     border-color: #00aeef;
     color: var(--white);
     font-weight: 700;
     background-color: var(--primary);
     z-index: 1;
-}
-
-.tab-list.col2 button {
-    min-width: calc(100vw / 2);
-}
-
-.tab-list.col3 button,
-.category-list.col3 button {
-    min-width: calc(100vw / 3);
-}
-
-.category-list.col5 button {
-    min-width: calc(100vw / 5);
 }
 
 .category-list2 {
@@ -1091,7 +1094,14 @@
     .category-list button {
         min-width: initial !important;
         flex: 1;
+        padding: 0;
         font-size: 2.4rem;
+        white-space: normal;
+    }
+
+    .tab-list button.act,
+    .category-list button.act {
+        padding: 0;
     }
 
     .category-list2 {
@@ -1996,7 +2006,14 @@
     .category-list button {
         min-width: initial !important;
         flex: 1;
+        padding: 0;
         font-size: 2.4rem;
+        white-space: normal;
+    }
+
+    .tab-list button.act,
+    .category-list button.act {
+        padding: 0;
     }
 
     .category-list2 {

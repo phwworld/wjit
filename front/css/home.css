@@ -96,6 +96,11 @@ main.home > section .home-sec-info {
     object-fit: cover;
 }
 
+/* 모바일: mo 영상 / 1025px 이상(태블릿·PC): pc 영상 */
+.home-visual-video.pc {
+    display: none;
+}
+
 /* 2번 슬라이드: 블랙 34% + 미세 도트 오버레이(샘플 hero-video-stack::before 동일 — 저화질·압축 아티팩트 마스킹)
    영상(auto) 위·카피(z-index 2) 아래에 두고, 슬라이드 자체 페이드와 함께 노출·숨김 */
 .home-visual-item:nth-of-type(2)::before {
@@ -1128,6 +1133,14 @@ main.home > section .home-sec-info {
 }
 
 @media (min-width: 1025px) {
+    .home-visual-video.mo {
+        display: none;
+    }
+
+    .home-visual-video.pc {
+        display: block;
+    }
+
     .scroll-action-home {
         bottom: 1.5rem;
         right: 1rem;

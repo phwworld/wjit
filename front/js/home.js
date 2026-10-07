@@ -229,7 +229,44 @@
   const FADE_MS = 1000;
   // 제목 퇴장 0.42s + 2번째 줄 스태거 0.15s
   const COPY_EXIT_MS = 570;
-  const videos = items.map((item) => item.querySelector(".home-visual-video"));
+  const mqDesktop = window.matchMedia("(min-width: 1025px)");
+  const visibleVideo = (item) => {
+    if (!item) return null;
+    return item.querySelector(mqDesktop.matches ? ".home-visual-video.pc" : ".home-visual-video.mo");
+  };
+  const stopVideo = (video) => {
+    if (!video) return;
+    video.pause();
+    if (video.readyState > 0) video.currentTime = 0;
+  };
+  // display 전환·autoplay로 숨은 영상이 다시 재생되면 즉시 멈춘다
+  items.forEach((item) => {
+    item.querySelectorAll(".home-visual-video").forEach((video) => {
+      video.addEventListener("play", () => {
+        const wanted = video === visibleVideo(item) && item.classList.contains("is-active");
+        if (!wanted) video.pause();
+      });
+    });
+  });
+  const playVisible = (item) => {
+    const video = visibleVideo(item);
+    if (!video) return;
+    video.currentTime = 0;
+    const playPromise = video.play();
+    if (playPromise && playPromise.catch) playPromise.catch(() => {});
+  };
+  // 뷰포트에 맞는 영상만 재생하고, 반대 사이즈 영상은 멈춘다
+  const syncVisibleVideos = () => {
+    items.forEach((item, i) => {
+      item.querySelectorAll(".home-visual-video").forEach((video) => {
+        const show =
+          (mqDesktop.matches && video.classList.contains("pc")) ||
+          (!mqDesktop.matches && video.classList.contains("mo"));
+        if (!show || i !== activeIndex) stopVideo(video);
+      });
+      if (i === activeIndex) playVisible(item);
+    });
+  };
   let leaveTimerId = null;
 
   let activeIndex = items.findIndex((item) => item.classList.contains("is-active"));
@@ -299,22 +336,13 @@
     });
 
     const prevItem = items[prevIndex];
-    const prevVideo = videos[prevIndex];
     leaveTimerId = window.setTimeout(() => {
       leaveTimerId = null;
       prevItem.classList.remove("is-leaving");
-      if (prevVideo) {
-        prevVideo.pause();
-        prevVideo.currentTime = 0;
-      }
+      prevItem.querySelectorAll(".home-visual-video").forEach(stopVideo);
     }, FADE_MS);
 
-    const nextVideo = videos[index];
-    if (nextVideo) {
-      nextVideo.currentTime = 0;
-      const playPromise = nextVideo.play();
-      if (playPromise && playPromise.catch) playPromise.catch(() => {});
-    }
+    playVisible(items[index]);
 
     startSlideTimer();
   };
@@ -323,6 +351,10 @@
     navItem.addEventListener("click", () => activate(i));
   });
 
+  if (mqDesktop.addEventListener) mqDesktop.addEventListener("change", syncVisibleVideos);
+  else mqDesktop.addListener(syncVisibleVideos);
+
+  syncVisibleVideos();
   startSlideTimer();
 })();
 
