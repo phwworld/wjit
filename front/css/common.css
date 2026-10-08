@@ -39,7 +39,7 @@ button {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .show {
@@ -730,9 +730,10 @@ main>.title.no-animate h3 {
   font-size: 2rem;
 }
 
-.c-tit .text-point {
+.c-tit span.text-point {
   display: inline !important;
   font-size: inherit;
+  color: var(--text-body) !important;
 }
 
 .c-tit .full-name {
@@ -801,14 +802,14 @@ main>.title.no-animate h3 {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .layer-pop .layer-inner {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(100vw - 4rem);
+  width: calc(100vw - 4.8rem);
   padding: 2.6rem 2.6rem 4rem;
   background-color: var(--white);
   transform: translate(-50%, -50%);
@@ -851,6 +852,44 @@ main>.title.no-animate h3 {
   margin-top: 3rem;
   padding-top: 3rem;
   border-top: 1px solid var(--text-body);
+}
+
+.layer-pop.home::before {
+  background: transparent !important;
+}
+
+.layer-pop.home.act::before {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.layer-pop.home.act ~ .layer-pop.home.act::before {
+  background: transparent !important;
+}
+
+.layer-pop.home .layer-inner {
+  padding: 0;
+}
+
+.layer-pop.home .pop-cont img {
+  background-color: var(--white);
+  width: 100%;
+}
+
+.layer-pop.home .pop-foot {
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.layer-pop.home .pop-foot a {
+  display: block;
+  height: 100%;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  color: var(--text-body);
 }
 
 /* ==========================================
@@ -1335,6 +1374,12 @@ main>.title.no-animate h3 {
     font-size: 4rem;
   }
 
+  .c-tit span.text-point {
+    display: inline !important;
+    font-size: inherit;
+    color: var(--text-point) !important;
+  }
+
   .c-tit .full-name {
     display: block;
     font-size: 2.8rem;
@@ -1396,6 +1441,25 @@ main>.title.no-animate h3 {
   .layer-pop .pop-foot {
     justify-content: center;
     margin-top: 0;
+  }
+
+  .layer-pop.home .layer-inner {
+    width: 56rem;
+  }
+
+  .layer-pop.home .pop-cont img {
+    background-color: var(--white);
+    width: 100%;
+  }
+  
+  .layer-pop.home .pop-foot {
+    height: 5.6rem;
+  }
+  
+  .layer-pop.home .pop-foot a {
+    padding: 0 3rem;
+    font-size: 1.8rem;
+    line-height: 5.6rem;
   }
 }
 
@@ -1927,5 +1991,24 @@ main>.title.no-animate h3 {
   .layer-pop .pop-foot {
     justify-content: center;
     margin-top: 0;
+  }
+
+  .layer-pop.home .layer-inner {
+    width: 56rem;
+  }
+
+  .layer-pop.home .pop-cont img {
+    background-color: var(--white);
+    width: 100%;
+  }
+  
+  .layer-pop.home .pop-foot {
+    height: 5.6rem;
+  }
+  
+  .layer-pop.home .pop-foot a {
+    padding: 0 3rem;
+    font-size: 1.8rem;
+    line-height: 5.6rem;
   }
 }

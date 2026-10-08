@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initInflowSelect();
     initCategoryPanels();
     initTabMenu();
+    initBridgeTabs();
     initCompanyTab();
     initFaqAccordion();
     initProjectCaseAccordion();
@@ -97,8 +98,9 @@ function initHeaderAutoHide() {
 
     const getHeaderHeight = () => header.offsetHeight;
 
-    // 헤더 노출 상태 기준으로 탭이 헤더 아래에 고정되는 시점을 지났는지
-    const isPastTab = (scrollY) => scrollY > 0 && scrollY + getHeaderHeight() >= getStickyNaturalTop(tabList) - 1;
+    // 탭이 뷰포트 상단에 닿은 뒤에 헤더를 숨긴다.
+    // 헤더 높이만큼 일찍 숨기면 sticky top이 0이 되어, 탭이 헤더 아래에 처음 닿는 구간에서 고정되지 않는다.
+    const isPastTab = (scrollY) => scrollY > 0 && scrollY >= getStickyNaturalTop(tabList) - 1;
 
     // 모바일 GNB · 검색 레이어 · 키보드 포커스가 헤더 안에 있으면 숨기지 않음
     const isHeaderBusy = () =>
@@ -677,6 +679,36 @@ function initCategoryPanels() {
 /* ==========================================================================
    9. 탭 메뉴 & 카테고리 탭 (Tab Menu & Category Tabs)
    ========================================================================== */
+function initBridgeTabs() {
+    document.querySelectorAll(".bridge-tabs").forEach((tabList) => {
+        const bridge = tabList.closest(".bridge-area");
+        if (!bridge) return;
+
+        const buttons = tabList.querySelectorAll("button");
+        const panels = bridge.querySelectorAll(".bridge-tabs-cont");
+
+        const scrollButtonToStart = (button) => {
+            if (!button || window.matchMedia("(min-width: 1025px)").matches) return;
+
+            const left = button.getBoundingClientRect().left - tabList.getBoundingClientRect().left + tabList.scrollLeft;
+            const maxLeft = Math.max(0, tabList.scrollWidth - tabList.clientWidth);
+            const targetLeft = Math.min(Math.max(0, left), maxLeft);
+            if (Math.abs(tabList.scrollLeft - targetLeft) < 1) return;
+
+            tabList.scrollTo({ left: targetLeft, behavior: "smooth" });
+        };
+
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                panels.forEach((panel, panelIndex) => {
+                    panel.classList.toggle("hide", panelIndex !== index);
+                });
+                requestAnimationFrame(() => scrollButtonToStart(button));
+            });
+        });
+    });
+}
+
 function initTabMenu() {
     // 1) 카테고리 리스트 (category-list, category-list2) 단순 활성화 토글
     const categoryContainers = document.querySelectorAll(".category-list, .category-list2, .sub-tab-list");
@@ -695,6 +727,15 @@ function initTabMenu() {
     tabContainers.forEach((tabContainer) => {
         const tabButtons = Array.from(tabContainer.querySelectorAll("button"));
         if (!tabButtons.length) return;
+
+        // sticky 요소 자체는 스크롤 컨테이너가 되면 아래로 스크롤할 때 고정이 풀린다
+        let tabScroller = tabContainer.querySelector(":scope > .tab-scroll");
+        if (!tabScroller) {
+            tabScroller = document.createElement("div");
+            tabScroller.className = "tab-scroll";
+            while (tabContainer.firstChild) tabScroller.appendChild(tabContainer.firstChild);
+            tabContainer.appendChild(tabScroller);
+        }
 
         const parentSection = tabContainer.closest(".inner-cont, .content, main") || document;
         const fallbackContents = Array.from(parentSection.querySelectorAll(".tab-cont"));
@@ -723,6 +764,27 @@ function initTabMenu() {
             });
         };
 
+        // 모바일: 활성 버튼이 스크롤 범위 안에서 가장 왼쪽에 오도록 가로 스크롤
+        const scrollTabToStart = (button, behavior = "smooth") => {
+            if (!button || window.matchMedia("(min-width: 1025px)").matches) return;
+
+            const left = button.getBoundingClientRect().left - tabScroller.getBoundingClientRect().left + tabScroller.scrollLeft;
+            const maxLeft = Math.max(0, tabScroller.scrollWidth - tabScroller.clientWidth);
+            const targetLeft = Math.min(Math.max(0, left), maxLeft);
+            if (Math.abs(tabScroller.scrollLeft - targetLeft) < 1) return;
+
+            if (behavior === "auto") {
+                tabScroller.scrollLeft = targetLeft;
+                return;
+            }
+
+            tabScroller.scrollTo({ left: targetLeft, behavior });
+        };
+
+        const alignActiveTab = (behavior = "auto") => {
+            scrollTabToStart(tabContainer.querySelector("button.act"), behavior);
+        };
+
         // 도착 스크롤 위치 — type2·첫 번째 컨텐츠는 탭이 --sticky-tab-top에 고정되는 위치, 나머지는 컨텐츠 상단이 탭 바로 아래
         const getTargetScrollTop = (targetCont, index, isHeaderHidden) => {
             const tabTop = getStickyTabTop(tabContainer, isHeaderHidden);
@@ -746,6 +808,7 @@ function initTabMenu() {
         tabButtons.forEach((button, index) => {
             button.addEventListener("click", () => {
                 setActiveTab(button);
+                scrollTabToStart(button);
 
                 const targetCont = getTargetCont(button, index);
                 if (!targetCont) return;
@@ -768,9 +831,9 @@ function initTabMenu() {
         });
 
         // 페이지 스크롤 시 현재 보고 있는 tab-cont 섹션에 맞춰 tab 버튼 활성화 (ScrollSpy)
-        if (tabTargets.length > 0 && !isType2) {
-            const onScroll = () => {
-                if (isClickScrolling) return;
+        // 모바일에서는 활성 버튼이 왼쪽 끝에 오도록 가로 위치도 맞춘다
+        const onScroll = () => {
+            if (!isClickScrolling && tabTargets.length > 0 && !isType2) {
                 clickedButton = null;
 
                 const line = getStickyTabTop(tabContainer) + tabContainer.offsetHeight + SPY_THRESHOLD;
@@ -788,12 +851,14 @@ function initTabMenu() {
                 }
 
                 setActiveTab(activeButton);
-            };
+            }
 
-            window.addEventListener("scroll", onScroll, { passive: true });
-            window.addEventListener("resize", onScroll);
-            onScroll();
-        }
+            alignActiveTab("auto");
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        onScroll();
     });
 }
 
@@ -818,6 +883,32 @@ function initCompanyTab() {
         const buttons = Array.from(tabContainer.querySelectorAll("button"));
         if (!buttons.length) return;
 
+        const scroller = tabContainer.querySelector(":scope > .tab-scroll");
+
+        const alignButton = (button, behavior = "auto") => {
+            if (!button || !scroller || window.matchMedia("(min-width: 1025px)").matches) return;
+
+            const scrollerRect = scroller.getBoundingClientRect();
+            const btnRect = button.getBoundingClientRect();
+            const overflowLeft = scrollerRect.left - btnRect.left;
+            const overflowRight = btnRect.right - scrollerRect.right;
+            let next = scroller.scrollLeft;
+
+            if (overflowLeft > 1) next -= overflowLeft;
+            else if (overflowRight > 1) next += overflowRight;
+
+            const maxLeft = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+            next = Math.min(Math.max(0, next), maxLeft);
+            if (Math.abs(scroller.scrollLeft - next) < 1) return;
+
+            if (behavior === "auto") {
+                scroller.scrollLeft = next;
+                return;
+            }
+
+            scroller.scrollTo({ left: next, behavior });
+        };
+
         const companyCont = tabContainer.nextElementSibling && tabContainer.nextElementSibling.classList.contains("company-cont")
             ? tabContainer.nextElementSibling
             : (tabContainer.parentElement ? tabContainer.parentElement.querySelector(".company-cont") : null);
@@ -837,6 +928,7 @@ function initCompanyTab() {
             button.addEventListener("click", () => {
                 buttons.forEach((btn) => btn.classList.remove("act"));
                 button.classList.add("act");
+                alignButton(button, "smooth");
 
                 const targetId = (button.getAttribute("data-target") || "").trim().replace(/^#/, "");
                 if (targetId) {
@@ -852,6 +944,8 @@ function initCompanyTab() {
                 }
             });
         });
+
+        requestAnimationFrame(() => alignButton(tabContainer.querySelector("button.act")));
     });
 }
 

@@ -56,13 +56,29 @@
     margin: 0 0 6rem;
     border-bottom: 2px solid var(--primary);
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
     scrollbar-width: none;
     background-color: var(--white);
 }
 
+/* 스크롤 컨테이너와 sticky 요소가 같으면 모바일에서 아래로 스크롤할 때 고정이 풀린다 */
+.tab-list:has(> .tab-scroll) {
+    display: block;
+    overflow: visible;
+}
+
+.tab-list > .tab-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
 .tab-list::-webkit-scrollbar,
-.category-list::-webkit-scrollbar {
+.category-list::-webkit-scrollbar,
+.tab-list > .tab-scroll::-webkit-scrollbar {
     display: none;
 }
 
@@ -77,7 +93,7 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    min-width: 8rem;
+    min-width: 10rem;
     height: 100%;
     padding: 0 1.2rem;
     border: 1px solid #f0f0f0;
@@ -412,11 +428,16 @@
 
 .board-view .view-attachment {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
     padding: 2rem 0;
     border-bottom: 1px solid var(--border-default);
 }
+
+.board-view .view-attachment div:nth-of-type(1) {
+    font-weight: 500;
+}
+
 .board-view .view-attachment .file-list {
     display: flex;
     flex-direction: column;
@@ -1106,6 +1127,10 @@
         overflow-x: hidden;
     }
 
+    .tab-list > .tab-scroll {
+        overflow-x: hidden;
+    }
+
     .category-list {
         margin: 0 auto 6rem;
     }
@@ -1443,6 +1468,11 @@
         /* margin-top: 5rem;
         padding-top: 5rem;
         border-width: 2px; */
+    }
+
+    .board-view .view-attachment {
+        gap: 10rem;
+        padding: 3rem 0;
     }
 
     /* 문의하기 */
@@ -2022,6 +2052,10 @@
         overflow-x: hidden;
     }
 
+    .tab-list > .tab-scroll {
+        overflow-x: hidden;
+    }
+
     .tab-list button,
     .category-list button {
         min-width: initial !important;
@@ -2343,6 +2377,11 @@
         right: 0;
         bottom: 5.5rem;
         font-size: 2.4rem;
+    }
+
+    .board-view .view-attachment {
+        gap: 10rem;
+        padding: 3rem 0;
     }
 
     /* 문의하기 */
