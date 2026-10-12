@@ -449,15 +449,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
 }
 
 .wikl-cont7 .img-cont img {
-    height: 12.2rem;
+    width: 16rem;
+    height: 16rem;
 }
 
 .wikl-cont7 .img-cont img+img {
     width: 100%;
+    height: auto;
 }
 
 /* wrms */
