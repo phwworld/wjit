@@ -1,0 +1,551 @@
+/* =========================================================
+   웅진IT 서브타이틀 모티브 — 통합 CSS (title.css)
+   기준 아트보드 1920 × 540 (화면 폭에 따라 자동 축소)
+   아트보드 클래스: .wjh-art → 섹션별 .wjh-{ai|solution|erp|cloud|managed-service|industry|resources|mediaroom|company}
+   ========================================================= */
+
+/* ---------- 공통 레이아웃 ---------- */
+/* .wjh-header { position: relative; width: 100%; height: var(--wjh-height, 540px); overflow: hidden; background: #fff; isolation: isolate; } */
+.wjh-ai,
+.wjh-solution,
+.wjh-erp,
+.wjh-cloud,
+.wjh-managed-service,
+.wjh-industry,
+.wjh-resources,
+.wjh-mediaroom,
+.wjh-company {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1920px;
+  height: 540px;
+  transform: translate(-50%, -50%) scale(var(--wjh-scale, 1));
+  transform-origin: 50% 50%;
+  /* background: #fff; */
+  background-color: transparent;
+  isolation: isolate;
+  container-type: inline-size;
+}
+
+@media (max-width: 1600px) {
+  .wjh-header {
+    --wjh-scale: .9;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wjh-header {
+    --wjh-scale: .75;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wjh-header {
+    --wjh-scale: .6;
+  }
+}
+
+@media (max-width: 768px) {
+  .wjh-header {
+    --wjh-scale: .45;
+  }
+}
+
+.wjh-hero {
+  font-family: 'Pretendard', 'Pretendard Variable', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* ---------- 공통 Keyframes (진입 · 타이틀) ---------- */
+@keyframes aIn1 {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-172px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes aIn2 {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(172px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes aIn3 {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(.32) rotate(-130deg) translateY(-48px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(22px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* ---------- A안 AI (.wjh-ai) ---------- */
+@keyframes discSpin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes discDrift {
+  0% {
+    transform: translateY(-1.4%);
+  }
+
+  100% {
+    transform: translateY(1.4%);
+  }
+}
+
+/* ---------- B안 SOLUTION (.wjh-solution) ---------- */
+@keyframes motifIn {
+  0% {
+    opacity: 0;
+    transform: translateY(3%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motifInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-3%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motifFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes csSpin {
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes csDrift {
+  0% {
+    transform: translateY(-1.5%);
+  }
+
+  100% {
+    transform: translateY(1.5%);
+  }
+}
+
+@keyframes csGather {
+  0% {
+    transform: translate3d(var(--dx), var(--dy), var(--dz)) scale3d(.4, .4, .4);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes csRowCW {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  16% {
+    transform: rotateY(90deg);
+  }
+
+  100% {
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes csRowCCW {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  16% {
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    transform: rotateY(-90deg);
+  }
+}
+
+/* ---------- N안 ERP (.wjh-erp) ---------- */
+@keyframes nSpin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes nDrift {
+  0% {
+    transform: translateY(-1.6%);
+  }
+
+  100% {
+    transform: translateY(1.6%);
+  }
+}
+
+@keyframes nRing {
+  0% {
+    opacity: 0;
+    transform: scale(.2);
+    animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+  }
+
+  4% {
+    opacity: 1;
+  }
+
+  16% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1);
+    animation-timing-function: cubic-bezier(.55, 0, .45, 1);
+  }
+
+  92% {
+    opacity: 0;
+    transform: scale(.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(.2);
+  }
+}
+
+@keyframes nPulse {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(calc(var(--ux) * 4px), calc(var(--uy) * 4px));
+  }
+}
+
+/* ---------- M안 CLOUD (.wjh-cloud) ---------- */
+@keyframes rbSpin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rbDrift {
+  0% {
+    transform: translateY(-1.6%);
+  }
+
+  100% {
+    transform: translateY(1.6%);
+  }
+}
+
+@keyframes rbLoop {
+  0% {
+    opacity: 0;
+    transform: rotate(-55deg) translate(calc(var(--ux) * var(--dist, 150px)), calc(var(--uy) * var(--dist, 150px))) scale(.35);
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  19% {
+    opacity: 1;
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+  }
+
+  94% {
+    opacity: 0;
+    transform: rotate(40deg) translate(calc(var(--ux) * var(--dist, 150px)), calc(var(--uy) * var(--dist, 150px))) scale(.35);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-55deg) translate(calc(var(--ux) * var(--dist, 150px)), calc(var(--uy) * var(--dist, 150px))) scale(.35);
+  }
+}
+
+/* ---------- O안 MANAGED SERVICE (.wjh-managed-service) ---------- */
+@keyframes ssSpin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes ssLoop {
+  0% {
+    transform: translate(calc(var(--sx) + var(--fx) * 0), calc(var(--sy) + var(--fy) * 0)) rotate(calc(var(--sr) + 0deg)) scale(var(--ss));
+  }
+
+  9% {
+    transform: translate(calc(var(--sx) + var(--fx) * 1), calc(var(--sy) + var(--fy) * 0.6)) rotate(calc(var(--sr) + 3deg)) scale(var(--ss));
+  }
+
+  18% {
+    transform: translate(calc(var(--sx) + var(--fx) * -0.4), calc(var(--sy) + var(--fy) * 1)) rotate(calc(var(--sr) + -2deg)) scale(var(--ss));
+  }
+
+  26% {
+    transform: translate(calc(var(--sx) + var(--fx) * 0.3), calc(var(--sy) + var(--fy) * -0.5)) rotate(calc(var(--sr) + 1deg)) scale(var(--ss));
+    animation-timing-function: cubic-bezier(.45, 0, .2, 1);
+  }
+
+  40% {
+    transform: translate(calc(var(--sx) * -.03), calc(var(--sy) * -.03)) rotate(calc(var(--sr) * -.06)) scale(1.015);
+  }
+
+  47% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+
+  82% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+    animation-timing-function: cubic-bezier(.55, 0, .35, 1);
+  }
+
+  94% {
+    transform: translate(calc(var(--sx) + var(--fx) * 0.6), calc(var(--sy) + var(--fy) * -0.4)) rotate(calc(var(--sr) + -1deg)) scale(var(--ss));
+  }
+
+  100% {
+    transform: translate(calc(var(--sx) + var(--fx) * 0), calc(var(--sy) + var(--fy) * 0)) rotate(calc(var(--sr) + 0deg)) scale(var(--ss));
+  }
+}
+
+@keyframes ssFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ssDrift {
+  0% {
+    transform: translateY(-1.4%);
+  }
+
+  100% {
+    transform: translateY(1.4%);
+  }
+}
+
+/* ---------- F안 Industry (.wjh-industry) ---------- */
+@keyframes formSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes formBreath {
+  0% {
+    transform: scale(.985);
+  }
+
+  100% {
+    transform: scale(1.015);
+  }
+}
+
+/* ---------- H안 자료실 (.wjh-resources) ---------- */
+@keyframes triSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes triDrift {
+  0% {
+    transform: translateY(-1.5%);
+  }
+
+  100% {
+    transform: translateY(1.5%);
+  }
+}
+
+@keyframes triLoop {
+  0% {
+    opacity: 0;
+    transform: rotate(-26deg) scale(.82);
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  82% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    animation-timing-function: cubic-bezier(.55, 0, .45, 1);
+  }
+
+  92% {
+    opacity: 0;
+    transform: rotate(-26deg) scale(.82);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(-26deg) scale(.82);
+  }
+}
+
+@keyframes triBuild {
+  0% {
+    opacity: 0;
+    transform: rotate(-26deg) scale(.82);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* ---------- G안 미디어룸 (.wjh-mediaroom) ---------- */
+@keyframes coilSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes coilBreath {
+  0% {
+    transform: scale(.985);
+  }
+
+  100% {
+    transform: scale(1.015);
+  }
+}
+
+/* ---------- E안 회사소개 (.wjh-company) ---------- */
+@keyframes arcSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes arcBreath {
+  0% {
+    transform: scale(.985);
+  }
+
+  100% {
+    transform: scale(1.015);
+  }
+}
