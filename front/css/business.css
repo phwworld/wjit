@@ -556,6 +556,10 @@
     background-image: none;
 }
 
+.wrms-bridge .inner-cont {
+    background: linear-gradient(to bottom, #fff 0%, #e3e8ef 100%);
+}
+
 .wrms-bridge::after {
     content: "";
     position: relative;
@@ -848,6 +852,11 @@
 /* businessSynergySuit */
 .bss-bridge {
     padding-bottom: 0;
+    background-color: #fff;
+    background-image: none;
+}
+
+.bss-bridge .inner-cont {
     background: linear-gradient(to bottom, #fff 0%, #ebedf3 64.496%);
 }
 
@@ -1646,8 +1655,8 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
-    background-image: url(../img/business/bg_s4hana_bridge_mo.svg);
-    background-color: #f1f2f6;
+    background-image: url(../img/business/bg_s4hana_bridge_mo.png);
+    background-color: #f5f6f8;
 }
 
 /* businessOne */
@@ -2957,6 +2966,10 @@
     gap: .8rem;
 }
 
+.naverCloudPlatform-cont5 {
+    margin-top: 1rem;
+}
+
 .naverCloudPlatform-cont6 .box-cont {
     padding: 13rem 2rem 3rem;
     background-repeat: no-repeat;
@@ -2971,6 +2984,61 @@
 
 .naverCloudPlatform-cont6>div:nth-of-type(3) .box-cont {
     background-image: url(../img/business/bg_naverCloudPlatform_cont6_03.png)
+}
+
+.naverCloudPlatform-cont7 {
+    margin-top: 4rem;
+}
+
+.naverCloudPlatform-cont7>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    background-color: var(--text-body);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    text-align: center;
+}
+
+.naverCloudPlatform-cont7>div {
+    display: flex;
+    flex-direction: column;
+    padding: .8rem;
+    background-color: var(--bg-surface);
+}
+
+.naverCloudPlatform-cont7>div>div {
+    position: relative;
+    padding: 1.4rem 1rem;
+    border: 1px solid #e1e7ee;
+    background-color: var(--white);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    text-align: center;
+}
+
+.naverCloudPlatform-cont7>div>div:not(:last-child) {
+    margin-bottom: 2.4rem;
+}
+
+.naverCloudPlatform-cont7>div>div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1.81213rem;
+    height: 1.1182rem;
+    margin-top: .694rem;
+    transform: translateX(-50%);
+    background: url(../img/business/ico_ncp_bridge_arrow_down.png) no-repeat center;
+    background-size: 1.81213rem 1.1182rem;
 }
 
 .naverCloudPlatform-bridge {
@@ -3909,6 +3977,7 @@
 
     .wrms-bridge .inner-cont {
         padding-top: 10.7rem;
+        background: none;
     }
 
     .wrms-bridge-cont {
@@ -4244,6 +4313,7 @@
 
     .bss-bridge .inner-cont {
         padding-top: 10rem;
+        background: none;
     }
 
     .bss-bridge .bss-bridge-cont {
@@ -4983,19 +5053,20 @@
     }
 
     .s4hana-bridge {
-        height: 60rem;
+        height: 40rem;
         padding-bottom: 0;
         background-position: center center;
         background-size: auto 100%;
-        background-image: url(../img/business/bg_s4hana_bridge_pc.svg);
+        background-image: url(../img/business/bg_s4hana_bridge_pc.png);
+        background-color: #f1f0f2;
     }
 
     .s4hana-bridge .inner-cont {
-        padding-top: 14.6rem;
+        padding-top: 10rem;
     }
 
     .s4hana-bridge .bridge-txt {
-        width: 62rem;
+        width: 100rem;
     }
 
     /* businessOne */
@@ -5933,6 +6004,51 @@
         background-size: auto 8rem;
     }
 
+    .naverCloudPlatform-cont7 {
+        margin-top: 6rem;
+    }
+
+    .naverCloudPlatform-cont7>p {
+        height: 5.2rem;
+        padding: 1.4rem 2rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .naverCloudPlatform-cont7>div {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 2rem;
+        padding: 4rem;
+    }
+
+    .naverCloudPlatform-cont7>div>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        height: 9rem;
+        padding: 2rem;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .naverCloudPlatform-cont7>div>div:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .naverCloudPlatform-cont7>div>div:not(:last-child)::after {
+        left: calc(100% + 1rem + 1px);
+        top: 50%;
+        width: 2.2rem;
+        height: 3.2rem;
+        margin-top: 0;
+        transform: translate(-50%, -50%);
+        background-image: url(../img/business/ico_naverCloudPlatform_cont7_arrow.png);
+        background-size: 2.2rem 3.2rem;
+    }
+
     .naverCloudPlatform-bridge {
         height: 73.9rem;
         padding-bottom: 0;
@@ -6734,6 +6850,7 @@
 
     .wrms-bridge .inner-cont {
         padding-top: 10.7rem;
+        background: none;
     }
 
     .wrms-bridge-cont {
@@ -7072,6 +7189,7 @@
 
     .bss-bridge .inner-cont {
         padding-top: 10rem;
+        background: none;
     }
 
     .bss-bridge .bss-bridge-cont {
@@ -7103,7 +7221,7 @@
     }
 
     .bss-bridge2 .inner-cont {
-        padding: 9rem 0;
+        padding: 9rem 2.4rem;
     }
 
     .bss-bridge2 .bridge-tit span {
@@ -7823,19 +7941,19 @@
     }
 
     .s4hana-bridge {
-        height: 65rem;
+        height: 40rem;
         padding-bottom: 0;
         background-position: center center;
         background-size: auto 100%;
-        background-image: url(../img/business/bg_s4hana_bridge_pc.svg);
+        background-image: url(../img/business/bg_s4hana_bridge_pc.png);
     }
 
     .s4hana-bridge .inner-cont {
-        padding-top: 14.6rem;
+        padding-top: 10rem;
     }
 
     .s4hana-bridge .bridge-txt {
-        width: 62rem;
+        width: 100rem;
     }
 
     /* businessOne */
@@ -8771,6 +8889,51 @@
     .naverCloudPlatform-cont6 .box-cont {
         padding: 14rem 3rem 4rem;
         background-size: auto 8rem;
+    }
+
+    .naverCloudPlatform-cont7 {
+        margin-top: 6rem;
+    }
+
+    .naverCloudPlatform-cont7>p {
+        height: 5.2rem;
+        padding: 1.4rem 2rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .naverCloudPlatform-cont7>div {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 2rem;
+        padding: 4rem;
+    }
+
+    .naverCloudPlatform-cont7>div>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        min-width: 0;
+        height: 9rem;
+        padding: 2rem;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .naverCloudPlatform-cont7>div>div:not(:last-child) {
+        margin-bottom: 0;
+    }
+
+    .naverCloudPlatform-cont7>div>div:not(:last-child)::after {
+        left: calc(100% + 1rem + 1px);
+        top: 50%;
+        width: 2.2rem;
+        height: 3.2rem;
+        margin-top: 0;
+        transform: translate(-50%, -50%);
+        background-image: url(../img/business/ico_naverCloudPlatform_cont7_arrow.png);
+        background-size: 2.2rem 3.2rem;
     }
 
     .naverCloudPlatform-bridge {
