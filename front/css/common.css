@@ -305,17 +305,23 @@ header .mo-gnb {
   display: block;
   position: fixed;
   top: 5.6rem;
-  right: -100vw;
-  width: 100vw;
+  right: 0;
+  width: 100%;
   height: calc(100vh - 5.6rem);
   background-color: var(--white);
   overflow-y: auto;
-  transition: right 0.3s ease-in-out;
+  /* 화면 밖(right: -100vw) 배치 시 모바일에서 레이아웃 뷰포트가 넓어져 오른쪽 여백이 생기므로
+     박스는 화면 안에 두고 clip-path로 오른쪽에서 열리는 효과 처리 */
+  clip-path: inset(0 0 0 100%);
+  visibility: hidden;
+  transition: clip-path 0.3s ease-in-out, visibility 0s 0.3s;
   z-index: 50;
 }
 
 header .mo-gnb.act {
-  right: 0;
+  clip-path: inset(0);
+  visibility: visible;
+  transition: clip-path 0.3s ease-in-out, visibility 0s;
 }
 
 header .mo-gnb>ul>li>a {
@@ -808,7 +814,7 @@ main>.title.no-animate h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: calc(100vw - 4rem);
+  width: calc(100% - 4rem);
   padding: 2.6rem 2.6rem 4rem;
   background-color: var(--white);
   transform: translate(-50%, -50%);

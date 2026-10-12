@@ -114,7 +114,8 @@ function initHeaderAutoHide() {
 
     const sync = () => {
         ticking = false;
-        const scrollY = window.scrollY;
+        // iOS 바운스(오버스크롤) 구간은 범위 내로 보정 — 상·하단 튕김 시 방향 반전으로 헤더·탭이 깜빡이지 않도록
+        const scrollY = Math.min(getMaxScroll(), Math.max(0, window.scrollY));
         const delta = scrollY - lastScrollY;
 
         if (!locked) {
@@ -718,9 +719,18 @@ function initTabMenu() {
         let clickedButton = null;
 
         const setActiveTab = (activeButton) => {
+            if (activeButton.classList.contains("act")) return;
             tabButtons.forEach((btn) => {
                 btn.classList.toggle("act", btn === activeButton);
             });
+            scrollTabIntoView(activeButton);
+        };
+
+        // 모바일 가로 스크롤 탭 — 활성 탭이 보이도록 탭 영역만 가로 이동 (scrollIntoView는 세로 스크롤까지 발생하여 사용 안 함)
+        const scrollTabIntoView = (button) => {
+            if (tabContainer.scrollWidth <= tabContainer.clientWidth) return;
+            const left = button.offsetLeft - (tabContainer.clientWidth - button.offsetWidth) / 2;
+            tabContainer.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
         };
 
         // 도착 스크롤 위치 — type2·첫 번째 컨텐츠는 탭이 --sticky-tab-top에 고정되는 위치, 나머지는 컨텐츠 상단이 탭 바로 아래
