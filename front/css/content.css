@@ -805,7 +805,7 @@
 
 .project-case .project-case-more {
     position: absolute;
-    top: 5.5rem;
+    top: 0;
     right: 0;
     height: 4.2rem;
     padding: 0 4rem 0 2rem;
@@ -960,6 +960,10 @@
 }
 
 /* download layer popup */
+.layer-pop.download {
+    margin-top: 0;
+}
+
 .layer-pop.download .email {
     display: flex;
     flex-wrap: wrap;
@@ -1796,7 +1800,6 @@
     }
 
     .project-case .project-case-more {
-        top: 10.5rem;
         height: 5rem;
         padding: 0 6rem 0 4rem;
         border: 1px solid var(--text-secondary);
@@ -2706,7 +2709,6 @@
     }
 
     .project-case .project-case-more {
-        top: 10.5rem;
         height: 5rem;
         padding: 0 6rem 0 4rem;
         border: 1px solid var(--text-secondary);
