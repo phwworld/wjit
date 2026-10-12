@@ -1059,6 +1059,7 @@
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: center top 2.4rem;
+    background-size: auto 6rem;
     border: 1px solid var(--border-default);
     font-size: 1.6rem;
     font-weight: 500;
@@ -1073,204 +1074,188 @@
  } */
 
 .bss-cont4>div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_02.svg);
-    background-size: 5.5rem 5.6rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_02.png);
 }
 
 .bss-cont4>div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_03.svg);
-    background-size: 5.9rem 5.8rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_03.png);
 }
 
 .bss-cont4>div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_04.svg);
-    background-size: 6.8rem 5rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_04.png);
 }
 
 .bss-cont4>div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_05.svg);
-    background-size: 4.9rem 5.4rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_05.png);
 }
 
 .bss-cont4>div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_06.svg);
-    background-size: 5.6rem 5.6rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_06.png);
 }
 
 .bss-cont4>div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_whrm_cont4_07.svg);
-    background-size: 5.6rem 5.6rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_07.png);
 }
 
 .bss-cont4>div:nth-child(7) {
     grid-column: 1 / 3;
-    background-image: url(../img/business/bg_bss_whrm_cont4_08.svg);
-    background-size: 5.4rem 5.2rem;
-}
-
-.bss-cont4.wics div,
-.bss-cont4.wevs div,
-.bss-cont4.fams div,
-.bss-cont4.wpms div,
-.bss-cont4.wrpa div,
-.bss-cont4.weis div {
-    background-size: 8rem 6rem;
+    background-image: url(../img/business/bg_bss_whrm_cont4_08.png);
 }
 
 .bss-cont4.wics div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_wics_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_01.png);
 }
 
 .bss-cont4.wics div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_wics_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_02.png);
 }
 
 .bss-cont4.wics div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_wics_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_03.png);
 }
 
 .bss-cont4.wics div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_wics_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_04.png);
 }
 
 .bss-cont4.wics div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_wics_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_05.png);
 }
 
 .bss-cont4.wics div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_wics_cont4_06.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_06.png);
 }
 
 .bss-cont4.wics div:nth-child(7) {
     grid-column: 1 / 3;
-    background-image: url(../img/business/bg_bss_wics_cont4_07.svg);
+    background-image: url(../img/business/bg_bss_wics_cont4_07.png);
 }
 
 .bss-cont4.wevs div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_01.png);
 }
 
 .bss-cont4.wevs div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_02.png);
 }
 
 .bss-cont4.wevs div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_03.png);
 }
 
 .bss-cont4.wevs div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_04.png);
 }
 
 .bss-cont4.wevs div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_05.png);
 }
 
 .bss-cont4.wevs div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_wevs_cont4_06.svg);
+    background-image: url(../img/business/bg_bss_wevs_cont4_06.png);
 }
 
 .bss-cont4.fams div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_fams_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_01.png);
 }
 
 .bss-cont4.fams div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_fams_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_02.png);
 }
 
 .bss-cont4.fams div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_fams_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_03.png);
 }
 
 .bss-cont4.fams div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_fams_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_04.png);
 }
 
 .bss-cont4.fams div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_fams_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_05.png);
 }
 
 .bss-cont4.fams div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_fams_cont4_06.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_06.png);
 }
 
 .bss-cont4.fams div:nth-child(7) {
     grid-column: 1 / 3;
-    background-image: url(../img/business/bg_bss_fams_cont4_07.svg);
+    background-image: url(../img/business/bg_bss_fams_cont4_07.png);
 }
 
 .bss-cont4.wpms div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_01.png);
 }
 
 .bss-cont4.wpms div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_02.png);
 }
 
 .bss-cont4.wpms div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_03.png);
 }
 
 .bss-cont4.wpms div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_04.png);
 }
 
 .bss-cont4.wpms div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_05.png);
 }
 
 .bss-cont4.wpms div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_wpms_cont4_06.svg);
+    background-image: url(../img/business/bg_bss_wpms_cont4_06.png);
 }
 
 .bss-cont4.wrpa div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_01.png);
 }
 
 .bss-cont4.wrpa div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_02.png);
 }
 
 .bss-cont4.wrpa div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_03.png);
 }
 
 .bss-cont4.wrpa div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_04.png);
 }
 
 .bss-cont4.wrpa div:nth-child(5) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_05.png);
 }
 
 .bss-cont4.wrpa div:nth-child(6) {
-    background-image: url(../img/business/bg_bss_wrpa_cont4_06.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_06.png);
 }
 
 .bss-cont4.wrpa div:nth-child(7) {
     grid-column: 1 / 3;
-    background-image: url(../img/business/bg_bss_wrpa_cont4_07.svg);
+    background-image: url(../img/business/bg_bss_wrpa_cont4_07.png);
 }
 
 .bss-cont4.weis div:nth-child(1) {
-    background-image: url(../img/business/bg_bss_weis_cont4_01.svg);
+    background-image: url(../img/business/bg_bss_weis_cont4_01.png);
 }
 
 .bss-cont4.weis div:nth-child(2) {
-    background-image: url(../img/business/bg_bss_weis_cont4_02.svg);
+    background-image: url(../img/business/bg_bss_weis_cont4_02.png);
 }
 
 .bss-cont4.weis div:nth-child(3) {
-    background-image: url(../img/business/bg_bss_weis_cont4_03.svg);
+    background-image: url(../img/business/bg_bss_weis_cont4_03.png);
 }
 
 .bss-cont4.weis div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_weis_cont4_04.svg);
+    background-image: url(../img/business/bg_bss_weis_cont4_04.png);
 }
 
 .bss-cont4.weis div:nth-child(5) {
     grid-column: 1 / 3;
-    background-image: url(../img/business/bg_bss_weis_cont4_05.svg);
+    background-image: url(../img/business/bg_bss_weis_cont4_05.png);
 }
 
 .bss-cont5 {
@@ -4473,48 +4458,8 @@
         border-color: #b5b7bd;
         /* border-style: dashed; */
         background-position: center top 4rem;
+        background-size: auto 8rem;
         font-size: 2rem;
-    }
-
-    .bss-cont4>div:nth-child(1) {
-        background-size: 5.9rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(2) {
-        background-size: 7.7rem 7.8rem;
-    }
-
-    .bss-cont4>div:nth-child(3) {
-        background-size: 7.7rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(4) {
-        background-size: 9.4rem 6.9rem;
-    }
-
-    .bss-cont4>div:nth-child(5) {
-        background-size: 7.2rem 8rem;
-    }
-
-    .bss-cont4>div:nth-child(6) {
-        background-size: 7.6rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(7) {
-        background-size: 8rem 8rem;
-    }
-
-    .bss-cont4>div:nth-child(8) {
-        background-size: 7.1rem 6.8rem;
-    }
-
-    .bss-cont4.wics div,
-    .bss-cont4.wevs div,
-    .bss-cont4.fams div,
-    .bss-cont4.wpms div,
-    .bss-cont4.wrpa div,
-    .bss-cont4.weis div {
-        background-size: 10rem 8rem;
     }
 
     .bss-cont5 {
@@ -4533,6 +4478,7 @@
         border-width: 1px;
         background-repeat: no-repeat;
         background-position: 6rem center;
+        backgorund-size: auto 6rem;
         font-size: 2rem;
         font-weight: 500;
     }
@@ -4562,245 +4508,232 @@
     }
 
     .bss-cont5>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_01.svg);
-        background-size: 5.9rem 6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_01.png);
         background-position: 6.55rem center;
     }
 
     .bss-cont5>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_02.svg);
-        background-size: 6.1rem 6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_02.png);
         background-position: 6.45rem center;
     }
 
     .bss-cont5>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_03.svg);
-        background-size: 7rem 5.1rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_03.png);
     }
 
-    /* .bss-cont5 > div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_whrm_cont5_04.svg);
-    background-size: 4.7rem 6rem;
-    background-position: 7.15rem center;
- } */
-
     .bss-cont5>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_05.svg);
-        background-size: 5.4rem 6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_05.png);
         background-position: 6.8rem center;
     }
 
     .bss-cont5>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_06.svg);
-        background-size: 6rem 6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_06.png);
         background-position: 6.5rem center;
     }
 
     .bss-cont5>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_07.svg);
-        background-size: 6rem 6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_07.png);
         background-position: 6.5rem center;
     }
 
     .bss-cont5>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_08.svg);
-        background-size: 7rem 5.6rem;
+        background-image: url(../img/business/bg_bss_whrm_cont5_08.png);
     }
 
     .bss-cont5.wics>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wics_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_01.png);
     }
 
     .bss-cont5.wics>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wics_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_02.png);
     }
 
     .bss-cont5.wics>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wics_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_03.png);
     }
 
     .bss-cont5.wics>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wics_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_04.png);
     }
 
     .bss-cont5.wics>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wics_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_05.png);
     }
 
     .bss-cont5.wics>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wics_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_06.png);
     }
 
     .bss-cont5.wics>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wics_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_07.png);
     }
 
     .bss-cont5.wics>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wics_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_08.png);
     }
 
     .bss-cont5.wevs>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_01.png);
     }
 
     .bss-cont5.wevs>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_02.png);
     }
 
     .bss-cont5.wevs>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_03.png);
     }
 
     .bss-cont5.wevs>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_04.png);
     }
 
     .bss-cont5.wevs>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_05.png);
     }
 
     .bss-cont5.wevs>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_06.png);
     }
 
     .bss-cont5.wevs>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_07.png);
     }
 
     .bss-cont5.wevs>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_08.png);
     }
 
     .bss-cont5.fams>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_fams_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_01.png);
     }
 
     .bss-cont5.fams>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_fams_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_02.png);
     }
 
     .bss-cont5.fams>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_fams_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_03.png);
     }
 
     .bss-cont5.fams>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_fams_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_04.png);
     }
 
     .bss-cont5.fams>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_fams_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_05.png);
     }
 
     .bss-cont5.fams>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_fams_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_06.png);
     }
 
     .bss-cont5.fams>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_fams_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_07.png);
     }
 
     .bss-cont5.fams>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_fams_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_08.png);
     }
 
     .bss-cont5.fams>div:nth-child(9) {
-        background-image: url(../img/business/bg_bss_fams_cont5_09.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_09.png);
     }
 
     .bss-cont5.wpms>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_01.png);
     }
 
     .bss-cont5.wpms>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_02.png);
     }
 
     .bss-cont5.wpms>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_03.png);
     }
 
     .bss-cont5.wpms>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_04.png);
     }
 
     .bss-cont5.wpms>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_05.png);
     }
 
     .bss-cont5.wpms>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_06.png);
     }
 
     .bss-cont5.wpms>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_07.png);
     }
 
     .bss-cont5.wpms>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_08.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_01.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_02.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_03.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_04.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_05.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_06.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_07.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_08.png);
     }
 
     .bss-cont5.weis>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_weis_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_01.png);
     }
 
     .bss-cont5.weis>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_weis_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_02.png);
     }
 
     .bss-cont5.weis>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_weis_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_03.png);
     }
 
     .bss-cont5.weis>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_weis_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_04.png);
     }
 
     .bss-cont5.weis>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_weis_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_05.png);
     }
 
     .bss-cont5.weis>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_weis_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_06.png);
     }
 
     .bss-cont5.weis>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_weis_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_07.png);
     }
 
     .bss-cont5.weis>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_weis_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_08.png);
     }
 
     .bss-cont5+p {
@@ -7182,6 +7115,7 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 5rem 3rem;
         margin-top: 6rem;
+        container-type: inline-size;
     }
 
     .bss-cont1>div {
@@ -7193,11 +7127,13 @@
         justify-self: start;
     }
 
+    /* 1·2개 카드도 3열 카드(좌측 패딩 0.6rem + 간격 3rem×2)와 같은 가로 크기 */
     .bss-cont1>div:nth-child(1) a,
-    .bss-cont1>div:nth-child(2) a {
-        flex: 0 0 45.8rem;
-        width: 45.8rem;
-        max-width: 45.8rem;
+    .bss-cont1>div:nth-child(2) a,
+    .bss-cont1>div:nth-child(4) a {
+        flex: 0 0 calc((100cqi - 6.6rem) / 3);
+        width: calc((100cqi - 6.6rem) / 3);
+        max-width: calc((100cqi - 6.6rem) / 3);
     }
 
     .bss-cont1>div:nth-child(3),
@@ -7260,10 +7196,6 @@
         background-color: var(--white);
         border-color: var(--primary);
     }
-
-    /* .bss-cont1 a:hover::after {
-        background-image: url(../img/business/ico_bss_cont1_arrow_on.svg);
-    } */
 
     .bss-cont2 {
         flex-direction: row;
@@ -7353,48 +7285,8 @@
         border-color: #b5b7bd;
         /* border-style: dashed; */
         background-position: center top 4rem;
+        background-size: auto 8rem;
         font-size: 2rem;
-    }
-
-    .bss-cont4>div:nth-child(1) {
-        background-size: 5.9rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(2) {
-        background-size: 7.7rem 7.8rem;
-    }
-
-    .bss-cont4>div:nth-child(3) {
-        background-size: 7.7rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(4) {
-        background-size: 9.4rem 6.9rem;
-    }
-
-    .bss-cont4>div:nth-child(5) {
-        background-size: 7.2rem 8rem;
-    }
-
-    .bss-cont4>div:nth-child(6) {
-        background-size: 7.6rem 7.6rem;
-    }
-
-    .bss-cont4>div:nth-child(7) {
-        background-size: 8rem 8rem;
-    }
-
-    .bss-cont4>div:nth-child(8) {
-        background-size: 7.1rem 6.8rem;
-    }
-
-    .bss-cont4.wics div,
-    .bss-cont4.wevs div,
-    .bss-cont4.fams div,
-    .bss-cont4.wpms div,
-    .bss-cont4.wrpa div,
-    .bss-cont4.weis div {
-        background-size: 10rem 8rem;
     }
 
     .bss-cont5 {
@@ -7442,245 +7334,245 @@
     }
 
     .bss-cont5>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_01.png);
         background-size: 5.9rem 6rem;
         background-position: 6.55rem center;
     }
 
     .bss-cont5>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_02.png);
         background-size: 6.1rem 6rem;
         background-position: 6.45rem center;
     }
 
     .bss-cont5>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_03.png);
         background-size: 7rem 5.1rem;
     }
 
     /* .bss-cont5 > div:nth-child(4) {
-    background-image: url(../img/business/bg_bss_whrm_cont5_04.svg);
+    background-image: url(../img/business/bg_bss_whrm_cont5_04.png);
     background-size: 4.7rem 6rem;
     background-position: 7.15rem center;
  } */
 
     .bss-cont5>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_05.png);
         background-size: 5.4rem 6rem;
         background-position: 6.8rem center;
     }
 
     .bss-cont5>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_06.png);
         background-size: 6rem 6rem;
         background-position: 6.5rem center;
     }
 
     .bss-cont5>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_07.png);
         background-size: 6rem 6rem;
         background-position: 6.5rem center;
     }
 
     .bss-cont5>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_whrm_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_whrm_cont5_08.png);
         background-size: 7rem 5.6rem;
     }
 
     .bss-cont5.wics>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wics_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_01.png);
     }
 
     .bss-cont5.wics>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wics_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_02.png);
     }
 
     .bss-cont5.wics>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wics_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_03.png);
     }
 
     .bss-cont5.wics>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wics_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_04.png);
     }
 
     .bss-cont5.wics>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wics_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_05.png);
     }
 
     .bss-cont5.wics>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wics_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_06.png);
     }
 
     .bss-cont5.wics>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wics_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_07.png);
     }
 
     .bss-cont5.wics>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wics_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wics_cont5_08.png);
     }
 
     .bss-cont5.wevs>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_01.png);
     }
 
     .bss-cont5.wevs>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_02.png);
     }
 
     .bss-cont5.wevs>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_03.png);
     }
 
     .bss-cont5.wevs>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_04.png);
     }
 
     .bss-cont5.wevs>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_05.png);
     }
 
     .bss-cont5.wevs>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_06.png);
     }
 
     .bss-cont5.wevs>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_07.png);
     }
 
     .bss-cont5.wevs>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wevs_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wevs_cont5_08.png);
     }
 
     .bss-cont5.fams>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_fams_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_01.png);
     }
 
     .bss-cont5.fams>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_fams_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_02.png);
     }
 
     .bss-cont5.fams>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_fams_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_03.png);
     }
 
     .bss-cont5.fams>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_fams_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_04.png);
     }
 
     .bss-cont5.fams>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_fams_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_05.png);
     }
 
     .bss-cont5.fams>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_fams_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_06.png);
     }
 
     .bss-cont5.fams>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_fams_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_07.png);
     }
 
     .bss-cont5.fams>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_fams_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_08.png);
     }
 
     .bss-cont5.fams>div:nth-child(9) {
-        background-image: url(../img/business/bg_bss_fams_cont5_09.svg);
+        background-image: url(../img/business/bg_bss_fams_cont5_09.png);
     }
 
     .bss-cont5.wpms>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_01.png);
     }
 
     .bss-cont5.wpms>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_02.png);
     }
 
     .bss-cont5.wpms>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_03.png);
     }
 
     .bss-cont5.wpms>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_04.png);
     }
 
     .bss-cont5.wpms>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_05.png);
     }
 
     .bss-cont5.wpms>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_06.png);
     }
 
     .bss-cont5.wpms>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_07.png);
     }
 
     .bss-cont5.wpms>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wpms_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wpms_cont5_08.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_01.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_02.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_03.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_04.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_05.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_06.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_07.png);
     }
 
     .bss-cont5.wrpa>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_wrpa_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_wrpa_cont5_08.png);
     }
 
     .bss-cont5.weis>div:nth-child(1) {
-        background-image: url(../img/business/bg_bss_weis_cont5_01.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_01.png);
     }
 
     .bss-cont5.weis>div:nth-child(2) {
-        background-image: url(../img/business/bg_bss_weis_cont5_02.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_02.png);
     }
 
     .bss-cont5.weis>div:nth-child(3) {
-        background-image: url(../img/business/bg_bss_weis_cont5_03.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_03.png);
     }
 
     .bss-cont5.weis>div:nth-child(4) {
-        background-image: url(../img/business/bg_bss_weis_cont5_04.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_04.png);
     }
 
     .bss-cont5.weis>div:nth-child(5) {
-        background-image: url(../img/business/bg_bss_weis_cont5_05.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_05.png);
     }
 
     .bss-cont5.weis>div:nth-child(6) {
-        background-image: url(../img/business/bg_bss_weis_cont5_06.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_06.png);
     }
 
     .bss-cont5.weis>div:nth-child(7) {
-        background-image: url(../img/business/bg_bss_weis_cont5_07.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_07.png);
     }
 
     .bss-cont5.weis>div:nth-child(8) {
-        background-image: url(../img/business/bg_bss_weis_cont5_08.svg);
+        background-image: url(../img/business/bg_bss_weis_cont5_08.png);
     }
 
     .bss-cont5+p {
