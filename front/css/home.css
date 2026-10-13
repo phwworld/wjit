@@ -1738,7 +1738,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         height: 60rem;
     }
     .case-list .case-items .hide {
-        display: block;
+        display: block !important;
     }
     
     .home-history-list {

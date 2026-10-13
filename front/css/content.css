@@ -631,6 +631,7 @@
     width: calc(100% - 5rem);
     height: 100%;
     font-size: 2rem;
+    background-color: transparent;
 }
 
 .title .search-input input[type="text"]::placeholder {

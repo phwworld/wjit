@@ -720,23 +720,54 @@ main>.title.no-animate h3 {
 }
 
 
-/* main:has(>.title.aicc) {
-  background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
+.title [class^="wjh-"] {
+  display: none !important;
+}
+
+.title.ai {
+  background: url(../img/common/bg_title_ai_mo.png) no-repeat;
   background-size: 100% auto;
-} */
-  .title.aicc {
-    background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
-    background-size: 100% auto;
-  }
+}
 
-  .title.wrms {
-    background: url(../img/common/bg_title_wrms_mo.png) no-repeat;
-    background-size: 100% auto;
-  }
+.title.solution {
+  background: url(../img/common/bg_title_solution_mo.png) no-repeat;
+  background-size: 100% auto;
+}
 
-  .title.wrms .wjc-art {
-    display: none !important;
-  }
+.title.erp {
+  background: url(../img/common/bg_title_erp_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.cloud {
+  background: url(../img/common/bg_title_cloud_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.managed {
+  background: url(../img/common/bg_title_managed_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.industry {
+  background: url(../img/common/bg_title_industry_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.resources {
+  background: url(../img/common/bg_title_resources_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.mediaroom {
+  background: url(../img/common/bg_title_mediaroom_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.company {
+  background: url(../img/common/bg_title_company_mo.png) no-repeat;
+  background-size: 100% auto;
+}
 
 /* content */
 .content .inner-cont {
@@ -1374,23 +1405,22 @@ main>.title.no-animate h3 {
     font-size: 1.8rem;
   }
 
-  /* main:has(>.title.aicc) {
-    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat center top;
-    background-size: contain;
-  } */
-  .title.aicc {
-    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
-    background-size: 100% auto;
-  }
-
-  .title.wrms {
-    background: none;
-  }
-
-  .title.wrms .wjc-art {
+  .title [class^="wjh-"] {
     display: block !important;
   }
 
+  .title.ai,
+  .title.solution,
+  .title.erp,
+  .title.cloud,
+  .title.managed,
+  .title.industry,
+  .title.resources,
+  .title.mediaroom,
+  .title.company {
+    background-image: none;
+  }
+  
   /* content */
   .content .inner-cont {
     padding: 0;
@@ -1745,6 +1775,22 @@ main>.title.no-animate h3 {
 
   main {
     padding-bottom: 13rem;
+  }
+
+  .title [class^="wjh-"] {
+    display: block !important;
+  }
+
+  .title.ai,
+  .title.solution,
+  .title.erp,
+  .title.cloud,
+  .title.managed,
+  .title.industry,
+  .title.resources,
+  .title.mediaroom,
+  .title.company {
+    background-image: none;
   }
 
   .scroll-action {
