@@ -224,7 +224,7 @@ header {
   position: sticky;
   top: 0;
   height: 5.6rem;
-  /* border-bottom: 1px solid #686c78; */
+  border-bottom: 1px solid #eee;
   background-color: #fff;
   z-index: 10;
   transition: z-index 0.3s ease-in-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
@@ -668,6 +668,7 @@ footer .inner-cont .family-site {
 
 /* title */
 main>.title {
+  position: relative;
   padding: 5.6rem 2.4rem;
   text-align: center;
 }
@@ -719,14 +720,54 @@ main>.title.no-animate h3 {
 }
 
 
-/* main:has(>.title.aicc) {
-  background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
+.title [class^="wjh-"] {
+  display: none !important;
+}
+
+.title.ai {
+  background: url(../img/common/bg_title_ai_mo.png) no-repeat;
   background-size: 100% auto;
-} */
-.title.aicc {
-  background: url(../img/common/bg_title_aicc_mo.svg) no-repeat;
+}
+
+.title.solution {
+  background: url(../img/common/bg_title_solution_mo.png) no-repeat;
   background-size: 100% auto;
- }
+}
+
+.title.erp {
+  background: url(../img/common/bg_title_erp_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.cloud {
+  background: url(../img/common/bg_title_cloud_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.managed {
+  background: url(../img/common/bg_title_managed_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.industry {
+  background: url(../img/common/bg_title_industry_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.resources {
+  background: url(../img/common/bg_title_resources_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.mediaroom {
+  background: url(../img/common/bg_title_mediaroom_mo.png) no-repeat;
+  background-size: 100% auto;
+}
+
+.title.company {
+  background: url(../img/common/bg_title_company_mo.png) no-repeat;
+  background-size: 100% auto;
+}
 
 /* content */
 .content .inner-cont {
@@ -1343,6 +1384,7 @@ main>.title.no-animate h3 {
 
   /* title */
   main>.title {
+    position: relative;
     padding: 10.5rem 0 10.5rem;
   }
 
@@ -1363,15 +1405,22 @@ main>.title.no-animate h3 {
     font-size: 1.8rem;
   }
 
-  /* main:has(>.title.aicc) {
-    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat center top;
-    background-size: contain;
-  } */
-  .title.aicc {
-    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
-    background-size: 100% auto;
+  .title [class^="wjh-"] {
+    display: block !important;
   }
 
+  .title.ai,
+  .title.solution,
+  .title.erp,
+  .title.cloud,
+  .title.managed,
+  .title.industry,
+  .title.resources,
+  .title.mediaroom,
+  .title.company {
+    background-image: none;
+  }
+  
   /* content */
   .content .inner-cont {
     padding: 0;
@@ -1728,6 +1777,22 @@ main>.title.no-animate h3 {
     padding-bottom: 13rem;
   }
 
+  .title [class^="wjh-"] {
+    display: block !important;
+  }
+
+  .title.ai,
+  .title.solution,
+  .title.erp,
+  .title.cloud,
+  .title.managed,
+  .title.industry,
+  .title.resources,
+  .title.mediaroom,
+  .title.company {
+    background-image: none;
+  }
+
   .scroll-action {
     bottom: 1.5rem;
     right: 1rem;
@@ -1927,13 +1992,17 @@ main>.title.no-animate h3 {
     font-size: 1.8rem;
   }
 
-  /* main:has(>.title.aicc) {
-    background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
-    background-size: 100% auto;
-  } */
   .title.aicc {
     background: url(../img/common/bg_title_aicc_pc.svg) no-repeat;
     background-size: 100% auto;
+  }
+
+  .title.wrms {
+    background: none;
+  }
+
+  .title.wrms .wjc-art {
+    display: block !important;
   }
 
   /* content */
