@@ -304,6 +304,7 @@ header .pc-gnb .gnb-sub.on>ul>li:nth-child(7) { animation-delay: 0.29s; }
 /* PC GNB 서브메뉴 닫힘: 아래→위로 걷히며 fade-out (ui.js에서 .is-closing 토글) */
 header .pc-gnb .gnb-sub {
   clip-path: inset(0 0 0 0);
+  border-top: 1px solid #e1e7ee;
 }
 
 header .pc-gnb .gnb-sub.is-closing {
