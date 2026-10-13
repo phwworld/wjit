@@ -113,6 +113,17 @@
     z-index: 1;
 }
 
+/* 버튼이 3개 이하일 때 100 / n 너비로 균등 분할 */
+.tab-list button:first-child:nth-last-child(-n+3),
+.tab-list button:first-child:nth-last-child(-n+3) ~ button,
+.category-list button:first-child:nth-last-child(-n+3),
+.category-list button:first-child:nth-last-child(-n+3) ~ button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 0.4rem;
+    white-space: normal;
+}
+
 .category-list2 {
     display: flex;
     margin-bottom: 3rem;
