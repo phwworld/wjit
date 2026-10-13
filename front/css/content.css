@@ -360,6 +360,10 @@
     margin-bottom: 0rem;
 }
 
+.board-list.type4 .thumb img {
+    aspect-ratio: 1/1;
+}
+
 .board-list.type4 .cont {
     padding-top: 2rem;
 }
@@ -369,6 +373,10 @@
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--text-body);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .board-list.type5 {
