@@ -1470,6 +1470,11 @@ main>.title.no-animate h3 {
     padding: 10.5rem 0 10.5rem;
   }
 
+  main>.title .inner-cont {
+    position: relative;
+    z-index: 2;
+  }
+
   main>.title .tit-info1 {
     font-size: 2.8rem;
   }
@@ -1858,6 +1863,11 @@ main>.title.no-animate h3 {
 
   main {
     padding-bottom: 13rem;
+  }
+
+  main>.title .inner-cont {
+    position: relative;
+    z-index: 2;
   }
 
   .title [class^="wjh-"] {
