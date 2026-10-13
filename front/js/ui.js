@@ -418,21 +418,70 @@ function initMobileGnb() {
    3. PC GNB 네비게이션 (PC GNB Hover & Focus)
    ========================================================================== */
 function initPcGnb() {
+    const pcGnb = document.querySelector(".pc-gnb");
     const pcGnbList = document.querySelectorAll(".pc-gnb > ul > li");
-    if (!pcGnbList.length) return;
+    if (!pcGnb || !pcGnbList.length) return;
+    const header = pcGnb.closest("header");
 
-    const isGnbActive = (item) => item.matches(":hover") || item.contains(document.activeElement);
+    const gnbSubs = Array.from(pcGnbList, (item) => item.querySelector(".gnb-sub")).filter(Boolean);
+    const CLOSE_DURATION = 300; // common.css .gnb-sub.is-closing transition 시간
+    let currentSub = null;
+    let closeTimer = null;
 
-    const openGnbSub = (gnbSub) => {
-        if (!gnbSub) return;
-        gnbSub.style.visibility = "visible";
-        gnbSub.style.height = gnbSub.scrollHeight + "px";
+    // transition 없이 즉시 스타일 적용 (닫힘 효과 중이면 함께 해제)
+    const setInstant = (gnbSub, height, visibility) => {
+        gnbSub.style.transition = "none";
+        gnbSub.classList.remove("is-closing");
+        gnbSub.style.height = height;
+        gnbSub.style.visibility = visibility;
+        void gnbSub.offsetHeight; // reflow
+        gnbSub.style.transition = "";
     };
 
-    const closeGnbSub = (item, gnbSub) => {
-        if (!gnbSub || isGnbActive(item)) return;
-        gnbSub.style.height = "0";
-        gnbSub.style.visibility = "hidden";
+    const openGnbSub = (gnbSub) => {
+        if (!gnbSub || gnbSub === currentSub) return;
+        clearTimeout(closeTimer);
+
+        // 열려 있던 서브의 현재 높이를 이어받아 접힘 없이 전환 (닫히는 중인 서브는 높이 승계 제외)
+        let startHeight = 0;
+        gnbSubs.forEach((sub) => {
+            if (sub === gnbSub || sub.style.visibility !== "visible") return;
+            if (!sub.classList.contains("is-closing")) {
+                startHeight = Math.max(startHeight, sub.getBoundingClientRect().height);
+            }
+            setInstant(sub, "0", "hidden");
+        });
+
+        // 컬럼 fade-down 재시작 (아래 setInstant의 reflow로 애니메이션 리셋)
+        gnbSub.classList.remove("on");
+
+        // 높이가 고정된 상태에선 scrollHeight가 실제 컨텐츠보다 클 수 있어 auto로 측정
+        setInstant(gnbSub, "auto", "visible");
+        const targetHeight = gnbSub.offsetHeight;
+        setInstant(gnbSub, startHeight + "px", "visible");
+        gnbSub.style.height = targetHeight + "px";
+        gnbSub.classList.add("on");
+        if (header) header.classList.add("gnb-open");
+        pcGnbList.forEach((item) => item.classList.toggle("on", item.contains(gnbSub)));
+        currentSub = gnbSub;
+    };
+
+    const closeGnbSub = () => {
+        if (!currentSub) return;
+        const gnbSub = currentSub;
+
+        // 아래→위로 걷히며 fade-out 후 숨김
+        gnbSub.classList.remove("on");
+        gnbSub.classList.add("is-closing");
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(() => {
+            setInstant(gnbSub, "0", "hidden");
+            // 닫힘 효과가 끝난 뒤 z-index 원복
+            if (header) header.classList.remove("gnb-open");
+        }, CLOSE_DURATION);
+
+        pcGnbList.forEach((item) => item.classList.remove("on"));
+        currentSub = null;
     };
 
     pcGnbList.forEach((item) => {
@@ -440,26 +489,23 @@ function initPcGnb() {
         if (!gnbSub) return;
 
         item.addEventListener("mouseenter", () => openGnbSub(gnbSub));
-        item.addEventListener("mouseleave", () => closeGnbSub(item, gnbSub));
         item.addEventListener("focusin", () => openGnbSub(gnbSub));
-        item.addEventListener("focusout", (event) => {
-            if (!item.contains(event.relatedTarget)) {
-                closeGnbSub(item, gnbSub);
-            }
-        });
+    });
+
+    // pc-gnb 영역(1depth 사이 gap 포함)을 벗어날 때까지 열린 상태 유지
+    pcGnb.addEventListener("mouseleave", () => {
+        // 클릭으로 생긴 포커스는 무시하고, 키보드 포커스가 남아 있을 때만 유지
+        const focused = document.activeElement;
+        if (pcGnb.contains(focused) && focused.matches(":focus-visible")) return;
+        closeGnbSub();
+    });
+    pcGnb.addEventListener("focusout", (event) => {
+        if (!pcGnb.contains(event.relatedTarget) && !pcGnb.matches(":hover")) closeGnbSub();
     });
 
     // ESC 키 입력 시 열려있는 PC GNB 서브메뉴 닫기
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            pcGnbList.forEach((item) => {
-                const gnbSub = item.querySelector(".gnb-sub");
-                if (gnbSub) {
-                    gnbSub.style.height = "0";
-                    gnbSub.style.visibility = "hidden";
-                }
-            });
-        }
+        if (e.key === "Escape") closeGnbSub();
     });
 }
 

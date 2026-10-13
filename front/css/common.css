@@ -247,6 +247,12 @@ header.act {
   z-index: 100;
 }
 
+/* PC GNB 서브메뉴 열림 — home-quick-nav(z-index 90) 위로 즉시 노출 (ui.js에서 토글) */
+header.gnb-open {
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+}
+
 header .inner-cont {
   display: flex;
   align-items: center;
@@ -268,6 +274,63 @@ header h1 a {
 header .pc-gnb,
 header .shortcut-menu {
   display: none;
+}
+
+/* PC GNB 서브메뉴 컬럼 fade-down (ui.js에서 .on 토글) */
+@keyframes gnb-sub-col-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -1rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+header .pc-gnb .gnb-sub.on>ul>li {
+  animation: gnb-sub-col-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(1) { animation-delay: 0.05s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(2) { animation-delay: 0.09s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(3) { animation-delay: 0.13s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(4) { animation-delay: 0.17s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(5) { animation-delay: 0.21s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(6) { animation-delay: 0.25s; }
+header .pc-gnb .gnb-sub.on>ul>li:nth-child(7) { animation-delay: 0.29s; }
+
+/* PC GNB 서브메뉴 닫힘: 아래→위로 걷히며 fade-out (ui.js에서 .is-closing 토글) */
+header .pc-gnb .gnb-sub {
+  clip-path: inset(0 0 0 0);
+}
+
+header .pc-gnb .gnb-sub.is-closing {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition:
+    clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.255s ease;
+}
+
+header .pc-gnb .gnb-sub.is-closing>ul>li {
+  opacity: 0;
+  transform: translate3d(0, -1.2rem, 0);
+  transition:
+    opacity 0.27s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header .pc-gnb .gnb-sub.on>ul>li {
+    animation: none;
+  }
+
+  header .pc-gnb .gnb-sub.is-closing,
+  header .pc-gnb .gnb-sub.is-closing>ul>li {
+    transition: none;
+  }
 }
 
 header .function-menu {
@@ -1112,6 +1175,7 @@ main>.title.no-animate h3 {
   header .pc-gnb>ul>li>a:hover,
   header .pc-gnb>ul>li:hover>a,
   header .pc-gnb>ul>li:focus-within>a,
+  header .pc-gnb>ul>li.on>a,
   header .pc-gnb>ul>li>a.act {
     border-bottom: 0.4rem solid var(--primary);
     color: var(--text-body);
@@ -1678,6 +1742,7 @@ main>.title.no-animate h3 {
   header .pc-gnb>ul>li>a:hover,
   header .pc-gnb>ul>li:hover>a,
   header .pc-gnb>ul>li:focus-within>a,
+  header .pc-gnb>ul>li.on>a,
   header .pc-gnb>ul>li>a.act {
     border-bottom: 0.4rem solid var(--primary);
     color: var(--text-body);
