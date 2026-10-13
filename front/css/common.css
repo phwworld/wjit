@@ -1343,6 +1343,7 @@ main>.title.no-animate h3 {
 
   footer .inner-cont .foot-cont2 .family-site button {
     display: block;
+    position: relative;
     width: 26rem;
     height: 5rem;
     padding-left: 1.4rem;
@@ -1351,17 +1352,33 @@ main>.title.no-animate h3 {
     color: rgba(255, 255, 255, 0.85);
     text-align: left;
     background-color: rgba(255, 255, 255, 0.06);
-    background-image: url(../img/common/icon_familysite.png);
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
     transition:
       border-color 0.3s ease,
       background-color 0.3s ease;
   }
 
+  footer .inner-cont .foot-cont2 .family-site button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 3rem;
+    height: 2.6rem;
+    background-image: url(../img/common/icon_familysite.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+  }
+
   footer .inner-cont .foot-cont2 .family-site.is-open button {
     border-color: rgba(17, 188, 255, 0.4);
     background-color: rgba(17, 188, 255, 0.08);
+  }
+
+  footer .inner-cont .foot-cont2 .family-site.is-open button::after {
+    transform: translateY(-50%) rotate(180deg);
   }
 
   footer .inner-cont .foot-cont2 .family-site ul {
@@ -1932,6 +1949,7 @@ main>.title.no-animate h3 {
 
   footer .inner-cont .foot-cont2 .family-site button {
     display: block;
+    position: relative;
     width: 26rem;
     height: 5rem;
     padding-left: 1.4rem;
@@ -1940,17 +1958,33 @@ main>.title.no-animate h3 {
     color: rgba(255, 255, 255, 0.85);
     text-align: left;
     background-color: rgba(255, 255, 255, 0.06);
-    background-image: url(../img/common/icon_familysite.png);
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
     transition:
       border-color 0.3s ease,
       background-color 0.3s ease;
   }
 
+  footer .inner-cont .foot-cont2 .family-site button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 3rem;
+    height: 2.6rem;
+    background-image: url(../img/common/icon_familysite.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+  }
+
   footer .inner-cont .foot-cont2 .family-site.is-open button {
     border-color: rgba(17, 188, 255, 0.4);
     background-color: rgba(17, 188, 255, 0.08);
+  }
+
+  footer .inner-cont .foot-cont2 .family-site.is-open button::after {
+    transform: translateY(-50%) rotate(180deg);
   }
 
   footer .inner-cont .foot-cont2 .family-site ul {
