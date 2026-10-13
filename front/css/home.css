@@ -16,6 +16,10 @@ body:has(main.home) header {
 body:has(main.home) header.transparent {
     background-color: transparent;
 }
+/* PC GNB 서브메뉴 열림 시 z-index 즉시 적용 (common.css header.gnb-open) */
+body:has(main.home) header.gnb-open {
+    transition: opacity 0.6s ease;
+}
 
 main.home {
     position: relative;
