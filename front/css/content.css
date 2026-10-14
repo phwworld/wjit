@@ -365,6 +365,7 @@
 }
 
 .board-list.type4 .cont {
+    height: 5.4rem;
     padding-top: 2rem;
 }
 
@@ -1393,6 +1394,7 @@
     }
 
     .board-list.type4 .cont {
+        height: 7.2rem;
         padding: 2rem 2.2rem;
         background-color: var(--bg-surface);
     }
@@ -2307,6 +2309,7 @@
     }
 
     .board-list.type4 .cont {
+        height: 7.2rem;
         padding: 2rem 2.2rem;
         background-color: var(--bg-surface);
     }
