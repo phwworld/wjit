@@ -769,6 +769,26 @@ function initTabMenu() {
         });
     });
 
+    // 1-1) 모바일 category-list 버튼 5개 이상 — 로드 시 'act' 버튼이 왼쪽에 보이도록 가로 스크롤 이동
+    const scrollActCategoryToStart = () => {
+        if (window.matchMedia("(min-width: 1025px)").matches) return;
+        document.querySelectorAll(".category-list").forEach((list) => {
+            const buttons = list.querySelectorAll("button");
+            const actButton = list.querySelector("button.act");
+            if (buttons.length < 5 || !actButton) return;
+            if (list.scrollWidth <= list.clientWidth) return;
+
+            const left = actButton.getBoundingClientRect().left - list.getBoundingClientRect().left + list.scrollLeft;
+            const maxLeft = Math.max(0, list.scrollWidth - list.clientWidth);
+            list.scrollTo({ left: Math.min(Math.max(0, left), maxLeft), behavior: "smooth" });
+        });
+    };
+    if (document.readyState === "complete") {
+        requestAnimationFrame(scrollActCategoryToStart);
+    } else {
+        window.addEventListener("load", scrollActCategoryToStart, { once: true });
+    }
+
     // 2) 탭 메뉴 (tab-list) - data-target ↔ tab-cont id 매칭으로 스크롤 이동 및 ScrollSpy
     const tabContainers = document.querySelectorAll(".tab-list");
     tabContainers.forEach((tabContainer) => {
