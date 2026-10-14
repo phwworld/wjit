@@ -1018,7 +1018,27 @@ function initCompanyTab() {
             });
         });
 
-        requestAnimationFrame(() => alignButton(tabContainer.querySelector("button.act")));
+        // 하위 버튼 5개 이상 — 로드 시 'act' 버튼이 왼쪽에 보이도록 가로 스크롤 이동
+        const scrollActToStart = () => {
+            const actButton = tabContainer.querySelector("button.act");
+            const list = scroller || tabContainer;
+            if (!actButton || window.matchMedia("(min-width: 1025px)").matches) return;
+            if (list.scrollWidth <= list.clientWidth) return;
+
+            const left = actButton.getBoundingClientRect().left - list.getBoundingClientRect().left + list.scrollLeft;
+            const maxLeft = Math.max(0, list.scrollWidth - list.clientWidth);
+            list.scrollTo({ left: Math.min(Math.max(0, left), maxLeft), behavior: "smooth" });
+        };
+
+        if (buttons.length >= 5) {
+            if (document.readyState === "complete") {
+                requestAnimationFrame(scrollActToStart);
+            } else {
+                window.addEventListener("load", scrollActToStart, { once: true });
+            }
+        } else {
+            requestAnimationFrame(() => alignButton(tabContainer.querySelector("button.act")));
+        }
     });
 }
 
