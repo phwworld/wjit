@@ -1,6 +1,6 @@
 /* =========================================================
    웅진IT 서브타이틀 모티브 — 통합 CSS (title.css)
-   기준 아트보드 1920 × 540 (화면 폭에 따라 자동 축소)
+   기준 아트보드 1440 × 540 (화면 폭에 따라 자동 축소)
    아트보드 클래스: .wjh-art → 섹션별 .wjh-{ai|solution|erp|cloud|managed-service|industry|resources|mediaroom|company}
    ========================================================= */
 
@@ -18,7 +18,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 1920px;
+  width: 1440px;
   height: 540px;
   transform: translate(-50%, -50%) scale(var(--wjh-scale, 1));
   transform-origin: 50% 50%;
