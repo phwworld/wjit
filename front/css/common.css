@@ -733,8 +733,12 @@ footer .inner-cont .family-site {
 /* title */
 main>.title {
   position: relative;
-  padding: 5.6rem 2.4rem;
+  display: flex;
+  align-items: center;
+  /* padding: 5.6rem 2.4rem; */
+  padding: 0 4rem;
   text-align: center;
+  aspect-ratio: 0.973 / 1;
 }
 
 main>.title .tit-info1 {
@@ -1468,6 +1472,7 @@ main>.title.no-animate h3 {
   main>.title {
     position: relative;
     padding: 10.5rem 0 10.5rem;
+    aspect-ratio: auto;
   }
 
   main>.title .inner-cont {
@@ -1863,6 +1868,10 @@ main>.title.no-animate h3 {
 
   main {
     padding-bottom: 13rem;
+  }
+
+  main>.title {
+    aspect-ratio: auto;
   }
 
   main>.title .inner-cont {

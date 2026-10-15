@@ -89,18 +89,26 @@
 
 .tab-list button,
 .category-list button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
     min-width: 10rem;
     height: 100%;
+    margin-left: -1px;
     padding: 0 1.2rem;
     border: 1px solid #f0f0f0;
+    border-bottom: 0;
     font-size: 1.6rem;
     white-space: nowrap;
     color: #202020;
     background-color: #fff;
+}
+
+.tab-list button:first-child,
+.category-list button:first-child {
+    margin-left: 0;
 }
 
 .tab-list button.act,
@@ -319,8 +327,9 @@
     display: block;
     width: 4.8rem;
     height: 4.8rem;
-    border: 1px solid var(--border-default);
-    background: url(../img/common/icon_down.svg) no-repeat center;
+    /* border: 1px solid var(--border-default); */
+    border: 1px solid #d5d5d5;
+    background: url(../img/common/icon_down.png) no-repeat center;
 }
 
 .board-list.type3 .cont-txt1 {
@@ -732,7 +741,8 @@
     position: relative;
     display: block;
     padding: 2.4rem 3.2rem 2.4rem 0;
-    border-top: 1px solid var(--border-default);
+    /* border-top: 1px solid var(--border-default); */
+    border-top: 1px solid #e1e7ee;
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-body);
@@ -829,12 +839,12 @@
     top: 0;
     right: 0;
     height: 4.2rem;
-    padding: 0 4rem 0 2rem;
+    padding: 0 4.4rem 0 2rem;
     border: 1px solid var(--text-secondary);
     font-size: 1.6rem;
     color: var(--text-body);
     line-height: 4.2rem;
-    background: url(../img/common/bg_btn_arrow.svg) no-repeat right 1rem center;
+    background: url(../img/common/bg_btn_arrow.png) no-repeat right 1rem center;
 }
 
 .download .board-list.type2 {
@@ -1165,7 +1175,7 @@
         min-width: initial !important;
         flex: 1;
         padding: 0;
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         white-space: normal;
     }
 
@@ -1288,11 +1298,11 @@
     }
 
     .board-list.type2 .cont {
-        width: calc(100% - 16.7rem);
+        width: calc(100% - 24.1rem);
     }
 
     .board-list.type2 .btn {
-        width: 15.7rem;
+        width: 18.1rem;
     }
 
     .board-list.type2 .cont-txt1 {
@@ -1303,27 +1313,29 @@
 
     .board-list.type2 .btn-down {
         display: block;
-        width: 15.7rem;
+        /* width: 15.7rem; */
+        width: 18.1rem;
         height: 5rem;
-        border: 1px solid var(--border-default);
+        /* border: 1px solid var(--border-default); */
+        border: 1px solid var(--text-secondary);
         background: none;
     }
 
     .board-list.type2 .btn-down .blind {
-        font-size: 1.8rem;
+        font-size: 2rem;
         line-height: 5rem;
-        color: var(--text-secondary);
+        color: var(--text-body);
         font-weight: 500;
     }
 
-    .board-list.type2 .btn-down .blind::before {
+    .board-list.type2 .btn-down .blind::after {
         content: "";
         display: inline-block;
         width: 2.4rem;
         height: 2.4rem;
-        margin-right: 1rem;
-        background: url(../img/common/icon_down.svg) no-repeat center top;
-        vertical-align: middle;
+        margin: 1.2rem 0 0 1rem;
+        background: url(../img/common/icon_down.png) no-repeat center top;
+        vertical-align: top;
     }
 
     .board-list.type3 .cont {
@@ -1823,11 +1835,10 @@
 
     .project-case .project-case-more {
         height: 5rem;
-        padding: 0 6rem 0 4rem;
-        border: 1px solid var(--text-secondary);
+        padding: 0 6.4rem 0 4rem;
         font-size: 2rem;
         line-height: 5rem;
-        background-position: right 1.6rem center;
+        background-position: right 2rem center;
     }
 
     .download .board-list.type2 .board-item {
@@ -2086,7 +2097,7 @@
         min-width: initial !important;
         flex: 1;
         padding: 0;
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         white-space: normal;
     }
 
@@ -2209,11 +2220,11 @@
     }
 
     .board-list.type2 .cont {
-        width: calc(100% - 16.7rem);
+        width: calc(100% - 24.1rem);
     }
 
     .board-list.type2 .btn {
-        width: 15.7rem;
+        width: 18.1rem;
     }
 
     .board-list.type2 .cont-txt1 {
@@ -2224,27 +2235,29 @@
 
     .board-list.type2 .btn-down {
         display: block;
-        width: 15.7rem;
+        /* width: 15.7rem; */
+        width: 18.1rem;
         height: 5rem;
-        border: 1px solid var(--border-default);
+        /* border: 1px solid var(--border-default); */
+        border: 1px solid var(--text-secondary);
         background: none;
     }
 
     .board-list.type2 .btn-down .blind {
-        font-size: 1.8rem;
+        font-size: 2rem;
         line-height: 5rem;
-        color: var(--text-secondary);
+        color: var(--text-body);
         font-weight: 500;
     }
 
-    .board-list.type2 .btn-down .blind::before {
+    .board-list.type2 .btn-down .blind::after {
         content: "";
         display: inline-block;
         width: 2.4rem;
         height: 2.4rem;
-        margin-right: 1rem;
-        background: url(../img/common/icon_down.svg) no-repeat center;
-        vertical-align: middle;
+        margin: 1.2rem 0 0 1rem;
+        background: url(../img/common/icon_down.png) no-repeat center top;
+        vertical-align: top;
     }
 
     .board-list.type3 .cont {
@@ -2733,11 +2746,10 @@
 
     .project-case .project-case-more {
         height: 5rem;
-        padding: 0 6rem 0 4rem;
-        border: 1px solid var(--text-secondary);
+        padding: 0 6.4rem 0 4rem;
         font-size: 2rem;
         line-height: 5rem;
-        background-position: right 1.6rem center;
+        background-position: right 2rem center;
     }
 
     .download .board-list.type2 .board-item {
