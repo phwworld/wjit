@@ -1248,24 +1248,54 @@ function initIndustrySliders() {
         const swiperEl = slider.querySelector(".swiper");
         if (!swiperEl) return;
 
-        new Swiper(swiperEl, {
-            enabled: false,
-            loop: true,
-            watchOverflow: true,
-            observer: true,
-            observeParents: true,
-            navigation: {
-                prevEl: slider.querySelector(".services-slider-prev"),
-                nextEl: slider.querySelector(".services-slider-next")
-            },
-            breakpoints: {
-                1025: {
-                    enabled: true,
-                    slidesPerView: 3,
-                    spaceBetween: 20
-                }
+        const mobileQuery = window.matchMedia("(max-width: 1024px)");
+        let servicesSwiper = null;
+
+        const createServicesSwiper = () => {
+            if (servicesSwiper) {
+                servicesSwiper.destroy(true, true);
+                servicesSwiper = null;
             }
-        });
+
+            if (mobileQuery.matches) {
+                servicesSwiper = new Swiper(swiperEl, {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    grid: {
+                        rows: 2,
+                        fill: "column"
+                    },
+                    watchOverflow: true,
+                    observer: true,
+                    observeParents: true,
+                    pagination: {
+                        el: slider.querySelector(".swiper-pagination"),
+                        clickable: true
+                    }
+                });
+                return;
+            }
+
+            const paginationEl = slider.querySelector(".swiper-pagination");
+            if (paginationEl) paginationEl.innerHTML = "";
+
+            servicesSwiper = new Swiper(swiperEl, {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 20,
+                watchOverflow: true,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    prevEl: slider.querySelector(".services-slider-prev"),
+                    nextEl: slider.querySelector(".services-slider-next")
+                }
+            });
+        };
+
+        createServicesSwiper();
+        mobileQuery.addEventListener("change", createServicesSwiper);
     });
 }
 
