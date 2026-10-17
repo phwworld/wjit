@@ -1148,6 +1148,10 @@ main>.title.no-animate h3 {
     color: #222;
   }
 
+  header.white .shortcut-menu a:hover {
+    color: var(--white);
+  }
+
   header .function-menu {
     gap: 4rem;
   }

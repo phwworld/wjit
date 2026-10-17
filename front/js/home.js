@@ -50,6 +50,22 @@
   });
 })();
 
+// 헤더 하단 보더: home-sec1이 헤더 아래로 완전히 지나가면 is-past-hero 부여
+(function () {
+  const hero = document.querySelector(".home-sec1");
+  const header = document.querySelector("header");
+  if (!hero || !header) return;
+
+  const update = () => {
+    const past = hero.getBoundingClientRect().bottom <= header.offsetHeight;
+    header.classList.toggle("is-past-hero", past);
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+
 // home-sec2: 스크롤 진입 시 1회 — 타이틀/설명 등장 후 카드 순차 리빌
 // 모바일·태블릿: 페이드 + 상승 + 블러 / 데스크톱(1440+): 카드 좌→우 clip-path 와이프
 (function () {
