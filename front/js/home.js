@@ -386,7 +386,7 @@
 
   const prevEl = newsListWrap.querySelector(".news-list-prev");
   const nextEl = newsListWrap.querySelector(".news-list-next");
-  const TICKER_SPEED = 5000;
+  const TICKER_SPEED = 15000;
   const NAV_SPEED = 500;
   const isDesktop = () => window.matchMedia("(min-width: 1025px)").matches;
 
@@ -564,10 +564,10 @@
 })();
 
 // sec4 case list swiper + 고객성공사례 배너 인트로
-// - 배너 인트로: 클립 마스크 리빌(좌상단 기준) + 이미지 줌아웃 + 텍스트/리스트 순차 등장
-//   섹션에 스크롤로 진입하기 전까지는 재생하지 않고, 진입한 뒤에는 자동 롤링으로 슬라이드가
-//   바뀔 때마다(loop 클론 포함) 새로 활성화된 슬라이드에 매번 다시 재생한다
-// - 하단 리스트 자동 롤링: Swiper autoplay
+// - 첫 진입: 좌상단 clip 마스크 + 줌아웃 → 문구 순차 → 리스트 순차
+// - PC/태블릿 자동 롤링(6초): 마스크와 리스트를 매번 다시 재생, 섹션 호버 시 일시정지
+// - PC/태블릿 라인 네비(클릭·드래그·방향키): 첫 진입과 같이 마스크·문구·리스트를 다시 재생
+// - 모바일: 같은 첫 진입, 이후에는 case-banner-clip 좌우 드래그로 이동
 (function () {
   if (typeof Swiper === "undefined") return;
 
@@ -575,56 +575,302 @@
   if (!caseList) return;
 
   const swiperEl = caseList.querySelector(".swiper");
+  const paginationEl = caseList.querySelector(".case-list-pagination");
   if (!swiperEl) return;
 
-  const swiper = new Swiper(swiperEl, {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    loop: true,
-    speed: 600,
-    // 좌우로 밀려 들어오는 기본 슬라이드 전환은 clip-path 마스크 리빌과 동시에 돌면
-    // 두 애니메이션이 겹쳐 보여서, 밀기 없이 크로스페이드만 쓰고 마스크 리빌이 전환 효과를 전담하게 함
-    effect: "fade",
-    fadeEffect: { crossFade: true },
-    watchOverflow: true,
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
-    pagination: {
-      el: caseList.querySelector(".case-list-pagination"),
-      clickable: true,
-    },
-    breakpoints: {
-      1025: {
-        spaceBetween: 0,
-      },
-    },
-  });
-
   const section = document.querySelector(".home-sec4");
-  if (!section || !("IntersectionObserver" in window)) return;
+  const mqDesktop = window.matchMedia("(min-width: 1025px)");
+  const SWIPE_THRESHOLD = 48;
+  const SWIPE_SPEED = 400;
 
-  const revealActiveSlide = () => {
-    const activeSlide = swiperEl.querySelector(".swiper-slide-active");
-    if (!activeSlide) return;
-    const banner = activeSlide.querySelector(".case-banner");
-    const items = activeSlide.querySelector(".case-items");
-    if (banner) banner.classList.add("is-revealed");
-    if (items) items.classList.add("is-revealed");
+  let swiper = null;
+  let entered = false;
+  let hovering = false;
+  let suppressClick = false;
+  let lastRealIndex = 0;
+  const replayIds = new WeakMap();
+
+  const activeSlide = () => swiper && swiper.slides[swiper.activeIndex];
+
+  const syncAutoplay = () => {
+    if (!swiper || !swiper.autoplay || !entered) return;
+    if (hovering && mqDesktop.matches) swiper.autoplay.stop();
+    else swiper.autoplay.start();
   };
+
+  const showInstant = (slide) => {
+    if (!slide) return;
+    replayIds.set(slide, (replayIds.get(slide) || 0) + 1);
+    const banner = slide.querySelector(".case-banner");
+    const items = slide.querySelector(".case-items");
+    banner?.classList.add("is-instant", "is-revealed");
+    items?.classList.add("is-instant", "is-revealed");
+  };
+
+  const replay = (slide) => {
+    if (!slide) return;
+    const token = (replayIds.get(slide) || 0) + 1;
+    replayIds.set(slide, token);
+    const banner = slide.querySelector(".case-banner");
+    const items = slide.querySelector(".case-items");
+    if (!banner) return;
+
+    const animated = slide.querySelectorAll(
+      ".case-banner-clip, .thumb, .cate, .tit, .desc, .case-item"
+    );
+    banner.classList.remove("is-revealed", "is-instant");
+    items?.classList.remove("is-revealed", "is-instant");
+    animated.forEach((el) => {
+      el.style.transition = "none";
+    });
+    void banner.offsetWidth;
+    animated.forEach((el) => {
+      el.style.transition = "";
+    });
+
+    window.requestAnimationFrame(() => {
+      if (replayIds.get(slide) !== token) return;
+      banner.classList.add("is-revealed");
+      items?.classList.add("is-revealed");
+    });
+  };
+
+  const onSlideChange = () => {
+    if (!entered || !swiper) return;
+    const real = swiper.realIndex;
+    if (real === lastRealIndex) return;
+    lastRealIndex = real;
+    const slide = activeSlide();
+    if (mqDesktop.matches) replay(slide);
+    else showInstant(slide);
+  };
+
+  const createSwiper = (index) => {
+    if (swiper) swiper.destroy(true, true);
+
+    const desktop = mqDesktop.matches;
+    swiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: desktop ? 0 : 10,
+      // 모바일 loop는 복제 슬라이드 보정 때문에 첫 진입 인덱스가 밀린다.
+      // rewind로 끝에서 처음으로 순환하고, PC/태블릿은 페이드 loop를 유지한다.
+      loop: desktop,
+      rewind: !desktop,
+      // PC/태블릿 페이드 시간을 두면 이전 배너가 새 마스크 뒤에 남는다. 전환은 즉시 하고 마스크가 연출을 맡는다.
+      speed: desktop ? 0 : SWIPE_SPEED,
+      // PC/태블릿은 밀기 없이 크로스페이드. 마스크 리빌이 전환을 맡는다.
+      // 모바일은 case-banner-clip 드래그에 맞춰 좌우로 이동한다.
+      effect: desktop ? "fade" : "slide",
+      fadeEffect: { crossFade: true },
+      allowTouchMove: false,
+      watchOverflow: true,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+      pagination: paginationEl
+        ? {
+            el: paginationEl,
+            clickable: true,
+          }
+        : undefined,
+    });
+
+    swiper.on("slideChangeTransitionStart", onSlideChange);
+    swiper.autoplay?.stop();
+
+    const startIndex = Number.isFinite(index) ? index : 0;
+    if (startIndex) {
+      if (desktop) swiper.slideToLoop(startIndex, 0);
+      else swiper.slideTo(startIndex, 0);
+    }
+    lastRealIndex = swiper.realIndex;
+
+    if (!entered) return;
+
+    if (desktop) showInstant(activeSlide());
+    else swiper.slides.forEach((slide) => showInstant(slide));
+    syncAutoplay();
+  };
+
+  const enterSection = () => {
+    if (entered) return;
+    entered = true;
+    lastRealIndex = swiper.realIndex;
+    swiper.slides.forEach((slide, i) => {
+      const attr = slide.getAttribute("data-swiper-slide-index");
+      const real = attr == null || attr === "" ? i : Number(attr);
+      if (real === swiper.realIndex) replay(slide);
+      else if (!mqDesktop.matches) showInstant(slide);
+    });
+    hovering = !!section?.matches(":hover");
+    syncAutoplay();
+  };
+
+  createSwiper(0);
+
+  const onModeChange = () => {
+    const index = swiper ? swiper.realIndex : 0;
+    createSwiper(index);
+  };
+  if (mqDesktop.addEventListener) mqDesktop.addEventListener("change", onModeChange);
+  else mqDesktop.addListener(onModeChange);
+
+  if (section) {
+    section.addEventListener("mouseenter", () => {
+      hovering = true;
+      syncAutoplay();
+    });
+    section.addEventListener("mouseleave", () => {
+      hovering = false;
+      syncAutoplay();
+    });
+  }
+
+  if (paginationEl) {
+    paginationEl.tabIndex = 0;
+
+    const indexFromX = (clientX) => {
+      const rect = paginationEl.getBoundingClientRect();
+      const count = paginationEl.querySelectorAll(".swiper-pagination-bullet").length || 1;
+      if (!rect.width) return swiper ? swiper.realIndex : 0;
+      const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+      return Math.max(0, Math.min(count - 1, Math.floor((x / rect.width) * count)));
+    };
+
+    const goToNav = (index) => {
+      if (!swiper || !mqDesktop.matches || !entered) return;
+      if (index === swiper.realIndex) return;
+      swiper.slideToLoop(index);
+    };
+
+    let navDrag = null;
+    paginationEl.addEventListener("pointerdown", (e) => {
+      if (!mqDesktop.matches || !entered || e.button !== 0) return;
+      navDrag = { last: indexFromX(e.clientX) };
+      paginationEl.classList.add("is-dragging");
+      paginationEl.setPointerCapture(e.pointerId);
+      goToNav(navDrag.last);
+      e.preventDefault();
+    });
+    paginationEl.addEventListener("pointermove", (e) => {
+      if (!navDrag) return;
+      const index = indexFromX(e.clientX);
+      if (index === navDrag.last) return;
+      navDrag.last = index;
+      goToNav(index);
+    });
+    const endNavDrag = (e) => {
+      if (!navDrag) return;
+      navDrag = null;
+      paginationEl.classList.remove("is-dragging");
+      try {
+        paginationEl.releasePointerCapture(e.pointerId);
+      } catch (err) {
+        /* already released */
+      }
+      syncAutoplay();
+    };
+    paginationEl.addEventListener("pointerup", endNavDrag);
+    paginationEl.addEventListener("pointercancel", endNavDrag);
+    paginationEl.addEventListener("keydown", (e) => {
+      if (!mqDesktop.matches || !swiper || !entered) return;
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      if (e.key === "ArrowRight") swiper.slideNext();
+      else swiper.slidePrev();
+    });
+  }
+
+  let clipDrag = null;
+  caseList.addEventListener(
+    "pointerdown",
+    (e) => {
+      if (mqDesktop.matches || !swiper || !entered || e.button !== 0) return;
+      if (!e.target.closest(".case-banner-clip")) return;
+      clipDrag = {
+        x: e.clientX,
+        y: e.clientY,
+        axis: null,
+        base: swiper.getTranslate(),
+        pid: e.pointerId,
+      };
+    },
+    true
+  );
+  caseList.addEventListener(
+    "pointermove",
+    (e) => {
+      if (!clipDrag || e.pointerId !== clipDrag.pid || !swiper) return;
+      const dx = e.clientX - clipDrag.x;
+      const dy = e.clientY - clipDrag.y;
+      if (!clipDrag.axis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+        clipDrag.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
+        if (clipDrag.axis === "x") {
+          e.target.closest(".case-banner-clip")?.classList.add("is-dragging");
+          try {
+            caseList.setPointerCapture(e.pointerId);
+          } catch (err) {
+            /* capture unsupported */
+          }
+          swiper.autoplay?.stop();
+        }
+      }
+      if (clipDrag.axis !== "x") return;
+      e.preventDefault();
+      swiper.setTransition(0);
+      swiper.setTranslate(clipDrag.base + dx);
+    },
+    { passive: false }
+  );
+  const endClipDrag = (e) => {
+    if (!clipDrag || e.pointerId !== clipDrag.pid || !swiper) return;
+    const dx = e.clientX - clipDrag.x;
+    const axis = clipDrag.axis;
+    const base = clipDrag.base;
+    clipDrag = null;
+    caseList.querySelectorAll(".case-banner-clip.is-dragging").forEach((el) => {
+      el.classList.remove("is-dragging");
+    });
+    if (axis !== "x") return;
+
+    suppressClick = true;
+    if (Math.abs(dx) >= SWIPE_THRESHOLD) {
+      if (dx < 0) swiper.slideNext(SWIPE_SPEED);
+      else swiper.slidePrev(SWIPE_SPEED);
+    } else {
+      swiper.setTransition(300);
+      swiper.setTranslate(base);
+    }
+    syncAutoplay();
+  };
+  caseList.addEventListener("pointerup", endClipDrag);
+  caseList.addEventListener("pointercancel", endClipDrag);
+  caseList.addEventListener(
+    "click",
+    (e) => {
+      if (!suppressClick) return;
+      if (!e.target.closest(".case-banner")) return;
+      e.preventDefault();
+      e.stopPropagation();
+      suppressClick = false;
+    },
+    true
+  );
+
+  if (!section || !("IntersectionObserver" in window)) {
+    enterSection();
+    return;
+  }
 
   const io = new IntersectionObserver(
     (entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
-      revealActiveSlide();
-      // 진입 이후엔 자동 롤링으로 슬라이드가 바뀔 때마다 새 활성 슬라이드를 매번 리빌
-      swiper.on("slideChangeTransitionStart", revealActiveSlide);
+      enterSection();
       io.disconnect();
     },
     { threshold: 0.2 }
   );
-
   io.observe(section);
 })();
 

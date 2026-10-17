@@ -655,6 +655,25 @@ main.home>section .home-sec-info {
     clip-path: inset(0 100% 100% 0);
     transition: clip-path 0.97s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: clip-path;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.case-banner-clip.is-dragging {
+    cursor: grabbing;
+}
+
+@media (min-width: 1025px) {
+    .case-banner-clip {
+        cursor: auto;
+        touch-action: auto;
+    }
+
+    /* 전환 중 이전 배너 이미지·문구가 새 마스크 뒤로 비치지 않게 */
+    .case-list .swiper-slide:not(.swiper-slide-active) .case-banner-clip,
+    .case-list .swiper-slide:not(.swiper-slide-active) .case-banner .info {
+        visibility: hidden;
+    }
 }
 
 .case-banner.is-revealed .case-banner-clip {
@@ -664,7 +683,7 @@ main.home>section .home-sec-info {
 .case-banner .thumb {
     position: absolute;
     inset: 0;
-    transform: scale(1.05);
+    transform: scale(1.12);
     transform-origin: top left;
     transition: transform 0.97s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -685,7 +704,7 @@ main.home>section .home-sec-info {
    .thumb은 인트로 줌아웃 transform을 쓰므로 img에 적용, 위에 겹친 .info 오버 시에도 유지되도록 .case-banner 기준 */
 @media (hover: hover) {
     .case-banner:hover .thumb img {
-        transform: scale(1.05);
+        transform: scale(1.08);
     }
 }
 
@@ -723,12 +742,17 @@ main.home>section .home-sec-info {
     transform: translate3d(0, 0, 0);
 }
 
+/* 마스크가 열린 뒤에 카테고리 → 제목 → 설명 */
+.case-banner.is-revealed .cate {
+    transition-delay: 0.76s;
+}
+
 .case-banner.is-revealed .tit {
-    transition-delay: 0.1s;
+    transition-delay: 0.86s;
 }
 
 .case-banner.is-revealed .desc {
-    transition-delay: 0.2s;
+    transition-delay: 0.96s;
 }
 
 .case-banner .cate {
@@ -775,22 +799,36 @@ main.home>section .home-sec-info {
     border-bottom: 0;
 }
 
-/* 리스트 항목 순차 등장 */
+/* 리스트는 배너 마스크·문구 뒤에 위에서부터 80ms 간격 */
 .case-items.is-revealed li:nth-child(1) .case-item {
-    transition-delay: 0s;
+    transition-delay: 1.2s;
 }
 
 .case-items.is-revealed li:nth-child(2) .case-item {
-    transition-delay: 0.08s;
+    transition-delay: 1.28s;
 }
 
 .case-items.is-revealed li:nth-child(3) .case-item {
-    transition-delay: 0.16s;
+    transition-delay: 1.36s;
+}
+
+.case-items.is-revealed li:nth-child(4) .case-item {
+    transition-delay: 1.44s;
 }
 
 .case-items.is-revealed .case-item {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+}
+
+/* 모바일 스와이프·리사이즈처럼 재생 없이 바로 보여줄 때 */
+.case-banner.is-instant .case-banner-clip,
+.case-banner.is-instant .thumb,
+.case-banner.is-instant .cate,
+.case-banner.is-instant .tit,
+.case-banner.is-instant .desc,
+.case-items.is-instant .case-item {
+    transition: none !important;
 }
 
 .case-item .txt {
@@ -841,6 +879,12 @@ main.home>section .home-sec-info {
 
 .case-list-pagination {
     display: none;
+    cursor: grab;
+    touch-action: none;
+}
+
+.case-list-pagination.is-dragging {
+    cursor: grabbing;
 }
 
 .home-sec5 {
@@ -870,7 +914,7 @@ main.home>section .home-sec-info {
 .home-sec5-bg-inner {
     position: absolute;
     inset: 0;
-    background: url(../img/home/bg_home_sec5.svg) no-repeat center top;
+    background: url(../img/home/bg_home_sec5.jpg) no-repeat center top;
     background-size: cover;
     transform: scale(1.12);
     transform-origin: left center;
@@ -1224,6 +1268,10 @@ main.home>section .home-sec-info {
 PC / 데스크톱 구간 (PC) - 1440px 이상
 ========================================== */
 @media (min-width: 1440px) {
+
+    main.home>section {
+        padding: 10rem 0 0 0;
+    }
 
     main.home>section .home-sec-title {
         font-size: 5rem;
@@ -1614,6 +1662,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .case-item .more {
+        align-self: center;
         width: 3rem;
         height: 3rem;
     }
@@ -1668,9 +1717,9 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         gap: 6rem;
     }
 
-    .home-sec5-bg-inner {
+    /* .home-sec5-bg-inner {
         background-size: auto 100%;
-    }
+    } */
 
     .home-growth-list {
         flex-direction: row;
@@ -1898,6 +1947,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 태블릿 구간 (Tablet) - 768px 이상 - 기준 해상도: 768px
 ========================================== */
 @media (min-width: 1025px) and (max-width: 1439px) {
+
+    main.home>section {
+        padding: 10rem 0 0 0;
+    }
 
     main.home>section .home-sec-title {
         font-size: 5rem;
@@ -2295,6 +2348,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .case-item .more {
+        align-self: center;
         width: 3rem;
         height: 3rem;
     }
