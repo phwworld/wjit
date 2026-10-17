@@ -1481,6 +1481,7 @@ main>.title.no-animate h3 {
     position: relative;
     padding: 10.5rem 0 10.5rem;
     aspect-ratio: auto;
+    overflow-x: clip;
   }
 
   main>.title.info-tit {
