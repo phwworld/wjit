@@ -1406,3 +1406,19 @@ function initServiceItemCycle() {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); });
   else init();
 })();
+
+/* 서브타이틀 모티브 — 화면 폭이 모티브 박스(1440px)보다 좁으면 폭에 맞춰 축소 */
+(function () {
+  function fit() {
+    var list = document.querySelectorAll('.title > [class^="wjh-"]');
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      var w = el.offsetWidth;
+      if (!w) continue;
+      el.style.setProperty('--wjh-scale', Math.min(1, el.parentNode.clientWidth / w));
+    }
+  }
+  window.addEventListener('resize', fit);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fit);
+  else fit();
+})();
