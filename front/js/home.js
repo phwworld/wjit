@@ -367,6 +367,68 @@
     navItem.addEventListener("click", () => activate(i));
   });
 
+  // 모바일/태블릿 좌우 스와이프: 놓는 순간 이전/다음 배너로 전환(전환 연출은 기존 페이드 그대로)
+  // - PC 폭에서도 터치 입력(가로 모드 태블릿)은 허용, 마우스 드래그는 1024px 이하에서만
+  // - 세로 이동은 페이지 스크롤에 맡기고(touch-action: pan-y), 가로로 판정된 경우만 처리
+  const SWIPE_THRESHOLD = 48;
+  let swipe = null;
+  let suppressClick = false;
+  if (hero) {
+    hero.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      if (mqDesktop.matches && e.pointerType !== "touch") return;
+      if (e.target.closest(".home-visual-nav")) return;
+      swipe = { x: e.clientX, y: e.clientY, axis: null, pid: e.pointerId };
+    });
+    hero.addEventListener(
+      "pointermove",
+      (e) => {
+        if (!swipe || e.pointerId !== swipe.pid) return;
+        const dx = e.clientX - swipe.x;
+        const dy = e.clientY - swipe.y;
+        if (!swipe.axis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+          swipe.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
+          if (swipe.axis === "x") {
+            try {
+              hero.setPointerCapture(e.pointerId);
+            } catch (err) {
+              /* capture unsupported */
+            }
+          }
+        }
+        if (swipe.axis === "x") e.preventDefault();
+      },
+      { passive: false }
+    );
+    const endSwipe = (e) => {
+      if (!swipe || e.pointerId !== swipe.pid) return;
+      const dx = e.clientX - swipe.x;
+      const axis = swipe.axis;
+      swipe = null;
+      if (axis !== "x") return;
+      // 스와이프 직후 따라오는 click(버튼)만 막고 바로 해제
+      suppressClick = true;
+      window.setTimeout(() => {
+        suppressClick = false;
+      }, 0);
+      if (e.type === "pointercancel" || Math.abs(dx) < SWIPE_THRESHOLD) return;
+      const len = items.length;
+      activate(dx < 0 ? (activeIndex + 1) % len : (activeIndex - 1 + len) % len);
+    };
+    hero.addEventListener("pointerup", endSwipe);
+    hero.addEventListener("pointercancel", endSwipe);
+    hero.addEventListener(
+      "click",
+      (e) => {
+        if (!suppressClick) return;
+        e.preventDefault();
+        e.stopPropagation();
+        suppressClick = false;
+      },
+      true
+    );
+  }
+
   if (mqDesktop.addEventListener) mqDesktop.addEventListener("change", syncVisibleVideos);
   else mqDesktop.addListener(syncVisibleVideos);
 
@@ -567,7 +629,7 @@
 // - 첫 진입: 좌상단 clip 마스크 + 줌아웃 → 문구 순차 → 리스트 순차
 // - PC/태블릿 자동 롤링(6초): 마스크와 리스트를 매번 다시 재생, 섹션 호버 시 일시정지
 // - PC/태블릿 라인 네비(클릭·드래그·방향키): 첫 진입과 같이 마스크·문구·리스트를 다시 재생
-// - 모바일: 같은 첫 진입, 이후에는 case-banner-clip 좌우 드래그로 이동
+// - 모바일: 같은 첫 진입, 이후에는 배너·리스트 영역 좌우 터치 스와이프로 이동(리스트는 제자리에서 내용만 교체)
 (function () {
   if (typeof Swiper === "undefined") return;
 
@@ -580,6 +642,11 @@
 
   const section = document.querySelector(".home-sec4");
   const mqDesktop = window.matchMedia("(min-width: 1025px)");
+
+  // 모바일: 배너만 좌우로 밀고, 리스트는 슬라이드 밖 고정 영역에서 내용만 교체한다(샘플 동일).
+  const staticItems = document.createElement("ul");
+  staticItems.className = "case-items case-items-static";
+  caseList.appendChild(staticItems);
   const SWIPE_THRESHOLD = 48;
   const SWIPE_SPEED = 400;
 
@@ -635,14 +702,32 @@
     });
   };
 
+  // mode: "hidden"(인트로 대기) | "replay"(첫 진입 순차 등장) | "instant"(즉시 교체)
+  const renderStaticItems = (mode) => {
+    if (mqDesktop.matches) return;
+    const source = activeSlide()?.querySelector(".case-items");
+    staticItems.innerHTML = source ? source.innerHTML : "";
+    staticItems.classList.remove("is-revealed", "is-instant");
+    if (mode === "instant") {
+      staticItems.classList.add("is-instant", "is-revealed");
+    } else if (mode === "replay") {
+      void staticItems.offsetWidth;
+      window.requestAnimationFrame(() => staticItems.classList.add("is-revealed"));
+    }
+  };
+
   const onSlideChange = () => {
     if (!entered || !swiper) return;
     const real = swiper.realIndex;
     if (real === lastRealIndex) return;
     lastRealIndex = real;
     const slide = activeSlide();
-    if (mqDesktop.matches) replay(slide);
-    else showInstant(slide);
+    if (mqDesktop.matches) {
+      replay(slide);
+    } else {
+      showInstant(slide);
+      renderStaticItems("instant");
+    }
   };
 
   const createSwiper = (index) => {
@@ -659,7 +744,7 @@
       // PC/태블릿 페이드 시간을 두면 이전 배너가 새 마스크 뒤에 남는다. 전환은 즉시 하고 마스크가 연출을 맡는다.
       speed: desktop ? 0 : SWIPE_SPEED,
       // PC/태블릿은 밀기 없이 크로스페이드. 마스크 리빌이 전환을 맡는다.
-      // 모바일은 case-banner-clip 드래그에 맞춰 좌우로 이동한다.
+      // 모바일은 배너·리스트 스와이프에 맞춰 좌우로 이동한다.
       effect: desktop ? "fade" : "slide",
       fadeEffect: { crossFade: true },
       allowTouchMove: false,
@@ -685,6 +770,7 @@
       else swiper.slideTo(startIndex, 0);
     }
     lastRealIndex = swiper.realIndex;
+    renderStaticItems(entered ? "instant" : "hidden");
 
     if (!entered) return;
 
@@ -703,6 +789,7 @@
       if (real === swiper.realIndex) replay(slide);
       else if (!mqDesktop.matches) showInstant(slide);
     });
+    renderStaticItems("replay");
     hovering = !!section?.matches(":hover");
     syncAutoplay();
   };
@@ -782,12 +869,15 @@
     });
   }
 
+  // 모바일 터치/마우스 스와이프: 배너와 고정 리스트 어디서든 좌우로 넘길 수 있다.
+  // 세로 이동은 페이지 스크롤에 맡기고(touch-action: pan-y), 가로로 판정된 뒤에만 배너를 끈다.
+  const SWIPE_AREA = ".case-banner, .case-items-static";
   let clipDrag = null;
   caseList.addEventListener(
     "pointerdown",
     (e) => {
       if (mqDesktop.matches || !swiper || !entered || e.button !== 0) return;
-      if (!e.target.closest(".case-banner-clip")) return;
+      if (!e.target.closest(SWIPE_AREA)) return;
       clipDrag = {
         x: e.clientX,
         y: e.clientY,
@@ -807,7 +897,7 @@
       if (!clipDrag.axis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
         clipDrag.axis = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
         if (clipDrag.axis === "x") {
-          e.target.closest(".case-banner-clip")?.classList.add("is-dragging");
+          caseList.classList.add("is-dragging");
           try {
             caseList.setPointerCapture(e.pointerId);
           } catch (err) {
@@ -829,15 +919,21 @@
     const axis = clipDrag.axis;
     const base = clipDrag.base;
     clipDrag = null;
-    caseList.querySelectorAll(".case-banner-clip.is-dragging").forEach((el) => {
-      el.classList.remove("is-dragging");
-    });
+    caseList.classList.remove("is-dragging");
     if (axis !== "x") return;
 
+    // 드래그 직후 따라오는 click(링크 이동)만 막고, 다음 탭은 정상 동작하도록 바로 해제
     suppressClick = true;
-    if (Math.abs(dx) >= SWIPE_THRESHOLD) {
-      if (dx < 0) swiper.slideNext(SWIPE_SPEED);
-      else swiper.slidePrev(SWIPE_SPEED);
+    window.setTimeout(() => {
+      suppressClick = false;
+    }, 0);
+    // pointercancel은 좌표를 믿을 수 없으므로 제자리로 복귀
+    if (e.type !== "pointercancel" && Math.abs(dx) >= SWIPE_THRESHOLD) {
+      // 드래그로 translate가 스냅 지점을 벗어나면 slidePrev가 엉뚱한 슬라이드를 고르므로 목표를 직접 계산(끝↔처음 순환)
+      const last = swiper.slides.length - 1;
+      const idx = swiper.activeIndex;
+      const target = dx < 0 ? (idx >= last ? 0 : idx + 1) : idx <= 0 ? last : idx - 1;
+      swiper.slideTo(target, SWIPE_SPEED);
     } else {
       swiper.setTransition(300);
       swiper.setTranslate(base);
@@ -850,7 +946,7 @@
     "click",
     (e) => {
       if (!suppressClick) return;
-      if (!e.target.closest(".case-banner")) return;
+      if (!e.target.closest(SWIPE_AREA)) return;
       e.preventDefault();
       e.stopPropagation();
       suppressClick = false;
