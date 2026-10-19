@@ -558,7 +558,7 @@
                                     <div class="thumb"><img src="../img/dummy/home_news_item.png" alt=""></div>
                                     <div class="info">
                                         <strong class="tit">2웅진그룹, CES 2026 참가… 교육·IT 아우르는 기술 경쟁력</strong>
-                                        <p class="desc">AI·클라우드 최신 트렌드와 고객 인사이트를 공유하는 IT 인사이트 데이를 성황리에 개최했습니다.</p>
+                                        <p class="desc">AI·클라우드 최신 트렌드와</p>
                                     </div>
                                 </a>
                             </div>
@@ -1079,19 +1079,49 @@
                 }).observe(moMenu, { attributes: true, attributeFilter: ["class"] });
             }
 
+            const rCont = document.querySelector("header .r-cont");
+            const inHeaderHoverZone = (x, y) => {
+                const hit = document.elementFromPoint(x, y);
+                if (hit && hit.nodeType === 1) {
+                    if (pcGnb && pcGnb.contains(hit)) return true;
+                    if (rCont && rCont.contains(hit)) return true;
+                }
+                if (!pcGnb || !rCont) return false;
+                const gnbRect = pcGnb.getBoundingClientRect();
+                const rRect = rCont.getBoundingClientRect();
+                if (gnbRect.width === 0 || rRect.width === 0) return false;
+                const left = Math.min(gnbRect.right, rRect.left);
+                const right = Math.max(gnbRect.right, rRect.left);
+                if (right - left <= 0) return false;
+                const headerRect = header.getBoundingClientRect();
+                return x >= left && x <= right && y >= headerRect.top && y <= headerRect.bottom;
+            };
+
+            const setGnbHover = (next) => {
+                if (gnbHover === next) return;
+                gnbHover = next;
+                syncHeader();
+            };
+
             if (pcGnb) {
                 pcGnb.addEventListener("mouseover", (event) => {
                     if (!event.target.closest(".pc-gnb > ul > li > a")) return;
-                    if (gnbHover) return;
-                    gnbHover = true;
-                    syncHeader();
-                });
-                pcGnb.addEventListener("mouseleave", () => {
-                    if (!gnbHover) return;
-                    gnbHover = false;
-                    syncHeader();
+                    setGnbHover(true);
                 });
             }
+
+            document.querySelectorAll(".shortcut-menu a, .function-menu .search, .function-menu .lang").forEach((el) => {
+                el.addEventListener("mouseenter", () => setGnbHover(true));
+            });
+
+            document.addEventListener("mousemove", (event) => {
+                if (!gnbHover || inHeaderHoverZone(event.clientX, event.clientY)) return;
+                setGnbHover(false);
+            });
+            document.addEventListener("mouseout", (event) => {
+                if (!gnbHover || event.relatedTarget) return;
+                setGnbHover(false);
+            });
 
             syncHeader();
         })();

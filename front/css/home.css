@@ -199,6 +199,7 @@ main.home>section .home-sec-info {
 
 .home-visual-text .txt2 {
     margin-top: 2rem;
+    padding: 0 3rem;
     font-size: 1.8rem;
     font-weight: 400;
     letter-spacing: -2%;
@@ -991,7 +992,7 @@ main.home>section .home-sec-info {
     flex-direction: column;
     gap: 0.8rem;
     width: 100%;
-    padding: 0 2.4rem;
+    /* padding: 0 2.4rem; */
     margin-top: 3rem;
 }
 
@@ -1305,6 +1306,24 @@ main.home>section .home-sec-info {
         bottom: 10rem;
     }
 
+    .news-list .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .news-list .swiper-slide {
+        display: flex;
+        height: auto;
+    }
+
+    .news-list .news-card {
+        flex: 1 1 auto;
+        height: auto;
+    }
+
+    .news-list .news-card .desc {
+        min-height: 3.92rem;
+    }
+
     .news-list .news-card .info {
         padding: 4rem 2rem;
     }
@@ -1391,6 +1410,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec2 {
         background-color: var(--white);
+    }
+
+    .home-sec2 .inner-cont {
+        padding: 0 !important;
     }
 
     .home-sec2 .business-list {

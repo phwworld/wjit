@@ -342,8 +342,10 @@ header .function-menu {
 header .function-menu button,
 header .function-menu a {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  /* width: 2rem;
+  height: 2rem; */
+  width: 2.4rem;
+  height: 2.4rem;
   background-size: 100% 100% !important;
 }
 
