@@ -1173,6 +1173,14 @@ main>.title.no-animate h3 {
     display: none;
   }
 
+  header .function-menu .search {
+    background-image: url(../img/common/icon_search_pc_off.svg);
+  }
+
+  header .function-menu .lang {
+    background-image: url(../img/common/icon_lang_pc_off.png);
+  }
+
   header .function-menu .search:hover {
     background-image: url(../img/common/icon_search_on.png);
   }
@@ -1781,6 +1789,14 @@ main>.title.no-animate h3 {
 
   header .function-menu .mo-menu {
     display: none;
+  }
+
+  header .function-menu .search {
+    background-image: url(../img/common/icon_search_pc_off.svg);
+  }
+
+  header .function-menu .lang {
+    background-image: url(../img/common/icon_lang_pc_off.png);
   }
 
   header .pc-gnb>ul {
