@@ -600,7 +600,7 @@ footer .inner-cont .foot-cont2 .sns-link .youtube {
 }
 
 footer .inner-cont .foot-cont2 .sns-link .linkedin {
-  background-image: url(../img/common/icon_sns_linkedin.svg);
+  background-image: url(../img/common/icon_sns_linkedin.png);
 }
 
 footer .inner-cont .foot-cont2 .sns-link .naver:hover {
@@ -616,7 +616,7 @@ footer .inner-cont .foot-cont2 .sns-link .youtube:hover {
 }
 
 footer .inner-cont .foot-cont2 .sns-link .linkedin:hover {
-  background-image: url(../img/common/icon_sns_linkedin_ho.svg);
+  background-image: url(../img/common/icon_sns_linkedin_ho.png);
 }
 
 footer .inner-cont .foot-menu,
