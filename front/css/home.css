@@ -1299,6 +1299,10 @@ main.home>section .home-sec-info {
 
 /* 모바일 전용: PC 규칙이 덮지 않는 속성(굵기 등)과 PC보다 우선하는 :lang(en)이 PC로 새지 않게 구간 제한 */
 @media (max-width: 1024px) {
+    main.home .home-visual-text {
+        margin-top: 4rem;
+    }
+
     main.home>section:not(.home-sec1) {
         min-height: 0;
         justify-content: flex-start;

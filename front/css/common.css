@@ -263,8 +263,10 @@ header .inner-cont {
 
 header h1 a {
   display: block;
-  width: 6.9rem;
-  height: 3.6rem;
+  /* width: 6.9rem;
+  height: 3.6rem; */
+  width: 7.6rem;
+  height: 4rem;
   font-size: 0;
   line-height: 0;
   background: url(../img/common/Logo_wj.svg) no-repeat;
@@ -344,22 +346,24 @@ header .function-menu a {
   display: inline-block;
   /* width: 2rem;
   height: 2rem; */
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.8rem;
+  height: 2.8rem;
   background-size: 100% 100% !important;
 }
 
 header .function-menu .search {
-  background: url(../img/common/icon_search_off.png) no-repeat;
+  background: url(../img/common/icon_search_off.svg) no-repeat;
 }
 
 header .function-menu .lang {
-  background: url(../img/common/icon_lang_off.png) no-repeat;
+  background: url(../img/common/icon_lang_off.svg) no-repeat;
 }
 
 header .function-menu .mo-menu {
-  width: 2rem;
-  height: 2rem;
+  /* width: 2rem;
+  height: 2rem; */
+  width: 2.8rem;
+  height: 2.8rem;
   background: url(../img/common/icon_mobile_menu.svg) no-repeat;
 }
 
