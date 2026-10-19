@@ -379,8 +379,15 @@ main.home>section .home-sec-info {
     line-height: 1.2;
 }
 
+/* 키워드 자동 줄바꿈: 항목 단위로 넘기고, 목록을 ·(1rem)만큼 왼쪽으로 당긴 뒤 그 1rem을 clip-path로 잘라
+   각 줄 첫 항목의 ·만 가려짐 */
 .home-sec2 .business-item .hover {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.4rem;
     margin-top: 1rem;
+    margin-left: -1rem;
+    clip-path: inset(0 0 0 1rem);
 }
 
 .home-sec2 .business-item .hover span {
@@ -390,6 +397,7 @@ main.home>section .home-sec-info {
     font-weight: 200;
     color: var(--text-body);
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .home-sec2 .business-item .hover span::before {
@@ -397,17 +405,6 @@ main.home>section .home-sec-info {
     position: absolute;
     left: 0;
     top: 0;
-}
-
-.home-sec2 .business-item .hover span:first-child,
-.home-sec2 .business-item .hover br:not(.pc)+span {
-    padding-left: 0;
-    margin-left: 0;
-}
-
-.home-sec2 .business-item .hover span:first-child::before,
-.home-sec2 .business-item .hover br:not(.pc)+span::before {
-    display: none;
 }
 
 /* 이미지 커버 레이어: 데스크톱(1440+) 마우스 환경에서만 노출 */
@@ -1474,17 +1471,6 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         letter-spacing: 0;
     }
 
-    .home-sec2 .business-item .hover span:first-child,
-    .home-sec2 .business-item .hover br:not(.mo)+span {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .home-sec2 .business-item .hover span:first-child::before,
-    .home-sec2 .business-item .hover br:not(.mo)+span::before {
-        display: none;
-    }
-
     .home-sec2 .business-item:nth-of-type(2) .cover {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/home/bg_home_sec2_02.svg);
     }
@@ -2133,7 +2119,6 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec2 .business-item .hover {
-        display: block;
         margin-top: 1.6rem;
     }
 
@@ -2144,17 +2129,6 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         color: #000;
         line-height: 1.6;
         letter-spacing: 0;
-    }
-
-    .home-sec2 .business-item .hover span:first-child,
-    .home-sec2 .business-item .hover br:not(.mo)+span {
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .home-sec2 .business-item .hover span:first-child::before,
-    .home-sec2 .business-item .hover br:not(.mo)+span::before {
-        display: none;
     }
 
     /* .home-sec2 .business-item:nth-of-type(2) a {
@@ -2209,7 +2183,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec2 .business-item a:hover .hover {
-        display: block;
+        display: flex;
     }
 
     /* 데스크톱 카드: opacity/translate 대신 좌→우 clip-path 마스크 오픈 */
