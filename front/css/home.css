@@ -455,7 +455,7 @@ main.home>section .home-sec-info {
     filter: blur(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
 
     .home-sec2 .home-sec-title,
     .home-sec2 .home-sec-info,
@@ -467,7 +467,7 @@ main.home>section .home-sec-info {
         transition: none;
         will-change: auto;
     }
-}
+} */
 
 .home-sec3 {
     position: relative;
@@ -1530,11 +1530,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/home/bg_home_sec2_06.svg);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .home-sec2 .business-item .cover {
-            transition: none;
-        }
-    }
+    /*@media (prefers-reduced-motion: reduce) {*/
+    /*    .home-sec2 .business-item .cover {*/
+    /*        transition: none;*/
+    /*    }*/
+    /*}*/
 
     /* 데스크톱 카드: opacity/translate 대신 좌→우 clip-path 마스크 오픈 */
     .home-sec2 .business-item {
@@ -1550,13 +1550,13 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         clip-path: inset(0 0 0 0);
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    /* @media (prefers-reduced-motion: reduce) {
         .home-sec2 .business-item {
             clip-path: inset(0 0 0 0) !important;
             transition: none !important;
             will-change: auto;
         }
-    }
+    } */
 
     .home-quick-nav {
         display: block;
@@ -2239,13 +2239,13 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         clip-path: inset(0 0 0 0);
     }
 
-    @media (prefers-reduced-motion: reduce) {
+    /* @media (prefers-reduced-motion: reduce) {
         .home-sec2 .business-item {
             clip-path: inset(0 0 0 0) !important;
             transition: none !important;
             will-change: auto;
         }
-    }
+    } */
 
     .home-sec3 {
         gap: 5rem;
