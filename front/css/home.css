@@ -996,7 +996,8 @@ main.home>section .home-sec-info {
 .home-growth-card {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+    justify-content: space-between;
     align-items: center;
     gap: 4.1rem;
     padding: 1.8rem 3.8rem 2rem 3rem;

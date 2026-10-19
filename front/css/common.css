@@ -1110,7 +1110,8 @@ main>.title.no-animate h3 {
   /* layout */
   header {
     height: 10rem;
-    border-bottom: 1px solid var(--text-body);
+    /* border-bottom: 1px solid var(--text-body); */
+    border-bottom: 1px solid #b5b7bd;
   }
 
   header .inner-cont {
@@ -1728,7 +1729,8 @@ main>.title.no-animate h3 {
   /* layout */
   header {
     height: 10rem;
-    border-bottom: 1px solid var(--text-body);
+    /* border-bottom: 1px solid var(--text-body); */
+    border-bottom: 1px solid #b5b7bd;
   }
 
   header .inner-cont {
