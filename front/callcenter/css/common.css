@@ -170,7 +170,7 @@ main .title .tit-info1 {
   font-weight: 500;
 }
 
-main .title h3 {
+main .title h1 {
   margin: 3rem 0 2.5rem;
   font-size: 7rem;
   font-weight: 700;
@@ -178,7 +178,7 @@ main .title h3 {
   line-height: 1.2;
 }
 
-main .title h3 span {
+main .title h1 span {
   display: inline-block;
   font-weight: 300;
 }

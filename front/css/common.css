@@ -772,7 +772,7 @@ main>.title .tit-info1 {
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-main>.title h3 {
+main>.title h1 {
   margin: 1.9rem 0;
   font-size: 3.4rem;
   font-weight: 700;
@@ -783,7 +783,7 @@ main>.title h3 {
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-main>.title h3 span {
+main>.title h1 span {
   display: block;
   font-weight: 300;
 }
@@ -798,14 +798,14 @@ main>.title .tit-info2 {
 
 main>.title.act .tit-info1,
 main>.title.act .tit-info2,
-main>.title.act h3 {
+main>.title.act h1 {
   transform: translateY(0);
   opacity: 1;
 }
 
 main>.title.no-animate .tit-info1,
 main>.title.no-animate .tit-info2,
-main>.title.no-animate h3 {
+main>.title.no-animate h1 {
   transform: translateY(0);
   opacity: 1;
 }
@@ -1529,12 +1529,12 @@ main>.title.no-animate h3 {
     font-size: 2.8rem;
   }
 
-  main>.title h3 {
+  main>.title h1 {
     margin: 3rem 0 2.5rem;
     font-size: 7rem;
   }
 
-  main>.title h3 span {
+  main>.title h1 span {
     display: inline-block;
   }
 
@@ -2163,12 +2163,12 @@ main>.title.no-animate h3 {
     font-size: 2.8rem;
   }
 
-  main>.title h3 {
+  main>.title h1 {
     margin: 3rem 0 2.5rem;
     font-size: 7rem;
   }
 
-  main>.title h3 span {
+  main>.title h1 span {
     display: inline-block;
   }
 
