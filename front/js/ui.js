@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLayerPopupEvents();
     initIndustrySliders();
     initServiceItemCycle();
+    initScrollTop();
 });
 
 /* ==========================================================================
@@ -1357,6 +1358,18 @@ function initServiceItemCycle() {
     }
 
     sync();
+}
+
+/* ==========================================================================
+   16. 페이지 최상단 이동 버튼 (Scroll To Top)
+   ========================================================================== */
+function initScrollTop() {
+    const btnTop = document.querySelector(".scroll-action .scroll-top");
+    if (!btnTop) return;
+
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 }
 
 /* 웅진IT 서브타이틀 모티브 — 통합 JS (title.js)
