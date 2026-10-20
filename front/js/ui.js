@@ -193,16 +193,23 @@ function getStickyTabTop(element, isHeaderHidden) {
  * 탭 클릭 이동 공통 스크롤
  * - 이동 방향으로 도착 시 헤더 상태를 먼저 확정(아래: 숨김 / 위: 노출)하고 이동 → 도착 후 위치 보정(튐) 없음
  * - getTargetTop(isHeaderHidden): 헤더 상태별 목표 scrollTop
+ * - options.forceHeaderHidden: 도착 시 헤더를 숨긴 채로 고정 (type2 탭)
  * - 이동 중 사용자가 직접 스크롤(휠·터치·키)하면 즉시 종료
  */
 let cancelScrollWithHeader = null;
 
-function scrollWithHeader(getTargetTop, onEnd) {
+function scrollWithHeader(getTargetTop, onEnd, options) {
     if (cancelScrollWithHeader) cancelScrollWithHeader();
 
+    const forceHeaderHidden = Boolean(options && options.forceHeaderHidden);
     const clampTop = (top) => Math.min(getMaxScroll(), Math.max(0, Math.round(top)));
-    const downTop = clampTop(getTargetTop(true));
-    const isHeaderHidden = Boolean(headerAutoHide) && downTop > window.scrollY + 1;
+    const rawHiddenTop = getTargetTop(true);
+    const downTop = clampTop(rawHiddenTop);
+    // type2는 위로 올라가 탭에 붙을 때도 헤더를 다시 열지 않는다. 페이지가 짧아 그 위치에 닿지 못하면 기존 방향 규칙을 따른다.
+    const canStickHidden = downTop + 1 >= Math.round(rawHiddenTop);
+    const isHeaderHidden = Boolean(headerAutoHide) && (
+        forceHeaderHidden ? canStickHidden : downTop > window.scrollY + 1
+    );
     const targetTop = isHeaderHidden ? downTop : clampTop(getTargetTop(false));
     const USER_EVENTS = ["wheel", "touchstart", "keydown"];
     let idleTimer = null;
@@ -867,7 +874,7 @@ function initTabMenu() {
                 : getDocTop(targetCont) - tabTop - tabContainer.offsetHeight;
         };
 
-        const scrollToContent = (targetCont, index) => {
+        const scrollToContent = (targetCont, index, forceHeaderHidden) => {
             isClickScrolling = true;
             scrollWithHeader(
                 (isHeaderHidden) => getTargetScrollTop(targetCont, index, isHeaderHidden),
@@ -875,7 +882,8 @@ function initTabMenu() {
                     isClickScrolling = false;
                     // 페이지 하단 등 목표까지 스크롤이 닿지 않아도 클릭한 탭 유지
                     if (clickedButton) setActiveTab(clickedButton);
-                }
+                },
+                forceHeaderHidden ? { forceHeaderHidden: true } : undefined
             );
         };
 
@@ -895,7 +903,7 @@ function initTabMenu() {
                     });
 
                     requestAnimationFrame(() => {
-                        requestAnimationFrame(() => scrollToContent(targetCont, index));
+                        requestAnimationFrame(() => scrollToContent(targetCont, index, true));
                     });
                     return;
                 }
