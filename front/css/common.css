@@ -516,8 +516,21 @@ main .content:has(.category-list, .tab-list) {
   background-size: 100%;
 }
 
+/* 헤더 높이 이상 스크롤 시에만 노출 (home .scroll-top과 동일 페이드) */
 .scroll-action .scroll-top {
-  background-image: url(../img/common/float_top_off.png)
+  background-image: url(../img/common/float_top_off.png);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.28s ease;
+}
+
+.scroll-action.is-top-visible .scroll-top {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .scroll-action .scroll-top:hover {

@@ -1364,12 +1364,24 @@ function initServiceItemCycle() {
    16. 페이지 최상단 이동 버튼 (Scroll To Top)
    ========================================================================== */
 function initScrollTop() {
-    const btnTop = document.querySelector(".scroll-action .scroll-top");
-    if (!btnTop) return;
+    const scrollAction = document.querySelector(".scroll-action");
+    const btnTop = scrollAction && scrollAction.querySelector(".scroll-top");
+    if (!scrollAction || !btnTop) return;
+
+    const header = document.querySelector("header");
+
+    const sync = () => {
+        const threshold = header ? header.offsetHeight : 0;
+        scrollAction.classList.toggle("is-top-visible", window.scrollY >= threshold);
+    };
 
     btnTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    sync();
 }
 
 /* 웅진IT 서브타이틀 모티브 — 통합 JS (title.js)
