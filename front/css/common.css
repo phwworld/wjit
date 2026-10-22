@@ -11,6 +11,8 @@
   --border-default: #d2d8e3;
   --border-input: #d5d5d5;
   --bg-surface: #f5f6f8;
+  /* 모바일 헤더. 태블릿·PC(1025px~)는 10rem */
+  --header-height: 7rem;
 }
 
 html {
@@ -223,7 +225,7 @@ textarea.form-control {
 header {
   position: sticky;
   top: 0;
-  height: 5.6rem;
+  height: var(--header-height);
   border-bottom: 1px solid #eee;
   background-color: #fff;
   z-index: 10;
@@ -256,7 +258,7 @@ header.gnb-open {
 header .inner-cont {
   display: flex;
   align-items: center;
-  height: 5.6rem;
+  height: 100%;
   padding: 0 2.4rem;
   justify-content: space-between;
 }
@@ -374,10 +376,10 @@ header .function-menu .mo-menu.act {
 header .mo-gnb {
   display: block;
   position: fixed;
-  top: 5.6rem;
+  top: var(--header-height);
   right: 0;
   width: 100%;
-  height: calc(100vh - 5.6rem);
+  height: calc(100vh - var(--header-height));
   background-color: var(--white);
   overflow-y: auto;
   /* 화면 밖(right: -100vw) 배치 시 모바일에서 레이아웃 뷰포트가 넓어져 오른쪽 여백이 생기므로
@@ -1013,6 +1015,24 @@ main>.title.no-animate h1 {
 
 .layer-pop.home.act ~ .layer-pop.home.act::before {
   background: transparent !important;
+  pointer-events: none;
+}
+
+/* 여러 개일 때 화면 전체를 가리는 레이어는 통과시키고, 맨 앞 팝업 내용만 클릭된다 */
+.layer-pop.home.act {
+  pointer-events: none;
+}
+
+.layer-pop.home.act::before {
+  pointer-events: auto;
+}
+
+.layer-pop.home.act .layer-inner {
+  pointer-events: auto;
+}
+
+.layer-pop.home.act:has(~ .layer-pop.home.act) .layer-inner * {
+  pointer-events: none;
 }
 
 .layer-pop.home .layer-inner {
@@ -1046,6 +1066,10 @@ main>.title.no-animate h1 {
    - PC는 화면이 너무 커지므로 rem(또는 px) 고정값 사용
    ========================================== */
 @media (min-width: 1440px) {
+  :root {
+    --header-height: 10rem;
+  }
+
   body {
     padding-bottom: 0;
     /* font-size: 1.6rem; */
@@ -1122,7 +1146,7 @@ main>.title.no-animate h1 {
 
   /* layout */
   header {
-    height: 10rem;
+    height: var(--header-height);
     /* border-bottom: 1px solid var(--text-body); */
     border-bottom: 1px solid #b5b7bd;
   }
@@ -1674,6 +1698,10 @@ main>.title.no-animate h1 {
    ========================================== */
 /* @media (min-width: 1025px) and (max-width: 1366px) { */
 @media (min-width: 1025px) and (max-width: 1439px) {
+  :root {
+    --header-height: 10rem;
+  }
+
   body {
     padding-bottom: 0;
     /* font-size: 1.6rem; */
@@ -1749,7 +1777,7 @@ main>.title.no-animate h1 {
 
   /* layout */
   header {
-    height: 10rem;
+    height: var(--header-height);
     /* border-bottom: 1px solid var(--text-body); */
     border-bottom: 1px solid #b5b7bd;
   }

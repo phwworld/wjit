@@ -39,7 +39,7 @@ main.home>section {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 5.6rem 0 5rem;
+    padding: var(--header-height) 0 5rem;
 }
 
 /* 히어로 인트로: 좌상단 모서리를 기준으로 사각형이 커지며 열리는 clip-path 리빌 */
@@ -334,7 +334,7 @@ main.home>section .home-sec-info {
 
 /* home section2 */
 .home-sec2 {
-    padding: 5.6rem 0 5rem;
+    padding: var(--header-height) 0 5rem;
     background-color: var(--bg-surface);
 }
 
@@ -1377,7 +1377,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 @media (min-width: 1440px) {
 
     main.home>section {
-        padding: 10rem 0 0 0;
+        padding: var(--header-height) 0 0 0;
     }
 
     main.home>section .home-sec-title {
@@ -1486,11 +1486,10 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec2 .business-item .txt2 {
-        /* font-size: 2rem; */
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: -2%;
     }
 
     .home-sec2 .business-item .cover .txt1,
@@ -1504,7 +1503,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec2 .business-item .hover span {
         position: relative;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 200;
         color: #000;
         line-height: 1.6;
@@ -1897,6 +1896,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.4;
+        letter-spacing: 0;
     }
 
     :lang(en) .home-sec2 .business-item .hover span {
@@ -2049,7 +2049,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 @media (min-width: 1025px) and (max-width: 1439px) {
 
     main.home>section {
-        padding: 10rem 0 0 0;
+        padding: var(--header-height) 0 0 0;
     }
 
     main.home>section .home-sec-title {
@@ -2150,12 +2150,11 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
     }
 
     .home-sec2 .business-item .txt2 {
-        /* font-size: 2rem; */
         color: #000;
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.4;
-        letter-spacing: 0;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: -2%;
     }
 
     .home-sec2 .business-item .hover {
@@ -2164,7 +2163,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
 
     .home-sec2 .business-item .hover span {
         position: relative;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 200;
         color: #000;
         line-height: 1.6;
@@ -2564,6 +2563,7 @@ PC / 데스크톱 구간 (PC) - 1440px 이상
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.4;
+        letter-spacing: 0;
     }
 
     :lang(en) .home-sec2 .business-item .hover span {

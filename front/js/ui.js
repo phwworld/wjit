@@ -1192,10 +1192,16 @@ function initLayerPopupEvents() {
     const popups = document.querySelectorAll(".layer-pop");
     popups.forEach((pop) => {
         // 팝업 배경(딤드 영역) 클릭 시 닫기
+        // 메인 팝업은 딤이 맨 뒤 레이어에만 있으므로, 여러 개면 맨 앞 팝업을 닫는다
         pop.addEventListener("click", (e) => {
-            if (e.target === pop) {
-                closeLayer(pop);
+            if (e.target !== pop) return;
+            if (pop.classList.contains("home")) {
+                const activeHomes = document.querySelectorAll(".layer-pop.home.act");
+                const top = activeHomes[activeHomes.length - 1];
+                if (top) closeLayer(top);
+                return;
             }
+            closeLayer(pop);
         });
 
         // 팝업 내부 취소 버튼 클릭 시 닫기

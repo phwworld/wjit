@@ -30,6 +30,7 @@
 
 /* company tab */
 .company-tab {
+   /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
    --sticky-offset: 6.1rem;
    position: sticky;
    /* 헤더 노출 시 헤더 높이(--sticky-tab-top)만큼 함께 이동 */
@@ -38,7 +39,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: 6rem;
+   padding: 4rem 0;
    background-color: var(--white);
    z-index: 10;
 }
@@ -1274,9 +1275,9 @@
    
       /* company tab */
       .company-tab {
+         /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
          --sticky-offset: 6.6rem;
-         padding: 0 22rem;
-         margin-top: 10rem;
+         padding: 8rem 22rem;
       }
    
       .company-tab button {
@@ -2121,7 +2122,7 @@
 
       /* overseas */
       .overseas-cont {
-         margin-top: 6rem;
+         margin-top: 4rem;
          padding: 3rem;
          background-color: var(--bg-surface);
       }
@@ -2353,9 +2354,9 @@
 
    /* company tab */
    .company-tab {
+      /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
       --sticky-offset: 6.6rem;
-      padding: 0 22rem;
-      margin-top: 10rem;
+      padding: 8rem 22rem;
    }
 
    .company-tab button {
@@ -3201,7 +3202,7 @@
    
    /* overseas */
    .overseas-cont {
-      margin-top: 6rem;
+      margin-top: 4rem;
       padding: 3rem;
       background-color: var(--bg-surface);
    }

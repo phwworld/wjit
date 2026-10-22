@@ -263,6 +263,11 @@
     display: inline-block;
 }
 
+.board-list .cont {
+    min-width: 0;
+    max-width: 100%;
+}
+
 .board-list .thumb {
     margin-bottom: 3rem;
 }
@@ -279,24 +284,30 @@
 
 .board-list .cont-txt2 {
     width: 100%;
+    max-width: 100%;
     margin-bottom: 3rem;
     font-size: 2rem;
     font-weight: 700;
     color: var(--text-body);
     line-height: 1.4;
-    white-space: nowrap;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
-
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .board-list .cont-txt3 {
+    max-width: 100%;
     margin-bottom: 3rem;
     color: var(--text-body);
     display: -webkit-box !important;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .board-list .cont-txt4 {
@@ -348,11 +359,17 @@
 }
 
 .board-list.type3 .cont-txt2 {
+    display: inline-block !important;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
     margin-bottom: 0;
     font-size: 1.3rem;
     font-weight: 400;
     white-space: inherit;
     text-overflow: initial;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .board-list.type3 .cont-txt2 span~span {
@@ -693,6 +710,7 @@
 .name-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     margin-top: 6rem;
     padding: 4rem 2rem;
@@ -1102,7 +1120,7 @@ main:has(.contact-complete) {
     width: 100%;
     max-width: 144rem;
     margin: 0 auto;
-    min-height: calc(100dvh - 5.6rem - 28.3rem);
+    min-height: calc(100dvh - var(--header-height) - 28.3rem);
     padding: 0 2.4rem;
     text-align: center;
 }
@@ -1146,7 +1164,7 @@ main:has(.contact-complete) {
 
     .contact-complete {
         gap: 6rem;
-        min-height: calc(100dvh - 10rem - 22.675rem);
+        min-height: calc(100dvh - var(--header-height) - 22.675rem);
         padding: 0;
     }
 
@@ -1328,7 +1346,7 @@ main:has(.contact-complete) {
 
     /* board list */
     .board-list {
-        margin-top: 5rem;
+        margin-top: 6rem;
     }
 
     .board-list .board-item {
@@ -1601,6 +1619,7 @@ main:has(.contact-complete) {
 
     /* 문의하기 */
     .tit-info2.contact {
+        margin-top: 6rem;
         padding: 4rem;
     }
 
@@ -1615,6 +1634,7 @@ main:has(.contact-complete) {
     }
 
     .inquiry-form {
+        margin-top: -4.5rem;
         padding: 0;
     }
 
@@ -2107,7 +2127,7 @@ main:has(.contact-complete) {
 
     .contact-complete {
         gap: 6rem;
-        min-height: calc(100dvh - 10rem - 22.675rem);
+        min-height: calc(100dvh - var(--header-height) - 22.675rem);
         padding: 0 4rem;
     }
 
@@ -2283,7 +2303,7 @@ main:has(.contact-complete) {
 
     /* board list */
     .board-list {
-        margin-top: 5rem;
+        margin-top: 6rem;
     }
 
     .board-list .board-item {
@@ -2544,6 +2564,7 @@ main:has(.contact-complete) {
 
     /* 문의하기 */
     .tit-info2.contact {
+        margin-top: 6rem;
         padding: 4rem;
     }
 
@@ -2559,6 +2580,7 @@ main:has(.contact-complete) {
 
 
     .inquiry-form {
+        margin-top: -4.5rem;
         padding: 0;
     }
 
