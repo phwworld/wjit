@@ -951,16 +951,6 @@ function initCompanyTab() {
     const tabContainers = document.querySelectorAll(".company-tab");
     if (!tabContainers.length) return;
 
-    const getOffsetTop = (element) => {
-        let offsetTop = 0;
-        let node = element;
-        while (node) {
-            offsetTop += node.offsetTop;
-            node = node.offsetParent;
-        }
-        return offsetTop;
-    };
-
     tabContainers.forEach((tabContainer) => {
         const buttons = Array.from(tabContainer.querySelectorAll("button"));
         if (!buttons.length) return;
@@ -996,13 +986,12 @@ function initCompanyTab() {
             : (tabContainer.parentElement ? tabContainer.parentElement.querySelector(".company-cont") : null);
         const tabContents = companyCont ? Array.from(companyCont.querySelectorAll(".tab-cont")) : [];
 
+        // type2 tab-list와 동일: 탭 sticky 위치로 이동 + 이동 중 헤더 숨김 고정
         const scrollToContent = () => {
-            const tabHeight = tabContainer.offsetHeight || 0;
-            const contMarginTop = companyCont ? (parseFloat(window.getComputedStyle(companyCont).marginTop) || 0) : 0;
-            const target = (companyCont && companyCont.querySelector(".tab-cont.act")) || companyCont || tabContainer;
-
-            scrollWithHeader((isHeaderHidden) =>
-                getOffsetTop(target) - getStickyTabTop(tabContainer, isHeaderHidden) - tabHeight - contMarginTop
+            scrollWithHeader(
+                (isHeaderHidden) => getStickyNaturalTop(tabContainer) - getStickyTabTop(tabContainer, isHeaderHidden),
+                undefined,
+                { forceHeaderHidden: true }
             );
         };
 
