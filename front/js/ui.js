@@ -193,7 +193,7 @@ function getStickyTabTop(element, isHeaderHidden) {
  * 탭 클릭 이동 공통 스크롤
  * - 이동 방향으로 도착 시 헤더 상태를 먼저 확정(아래: 숨김 / 위: 노출)하고 이동 → 도착 후 위치 보정(튐) 없음
  * - getTargetTop(isHeaderHidden): 헤더 상태별 목표 scrollTop
- * - options.forceHeaderHidden: 도착 시 헤더를 숨긴 채로 고정 (type2 탭)
+ * - options.forceHeaderHidden: 도착 시 헤더를 숨긴 채로 고정 (type2 탭 · company-tab)
  * - 이동 중 사용자가 직접 스크롤(휠·터치·키)하면 즉시 종료
  */
 let cancelScrollWithHeader = null;
@@ -1001,8 +1001,12 @@ function initCompanyTab() {
             const contMarginTop = companyCont ? (parseFloat(window.getComputedStyle(companyCont).marginTop) || 0) : 0;
             const target = (companyCont && companyCont.querySelector(".tab-cont.act")) || companyCont || tabContainer;
 
-            scrollWithHeader((isHeaderHidden) =>
-                getOffsetTop(target) - getStickyTabTop(tabContainer, isHeaderHidden) - tabHeight - contMarginTop
+            // type2 tab-list와 동일 — 탭 클릭 이동 시 헤더를 숨긴 채로 고정 (위로 스크롤해도 다시 열지 않음)
+            scrollWithHeader(
+                (isHeaderHidden) =>
+                    getOffsetTop(target) - getStickyTabTop(tabContainer, isHeaderHidden) - tabHeight - contMarginTop,
+                undefined,
+                { forceHeaderHidden: true }
             );
         };
 
