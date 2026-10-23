@@ -862,6 +862,11 @@ main>.title.no-animate h1 {
   background-size: 100% auto;
 }
 
+main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
+  margin-bottom: 6rem;
+  border-bottom: 1px solid #e1e7ee;
+}
+
 /* content */
 .content .inner-cont {
   padding: 0 2.4rem;
@@ -1538,6 +1543,7 @@ main>.title.no-animate h1 {
     padding: 10.5rem 0 10.5rem;
     aspect-ratio: auto;
     overflow-x: clip;
+    overflow-y: hidden;
   }
 
   main>.title.info-tit {
@@ -1581,7 +1587,11 @@ main>.title.no-animate h1 {
   .title.company {
     background-image: none;
   }
-  
+
+  main > .title:has(+ .content > :first-child.inner-cont> :first-child:not(form):is(h4.c-tit)) {
+    margin-bottom: 10rem;
+  }
+
   /* content */
   .content .inner-cont {
     padding: 0;
@@ -2185,6 +2195,7 @@ main>.title.no-animate h1 {
   /* title */
   main>.title {
     padding: 10.5rem 0 10.5rem;
+    overflow-y: hidden;
   }
 
   main>.title .tit-info1 {
@@ -2215,6 +2226,10 @@ main>.title.no-animate h1 {
 
   .title.wrms .wjc-art {
     display: block !important;
+  }
+
+  main > .title:has(+ .content > :first-child.inner-cont> :first-child:not(form):is(h4.c-tit)) {
+    margin-bottom: 10rem;
   }
 
   /* content */
