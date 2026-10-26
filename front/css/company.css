@@ -39,6 +39,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-top: -4rem;
    padding: 4rem 0;
    background-color: var(--white);
    z-index: 10;
@@ -1277,6 +1278,7 @@
       .company-tab {
          /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
          --sticky-offset: 6.6rem;
+         margin-top: -6rem;
          padding: 8rem 22rem;
       }
    
@@ -2356,6 +2358,7 @@
    .company-tab {
       /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
       --sticky-offset: 6.6rem;
+      margin-top: -6rem;
       padding: 8rem 22rem;
    }
 
