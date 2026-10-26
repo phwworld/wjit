@@ -288,6 +288,15 @@
   let activeIndex = items.findIndex((item) => item.classList.contains("is-active"));
   if (activeIndex < 0) activeIndex = 0;
 
+  // 2번째 슬라이드 활성 시 히어로 섹션에 data-tone="dark" 부여 → 퀵네비 톤 전환
+  const DARK_SLIDE_INDEXES = [1];
+  const syncHeroTone = (index) => {
+    if (!hero) return;
+    if (DARK_SLIDE_INDEXES.includes(index)) hero.dataset.tone = "dark";
+    else delete hero.dataset.tone;
+  };
+  syncHeroTone(activeIndex);
+
   let slideStartedAt = 0;
   let slideRafId = null;
   let slideTimerId = null;
@@ -333,6 +342,7 @@
       return;
     }
     activeIndex = index;
+    syncHeroTone(index);
 
     // 이전 전환이 끝나기 전에 다시 전환되면 남아 있던 퇴장 슬라이드를 즉시 정리
     if (leaveTimerId) {
@@ -1078,6 +1088,12 @@
     syncQuickNav(index);
     syncScrollAction(index);
   };
+
+  // 섹션 톤이 스크롤 없이 바뀌는 경우(히어로 슬라이드 전환 등)에도 퀵네비 톤 동기화
+  if (quickNav && "MutationObserver" in window) {
+    const toneObserver = new MutationObserver(() => syncQuickNav(getActiveIndex()));
+    sections.forEach((section) => toneObserver.observe(section, { attributes: true, attributeFilter: ["data-tone"] }));
+  }
 
   const scrollToSection = (index) => {
     if (index < 0 || index >= sections.length) return;

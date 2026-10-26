@@ -1079,25 +1079,26 @@ main.home>section .home-sec-info {
 }
 
 .home-quick-nav ul {
-    position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.home-quick-nav ul::before {
+.home-quick-nav li {
+    position: relative;
+    height: 4.8rem;
+}
+
+/* 각 li의 dot 하단에서 다음 li의 dot 상단까지 라인 (마지막 li 제외)
+   dot 크기 11px(9px + border 1px*2) — dot 배경이 투명해도 라인이 비치지 않도록 dot 영역 제외 */
+.home-quick-nav li:not(:last-child)::before {
     content: "";
     position: absolute;
-    top: 2.4rem;
-    bottom: 2.4rem;
-    /* right: 4px; */
+    top: calc(50% + 5.5px);
+    height: calc(100% - 11px);
     right: 5px;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
-}
-
-.home-quick-nav li {
-    height: 4.8rem;
 }
 
 .home-quick-nav a {
@@ -1150,7 +1151,7 @@ main.home>section .home-sec-info {
 }
 
 /* home-quick-nav: 어두운 배경 섹션(고객사례, 성장스토리 등) 위에서의 톤 전환 */
-.home-quick-nav.is-dark ul::before {
+.home-quick-nav.is-dark li::before {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
