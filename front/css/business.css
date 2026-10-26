@@ -6439,6 +6439,10 @@
         width: 108rem !important;
     }
 
+    .naverworks-cont10 {
+        margin-bottom: 4rem;    
+    }
+
     .naverworks-cont10 a {
         width: 38.4rem;
     }
@@ -9356,6 +9360,10 @@
     .naverworks-cont7 .pc img,
     .naverworks-cont8 .pc img {
         width: 108rem !important;
+    }
+
+    .naverworks-cont10 {
+        margin-bottom: 4rem;    
     }
 
     .naverworks-cont10 a {

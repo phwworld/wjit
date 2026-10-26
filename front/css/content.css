@@ -1302,7 +1302,7 @@ main:has(.contact-complete) {
     }
 
     .category-list2 button:first-child {
-        padding: 0 1rem 0 3rem;
+        padding: 0 3rem 0 1rem;
     }
 
     .category-list2 button:first-child::before {
@@ -1520,7 +1520,7 @@ main:has(.contact-complete) {
     }
 
     .board-list.type5 {
-        margin-top: 1-rem;
+        margin-top: 10rem;
         padding: 4rem 0 4rem 0;
         border-width: 1px 0;
     }
@@ -2259,7 +2259,7 @@ main:has(.contact-complete) {
     }
 
     .category-list2 button:first-child {
-        padding: 0 1rem 0 3rem;
+        padding: 0 3rem 0 1rem;
     }
 
     .category-list2 button:first-child::before {
@@ -2471,7 +2471,7 @@ main:has(.contact-complete) {
     }
 
     .board-list.type5 {
-        margin-top: 1-rem;
+        margin-top: 10rem;
         padding: 4rem 0 4rem 0;
         border-width: 1px 0;
     }

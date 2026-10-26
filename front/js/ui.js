@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initIndustrySliders();
     initServiceItemCycle();
     initScrollTop();
+    initHashScroll();
 });
 
 /* ==========================================================================
@@ -239,6 +240,53 @@ function scrollWithHeader(getTargetTop, onEnd, options) {
     onProgress();
 
     window.scrollTo({ top: targetTop, behavior: "smooth" });
+}
+
+/* ==========================================================================
+   1-2. 주소 해시(#id) 스크롤
+   - 주소에 id가 있으면 브라우저가 해당 요소로 스크롤한다
+   - #sapJoule 은 sticky 탭에 가리지 않도록 목표 위치에서 tab-list 높이만큼 뺀다
+   ========================================================================== */
+function getHashId() {
+    const raw = (location.hash || "").replace(/^#/, "");
+    if (!raw) return "";
+    try {
+        return decodeURIComponent(raw);
+    } catch (error) {
+        return raw;
+    }
+}
+
+function applySapJouleScrollMargin() {
+    const target = document.getElementById("sapJoule");
+    const tabList = document.querySelector(".tab-list");
+    if (!target || !tabList) return 0;
+
+    const offset = tabList.offsetHeight;
+    target.style.scrollMarginTop = `${offset}px`;
+    return offset;
+}
+
+function initHashScroll() {
+    const scrollToSapJoule = () => {
+        if (getHashId() !== "sapJoule") return;
+
+        const target = document.getElementById("sapJoule");
+        if (!target) return;
+
+        const offset = applySapJouleScrollMargin();
+        scrollWithHeader(
+            () => getDocTop(target) - offset,
+            null,
+            { forceHeaderHidden: true }
+        );
+    };
+
+    applySapJouleScrollMargin();
+    window.addEventListener("resize", applySapJouleScrollMargin);
+    window.addEventListener("hashchange", scrollToSapJoule);
+    window.addEventListener("load", scrollToSapJoule);
+    if (document.readyState === "complete") scrollToSapJoule();
 }
 
 /* ==========================================================================
@@ -1386,6 +1434,9 @@ function initScrollTop() {
     window.addEventListener("resize", sync, { passive: true });
     sync();
 }
+
+// 해시 스크롤보다 먼저 #sapJoule 여백을 잡는다 (스크립트는 body 끝에서 실행)
+applySapJouleScrollMargin();
 
 /* 웅진IT 서브타이틀 모티브 — 통합 JS (title.js)
    [data-wjh-motif] 요소마다 모티브 SVG/3D 구조를 삽입합니다. 의존성 없음. */

@@ -1089,7 +1089,8 @@ main.home>section .home-sec-info {
     position: absolute;
     top: 2.4rem;
     bottom: 2.4rem;
-    right: 4px;
+    /* right: 4px; */
+    right: 5px;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
