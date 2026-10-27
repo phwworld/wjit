@@ -764,6 +764,8 @@ main>.title {
 
 main>.title.info-tit {
   aspect-ratio: 1.108 / 1;
+  margin-bottom: 0 !important;
+  border-bottom: 0 !important;
 }
 
 main>.title .tit-info1 {
@@ -1307,6 +1309,7 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
+    letter-spacing: -0.4px;
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul {
@@ -1337,6 +1340,10 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   :lang(en) header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
     padding-left: 84rem;
+  }
+
+  :lang(en) header .pc-gnb>ul>li:nth-of-type(1)>.gnb-sub>ul>li:nth-of-type(4) a {
+    width: 31rem;
   }
 
   main {
@@ -1935,6 +1942,7 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .pc-gnb>ul>li>.gnb-sub>ul>li>ul>li>a:hover {
     font-weight: 700;
+    letter-spacing: -0.4px;
   }
 
   header .pc-gnb>ul>li>.gnb-sub.sub2>ul {
@@ -1962,6 +1970,10 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .pc-gnb>ul>li>.gnb-sub.sub5>ul {
     padding-left: calc(2.4rem + 10.8rem + 14rem + 16rem + 0.5rem + 8rem + 7rem + 5rem + 7rem);
+  }
+
+  :lang(en) header .pc-gnb>ul>li:nth-of-type(1)>.gnb-sub>ul>li:nth-of-type(4) a {
+    width: 31rem;
   }
 
   main {

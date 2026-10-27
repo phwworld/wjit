@@ -28,19 +28,22 @@
    display: block;
 }
 
+/* company-tab이 있으면 카테고리는 스크롤하고 탭만 헤더 아래에 고정 */
+.content:has(.company-tab) > .category-list {
+   position: static;
+}
+
 /* company tab */
 .company-tab {
-   /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
-   --sticky-offset: 6.1rem;
    position: sticky;
    /* 헤더 노출 시 헤더 높이(--sticky-tab-top)만큼 함께 이동 */
-   top: calc(var(--sticky-tab-top, 0px) + var(--sticky-offset));
+   top: var(--sticky-tab-top, 0px);
    transition: top 0.3s cubic-bezier(0.22, 1, 0.36, 1);
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-top: -4rem;
-   padding: 4rem 0;
+   /* margin-top: -4rem; */
+   /* padding: 4rem 0; */
    background-color: var(--white);
    z-index: 10;
 }
@@ -1276,10 +1279,10 @@
    
       /* company tab */
       .company-tab {
-         /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
-         --sticky-offset: 6.6rem;
-         margin-top: -6rem;
-         padding: 8rem 22rem;
+         /* margin-top: -6rem; */
+         /* padding: 8rem 22rem; */
+         margin-top: 8rem;
+         padding: 0 22rem;
       }
    
       .company-tab button {
@@ -2356,10 +2359,10 @@
 
    /* company tab */
    .company-tab {
-      /* 카테고리 높이. 상단 여백은 padding이라 sticky 박스에 포함된다 */
-      --sticky-offset: 6.6rem;
-      margin-top: -6rem;
-      padding: 8rem 22rem;
+      /* margin-top: -6rem;
+      padding: 8rem 22rem; */
+      margin-top: 8rem;
+      padding: 0 22rem;
    }
 
    .company-tab button {
