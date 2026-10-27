@@ -1588,7 +1588,8 @@ main:has(.contact-complete) {
     }
 
     .board-view .view-title .title-txt1 {
-        margin-bottom: 4rem;
+        /* margin-bottom: 4rem; */
+        margin-bottom: 1.6rem;
         font-size: 2.4rem;
         font-weight: 600;
     }
@@ -2539,7 +2540,8 @@ main:has(.contact-complete) {
     }
 
     .board-view .view-title .title-txt1 {
-        margin-bottom: 4rem;
+        /* margin-bottom: 4rem; */
+        margin-bottom: 1.6rem;
         font-size: 3.2rem;
         font-weight: 600;
     }
