@@ -1088,14 +1088,14 @@ main.home>section .home-sec-info {
     height: 4.8rem;
 }
 
-/* 각 li의 dot 하단에서 다음 li의 dot 상단까지 라인 (마지막 li 제외)
-   dot 크기 11px(9px + border 1px*2) — dot 배경이 투명해도 라인이 비치지 않도록 dot 영역 제외 */
+/* 각 li의 dot 하단 보더에서 다음 li의 dot 상단까지 라인 (마지막 li 제외)
+   dot 9px(border-box). 라인은 1px 보더와 겹쳐 간격이 생기지 않고, 투명한 점 안쪽으로는 들어가지 않음 */
 .home-quick-nav li:not(:last-child)::before {
     content: "";
     position: absolute;
-    top: calc(50% + 5.5px);
-    height: calc(100% - 11px);
-    right: 5px;
+    top: calc(50% + 3.5px);
+    height: calc(100% - 8px);
+    right: 4px;
     width: 1px;
     background-color: rgba(0, 0, 0, 0.2);
     pointer-events: none;
@@ -1113,11 +1113,13 @@ main.home>section .home-sec-info {
     position: relative;
     z-index: 1;
     flex-shrink: 0;
+    box-sizing: border-box;
     width: 9px;
     height: 9px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: transparent;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -1140,7 +1142,7 @@ main.home>section .home-sec-info {
 }
 
 .home-quick-nav a.is-active .label {
-    color: #1a1a1a;
+    color: var(--text-body);
     font-weight: 700;
     line-height: 1;
 }
@@ -1151,21 +1153,21 @@ main.home>section .home-sec-info {
 }
 
 /* home-quick-nav: 어두운 배경 섹션(고객사례, 성장스토리 등) 위에서의 톤 전환 */
-.home-quick-nav.is-dark li::before {
-    background-color: rgba(255, 255, 255, 0.3);
+.home-quick-nav.is-dark li:not(:last-child)::before {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .home-quick-nav.is-dark .dot {
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: #fff;
     background-color: transparent;
 }
 
 .home-quick-nav.is-dark .label {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .home-quick-nav.is-dark a:hover .label {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .home-quick-nav.is-dark a:hover .dot {
