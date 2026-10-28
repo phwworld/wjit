@@ -2037,7 +2037,7 @@
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: right 2rem top 2rem;
-    background-size: 7rem 5rem;
+    background-size: auto 5rem;
 }
 
 .dynamics365-cont8 .box.supply {
@@ -2335,6 +2335,10 @@
 .dynamics365-cont11 .ui {
     background-image: url(../img/business/icon_dynamics365_cont11_ui.png);
     background-position: center 10.6rem;
+}
+
+:lang(en) .dynamics365-cont11 .ui {
+    background-position: center 8.6rem;
 }
 
 .dynamics365-cont11 .monitor {
@@ -2820,7 +2824,8 @@
 }
 
 .msazure-cont6>div>div {
-    flex-basis: calc(50% - 1rem);
+    /*flex-basis: calc(50% - 1rem);*/
+    flex-basis: calc((100% - 1rem) / 2);
     padding: 9.6rem 0 2rem;
     font-size: 1.4rem;
     text-align: center;
@@ -2910,7 +2915,8 @@
     padding: 1.6rem 2rem 1.6rem 8.6rem;
     background-repeat: no-repeat;
     background-position: left 2rem center;
-    background-size: auto 6rem;
+    /*background-size: auto 6rem;*/
+    background-size: 5rem auto;
     background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
 }
 
@@ -2999,13 +3005,17 @@
     justify-content: center;
     width: calc(33.3% - 1rem);
     height: 5.4rem;
-    ;
     border: 1px solid var(--text-point);
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-point);
     text-align: center;
-    background-color: var(--white)
+    line-height: 1.1;
+    background-color: var(--white);
+}
+
+:lang(en) .naverCloudPlatform-cont2 .box-cont+div span {
+    letter-spacing: -1px;
 }
 
 .naverCloudPlatform-cont3>div {
@@ -3357,13 +3367,21 @@
     gap: .8rem;
 }
 
+.naverworks-cont2>div>div {
+    padding: 0;
+}
+
 .naverworks-cont2 .box-cont {
-    padding: 2rem 2rem 2rem 6.6rem;
+    padding: 2rem 2rem 2rem 9.6rem;
     font-size: 1.6rem;
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: auto 5rem;
+    background-position: left 2rem center;
+    background-size: 6rem auto;
     background-image: url(../img/business/bg_naverworks_cont2_01.png);
+}
+
+.naverworks-cont2 .box-cont .box-tit {
+    margin-bottom: 0.6rem;
 }
 
 .naverworks-cont2>div>div:nth-of-type(2) .box-cont {
@@ -4064,7 +4082,7 @@
         padding-top: 10rem;
         font-size: 2.4rem;
         text-align: center;
-        font-weight: 500; 
+        font-weight: 500;
         background-repeat: no-repeat;
         background-position: center top;
         background-size: auto 8rem;
@@ -4389,6 +4407,10 @@
         letter-spacing: -0.02em;
     }
 
+    :lang(en) .bss-bridge-cont>div>p:first-of-type {
+      min-height: 7.6rem;
+    }
+
     .bss-bridge-cont>div>p:last-of-type {
         padding: 4rem 3rem;
         text-align: left;
@@ -4559,6 +4581,13 @@
     .bss-cont3 .box-tit {
         letter-spacing: -0.02em;
         line-height: 1.4;
+    }
+
+    :lang(en) .bss-cont3 .box-tit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 8rem;
     }
 
     .bss-cont3 .box-cont {
@@ -5184,7 +5213,7 @@
         display: flex;
         gap: 10rem;
     }
-    
+
     .businessOne-cont6-area .cont-txt~.cont-txt {
         /* margin-top: 2rem; */
     }
@@ -5339,6 +5368,10 @@
         gap: 0;
         padding: 2rem 0;
         background: url(../img/business/img_dynamics365_cont8_diagram.png) no-repeat center / calc(100% * 60 / 144) auto;
+    }
+
+    :lang(en) .dynamics365-cont8 .cont8-body {
+        background-image: url(../img/business/img_dynamics365_cont8_diagram_en.png);
     }
 
     .dynamics365-cont8 .cont8-body::before {
@@ -6356,7 +6389,7 @@
 
     .naverworks-cont2>div>div {
         width: calc((100% - 4rem) / 3);
-        padding: 4rem 3rem;
+        padding: 3rem 4rem;
     }
 
     .naverworks-cont2 .box-cont {
@@ -6366,13 +6399,17 @@
         padding: 0 0 0 12rem;
         font-size: 2rem;
         background-size: auto 8rem;
+        background-position: left center;
+    }
+
+    .naverworks-cont2 .box-cont .box-tit {
+        margin-bottom: 0 !important;
     }
 
     .naverworks-cont5 .box-cont {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        ;
         padding: 4rem;
     }
 
@@ -6440,7 +6477,7 @@
     }
 
     .naverworks-cont10 {
-        margin-bottom: 4rem;    
+        margin-bottom: 4rem;
     }
 
     .naverworks-cont10 a {
@@ -6500,7 +6537,8 @@
     }
 
     .gdc-cont1>div {
-        flex: 1 1 calc(50% - 3rem);
+        /*flex: 1 1 calc(50% - 3rem);*/
+        flex: 1 !important;
     }
 
     .gdc-cont1 .box-cont {
@@ -6562,7 +6600,7 @@
     }
 
     .gdc-cont4 .num {
-        font-size: 6rem; 
+        font-size: 6rem;
     }
 
     .gdc-cont4>div>div>div {
@@ -6616,10 +6654,12 @@
     .bpo-cont2 {
         /* margin-top: 6rem; */
         margin-top: 4rem;
+        text-align: center;
     }
 
     .bpo-cont2 a {
         width: 43rem;
+        text-align: left;
     }
 }
 
@@ -7312,6 +7352,10 @@
         letter-spacing: -0.02em;
     }
 
+    :lang(en) .bss-bridge-cont>div>p:first-of-type {
+      min-height: 7.6rem;
+    }
+
     .bss-bridge-cont>div>p:last-of-type {
         padding: 4rem 3rem;
         text-align: left;
@@ -7362,7 +7406,7 @@
 
     .bss-cont1>div>p {
         margin-bottom: 2rem;
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         font-weight: 700;
         line-height: 1.8;
     }
@@ -7481,6 +7525,13 @@
     .bss-cont3 .box-tit {
         letter-spacing: -0.02em;
         line-height: 1.4;
+    }
+
+    :lang(en) .bss-cont3 .box-tit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 8rem;
     }
 
     .bss-cont3 .box-cont {
@@ -8002,7 +8053,7 @@
     .s4hana-cont8 .box-cont a {
         background-size: auto 2.1rem;
     }
-    
+
 
     .s4hana-cont9>div {
         gap: 2rem;
@@ -8039,7 +8090,7 @@
         transform: translateY(-50%);
         background: url(../img/business/bg_s4hana_cont9_arrow.svg) no-repeat center / contain;
     }
- 
+
     .s4hana-cont9 .box-cont {
         flex: 1;
         font-size: 1.8rem;
@@ -8116,7 +8167,7 @@
         display: flex;
         gap: 3rem;
     }
-    
+
     .businessOne-cont6-area .cont-txt~.cont-txt {
         /* margin-top: 2rem; */
     }
@@ -8484,7 +8535,7 @@
     .dynamics365-cont10 {
         margin-top: 4rem;
     }
-    
+
     .dynamics365-cont10 .cont10-panel {
         gap: 3rem;
         padding: 4rem;
@@ -8914,7 +8965,7 @@
         margin-bottom: 1rem;
         font-size: 2.4rem;
         font-weight: 500;
-    } 
+    }
 
     .powerPlatform-cont2 .box-cont {
         font-size: 1.8rem;
@@ -9289,13 +9340,17 @@
         padding: 0 0 0 12rem;
         font-size: 2rem;
         background-size: auto 8rem;
+        background-position: left center;
+    }
+
+    .naverworks-cont2 .box-cont .box-tit {
+        margin-bottom: 0 !important;
     }
 
     .naverworks-cont5 .box-cont {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        ;
         padding: 4rem;
     }
 
@@ -9363,7 +9418,7 @@
     }
 
     .naverworks-cont10 {
-        margin-bottom: 4rem;    
+        margin-bottom: 4rem;
     }
 
     .naverworks-cont10 a {
@@ -9427,7 +9482,8 @@
     }
 
     .gdc-cont1>div {
-        flex: 1 1 calc(50% - 3rem);
+        /*flex: 1 1 calc(50% - 3rem);*/
+      flex: 1 !important;
     }
 
     .gdc-cont1 .box-cont {
@@ -9543,9 +9599,11 @@
     .bpo-cont2 {
         /* margin-top: 6rem; */
         margin-top: 4rem;
+        text-align: center;
     }
 
     .bpo-cont2 a {
         width: 43rem;
+        text-align: left;
     }
 }

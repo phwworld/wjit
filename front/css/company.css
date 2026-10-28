@@ -618,6 +618,10 @@
    width: 18.4rem;
 }
 
+:lang(en) .overview-cont6 .ci-btns {
+  width: 20.4rem;
+}
+
 .overview-cont6 .ci-btns a {
    display: grid;
    grid-template-columns: 1fr auto;
@@ -908,7 +912,7 @@
 /* financial */
 .financial-tit {
    display: flex;
-   justify-content: space-between; 
+   justify-content: space-between;
    align-items: center;
    margin-bottom: 5rem;
 }
@@ -1276,7 +1280,7 @@
       :lang(en) .img-txt .pc.en {
          display: block;
       }
-   
+
       /* company tab */
       .company-tab {
          /* margin-top: -6rem; */
@@ -1284,7 +1288,7 @@
          margin-top: 8rem;
          padding: 0 22rem;
       }
-   
+
       .company-tab button {
          flex: 1;
          width: auto;
@@ -1294,7 +1298,7 @@
          font-weight: 500;
          line-height: normal;
       }
-   
+
       .company-tab button.act {
          border-width: 1px;
          border-color: var(--primary);
@@ -1303,16 +1307,16 @@
       .company-tab .mo-hide {
          display: inline;
       }
-   
+
       /* company cont */
       .company-cont {
          margin-top: 10rem;
       }
-   
+
       .company-cont .c-tit span {
          font-size: 4rem;
       }
-   
+
       /* overview */
       .overview-cont1 {
          /* display: grid;
@@ -1332,69 +1336,69 @@
       .overview-cont1 img {
          width: initial;
       }
-   
+
       /* .overview-cont1 .overview-diagram {
          grid-area: diagram;
          margin-bottom: 0;
       }
-   
+
       .overview-cont1 .overview-diagram .mo {
          display: none;
       }
-   
+
       .overview-cont1 .overview-diagram .pc {
          display: block;
          width: 65.2rem;
          max-width: none;
       }
-   
+
       .overview-cont1 .overview-group {
          width: auto;
          padding: 0;
          background-color: transparent;
       }
-   
+
       .overview-cont1 .overview-group.sap {
          grid-area: sap;
       }
-   
+
       .overview-cont1 .overview-group.cloud {
          grid-area: cloud;
          text-align: right;
       }
-   
+
       .overview-cont1 .overview-group.solution {
          grid-area: solution;
       }
-   
+
       .overview-cont1 .group-inner {
          padding: 0;
          border: 0;
          background-color: transparent;
       }
-   
+
       .overview-cont1 .overview-group h5 {
          display: none;
       }
-   
+
       .overview-cont1 .overview-group li+li {
          margin-top: 4rem;
       }
-   
+
       .overview-cont1 .overview-group.cloud li+li {
          margin-top: 3.4rem;
       }
-   
+
       .overview-cont1 .overview-group.solution ul {
          display: flex;
          justify-content: space-between;
          padding: 0 30rem;
       }
-   
+
       .overview-cont1 .overview-group.solution li+li {
          margin-top: 0;
       }
-   
+
       .overview-cont1 .overview-group strong {
          margin-bottom: 0.4rem;
          font-size: 2.4rem;
@@ -1402,102 +1406,102 @@
          line-height: 1.4;
          white-space: nowrap;
       }
-   
+
       .overview-cont1 .overview-group p {
          font-size: 1.8rem;
          letter-spacing: 0;
          line-height: 1.4;
          white-space: nowrap;
       } */
-   
+
       .overview-cont2 {
          /* margin-top: 6rem; */
          margin-top: 4rem;
       }
-   
+
       .overview-cont2.history>.history-list {
          border-top-width: 0.3rem;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-head {
          gap: 0;
          padding: 2.4rem 4rem ;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-head::after {
          right: 4rem;
          width: 3.4rem;
          height: 3.4rem;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-head strong {
          width: 18.4rem;
          font-size: 2.4rem;
          letter-spacing: -0.02em;
          line-height: 1;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-head span {
          font-size: 2rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-cont-inner {
          padding: 0 0 0 22.4rem;
       }
-   
+
       .overview-cont2.history>.history-list>.history-item .item-cont.act .item-cont-inner {
          padding: 4rem 0 4rem 22.4rem;
       }
-   
+
       .overview-cont2 .item-cont .history-item .year {
          width: auto;
          padding-right: 6rem;
          font-size: 2.4rem;
          letter-spacing: -0.02em;
       }
-   
+
       .overview-cont2 .item-cont .history-item .marker::before {
          top: 0.6rem;
       }
-   
+
       .overview-cont2 .item-cont .history-item .marker::after {
          top: 1.2rem;
       }
-   
+
       .overview-cont2 .item-cont .history-item ul {
          padding: 0 0 4rem 6rem;
       }
-   
+
       .overview-cont2 .item-cont .history-item:last-child ul {
          padding-bottom: 1rem;
       }
-   
+
       .overview-cont2 .item-cont .history-item li {
          font-size: 1.8rem;
          letter-spacing: -0.02em;
          line-height: 1.8;
       }
-   
+
       .overview-cont2 .item-cont .history-item li+li {
          margin-top: 0;
       }
-   
+
       .overview-cont3 {
          flex-direction: row;
          align-items: center;
          justify-content: space-between;
          gap: 11rem;
       }
-   
+
       .overview-cont3 .overview-visual {
          order: 1;
          flex-shrink: 0;
          width: 48rem;
       }
-   
+
       .overview-cont3 .cont-txt {
          flex: 1;
          min-width: 0;
@@ -1505,7 +1509,7 @@
          font-size: 2rem;
          font-weight: 500;
       }
-   
+
       .overview-cont4 {
          display: grid;
          grid-template-columns: repeat(3, 44rem);
@@ -1514,15 +1518,15 @@
          margin-top: 4rem;
          padding: 3.5rem;
       }
-   
+
       .overview-cont4 .love-card {
-         height: 34rem;
+         min-height: 34rem;
          padding: 4rem 3.4rem 4.9rem;
          background-position: right 3.4rem top 4rem;
          background-size: auto 9rem;
          border: 1px dashed var(--border-default);
       }
-   
+
       .overview-cont4 .card-head {
          height: auto;
          min-height: 9rem;
@@ -1532,51 +1536,51 @@
          font-weight: 500;
          letter-spacing: -2px;
       }
-   
+
       .overview-cont4 .love-card p {
          font-size: 2rem;
          font-weight: 500;
          line-height: 1.8;
       }
-   
+
       .overview-cont5 {
          margin-top: 4rem;
          padding: 0 4rem 8rem;
          background: linear-gradient(to bottom, transparent 17.8rem, var(--bg-surface) 17.8rem);
       }
-   
+
       .overview-cont5 .ethics-diagram {
          max-width: 86.8rem;
          aspect-ratio: 868 / 360;
       }
-   
+
       .overview-cont5 .ethics-diagram p {
          font-size: 3.2rem;
       }
-   
+
       .overview-cont5 .ethics-tit {
          gap: 2.1rem;
          font-size: 3.6rem;
       }
-   
+
       .overview-cont5 .ethics-tit::before,
       .overview-cont5 .ethics-tit::after {
          flex: 1;
          width: auto;
          max-width: 50rem;
       }
-   
+
       .overview-cont5 .ethics-list {
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: 3rem;
       }
-   
+
       .overview-cont5 .ethics-item {
          flex-direction: row;
          align-items: stretch;
       }
-   
+
       .overview-cont5 .ethics-item strong {
          flex-shrink: 0;
          width: 15.2rem;
@@ -1584,7 +1588,7 @@
          font-size: 2.8rem;
          line-height: 1.8;
       }
-   
+
       .overview-cont5 .ethics-item ul,
       .overview-cont5 .ethics-item .ethics-org {
          flex: 1;
@@ -1592,40 +1596,40 @@
          padding: 3rem 4rem 3rem 2.6rem;
          border-color: var(--border-default);
       }
-   
+
       .overview-cont5 .ethics-item ul {
          display: flex;
          flex-direction: column;
          justify-content: center;
       }
-   
+
       .overview-cont5 .ethics-item li {
          font-size: 2rem;
          font-weight: 500;
          line-height: 1.8;
       }
-   
+
       .overview-cont5 .ethics-item li span {
          padding-left: 9.5rem;
       }
-   
+
       .overview-cont5 .ethics-org {
          justify-content: center;
          gap: 4rem;
       }
-   
+
       .overview-cont5 .ethics-org p {
          width: auto;
          padding: 1rem 5rem;
          font-size: 2rem;
          line-height: 1.6;
       }
-   
+
       .overview-cont5 .ethics-org p:first-child::after {
          height: 4rem;
          background-color: var(--border-default);
       }
-   
+
       .overview-cont6 {
          flex-direction: row;
          justify-content: space-between;
@@ -1634,18 +1638,22 @@
          padding: 3rem 14rem;
          border-width: 4rem;
       }
-   
+
       .overview-cont6 .ci-logo {
          width: 26.4rem;
          height: 13.8rem;
       }
-   
+
       .overview-cont6 .ci-btns {
          flex-direction: row;
          width: auto;
          gap: 1.6rem;
       }
-   
+
+      :lang(en) .overview-cont6 .ci-btns {
+        width: auto;
+      }
+
       .overview-cont6 .ci-btns a {
          width: auto;
          height: 5rem;
@@ -1654,7 +1662,7 @@
          line-height: 1.8;
          letter-spacing: -0.02em;
       }
-   
+
       /* .overview-cont7 {
          position: relative;
          display: block;
@@ -1664,7 +1672,7 @@
          background-color: var(--white);
          box-shadow: inset 0 0 0 3rem var(--bg-surface);
       }
-   
+
       .overview-cont7::after {
          content: "";
          position: absolute;
@@ -1672,11 +1680,11 @@
          border: 1px dashed var(--border-default);
          pointer-events: none;
       }
-   
+
       .overview-cont7 .talent-logo {
          display: none;
       }
-   
+
       .overview-cont7 .talent-diagram {
          display: block;
          position: absolute;
@@ -1685,12 +1693,12 @@
          width: 49.6rem;
          height: 46.9rem;
       }
-   
+
       .overview-cont7 .talent-list {
          display: block;
          width: auto;
       }
-   
+
       .overview-cont7 .talent-list li {
          position: absolute;
          display: block;
@@ -1699,58 +1707,58 @@
          background: none;
          border: 0;
       }
-   
+
       .overview-cont7 .talent-list li>img {
          display: none;
       }
-   
+
       .overview-cont7 .talent-list li:nth-child(1) {
          left: 7.7rem;
          top: 10.5rem;
          text-align: right;
       }
-   
+
       .overview-cont7 .talent-list li:nth-child(2) {
          left: 105.3rem;
          top: 10.5rem;
       }
-   
+
       .overview-cont7 .talent-list li:nth-child(3) {
          left: 7.7rem;
          top: 41.7rem;
          text-align: right;
       }
-   
+
       .overview-cont7 .talent-list li:nth-child(4) {
          left: 105.3rem;
          top: 41.7rem;
       }
-   
+
       .overview-cont7 .talent-list li:nth-child(1) .talent-txt,
       .overview-cont7 .talent-list li:nth-child(3) .talent-txt {
          align-items: flex-end;
       }
-   
+
       .overview-cont7 .talent-txt strong {
          font-family: 'WOONGJINLOVE';
          font-size: 2.8rem;
          line-height: 1.6;
       }
-   
+
       .overview-cont7 .talent-txt p {
          font-size: 2rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
       } */
-   
+
       /* .overview-cont8 {
          gap: 5rem;
          margin-top: 6rem;
          padding: 5rem 4rem;
          background-color: var(--bg-surface);
       }
-   
+
       .overview-cont8 .reward-block {
          position: relative;
          display: grid;
@@ -1764,7 +1772,7 @@
          box-shadow: none;
          border: 0;
       }
-   
+
       .overview-cont8 .reward-block::before {
          content: "";
          position: absolute;
@@ -1775,7 +1783,7 @@
          background-color: var(--white);
          border: 1px dashed var(--border-default);
       }
-   
+
       .overview-cont8 .reward-head {
          position: relative;
          z-index: 1;
@@ -1791,7 +1799,7 @@
          border-radius: 50%;
          background-color: var(--white);
       }
-   
+
       .overview-cont8 .reward-head::before,
       .overview-cont8 .reward-head::after {
          content: "";
@@ -1803,32 +1811,32 @@
          background-color: #11bcff;
          transform: translateY(-1rem);
       }
-   
+
       .overview-cont8 .reward-head::before {
          right: 100%;
       }
-   
+
       .overview-cont8 .reward-head::after {
          left: 100%;
       }
-   
+
       .overview-cont8 .reward-head strong {
          font-family: 'WOONGJINLOVE';
          font-size: 3.6rem;
          letter-spacing: -0.04em;
          line-height: 1.6;
       }
-   
+
       .overview-cont8 .reward-head img {
          width: 8.1rem;
          height: 9rem;
       }
-   
+
       .overview-cont8 .reward-block:nth-child(2) .reward-head img {
          width: 9rem;
          height: 9rem;
       }
-   
+
       .overview-cont8 .reward-item {
          position: relative;
          z-index: 1;
@@ -1840,20 +1848,20 @@
          padding-top: 2.8rem;
          justify-self: center;
       }
-   
+
       .overview-cont8 .reward-item:nth-child(2) {
          grid-column: 2;
       }
-   
+
       .overview-cont8 .reward-item:nth-child(3) {
          grid-column: 6;
       }
-   
+
       .overview-cont8 .reward-item+.reward-item {
          padding-top: 2.8rem;
          border-top: 0;
       }
-   
+
       .overview-cont8 .reward-item strong {
          display: flex;
          align-items: center;
@@ -1873,7 +1881,7 @@
          line-height: 1.6;
          text-align: center;
       }
-   
+
       .overview-cont8 .reward-item p {
          position: relative;
          left: 0;
@@ -1886,13 +1894,13 @@
          line-height: 1.8;
          text-align: center;
       } */
-   
+
       /* .overview-cont9 {
          gap: 3rem;
          margin-top: 6rem;
          padding: 4rem;
       }
-   
+
       .overview-cont9>div {
          justify-content: center;
          gap: 0;
@@ -1901,35 +1909,35 @@
          border: 1px dashed var(--border-default);
          background-size: 8.8rem 8.8rem;
       }
-   
+
       .overview-cont9>div:nth-child(1) {
          background-image: url(../img/company/img_overview_cont9_icon01.svg);
       }
-   
+
       .overview-cont9>div:nth-child(2) {
          background-image: url(../img/company/img_overview_cont9_icon02.svg);
          background-size: 9.5rem 8.8rem;
       }
-   
+
       .overview-cont9>div:nth-child(3) {
          background-image: url(../img/company/img_overview_cont9_icon03.svg);
          background-size: 8.6rem 8.8rem;
       }
-   
+
       .overview-cont9 strong {
          font-family: 'WOONGJINLOVE';
          font-size: 2.8rem;
          letter-spacing: -0.04em;
          line-height: 1.6;
       }
-   
+
       .overview-cont9 p {
          font-size: 2rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
       } */
-   
+
       /* .overview-cont10 {
          display: grid;
          grid-template-columns: 1fr 1fr;
@@ -1937,7 +1945,7 @@
          margin-top: 6rem;
          padding: 4rem;
       }
-   
+
       .overview-cont10>div {
          gap: 0;
          min-height: 16.4rem;
@@ -1947,45 +1955,45 @@
          background-position: left 5rem center;
          background-size: 7rem 7rem;
       }
-   
+
       .overview-cont10>div:nth-child(3) {
          background-size: 7.9rem 7rem;
       }
-   
+
       .overview-cont10>div:nth-child(6) {
          background-size: 5.5rem 7rem;
       }
-   
+
       .overview-cont10>div:nth-child(8) {
          background-size: 7rem 5.9rem;
       }
-   
+
       .overview-cont10>div:nth-child(9) {
          background-size: 8rem 6.4rem;
       }
-   
+
       .overview-cont10 .mo {
          display: none;
       }
-   
+
       .overview-cont10 strong {
          font-family: 'WOONGJINLOVE';
          font-size: 2.8rem;
          letter-spacing: -0.04em;
          line-height: 1.6;
       }
-   
+
       .overview-cont10 p {
          font-size: 2rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
       } */
-   
+
       /* financial */
       .financial-tit {
          display: flex;
-         justify-content: space-between; 
+         justify-content: space-between;
          align-items: center;
          /* margin-bottom: 5rem; */
          margin-bottom: 6rem;
@@ -1993,32 +2001,32 @@
          padding-bottom: 4rem;
          border-bottom: 2px solid var(--text-body);
       }
-   
+
       .financial-tit.devide {
          margin-top: 10rem;
          padding-top: 10rem;
       }
-   
+
       .financial-tit .c-tit {
          margin-bottom: 0;
       }
-   
+
       .financial-tit label {
          display: inline-block;
          margin-right: 2rem;
          font-size: 2.4rem;
       }
-   
+
       .financial-tit select {
          width: 24rem;
          height: 4.8rem;
       }
-   
+
       .financial-cont {
          display: flex;
          flex-wrap: wrap;;
       }
-   
+
       .financial-cont .tit {
          width: 31rem;
          margin: 10rem 0 0;
@@ -2032,19 +2040,19 @@
          margin-left: 0;
          font-size: 2rem;
       }
-      
+
       .financial-cont .info {
          margin-top: 2rem;
          font-size: 2rem;
       }
-   
+
       .financial-cont>div {
          width: calc(100% - 31rem);
          margin-top: 10rem;
          /* padding-top: 10rem;
          border-top: 1px dashed var(--border-default); */
       }
-   
+
       .financial-cont .tit:first-child,
       .financial-cont div:nth-of-type(1) {
          margin-top: 0;
@@ -2103,7 +2111,7 @@
          justify-content: space-between;
          align-items: center;
       }
-      
+
       .disclosure-cont.pc .shortcut {
          display: inline-flex;
          align-items: center;
@@ -2115,7 +2123,7 @@
          font-weight: 700;
          background-color: var(--primary);
       }
-      
+
       .disclosure-cont.pc .shortcut::before {
          content: "";
          width: 2.5rem;
@@ -2131,13 +2139,13 @@
          padding: 3rem;
          background-color: var(--bg-surface);
       }
-   
+
       .overseas-cont .overseas-box {
          padding: 4rem 4.8rem 0 6rem;
          background-color: var(--white);
          border: 1px solid #e1e7ee;
       }
-   
+
       .overseas-cont .overseas-company {
          display: block;
          margin-bottom: 3rem;
@@ -2147,70 +2155,70 @@
          letter-spacing: -0.02em;
          line-height: 1.8;
       }
-   
+
       .overseas-cont .overseas-list {
          gap: 0;
       }
-   
+
       .overseas-cont .overseas-item {
          gap: 1.6rem;
          padding-bottom: 5rem;
          border-bottom: 1px solid #e1e7ee;
       }
-   
+
       .overseas-cont .overseas-item+.overseas-item {
          margin-top: 4rem;
       }
-   
+
       .overseas-cont .overseas-item:last-child {
          padding-bottom: 4rem;
          border-bottom: 0;
       }
-   
+
       .overseas-cont .overseas-region {
          font-size: 2.8rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: normal;
       }
-   
+
       .overseas-cont .overseas-body {
          flex-direction: row;
          align-items: center;
          gap: 6.9rem;
       }
-   
+
       .overseas-cont .overseas-info {
          flex: 1;
          gap: 2rem;
          min-width: 0;
       }
-   
+
       .overseas-cont .overseas-info li {
          gap: 3rem;
       }
-   
+
       .overseas-cont .overseas-info .label {
          width: 14rem;
          height: 4rem;
          font-size: 2rem;
          line-height: 1.8;
       }
-   
+
       .overseas-cont .overseas-info p {
          font-size: 2rem;
          font-weight: 500;
          letter-spacing: -0.02em;
          line-height: 1.8;
       }
-   
+
       .overseas-cont .overseas-btns {
          flex-direction: column;
          flex-shrink: 0;
          gap: 1.4rem;
          width: 15.4rem;
       }
-   
+
       .overseas-cont .overseas-btns a {
          display: grid;
          grid-template-columns: 1fr auto;
@@ -2228,11 +2236,11 @@
          height: 2.4rem;
          background-size: 1.75537rem 1.70777rem;
       }
-   
+
       .overseas-cont .overseas-btns a:only-child {
          width: 100%;
       }
-   
+
       .overseas-cont+.c-tit {
          margin-top: 10rem;
       }
@@ -3066,7 +3074,7 @@
    /* financial */
    .financial-tit {
       display: flex;
-      justify-content: space-between; 
+      justify-content: space-between;
       align-items: center;
       /* margin-bottom: 5rem; */
       margin-bottom: 6rem;
@@ -3113,7 +3121,7 @@
       margin-left: 0;
       font-size: 2rem;
    }
-   
+
    .financial-cont .info {
       margin-top: 2rem;
       font-size: 2rem;
@@ -3184,7 +3192,7 @@
       justify-content: space-between;
       align-items: center;
    }
-   
+
    .disclosure-cont.pc .shortcut {
       display: inline-flex;
       align-items: center;
@@ -3196,7 +3204,7 @@
       font-weight: 700;
       background-color: var(--primary);
    }
-   
+
    .disclosure-cont.pc .shortcut::before {
       content: "";
       width: 2.5rem;
@@ -3205,7 +3213,7 @@
       background: url(../img/common/icon_page_move.svg) no-repeat center;
       background-size: 100%;
    }
-   
+
    /* overseas */
    .overseas-cont {
       margin-top: 4rem;

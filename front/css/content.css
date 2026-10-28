@@ -7,7 +7,7 @@
 /* btn shortcut */
 .btn-shortcut {
     margin-top: 4rem;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .btn-shortcut a {
@@ -16,16 +16,13 @@
     height: 4.8rem;
     padding: 0 2rem;
     color: var(--white);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 4.8rem;
     background-color: var(--primary);
-}
-
-.btn-shortcut a span {
-    display: inline-block;
-    padding-right: 4.4rem;
-    background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right 1rem center;
-    background-size: auto 1.8rem;
+    background-repeat: no-repeat;
+    background-position: right 2rem center;
+    background-image:  url(../img/common/icon_shortcut_arrow.png);
+    background-size: 1rem auto;
 }
 
 .btn-shortcut a i {
@@ -34,14 +31,14 @@
     font-weight: 400;
 }
 
-.btn-shortcut.youtube a {
+/* .btn-shortcut.youtube a {
     font-weight: 600;
 }
 
 .btn-shortcut.youtube i {
     font-size: 1.8rem;
     font-weight: 600;
-}
+} */
 
 /* tab menu, category */
 .tab-list,
@@ -381,7 +378,7 @@
     width: 4.8rem;
     height: 4.8rem;
     border: 1px solid var(--border-default);
-    background: url(../img/common/icon_link.svg) no-repeat center;
+    background: url(../img/common/icon_link.png) no-repeat center;
 }
 
 .board-list.type4 {
@@ -502,7 +499,7 @@
     text-decoration: underline;
     text-underline-offset: 0.4rem;
 }
- 
+
 /* 문의하기 */
 .tit-info2.contact {
     padding: 2rem 2rem 3rem 2rem;
@@ -1014,7 +1011,7 @@
 }
 
 .bridge-area .bridge-txt {
-    margin-bottom: 4rem; 
+    margin-bottom: 4rem;
 }
 
 /* download layer popup */
@@ -1193,24 +1190,14 @@ main:has(.contact-complete) {
     }
 
     .btn-shortcut a {
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
         min-width: 34rem;
-        width: 34rem;
         height: 10rem;
-        padding: 1.2rem 4rem;
+        padding: 1.8rem 5rem 0 2.4rem;
         font-size: 2.8rem;
-        text-align: left;
+        font-weight: 700;
         line-height: 1;
-    }
-
-    .btn-shortcut a span {
-        display: inline-block;
-        /* width: 100%; */
-        padding-right: 2.4rem;
-        background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right top .5rem;
-        background-size: auto 1.8rem;
+        background-position: right 2.4rem top 2.4rem;
+        background-size: 1.6rem auto;
     }
 
     .btn-shortcut a i {
@@ -1218,25 +1205,25 @@ main:has(.contact-complete) {
         margin-top: 1rem;
         padding-left: 0;
         font-size: 2rem;
+        font-weight: 500;
     }
 
     .btn-shortcut.youtube {
         margin-top: 4rem;
+        text-align: center;
     }
 
     .btn-shortcut.youtube a {
-        height: 7.4rem;
-        padding: 0 4rem;
-    }
-
-    .btn-shortcut.youtube a span {
-        background-position: right center;
+        width: 3.4rem;
+        height: 6.9rem;
+        background-position: right 2.4rem center;
     }
 
     .btn-shortcut.youtube i {
         display: inline-block;
         margin: 0 0 0 1rem;
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        font-weight: 700;
     }
 
     .cont-txt:has(+ .btn-shortcut) {
@@ -1245,7 +1232,7 @@ main:has(.contact-complete) {
         min-height: 10rem;
         padding-bottom: 4rem;
     }
-    
+
     .cont-txt:has(+ .btn-shortcut) + .btn-shortcut {
         float: right;
     }
@@ -1362,7 +1349,8 @@ main:has(.contact-complete) {
     }
 
     .board-list .thumb img {
-        width: 48rem;
+        /*width: 48rem;*/
+        width: 47.9rem;
     }
 
     .board-list .cont {
@@ -1456,7 +1444,8 @@ main:has(.contact-complete) {
         display: block;
         width: 15.7rem;
         height: 5rem;
-        border: 1px solid var(--border-default);
+        /*border: 1px solid var(--border-default);*/
+        border: 1px solid #777;
         text-align: center;
         background: none;
     }
@@ -1464,17 +1453,17 @@ main:has(.contact-complete) {
     .board-list.type3 .btn-link .blind {
         font-size: 1.8rem;
         line-height: 5rem;
-        color: var(--text-secondary);
+        color: var(--text-body);
         font-weight: 500;
     }
 
-    .board-list.type3 .btn-link .blind::before {
+    .board-list.type3 .btn-link .blind::after {
         content: "";
         display: inline-block;
-        width: 2.4rem;
-        height: 2.4rem;
-        margin-right: 1rem;
-        background: url(../img/common/icon_link.svg) no-repeat center top;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-left: 1rem;
+        background: url(../img/common/icon_link.png) no-repeat center top;
         vertical-align: middle;
     }
 
@@ -1893,7 +1882,7 @@ main:has(.contact-complete) {
     .project-case .project-item .item-head {
         padding: 2.4rem 4rem;
     }
-    
+
     .faq .faq-item .item-head::after,
     .project-case .project-item .item-head::after {
         right: 4rem;
@@ -2026,12 +2015,12 @@ main:has(.contact-complete) {
     .bridge-area .inner-cont {
         padding: 8.7rem 0;
     }
-    
+
     .bridge-area .bridge-tit {
         /* font-size: 5rem; */
         font-size: 3.6rem;
     }
-    
+
     .bridge-area .bridge-txt {
         margin-bottom: 4rem;
         font-size: 2rem;
@@ -2157,24 +2146,14 @@ main:has(.contact-complete) {
     }
 
     .btn-shortcut a {
-        display: inline-flex;
-        justify-content: flex-start;
-        align-items: center;
         min-width: 34rem;
-        width: 34rem;
         height: 10rem;
-        padding: 1.2rem 4rem;
+        padding: 1.8rem 5rem 0 2.4rem;
         font-size: 2.8rem;
-        text-align: left;
+        font-weight: 700;
         line-height: 1;
-    }
-
-    .btn-shortcut a span {
-        display: inline-block;
-        /* width: 100%; */
-        padding-right: 2.4rem;
-        background: url(../img/common/icon_shortcut_arrow.svg) no-repeat right top .5rem;
-        background-size: auto 1.8rem;
+        background-position: right 2.4rem top 2.4rem;
+        background-size: 1.6rem auto;
     }
 
     .btn-shortcut a i {
@@ -2182,25 +2161,25 @@ main:has(.contact-complete) {
         margin-top: 1rem;
         padding-left: 0;
         font-size: 2rem;
+        font-weight: 500;
     }
 
     .btn-shortcut.youtube {
         margin-top: 4rem;
+        text-align: center;
     }
 
     .btn-shortcut.youtube a {
-        height: 7.4rem;
-        padding: 0 4rem;
-    }
-
-    .btn-shortcut.youtube a span {
-        background-position: right center;
+        width: 3.4rem;
+        height: 6.9rem;
+        background-position: right 2.4rem center;
     }
 
     .btn-shortcut.youtube i {
         display: inline-block;
         margin: 0 0 0 1rem;
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        font-weight: 700;
     }
 
     .cont-txt:has(+ .btn-shortcut) {
@@ -2209,7 +2188,7 @@ main:has(.contact-complete) {
         min-height: 10rem;
         padding-bottom: 4rem;
     }
-    
+
     .cont-txt:has(+ .btn-shortcut) + .btn-shortcut {
         float: right;
     }
@@ -2320,7 +2299,8 @@ main:has(.contact-complete) {
     }
 
     .board-list .thumb img {
-        width: 48rem;
+        /*width: 48rem;*/
+        width: 47.9rem;
     }
 
     .board-list .cont {
@@ -2414,7 +2394,8 @@ main:has(.contact-complete) {
         display: block;
         width: 15.7rem;
         height: 5rem;
-        border: 1px solid var(--border-default);
+        /*border: 1px solid var(--border-default);*/
+        border: 1px solid #777;
         text-align: center;
         background: none;
     }
@@ -2422,17 +2403,17 @@ main:has(.contact-complete) {
     .board-list.type3 .btn-link .blind {
         font-size: 1.8rem;
         line-height: 5rem;
-        color: var(--text-secondary);
+        color: var(--text-body);
         font-weight: 500;
     }
 
-    .board-list.type3 .btn-link .blind::before {
+    .board-list.type3 .btn-link .blind::after {
         content: "";
         display: inline-block;
-        width: 2.4rem;
-        height: 2.4rem;
-        margin-right: 1rem;
-        background: url(../img/common/icon_link.svg) no-repeat center top;
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-left: 1rem;
+        background: url(../img/common/icon_link.png) no-repeat center top;
         vertical-align: middle;
     }
 
@@ -2899,7 +2880,7 @@ main:has(.contact-complete) {
     .download .board-list.type2 .board-item {
         padding: 2rem 4rem;
     }
-    
+
     .download .board-list.type2 .cont {
         padding-right: 0;
     }
@@ -2969,11 +2950,11 @@ main:has(.contact-complete) {
     .bridge-area .inner-cont {
         padding: 8.7rem 2.4rem;
     }
-    
+
     .bridge-area .bridge-tit {
         font-size: 3.6rem;
     }
-    
+
     .bridge-area .bridge-txt {
         margin-bottom: 4rem;
         font-size: 2rem;
