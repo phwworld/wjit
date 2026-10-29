@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initServiceItemCycle();
     initScrollTop();
     initHashScroll();
+    initBssCont3TitleHeight();
 });
 
 /* ==========================================================================
@@ -1485,6 +1486,58 @@ applySapJouleScrollMargin();
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); });
   else init();
 })();
+
+/* bss-cont3 제목 — PC에서 1줄과 2줄이 한 묶음에 섞일 때만 2줄 높이로 맞춘다 */
+function initBssCont3TitleHeight() {
+    const groups = document.querySelectorAll(".bss-cont3");
+    if (!groups.length) return;
+
+    const pcQuery = window.matchMedia("(min-width: 1025px)");
+
+    const lineCount = (title) => {
+        const style = getComputedStyle(title);
+        const lineHeight = parseFloat(style.lineHeight);
+        const padding = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+        const contentHeight = title.getBoundingClientRect().height - padding;
+        if (!lineHeight || contentHeight <= 0) return 0;
+        return Math.round(contentHeight / lineHeight);
+    };
+
+    const sync = () => {
+        const isPc = pcQuery.matches;
+
+        groups.forEach((group) => {
+            group.classList.remove("is-mixed-tit");
+            if (!isPc || group.getClientRects().length === 0) return;
+
+            const titles = group.querySelectorAll(".box-tit");
+            let hasOne = false;
+            let hasTwo = false;
+
+            titles.forEach((title) => {
+                const lines = lineCount(title);
+                if (lines <= 1) hasOne = true;
+                else hasTwo = true;
+            });
+
+            if (hasOne && hasTwo) group.classList.add("is-mixed-tit");
+        });
+    };
+
+    let frame = 0;
+    const requestSync = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(sync);
+    };
+
+    requestSync();
+    window.addEventListener("resize", requestSync);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(requestSync);
+
+    document.querySelectorAll(".tab-cont").forEach((tab) => {
+        new MutationObserver(requestSync).observe(tab, { attributes: true, attributeFilter: ["class"] });
+    });
+}
 
 /* 서브타이틀 모티브 — 화면 폭이 모티브 박스(1440px)보다 좁으면 폭에 맞춰 축소 */
 (function () {

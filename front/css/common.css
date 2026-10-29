@@ -120,7 +120,8 @@ br.pc {
 
 textarea.form-control {
   height: 17.8rem;
-  padding: 2rem 0 0 1.2rem;
+  /*padding: 2rem 0 0 1.2rem;*/
+  padding: 1rem 0 0 1.2rem;
 }
 
 .form-select {
@@ -249,9 +250,9 @@ header.act {
   z-index: 100;
 }
 
-/* PC GNB 서브메뉴 열림 — home-quick-nav(z-index 90) 위로 즉시 노출 (ui.js에서 토글) */
+/* PC GNB 서브메뉴 열림 — home-quick-nav(90)·search-layer(100) 위로 즉시 노출 (ui.js에서 토글) */
 header.gnb-open {
-  z-index: 100;
+  z-index: 110;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
 }
 
@@ -1209,8 +1210,10 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .function-menu button,
   header .function-menu a {
-    width: 2.8rem;
-    height: 2.8rem;
+    /* width: 2.8rem;
+    height: 2.8rem; */
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   header .function-menu .mo-menu {
@@ -1231,6 +1234,14 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .function-menu .lang:hover {
     background-image: url(../img/common/icon_lang_on.png);
+  }
+
+  header.white .function-menu .search {
+    background-image: url(../img/common/icon_search_w_pc.png);
+  }
+
+  header.white .function-menu .lang {
+    background-image: url(../img/common/icon_lang_w_pc.png);
   }
 
   header .pc-gnb>ul {
@@ -1507,6 +1518,11 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
     background-color: rgba(17, 188, 255, 0.1);
   }
 
+  .search-layer {
+    top: var(--header-height);
+    padding: 10rem 2.4rem;
+  }
+
   .search-layer .inner-cont {
     width: 70rem;
     margin: 0 auto;
@@ -1514,7 +1530,8 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   .search-layer .title {
     margin-bottom: 4rem;
-    font-size: 3.2rem;
+    /*font-size: 3.2rem;*/
+    font-size: 2.8rem;
   }
 
   .search-layer .search-input form {
@@ -1697,11 +1714,11 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
     background-color: var(--white);
     width: 100%;
   }
-  
+
   .layer-pop.home .pop-foot {
     height: 5.6rem;
   }
-  
+
   .layer-pop.home .pop-foot a {
     padding: 0 3rem;
     font-size: 1.8rem;
@@ -1855,6 +1872,14 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   header .function-menu .lang {
     background-image: url(../img/common/icon_lang_pc_off.png);
+  }
+
+  header.white .function-menu .search {
+    background-image: url(../img/common/icon_search_w_pc.png);
+  }
+
+  header.white .function-menu .lang {
+    background-image: url(../img/common/icon_lang_w_pc.png);
   }
 
   header .pc-gnb>ul {
@@ -2167,6 +2192,11 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
     background-color: rgba(17, 188, 255, 0.1);
   }
 
+  .search-layer {
+    top: var(--header-height);
+    padding: 10rem 2.4rem;
+  }
+
   .search-layer .inner-cont {
     width: 70rem;
     margin: 0 auto;
@@ -2174,7 +2204,8 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
 
   .search-layer .title {
     margin-bottom: 4rem;
-    font-size: 3.2rem;
+    /*font-size: 3.2rem;*/
+    font-size: 2.8rem;
   }
 
   .search-layer .search-input form {
@@ -2327,11 +2358,11 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
     background-color: var(--white);
     width: 100%;
   }
-  
+
   .layer-pop.home .pop-foot {
     height: 5.6rem;
   }
-  
+
   .layer-pop.home .pop-foot a {
     padding: 0 3rem;
     font-size: 1.8rem;

@@ -1082,14 +1082,16 @@
             const visualItems = Array.from(document.querySelectorAll(".home-visual-item"));
             const moMenu = document.querySelector(".mo-menu");
             const pcGnb = document.querySelector(".pc-gnb > ul");
+            const searchLayer = document.querySelector(".search-layer");
 
             let sec1Visible = false;
             let menuOpen = false;
             let gnbHover = false;
+            let searchOpen = false;
 
             const syncHeader = () => {
                 const activeIndex = visualItems.findIndex((item) => item.classList.contains("is-active"));
-                const holdSolid = menuOpen || gnbHover;
+                const holdSolid = menuOpen || gnbHover || searchOpen;
                 const overHero = sec1Visible && !holdSolid;
 
                 header.classList.toggle("transparent", overHero);
@@ -1121,6 +1123,14 @@
                     menuOpen = moMenu.classList.contains("act");
                     syncHeader();
                 }).observe(moMenu, { attributes: true, attributeFilter: ["class"] });
+            }
+
+            if (searchLayer && "MutationObserver" in window) {
+                searchOpen = searchLayer.classList.contains("act");
+                new MutationObserver(() => {
+                    searchOpen = searchLayer.classList.contains("act");
+                    syncHeader();
+                }).observe(searchLayer, { attributes: true, attributeFilter: ["class"] });
             }
 
             const rCont = document.querySelector("header .r-cont");
