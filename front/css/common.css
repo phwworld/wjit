@@ -865,6 +865,10 @@ main>.title.no-animate h1 {
   background-size: 100% auto;
 }
 
+:lang(en) .title.company.contact {
+  aspect-ratio: 1.0141 / 1.15;
+}
+
 main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
   margin-bottom: 6rem;
   border-bottom: 1px solid #e1e7ee;
@@ -1612,6 +1616,10 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
     background-image: none;
   }
 
+  :lang(en) .title.company.contact {
+    aspect-ratio: auto;
+  }
+
   main > .title:has(+ .content > :first-child.inner-cont> :first-child:not(form):is(h4.c-tit)) {
     margin-bottom: 10rem;
   }
@@ -2033,6 +2041,10 @@ main>.title:has(+.content>:first-child.inner-cont>:first-child:not(form)) {
   .title.mediaroom,
   .title.company {
     background-image: none;
+  }
+
+  :lang(en) .title.company.contact {
+    aspect-ratio: auto;
   }
 
   .scroll-action {

@@ -470,6 +470,11 @@
     border-width: 1px 0;
 }
 
+.view-cont img {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .board-view.blog-view {
     /* margin-top: 0;
     padding-top: 3rem;
@@ -1596,6 +1601,11 @@ main:has(.contact-complete) {
         font-size: 2.4rem;
     }
 
+  .view-cont img {
+    width: initial;
+    height: initial;
+  }
+
     .board-view.blog-view {
         /* margin-top: 5rem;
         padding-top: 5rem;
@@ -2539,6 +2549,11 @@ main:has(.contact-complete) {
         bottom: 5.5rem;
         font-size: 2.4rem;
     }
+
+  .view-cont img {
+    width: initial;
+    height: initial;
+  }
 
     .board-view .view-attachment {
         gap: 10rem;

@@ -1487,9 +1487,9 @@ applySapJouleScrollMargin();
   else init();
 })();
 
-/* bss-cont3 제목 — PC에서 1줄과 2줄이 한 묶음에 섞일 때만 2줄 높이로 맞춘다 */
+/* bss-cont3 / mendix-cont4 제목 — PC에서 1줄과 2줄이 한 묶음에 섞일 때만 2줄 높이로 맞춘다 */
 function initBssCont3TitleHeight() {
-    const groups = document.querySelectorAll(".bss-cont3");
+    const groups = document.querySelectorAll(".bss-cont3, .mendix-cont4");
     if (!groups.length) return;
 
     const pcQuery = window.matchMedia("(min-width: 1025px)");

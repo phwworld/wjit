@@ -2916,7 +2916,7 @@
     background-repeat: no-repeat;
     background-position: left 2rem center;
     /*background-size: auto 6rem;*/
-    background-size: 5rem auto;
+    background-size: auto 7.5rem;
     background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
 }
 
@@ -4590,6 +4590,14 @@
         min-height: calc(1.4em * 2 + 1.2rem * 2);
     }
 
+    .mendix-cont4.is-mixed-tit .box-tit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(1.4em * 2 + 1rem * 2);
+        line-height: 1.4;
+    }
+
     :lang(en) .bss-cont3 .box-tit {
         display: flex;
         align-items: center;
@@ -5653,6 +5661,7 @@
         background-position: center 13rem;
     }
 
+    :lang(en) .dynamics365-cont11 .ui,
     .dynamics365-cont11 .ui {
         background-position: center 13.2rem;
     }
@@ -6067,6 +6076,10 @@
         margin-bottom: 0;
     }
 
+    :lang(en) .powerPlatform-cont5 .box-tit {
+      width: 37rem;
+    }
+
     .powerPlatform-cont5 .box-tit::after {
         content: "";
         position: absolute;
@@ -6083,6 +6096,10 @@
         padding-left: 5rem;
         font-size: 2rem;
     }
+
+  :lang(en) .powerPlatform-cont5 .box-cont {
+    width: calc(100% - 37rem);
+  }
 
     /* naverCloudPlatform */
     .naverCloudPlatform-cont1 .box-cont {
@@ -7544,6 +7561,14 @@
         min-height: calc(1.4em * 2 + 1.2rem * 2);
     }
 
+    .mendix-cont4.is-mixed-tit .box-tit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(1.4em * 2 + 1rem * 2);
+        line-height: 1.4;
+    }
+
     :lang(en) .bss-cont3 .box-tit {
         display: flex;
         align-items: center;
@@ -8613,6 +8638,7 @@
         background-size: auto 8rem;
     }
 
+    :lang(en) .dynamics365-cont11 .ui,
     .dynamics365-cont11 .ui {
         background-position: center 13.2rem;
     }
@@ -8970,7 +8996,8 @@
     }
 
     .powerPlatform-cont2>div>div {
-        flex-basis: calc(33.3% - 2rem);
+        /*flex-basis: calc(33.3% - 2rem);*/
+        flex-basis: calc((100% - 2rem) / 2);
         padding: 3rem 4rem 3rem 16rem;
         background-repeat: no-repeat;
         background-position: left 4rem center;
@@ -9022,6 +9049,10 @@
         margin-bottom: 0;
     }
 
+  :lang(en) .powerPlatform-cont5 .box-tit {
+    width: 37rem;
+  }
+
     .powerPlatform-cont5 .box-tit::after {
         content: "";
         position: absolute;
@@ -9038,6 +9069,10 @@
         padding-left: 5rem;
         font-size: 2rem;
     }
+
+  :lang(en) .powerPlatform-cont5 .box-cont {
+    width: calc(100% - 34rem);
+  }
 
     /* naverCloudPlatform */
     .naverCloudPlatform-cont1 .box-cont {
