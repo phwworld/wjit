@@ -339,6 +339,10 @@ main.home>section .home-sec-info {
     background-color: var(--bg-surface);
 }
 
+.home-sec2 .inner-cont {
+  padding: 4rem 2.4rem 0 !important;
+}
+
 .home-sec2 .home-sec-title {
     color: #0a0a0a
 }

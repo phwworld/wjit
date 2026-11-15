@@ -129,6 +129,15 @@
     white-space: normal;
 }
 
+/* 버튼이 4개일 때 균등 분할. type2(msDynamics365)는 라벨이 길어 기존 스크롤 유지 */
+.tab-list:not(.type2) button:first-child:nth-last-child(4),
+.tab-list:not(.type2) button:first-child:nth-last-child(4) ~ button,
+.category-list button:first-child:nth-last-child(4),
+.category-list button:first-child:nth-last-child(4) ~ button {
+  flex: 1;
+  min-width: auto;
+}
+
 .category-list2 {
     display: flex;
     margin-bottom: 3rem;
@@ -139,6 +148,7 @@
     height: 3.2rem;
     /* margin-left: .8rem; */
     padding: 0 1.2rem;
+    color: var(--text-body);
 }
 
 .category-list2 button.act {
@@ -881,6 +891,7 @@
 
 .download .board-list.type2 .cont-txt1 {
     width: 100%;
+    padding-top: 1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

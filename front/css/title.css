@@ -479,8 +479,8 @@
    height: 540px;
    transform: translate(-50%, -50%) scale(var(--wjh-scale, 1));
    transform-origin: 50% 50%;
-   background: #fff;
-   background: #fff;
+   /*background: #fff;*/
+   background: transparent;
    isolation: isolate;
    container-type: inline-size;
 }

@@ -345,8 +345,8 @@
 }
 
 .wikl-cont5 {
-    flex-direction: row;
-    gap: .6rem;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .wikl-cont5>div {
@@ -2915,8 +2915,8 @@
     padding: 1.6rem 2rem 1.6rem 8.6rem;
     background-repeat: no-repeat;
     background-position: left 2rem center;
-    /*background-size: auto 6rem;*/
-    background-size: auto 7.5rem;
+    background-size: auto 5rem;
+    /* background-size: auto 7.5rem; */
     background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
 }
 
@@ -3913,6 +3913,7 @@
     }
 
     .wikl-cont5 {
+        flex-direction: row;
         gap: 2rem;
     }
 
@@ -6024,21 +6025,51 @@
     }
 
     .powerPlatform-cont2>div>div {
-        flex-basis: calc(33.3% - 2rem);
-        padding: 3rem 4rem 3rem 16rem;
+        box-sizing: border-box;
+        flex: 0 0 calc((100% - 4rem) / 3);
+        max-width: calc((100% - 4rem) / 3);
+        padding: 14rem 4rem 4rem;
+        text-align: center;
         background-repeat: no-repeat;
-        background-position: left 4rem center;
+        background-position: center top 4rem;
         background-size: auto 8rem;
+        background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(2) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_02.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(3) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_03.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(4) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_04.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(5) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_05.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(6) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_06.png);
     }
 
     .powerPlatform-cont2 .box-tit {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         font-size: 2.4rem;
         font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
     }
 
     .powerPlatform-cont2 .box-cont {
         font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        color: #000;
     }
 
     .powerPlatform-cont3 {
@@ -6883,6 +6914,7 @@
     }
 
     .wikl-cont5 {
+        flex-direction: row;
         gap: 2rem;
     }
 
@@ -8996,22 +9028,51 @@
     }
 
     .powerPlatform-cont2>div>div {
-        /*flex-basis: calc(33.3% - 2rem);*/
-        flex-basis: calc((100% - 2rem) / 2);
-        padding: 3rem 4rem 3rem 16rem;
+        box-sizing: border-box;
+        flex: 0 0 calc((100% - 4rem) / 3);
+        max-width: calc((100% - 4rem) / 3);
+        padding: 14rem 4rem 4rem;
+        text-align: center;
         background-repeat: no-repeat;
-        background-position: left 4rem center;
+        background-position: center top 4rem;
         background-size: auto 8rem;
+        background-image: url(../img/business/bg_powerPlatform_cont2_01.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(2) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_02.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(3) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_03.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(4) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_04.png);
+    }
+
+    .powerPlatform-cont2>div>div:nth-of-type(5) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_05.png);
+    }
+    
+    .powerPlatform-cont2>div>div:nth-of-type(6) {
+        background-image: url(../img/business/bg_powerPlatform_cont2_06.png);
     }
 
     .powerPlatform-cont2 .box-tit {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         font-size: 2.4rem;
         font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
     }
 
     .powerPlatform-cont2 .box-cont {
         font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.6;
+        letter-spacing: -0.02em;
+        color: #000;
     }
 
     .powerPlatform-cont3 {

@@ -1013,6 +1013,14 @@
    text-align: center;
 }
 
+.financial-cont .align-left tbody th {
+   text-align: left;
+}
+
+.financial-cont .align-left tbody .depth th {
+   padding: 0.8rem 1rem 0.9rem 2rem;
+}
+
 .financial-cont tbody td {
    font-weight: 400;
    line-height: normal;
@@ -1053,6 +1061,10 @@
 
 .financial-cont table td.left {
    text-align: left;
+}
+
+.financial-cont .financial-tbl tbody td {
+   text-align: right;
 }
 
 /* overseas */
@@ -2099,6 +2111,18 @@
          background-color: var(--border-default);
       }
 
+      .financial-cont .align-left tbody th {
+         padding: 1.4rem 2rem 1.5rem 15rem;
+      }
+
+      .financial-cont .align-left tbody td {
+         padding: 1.4rem 15rem 1.5rem 2rem;
+      }
+
+      .financial-cont .align-left tbody .depth th {
+         padding: 1.4rem 2rem 1.5rem 17rem;
+      }
+
       /* disclosure */
       .disclosure-cont.mo {
          display: none;
@@ -2133,6 +2157,15 @@
          margin-right: 1rem;
          background: url(../img/common/icon_page_move.svg) no-repeat center;
          background-size: 100%;
+      }
+
+      .financial-cont .financial-tbl tbody td {
+         padding: 1.4rem 15rem 1.5rem 2rem;
+         text-align: right;
+      }
+
+      .financial-cont .financial-tbl.ty2 tbody td {
+         padding: 1.4rem 20rem 1.5rem 2rem;
       }
 
       /* overseas */
@@ -2374,7 +2407,7 @@
       /* margin-top: -6rem;
       padding: 8rem 22rem; */
       margin-top: 8rem;
-      padding: 0 22rem;
+      padding: 0 18rem;
    }
 
    .company-tab button {
@@ -3182,6 +3215,18 @@
       background-color: var(--border-default);
    }
 
+   .financial-cont .align-left tbody th {
+      padding: 1.4rem 2rem 1.5rem 15rem;
+   }
+
+   .financial-cont .align-left tbody td {
+      padding: 1.4rem 15rem 1.5rem 2rem;
+   }
+
+   .financial-cont .align-left tbody .depth th {
+      padding: 1.4rem 2rem 1.5rem 17rem;
+   }
+
    /* disclosure */
    .disclosure-cont.mo {
       display: none;
@@ -3216,6 +3261,15 @@
       margin-right: 1rem;
       background: url(../img/common/icon_page_move.svg) no-repeat center;
       background-size: 100%;
+   }
+
+   .financial-cont .financial-tbl tbody td {
+      padding: 1.4rem 10rem 1.5rem 2rem;
+      text-align: right;
+   }
+
+   .financial-cont .financial-tbl.ty2 tbody td {
+      padding: 1.4rem 18rem 1.5rem 2rem;
    }
 
    /* overseas */
