@@ -152,7 +152,7 @@
 }
 
 .category-list2 button.act {
-    color: var(--text-point);
+    color: var(--text-point) !important;
     font-weight: 700;
 }
 
